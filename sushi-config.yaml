@@ -5,6 +5,7 @@
 id: breastcancer.ichom
 canonical: https://connect.ichom.org/fhir
 name: Breast Cancer - ICHOM
+title: "ICHOM FHIR Implementation Guide: Breast Cancer"
 status: draft
 version: 0.0.1
 fhirVersion: 4.0.1
