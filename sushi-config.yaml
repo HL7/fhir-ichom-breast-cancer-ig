@@ -15,9 +15,25 @@ publisher:
   name: ICHOM
   url: https://ichom.org
 
+pages:
+  index.md:
+    title: Introduction
+  2_use-cases.md:
+    title: Use Cases
+  3_security.md:
+    title: Security
+  4_hl7-fhir-basics.md:
+    title: HL7 FHIR Basics
+  5_examples.md:
+    title: Examples
+
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Use Cases: 2_use-cases.html
+  Security: 3_security.html
+  HL7 FHIR Basics: 4_hl7-fhir-basics.html
+  Examples: 5_examples.html
   Artifacts: artifacts.html
