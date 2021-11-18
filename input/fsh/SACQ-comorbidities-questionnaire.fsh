@@ -1,11 +1,10 @@
-Instance: SACQ-comorbidities
+Instance: SACQComorbidities
 InstanceOf: Questionnaire
 Usage: #definition
 Title: "SACQ comorbidities"
 Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha et al, 2003)."
 
-* id = "SACQ-comorbidities"
-* name = "SACQ-comorbidities"
+* name = "SACQComorbidities"
 * status = #draft
 
 // ^\t(?<linkId>[^\t]+)\t[^\t]+\t[^\t]+\t[^\t]+\t(?<text>[^\t]+).+
