@@ -3,6 +3,7 @@ InstanceOf: Questionnaire
 Usage: #definition
 Title: "SACQ comorbidities"
 Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha et al, 2003)."
+* insert PublicationInstanceRuleset
 
 * name = "SACQComorbidities"
 * status = #draft
