@@ -161,21 +161,24 @@ Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha
   * text = "What is the total summed score of the patient's SACQ responses?"
 
 
-// FIXME: does it have to be on top?
 Alias: $SCT = http://snomed.info/sct
 
 ValueSet: PatientComorbidityHistory
 Id: patient-comorbidity-history
 Title: "Patient's comorbidity history"
 Description: "Patient's documented history of comorbidities"
-// fix the mappings 
+* ICHOM#no-other-diseases
 * $SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
 * $SCT#38341003 "High blood pressure"
-* $SCT#202569003 "Leg pain when walking due to poor circulation"
 * $SCT#19829001 "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
 * $SCT#73211009 "Diabetes"
+* $SCT#429040005 "Ulcer"
 * $SCT#90708001 "Kidney disease"
 * $SCT#235856003 "Liver disease"
-* $SCT#230690007 "Problems caused by stroke"
+* $SCT#271737000 "Anemia"
+* ICHOM#cancer-within-5yrs
 * $SCT#35489007 "Depression"
-* $SCT#3723001 "Arthritis"
+* $SCT#396275006 "Osteoarthritis"
+* $SCT#161891005 "Back pain"
+* $SCT#69896004 "Rheumatoid arthritis"
+* ICHOM#other-medical-problems
