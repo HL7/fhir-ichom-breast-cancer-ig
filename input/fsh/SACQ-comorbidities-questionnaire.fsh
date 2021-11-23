@@ -15,12 +15,6 @@ Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha
 * name = "SACQComorbidities"
 * status = #draft
 
-// tsv to generation regex (needs adjustment)
-// ^\t(?<linkId>[^\t]+)\t[^\t]+\t[^\t]+\t[^\t]+\t(?<text>[^\t]+).+
-// * item[+].linkId = "$+{linkId}"
-// * type = #boolean
-// * text = "$+{text}"
-
 * item[+]
   * linkId = "ComorbiditiesSACQ"
   * type = #choice
