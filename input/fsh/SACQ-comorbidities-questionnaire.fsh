@@ -187,7 +187,7 @@ Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha
 
 * item[+]
   * linkId = "ComorbiditiesSACQ_Other"
-  * type = #boolean
+  * type = #text
   * text = "What other medical problems are you experiencing?"
   * insert enableWhen(SACQPatientComorbidityHistory#other-medical-problems)
 
