@@ -20,11 +20,13 @@ pages:
     title: Introduction
   2_use-cases.md:
     title: Use Cases
-  3_security.md:
+  3_standard-set.md:
+    title: Standard Set
+  4_security.md:
     title: Security
-  4_hl7-fhir-basics.md:
+  5_hl7-fhir-basics.md:
     title: HL7 FHIR Basics
-  5_examples.md:
+  6_examples.md:
     title: Examples
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -33,7 +35,8 @@ pages:
 menu:
   Home: index.html
   Use Cases: 2_use-cases.html
-  Security: 3_security.html
-  HL7 FHIR Basics: 4_hl7-fhir-basics.html
-  Examples: 5_examples.html
+  Standard Set: 3_standard-set.html
+  Security: 4_security.html
+  HL7 FHIR Basics: 5_hl7-fhir-basics.html
+  Examples: 6_examples.html
   Artifacts: artifacts.html
