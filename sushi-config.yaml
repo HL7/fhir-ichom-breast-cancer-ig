@@ -2,7 +2,7 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: breastcancer.ichom
+id: hl7.fhir.uv.ichom.breastcancer
 canonical: https://connect.ichom.org/fhir
 name: Breast Cancer - ICHOM
 title: "ICHOM FHIR Implementation Guide: Breast Cancer"
