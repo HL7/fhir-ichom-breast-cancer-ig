@@ -1,5 +1,7 @@
 Alias: $SCT = http://snomed.info/sct
 
+// standard set is published separately for re-use in other IGs
+
 CodeSystem: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ patient's comorbidity history"
