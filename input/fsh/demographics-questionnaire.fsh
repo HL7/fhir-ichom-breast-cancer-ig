@@ -42,8 +42,11 @@ Description: "Demographic Factors"
 
 * item[+]
   * linkId = "EducationLevel"
-  * type = #string
+  * type = #choice
   * text = "Please indicate your highest level of schooling."
+  * answerValueSet = Canonical(EducationLevel)
+  * required = true
+  * repeats = false
 
 // valueset described in dictionary not standard, currently referring to standard value set
 * item[+]
