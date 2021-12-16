@@ -56,8 +56,9 @@ Description: "Demographic Factors"
 
 * item[+]
   * linkId = "MENOPAUSE"
-  * type = #boolean
+  * type = #choice
   * text = "What is your current menopausal status?"
+  * answerValueSet = Canonical(MenopausalStatus)
   * enableWhen
     * question = "DemographicFactors_Sex"
     * operator = #=
