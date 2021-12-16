@@ -40,17 +40,17 @@ Description: "Demographic Factors"
 * item[+]
   * linkId = "Ethnicity"
   * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * text = "Please indicate the ethnicity that you identify with."
 
 * item[+]
   * linkId = "Race"
   * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * text = "Please indicate the biological race that you identify with."
 
 * item[+]
   * linkId = "EducationLevel"
   * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * text = "Please indicate your highest level of schooling."
 
 // valueset described in dictionary not standard, currently referring to standard value set
 * item[+]
