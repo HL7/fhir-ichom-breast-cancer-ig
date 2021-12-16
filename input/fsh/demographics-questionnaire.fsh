@@ -60,6 +60,6 @@ Description: "Demographic Factors"
   * text = "What is your current menopausal status?"
   * answerValueSet = Canonical(MenopausalStatus)
   * enableWhen
-    * question = "DemographicFactors_Sex"
+    * question = "Sex"
     * operator = #=
     * answerCoding = #female
