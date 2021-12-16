@@ -1,10 +1,3 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenFemale(code)
-* enableWhen
-  * question = "DemographicFactors_Sex"
-  * operator = #=
-  * answerCoding = {code}
-
 Instance: Demographics
 InstanceOf: Questionnaire
 Usage: #definition
@@ -65,4 +58,7 @@ Description: "Demographic Factors"
   * linkId = "MENOPAUSE"
   * type = #boolean
   * text = "What is your current menopausal status?"
-  * insert enableWhenFemale(#female)
+  * enableWhen
+    * question = "DemographicFactors_Sex"
+    * operator = #=
+    * answerCoding = #female
