@@ -38,6 +38,7 @@ CodeSystem: MenopausalStatus
 Id: MenopausalStatusCS
 Title: "MenopausalStatus"
 Description: "Menopausal Status"
+* ^caseSensitive = true
 * #0 "Pre-menopause"
 * #1 "Post-menopausei (natural/surgical) - if you have not had your period >12 months, caused by natural decline of hormones or due to surgery (e.g. menopause that develops after the ovaries are surgically removed)"
 * #2 "I don't know what my current menopausal status is"
