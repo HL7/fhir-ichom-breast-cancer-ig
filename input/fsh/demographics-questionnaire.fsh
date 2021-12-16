@@ -61,10 +61,8 @@ Description: "Demographic Factors"
   * required = true
   * repeats = false
 
-// was rephrasing from "What is your current menopausal status?" to make it boolean
-// or should i create a new valueset?
 * item[+]
   * linkId = "MENOPAUSE"
   * type = #boolean
-  * text = "Are you in your menopause?"
+  * text = "What is your current menopausal status?"
   * insert enableWhenFemale(#female)
