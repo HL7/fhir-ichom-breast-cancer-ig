@@ -1,3 +1,5 @@
+Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
+
 ValueSet: DemographicFactorsSex
 Id: DemographicFactorsSex
 Title: "Sex of patient"
@@ -10,11 +12,27 @@ Title: "Country"
 Description: "Country (e.g. of residence)"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 
-ValueSet: RelationshipStatus
+CodeSystem: RelationshipStatus
 Id: RelationshipStatus
 Title: "RelationshipStatus"
+Description: "Codes used in ICHOM relationship status that are not available yet in standard terminologies"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/relationship-status
+* ^caseSensitive = true
+
+* #not-married-partnered "Not married/partnered"
+* #married-partnered "Married/partnered"
+* #divorced-separated "Divorced/separated"
+* #unknown "unknown"
+
+ValueSet: RelationshipStatus
+Id: RelationshipStatus-combined
+Title: "RelationshipStatus"
 Description: "Relationship Status"
-* include codes from valueset http://hl7.org/fhir/ValueSet/marital-status
+* RelationshipStatus#not-married-partnered
+* RelationshipStatus#married-partnered
+* RelationshipStatus#divorced-separated
+* $FHIRMS#W "Widowed"
+* RelationshipStatus#unknown
 
 CodeSystem: MenopausalStatus
 Id: MenopausalStatusCS
