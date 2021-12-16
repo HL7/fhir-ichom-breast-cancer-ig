@@ -62,4 +62,4 @@ Description: "Demographic Factors"
   * enableWhen
     * question = "Sex"
     * operator = #=
-    * answerCoding = #female
+    * answerCoding = http://hl7.org/fhir/administrative-gender#female
