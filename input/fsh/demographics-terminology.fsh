@@ -14,4 +14,4 @@ ValueSet: RelationshipStatus
 Id: RelationshipStatus
 Title: "RelationshipStatus"
 Description: "Relationship Status"
-* include codes from valueset https://www.hl7.org/fhir/v3/MaritalStatus/cs.html
+* include codes from valueset http://hl7.org/fhir/ValueSet/marital-status
