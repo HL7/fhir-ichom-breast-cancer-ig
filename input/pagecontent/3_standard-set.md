@@ -6,7 +6,7 @@
 
 # Case-Mix Variables
 ## Demographic Factors
-...
+All patients - [demographics questionnaire](Questionnaire-Demographics.html).
 
 ## Baseline Clinical Factors
 All patients - [comorbidities questionnaire](Questionnaire-SACQComorbidities.html).
