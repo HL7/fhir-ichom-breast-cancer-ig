@@ -15,3 +15,19 @@ Id: RelationshipStatus
 Title: "RelationshipStatus"
 Description: "Relationship Status"
 * include codes from valueset http://hl7.org/fhir/ValueSet/marital-status
+
+CodeSystem: MenopausalStatus
+Id: MenopausalStatusCS
+Title: "MenopausalStatus"
+Description: "Menopausal Status"
+* #0 "Pre-menopause"
+* #1 "Post-menopausei (natural/surgical) - if you have not had your period >12 months, caused by natural decline of hormones or due to surgery (e.g. menopause that develops after the ovaries are surgically removed)"
+* #2 "I don't know what my current menopausal status is"
+
+ValueSet: MenopausalStatus
+Id: MenopausalStatus-vs
+Title: "MenopausalStatus"
+Description: "Menopausal Status"
+* MenopausalStatusCS#0
+* MenopausalStatusCS#1
+* MenopausalStatusCS#2
