@@ -12,6 +12,24 @@ Title: "Country"
 Description: "Country (e.g. of residence)"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 
+CodeSystem: EducationLevel
+Id: EducationLevel
+Title: "EducationLevel"
+Description: "Highest level of education completed based on local standard definitions of education levels"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/education-level
+* ^caseSensitive = true
+
+* #none "None"
+* #primary "Primary"
+* #secondary "Secondary"
+* #tertiary "Tertiary"
+
+ValueSet: EducationLevel
+Id: EducationLevel
+Title: "EducationLevel"
+Description: "Highest level of education completed based on local standard definitions of education levels"
+* include codes from system EducationLevel
+
 CodeSystem: RelationshipStatus
 Id: RelationshipStatus
 Title: "RelationshipStatus"
