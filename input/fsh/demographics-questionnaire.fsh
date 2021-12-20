@@ -1,10 +1,3 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenFemale(code)
-* enableWhen
-  * question = "DemographicFactors_Sex"
-  * operator = #=
-  * answerCoding = {code}
-
 Instance: Demographics
 InstanceOf: Questionnaire
 Usage: #definition
@@ -40,17 +33,20 @@ Description: "Demographic Factors"
 * item[+]
   * linkId = "Ethnicity"
   * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * text = "Please indicate the ethnicity that you identify with."
 
 * item[+]
   * linkId = "Race"
   * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * text = "Please indicate the biological race that you identify with."
 
 * item[+]
   * linkId = "EducationLevel"
-  * type = #string
-  * text = "Please indicate the ethnicity that you identify with"
+  * type = #choice
+  * text = "Please indicate your highest level of schooling."
+  * answerValueSet = Canonical(EducationLevel)
+  * required = true
+  * repeats = false
 
 // valueset described in dictionary not standard, currently referring to standard value set
 * item[+]
@@ -61,10 +57,12 @@ Description: "Demographic Factors"
   * required = true
   * repeats = false
 
-// was rephrasing from "What is your current menopausal status?" to make it boolean
-// or should i create a new valueset?
 * item[+]
   * linkId = "MENOPAUSE"
-  * type = #boolean
-  * text = "Are you in your menopause?"
-  * insert enableWhenFemale(#female)
+  * type = #choice
+  * text = "What is your current menopausal status?"
+  * answerValueSet = Canonical(MenopausalStatus)
+  * enableWhen
+    * question = "Sex"
+    * operator = #=
+    * answerCoding = http://hl7.org/fhir/administrative-gender#female
