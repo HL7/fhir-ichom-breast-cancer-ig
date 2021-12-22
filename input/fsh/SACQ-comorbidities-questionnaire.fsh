@@ -123,13 +123,13 @@ Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha
   * linkId = "ComorbiditiesSACQ_CancerFU1"
   * type = #boolean
   * text = "Do you receive treatment for cancer/another cancer?"
-  * insert enableWhen(SACQPatientComorbidityHistory#cancer-within-5yrs)
+  * insert enableWhen(SACQPatientComorbidityCodeSystem#cancer-within-5yrs)
 
 * item[+]
   * linkId = "ComorbiditiesSACQ_CancerFU2"
   * type = #boolean
   * text = "Does your cancer/other cancer limit your activities?"
-  * insert enableWhen(SACQPatientComorbidityHistory#cancer-within-5yrs)
+  * insert enableWhen(SACQPatientComorbidityCodeSystem#cancer-within-5yrs)
 
 * item[+]
   * linkId = "ComorbiditiesSACQ_DepressionFU1"
@@ -183,7 +183,7 @@ Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha
   * linkId = "ComorbiditiesSACQ_Other"
   * type = #text
   * text = "What other medical problems are you experiencing?"
-  * insert enableWhen(SACQPatientComorbidityHistory#other-medical-problems)
+  * insert enableWhen(SACQPatientComorbidityCodeSystem#other-medical-problems)
 
 * item[+]
   * linkId = "ComorbiditiesSACQ_Score"
