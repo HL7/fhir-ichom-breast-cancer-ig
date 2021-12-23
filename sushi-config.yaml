@@ -25,9 +25,7 @@ pages:
     title: Standard Set
   4_security.md:
     title: Security
-  5_hl7-fhir-basics.md:
-    title: HL7 FHIR Basics
-  6_examples.md:
+  5_examples.md:
     title: Examples
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -38,6 +36,5 @@ menu:
   Use Cases: 2_use-cases.html
   Standard Set: 3_standard-set.html
   Security: 4_security.html
-  HL7 FHIR Basics: 5_hl7-fhir-basics.html
-  Examples: 6_examples.html
+  Examples: 5_examples.html
   Artifacts: artifacts.html
