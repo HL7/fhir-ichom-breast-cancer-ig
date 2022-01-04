@@ -8,11 +8,11 @@ RuleSet: enableWhenComorbidity(code)
 Instance: SACQComorbidities
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "SACQ comorbidities"
 Description: "Based upon the Self-administered Comorbidity Questionnaire (Sangha et al, 2003)."
 * insert PublicationInstanceRuleset
 
 * name = "SACQComorbidities"
+* title = "SACQ comorbidities"
 * status = #draft
 
 * item[+]

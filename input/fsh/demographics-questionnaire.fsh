@@ -1,11 +1,11 @@
 Instance: Demographics
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Demographic Factors"
 Description: "Demographic Factors"
 * insert PublicationInstanceRuleset
 
 * name = "DemographicFactors"
+* title = "Demographic Factors"
 * status = #draft
 
 * item[+]

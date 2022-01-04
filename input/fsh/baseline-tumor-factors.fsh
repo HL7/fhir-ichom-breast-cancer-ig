@@ -8,11 +8,11 @@ RuleSet: enableWhenTrue(question)
 Instance: BaselineTumorFactors
 InstanceOf: Questionnaire
 Usage: #definition
-Title: "Baseline Tumor Factors"
 Description: "Baseline Tumor Factors"
 * insert PublicationInstanceRuleset
 
 * name = "BaselineTumorFactors"
+* title = "Baseline Tumor Factors"
 * status = #draft
 
 * item[+]
