@@ -3,7 +3,7 @@ Alias: $SCT = http://snomed.info/sct
 // standard set is published separately for re-use in other IGs
 
 CodeSystem: SACQPatientComorbidityCodeSystem
-Id: SACQPatientComorbidity
+Id: SACQPatientComorbidityCodeSystem
 Title: "SACQ patient's comorbidity history"
 Description: "Codes used in SACQ patient's comorbidity history that are not available yet in standard terminologies"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/sacq-patient-comorbidity-history
