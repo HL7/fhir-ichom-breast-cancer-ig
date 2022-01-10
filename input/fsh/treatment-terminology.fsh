@@ -41,6 +41,12 @@ Description: "Codes indicating the kind of surgery a patient undertook"
 * #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
 * #999 "Unknown"
 
+ValueSet: BreastSurgeryTypes
+Id: BreastSurgeryTypes
+Title: "BreastSurgeryTypes"
+Description: "Codes indicating the kind of surgery a patient undertook"
+* include codes from system BreastSurgeryTypesCodeSystem
+
 
 CodeSystem: SurgeryAxillaCodeSystem
 Id: SurgeryAxillaCodeSystem
