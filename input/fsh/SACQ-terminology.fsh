@@ -1,6 +1,6 @@
 Alias: $SCT = http://snomed.info/sct
 
-// standard set is published separately for re-use in other IGs // test
+// standard set is published separately for re-use in other IGs
 
 CodeSystem: SACQPatientComorbidityCodeSystem
 Id: SACQPatientComorbidityCodeSystem
