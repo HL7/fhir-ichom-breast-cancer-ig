@@ -18,7 +18,7 @@ status = #draft
   * type = #boolean
   * text = "Was the intent of the treatment curative?"
   * required = true
- 
+
 * item[+]
   * linkId =  "MalignancyRecur"
   * type = #choice

@@ -14,7 +14,7 @@ title: "EORTC QLQ Questionnaire"
 status = #draft
 
 * item[+]
-  * linkId =  "EORTCQLQ_Q31-Q43"
+  * linkId =  "EORTCQLQC30_Q01-Q05"
   * type = #display
   * text = "We are interested in some things about you and your health. 
 Please answer all of the questions yourself by selecting the answer that best applies to you.

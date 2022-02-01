@@ -15,7 +15,6 @@ Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
 * include codes from system Recurrence-CodeSystem
 
-
 CodeSystem: Survival-Recurrencemethod-CodeSystem
 Id: Recurrencemethod-CodeSystem
 Title: "Method of confirming recurrence"
