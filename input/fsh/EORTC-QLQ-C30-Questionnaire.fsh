@@ -4,7 +4,7 @@ RuleSet: enableWhenTrue(question)
   * operator = #=
   * answerBoolean = true
 
-Instance: EORTCQLQ
+Instance: EORTCQLQ 
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "European Organization for Research and Treatment for Cancer Quality of Life Questionnaire (EORTC QLQ)."
@@ -14,7 +14,7 @@ title: "EORTC QLQ Questionnaire"
 status = #draft
 
 * item[+]
-  * linkId =  "EORTCQLQC30_Q31-Q43"
+  * linkId =  "EORTCQLQ_Q31-Q43"
   * type = #display
   * text = "We are interested in some things about you and your health. 
 Please answer all of the questions yourself by selecting the answer that best applies to you.
