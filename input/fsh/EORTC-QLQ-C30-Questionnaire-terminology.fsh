@@ -1,16 +1,17 @@
-CodeSystem: Questionnaire-EORTCQLQ-CodeSystem
-Id: EORTCQLQ-CodeSystem
-Title: "Questionnaire-EORTCQLQ response"
-Description: "Codes used in the EORTCQLQ questionnare"
+CodeSystem: EORTCQLQCodeSystem
+Id: EORTCQLQCodeSystem
+Title: "Questionnaire-EORTC-QLQ response"
+Description: "Codes used in the EORTC-QLQ questionnare"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
 
-#1 = Not at all
-#2 = A little
-#3 = Quite a bit
-#4 = Very much
+* #1 "Not at all"
+* #2 "A little"
+* #3 "Quite a bit"
+* #4 "Very much"
 
-ValueSet: EORTCQLQ-VS
-Id: EORTCQLQ-VS
+ValueSet: EORTCQLQValueSet
+Id: EORTCQLQValueSet
 Title: "Questionnaire-EORTCQLQ response"
-Description: "Valueset used in the EORTCQLQ questionnare"
-* include codes from system EORTCQLQ-CodeSystem
+Description: "Valueset used in the EORTC-QLQ questionnare"
+* include codes from system EORTCQLQCodeSystem
 

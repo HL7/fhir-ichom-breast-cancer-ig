@@ -1,16 +1,17 @@
-CodeSystem: Questionnaire-FACT-ES-CodeSystem
-Id: FACT-ES-CodeSystem
-Title: "Questionnaire-FACT-ES response"
-Description: "Codes used in the FACT-ES questionnare"
+CodeSystem: QuestionnaireFACTESCodeSystem
+Id: QuestionnaireFACTESCodeSystem
+Title: "Codesystem of FACT-ES questionnaire"
+Description: "Codes used in the Functional Assesment of Cancer Therapy questionnare"
+// * ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
 
-#0 = Not at all
-#1 = A little
-#2 = Somewhat
-#3 = Quite a bit
-#4 = Very much
+* #0 "Not at all"
+* #1 "A little"
+* #2 "Somewhat"
+* #3 "Quite a bit"
+* #4 "Very much"
 
-ValueSet: FACT-ES-VS
-Id: FACT-ES-VS
-Title: "Questionnaire-FACT-ES response"
-Description: "Valueset used in the FACT-ES questionnare"
-* include codes from system FACT-ES-CodeSystem
+ValueSet: FACTESValueSet
+Id: FACTESValueSet
+Title: "Valueset of FACT-ES questionnaire "
+Description: "Valueset used in the Functional Assesment of Cancer Therapy questionnare"
+* include codes from system QuestionnaireFACTESCodeSystem

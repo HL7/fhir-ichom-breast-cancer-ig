@@ -1,32 +1,34 @@
-CodeSystem: Survival-recurrenceCodeSystem
-Id: Recurrence-CodeSystem 
+CodeSystem: RecurrenceCodeSystem
+Id: RecurrenceCodeSystem 
 Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
+//* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence
 
-#0 "No"
-#1 "Yes, local recurrence"
-#2 "Yes, regional recurrence"
-#3 "Yes, distant recurrence"
-#999 "Unknown"
+* #0 "No"
+* #1 "Yes, local recurrence"
+* #2 "Yes, regional recurrence" 
+* #3 "Yes, distant recurrence"
+* #999 "Unknown"
 
-ValueSet: Recurrence-VS
-Id: Recurrence-VS
+ValueSet: RecurrenceValueSet
+Id: RecurrenceValueSet
 Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
-* include codes from system Recurrence-CodeSystem
+* include codes from system RecurrenceCodeSystem
 
-CodeSystem: Survival-Recurrencemethod-CodeSystem
-Id: Recurrencemethod-CodeSystem
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
 Title: "Method of confirming recurrence"
-Description: "The method used to confirm recurrence of neoplasm"
+Description: "Codes used describe the method to confirm recurrence of neoplasm"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence_method
 
-#0 "Radiological diagnosis"
-#1 "Histological diagnosis"
-#2 "Radiological and histological diagnosis"
-#999 "Unknown"
+* #0 "Radiological diagnosis"
+* #1 "Histological diagnosis"
+* #2 "Radiological and histological diagnosis"
+* #999 "Unknown"
 
-ValueSet: Recurrencemethod-VS
-Id: Recurrencemethod-VS
+ValueSet: RecurrenceMethodValueSet
+Id: RecurrenceMethodValueSet
 Title: "Method of confirming recurrence"
-Description: "The method used to confirm recurrence of neoplasm"
-* include codes from system Recurrencemethod-CodeSystem
+Description: "Codes used describe the method to confirm recurrence of neoplasm"
+* include codes from system RecurrenceMethodCodeSystem

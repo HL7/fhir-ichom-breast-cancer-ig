@@ -1,14 +1,16 @@
-CodeSystem: Questionnaire-BreastQCodeSystem
-Id: BreastQ-CodeSystem
+CodeSystem: QualityOfLifeCodeSystem
+Id: QualityOfLifeCodeSystem
 Title: "Questionnaire-BreastQ response"
-Description: "Codes used in the BreastQ questionnare"
-1 = Very dissatisfied
-2 = Somewhat dissatisfied
-3 = Somewhat satisfied
-4 = Very satisfied
+Description: "Codes used in quality of life questionnaire in women who underwent breast surgery"
+//* ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q
 
-ValueSet: BreastQ-VS 
-Id: BreastQ-VS
+* #1 "Very dissatisfied"
+* #2 "Somewhat dissatisfied"
+* #3 "Somewhat satisfied"
+* #4 "Very satisfied"
+
+ValueSet: QualityOfLifeValueSet 
+Id: QualityOfLifeValueSet
 Title: "Questionnaire-BreastQ response"
-Description: "Valueset used in the BreastQ questionnare"
-* include codes from system BreastQ-CodeSystem
+Description: "Valueset used in quality of life questionnaire in women who underwent breast surgery"
+* include codes from system QualityOfLifeCodeSystem
