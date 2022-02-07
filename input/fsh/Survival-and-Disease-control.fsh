@@ -30,7 +30,7 @@ Description: "Survival and disease control"
   * enableWhen
     * question =  "MalignancyRecur"
     * operator = #=
-    * answerCoding = {1,2,3}
+    * answerCoding =  #1|#2|#3 
 
 * item[+]
   * linkId =  "RecurDateCancer"
@@ -40,7 +40,7 @@ Description: "Survival and disease control"
   * enableWhen
     * question =  "MalignancyRecur"
     * operator = #=
-    * answerCoding = {1,2,3}
+    * answerCoding =  #1|#2|#3 
 
 * item[+]
   * linkId =  "VitalStatus"
