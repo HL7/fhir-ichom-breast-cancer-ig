@@ -1,7 +1,7 @@
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
-Title: "Questionnaire-EORTC-QLQ response"
-Description: "Codes used in the EORTC-QLQ questionnare"
+Title: "Codes used in EORTC-QLQ questionnaire response"
+Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
 
 * #1 "Not at all"
@@ -11,7 +11,7 @@ Description: "Codes used in the EORTC-QLQ questionnare"
 
 ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
-Title: "Questionnaire-EORTCQLQ response"
-Description: "Valueset used in the EORTC-QLQ questionnare"
+Title: "Values used in EORTC-QLQ questionnaire response"
+Description: "Valueset used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * include codes from system EORTCQLQCodeSystem
 

@@ -1,10 +1,11 @@
 Instance: EORTCQLQ 
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "European Organization for Research and Treatment for Cancer Quality of Life Questionnaire (EORTC QLQ)."
+Description: "European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ). 
+Including the core questionnaire and the breast cancer and liver metastases colorectal modules"
 
 * name = "EORTCQLQ-questionnaire"
-* title = "EORTC QLQ Questionnaire"
+* title = "European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * status = #draft
 
 * item[+]
@@ -220,6 +221,7 @@ There are no 'right' or 'wrong' answers. The information that you provide will r
   * type = #display
   * text = "For the following questions please select the number between 1 and 7 that best applies to you."
 
+// We still need to set the range from 1 - 7 with 1 = Very poor and 7 = Excellent
 * item[+]
   * linkId = "EORTCQLQC30_Q29"
   * type = #integer
@@ -256,7 +258,7 @@ Please answer by selecting the answer that best applies to you. During the past 
 * item[+]
   * linkId = "EORTCQLQBR23_Q33"
   * type = #choice
-  * text = "Were you eyes painful, irritated or watery?"
+  * text = "Were your eyes painful, irritated or watery?"
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true
 
@@ -267,13 +269,14 @@ Please answer by selecting the answer that best applies to you. During the past 
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true
 
+/* In de datadictionairy there is no enable when defined, but the question is then displayed as: Answer this question only if you had any hair loss: Were you upset by the loss of your hair?
+In that case the following question should not have an enable when, but using it seems more practical. */ 
 * item[+]
   * linkId = "EORTCQLQBR23_Q35"
   * type = #choice
-  * text = "Answer this question only if you had any hair loss: Were you upset by the loss of your hair?"
+  * text = "Were you upset by the loss of your hair?"
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * insert enableWhenTrue(EORTCQLQBR23_Q34) 
-  * required = true
 
 * item[+]
   * linkId = "EORTCQLQBR23_Q36"
@@ -350,13 +353,14 @@ Please answer by selecting the answer that best applies to you. During the past 
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true
 
+/* In de datadictionairy there is no enableWhen defined, but the question is then displayed as:Answer this question only if you have been sexually active: To what extent was sex enjoyable for you?
+In that case the following question should not have an enable when, but using it seems more practical. */ 
 * item[+]
   * linkId = "EORTCQLQBR23_Q46"
   * type = #choice
   * text = "To what extent was sex enjoyable for you?"
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * insert enableWhenTrue(EORTCQLQBR23_Q45) 
-  * required = true
 
 * item[+]
   * linkId =  "EORTCQLQBR23_Q47-Q53"
@@ -415,6 +419,6 @@ Please answer by selecting the answer that best applies to you. During the past 
 * item[+]
   * linkId = "EORTC QLQ-LMC21"
   * type = #choice
-  * text = "During the past week: Have you had tingling hands or feet?"
+  * text = "Have you had tingling hands or feet?"
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true

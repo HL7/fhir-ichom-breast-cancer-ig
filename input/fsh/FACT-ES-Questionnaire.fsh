@@ -4,9 +4,10 @@ Usage: #definition
 Description: "Functional Assesment of Cancer Therapy"
 
 * name = "FACT-ES-questionnaire"
-* title = "Functional Assesment of Cancer Therapy"
+* title = "Functional Assesment of Cancer Therapy Endocrine Subscale (FACT-ES) Questionnaire"
 * status = #draft
 
+// TIMING: Baseline, 6 months, 1-year post treatment, tracked annually up to 10 years
 * item[+]
   * linkId =  "FACTES-00"
   * type = #display

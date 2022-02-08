@@ -1,12 +1,13 @@
 Instance: BreastQ
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Questionnaire about quality of life of patients with breast cancer"
+Description: "Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 
 * name = "BreastQ"
-* title = "Questionnaire regarding quality of life of breastcancer patients"
+* title = "BREAST-Q: Patient Reported Outcomes Instrument"
 * status = #draft
 
+//Group 1: Patients with mastectomy - Baseline
 * item[+]
   * linkId =  "BREASTQMAST_Q00"
   * type = #display
@@ -19,6 +20,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMAST_Q02"
@@ -26,6 +28,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How comfortable your bras fit?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMAST_Q03"
@@ -33,6 +36,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMAST_Q04"
@@ -40,12 +44,15 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
+// Group 2 - Patients with breast conserving therapy - Baseline
 * item[+]
   * linkId =  "BREASTQBCT_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCT_Q01"
@@ -53,6 +60,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCT_Q02"
@@ -60,7 +68,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How comfortable your bras fit?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
-
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCT_Q03"
@@ -68,6 +76,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCT_Q04"
@@ -75,7 +84,9 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
+// Group 3 - Patients with reconstruction - Baseline
 * item[+]
   * linkId =  "BREASTQREC_Q00"
   * type = #display
@@ -88,6 +99,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQREC_Q02"
@@ -95,6 +107,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How comfortable your bras fit?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQREC_Q03"
@@ -102,6 +115,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQREC_Q04"
@@ -109,13 +123,15 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
-
+// Group 4 - Patients with mastectomy - 1- and 2-year post treatment, tracked annually up to 10 years
 * item[+]
   * linkId =  "BREASTQMASTP_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q01"
@@ -123,6 +139,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q02"
@@ -130,6 +147,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How comfortable your bras fit?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q03"
@@ -137,7 +155,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
-
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q04"
@@ -145,7 +163,9 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
+// Group 5 - Patients with breast conserving therapy - 1- and 2-year post treatment, tracked annually up to 10 years
 * item[+]
   * linkId =  "BREASTQBCTP_Q00"
   * type = #display
@@ -158,6 +178,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q02"
@@ -165,6 +186,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "The shape of your lumpectomy breast when you are wearing a bra?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q03"
@@ -172,6 +194,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How normal you feel in your clothes?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q04"
@@ -179,6 +202,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q05"
@@ -186,6 +210,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How your lumpectomy breast sits/hangs?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "e"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q06"
@@ -193,6 +218,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How smoothly shaped your lumpectomy breast looks?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "f"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q07"
@@ -200,6 +226,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "The contour (outline) of your lumpectomy breast?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "g"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q08"
@@ -207,6 +234,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How equal in size your breasts are to each other?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "h"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q09"
@@ -214,6 +242,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How normal your lumpectomy breast looks?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "i"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q10"
@@ -221,6 +250,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How much your breast look the same?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "j"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q11"
@@ -228,12 +258,15 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "k"
+  * required = true
 
+// Group 6 - Patients with reconstruction - 1- and 2-year post treatment, tracked annually up to 10 years
 * item[+]
   * linkId =  "BREASTQRECP_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q01"
@@ -241,6 +274,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror clothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q02"
@@ -248,6 +282,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "The shape of your reconstructed breast(s) when you are wearing a bra?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q03"
@@ -255,6 +290,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How normal you feel in your clothes?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q04"
@@ -262,6 +298,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "The size of your reconstructed breast(s)?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q05"
@@ -269,6 +306,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "Being able to wear clothing that is more fitted?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "e"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q06"
@@ -276,6 +314,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How your breasts are lined up in relation to each other?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "f"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q07"
@@ -283,7 +322,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text =  "How comfortable your bras fit?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "g"
-
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q08"
@@ -291,6 +330,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "The softness of your reconstructed breast(s)?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "h"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q09"
@@ -298,6 +338,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How equal in size your breasts are to each other?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "i"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q10"
@@ -305,6 +346,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How natural your reconstructed breast(s) looks?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "j"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q11"
@@ -312,6 +354,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How naturally your reconstructed breast(s) sits/hangs?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "k"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q12"
@@ -319,6 +362,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How your reconstructed breast(s) feel to touch?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "l"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q13"
@@ -326,6 +370,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How much your reconstructed breast(s) feels like a natural part of your body?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "m"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q14"
@@ -333,6 +378,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How closely matched your breasts are to each other?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "n"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q15"
@@ -340,6 +386,7 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How your reconstructed breast(s) look now compared to before you had any breast surgery?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "o"
+  * required = true
 
 * item[+]
   * linkId =  "BREASTQRECP_Q16"
@@ -347,3 +394,4 @@ Description: "Questionnaire about quality of life of patients with breast cancer
   * text = "How you look in the mirror unclothed?"
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "p"
+  * required = true

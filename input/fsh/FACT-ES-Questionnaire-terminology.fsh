@@ -2,7 +2,7 @@ CodeSystem: QuestionnaireFACTESCodeSystem
 Id: QuestionnaireFACTESCodeSystem
 Title: "Codesystem of FACT-ES questionnaire"
 Description: "Codes used in the Functional Assesment of Cancer Therapy questionnare"
-// * ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
+* ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
 
 * #0 "Not at all"
 * #1 "A little"

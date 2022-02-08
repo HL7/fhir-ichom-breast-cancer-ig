@@ -2,7 +2,7 @@ CodeSystem: RecurrenceCodeSystem
 Id: RecurrenceCodeSystem 
 Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
-//* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence
+* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence
 
 * #0 "No"
 * #1 "Yes, local recurrence"
