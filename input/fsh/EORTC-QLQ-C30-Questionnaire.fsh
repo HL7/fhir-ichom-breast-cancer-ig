@@ -3,10 +3,19 @@ InstanceOf: Questionnaire
 Usage: #definition
 Description: "European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ). 
 Including the core questionnaire and the breast cancer and liver metastases colorectal modules"
+* insert PublicationInstanceRuleset
 
 * name = "EORTCQLQ-questionnaire"
 * title = "European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * status = #draft
+
+// Timing: Baseline, 6 months, 1-year post treatment, tracked annually up to 10 years
+* item[+]
+  * linkId =  "EORTCQLQC30_Timing"
+  * type = #choice
+  * text = "What is the timing of the response of this questionnaire?"
+  * answerValueSet = Canonical(ResponseTimingValueSet) 
+  * required = true
 
 * item[+]
   * linkId =  "EORTCQLQC30_Q01-Q05"
@@ -221,17 +230,17 @@ There are no 'right' or 'wrong' answers. The information that you provide will r
   * type = #display
   * text = "For the following questions please select the number between 1 and 7 that best applies to you."
 
-// We still need to set the range from 1 - 7 with 1 = Very poor and 7 = Excellent
+// How do you limit the answeroptions in the range 1-7? (applies for both Q29 and Q30)
 * item[+]
   * linkId = "EORTCQLQC30_Q29"
   * type = #integer
-  * text = "How would you rate your overall health during the past week?"
+  * text = "How would you rate your overall health during the past week? Please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
   * required = true
 
 * item[+]
   * linkId = "EORTCQLQC30_Q30"
   * type = #integer
-  * text = "How would you rate your overall quality of life during the past week?"
+  * text = "How would you rate your overall quality of life during the past week? Please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
   * required = true
 
 * item[+]
@@ -269,8 +278,6 @@ Please answer by selecting the answer that best applies to you. During the past 
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true
 
-/* In de datadictionairy there is no enable when defined, but the question is then displayed as: Answer this question only if you had any hair loss: Were you upset by the loss of your hair?
-In that case the following question should not have an enable when, but using it seems more practical. */ 
 * item[+]
   * linkId = "EORTCQLQBR23_Q35"
   * type = #choice
@@ -353,8 +360,6 @@ In that case the following question should not have an enable when, but using it
   * answerValueSet = Canonical(EORTCQLQValueSet)
   * required = true
 
-/* In de datadictionairy there is no enableWhen defined, but the question is then displayed as:Answer this question only if you have been sexually active: To what extent was sex enjoyable for you?
-In that case the following question should not have an enable when, but using it seems more practical. */ 
 * item[+]
   * linkId = "EORTCQLQBR23_Q46"
   * type = #choice

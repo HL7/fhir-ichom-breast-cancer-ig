@@ -2,12 +2,19 @@ Instance: Survival
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "Survival and disease control"
+* insert PublicationInstanceRuleset
 
 * name = "Survival-questionnaire"
 * title = "Questionnaire regarding survival and disease control of breastcancer patients"
 * status = #draft
 
 // Timing: 1-year post treatment, tracked annually up to 10 years
+* item[+]
+  * linkId =  "BreastQ_Timing"
+  * type = #choice
+  * text = "What is the timing of the response of this questionnaire?"
+  * answerValueSet = Canonical(ResponseTimingSurvivalValueSet ) 
+  * required = true
 
 * item[+]
   * linkId =  "Survival-Q0"
@@ -33,7 +40,7 @@ Description: "Survival and disease control"
   * enableWhen
     * question =  "MalignancyRecur"
     * operator = #=
-    * answerCoding =  #1|#2|#3 
+    * answerCoding = #1|#2|#3 
 
 * item[+]
   * linkId =  "RecurDateCancer"
@@ -43,7 +50,7 @@ Description: "Survival and disease control"
   * enableWhen
     * question =  "MalignancyRecur"
     * operator = #=
-    * answerCoding =  #1|#2|#3 
+    * answerCoding = #1|#2|#3 
 
 * item[+]
   * linkId =  "VitalStatus"

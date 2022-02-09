@@ -1,19 +1,35 @@
+/* EnableWhen function to only show questions based on their timing. #0 = baseline, #1 = 1 year post treatment #2 = 2 years post-treatment */ 
+RuleSet: enableWhenTiming(code)
+* enableWhen
+  * question = "BreastQ_Timing"
+  * operator = #=
+  * answerCoding = #{code}
+
 Instance: BreastQ
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
+* insert PublicationInstanceRuleset
 
 * name = "BreastQ"
 * title = "BREAST-Q: Patient Reported Outcomes Instrument"
 * status = #draft
 
-//Group 1: Patients with mastectomy - Baseline
+* item[+]
+  * linkId =  "BreastQ_Timing"
+  * type = #choice
+  * text = "What is the timing of the response of this questionnaire?"
+  * answerValueSet = Canonical(ResponseTimingBreastQValueSet) 
+  * required = true
+
+//Group 1: Patients with mastectomy - Baseline (=#0)
 * item[+]
   * linkId =  "BREASTQMAST_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
-  
+  * insert enableWhenTiming(0)
+
 * item[+]
   * linkId =  "BREASTQMAST_Q01"
   * type = #choice
@@ -21,6 +37,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQMAST_Q02"
@@ -29,6 +46,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQMAST_Q03"
@@ -37,6 +55,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQMAST_Q04"
@@ -45,14 +64,16 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(0)
 
-// Group 2 - Patients with breast conserving therapy - Baseline
+// Group 2 - Patients with breast conserving therapy - Baseline (=#0)
 * item[+]
   * linkId =  "BREASTQBCT_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQBCT_Q01"
@@ -61,6 +82,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQBCT_Q02"
@@ -69,6 +91,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQBCT_Q03"
@@ -77,6 +100,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQBCT_Q04"
@@ -85,13 +109,15 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(0)
 
-// Group 3 - Patients with reconstruction - Baseline
+// Group 3 - Patients with reconstruction - Baseline (=#0)
 * item[+]
   * linkId =  "BREASTQREC_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQREC_Q01"
@@ -100,6 +126,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQREC_Q02"
@@ -108,6 +135,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQREC_Q03"
@@ -116,6 +144,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(0)
 
 * item[+]
   * linkId =  "BREASTQREC_Q04"
@@ -124,14 +153,16 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(0)
 
-// Group 4 - Patients with mastectomy - 1- and 2-year post treatment, tracked annually up to 10 years
+// Group 4 - Patients with mastectomy - 1- and 2-year post treatment
 * item[+]
   * linkId =  "BREASTQMASTP_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q01"
@@ -140,6 +171,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q02"
@@ -148,6 +180,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q03"
@@ -156,6 +189,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQMASTP_Q04"
@@ -164,13 +198,15 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(1|2)
 
-// Group 5 - Patients with breast conserving therapy - 1- and 2-year post treatment, tracked annually up to 10 years
+// Group 5 - Patients with breast conserving therapy - 1- and 2-year post treatment
 * item[+]
   * linkId =  "BREASTQBCTP_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q01"
@@ -179,6 +215,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q02"
@@ -187,7 +224,8 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
-
+  * insert enableWhenTiming(1|2)
+  
 * item[+]
   * linkId =  "BREASTQBCTP_Q03"
   * type = #choice
@@ -195,6 +233,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q04"
@@ -203,6 +242,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q05"
@@ -211,6 +251,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "e"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q06"
@@ -219,6 +260,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "f"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q07"
@@ -227,6 +269,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "g"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q08"
@@ -235,6 +278,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "h"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q09"
@@ -243,6 +287,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "i"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q10"
@@ -251,6 +296,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "j"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQBCTP_Q11"
@@ -259,14 +305,16 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "k"
   * required = true
+  * insert enableWhenTiming(1|2)
 
-// Group 6 - Patients with reconstruction - 1- and 2-year post treatment, tracked annually up to 10 years
+// Group 6 - Patients with reconstruction - 1- and 2-year post treatment
 * item[+]
   * linkId =  "BREASTQRECP_Q00"
   * type = #display
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
   how satisfied or dissatisfied have you been with:"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q01"
@@ -275,6 +323,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "a"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q02"
@@ -283,6 +332,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "b"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q03"
@@ -291,6 +341,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "c"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q04"
@@ -299,6 +350,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "d"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q05"
@@ -307,6 +359,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "e"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q06"
@@ -315,6 +368,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "f"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q07"
@@ -323,6 +377,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "g"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q08"
@@ -331,6 +386,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "h"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q09"
@@ -339,6 +395,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "i"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q10"
@@ -347,6 +404,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "j"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q11"
@@ -355,6 +413,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "k"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q12"
@@ -363,6 +422,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "l"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q13"
@@ -371,6 +431,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "m"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q14"
@@ -379,6 +440,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "n"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q15"
@@ -387,6 +449,7 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "o"
   * required = true
+  * insert enableWhenTiming(1|2)
 
 * item[+]
   * linkId =  "BREASTQRECP_Q16"
@@ -395,3 +458,4 @@ Description: "Patient Reported Outcomes Instrument about quality of life of pati
   * answerValueSet = Canonical(QualityOfLifeValueSet)
   * prefix = "p"
   * required = true
+  * insert enableWhenTiming(1|2)

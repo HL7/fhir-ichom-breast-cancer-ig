@@ -2,12 +2,20 @@ Instance: FACT-ES
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "Functional Assesment of Cancer Therapy"
+* insert PublicationInstanceRuleset
 
 * name = "FACT-ES-questionnaire"
 * title = "Functional Assesment of Cancer Therapy Endocrine Subscale (FACT-ES) Questionnaire"
 * status = #draft
 
 // TIMING: Baseline, 6 months, 1-year post treatment, tracked annually up to 10 years
+* item[+]
+  * linkId =  "FACT-ES_Timing"
+  * type = #choice
+  * text = "What is the timing of the response of this questionnaire?"
+  * answerValueSet = Canonical(ResponseTimingValueSet) 
+  * required = true
+
 * item[+]
   * linkId =  "FACTES-00"
   * type = #display
