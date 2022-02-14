@@ -1,4 +1,4 @@
-Instance: FACT-ES
+Instance: FACTES
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "Functional Assesment of Cancer Therapy"

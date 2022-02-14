@@ -3,6 +3,7 @@ Id: RecurrenceCodeSystem
 Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence
+* ^caseSensitive = true
 
 * #0 "No"
 * #1 "Yes, local recurrence"
@@ -21,6 +22,7 @@ Id: RecurrenceMethodCodeSystem
 Title: "Method of confirming recurrence"
 Description: "Codes used describe the method to confirm recurrence of neoplasm"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence_method
+* ^caseSensitive = true
 
 * #0 "Radiological diagnosis"
 * #1 "Histological diagnosis"

@@ -10,7 +10,7 @@ Description: "Survival and disease control"
 
 // Timing: 1-year post treatment, tracked annually up to 10 years
 * item[+]
-  * linkId =  "BreastQ_Timing"
+  * linkId =  "Survival_Timing"
   * type = #choice
   * text = "What is the timing of the response of this questionnaire?"
   * answerValueSet = Canonical(ResponseTimingSurvivalValueSet ) 
@@ -25,8 +25,7 @@ Description: "Survival and disease control"
 * item[+]
   * linkId =  "MalignancyRecur"
   * type = #choice
-  * text = "Is there evidence of local, regional or distant recurrence of neoplasm?"
-  // supporting definition: In case of multiple recurrences, please report the most severe
+  * text = "Is there evidence of local, regional or distant recurrence of neoplasm? (In case of multiple recurrences, please report the most severe)"
   * answerValueSet = Canonical(RecurrenceValueSet)
   * required = true
   * insert enableWhenTrue(Survival-Q0)

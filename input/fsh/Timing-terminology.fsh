@@ -4,6 +4,7 @@ Id: ResponseTimingCodeSystem
 Title: "Timing of the response of the patient reported outcome measures"
 Description: "Patient reported outcome measures are repeatedly collected from patients starting at the first doctor's visit (baseline) up untill 10 years after treatment."
 * ^url = http://connect.ichom.org/fhir/CodeSystem/Timing
+* ^caseSensitive = true
 
 * #0 "Patient's first doctor's visit (baseline)"
 * #6mnd "6 months post-treatment"
