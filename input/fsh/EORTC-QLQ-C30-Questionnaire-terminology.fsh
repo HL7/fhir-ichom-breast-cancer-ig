@@ -14,5 +14,7 @@ ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
 Title: "Values used in EORTC-QLQ questionnaire response"
 Description: "Valueset used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* include codes from system EORTCQLQCodeSystem
-
+* EORTCQLQCodeSystem#1
+* EORTCQLQCodeSystem#2
+* EORTCQLQCodeSystem#3
+* EORTCQLQCodeSystem#4

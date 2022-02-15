@@ -5,7 +5,7 @@ Description: "Survival and disease control"
 * insert PublicationInstanceRuleset
 
 * name = "Survival-questionnaire"
-* title = "Questionnaire regarding survival and disease control of breastcancer patients"
+* title = "Survival and disease control questionnaire"
 * status = #draft
 
 // Timing: 1-year post treatment, tracked annually up to 10 years
