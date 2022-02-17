@@ -4,7 +4,7 @@ Usage: #definition
 Description: "Survival and disease control"
 * insert PublicationInstanceRuleset
 
-* name = "Survival-questionnaire"
+* name = "SurvivalQuestionnaire"
 * title = "Survival and disease control questionnaire"
 * status = #draft
 
