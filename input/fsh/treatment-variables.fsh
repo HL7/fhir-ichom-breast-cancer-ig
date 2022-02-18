@@ -11,15 +11,15 @@ Usage: #definition
 Description: "Treatment variables"
 * insert PublicationInstanceRuleset
 
-* name = "Treatment variables"
+* name = "TreatmentVariables"
 * title = "Treatment variables"
 * status = #draft
 
 * item[+]
   * linkId = "TREATMENT_BREAST"
   * type = #choice
-  * text = "Indicate whether the patient received one of the following treatment during the last year: (select all that apply) "
-  * answerValueSet = Canonical(TreatmentTypes)
+  * text = "Indicate whether the patient received one of the following treatment during the last year: (select all that apply)"
+  * answerValueSet = Canonical(TreatmentTypeValueSet)
   * required = true
   * repeats = true
 
@@ -29,20 +29,19 @@ Description: "Treatment variables"
   * type = #choice
   * text = "Indicate whether the patient received surgery during the last year:"
   * insert enableWhenTreatment($treatment#1)
-  * answerValueSet = Canonical(BreastSurgeryTypes)
+  * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
 
 * item[+]
   * linkId = "SurgeryDate"
   * type = #date
   * text = "Provide the date of surgery:"
 
-
-
 * item[+]
   * linkId = "SURGERYAX"
   * type = #choice
   * text = "Indicate whether the patient received surgery to the axilla during the last year:"
   * insert enableWhenTreatment($treatment#2)
+  * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)
 
 * item[+]
   * linkId = "SURGERYAXDATE"
@@ -52,21 +51,19 @@ Description: "Treatment variables"
 * item[+]
   * linkId = "SURGERYAX2"
   * type = #choice
-  * text = "Indicate whether the patient received  axillary clearance due to lymph node involvement after sentinel lymph node biopsy  during the last year:"
-
+  * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy  during the last year:"
+  * answerValueSet = Canonical(BooleanExtendedValueSet)
 
 * item[+]  
   * linkId = "SURGERYAX2DATE"
   * type = #date
   * text = "Please provide the date of axillary clearance:"
 
-
-
 * item[+] 
   * linkId = "RECONSTRUCT"
   * type = #choice
   * text = "Indicate whether the patient received a delayed reconstruction during the last year:"
-
+  * answerValueSet = Canonical(DelayedReconstructionValueSet)
 
 * item[+]  
   * linkId = "RECONSTRUCTDATE"
@@ -78,21 +75,18 @@ Description: "Treatment variables"
   * linkId = "RADIOTX_BREAST"
   * type = #choice
   * text = "If the patient received radiotherapy during the last year, please indicate the intent of radiotherapy:"
-
-
+  * answerValueSet = Canonical(TherapyIntentValueSet)
 
 * item[+]  
   * linkId = "RADIOTXTYPE_BREAST"
   * type = #choice
   * text = "Indicate location/type of radiotherapy:"
-
+  * answerValueSet = Canonical(RadiotherapyLocationValueSet)
 
 * item[+]  
   * linkId = "RadioTxStartDate"
   * type = #date
   * text = "Please provide the start date of radiotherapy:"
-
-
 
 * item[+]
   * linkId = "RadioTxStopDate"
@@ -101,26 +95,22 @@ Description: "Treatment variables"
 
 
 
-
 * item[+]
   * linkId = "CHEMOTXINTENT"
   * type = #choice
   * text = "If the patient received chemotherapy during the last year, please indicate the intent of chemotherapy:"
-
-
+  * answerValueSet = Canonical(TherapyIntentValueSet)
 
 * item[+]
   * linkId = "CHEMOTXTYPE_BREAST"
   * type = #choice
   * text = "Indicate what type of chemotherapy (select all that apply):"
-
-
+  * answerValueSet = Canonical(ChemotherapyTypeValueSet)
 
 * item[+]
   * linkId = "ChemoTxStartDate"
   * type = #date
   * text = "Please provide the start date of chemotherapy:"
-
 
 * item[+]
   * linkId = "ChemoTxStopdate"
@@ -133,14 +123,14 @@ Description: "Treatment variables"
   * linkId = "HORMONTX_BREAST"
   * type = #choice
   * text = "If the patient received hormontherapy during the last year, please indicate the intent of hormontherapy:"
-
+  * answerValueSet = Canonical(TherapyIntentValueSet)
 
 
 * item[+]  
   * linkId = "HORMONTXTYPE"
   * type = #choice
   * text = "Indicate what type of hormonal therapy (select all that apply):"
-
+  * answerValueSet = Canonical(HormonalTherapyTypeValueSet)
 
 
 * item[+]  
@@ -159,7 +149,7 @@ Description: "Treatment variables"
   * linkId = "TARGETTX_BREAST"
   * type = #choice
   * text = "Indicate what type of targeted therapy:"
-
+  * answerValueSet = Canonical(TargetedTherapyValueSet)
 
 * item[+]  
   * linkId = "TargetTxStartDate"
@@ -177,7 +167,7 @@ Description: "Treatment variables"
   * linkId = "SURGERYPATIENT"
   * type = #choice
   * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
-
+  * answerValueSet = Canonical(ReoperationsValueSet)
 
 * item[+]  
   * linkId = "SURGERYDATEPATIENT"
@@ -189,7 +179,7 @@ Description: "Treatment variables"
   * linkId = "SYSTPATIENT"
   * type = #choice
   * text = "Is the patient currently receiving systemic (ie drug) treatment for breast cancer?"
-
+  * answerValueSet = Canonical(SystemicTherapyValueSet)
 
 
 * item[+]  

@@ -23,24 +23,15 @@ ValueSet: ResponseTimingValueSet
 Id: ResponseTimingValueSet
 Title: "Timing of the response of the patient reported outcome measures"
 Description: "Patient reported outcome measures are repeatedly collected from patients starting at the first doctor's visit (baseline) up untill 10 years after treatment."
-* ResponseTimingCodeSystem#0
-* ResponseTimingCodeSystem#6mnd
-* ResponseTimingCodeSystem#1
-* ResponseTimingCodeSystem#2
-* ResponseTimingCodeSystem#3
-* ResponseTimingCodeSystem#4
-* ResponseTimingCodeSystem#5
-* ResponseTimingCodeSystem#6
-* ResponseTimingCodeSystem#7
-* ResponseTimingCodeSystem#8
-* ResponseTimingCodeSystem#9
-* ResponseTimingCodeSystem#10
+* ^version  = 0.0.1
+* include codes from system ResponseTimingCodeSystem
 
 //BreastQ response timing
 ValueSet: ResponseTimingBreastQValueSet 
 Id: ResponseTimingBreastQValueSet
 Title: "Timing of the response of the BreastQ patient reported outcome measures"
 Description: "Patient reported outcome measures are repeatedly collected from patients."
+* ^version  = 0.0.1
 * ResponseTimingCodeSystem#0
 * ResponseTimingCodeSystem#1
 * ResponseTimingCodeSystem#2
@@ -50,6 +41,7 @@ ValueSet: ResponseTimingSurvivalValueSet
 Id: ResponseTimingSurvivalValueSet
 Title: "Timing of the response of survival questionnaire"
 Description: "The survival questionnaire is repeatedly collected from patients starting at the first year post-treatment up untill 10 years post-treatment."
+* ^version  = 0.0.1
 * ResponseTimingCodeSystem#1
 * ResponseTimingCodeSystem#2
 * ResponseTimingCodeSystem#3

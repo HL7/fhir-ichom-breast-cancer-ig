@@ -3,6 +3,7 @@ Instance: DebugBundleSACQPatientComorbidity
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to SACQComorbidities"
+Description: "Bundle of the Self-administered Comorbidity Questionnaire"
 * type = #transaction
 
 * entry[+]
@@ -25,6 +26,7 @@ Instance: DebugBundleEORTCQLQ
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to EORTCQLQ"
+Description: "Bundle of the European Organization for Research and Treatment of Cancer Quality of Life Questionnaire (EORTC QLQ)"
 * type = #transaction
 
 * entry[+]
@@ -57,6 +59,7 @@ Instance: DebugBundleBreastQ
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to BreastQ"
+Description: "Bundle of the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * type = #transaction
 
 * entry[+]
@@ -99,6 +102,7 @@ Instance: DebugBundleFACTES
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to FACT-ES"
+Description: "Bundle of the Functional Assesment of Cancer Therapy Questionnaire"
 * type = #transaction
 
 * entry[+]
@@ -131,6 +135,7 @@ Instance: DebugBundleSurvival
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to Survival and Disease control"
+Description: "Bundle of the Survival and disease control questionnaire"
 * type = #transaction
 
 * entry[+]

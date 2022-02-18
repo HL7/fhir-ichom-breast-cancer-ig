@@ -13,10 +13,6 @@ Description: "Codes used in the Functional Assesment of Cancer Therapy questionn
 
 ValueSet: FACTESValueSet
 Id: FACTESValueSet
-Title: "Valueset of FACT-ES questionnaire "
+Title: "Valueset of FACT-ES questionnaire"
 Description: "Valueset used in the Functional Assesment of Cancer Therapy questionnare"
-* FACTESCodeSystem#0
-* FACTESCodeSystem#1
-* FACTESCodeSystem#2
-* FACTESCodeSystem#3
-* FACTESCodeSystem#4
+* include codes from system FACTESCodeSystem

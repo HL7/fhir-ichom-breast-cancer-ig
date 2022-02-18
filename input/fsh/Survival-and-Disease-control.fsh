@@ -1,7 +1,13 @@
+RuleSet: enableWhenRecurrence(code)
+* enableWhen
+  * question = "MalignancyRecur"
+  * operator = #=
+  * answerCoding = RecurrenceCodeSystem#{code}
+
 Instance: Survival
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Survival and disease control"
+Description: "Survival and disease control questionnaire"
 * insert PublicationInstanceRuleset
 
 * name = "SurvivalQuestionnaire"
@@ -27,7 +33,6 @@ Description: "Survival and disease control"
   * type = #choice
   * text = "Is there evidence of local, regional or distant recurrence of neoplasm? (In case of multiple recurrences, please report the most severe)"
   * answerValueSet = Canonical(RecurrenceValueSet)
-  * required = true
   * insert enableWhenTrue(Survival-Q0)
 
 * item[+]
@@ -35,21 +40,19 @@ Description: "Survival and disease control"
   * type = #choice
   * text = "What was the method of confirming recurrence of neoplasm?"
   * answerValueSet = Canonical(RecurrenceMethodValueSet)
-  * required = true
-  * enableWhen
-    * question =  "MalignancyRecur"
-    * operator = #=
-    * answerCoding = #1|#2|#3 
+  * insert enableWhenRecurrence(1)
+  * insert enableWhenRecurrence(2)
+  * insert enableWhenRecurrence(3)
+  * enableBehavior = #any
 
 * item[+]
   * linkId =  "RecurDateCancer"
   * type = #date
   * text = "What is the date of cancer recurrence?"
-  * required = true
-  * enableWhen
-    * question =  "MalignancyRecur"
-    * operator = #=
-    * answerCoding = #1|#2|#3 
+  * insert enableWhenRecurrence(1)
+  * insert enableWhenRecurrence(2)
+  * insert enableWhenRecurrence(3)
+  * enableBehavior = #any
 
 * item[+]
   * linkId =  "VitalStatus"
@@ -61,12 +64,10 @@ Description: "Survival and disease control"
   * linkId =  "DeceasedDate"
   * type = #date
   * text = "What was the date of death of the person?"
-  * required = true
-  * insert enableWhenTrue(Survival-Q4)
+  * insert enableWhenTrue(VitalStatus)
 
 * item[+]
   * linkId =  "DEATHBC"
   * type = #boolean
   * text = "Is the death attributable to breast cancer?"
-  * required = true
-  * insert enableWhenTrue(Survival-Q4)
+  * insert enableWhenTrue(VitalStatus)
