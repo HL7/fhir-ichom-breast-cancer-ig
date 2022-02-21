@@ -7,7 +7,7 @@ Description: "Patient reported outcome measures are repeatedly collected from pa
 * ^caseSensitive = true
 
 * #0 "Patient's first doctor's visit (baseline)"
-* #6mnd "6 months post-treatment"
+* #6m "6 months post-treatment"
 * #1 "1 year post-treatment"
 * #2 "2 years post-treatment"
 * #3 "3 years post-treatment"
@@ -29,7 +29,7 @@ Description: "Patient reported outcome measures are repeatedly collected from pa
 //BreastQ response timing
 ValueSet: ResponseTimingBreastQValueSet 
 Id: ResponseTimingBreastQValueSet
-Title: "Timing of the response of the BreastQ patient reported outcome measures"
+Title: "Timing of the response of the BreastQ"
 Description: "Patient reported outcome measures are repeatedly collected from patients."
 * ^version  = 0.0.1
 * ResponseTimingCodeSystem#0

@@ -1,11 +1,11 @@
 Instance: FACTES
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Functional Assesment of Cancer Therapy Questionnaire"
+Description: "Functional Assessment of Cancer Therapy Questionnaire"
 * insert PublicationInstanceRuleset
 
 * name = "FACTESQuestionnaire"
-* title = "Functional Assesment of Cancer Therapy Endocrine Subscale (FACT-ES) Questionnaire"
+* title = "Functional Assessment of Cancer Therapy Endocrine Subscale (FACT-ES) Questionnaire"
 * status = #draft
 
 // TIMING: Baseline, 6 months, 1-year post treatment, tracked annually up to 10 years

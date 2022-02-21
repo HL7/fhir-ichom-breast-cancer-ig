@@ -40,9 +40,18 @@ Description: "Survival and disease control questionnaire"
   * type = #choice
   * text = "What was the method of confirming recurrence of neoplasm?"
   * answerValueSet = Canonical(RecurrenceMethodValueSet)
-  * insert enableWhenRecurrence(1)
-  * insert enableWhenRecurrence(2)
-  * insert enableWhenRecurrence(3)
+  * enableWhen
+    * question = "MalignancyRecur"
+    * operator = #=
+    * answerCoding = RecurrenceCodeSystem#1
+  * enableWhen
+    * question = "MalignancyRecur"
+    * operator = #=
+    * answerCoding = RecurrenceCodeSystem#2
+  * enableWhen
+    * question = "MalignancyRecur"
+    * operator = #=
+    * answerCoding = RecurrenceCodeSystem#3
   * enableBehavior = #any
 
 * item[+]

@@ -23,7 +23,7 @@ Description: "Valueset used in the Patient Reported Outcomes Instrument about qu
 // Surgery Type - Codesystem
 CodeSystem: BreastQSurgeryCodeSystem
 Id: BreastQSurgeryCodeSystem
-Title: "Type of surgery for the Patient Reported Outcomes Instrument (BreastQ)"
+Title: "Type of surgery for BreastQ "
 Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q-surgery
 * ^caseSensitive = true
