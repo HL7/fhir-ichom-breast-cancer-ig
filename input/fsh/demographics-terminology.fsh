@@ -12,9 +12,9 @@ Title: "Country"
 Description: "Country (e.g. of residence)"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 
-CodeSystem: EducationLevel
-Id: EducationLevel
-Title: "EducationLevel"
+CodeSystem: EducationLevelCodeSystem
+Id: EducationLevelCodeSystem
+Title: "EducationLevelCodeSystem"
 Description: "Highest level of education completed based on local standard definitions of education levels"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/education-level
 * ^caseSensitive = true
@@ -28,11 +28,11 @@ ValueSet: EducationLevel
 Id: EducationLevel
 Title: "EducationLevel"
 Description: "Highest level of education completed based on local standard definitions of education levels"
-* include codes from system EducationLevel
+* include codes from system EducationLevelCodeSystem
 
-CodeSystem: RelationshipStatus
-Id: RelationshipStatus
-Title: "RelationshipStatus"
+CodeSystem: RelationshipStatusCodeSystem
+Id: RelationshipStatusCodeSystem
+Title: "RelationshipStatusCodeSystem"
 Description: "Codes used in ICHOM relationship status that are not available yet in standard terminologies"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/relationship-status
 * ^caseSensitive = true
@@ -43,18 +43,18 @@ Description: "Codes used in ICHOM relationship status that are not available yet
 * #unknown "unknown"
 
 ValueSet: RelationshipStatus
-Id: RelationshipStatus-combined
+Id: RelationshipStatus
 Title: "RelationshipStatus"
 Description: "Relationship Status"
-* RelationshipStatus#not-married-partnered
-* RelationshipStatus#married-partnered
-* RelationshipStatus#divorced-separated
+* RelationshipStatusCodeSystem#not-married-partnered
+* RelationshipStatusCodeSystem#married-partnered
+* RelationshipStatusCodeSystem#divorced-separated
 * $FHIRMS#W "Widowed"
-* RelationshipStatus#unknown
+* RelationshipStatusCodeSystem#unknown
 
-CodeSystem: MenopausalStatus
-Id: MenopausalStatusCS
-Title: "MenopausalStatus"
+CodeSystem: MenopausalStatusCodeSystem
+Id: MenopausalStatusCodeSystem
+Title: "MenopausalStatusCodeSystem"
 Description: "Menopausal Status"
 * ^caseSensitive = true
 * #0 "Pre-menopause"
@@ -65,6 +65,6 @@ ValueSet: MenopausalStatus
 Id: MenopausalStatus-vs
 Title: "MenopausalStatus"
 Description: "Menopausal Status"
-* MenopausalStatusCS#0
-* MenopausalStatusCS#1
-* MenopausalStatusCS#2
+* MenopausalStatusCodeSystem#0
+* MenopausalStatusCodeSystem#1
+* MenopausalStatusCodeSystem#2
