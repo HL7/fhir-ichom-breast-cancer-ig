@@ -1,20 +1,20 @@
 /* EnableWhen function to only show questions based on their timing. 
 #0 = baseline, #1 = 1 year post treatment #2 = 2 years post-treatment */ 
 RuleSet: enableWhenTiming(code)
-* enableWhen
+* enableWhen[+]
   * question = "BreastQ_Timing"
   * operator = #=
   * answerCoding = ResponseTimingCodeSystem{code}
 
 RuleSet: enableWhenTimingNotEquals(code)
-* enableWhen
+* enableWhen[+]
   * question = "BreastQ_Timing"
   * operator = #!=
   * answerCoding = ResponseTimingCodeSystem{code}
 
 /* EnableWhen function to only show questions based on the surgery the patient received */ 
 RuleSet: enableWhenSurgeryType(code)
-* enableWhen
+* enableWhen[+]
   * question = "BreastQ_Surgery"
   * operator = #=
   * answerCoding = BreastQSurgeryCodeSystem{code}

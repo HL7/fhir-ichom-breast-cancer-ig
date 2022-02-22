@@ -15,10 +15,8 @@ ValueSet: BreastQValueSet
 Id: BreastQValueSet
 Title: "Patient Reported Outcomes Instrument response (BreastQ)"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* BreastQCodeSystem#1
-* BreastQCodeSystem#2
-* BreastQCodeSystem#3
-* BreastQCodeSystem#4
+* ^version  = 0.0.1
+* include codes from system BreastQCodeSystem
 
 // Surgery Type - Codesystem
 CodeSystem: BreastQSurgeryCodeSystem
@@ -39,9 +37,5 @@ ValueSet: BreastQSurgeryValueSet
 Id: BreastQSurgeryValueSet
 Title: "Type of surgery for the Patient Reported Outcomes Instrument (BreastQ)"
 Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* BreastQSurgeryCodeSystem#0
-* BreastQSurgeryCodeSystem#1
-* BreastQSurgeryCodeSystem#2
-* BreastQSurgeryCodeSystem#3
-* BreastQSurgeryCodeSystem#4
-* BreastQSurgeryCodeSystem#5
+* ^version  = 0.0.1
+* include codes from system BreastQSurgeryCodeSystem

@@ -15,11 +15,8 @@ ValueSet: RecurrenceValueSet
 Id: RecurrenceValueSet
 Title: "Recurrence of neoplasm"
 Description: "Codes used to indicate recurrence of neoplasm"
-* RecurrenceCodeSystem#0
-* RecurrenceCodeSystem#1
-* RecurrenceCodeSystem#2
-* RecurrenceCodeSystem#3
-* RecurrenceCodeSystem#999
+* ^version  = 0.0.1
+* include codes from system RecurrenceCodeSystem
 
 CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
@@ -37,7 +34,5 @@ ValueSet: RecurrenceMethodValueSet
 Id: RecurrenceMethodValueSet
 Title: "Method of confirming recurrence"
 Description: "Codes used describe the method to confirm recurrence of neoplasm"
-* RecurrenceMethodCodeSystem#0
-* RecurrenceMethodCodeSystem#1
-* RecurrenceMethodCodeSystem#2
-* RecurrenceMethodCodeSystem#999
+* ^version  = 0.0.1
+* include codes from system RecurrenceMethodCodeSystem

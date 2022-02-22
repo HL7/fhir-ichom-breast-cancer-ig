@@ -1,8 +1,8 @@
 RuleSet: enableWhenRecurrence(code)
-* enableWhen
+* enableWhen[+]
   * question = "MalignancyRecur"
   * operator = #=
-  * answerCoding = RecurrenceCodeSystem#{code}
+  * answerCoding = RecurrenceCodeSystem{code}
 
 Instance: Survival
 InstanceOf: Questionnaire
@@ -40,27 +40,18 @@ Description: "Survival and disease control questionnaire"
   * type = #choice
   * text = "What was the method of confirming recurrence of neoplasm?"
   * answerValueSet = Canonical(RecurrenceMethodValueSet)
-  * enableWhen
-    * question = "MalignancyRecur"
-    * operator = #=
-    * answerCoding = RecurrenceCodeSystem#1
-  * enableWhen
-    * question = "MalignancyRecur"
-    * operator = #=
-    * answerCoding = RecurrenceCodeSystem#2
-  * enableWhen
-    * question = "MalignancyRecur"
-    * operator = #=
-    * answerCoding = RecurrenceCodeSystem#3
+  * insert enableWhenRecurrence(#1)
+  * insert enableWhenRecurrence(#2)
+  * insert enableWhenRecurrence(#3)
   * enableBehavior = #any
 
 * item[+]
   * linkId =  "RecurDateCancer"
   * type = #date
   * text = "What is the date of cancer recurrence?"
-  * insert enableWhenRecurrence(1)
-  * insert enableWhenRecurrence(2)
-  * insert enableWhenRecurrence(3)
+  * insert enableWhenRecurrence(#1)
+  * insert enableWhenRecurrence(#2)
+  * insert enableWhenRecurrence(#3)
   * enableBehavior = #any
 
 * item[+]
