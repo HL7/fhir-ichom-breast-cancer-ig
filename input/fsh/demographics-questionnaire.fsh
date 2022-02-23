@@ -52,7 +52,7 @@ Description: "Demographic Factors"
 * item[+]
   * linkId = "RelationshipStatus"
   * type = #choice
-  * text = "What is your current relationship status?"
+  * text = "Please indicate your current relationship status."
   * answerValueSet = Canonical(RelationshipStatus)
   * required = true
   * repeats = false
