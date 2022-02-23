@@ -173,10 +173,11 @@ Description: "Bundle of the Survival and disease control questionnaire"
   * request.method = #PUT
   * resource = Survival
 
-Instance: DebugDemographcisBundle
+Instance: DebugDemographicsBundle
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to demographics"
+Description: "Bundle of the Demographics Questionnaire"
 * type = #transaction
 
 * entry[+]
@@ -228,6 +229,7 @@ Instance: DebugBaselineTumorFactorsBundle
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of all valuesystems and questionnaires related to BaselineTumorFactors"
+Description: "Bundle of the BaselineTumorFactors Questionnaire"
 * type = #transaction
 
 * entry[+]
