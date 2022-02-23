@@ -109,6 +109,7 @@ Description: "Baseline Tumor Factors"
   // todo: automatically fill in 999 if it's not filled in
   * text = "Indicate size of invasive component of tumor (in mm, 999 if unknown)"
   * required = true
+  * initial.valueInteger = 999
   * insert enableWhenTrue(received_surgery)
 
 * item[+]
@@ -116,6 +117,7 @@ Description: "Baseline Tumor Factors"
   * type = #integer
   * text = "Number of lymph nodes resected (999 if unknown)"
   * required = true
+  * initial.valueInteger = 999
   * insert enableWhenTrue(received_surgery)
 
 * item[+]
@@ -123,6 +125,7 @@ Description: "Baseline Tumor Factors"
   * type = #integer
   * text = "Number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown)"
   * required = true
+  * initial.valueInteger = 999
   * insert enableWhenTrue(received_surgery)
 
 * item[+]
