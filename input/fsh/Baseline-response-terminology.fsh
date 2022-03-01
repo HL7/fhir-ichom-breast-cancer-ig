@@ -1,3 +1,5 @@
+// DEMOGRAPHICS CodeSystems
+
 Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 
 ValueSet: DemographicFactorsSex
@@ -34,26 +36,43 @@ Description: "Relationship Status"
 * $FHIRMS#W "Widowed"
 * RelationshipStatusCodeSystem#unknown
 
-CodeSystem: EORTCQLQCodeSystem
-Id: EORTCQLQCodeSystem
-Title: "Codes used in EORTC-QLQ questionnaire response"
-Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
+// BASELINE CLINICAL FACTORS CodeSystems
+Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
+
+CodeSystem: SACQPatientComorbidityCodeSystem
+Id: SACQPatientComorbidityCodeSystem
+Title: "SACQ patient's comorbidity history"
+Description: "Codes used in SACQ patient's comorbidity history that are not available yet in standard terminologies"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/sacq-patient-comorbidity-history
 * ^caseSensitive = true
 
-* #1 "Not at all"
-* #2 "A little"
-* #3 "Quite a bit"
-* #4 "Very much"
+* #no-other-diseases "No other diseases known"
+* #cancer-within-5yrs "Cancer/other cancer (within last 5 years)"
+* #other-medical-problems "Other medical problems"
+  "Other medical problems affecting the patient, outside of those that have been asked explicitly"
 
-ValueSet: EORTCQLQValueSet
-Id: EORTCQLQValueSet
-Title: "Values used in EORTC-QLQ questionnaire response"
-Description: "Valueset used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^version  = 0.0.1
-* include codes from system EORTCQLQCodeSystem
+ValueSet: SACQPatientComorbidityHistory
+Id: SACQ-patient-comorbidity-history
+Title: "SACQ Patient's comorbidity history"
+Description: "Patient's documented history of comorbidities"
+* SACQPatientComorbidityCodeSystem#no-other-diseases
+* $SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
+* $SCT#38341003 "High blood pressure"
+* $SCT#19829001 "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* $SCT#73211009 "Diabetes"
+* $SCT#429040005 "Ulcer"
+* $SCT#90708001 "Kidney disease"
+* $SCT#235856003 "Liver disease"
+* $SCT#271737000 "Anemia"
+* SACQPatientComorbidityCodeSystem#cancer-within-5yrs
+* $SCT#35489007 "Depression"
+* $SCT#396275006 "Osteoarthritis"
+* $SCT#161891005 "Back pain"
+* $SCT#69896004 "Rheumatoid arthritis"
+* SACQPatientComorbidityCodeSystem#other-medical-problems
 
 
+// BASELINE TUMOR FACTORS CodeSystems
 CodeSystem: ClinicalTumorStageCodeSystem
 Id: clinical-tumor-stage-codesystem
 Title: "Clinical Tumor Stage Code System"
@@ -120,67 +139,85 @@ Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
 * include codes from system ClinicalDistantMetastasisCodeSystem
 
 
-CodeSystem: PathologicalTumorStageCodeSystem
-Id: pathological-tumor-stage-codesystem
-Title: "Pathological Tumor Stage Code System"
-Description: "Pathological tumor stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-tumor-stage
+// DEGREE OF HEALTH - EORTC-QLQ CodeSystem
+CodeSystem: EORTCQLQCodeSystem
+Id: EORTCQLQCodeSystem
+Title: "Codes used in EORTC-QLQ questionnaire response"
+Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
 * ^caseSensitive = true
 
-* #0 "pTX"
-* #1 "pT0"
-* #2 "pTis"
-* #3 "pT1"
-* #4 "pT2"
-* #5 "pT3"
-* #6 "pT4"
-* #999 "Unknown"
+* #1 "Not at all"
+* #2 "A little"
+* #3 "Quite a bit"
+* #4 "Very much"
 
-ValueSet: PathologicalTumorStage
-Id: pathological-tumor-stage
-Title: "Pathological Tumor Stage"
-Description: "Pathological tumor stage (per AJCC 5th - 7th Ed.)"
+ValueSet: EORTCQLQValueSet
+Id: EORTCQLQValueSet
+Title: "Values used in EORTC-QLQ questionnaire response"
+Description: "Valueset used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * ^version  = 0.0.1
-* include codes from system PathologicalTumorStageCodeSystem
+* include codes from system EORTCQLQCodeSystem
 
-
-CodeSystem: PathologicalNodalStageCodeSystem
-Id: pathological-nodal-stage-codesystem
-Title: "Pathological Nodal Stage Code System"
-Description: "Pathological nodal stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-nodal-stage
+// DEGREE OF HEALTH - BreastQ Codesystem
+CodeSystem: BreastQCodeSystem
+Id: BreastQCodeSystem
+Title: "Patient Reported Outcomes Instrument response (BreastQ)"
+Description: "Codes used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q
 * ^caseSensitive = true
 
-* #0 "pNX"
-* #1 "pN0"
-* #2 "pN1"
-* #3 "pN2"
-* #4 "pN3"
-* #999 "Unknown"
+* #1 "Very dissatisfied"
+* #2 "Somewhat dissatisfied"
+* #3 "Somewhat satisfied"
+* #4 "Very satisfied"
 
-ValueSet: PathologicalNodalStage
-Id: pathological-nodal-stage
-Title: "Pathological Nodal Stage"
-Description: "Pathological nodal stage (per AJCC 5th - 7th Ed.)"
+ValueSet: BreastQValueSet 
+Id: BreastQValueSet
+Title: "Patient Reported Outcomes Instrument response (BreastQ)"
+Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
-* include codes from system PathologicalNodalStageCodeSystem
+* include codes from system BreastQCodeSystem
 
-
-CodeSystem: PathologicalDistantMetastasisCodeSystem
-Id: pathological-distant-metastasis-codesystem
-Title: "Pathological Distant Metastasis Code System"
-Description: "Pathological distant metastasis (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-distant-metastasis
+CodeSystem: BreastQSurgeryCodeSystem
+Id: BreastQSurgeryCodeSystem
+Title: "Type of surgery for BreastQ"
+Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q-surgery
 * ^caseSensitive = true
 
-* #0 "pMx"
-* #1 "pM0"
-* #2 "pM1"
-* #999 "Unknown"
+* #0 "Breast conserving surgery"
+* #1 "Breast conserving surgery with mammoplasty" 
+* #2 "Mastectomy without immediate reconstruction"
+* #3 "Mastectomy with immediate reconstruction (direct/staged implant)"
+* #4 "Mastectomy with immediate reconstruction (autologous)"
+* #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
 
-ValueSet: PathologicalDistantMetastasis
-Id: pathological-distant-metastasis
-Title: "Pathological Distant Metastasis"
-Description: "Pathological distant metastasis (per AJCC 5th - 7th Ed.)"
+ValueSet: BreastQSurgeryValueSet 
+Id: BreastQSurgeryValueSet
+Title: "Type of surgery for the Patient Reported Outcomes Instrument (BreastQ)"
+Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
-* include codes from system PathologicalDistantMetastasisCodeSystem
+* include codes from system BreastQSurgeryCodeSystem
+
+
+// DEGREE OF HEALTH - FACT-ES CodeSystem
+CodeSystem: FACTESCodeSystem
+Id: FACTESCodeSystem
+Title: "Codesystem of FACT-ES questionnaire"
+Description: "Codes used in the Functional Assessment of Cancer Therapy questionnare"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
+* ^caseSensitive = true
+
+* #0 "Not at all"
+* #1 "A little"
+* #2 "Somewhat"
+* #3 "Quite a bit"
+* #4 "Very much"
+
+ValueSet: FACTESValueSet
+Id: FACTESValueSet
+Title: "Valueset of FACT-ES questionnaire"
+Description: "Valueset used in the Functional Assessment of Cancer Therapy questionnare"
+* ^version  = 0.0.1
+* include codes from system FACTESCodeSystem
