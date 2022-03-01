@@ -6,12 +6,6 @@ RuleSet: enableWhenComorbidity(code)
   * operator = #=
   * answerCoding = {code}
 
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTrue(question)
-* enableWhen
-  * question = "{question}"
-  * operator = #=
-  * answerBoolean = true
 
 // shorthand notation to only show questions based on the surgery the patient received
 RuleSet: enableWhenSurgeryType(code)
@@ -20,14 +14,14 @@ RuleSet: enableWhenSurgeryType(code)
   * operator = #=
   * answerCoding = BreastQSurgeryCodeSystem{code}
 
-Instance: BaselineResponse
+Instance: BaselinePatientReported
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Questionnaire response during baseline (first doctors' visit)"
+Description: "Patient-reported response during baseline (first doctors' visit)"
 * insert PublicationInstanceRuleset
 
-* name = "BaselineReponse"
-* title = "Baseline questionnaire response"
+* name = "BaselinePatientReported"
+* title = "Patient reported response at baseline"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -56,18 +50,18 @@ Description: "Questionnaire response during baseline (first doctors' visit)"
   * text = "Demographic factors"
   * required = true
 
-  * item[+]
-    * linkId = "Sex"
-    * type = #choice
-    * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsSex)
-    * required = true
+  // * item[+]
+  //   * linkId = "Sex"
+  //   * type = #choice
+  //   * text = "Please indicate your sex at birth."
+  //   * answerValueSet = Canonical(DemographicFactorsSex)
+  //   * required = true
 
-  * item[+]
-    * linkId = "YearOfBirth"
-    * type = #date
-    * text = "In what year were you born?"
-    * required = true
+  // * item[+]
+  //   * linkId = "YearOfBirth"
+  //   * type = #date
+  //   * text = "In what year were you born?"
+  //   * required = true
 
   * item[+]
     * linkId = "COUNTRY"
@@ -115,10 +109,10 @@ Description: "Questionnaire response during baseline (first doctors' visit)"
     * answerOption[+].valueString = "Pre-menopause"
     * answerOption[+].valueString = "Post-menopausei (natural/surgical) - if you have not had your period >12 months, caused by natural decline of hormones or due to surgery (e.g. menopause that develops after the ovaries are surgically removed)"
     * answerOption[+].valueString = "I don't know what my current menopausal status is"
-    * enableWhen
-      * question = "Sex"
-      * operator = #=
-      * answerCoding = http://hl7.org/fhir/administrative-gender#female
+    // * enableWhen
+    //   * question = "Sex"
+    //   * operator = #=
+    //   * answerCoding = http://hl7.org/fhir/administrative-gender#female
 
 // GROUP 3 - BASELINE CLINICAL FACTORS
 * item[+]
@@ -304,156 +298,156 @@ Description: "Questionnaire response during baseline (first doctors' visit)"
     * maxLength = 2
   // Add answerOptions to limit the possible answers?
 
-  * item[+]
-    * linkId = "HeightValue"
-    * type = #integer
-    * text =  "Please indicate your body height."
-    * maxLength = 3
+  // * item[+]
+  //   * linkId = "HeightValue"
+  //   * type = #integer
+  //   * text =  "Please indicate your body height."
+  //   * maxLength = 3
 
-  * item[+]
-    * linkId = "HeightUnit" 
-    * type = #choice
-    * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
-    * answerOption[+].valueString = "cm"
-    * answerOption[+].valueString = "inches"
+  // * item[+]
+  //   * linkId = "HeightUnit" 
+  //   * type = #choice
+  //   * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
+  //   * answerOption[+].valueString = "cm"
+  //   * answerOption[+].valueString = "inches"
 
-  * item[+]
-    * linkId = "WeightValue"
-    * type = #integer
-    * text = "Please indicate your body weight." 
-    * maxLength = 3
+  // * item[+]
+  //   * linkId = "WeightValue"
+  //   * type = #integer
+  //   * text = "Please indicate your body weight." 
+  //   * maxLength = 3
 
-  * item[+]
-    * linkId = "WeightUnit" 
-    * type = #choice
-    * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
-    * answerOption[+].valueString = "kilograms"
-    * answerOption[+].valueString = "lbs"
+  // * item[+]
+  //   * linkId = "WeightUnit" 
+  //   * type = #choice
+  //   * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
+  //   * answerOption[+].valueString = "kilograms"
+  //   * answerOption[+].valueString = "lbs"
 
-  * item[+]
-    * linkId = "LATERAL"
-    * type = #choice
-    * text = "Indicate the laterality of breast cancer:"
-    * answerOption[+].valueString = "Left breast"
-    * answerOption[+].valueString = "Right breast"
-    * answerOption[+].valueString = "Both breasts"
+  // * item[+]
+  //   * linkId = "LATERAL"
+  //   * type = #choice
+  //   * text = "Indicate the laterality of breast cancer:"
+  //   * answerOption[+].valueString = "Left breast"
+  //   * answerOption[+].valueString = "Right breast"
+  //   * answerOption[+].valueString = "Both breasts"
 
-  * item[+]
-    * linkId = "FIRSTBC"
-    * type = #choice
-    * text = "Indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
-    * answerOption[+].valueString = "Primary tumor"
-    * answerOption[+].valueString = "New ipsilateral"
-    * answerOption[+].valueString = "New contralateral"
+  // * item[+]
+  //   * linkId = "FIRSTBC"
+  //   * type = #choice
+  //   * text = "Indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
+  //   * answerOption[+].valueString = "Primary tumor"
+  //   * answerOption[+].valueString = "New ipsilateral"
+  //   * answerOption[+].valueString = "New contralateral"
 
 
-// GROUP 4 - BASELINE TUMOR FACTORS
-* item[+]
-  * linkId =  "Baseline-Tumor-Factors"
-  * type = #group
-  * text = "Tumor factors"
-  * required = true
+// // GROUP 4 - BASELINE TUMOR FACTORS
+// * item[+]
+//   * linkId =  "Baseline-Tumor-Factors"
+//   * type = #group
+//   * text = "Tumor factors"
+//   * required = true
 
-  * item[+]
-    * linkId = "HistologicalDiagnosisDate"
-    * type = #date
-    * text = "The initial date of histological diagnosis"
+//   * item[+]
+//     * linkId = "HistologicalDiagnosisDate"
+//     * type = #date
+//     * text = "The initial date of histological diagnosis"
 
-  * item[+]
-    * linkId = "HISTOTYPE"
-    * type = #choice
-    * text = "Indicate histologic type of the tumor (select all that apply)"
-    * answerOption[+].valueString = "Ductal carcinoma in situ"
-    * answerOption[+].valueString = "Invasive ductal carcinoma"
-    * answerOption[+].valueString = "Invasive lobular carcinoma"
-    * answerOption[+].valueString = "Other"
-    * answerOption[+].valueString = "Unknown"
-    * required = true
-    * repeats = true
+//   * item[+]
+//     * linkId = "HISTOTYPE"
+//     * type = #choice
+//     * text = "Indicate histologic type of the tumor (select all that apply)"
+//     * answerOption[+].valueString = "Ductal carcinoma in situ"
+//     * answerOption[+].valueString = "Invasive ductal carcinoma"
+//     * answerOption[+].valueString = "Invasive lobular carcinoma"
+//     * answerOption[+].valueString = "Other"
+//     * answerOption[+].valueString = "Unknown"
+//     * required = true
+//     * repeats = true
 
-  * item[+]
-    * linkId = "MUTBC"
-    * type = #choice
-    * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
-    * answerOption[+].valueString = "No mutation"
-    * answerOption[+].valueString = "BRCA 1"
-    * answerOption[+].valueString = "BRCA 2"
-    * answerOption[+].valueString = "Other mutation"
-    * answerOption[+].valueString = "Not tested"
-    * required = true
+//   * item[+]
+//     * linkId = "MUTBC"
+//     * type = #choice
+//     * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
+//     * answerOption[+].valueString = "No mutation"
+//     * answerOption[+].valueString = "BRCA 1"
+//     * answerOption[+].valueString = "BRCA 2"
+//     * answerOption[+].valueString = "Other mutation"
+//     * answerOption[+].valueString = "Not tested"
+//     * required = true
 
-  * item[+]
-    * linkId = "GRADEINV"
-    * type = #choice
-    * text = "Indicate grade of invasive component of tumor"
-    * answerOption[+].valueString = "Grade 1"
-    * answerOption[+].valueString = "Grade 2"
-    * answerOption[+].valueString = "Grade 3"
-    * answerOption[+].valueString = "Not reported"
-    * required = true
+//   * item[+]
+//     * linkId = "GRADEINV"
+//     * type = #choice
+//     * text = "Indicate grade of invasive component of tumor"
+//     * answerOption[+].valueString = "Grade 1"
+//     * answerOption[+].valueString = "Grade 2"
+//     * answerOption[+].valueString = "Grade 3"
+//     * answerOption[+].valueString = "Not reported"
+//     * required = true
 
-  * item[+]
-    * linkId = "GRADEDCIS"
-    * type = #choice
-    * text = "Indicate tumor grade of DCIS component of tumor"
-    * answerOption[+].valueString = "Low"
-    * answerOption[+].valueString = "Intermediate"
-    * answerOption[+].valueString = "High"
-    * answerOption[+].valueString = "Not reported"
-    * required = true
+//   * item[+]
+//     * linkId = "GRADEDCIS"
+//     * type = #choice
+//     * text = "Indicate tumor grade of DCIS component of tumor"
+//     * answerOption[+].valueString = "Low"
+//     * answerOption[+].valueString = "Intermediate"
+//     * answerOption[+].valueString = "High"
+//     * answerOption[+].valueString = "Not reported"
+//     * required = true
 
-  * item[+]
-    * linkId = "TNMCT_BREAST"
-    * type = #choice
-    * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalTumorStage)
-  //* insert enableWhenTrue(received_neoadjuvant_therapy)
+//   * item[+]
+//     * linkId = "TNMCT_BREAST"
+//     * type = #choice
+//     * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
+//     * answerValueSet = Canonical(ClinicalTumorStage)
+//   //* insert enableWhenTrue(received_neoadjuvant_therapy)
 
-  * item[+]
-    * linkId = "TNMCN_BREAST"
-    * type = #choice
-    * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalNodalStage)
-    //* insert enableWhenTrue(received_neoadjuvant_therapy)
+//   * item[+]
+//     * linkId = "TNMCN_BREAST"
+//     * type = #choice
+//     * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
+//     * answerValueSet = Canonical(ClinicalNodalStage)
+//     //* insert enableWhenTrue(received_neoadjuvant_therapy)
 
-  * item[+]
-    * linkId = "TNMCM_BREAST"
-    * type = #choice
-    * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalDistantMetastasis)
-    //* insert enableWhenTrue(received_neoadjuvant_therapy)
+//   * item[+]
+//     * linkId = "TNMCM_BREAST"
+//     * type = #choice
+//     * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
+//     * answerValueSet = Canonical(ClinicalDistantMetastasis)
+//     //* insert enableWhenTrue(received_neoadjuvant_therapy)
 
-  * item[+]
-    * linkId = "ERSTATUS"
-    * type = #choice
-    * text = "Indicate if the estrogen receptor status is positive"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Not performed"
-    * answerOption[+].valueString = "Unkown"
-    * required = true
-  // * insert enableWhenTrue(received_surgery)
+//   * item[+]
+//     * linkId = "ERSTATUS"
+//     * type = #choice
+//     * text = "Indicate if the estrogen receptor status is positive"
+//     * answerOption[+].valueString = "No"
+//     * answerOption[+].valueString = "Yes"
+//     * answerOption[+].valueString = "Not performed"
+//     * answerOption[+].valueString = "Unkown"
+//     * required = true
+//   // * insert enableWhenTrue(received_surgery)
 
-  * item[+]
-    * linkId = "PRSTATUS"
-    * type = #choice
-    * text = "Indicate if the progesterone receptor status is positive"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Not performed"
-    * answerOption[+].valueString = "Unkown"
-  // * insert enableWhenTrue(received_surgery)
-    * required = true
+//   * item[+]
+//     * linkId = "PRSTATUS"
+//     * type = #choice
+//     * text = "Indicate if the progesterone receptor status is positive"
+//     * answerOption[+].valueString = "No"
+//     * answerOption[+].valueString = "Yes"
+//     * answerOption[+].valueString = "Not performed"
+//     * answerOption[+].valueString = "Unkown"
+//   // * insert enableWhenTrue(received_surgery)
+//     * required = true
 
-  * item[+]
-    * linkId = "HER2STATUS"
-    * type = #choice
-    * text = "Indicate if the HER2 receptor status is positive"
-    * answerOption[+].valueString = "Negative"
-    * answerOption[+].valueString = "Positive"
-    * answerOption[+].valueString = "Equivocal"
-    * answerOption[+].valueString = "HER2 receptor status not tested"
-  // * insert enableWhenTrue(received_surgery)
+//   * item[+]
+//     * linkId = "HER2STATUS"
+//     * type = #choice
+//     * text = "Indicate if the HER2 receptor status is positive"
+//     * answerOption[+].valueString = "Negative"
+//     * answerOption[+].valueString = "Positive"
+//     * answerOption[+].valueString = "Equivocal"
+//     * answerOption[+].valueString = "HER2 receptor status not tested"
+//   // * insert enableWhenTrue(received_surgery)
 
 // GROUP 5 - DEGREE OF HEALTH
 * item[+]

@@ -52,7 +52,7 @@ Description: "Codes used in SACQ patient's comorbidity history that are not avai
   "Other medical problems affecting the patient, outside of those that have been asked explicitly"
 
 ValueSet: SACQPatientComorbidityHistory
-Id: SACQ-patient-comorbidity-history
+Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history"
 Description: "Patient's documented history of comorbidities"
 * SACQPatientComorbidityCodeSystem#no-other-diseases
@@ -74,7 +74,7 @@ Description: "Patient's documented history of comorbidities"
 
 // BASELINE TUMOR FACTORS CodeSystems
 CodeSystem: ClinicalTumorStageCodeSystem
-Id: clinical-tumor-stage-codesystem
+Id: ClinicalTumorStageCodeSystem
 Title: "Clinical Tumor Stage Code System"
 Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-tumor-stage
@@ -90,7 +90,7 @@ Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
 * #999 "Unknown"
 
 ValueSet: ClinicalTumorStage
-Id: clinical-tumor-stage
+Id: ClinicalTumorStage
 Title: "Clinical Tumor Stage"
 Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
 * ^version  = 0.0.1
@@ -98,7 +98,7 @@ Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
 
 
 CodeSystem: ClinicalNodalStageCodeSystem
-Id: clinical-nodal-stage-codesystem
+Id: ClinicalNodalStageCodeSystem
 Title: "Clinical Nodal Stage Code System"
 Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-nodal-stage
@@ -112,7 +112,7 @@ Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
 * #999 "Unknown"
 
 ValueSet: ClinicalNodalStage
-Id: clinical-nodal-stage
+Id: ClinicalNodalStage
 Title: "Clinical Nodal Stage"
 Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
 * ^version  = 0.0.1
@@ -120,7 +120,7 @@ Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
 
 
 CodeSystem: ClinicalDistantMetastasisCodeSystem
-Id: clinical-distant-metastasis-codesystem
+Id: ClinicalDistantMetastasisCodeSystem
 Title: "Clinical Distant Metastasis Code System"
 Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-distant-metastasis
@@ -132,7 +132,7 @@ Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
 * #999 "Unknown"
 
 ValueSet: ClinicalDistantMetastasis
-Id: clinical-distant-metastasis
+Id: ClinicalDistantMetastasis
 Title: "Clinical Distant Metastasis"
 Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
 * ^version  = 0.0.1
