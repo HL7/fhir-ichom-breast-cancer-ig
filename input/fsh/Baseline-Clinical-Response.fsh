@@ -17,7 +17,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "Baseline-General-Information"
+  * linkId =  "General-Information"
   * type = #group
   * text = "General information"
   * required = true

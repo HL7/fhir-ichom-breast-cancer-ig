@@ -1,18 +1,11 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTreatment(code)
-* enableWhen[+]
-  * question = "TREATMENT_BREAST"
-  * operator = #=
-  * answerCoding = TreatmentTypesCodeSystem{code}
-
-Instance: 6MonthsClinical
+Instance: 1YearClinical
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Clinical questionnaire response at 6 months follow-up"
+Description: "Clinical questionnaire response at 1 year follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "SixMonthsClinical"
-* title = "Clinical response at 6 months follow-up"
+* name = "1YearClinicalResponse"
+* title = "Clinical response at 1 year follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -34,7 +27,7 @@ Description: "Clinical questionnaire response at 6 months follow-up"
     * text = "What is your last name?"
     * required = true
 
-// GROUP 2 - 6 Months TUMOR FACTORS
+// GROUP 2 - 1 year TUMOR FACTORS
 * item[+]
   * linkId =  "6-Months-Tumor-Factors"
   * type = #group

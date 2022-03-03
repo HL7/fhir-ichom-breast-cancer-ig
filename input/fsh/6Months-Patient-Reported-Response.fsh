@@ -1,7 +1,7 @@
 Instance: 6MonthsPatientReported
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Patient-reported response during at 6 months follow-up"
+Description: "Patient-reported response at 6 months follow-up"
 * insert PublicationInstanceRuleset
 
 * name = "Six-Months-Patient-Reported"
