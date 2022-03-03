@@ -6,7 +6,6 @@ RuleSet: enableWhenComorbidity(code)
   * operator = #=
   * answerCoding = {code}
 
-
 // shorthand notation to only show questions based on the surgery the patient received
 RuleSet: enableWhenSurgeryType(code)
 * enableWhen[+]
@@ -50,18 +49,12 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
   * text = "Demographic factors"
   * required = true
 
-  // * item[+]
-  //   * linkId = "Sex"
-  //   * type = #choice
-  //   * text = "Please indicate your sex at birth."
-  //   * answerValueSet = Canonical(DemographicFactorsSex)
-  //   * required = true
-
-  // * item[+]
-  //   * linkId = "YearOfBirth"
-  //   * type = #date
-  //   * text = "In what year were you born?"
-  //   * required = true
+  * item[+]
+    * linkId = "Sex"
+    * type = #choice
+    * text = "Please indicate your sex at birth."
+    * answerValueSet = Canonical(DemographicFactorsSex)
+    * required = true
 
   * item[+]
     * linkId = "COUNTRY"
@@ -74,23 +67,37 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
     * linkId = "Ethnicity"
     * type = #string
     * text = "Please indicate the ethnicity that you identify with."
+    * required = true
       //Canonical is missing
 
   * item[+]
     * linkId = "Race"
     * type = #string
     * text = "Please indicate the biological race that you identify with."
+    * required = true
       //Canonical is missing
-
+ 
   * item[+]
     * linkId = "EducationLevel"
     * type = #choice
     * text = "Please indicate your highest level of schooling."
-    * answerOption[+].valueString = "none"
-    * answerOption[+].valueString = "Primary"
-    * answerOption[+].valueString = "Secondary"
-    * answerOption[+].valueString = "Tertiary"
+    * answerOption[0].valueCoding.system = "http://connect.ichom.org/fhir/CodeSystem/education-level"
+    * answerOption[0].valueCoding.code = #none
+    * answerOption[0].valueCoding.display = "None"
+    * answerOption[1].valueCoding.system = "http://connect.ichom.org/fhir/CodeSystem/education-level"
+    * answerOption[1].valueCoding.code = #primary
+    * answerOption[1].valueCoding.display = "Primary"
+    * answerOption[2].valueCoding.system = "http://connect.ichom.org/fhir/CodeSystem/education-level"
+    * answerOption[2].valueCoding.code = #secondary
+    * answerOption[2].valueCoding.display = "Secondary"
+    * answerOption[3].valueCoding.system = "http://connect.ichom.org/fhir/CodeSystem/education-level"
+    * answerOption[3].valueCoding.code = #tertiary
+    * answerOption[3].valueCoding.display = "Tertiary"
     * required = true
+    // * answerOption[+].valueString = "Primary"
+    // * answerOption[+].valueString = "Secondary"
+    // * answerOption[+].valueString = "Tertiary"
+    
 
 
   * item[+]
@@ -107,12 +114,13 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
     * type = #choice
     * text = "What is your current menopausal status?"
     * answerOption[+].valueString = "Pre-menopause"
-    * answerOption[+].valueString = "Post-menopausei (natural/surgical) - if you have not had your period >12 months, caused by natural decline of hormones or due to surgery (e.g. menopause that develops after the ovaries are surgically removed)"
+    * answerOption[+].valueString = "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
     * answerOption[+].valueString = "I don't know what my current menopausal status is"
-    // * enableWhen
-    //   * question = "Sex"
-    //   * operator = #=
-    //   * answerCoding = http://hl7.org/fhir/administrative-gender#female
+    * enableWhen
+      * question = "Sex"
+      * operator = #=
+      * answerCoding = http://hl7.org/fhir/administrative-gender#female
+    * required = true
 
 // GROUP 3 - BASELINE CLINICAL FACTORS
 * item[+]
@@ -291,163 +299,12 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
     * text = "What other medical problems are you experiencing?"
     * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#other-medical-problems)
 
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_Score"
-    * type = #integer
-    * text = "What is the total summed score of the patient's SACQ responses?"
-    * maxLength = 2
+  // * item[+]
+  //   * linkId = "ComorbiditiesSACQ_Score"
+  //   * type = #integer
+  //   * text = "What is the total summed score of the patient's SACQ responses?"
+  //   * maxLength = 2
   // Add answerOptions to limit the possible answers?
-
-  // * item[+]
-  //   * linkId = "HeightValue"
-  //   * type = #integer
-  //   * text =  "Please indicate your body height."
-  //   * maxLength = 3
-
-  // * item[+]
-  //   * linkId = "HeightUnit" 
-  //   * type = #choice
-  //   * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
-  //   * answerOption[+].valueString = "cm"
-  //   * answerOption[+].valueString = "inches"
-
-  // * item[+]
-  //   * linkId = "WeightValue"
-  //   * type = #integer
-  //   * text = "Please indicate your body weight." 
-  //   * maxLength = 3
-
-  // * item[+]
-  //   * linkId = "WeightUnit" 
-  //   * type = #choice
-  //   * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
-  //   * answerOption[+].valueString = "kilograms"
-  //   * answerOption[+].valueString = "lbs"
-
-  // * item[+]
-  //   * linkId = "LATERAL"
-  //   * type = #choice
-  //   * text = "Indicate the laterality of breast cancer:"
-  //   * answerOption[+].valueString = "Left breast"
-  //   * answerOption[+].valueString = "Right breast"
-  //   * answerOption[+].valueString = "Both breasts"
-
-  // * item[+]
-  //   * linkId = "FIRSTBC"
-  //   * type = #choice
-  //   * text = "Indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
-  //   * answerOption[+].valueString = "Primary tumor"
-  //   * answerOption[+].valueString = "New ipsilateral"
-  //   * answerOption[+].valueString = "New contralateral"
-
-
-// // GROUP 4 - BASELINE TUMOR FACTORS
-// * item[+]
-//   * linkId =  "Baseline-Tumor-Factors"
-//   * type = #group
-//   * text = "Tumor factors"
-//   * required = true
-
-//   * item[+]
-//     * linkId = "HistologicalDiagnosisDate"
-//     * type = #date
-//     * text = "The initial date of histological diagnosis"
-
-//   * item[+]
-//     * linkId = "HISTOTYPE"
-//     * type = #choice
-//     * text = "Indicate histologic type of the tumor (select all that apply)"
-//     * answerOption[+].valueString = "Ductal carcinoma in situ"
-//     * answerOption[+].valueString = "Invasive ductal carcinoma"
-//     * answerOption[+].valueString = "Invasive lobular carcinoma"
-//     * answerOption[+].valueString = "Other"
-//     * answerOption[+].valueString = "Unknown"
-//     * required = true
-//     * repeats = true
-
-//   * item[+]
-//     * linkId = "MUTBC"
-//     * type = #choice
-//     * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
-//     * answerOption[+].valueString = "No mutation"
-//     * answerOption[+].valueString = "BRCA 1"
-//     * answerOption[+].valueString = "BRCA 2"
-//     * answerOption[+].valueString = "Other mutation"
-//     * answerOption[+].valueString = "Not tested"
-//     * required = true
-
-//   * item[+]
-//     * linkId = "GRADEINV"
-//     * type = #choice
-//     * text = "Indicate grade of invasive component of tumor"
-//     * answerOption[+].valueString = "Grade 1"
-//     * answerOption[+].valueString = "Grade 2"
-//     * answerOption[+].valueString = "Grade 3"
-//     * answerOption[+].valueString = "Not reported"
-//     * required = true
-
-//   * item[+]
-//     * linkId = "GRADEDCIS"
-//     * type = #choice
-//     * text = "Indicate tumor grade of DCIS component of tumor"
-//     * answerOption[+].valueString = "Low"
-//     * answerOption[+].valueString = "Intermediate"
-//     * answerOption[+].valueString = "High"
-//     * answerOption[+].valueString = "Not reported"
-//     * required = true
-
-//   * item[+]
-//     * linkId = "TNMCT_BREAST"
-//     * type = #choice
-//     * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
-//     * answerValueSet = Canonical(ClinicalTumorStage)
-//   //* insert enableWhenTrue(received_neoadjuvant_therapy)
-
-//   * item[+]
-//     * linkId = "TNMCN_BREAST"
-//     * type = #choice
-//     * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
-//     * answerValueSet = Canonical(ClinicalNodalStage)
-//     //* insert enableWhenTrue(received_neoadjuvant_therapy)
-
-//   * item[+]
-//     * linkId = "TNMCM_BREAST"
-//     * type = #choice
-//     * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
-//     * answerValueSet = Canonical(ClinicalDistantMetastasis)
-//     //* insert enableWhenTrue(received_neoadjuvant_therapy)
-
-//   * item[+]
-//     * linkId = "ERSTATUS"
-//     * type = #choice
-//     * text = "Indicate if the estrogen receptor status is positive"
-//     * answerOption[+].valueString = "No"
-//     * answerOption[+].valueString = "Yes"
-//     * answerOption[+].valueString = "Not performed"
-//     * answerOption[+].valueString = "Unkown"
-//     * required = true
-//   // * insert enableWhenTrue(received_surgery)
-
-//   * item[+]
-//     * linkId = "PRSTATUS"
-//     * type = #choice
-//     * text = "Indicate if the progesterone receptor status is positive"
-//     * answerOption[+].valueString = "No"
-//     * answerOption[+].valueString = "Yes"
-//     * answerOption[+].valueString = "Not performed"
-//     * answerOption[+].valueString = "Unkown"
-//   // * insert enableWhenTrue(received_surgery)
-//     * required = true
-
-//   * item[+]
-//     * linkId = "HER2STATUS"
-//     * type = #choice
-//     * text = "Indicate if the HER2 receptor status is positive"
-//     * answerOption[+].valueString = "Negative"
-//     * answerOption[+].valueString = "Positive"
-//     * answerOption[+].valueString = "Equivocal"
-//     * answerOption[+].valueString = "HER2 receptor status not tested"
-//   // * insert enableWhenTrue(received_surgery)
 
 // GROUP 5 - DEGREE OF HEALTH
 * item[+]
@@ -880,170 +737,37 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
 // BREASTQ
 * item[+]
   * linkId = "Degree-of-Health-BreastQ"
-  * text = "Degree of Health - BreastQ"
+  * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+    how satisfied or dissatisfied have you been with:"
   * type = #group  
   
   * item[+]
-    * linkId =  "BreastQ_Surgery"
+    * linkId =  "BREASTQMAST_Q01"
     * type = #choice
-    * text = "Which type of surgery did you receive?"
-    * answerValueSet = Canonical(BreastQSurgeryValueSet) 
+    * text = "How you look in the mirror clothed?"
+    * answerValueSet = Canonical(BreastQValueSet)
     * required = true
 
-  //Group 1: Patients with mastectomy (#2) 
   * item[+]
-    * linkId =  "Mastectomy"
-    * type = #group
-    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
-    * insert enableWhenSurgeryType(#2)
-    * enableBehavior = #all
+    * linkId =  "BREASTQMAST_Q02"
+    * type = #choice
+    * text = "How comfortable your bras fit?"
+    * answerValueSet = Canonical(BreastQValueSet)
+    * required = true
 
-    * item[+]
-      * linkId =  "BREASTQMAST_Q01"
-      * type = #choice
-      * text = "How you look in the mirror clothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
-      * insert enableWhenSurgeryType(#2)
-      * enableBehavior = #all
-
-    * item[+]
-      * linkId =  "BREASTQMAST_Q02"
-      * type = #choice
-      * text = "How comfortable your bras fit?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
-      * insert enableWhenSurgeryType(#2)
-      * enableBehavior = #all
-
-    * item[+]
-      * linkId =  "BREASTQMAST_Q03"
-      * type = #choice
-      * text = "Being able to wear clothing that is more fitted?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
-      * insert enableWhenSurgeryType(#2)
-      * enableBehavior = #all
-
-    * item[+]
-      * linkId =  "BREASTQMAST_Q04"
-      * type = #choice
-      * text = "How you look in the mirror unclothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
-      * insert enableWhenSurgeryType(#2)
-      * enableBehavior = #all
-
-
-  // Group 2 - Patients with breast conserving therapy (#0 and #1)
   * item[+]
-    * linkId =  "Breast-Conserving-Therapy"
-    * type = #group
-    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
-    * insert enableWhenSurgeryType(#0)
-    * insert enableWhenSurgeryType(#1)
-    * enableBehavior = #any
+    * linkId =  "BREASTQMAST_Q03"
+    * type = #choice
+    * text = "Being able to wear clothing that is more fitted?"
+    * answerValueSet = Canonical(BreastQValueSet)
+    * required = true
 
-
-    * item[+]
-      * linkId =  "BREASTQBCT_Q01"
-      * type = #choice
-      * text = "How you look in the mirror clothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
-      * insert enableWhenSurgeryType(#0)
-      * insert enableWhenSurgeryType(#1)
-      * enableBehavior = #any
-
-    * item[+]
-      * linkId =  "BREASTQBCT_Q02"
-      * type = #choice
-      * text = "How comfortable your bras fit?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
-      * insert enableWhenSurgeryType(#0)
-      * insert enableWhenSurgeryType(#1)
-      * enableBehavior = #any
-
-
-    * item[+]
-      * linkId =  "BREASTQBCT_Q03"
-      * type = #choice
-      * text = "Being able to wear clothing that is more fitted?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
-      * insert enableWhenSurgeryType(#0)
-      * insert enableWhenSurgeryType(#1)
-      * enableBehavior = #any
-
-
-    * item[+]
-      * linkId =  "BREASTQBCT_Q04"
-      * type = #choice
-      * text = "How you look in the mirror unclothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
-      * insert enableWhenSurgeryType(#0)
-      * insert enableWhenSurgeryType(#1)
-      * enableBehavior = #any
-
-
-  // Group 3 - Patients with reconstruction (#3, #4 and #5) 
   * item[+]
-    * linkId =  "Resection"
-    * type = #group
-    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
-    * insert enableWhenSurgeryType(#3)
-    * insert enableWhenSurgeryType(#4)
-    * insert enableWhenSurgeryType(#5)
-    * enableBehavior = #any
-
-    * item[+]
-      * linkId =  "BREASTQREC_Q01"
-      * type = #choice
-      * text = "How you look in the mirror clothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
-      * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
-      * enableBehavior = #any
-
-    * item[+]
-      * linkId =  "BREASTQREC_Q02"
-      * type = #choice
-      * text = "How comfortable your bras fit?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
-      * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
-      * enableBehavior = #any
-
-    * item[+]
-      * linkId =  "BREASTQREC_Q03"
-      * type = #choice
-      * text = "Being able to wear clothing that is more fitted?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
-      * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
-      * enableBehavior = #any
-
-    * item[+]
-      * linkId =  "BREASTQREC_Q04"
-      * type = #choice
-      * text = "How you look in the mirror unclothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
-      * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
-      * enableBehavior = #any
+    * linkId =  "BREASTQMAST_Q04"
+    * type = #choice
+    * text = "How you look in the mirror unclothed?"
+    * answerValueSet = Canonical(BreastQValueSet)
+    * required = true
 
 // FACT-ES
 * item[+]

@@ -66,19 +66,22 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * type = #integer
     * text =  "Please indicate your body height."
     * maxLength = 3
-
+    * required = true
+    
   * item[+]
     * linkId = "HeightUnit" 
     * type = #choice
     * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
     * answerOption[+].valueString = "cm"
     * answerOption[+].valueString = "inches"
+    * required = true
 
   * item[+]
     * linkId = "WeightValue"
     * type = #integer
     * text = "Please indicate your body weight." 
     * maxLength = 3
+    * required = true
 
   * item[+]
     * linkId = "WeightUnit" 
@@ -86,6 +89,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
     * answerOption[+].valueString = "kilograms"
     * answerOption[+].valueString = "lbs"
+    * required = true
 
   * item[+]
     * linkId = "LATERAL"
@@ -94,6 +98,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * answerOption[+].valueString = "Left breast"
     * answerOption[+].valueString = "Right breast"
     * answerOption[+].valueString = "Both breasts"
+    * required = true
 
   * item[+]
     * linkId = "FIRSTBC"
@@ -102,7 +107,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * answerOption[+].valueString = "Primary tumor"
     * answerOption[+].valueString = "New ipsilateral"
     * answerOption[+].valueString = "New contralateral"
-
+    * required = true
 
 // GROUP 4 - BASELINE TUMOR FACTORS
 * item[+]
@@ -115,6 +120,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * linkId = "HistologicalDiagnosisDate"
     * type = #date
     * text = "The initial date of histological diagnosis"
+    * required = true    
 
   * item[+]
     * linkId = "HISTOTYPE"
@@ -164,21 +170,21 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * type = #choice
     * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
     * answerValueSet = Canonical(ClinicalTumorStage)
-  //* insert enableWhenTrue(received_neoadjuvant_therapy)
-
+    * required = true   
+ 
   * item[+]
     * linkId = "TNMCN_BREAST"
     * type = #choice
     * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
     * answerValueSet = Canonical(ClinicalNodalStage)
-    //* insert enableWhenTrue(received_neoadjuvant_therapy)
+    * required = true
 
   * item[+]
     * linkId = "TNMCM_BREAST"
     * type = #choice
     * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
     * answerValueSet = Canonical(ClinicalDistantMetastasis)
-    //* insert enableWhenTrue(received_neoadjuvant_therapy)
+    * required = true
 
   * item[+]
     * linkId = "ERSTATUS"
@@ -189,7 +195,6 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * answerOption[+].valueString = "Not performed"
     * answerOption[+].valueString = "Unkown"
     * required = true
-  // * insert enableWhenTrue(received_surgery)
 
   * item[+]
     * linkId = "PRSTATUS"
@@ -199,7 +204,6 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * answerOption[+].valueString = "Yes"
     * answerOption[+].valueString = "Not performed"
     * answerOption[+].valueString = "Unkown"
-  // * insert enableWhenTrue(received_surgery)
     * required = true
 
   * item[+]
@@ -210,4 +214,4 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * answerOption[+].valueString = "Positive"
     * answerOption[+].valueString = "Equivocal"
     * answerOption[+].valueString = "HER2 receptor status not tested"
-  // * insert enableWhenTrue(received_surgery)
+    * required = true
