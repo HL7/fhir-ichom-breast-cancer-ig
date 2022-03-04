@@ -1,18 +1,17 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTreatment(code)
+RuleSet: enableWhenRecurrence(code)
 * enableWhen[+]
-  * question = "TREATMENT_BREAST"
+  * question = "MalignancyRecur"
   * operator = #=
-  * answerCoding = TreatmentTypesCodeSystem{code}
+  * answerCoding = RecurrenceCodeSystem{code}
 
-Instance: 6MonthsClinical
+Instance: 1YearClinical
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Clinical questionnaire response at 6 months follow-up"
+Description: "Clinical questionnaire response at 1 year follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "SixMonthsClinical"
-* title = "Clinical response at 6 months follow-up"
+* name = "OneYearClinicalResponse"
+* title = "Clinical response at 1 year follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -38,77 +37,19 @@ Description: "Clinical questionnaire response at 6 months follow-up"
 * item[+]
   * linkId =  "Tumor-Factors"
   * type = #group
-  * text = "Tumor factors"
+  * text = "Tumor factors at 1 year follow-up"
   * required = true
 
   * item[+]
-    * linkId = "received_surgery"
-    * type = #boolean
-    * text = "Has the patient received surgery?"
-    * required = true
-    
-  * item[+]
-    * linkId = "TNMPT_BREAST"
+    * linkId = "MUTBC"
     * type = #choice
-    * text = "Pathological tumor stage (per AJCC 5th - 7th Ed.)"
-    * answerOption[+].valueString = "pTX"
-    * answerOption[+].valueString = "pT0"
-    * answerOption[+].valueString = "pTis"
-    * answerOption[+].valueString = "pT1"
-    * answerOption[+].valueString = "pT2"
-    * answerOption[+].valueString = "pT3"
-    * answerOption[+].valueString = "pT4"
-    * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery)
-    * required = true
-
-  * item[+]
-    * linkId = "TNMPN_BREAST"
-    * type = #choice
-    * text = "Pathological nodal stage (per AJCC 5th - 7th Ed.)"
-    * answerOption[+].valueString = "pNX"
-    * answerOption[+].valueString = "pN0"
-    * answerOption[+].valueString = "pN1"
-    * answerOption[+].valueString = "pN2"
-    * answerOption[+].valueString = "pN3"
-    * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery)
-    * required = true
-
-  * item[+]
-    * linkId = "TNMPM_BREAST"
-    * type = #choice
-    * text = "Pathological distant metastasis (per AJCC 5th - 7th Ed.)"
-    * answerOption[+].valueString = "pMX"
-    * answerOption[+].valueString = "pM0"
-    * answerOption[+].valueString = "pM1"
-    * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery)
-    * required = true
-
-  * item[+]
-    * linkId = "SIZEINV"
-    * type = #integer
-    * text = "Indicate size of invasive component of tumor (in mm, 999 if unknown)"
-    * required = true
-    * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery)
-
-  * item[+]
-    * linkId = "NumLymphNodesResect"
-    * type = #integer
-    * text = "Number of lymph nodes resected (999 if unknown)"
-    * required = true
-    * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery)
-
-  * item[+]
-    * linkId = "LYMPHINV_BREAST"
-    * type = #integer
-    * text = "Number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown)"
-    * required = true
-    * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery)
+    * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
+    * answerOption[+].valueString = "No mutation"
+    * answerOption[+].valueString = "BRCA 1"
+    * answerOption[+].valueString = "BRCA 2"
+    * answerOption[+].valueString = "Other mutation"
+    * answerOption[+].valueString = "Not tested"
+    * required = true  
 
 // GROUP 3 - TREATMENT VARIABLES 
 * item[+]
@@ -390,95 +331,63 @@ Description: "Clinical questionnaire response at 6 months follow-up"
       * answerString = "yes, but the treatment has stopped"
     * required = true
 
-// GROUP 4 - DISUTILITY OF CARE
+
+// GROUP 5 - Survival and disease control
 * item[+]
-  * linkId =  "DisutilityofCare"
+  * linkId =  "Survival-and-Disease-control"
   * type = #group
-  * text = "Disutility of care"
+  * text = "Survival and disease control at 1 year follow-up"
   * required = true
 
   * item[+]
-    * linkId = "REOP_BREAST"
-    * type = #choice
-    * text = "Indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
-    * answerValueSet = Canonical(InvolvedMarginsValueSet)    
-    * enableWhen[+]
-      * question = "SURGERY_BREAST"
-      * operator = #!=
-      * answerCoding = BreastSurgeryTypesCodeSystem#999
+    * linkId =  "Survival-Q0"
+    * type = #boolean
+    * text = "Was the intent of the treatment curative?"
     * required = true
-  
+
   * item[+]
-    * linkId = "REOPDATE_BREAST"
+    * linkId =  "MalignancyRecur"
+    * type = #choice
+    * text = "Is there evidence of local, regional or distant recurrence of neoplasm? (In case of multiple recurrences, please report the most severe)"
+    * answerValueSet = Canonical(RecurrenceValueSet)
+    * insert enableWhenTrue(Survival-Q0)
+
+  * item[+]
+    * linkId =  "RecurMethod"
+    * type = #choice
+    * text = "What was the method of confirming recurrence of neoplasm?"
+    * answerOption[+].valueString = "Radiological diagnosis"
+    * answerOption[+].valueString = "Histological diagnosis"
+    * answerOption[+].valueString = "Radiological and histological diagnosis"
+    * answerOption[+].valueString = "Unknown"
+    * insert enableWhenRecurrence(#1)
+    * insert enableWhenRecurrence(#2)
+    * insert enableWhenRecurrence(#3)
+    * enableBehavior = #any
+
+  * item[+]
+    * linkId =  "RecurDateCancer"
     * type = #date
-    * text = "Please provide the date of the reoperation due to positive margins:"
-    * enableWhen[+]
-      * question = "REOP_BREAST"
-      * operator = #!=
-      * answerCoding = InvolvedMarginsCodeSystem#999
-    * enableWhen[+]
-      * question = "REOP_BREAST"
-      * operator = #!=
-      * answerCoding = InvolvedMarginsCodeSystem#0
-    * enableBehavior = #all
+    * text = "What is the date of cancer recurrence?"
+    * insert enableWhenRecurrence(#1)
+    * insert enableWhenRecurrence(#2)
+    * insert enableWhenRecurrence(#3)
+    * enableBehavior = #any
+
+  * item[+]
+    * linkId =  "VitalStatus"
+    * type = #boolean
+    * text = "Has the person deceased?"
     * required = true
 
   * item[+]
-    * linkId = "ComplicationImpact"
-    * type = #choice
-    * text = "Please state the impact of the complication experienced by the patient:"
-    * answerValueSet = Canonical(ComplicationImpactValueSet)    
-    * enableWhen[+]
-      * question = "TREATMENT_BREAST"
-      * operator = #!=
-      * answerCoding = TreatmentTypesCodeSystem#0
-    * enableWhen[+]
-      * question = "TREATMENT_BREAST"
-      * operator = #!=
-      * answerCoding = TreatmentTypesCodeSystem#999
-    * enableBehavior = #all
-    * required = true
-
+    * linkId =  "DeceasedDate"
+    * type = #date
+    * text = "What was the date of death of the person?"
+    * insert enableWhenTrue(VitalStatus)
 
   * item[+]
-    * linkId = "ComplicationAttrTreatment"
-    * type = #choice
-    * text = "Indicate whether the complication is attributable to treatment:"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Unknown"
-    * enableWhen[+]
-      * question = "TREATMENT_BREAST"
-      * operator = #!=
-      * answerCoding = ComplicationImpactCodeSystem#0
-    * enableWhen[+]
-      * question = "TREATMENT_BREAST"
-      * operator = #!=
-      * answerCoding = ComplicationImpactCodeSystem#999
-    * enableBehavior = #all
-
-    * required = true
-
-  * item[+]
-    * linkId = "COMPL_BREAST"
-    * type = #choice
-    * text = "Please indicate the type of complication:"
-    * answerOption[+].valueString = "Wound infection"
-    * answerOption[+].valueString = "Seroma/hematoma"
-    * answerOption[+].valueString = "Hemorrhage"
-    * answerOption[+].valueString = "Mastectomy skin flap necrosis"
-    * answerOption[+].valueString = "Partial autologous graft loss"
-    * answerOption[+].valueString = "Total autologous graft loss"
-    * answerOption[+].valueString = "Loss of implant"
-    * answerOption[+].valueString = "Thromboembolic event"
-    * answerOption[+].valueString = "Nerve damage"
-    * answerOption[+].valueString = "Delay wound healing/dehiscence"
-    * answerOption[+].valueString = "Skin toxicity"
-    * answerOption[+].valueString = "Pneumonia"
-    * answerOption[+].valueString = "Neutropenic sepsis"
-    * answerOption[+].valueString = "Unknown"
-    * enableWhen[+]
-      * question = "ComplicationAttrTreatment"
-      * operator = #=
-      * answerString = "Yes"
-    * required = true
+    * linkId =  "DEATHBC"
+    * type = #boolean
+    * text = "Is the death attributable to breast cancer?"
+    * insert enableWhenTrue(VitalStatus)

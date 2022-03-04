@@ -53,6 +53,8 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * type = #date
     * text = "In what year were you born?"
     * required = true
+// use extension to constrain the answer type to YYYY only. 
+
 
 // GROUP 3 - BASELINE CLINICAL FACTORS
 * item[+]
@@ -169,21 +171,36 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * linkId = "TNMCT_BREAST"
     * type = #choice
     * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalTumorStage)
+    * answerOption[+].valueString = "cTX"
+    * answerOption[+].valueString = "cT0"
+    * answerOption[+].valueString = "cTis"
+    * answerOption[+].valueString = "cT1"
+    * answerOption[+].valueString = "cT2"
+    * answerOption[+].valueString = "cT3"
+    * answerOption[+].valueString = "cT4"
+    * answerOption[+].valueString = "Unknown"
     * required = true   
- 
+
   * item[+]
     * linkId = "TNMCN_BREAST"
     * type = #choice
     * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalNodalStage)
+    * answerOption[+].valueString = "cNX"
+    * answerOption[+].valueString = "cN0"
+    * answerOption[+].valueString = "cN1"
+    * answerOption[+].valueString = "cN2"
+    * answerOption[+].valueString = "cN3"
+    * answerOption[+].valueString = "Unknown"
     * required = true
 
   * item[+]
     * linkId = "TNMCM_BREAST"
     * type = #choice
     * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
-    * answerValueSet = Canonical(ClinicalDistantMetastasis)
+    * answerOption[+].valueString = "cMX"
+    * answerOption[+].valueString = "cM0"
+    * answerOption[+].valueString = "cM1"
+    * answerOption[+].valueString = "Unknown"
     * required = true
 
   * item[+]

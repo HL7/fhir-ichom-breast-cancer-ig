@@ -14,28 +14,6 @@ Title: "Country"
 Description: "Country (e.g. of residence)"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 
-CodeSystem: RelationshipStatusCodeSystem
-Id: RelationshipStatusCodeSystem
-Title: "RelationshipStatusCodeSystem"
-Description: "Codes used in ICHOM relationship status that are not available yet in standard terminologies"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/relationship-status
-* ^caseSensitive = true
-
-* #not-married-partnered "Not married/partnered"
-* #married-partnered "Married/partnered"
-* #divorced-separated "Divorced/separated"
-* #unknown "unknown"
-
-ValueSet: RelationshipStatus
-Id: RelationshipStatus
-Title: "RelationshipStatus"
-Description: "Relationship Status"
-* RelationshipStatusCodeSystem#not-married-partnered
-* RelationshipStatusCodeSystem#married-partnered
-* RelationshipStatusCodeSystem#divorced-separated
-* $FHIRMS#W "Widowed"
-* RelationshipStatusCodeSystem#unknown
-
 // BASELINE CLINICAL FACTORS CodeSystems
 Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
 
@@ -72,138 +50,7 @@ Description: "Patient's documented history of comorbidities"
 * SACQPatientComorbidityCodeSystem#other-medical-problems
 
 
-// BASELINE TUMOR FACTORS CodeSystems
-CodeSystem: ClinicalTumorStageCodeSystem
-Id: ClinicalTumorStageCodeSystem
-Title: "Clinical Tumor Stage Code System"
-Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-tumor-stage
-* ^caseSensitive = true
-
-* #0 "cTX"
-* #1 "cT0"
-* #2 "cTis"
-* #3 "cT1"
-* #4 "cT2"
-* #5 "cT3"
-* #6 "cT4"
-* #999 "Unknown"
-
-ValueSet: ClinicalTumorStage
-Id: ClinicalTumorStage
-Title: "Clinical Tumor Stage"
-Description: "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
-* ^version  = 0.0.1
-* include codes from system ClinicalTumorStageCodeSystem
-
-
-CodeSystem: ClinicalNodalStageCodeSystem
-Id: ClinicalNodalStageCodeSystem
-Title: "Clinical Nodal Stage Code System"
-Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-nodal-stage
-* ^caseSensitive = true
-
-* #0 "cNX"
-* #1 "cN0"
-* #2 "cN1"
-* #3 "cN2"
-* #4 "cN3"
-* #999 "Unknown"
-
-ValueSet: ClinicalNodalStage
-Id: ClinicalNodalStage
-Title: "Clinical Nodal Stage"
-Description: "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
-* ^version  = 0.0.1
-* include codes from system ClinicalTumorStageCodeSystem
-
-
-CodeSystem: ClinicalDistantMetastasisCodeSystem
-Id: ClinicalDistantMetastasisCodeSystem
-Title: "Clinical Distant Metastasis Code System"
-Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/clinical-distant-metastasis
-* ^caseSensitive = true
-
-* #0 "cMX"
-* #1 "cM0"
-* #2 "cM1"
-* #999 "Unknown"
-
-ValueSet: ClinicalDistantMetastasis
-Id: ClinicalDistantMetastasis
-Title: "Clinical Distant Metastasis"
-Description: "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
-* ^version  = 0.0.1
-* include codes from system ClinicalDistantMetastasisCodeSystem
-
-
-CodeSystem: PathologicalTumorStageCodeSystem
-Id: pathological-tumor-stage-codesystem
-Title: "Pathological Tumor Stage Code System"
-Description: "Pathological tumor stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-tumor-stage
-* ^caseSensitive = true
-
-* #0 "pTX"
-* #1 "pT0"
-* #2 "pTis"
-* #3 "pT1"
-* #4 "pT2"
-* #5 "pT3"
-* #6 "pT4"
-* #999 "Unknown"
-
-ValueSet: PathologicalTumorStage
-Id: pathological-tumor-stage
-Title: "Pathological Tumor Stage"
-Description: "Pathological tumor stage (per AJCC 5th - 7th Ed.)"
-* include codes from system PathologicalTumorStageCodeSystem
-
-
-CodeSystem: PathologicalNodalStageCodeSystem
-Id: pathological-nodal-stage-codesystem
-Title: "Pathological Nodal Stage Code System"
-Description: "Pathological nodal stage (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-nodal-stage
-* ^caseSensitive = true
-
-* #0 "pNX"
-* #1 "pN0"
-* #2 "pN1"
-* #3 "pN2"
-* #4 "pN3"
-* #999 "Unknown"
-
-ValueSet: PathologicalNodalStage
-Id: pathological-nodal-stage
-Title: "Pathological Nodal Stage"
-Description: "Pathological nodal stage (per AJCC 5th - 7th Ed.)"
-* include codes from system PathologicalNodalStageCodeSystem
-
-
-CodeSystem: PathologicalDistantMetastasisCodeSystem
-Id: pathological-distant-metastasis-codesystem
-Title: "Pathological Distant Metastasis Code System"
-Description: "Pathological distant metastasis (per AJCC 5th - 7th Ed.)"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/pathological-distant-metastasis
-* ^caseSensitive = true
-
-* #0 "pMx"
-* #1 "pM0"
-* #2 "pM1"
-* #999 "Unknown"
-
-ValueSet: PathologicalDistantMetastasis
-Id: pathological-distant-metastasis
-Title: "Pathological Distant Metastasis"
-Description: "Pathological distant metastasis (per AJCC 5th - 7th Ed.)"
-* include codes from system PathologicalDistantMetastasisCodeSystem
-
-
 // TREATMENT VARIABLES
-
 Alias: $treatment = http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 
 //TreatmentType
@@ -274,149 +121,6 @@ Description: "Codes indicating the kind of axilla surgery was performed"
 * include codes from system SurgeryAxillaCodeSystem
 
 
-
-// Axilla Clearance -- General anwers
-CodeSystem: BooleanExtendedCodeSystem
-Id: BooleanExtendedCodeSystem
-Title: "Boolean extended Code System"
-Description: "Extended Code System of boolean"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Boolean-Extended
-* ^caseSensitive = true
-
-* #0 "No"
-* #1 "Yes"
-* #999 "Unknown"
-
-ValueSet: BooleanExtendedValueSet
-Id: BooleanExtendedValueSet
-Title: "Boolean extended Code System"
-Description: "Extended Code System of boolean"
-* include codes from system BooleanExtendedCodeSystem
-
-
-// Delayed Reconstruction
-CodeSystem: DelayedReconstructionCodeSystem
-Id: DelayedReconstructionCodeSystem
-Title: "Delayed reconstruction Code System"
-Description: "Codes indicating type of delayed reconstruction"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Delayed-Reconstruction
-* ^caseSensitive = true
-* #0 "Delayed reconstruction  (direct/staged implant)"
-* #1 "Delayed reconstruction ( autologous)"
-* #2 "Delayed reconstruction  (implant/autologous)"
-* #999 "Unknown"
-
-ValueSet: DelayedReconstructionValueSet
-Id: DelayedReconstructionValueSet
-Title: "Delayed reconstruction Code System"
-Description:  "Codes indicating type of delayed reconstruction"
-* include codes from system DelayedReconstructionCodeSystem
-
-
-// Therapy Intent
-CodeSystem: TherapyIntentCodeSystem
-Id:  TherapyIntentCodeSystem
-Title: "Intent of Therapy Code System"
-Description: "Codes indicating the intent of Therapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Therapy-Intent
-* ^caseSensitive = true
-* #0 "Neoadjuvant"
-* #1 "Adjuvant"
-* #999 "Unknown"
-
-ValueSet: TherapyIntentValueSet
-Id: TherapyIntentValueSet
-Title: "Intent of Therapy ValueSet"
-Description: "Codes indicating the intent of Therapy"
-* include codes from system TherapyIntentCodeSystem
-
-
-// Location of radiotherapy
-CodeSystem: RadiotherapyLocationCodeSystem
-Id: RadiotherapyLocationCodeSystem
-Title: "Location of radiotherapy Code System"
-Description: "Codes indicating the location of radiotherapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Radiotherapy-location
-* ^caseSensitive = true
-
-* #0 "Breast"
-* #1 "Chest wall"
-* #2 "Axillary nodal irradiation"
-* #3 "Supraclavicular irradiation"
-* #4 "Internal mammary node irradiation"
-* #5 "Tumor bed boost"
-* #6 "Brain metastases"
-* #7 "Bone metastases"
-* #8 "Any metastatic site"
-* #9 "Other"
-* #999 "Unknown"
-
-ValueSet: RadiotherapyLocationValueSet
-Id: RadiotherapyLocationValueSet
-Title: "Location of radiotherapy ValueSet"
-Description: "Codes indicating the Location of radiotherapy"
-* include codes from system RadiotherapyLocationCodeSystem
-
-
-// ChemotherapyType
-CodeSystem: ChemotherapyTypeCodeSystem
-Id: ChemotherapyTypeCodeSystem
-Title: "Type of chemotherapy Code System"
-Description: "Codes indicating the type of chemotherapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Chemotherapy
-* ^caseSensitive = true
-* #0 "Anthracycline containing"
-* #1 "Taxane containing"
-* #2 "Platinum containing"
-* #3 "Other"
-* #999 "Unknown"
-
-ValueSet: ChemotherapyTypeValueSet
-Id: ChemotherapyTypeValueSet
-Title: "Type of chemotherapy ValueSet"
-Description: "Codes indicating the type of chemotherapy"
-* include codes from system ChemotherapyTypeCodeSystem
-
-
-// HormonalTherapyType
-CodeSystem: HormonalTherapyTypeCodeSystem
-Id: HormonalTherapyTypeCodeSystem
-Title: "Hormonal therapy type Code System"
-Description: "Codes indicating the type of hormonal therapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Hormonal-Therapy
-* ^caseSensitive = true
-* #0 "Aromatase inhibitor"
-* #1 "Selective estrogen-receptor modulator (e.g. Tamoxifen)"
-* #2 "Oophorectomy"
-* #3 "LHRH agonist"
-* #4 "Other"
-* #999 "Unknown"
-
-ValueSet: HormonalTherapyTypeValueSet
-Id: HormonalTherapyTypeValueSet
-Title: "Hormonal therapy type ValueSet"
-Description: "Codes indicating the type of hormonal therapy"
-* include codes from system HormonalTherapyTypeCodeSystem
-
-
-// Targeted Therapy
-CodeSystem: TargetedTherapyCodeSystem
-Id: TargetedTherapyCodeSystem
-Title: "Targeted Therapy Code System"
-Description: "Codes indicating type of targeted therapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Targeted-Therapy
-* ^caseSensitive = true
-* #0 "Her-2 targeting therapy"
-* #1 "Other"
-* #999 "Unknown"
-
-ValueSet: TargetedTherapyValueSet
-Id: TargetedTherapyValueSet
-Title: "Targeted Therapy ValueSet"
-Description: "Codes indicating type of targeted therapy"
-* include codes from system TargetedTherapyCodeSystem
-
-
 // Reoperations
 CodeSystem: ReoperationsCodeSystem
 Id: ReoperationsCodeSystem
@@ -435,27 +139,6 @@ Id: ReoperationsValueSet
 Title: "Reoperations ValueSet"
 Description: "Codes indicating if the patient received a reoperation"
 * include codes from system ReoperationsCodeSystem
-
-
-// Systemic therapy
-CodeSystem: SystemicTherapyCodeSystem
-Id: SystemicTherapyCodeSystem
-Title: "Systemic Therapy Code System"
-Description: "Codes indicating if the patient received systemic therapy"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Systemic-Therapy
-* ^caseSensitive = true
-* #0 "no, never had systemic treatment"
-* #1 "yes, but the treatment has stopped"
-* #2 "yes, on chemotherapy"
-* #3 "yes, on targeted therapy"
-* #4 "yes, on hormone therapy"
-* #999 "unkown"
-
-ValueSet: SystemicTherapyValueSet
-Id: SystemicTherapyValueSet
-Title: "Systemic Therapy ValueSet"
-Description: "Codes indicating if the patient received systemic therapy"
-* include codes from system SystemicTherapyCodeSystem
 
 // DISUTILITY OF CARE
 // Involved margins reoperation
@@ -506,36 +189,6 @@ Description: "Codes indicating if the impact of complications"
 * include codes from system ComplicationImpactCodeSystem
 
 
-//Complication type
-CodeSystem: ComplicationTypeCodeSystem
-Id: ComplicationTypeCodeSystem
-Title: "Complication type Code System"
-Description: "Codes indicating the type of complication"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Complication-type
-* ^caseSensitive = true
-* #0 "Wound infection"
-* #1 "Seroma/hematoma"
-* #2 "Hemorrhage"
-* #3 "Mastectomy skin flap necrosis"
-* #4 "Partial autologous graft loss"
-* #5 "Total autologous graft loss"
-* #6 "Loss of implant"
-* #7 "Thromboembolic event"
-* #8 "Nerve damage"
-* #9 "Delay wound healing/dehiscence"
-* #10 "Skin toxicity"
-* #11 "Pneumonia"
-* #12 "Neutropenic sepsis"
-* #999  "Unknown"
-
-ValueSet: ComplicationTypeValueSet
-Id: ComplicationTypeValueSet
-Title: "Complication type ValueSet"
-Description: "Codes indicating the type of complication"
-* include codes from system ComplicationTypeCodeSystem
-
-
-
 // DEGREE OF HEALTH - EORTC-QLQ CodeSystem
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
@@ -576,27 +229,6 @@ Description: "Valueset used in the Patient Reported Outcomes Instrument about qu
 * ^version  = 0.0.1
 * include codes from system BreastQCodeSystem
 
-CodeSystem: BreastQSurgeryCodeSystem
-Id: BreastQSurgeryCodeSystem
-Title: "Type of surgery for BreastQ"
-Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q-surgery
-* ^caseSensitive = true
-
-* #0 "Breast conserving surgery"
-* #1 "Breast conserving surgery with mammoplasty" 
-* #2 "Mastectomy without immediate reconstruction"
-* #3 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* #4 "Mastectomy with immediate reconstruction (autologous)"
-* #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
-
-ValueSet: BreastQSurgeryValueSet 
-Id: BreastQSurgeryValueSet
-Title: "Type of surgery for the Patient Reported Outcomes Instrument (BreastQ)"
-Description: "Type of surgery of the patient in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^version  = 0.0.1
-* include codes from system BreastQSurgeryCodeSystem
-
 
 // DEGREE OF HEALTH - FACT-ES CodeSystem
 CodeSystem: FACTESCodeSystem
@@ -619,6 +251,8 @@ Description: "Valueset used in the Functional Assessment of Cancer Therapy quest
 * ^version  = 0.0.1
 * include codes from system FACTESCodeSystem
 
+
+// Survival and disease control
 CodeSystem: RecurrenceCodeSystem
 Id: RecurrenceCodeSystem 
 Title: "Recurrence of neoplasm"
@@ -639,21 +273,4 @@ Description: "Codes used to indicate recurrence of neoplasm"
 * ^version  = 0.0.1
 * include codes from system RecurrenceCodeSystem
 
-CodeSystem: RecurrenceMethodCodeSystem
-Id: RecurrenceMethodCodeSystem
-Title: "Method of confirming recurrence"
-Description: "Codes used describe the method to confirm recurrence of neoplasm"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence_method
-* ^caseSensitive = true
 
-* #0 "Radiological diagnosis"
-* #1 "Histological diagnosis"
-* #2 "Radiological and histological diagnosis"
-* #999 "Unknown"
-
-ValueSet: RecurrenceMethodValueSet
-Id: RecurrenceMethodValueSet
-Title: "Method of confirming recurrence"
-Description: "Codes used describe the method to confirm recurrence of neoplasm"
-* ^version  = 0.0.1
-* include codes from system RecurrenceMethodCodeSystem

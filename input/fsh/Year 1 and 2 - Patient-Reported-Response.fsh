@@ -1,19 +1,18 @@
-// Rulesets:
-// shorthand notation to only show a particular question based on the type of comorbidity
-RuleSet: enableWhenComorbidity(code)
-* enableWhen
-  * question = "ComorbiditiesSACQ"
+// shorthand notation to only show questions based on the surgery the patient received
+RuleSet: enableWhenSurgeryType(code)
+* enableWhen[+]
+  * question = "BreastQ_Surgery"
   * operator = #=
-  * answerCoding = {code}
+  * answerCoding = BreastSurgeryTypesCodeSystem{code}
 
-Instance: BaselinePatientReported
+Instance: Year1and2PatientReported
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Patient-reported response during baseline (first doctors' visit)"
+Description: "Patient-reported response at 1 and 2 years follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "BaselinePatientReported"
-* title = "Patient reported response at baseline"
+* name = "Year1and2PatientReported"
+* title = "Patient reported response at 1 and 2 years follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -34,259 +33,6 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
     * type = #string
     * text = "What is your last name?"
     * required = true
-
-// GROUP 2 - DEMOGRAPHICS
-* item[+]
-  * linkId =  "Demographics"
-  * type = #group
-  * text = "Demographic factors"
-  * required = true
-
-  * item[+]
-    * linkId = "Sex"
-    * type = #choice
-    * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsSex)
-    * required = true
-
-  * item[+]
-    * linkId = "COUNTRY"
-    * type = #choice
-    * text = "What is your country of residence?"
-    * answerValueSet = Canonical(DemographicCountry)
-    * required = true
-
-  * item[+]
-    * linkId = "Ethnicity"
-    * type = #string
-    * text = "Please indicate the ethnicity that you identify with."
-    * required = true
-      //Canonical is missing
-
-  * item[+]
-    * linkId = "Race"
-    * type = #string
-    * text = "Please indicate the biological race that you identify with."
-    * required = true
-      //Canonical is missing
- 
-  * item[+]
-    * linkId = "EducationLevel"
-    * type = #choice
-    * text = "Please indicate your highest level of schooling."
-    * answerOption[+].valueString = "None"
-    * answerOption[+].valueString = "Primary"
-    * answerOption[+].valueString = "Secondary"
-    * answerOption[+].valueString = "Tertiary"
-    * required = true
-   
-  * item[+]
-    * linkId = "RelationshipStatus"
-    * type = #choice
-    * text = "Please indicate your current relationship status."
-    * required = true
-    * answerOption[+].valueString = "Not married/partnered"
-    * answerOption[+].valueString = "Married/partnered"
-    * answerOption[+].valueString = "Divorced/separated"
-    * answerOption[+].valueString = "Widowed"
-    * answerOption[+].valueString = "unknown"
-
-  * item[+]
-    * linkId = "MENOPAUSE"
-    * type = #choice
-    * text = "What is your current menopausal status?"
-    * answerOption[+].valueString = "Pre-menopause"
-    * answerOption[+].valueString = "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
-    * answerOption[+].valueString = "I don't know what my current menopausal status is"
-    * enableWhen
-      * question = "Sex"
-      * operator = #=
-      * answerCoding = http://hl7.org/fhir/administrative-gender#female
-    * required = true
-
-// GROUP 3 - BASELINE CLINICAL FACTORS
-* item[+]
-  * linkId =  "Baseline-Clinical-Factors"
-  * type = #group
-  * text = "Clinical factors"
-  * required = true
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ"
-    * type = #choice
-    * text = "Have you been told by a doctor that you have any of the following?"
-    * answerValueSet = Canonical(SACQPatientComorbidityHistory)
-    * required = true
-    * repeats = true
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_HeartDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for heart disease (For example, angina, heart failure, or heart attack)?"
-    * insert enableWhenComorbidity($SCT#56265001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_HeartDiseaseFU2"
-    * type = #boolean
-    * text = "Does your heart disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#56265001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_HighBloodPressureFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for high blood pressure?"
-    * insert enableWhenComorbidity($SCT#38341003)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_HighBloodPressureFU2"
-    * type = #boolean
-    * text = "Does your high blood pressure limit your activities?"
-    * insert enableWhenComorbidity($SCT#38341003)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_LungDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for lung disease?"
-    * insert enableWhenComorbidity($SCT#19829001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_LungDiseaseFU2"
-    * type = #boolean
-    * text = "Does your lung disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#19829001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_DiabetesFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for diabetes?"
-    * insert enableWhenComorbidity($SCT#73211009)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_DiabetesFU2"
-    * type = #boolean
-    * text = "Does your diabetes limit your activities?"
-    * insert enableWhenComorbidity($SCT#73211009)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_StomachDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for an ulcer or stomach disease?"
-    * insert enableWhenComorbidity($SCT#429040005)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_StomachDiseaseFU2"
-    * type = #boolean
-    * text = "Does your ulcer or stomach disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#429040005)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_KidneyDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for kidney disease?"
-    * insert enableWhenComorbidity($SCT#90708001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_KidneyDiseaseFU2"
-    * type = #boolean
-    * text = "Does your kidney disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#90708001)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_LiverDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for liver disease?"
-    * insert enableWhenComorbidity($SCT#235856003)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_LiverDiseaseFU2"
-    * type = #boolean
-    * text = "Does your liver disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#235856003)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_BloodDiseaseFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for anemia or other blood disease?"
-    * insert enableWhenComorbidity($SCT#271737000)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_BloodDiseaseFU2"
-    * type = #boolean
-    * text = "Does your anemia or other blood disease limit your activities?"
-    * insert enableWhenComorbidity($SCT#271737000)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_CancerFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for cancer/another cancer?"
-    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#cancer-within-5yrs)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_CancerFU2"
-    * type = #boolean
-    * text = "Does your cancer/other cancer limit your activities?"
-    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#cancer-within-5yrs)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_DepressionFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for depression?"
-    * insert enableWhenComorbidity($SCT#35489007)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_DepressionFU2"
-    * type = #boolean
-    * text = "Does your depression limit your activities?"
-    * insert enableWhenComorbidity($SCT#35489007)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_OsteoarthritisFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for osteoarthritis/degenerative arthritis?"
-    * insert enableWhenComorbidity($SCT#396275006)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_OsteoarthritisFU2"
-    * type = #boolean
-    * text = "Does your osteoarthritis/degenerative arthritis limit your activities?"
-    * insert enableWhenComorbidity($SCT#396275006)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_BackPainFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for back pain?"
-    * insert enableWhenComorbidity($SCT#161891005)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_BackPainFU2"
-    * type = #boolean
-    * text = "Does your back pain limit your activities?"
-    * insert enableWhenComorbidity($SCT#161891005)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_RheumatoidArthritisFU1"
-    * type = #boolean
-    * text = "Do you receive treatment for rheumatoid arthritis?"
-    * insert enableWhenComorbidity($SCT#69896004)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_RheumatoidArthritisFU2"
-    * type = #boolean
-    * text = "Does your rheumatoid arthritis limit your activities?"
-    * insert enableWhenComorbidity($SCT#69896004)
-
-  * item[+]
-    * linkId = "ComorbiditiesSACQ_Other"
-    * type = #text
-    * text = "What other medical problems are you experiencing?"
-    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#other-medical-problems)
-
-  // * item[+]
-  //   * linkId = "ComorbiditiesSACQ_Score"
-  //   * type = #integer
-  //   * text = "What is the total summed score of the patient's SACQ responses?"
-  //   * maxLength = 2
-  // Add answerOptions to limit the possible answers?
 
 // GROUP 5 - DEGREE OF HEALTH
 * item[+]
@@ -716,40 +462,366 @@ Description: "Patient-reported response during baseline (first doctors' visit)"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
-// BREASTQ
+// BreastQ
 * item[+]
   * linkId = "Degree-of-Health-BreastQ"
-  * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+  * text = "Degree of Health BreastQ"
+  * type = #group   
+    
+  * item[+]
+    * linkId =  "BreastQ_Surgery"
+    * type = #choice
+    * text = "Which type of surgery did you receive?"
+    * answerValueSet = Canonical(BreastSurgeryTypeValueSet) 
+    * required = true
+
+// Group 1 - Patients with mastectomy without immediate reconstruction
+  * item[+]
+    * linkId =  "Group_mastectomy-posttreatment"
+    * type = #group
+    * text = "With your breast area in mind, in the past 2 weeks, 
     how satisfied or dissatisfied have you been with:"
-  * type = #group  
-  
-  * item[+]
-    * linkId =  "BREASTQMAST_Q01"
-    * type = #choice
-    * text = "How you look in the mirror clothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * insert enableWhenSurgeryType(#2)
+    * enableBehavior = #all
 
-  * item[+]
-    * linkId =  "BREASTQMAST_Q02"
-    * type = #choice
-    * text = "How comfortable your bras fit?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId =  "BREASTQMASTP_Q01"
+      * type = #choice
+      * text = "How you look in the mirror clothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "a"
+      * insert enableWhenSurgeryType(#2)
 
-  * item[+]
-    * linkId =  "BREASTQMAST_Q03"
-    * type = #choice
-    * text = "Being able to wear clothing that is more fitted?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId =  "BREASTQMASTP_Q02"
+      * type = #choice
+      * text = "How comfortable your bras fit?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "b"
+      * insert enableWhenSurgeryType(#2)
 
+    * item[+]
+      * linkId =  "BREASTQMASTP_Q03"
+      * type = #choice
+      * text = "Being able to wear clothing that is more fitted?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "c"
+      * insert enableWhenSurgeryType(#2)
+
+    * item[+]
+      * linkId =  "BREASTQMASTP_Q04"
+      * type = #choice
+      * text = "How you look in the mirror unclothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "d"
+      * insert enableWhenSurgeryType(#2)
+
+
+  // Group 2 - Patients with breast conserving therapy (#0 and #1)
   * item[+]
-    * linkId =  "BREASTQMAST_Q04"
-    * type = #choice
-    * text = "How you look in the mirror unclothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * linkId =  "Group-BCT-posttreatment"
+    * type = #group
+    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+    how satisfied or dissatisfied have you been with:"
+    * insert enableWhenSurgeryType(#0)
+    * insert enableWhenSurgeryType(#1)
+    * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q01"
+      * type = #choice
+      * text = "How you look in the mirror clothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "a"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q02"
+      * type = #choice
+      * text = "The shape of your lumpectomy breast when you are wearing a bra?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "b"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+      
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q03"
+      * type = #choice
+      * text = "How normal you feel in your clothes?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "c"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q04"
+      * type = #choice
+      * text = "Being able to wear clothing that is more fitted?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "d"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+      
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q05"
+      * type = #choice
+      * text = "How your lumpectomy breast sits/hangs?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "e"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q06"
+      * type = #choice
+      * text = "How smoothly shaped your lumpectomy breast looks?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "f"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q07"
+      * type = #choice
+      * text = "The contour (outline) of your lumpectomy breast?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "g"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q08"
+      * type = #choice
+      * text = "How equal in size your breasts are to each other?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "h"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q09"
+      * type = #choice
+      * text = "How normal your lumpectomy breast looks?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "i"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q10"
+      * type = #choice
+      * text = "How much your breast look the same?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "j"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQBCTP_Q11"
+      * type = #choice
+      * text = "How you look in the mirror unclothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "k"
+      * insert enableWhenSurgeryType(#0)
+      * insert enableWhenSurgeryType(#1)
+      * enableBehavior = #any
+
+  // Group 3 - Patients with reconstruction (#3, #4 and #5) 
+  * item[+]
+    * linkId =  "Group_reconstruction-posttreatment"
+    * type = #group
+    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+    how satisfied or dissatisfied have you been with:"
+    * insert enableWhenSurgeryType(#3)
+    * insert enableWhenSurgeryType(#4)
+    * insert enableWhenSurgeryType(#5)
+    * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q01"
+      * type = #choice
+      * text = "How you look in the mirror clothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "a"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q02"
+      * type = #choice
+      * text = "The shape of your reconstructed breast(s) when you are wearing a bra?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "b"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q03"
+      * type = #choice
+      * text = "How normal you feel in your clothes?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "c"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q04"
+      * type = #choice
+      * text = "The size of your reconstructed breast(s)?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "d"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q05"
+      * type = #choice
+      * text = "Being able to wear clothing that is more fitted?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "e"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q06"
+      * type = #choice
+      * text = "How your breasts are lined up in relation to each other?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "f"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q07"
+      * type = #choice
+      * text =  "How comfortable your bras fit?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "g"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q08"
+      * type = #choice
+      * text = "The softness of your reconstructed breast(s)?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "h"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q09"
+      * type = #choice
+      * text = "How equal in size your breasts are to each other?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "i"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q10"
+      * type = #choice
+      * text = "How natural your reconstructed breast(s) looks?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "j"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+    * item[+]
+      * linkId =  "BREASTQRECP_Q11"
+      * type = #choice
+      * text = "How naturally your reconstructed breast(s) sits/hangs?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "k"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q12"
+      * type = #choice
+      * text = "How your reconstructed breast(s) feel to touch?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "l"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q13"
+      * type = #choice
+      * text = "How much your reconstructed breast(s) feels like a natural part of your body?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "m"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q14"
+      * type = #choice
+      * text = "How closely matched your breasts are to each other?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "n"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+    * item[+]
+      * linkId =  "BREASTQRECP_Q15"
+      * type = #choice
+      * text = "How your reconstructed breast(s) look now compared to before you had any breast surgery?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "o"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
+    * item[+]
+      * linkId =  "BREASTQRECP_Q16"
+      * type = #choice
+      * text = "How you look in the mirror unclothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * prefix = "p"
+      * insert enableWhenSurgeryType(#3)
+      * insert enableWhenSurgeryType(#4)
+      * insert enableWhenSurgeryType(#5)
+      * enableBehavior = #any
+
 
 // FACT-ES
 * item[+]

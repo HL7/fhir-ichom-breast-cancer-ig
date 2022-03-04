@@ -4,13 +4,13 @@ Usage: #definition
 Description: "Patient-reported response at 6 months follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "Six-Months-Patient-Reported"
+* name = "SixMonthsPatientReported"
 * title = "Patient reported response at 6 months follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "Six-Months-General-Information"
+  * linkId =  "General-Information"
   * type = #group
   * text = "General information"
   * required = true
