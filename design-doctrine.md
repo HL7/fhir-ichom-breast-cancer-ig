@@ -10,4 +10,4 @@
 * keep IG publisher and sushi up to date - always use the latest version
 
 # AnswerOptions versus ValueSet
-* Rule of thump is: Use Valuesets when the list of permitted answers consist of existing codes (e.g. gender) and/or when the list of permitted answers are repeatedly used in other questions. Otherwise, use answerOptions.
+* Rule of thumb is: Use Valuesets when the list of permitted answers consists of existing codes (e.g. gender) and/or when the list of permitted answers are repeatedly used in other questions. Otherwise, use answerOptions.

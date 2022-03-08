@@ -8,11 +8,24 @@ Title: "Sex of patient"
 Description: "Codes used in sex of patient"
 * include codes from system http://hl7.org/fhir/administrative-gender
 
-ValueSet: DemographicCountry
-Id: DemographicCountry
+ValueSet: DemographicFactorsCountry
+Id: DemographicFactorsCountry
 Title: "Country"
 Description: "Country (e.g. of residence)"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
+
+ValueSet: DemographicFactorsEthnicity
+Id: DemographicFactorsEthnicity
+Title: "Ethnicity"
+Description: "Codes used in ethnicity of patient"
+* include codes from system http://terminology.hl7.org/CodeSystem/v3-Ethnicity
+
+ValueSet: DemographicFactorsRace
+Id: DemographicFactorsRace
+Title: "Race"
+Description: "Codes used in race of patient"
+* include codes from  system http://terminology.hl7.org/CodeSystem/v3-Race
+
 
 // BASELINE CLINICAL FACTORS CodeSystems
 Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs

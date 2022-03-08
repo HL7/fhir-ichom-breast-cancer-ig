@@ -8,7 +8,7 @@ RuleSet: enableWhenTrue(question)
 Instance: BaselineClinical
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Clinical questionnaire response during baseline (first doctors' visit)"
+Description: "Clinical questionnaire response at baseline (first doctors' visit)"
 * insert PublicationInstanceRuleset
 
 * name = "BaselineClinical"
@@ -17,32 +17,32 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information"
+  * linkId =  "General-Information-01-Clinical"
   * type = #group
   * text = "General information"
   * required = true
 
   * item[+]
-    * linkId = "N/A"
+    * linkId = "N/A-01-Clinical"
     * type = #integer //or string
     * text = "What is the patient's ID?"
     * required = true
 
   * item[+]
-    * linkId = "LastName"
+    * linkId = "LastName-01-Clinical"
     * type = #string
     * text = "What is your last name?"
     * required = true
 
 // GROUP 2 - DEMOGRAPHICS
 * item[+]
-  * linkId =  "Demographics"
+  * linkId =  "Demographics-01"
   * type = #group
   * text = "Demographic factors"
   * required = true
 
   * item[+]
-    * linkId = "Sex"
+    * linkId = "Sex-01"
     * type = #choice
     * text = "Please indicate your sex at birth."
     * answerValueSet = Canonical(DemographicFactorsSex)
@@ -58,20 +58,20 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
 
 // GROUP 3 - BASELINE CLINICAL FACTORS
 * item[+]
-  * linkId =  "Baseline-Clinical-Factors"
+  * linkId =  "Baseline-Clinical-Factors-01"
   * type = #group
   * text = "Clinical factors"
   * required = true
 
   * item[+]
-    * linkId = "HeightValue"
+    * linkId = "HeightValue-01"
     * type = #integer
     * text =  "Please indicate your body height."
     * maxLength = 3
     * required = true
     
   * item[+]
-    * linkId = "HeightUnit" 
+    * linkId = "HeightUnit-01" 
     * type = #choice
     * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
     * answerOption[+].valueString = "cm"
@@ -79,14 +79,14 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "WeightValue"
+    * linkId = "WeightValue-01"
     * type = #integer
     * text = "Please indicate your body weight." 
     * maxLength = 3
     * required = true
 
   * item[+]
-    * linkId = "WeightUnit" 
+    * linkId = "WeightUnit-01" 
     * type = #choice
     * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
     * answerOption[+].valueString = "kilograms"
@@ -94,7 +94,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "LATERAL"
+    * linkId = "LATERAL-01"
     * type = #choice
     * text = "Indicate the laterality of breast cancer:"
     * answerOption[+].valueString = "Left breast"
@@ -103,7 +103,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "FIRSTBC"
+    * linkId = "FIRSTBC-01"
     * type = #choice
     * text = "Indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
     * answerOption[+].valueString = "Primary tumor"
@@ -113,19 +113,19 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
 
 // GROUP 4 - BASELINE TUMOR FACTORS
 * item[+]
-  * linkId =  "Baseline-Tumor-Factors"
+  * linkId =  "Baseline-Tumor-Factors-01"
   * type = #group
   * text = "Tumor factors"
   * required = true
 
   * item[+]
-    * linkId = "HistologicalDiagnosisDate"
+    * linkId = "HistologicalDiagnosisDate-01"
     * type = #date
     * text = "The initial date of histological diagnosis"
     * required = true    
 
   * item[+]
-    * linkId = "HISTOTYPE"
+    * linkId = "HISTOTYPE-01"
     * type = #choice
     * text = "Indicate histologic type of the tumor (select all that apply)"
     * answerOption[+].valueString = "Ductal carcinoma in situ"
@@ -137,7 +137,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * repeats = true
 
   * item[+]
-    * linkId = "MUTBC"
+    * linkId = "MUTBC-01"
     * type = #choice
     * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
     * answerOption[+].valueString = "No mutation"
@@ -148,7 +148,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "GRADEINV"
+    * linkId = "GRADEINV-01"
     * type = #choice
     * text = "Indicate grade of invasive component of tumor"
     * answerOption[+].valueString = "Grade 1"
@@ -158,7 +158,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "GRADEDCIS"
+    * linkId = "GRADEDCIS-01"
     * type = #choice
     * text = "Indicate tumor grade of DCIS component of tumor"
     * answerOption[+].valueString = "Low"
@@ -168,7 +168,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "TNMCT_BREAST"
+    * linkId = "TNMCT_BREAST-01"
     * type = #choice
     * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cTX"
@@ -182,7 +182,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true   
 
   * item[+]
-    * linkId = "TNMCN_BREAST"
+    * linkId = "TNMCN_BREAST-01"
     * type = #choice
     * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cNX"
@@ -194,7 +194,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "TNMCM_BREAST"
+    * linkId = "TNMCM_BREAST-01"
     * type = #choice
     * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cMX"
@@ -204,7 +204,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "ERSTATUS"
+    * linkId = "ERSTATUS-01"
     * type = #choice
     * text = "Indicate if the estrogen receptor status is positive"
     * answerOption[+].valueString = "No"
@@ -214,7 +214,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "PRSTATUS"
+    * linkId = "PRSTATUS-01"
     * type = #choice
     * text = "Indicate if the progesterone receptor status is positive"
     * answerOption[+].valueString = "No"
@@ -224,7 +224,7 @@ Description: "Clinical questionnaire response during baseline (first doctors' vi
     * required = true
 
   * item[+]
-    * linkId = "HER2STATUS"
+    * linkId = "HER2STATUS-01"
     * type = #choice
     * text = "Indicate if the HER2 receptor status is positive"
     * answerOption[+].valueString = "Negative"
