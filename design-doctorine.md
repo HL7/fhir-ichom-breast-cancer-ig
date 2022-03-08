@@ -12,7 +12,7 @@
 * will ignore neo-adjuvant and metastatic cases for now
 * top of the questionnaires needs to have instructions on how it should be filled out (see original PDFs for them)
 * "Date by DD/MM/YYYY; Please enter "999" if date is unknown": put a checkbox in at the beginning to signal that the date is known, this should enable a date picker
-* the inclusion criteria of the receptor status (ER, PR and HER2) can be ignored. These need to be filled in at baseline and are independent of the surgery, since these are based on the biopsy.
+* receptor status (ER, PR and HER2) can be filled in at baseline, and ignore using them as inclusion criteria
 
 
 ## Clinical data points
