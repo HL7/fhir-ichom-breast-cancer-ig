@@ -1,11 +1,25 @@
 ### Business needs
+This is a domain of knowledge IG: it focuses on representing the set's data elements in FHIR only and it does not aim to solve specific use cases. Concrete interaction patterns for information exchange are out of scope for this document.
+
+That said, to give you an idea where this set is applicable, here are a few example business needs to get you started:
+
 1. PROMs data capture: Leverage the FHIR infrastructure to transfer PROMs data (i.e. patients’ survey responses) from a third-party vendor to the EHR or data warehouse of healthcare providers.
 2. Transfer of ICHOM’s Set of Patient-Centered Outcome Measures to:
 	1. Health analytic tools (e.g. Health Catalyst)
 	2. Other provider organizations for the purpose of research or participation in a learning collaborative
-3. The ICHOM benchmarking platform
+3. Exchange of information with the [ICHOM benchmarking platform](https://www.ichom.org/global-benchmarking-platform)
 
-For each of these potential use cases, the FHIR infrastructure is leveraged to transfer de-identified, individual patient data (both PROMs and data extracted from the EHR or data warehouse) to another entity in a pre-defined data format.
+For each of these potential use cases, the FHIR infrastructure is leveraged to transfer de-identified, individual patient data (both PROMs and data extracted from the EHR or data warehouse) to another entity in a pre-defined data format. _does this sentence make sense in the new, data set only scope?_
+
+_question: what about these earlier use-cases?_
+
+> 1) The creation of interactive dashboards that allow healthcare organizations to compare their risk adjusted outcomes to the ICHOM global average with the goal of establishing learning collaboratives and setting a standard of excellence in patient outcomes. This platform will also allow for comparisons at the country level and is flexible enough to support comparisons across different groups as needed. 
+
+> 2) The ability to track and compare the outcomes that matter most to different cohorts of patients to guide quality improvement initiatives within a provider organization. 
+
+> 3) The ability to track individual patient outcomes against an average reference value to inform treatment decisions and facilitate shared decision making.
+_
+
 
 ### Actors
 * Health informaticist or IT professionals working within a healthcare provider organization.
