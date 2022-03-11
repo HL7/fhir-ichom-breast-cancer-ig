@@ -141,6 +141,7 @@ Title: "Reoperations Code System"
 Description: "Codes indicating if the patient received a reoperation"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/Reoperations
 * ^caseSensitive = true
+
 * #0 "No"
 * #1 "Breast reconstruction surgery"
 * #2 "Mastectomy"

@@ -8,11 +8,11 @@ RuleSet: enableWhenTrue(question)
 Instance: BaselineClinical
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Clinical questionnaire response at baseline (first doctors' visit)"
+Description: "Clinical response questionnaire at baseline (first doctors' visit)"
 * insert PublicationInstanceRuleset
 
 * name = "BaselineClinical"
-* title = "Clinical response at baseline"
+* title = "Clinical response questionnaire at baseline"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -24,14 +24,14 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
 
   * item[+]
     * linkId = "N/A-01-Clinical"
-    * type = #integer //or string
-    * text = "What is the patient's ID?"
+    * type = #integer 
+    * text = "What is the patient's medical record number?"
     * required = true
 
   * item[+]
     * linkId = "LastName-01-Clinical"
     * type = #string
-    * text = "What is your last name?"
+    * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 2 - DEMOGRAPHICS
@@ -50,15 +50,15 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
 
   * item[+]
     * linkId = "YearOfBirth"
-    * type = #date
+    * type = #string
     * text = "In what year were you born?"
     * required = true
-// use extension to constrain the answer type to YYYY only. 
+// How can we constrain the answer type to YYYY only?
 
 
-// GROUP 3 - BASELINE CLINICAL FACTORS
+// GROUP 3 - CLINICAL FACTORS
 * item[+]
-  * linkId =  "Baseline-Clinical-Factors-01"
+  * linkId =  "Clinical-Factors-01"
   * type = #group
   * text = "Clinical factors"
   * required = true
@@ -111,9 +111,9 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
     * answerOption[+].valueString = "New contralateral"
     * required = true
 
-// GROUP 4 - BASELINE TUMOR FACTORS
+// GROUP 4 - TUMOR FACTORS
 * item[+]
-  * linkId =  "Baseline-Tumor-Factors-01"
+  * linkId =  "Tumor-Factors-01"
   * type = #group
   * text = "Tumor factors"
   * required = true
@@ -121,13 +121,13 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "HistologicalDiagnosisDate-01"
     * type = #date
-    * text = "The initial date of histological diagnosis"
+    * text = "Indicate the initial date of histological diagnosis"
     * required = true    
 
   * item[+]
     * linkId = "HISTOTYPE-01"
     * type = #choice
-    * text = "Indicate histologic type of the tumor (select all that apply)"
+    * text = "Indicate the histologic type of the tumor (select all that apply)"
     * answerOption[+].valueString = "Ductal carcinoma in situ"
     * answerOption[+].valueString = "Invasive ductal carcinoma"
     * answerOption[+].valueString = "Invasive lobular carcinoma"
@@ -150,7 +150,7 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "GRADEINV-01"
     * type = #choice
-    * text = "Indicate grade of invasive component of tumor"
+    * text = "Indicate the grade of the invasive component of tumor"
     * answerOption[+].valueString = "Grade 1"
     * answerOption[+].valueString = "Grade 2"
     * answerOption[+].valueString = "Grade 3"
@@ -160,7 +160,7 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "GRADEDCIS-01"
     * type = #choice
-    * text = "Indicate tumor grade of DCIS component of tumor"
+    * text = "Indicate the tumor grade of DCIS component of tumor"
     * answerOption[+].valueString = "Low"
     * answerOption[+].valueString = "Intermediate"
     * answerOption[+].valueString = "High"
@@ -170,7 +170,7 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "TNMCT_BREAST-01"
     * type = #choice
-    * text = "Clinical tumor stage (per AJCC 5th - 7th Ed.)"
+    * text = "Indicate the clinical tumor stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cTX"
     * answerOption[+].valueString = "cT0"
     * answerOption[+].valueString = "cTis"
@@ -184,7 +184,7 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "TNMCN_BREAST-01"
     * type = #choice
-    * text = "Clinical nodal stage (per AJCC 5th - 7th Ed.)"
+    * text = "Indicate the clinical nodal stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cNX"
     * answerOption[+].valueString = "cN0"
     * answerOption[+].valueString = "cN1"
@@ -196,7 +196,7 @@ Description: "Clinical questionnaire response at baseline (first doctors' visit)
   * item[+]
     * linkId = "TNMCM_BREAST-01"
     * type = #choice
-    * text = "Clinical distant metastasis (per AJCC 5th - 7th Ed.)"
+    * text = "Indicate the clinical distant metastasis (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "cMX"
     * answerOption[+].valueString = "cM0"
     * answerOption[+].valueString = "cM1"
