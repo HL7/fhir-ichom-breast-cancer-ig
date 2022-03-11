@@ -31,7 +31,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
   * item[+]
     * linkId = "LastName-03-PatientReported"
     * type = #string
-    * text = "What is your last name?"
+    * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 5 - DEGREE OF HEALTH
@@ -479,8 +479,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
   * item[+]
     * linkId =  "Group_mastectomy-posttreatment-03"
     * type = #group
-    * text = "With your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
+    * text = "With your breast area in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#2)
     * enableBehavior = #all
 
@@ -521,8 +520,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
   * item[+]
     * linkId =  "Group-BCT-posttreatment-03"
     * type = #group
-    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
+    * text = "With your breasts in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#0)
     * insert enableWhenSurgeryType03(#1)
     * enableBehavior = #any
@@ -641,8 +639,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
   * item[+]
     * linkId =  "Group_reconstruction-posttreatment-03"
     * type = #group
-    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
+    * text = "With your breasts in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#3)
     * insert enableWhenSurgeryType03(#4)
     * insert enableWhenSurgeryType03(#5)

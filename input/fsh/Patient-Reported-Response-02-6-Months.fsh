@@ -24,7 +24,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
   * item[+]
     * linkId = "LastName-02-PatientReported"
     * type = #string
-    * text = "What is your last name?"
+    * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 5 - DEGREE OF HEALTH

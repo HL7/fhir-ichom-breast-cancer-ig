@@ -24,7 +24,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
   * item[+]
     * linkId = "LastName-04-PatientReported"
     * type = #string
-    * text = "What is your last name?"
+    * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 5 - DEGREE OF HEALTH
@@ -454,8 +454,6 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * text = "Have you had tingling hands or feet?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-
-
 
 // FACT-ES
 * item[+]

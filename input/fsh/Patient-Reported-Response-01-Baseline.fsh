@@ -25,14 +25,14 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
   * item[+]
     * linkId = "N/A-01-PatientReported"
-    * type = #integer //or string
+    * type = #integer 
     * text = "What is the patient's ID?"
     * required = true
 
   * item[+]
     * linkId = "LastName-01-PatientReported"
     * type = #string
-    * text = "What is your last name?"
+    * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 2 - DEMOGRAPHIC FACTORS
