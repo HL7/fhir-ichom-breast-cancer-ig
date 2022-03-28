@@ -1,12 +1,5 @@
-*fill in - Philips/ICHOM*
+You may notice that this FHIR IG is organized differently than the ICHOM reference guide and data dictionary. This is due to their different focuses or intended uses. The reference guide and data dictionary are meant to describe all of the data elements included in the Set so they are organized by data or variable type (e.g. Demographics, Baseline Clinical Factors). In contrast, this IG is meant to facilitate collection of the data elements. Therefore, it is organized by when when in the patient's care pathway the data is to be collected (e.g. Baseline, 1 year follow-up) and the source of the data (clinical or patient reported). Despite this difference in organization, the data elements with the FHIR IG and ICHOM's reference guide and data dictionary are completely aligned.
+
+*include graphic created by ICHOM here*
 
 *this page will provide a clear mapping between ICHOM data points as shown in the reference guide and corresponding FHIR artifacts.*
-
-*TODO: make it look better*
-
-# Case-Mix Variables
-## Demographic Factors
-All patients - [demographics questionnaire](Questionnaire-Demographics.html).
-
-#### Baseline Clinical Factors
-All patients - [comorbidities questionnaire](Questionnaire-SACQComorbidities.html).
