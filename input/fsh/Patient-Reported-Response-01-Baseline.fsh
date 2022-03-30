@@ -18,7 +18,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-01-PatientReported"
+  * linkId = "General-Information-01-PatientReported"
   * type = #group
   * text = "General information"
   * required = true
@@ -37,7 +37,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
 // GROUP 2 - DEMOGRAPHIC FACTORS
 * item[+]
-  * linkId =  "Demographics-01"
+  * linkId = "Demographics-01"
   * type = #group
   * text = "Demographic factors"
   * required = true
@@ -106,7 +106,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
 // GROUP 3 - BASELINE CLINICAL FACTORS
 * item[+]
-  * linkId =  "Baseline-Clinical-Factors-01"
+  * linkId = "Baseline-Clinical-Factors-01"
   * type = #group
   * text = "Clinical factors"
   * required = true
@@ -292,7 +292,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 * item[+]
   * linkId = "Degree-of-Health-EORTC-QLQ-01"
   * text = "Degree of Health - EORTC-QLQ"
-  * type = #group  
+  * type = #group
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05-01"
@@ -336,7 +336,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q06-Q28-01"
+    * linkId = "EORTC-QLQ-Q06-Q28-01"
     * type = #group
     * text = "During the past week:"
 
@@ -502,7 +502,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q29-Q30-01"
+    * linkId = "EORTC-QLQ-Q29-Q30-01"
     * type = #group
     * text = "For the following questions please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
 
@@ -533,7 +533,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * answerOption[+].valueInteger = 7
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q31-Q43-01"
+    * linkId = "EORTC-QLQ-Q31-Q43-01"
     * type = #group
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. 
   Please answer by selecting the answer that best applies to you. During the past week:"
@@ -630,7 +630,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q44-Q46-01"
+    * linkId = "EORTC-QLQ-Q44-Q46-01"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -656,7 +656,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * insert enableWhenTrue(EORTCQLQBR23_Q45-01) 
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q47-Q53-01"
+    * linkId = "EORTC-QLQ-Q47-Q53-01"
     * type = #group
     * text = "During the past week:"
 
@@ -721,31 +721,31 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * linkId = "Degree-of-Health-BreastQ-01"
   * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
     how satisfied or dissatisfied have you been with:"
-  * type = #group  
+  * type = #group
   
   * item[+]
-    * linkId =  "BREASTQMAST_Q01-01"
+    * linkId = "BREASTQMAST_Q01-01"
     * type = #choice
     * text = "How you look in the mirror clothed?"
     * answerValueSet = Canonical(BreastQValueSet)
     * required = true
 
   * item[+]
-    * linkId =  "BREASTQMAST_Q02-01"
+    * linkId = "BREASTQMAST_Q02-01"
     * type = #choice
     * text = "How comfortable your bras fit?"
     * answerValueSet = Canonical(BreastQValueSet)
     * required = true
 
   * item[+]
-    * linkId =  "BREASTQMAST_Q03-01"
+    * linkId = "BREASTQMAST_Q03-01"
     * type = #choice
     * text = "Being able to wear clothing that is more fitted?"
     * answerValueSet = Canonical(BreastQValueSet)
     * required = true
 
   * item[+]
-    * linkId =  "BREASTQMAST_Q04-01"
+    * linkId = "BREASTQMAST_Q04-01"
     * type = #choice
     * text = "How you look in the mirror unclothed?"
     * answerValueSet = Canonical(BreastQValueSet)
@@ -753,7 +753,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
 // FACT-ES
 * item[+]
-  * linkId =  "Degree-of-Health-FACTES-01"
+  * linkId = "Degree-of-Health-FACTES-01"
   * type = #group
   * text = "Please indicate your response as it applies to the past 7 days:"
 

@@ -10,7 +10,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-04-PatientReported"
+  * linkId = "General-Information-04-PatientReported"
   * type = #group
   * text = "General information"
   * required = true
@@ -31,7 +31,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
 * item[+]
   * linkId = "Degree-of-Health-EORTC-QLQ-04"
   * text = "Degree of Health - EORTC-QLQ"
-  * type = #group  
+  * type = #group
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05-04"
@@ -75,7 +75,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q06-Q28-04"
+    * linkId = "EORTC-QLQ-Q06-Q28-04"
     * type = #group
     * text = "During the past week:"
 
@@ -241,7 +241,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q29-Q30-04"
+    * linkId = "EORTC-QLQ-Q29-Q30-04"
     * type = #group
     * text = "For the following questions please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
 
@@ -272,7 +272,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * answerOption[+].valueInteger = 7
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q31-Q43-04"
+    * linkId = "EORTC-QLQ-Q31-Q43-04"
     * type = #group
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. 
   Please answer by selecting the answer that best applies to you. During the past week:"
@@ -369,7 +369,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q44-Q46-04"
+    * linkId = "EORTC-QLQ-Q44-Q46-04"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -395,7 +395,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
       * insert enableWhenTrue(EORTCQLQBR23_Q45-04) 
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q47-Q53-04"
+    * linkId = "EORTC-QLQ-Q47-Q53-04"
     * type = #group
     * text = "During the past week:"
 
@@ -457,7 +457,7 @@ Description: "Annual update of patient-reported response starting from year 3 of
 
 // FACT-ES
 * item[+]
-  * linkId =  "Degree-of-Health-FACTES-04"
+  * linkId = "Degree-of-Health-FACTES-04"
   * type = #group
   * text = "Please indicate your response as it applies to the past 7 days:"
 

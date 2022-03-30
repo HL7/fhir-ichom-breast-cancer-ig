@@ -17,7 +17,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-02-Clinical"
+  * linkId = "General-Information-02-Clinical"
   * type = #group
   * text = "General information"
   * required = true
@@ -36,7 +36,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
 // GROUP 2 - TUMOR FACTORS
 * item[+]
-  * linkId =  "Tumor-Factors-02"
+  * linkId = "Tumor-Factors-02"
   * type = #group
   * text = "Tumor factors"
   * required = true
@@ -112,7 +112,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
 // GROUP 3 - TREATMENT VARIABLES 
 * item[+]
-  * linkId =  "Treatment-Variables-02"
+  * linkId = "Treatment-Variables-02"
   * type = #group
   * text = "Treatment Variables at 6 months follow-up"
   * required = true
@@ -129,7 +129,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SURGERY_BREAST-02"
     * type = #choice
     * text = "Indicate the type of surgery the patient received during the last year:"
-    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)    
+    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
     * insert enableWhenTreatment02(#1)
     * required = true
 
@@ -151,7 +151,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SURGERYAX-02"
     * type = #choice
     * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
-    * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)    
+    * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)
     * insert enableWhenTreatment02(#2)
     * required = true
 
@@ -165,8 +165,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "SURGERYAXDATE-02"
     * type = #date
-    * text = "Please provide the date of surgery to the axilla:"  
-    * insert enableWhenTrue(SURGERYAXDATE-Known-02)    
+    * text = "Please provide the date of surgery to the axilla:"
+    * insert enableWhenTrue(SURGERYAXDATE-Known-02)
     * required = true
 
   * item[+]
@@ -198,7 +198,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * required = true
 // EnableWhen doesnt work with string answerOptions
 
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYAX2DATE-02"
     * type = #date
     * text = "Please provide the date of axillary clearance:"
@@ -209,9 +209,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "RECONSTRUCT-02"
     * type = #choice
     * text = "Indicate the type of delayed reconstruction the patient received during the last year:"
-    * answerOption[+].valueString = "Delayed reconstruction  (direct/staged implant)"
+    * answerOption[+].valueString = "Delayed reconstruction (direct/staged implant)"
     * answerOption[+].valueString = "Delayed reconstruction ( autologous)"
-    * answerOption[+].valueString = "Delayed reconstruction  (implant/autologous)"
+    * answerOption[+].valueString = "Delayed reconstruction (implant/autologous)"
     * answerOption[+].valueString = "Unknown"
     * insert enableWhenTreatment02(#3)
     * required = true
@@ -223,14 +223,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#3)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RECONSTRUCTDATE-02"
     * type = #date
     * text = "Please provide the date of delayed reconstruction:"
     * insert enableWhenTrue(RECONSTRUCTDATE-Known-02)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RADIOTX_BREAST-02"
     * type = #choice
     * text = "Please indicate the intent of radiotherapy:"
@@ -241,7 +241,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * required = true
     * repeats = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RADIOTXTYPE_BREAST-02"
     * type = #choice
     * text = "Indicate location/type of radiotherapy:"
@@ -266,7 +266,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#4)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RadioTxStartDate-02"
     * type = #date
     * text = "Please provide the start date of radiotherapy:"
@@ -338,7 +338,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(ChemoTxStopdate-Known-02)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTX_BREAST-02"
     * type = #choice
     * text = "Please indicate the intent of hormontherapy:"
@@ -348,7 +348,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#6)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXTYPE-02"
     * type = #choice
     * text = "Indicate the type of hormonal therapy (select all that apply):"
@@ -369,7 +369,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#6)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXSTARTDATE-02"
     * type = #date
     * text = "Please provide the start date of hormonal therapy:"
@@ -383,14 +383,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#6)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXSTOPDATE-02"
     * type = #date
     * text = "Please provide the stop date of hormonal therapy, if applicable:"
     * insert enableWhenTrue(HORMONTXSTOPDATE-Known-02)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "TARGETTX_BREAST-02"
     * type = #choice
     * text = "Indicate the type of targeted therapy:"
@@ -407,7 +407,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#7)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "TargetTxStartDate-02"
     * type = #date
     * text = "Please provide the start date of targeted therapy"
@@ -421,14 +421,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTreatment02(#7)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "TargetTxStopDate-02"
     * type = #date
     * text = "Please provide the stop date of targeted therapy"
     * insert enableWhenTrue(TargetTxStopDate-Known-02)
     * required = true
     
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYPATIENT-02"
     * type = #choice
     * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
@@ -448,17 +448,17 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "SURGERYPATIENT-02"
       * operator = #!=
       * answerCoding = ReoperationsCodeSystem#999
-    * enableBehavior = #all     
+    * enableBehavior = #all
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYDATEPATIENT-02"
     * type = #date
     * text = "When was the reoperation?"
-    * insert enableWhenTrue(SURGERYDATEPATIENT-Known-02)    
+    * insert enableWhenTrue(SURGERYDATEPATIENT-Known-02)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "SYSTPATIENT-02"
     * type = #choice
     * text = "Is the patient currently receiving systemic (ie drug) treatment for breast cancer?"
@@ -482,7 +482,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * required = true
 // enableWhen is not working here with answerString
 
-  * item[+]     
+  * item[+]
     * linkId = "SYSTDATEPATIENT-02"
     * type = #date
     * text = "When did the systemic treatment stop?"
@@ -491,7 +491,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
 // GROUP 4 - DISUTILITY OF CARE
 * item[+]
-  * linkId =  "DisutilityofCare-02"
+  * linkId = "DisutilityofCare-02"
   * type = #group
   * text = "Disutility of care"
   * required = true
@@ -500,7 +500,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "REOP_BREAST-02"
     * type = #choice
     * text = "Indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
-    * answerValueSet = Canonical(InvolvedMarginsValueSet)    
+    * answerValueSet = Canonical(InvolvedMarginsValueSet)
     * enableWhen[+]
       * question = "SURGERY_BREAST-02"
       * operator = #!=
@@ -519,8 +519,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "REOP_BREAST-02"
       * operator = #!=
       * answerCoding = InvolvedMarginsCodeSystem#0
-    * enableBehavior = #all  
-    * required = true    
+    * enableBehavior = #all
+    * required = true
 
   * item[+]
     * linkId = "REOPDATE_BREAST-02"
@@ -533,7 +533,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ComplicationImpact-02"
     * type = #choice
     * text = "Please state the impact of the complication experienced by the patient:"
-    * answerValueSet = Canonical(ComplicationImpactValueSet)    
+    * answerValueSet = Canonical(ComplicationImpactValueSet)
     * enableWhen[+]
       * question = "TREATMENT_BREAST-02"
       * operator = #!=

@@ -17,7 +17,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-01-Clinical"
+  * linkId = "General-Information-01-Clinical"
   * type = #group
   * text = "General information"
   * required = true
@@ -36,7 +36,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
 // GROUP 2 - DEMOGRAPHICS
 * item[+]
-  * linkId =  "Demographics-01"
+  * linkId = "Demographics-01"
   * type = #group
   * text = "Demographic factors"
   * required = true
@@ -54,12 +54,12 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "In what year were you born?"
     * required = true
     * maxLength = 4
-// How can we constrain the answer type to YYYY only?
+// For the future we need to allow only 4 digits as an answer, but we'll leave it as is for now
 
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
-  * linkId =  "Clinical-Factors-01"
+  * linkId = "Clinical-Factors-01"
   * type = #group
   * text = "Clinical factors"
   * required = true
@@ -67,7 +67,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "HeightValue-01"
     * type = #integer
-    * text =  "Please indicate your body height."
+    * text = "Please indicate your body height."
     * maxLength = 3
     * required = true
     
@@ -114,7 +114,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
 // GROUP 4 - TUMOR FACTORS
 * item[+]
-  * linkId =  "Tumor-Factors-01"
+  * linkId = "Tumor-Factors-01"
   * type = #group
   * text = "Tumor factors"
   * required = true
@@ -123,7 +123,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "HistologicalDiagnosisDate-01"
     * type = #date
     * text = "Indicate the initial date of histological diagnosis"
-    * required = true    
+    * required = true
 
   * item[+]
     * linkId = "HISTOTYPE-01"
@@ -180,7 +180,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerOption[+].valueString = "cT3"
     * answerOption[+].valueString = "cT4"
     * answerOption[+].valueString = "Unknown"
-    * required = true   
+    * required = true
 
   * item[+]
     * linkId = "TNMCN_BREAST-01"
@@ -214,6 +214,8 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerOption[+].valueString = "Unkown"
     * required = true
 
+// add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
+
   * item[+]
     * linkId = "PRSTATUS-01"
     * type = #choice
@@ -223,6 +225,8 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerOption[+].valueString = "Not performed"
     * answerOption[+].valueString = "Unkown"
     * required = true
+
+// add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
 
   * item[+]
     * linkId = "HER2STATUS-01"

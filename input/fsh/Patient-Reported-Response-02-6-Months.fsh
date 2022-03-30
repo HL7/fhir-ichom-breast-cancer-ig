@@ -10,7 +10,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-02-PatientReported"
+  * linkId = "General-Information-02-PatientReported"
   * type = #group
   * text = "General information"
   * required = true
@@ -31,7 +31,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 * item[+]
   * linkId = "Degree-of-Health-EORTC-QLQ-02"
   * text = "Degree of Health - EORTC-QLQ"
-  * type = #group  
+  * type = #group
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05-02"
@@ -75,7 +75,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q06-Q28-02"
+    * linkId = "EORTC-QLQ-Q06-Q28-02"
     * type = #group
     * text = "During the past week:"
 
@@ -241,7 +241,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q29-Q30-02"
+    * linkId = "EORTC-QLQ-Q29-Q30-02"
     * type = #group
     * text = "For the following questions please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
 
@@ -272,7 +272,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
       * answerOption[+].valueInteger = 7
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q31-Q43-02"
+    * linkId = "EORTC-QLQ-Q31-Q43-02"
     * type = #group
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. 
   Please answer by selecting the answer that best applies to you. During the past week:"
@@ -369,7 +369,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q44-Q46-02"
+    * linkId = "EORTC-QLQ-Q44-Q46-02"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -395,7 +395,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
       * insert enableWhenTrue(EORTCQLQBR23_Q45-02) 
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q47-Q53-02"
+    * linkId = "EORTC-QLQ-Q47-Q53-02"
     * type = #group
     * text = "During the past week:"
 
@@ -457,7 +457,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 
 // FACT-ES
 * item[+]
-  * linkId =  "Degree-of-Health-FACT-ES-02"
+  * linkId = "Degree-of-Health-FACT-ES-02"
   * type = #group
   * text = "Please indicate your response as it applies to the past 7 days:"
 

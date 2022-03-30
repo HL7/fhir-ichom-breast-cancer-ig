@@ -17,7 +17,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-03-PatientReported"
+  * linkId = "General-Information-03-PatientReported"
   * type = #group
   * text = "General information"
   * required = true
@@ -38,7 +38,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 * item[+]
   * linkId = "Degree-of-Health-EORTC-QLQ-03"
   * text = "Degree of Health - EORTC-QLQ"
-  * type = #group  
+  * type = #group
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05-03"
@@ -82,7 +82,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q06-Q28-03"
+    * linkId = "EORTC-QLQ-Q06-Q28-03"
     * type = #group
     * text = "During the past week:"
 
@@ -248,7 +248,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q29-Q30-03"
+    * linkId = "EORTC-QLQ-Q29-Q30-03"
     * type = #group
     * text = "For the following questions please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
 
@@ -279,7 +279,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * answerOption[+].valueInteger = 7
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q31-Q43-03"
+    * linkId = "EORTC-QLQ-Q31-Q43-03"
     * type = #group
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. 
   Please answer by selecting the answer that best applies to you. During the past week:"
@@ -376,7 +376,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * required = true
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q44-Q46-03"
+    * linkId = "EORTC-QLQ-Q44-Q46-03"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -402,7 +402,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenTrue(EORTCQLQBR23_Q45-03) 
 
   * item[+]
-    * linkId =  "EORTC-QLQ-Q47-Q53-03"
+    * linkId = "EORTC-QLQ-Q47-Q53-03"
     * type = #group
     * text = "During the past week:"
 
@@ -466,10 +466,10 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 * item[+]
   * linkId = "Degree-of-Health-BreastQ-03"
   * text = "Degree of Health BreastQ"
-  * type = #group   
+  * type = #group
     
   * item[+]
-    * linkId =  "BreastQ_Surgery-03"
+    * linkId = "BreastQ_Surgery-03"
     * type = #choice
     * text = "Which type of surgery did you receive?"
     * answerValueSet = Canonical(BreastSurgeryTypeValueSet) 
@@ -477,14 +477,14 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 
 // Group 1 - Patients with mastectomy without immediate reconstruction
   * item[+]
-    * linkId =  "Group_mastectomy-posttreatment-03"
+    * linkId = "Group_mastectomy-posttreatment-03"
     * type = #group
     * text = "With your breast area in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#2)
     * enableBehavior = #all
 
     * item[+]
-      * linkId =  "BREASTQMASTP_Q01-03"
+      * linkId = "BREASTQMASTP_Q01-03"
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -492,7 +492,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenSurgeryType03(#2)
 
     * item[+]
-      * linkId =  "BREASTQMASTP_Q02-03"
+      * linkId = "BREASTQMASTP_Q02-03"
       * type = #choice
       * text = "How comfortable your bras fit?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -500,7 +500,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenSurgeryType03(#2)
 
     * item[+]
-      * linkId =  "BREASTQMASTP_Q03-03"
+      * linkId = "BREASTQMASTP_Q03-03"
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -508,7 +508,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenSurgeryType03(#2)
 
     * item[+]
-      * linkId =  "BREASTQMASTP_Q04-03"
+      * linkId = "BREASTQMASTP_Q04-03"
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -518,7 +518,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 
   // Group 2 - Patients with breast conserving therapy (#0 and #1)
   * item[+]
-    * linkId =  "Group-BCT-posttreatment-03"
+    * linkId = "Group-BCT-posttreatment-03"
     * type = #group
     * text = "With your breasts in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#0)
@@ -526,7 +526,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
     * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q01-03"
+      * linkId = "BREASTQBCTP_Q01-03"
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -536,7 +536,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q02-03"
+      * linkId = "BREASTQBCTP_Q02-03"
       * type = #choice
       * text = "The shape of your lumpectomy breast when you are wearing a bra?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -546,7 +546,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
       
     * item[+]
-      * linkId =  "BREASTQBCTP_Q03-03"
+      * linkId = "BREASTQBCTP_Q03-03"
       * type = #choice
       * text = "How normal you feel in your clothes?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -556,7 +556,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q04-03"
+      * linkId = "BREASTQBCTP_Q04-03"
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -566,7 +566,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
       
     * item[+]
-      * linkId =  "BREASTQBCTP_Q05-03"
+      * linkId = "BREASTQBCTP_Q05-03"
       * type = #choice
       * text = "How your lumpectomy breast sits/hangs?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -576,7 +576,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q06-03"
+      * linkId = "BREASTQBCTP_Q06-03"
       * type = #choice
       * text = "How smoothly shaped your lumpectomy breast looks?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -586,7 +586,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q07-03"
+      * linkId = "BREASTQBCTP_Q07-03"
       * type = #choice
       * text = "The contour (outline) of your lumpectomy breast?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -596,7 +596,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q08-03"
+      * linkId = "BREASTQBCTP_Q08-03"
       * type = #choice
       * text = "How equal in size your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -606,7 +606,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q09-03"
+      * linkId = "BREASTQBCTP_Q09-03"
       * type = #choice
       * text = "How normal your lumpectomy breast looks?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -616,7 +616,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q10-03"
+      * linkId = "BREASTQBCTP_Q10-03"
       * type = #choice
       * text = "How much your breast look the same?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -626,7 +626,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQBCTP_Q11-03"
+      * linkId = "BREASTQBCTP_Q11-03"
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -637,7 +637,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 
   // Group 3 - Patients with reconstruction (#3, #4 and #5) 
   * item[+]
-    * linkId =  "Group_reconstruction-posttreatment-03"
+    * linkId = "Group_reconstruction-posttreatment-03"
     * type = #group
     * text = "With your breasts in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType03(#3)
@@ -646,7 +646,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
     * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q01-03"
+      * linkId = "BREASTQRECP_Q01-03"
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -657,7 +657,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q02-03"
+      * linkId = "BREASTQRECP_Q02-03"
       * type = #choice
       * text = "The shape of your reconstructed breast(s) when you are wearing a bra?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -668,7 +668,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q03-03"
+      * linkId = "BREASTQRECP_Q03-03"
       * type = #choice
       * text = "How normal you feel in your clothes?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -679,7 +679,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q04-03"
+      * linkId = "BREASTQRECP_Q04-03"
       * type = #choice
       * text = "The size of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -690,7 +690,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q05-03"
+      * linkId = "BREASTQRECP_Q05-03"
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -701,7 +701,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q06-03"
+      * linkId = "BREASTQRECP_Q06-03"
       * type = #choice
       * text = "How your breasts are lined up in relation to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -712,9 +712,9 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q07-03"
+      * linkId = "BREASTQRECP_Q07-03"
       * type = #choice
-      * text =  "How comfortable your bras fit?"
+      * text = "How comfortable your bras fit?"
       * answerValueSet = Canonical(BreastQValueSet)
       * prefix = "g"
       * insert enableWhenSurgeryType03(#3)
@@ -723,7 +723,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q08-03"
+      * linkId = "BREASTQRECP_Q08-03"
       * type = #choice
       * text = "The softness of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -734,7 +734,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q09-03"
+      * linkId = "BREASTQRECP_Q09-03"
       * type = #choice
       * text = "How equal in size your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -745,7 +745,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q10-03"
+      * linkId = "BREASTQRECP_Q10-03"
       * type = #choice
       * text = "How natural your reconstructed breast(s) looks?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -755,7 +755,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenSurgeryType03(#5)
       * enableBehavior = #any
     * item[+]
-      * linkId =  "BREASTQRECP_Q11-03"
+      * linkId = "BREASTQRECP_Q11-03"
       * type = #choice
       * text = "How naturally your reconstructed breast(s) sits/hangs?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -766,7 +766,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q12-03"
+      * linkId = "BREASTQRECP_Q12-03"
       * type = #choice
       * text = "How your reconstructed breast(s) feel to touch?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -777,7 +777,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q13-03"
+      * linkId = "BREASTQRECP_Q13-03"
       * type = #choice
       * text = "How much your reconstructed breast(s) feels like a natural part of your body?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -788,7 +788,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q14-03"
+      * linkId = "BREASTQRECP_Q14-03"
       * type = #choice
       * text = "How closely matched your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -798,7 +798,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * insert enableWhenSurgeryType03(#5)
       * enableBehavior = #any
     * item[+]
-      * linkId =  "BREASTQRECP_Q15-03"
+      * linkId = "BREASTQRECP_Q15-03"
       * type = #choice
       * text = "How your reconstructed breast(s) look now compared to before you had any breast surgery?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -809,7 +809,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * enableBehavior = #any
 
     * item[+]
-      * linkId =  "BREASTQRECP_Q16-03"
+      * linkId = "BREASTQRECP_Q16-03"
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
@@ -822,7 +822,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 
 // FACT-ES
 * item[+]
-  * linkId =  "Degree-of-Health-FACTES-03"
+  * linkId = "Degree-of-Health-FACTES-03"
   * type = #group
   * text = "Please indicate your response as it applies to the past 7 days:"
 

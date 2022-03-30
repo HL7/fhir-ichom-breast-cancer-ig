@@ -22,7 +22,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId =  "General-Information-04-Clinical"
+  * linkId = "General-Information-04-Clinical"
   * type = #group
   * text = "General information"
   * required = true
@@ -41,7 +41,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
 
 // GROUP 2 - TREATMENT VARIABLES 
 * item[+]
-  * linkId =  "Treatment-Variables-04"
+  * linkId = "Treatment-Variables-04"
   * type = #group
   * text = "Treatment Variables at 1 year follow-up"
   * required = true
@@ -58,7 +58,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * linkId = "SURGERY_BREAST-04"
     * type = #choice
     * text = "Indicate the type of surgery the patient received during the last year:"
-    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)    
+    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
     * insert enableWhenTreatment04(#1)
     * required = true
 
@@ -80,7 +80,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * linkId = "SURGERYAX-04"
     * type = #choice
     * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
-    * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)    
+    * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)
     * insert enableWhenTreatment04(#2)
     * required = true
 
@@ -94,8 +94,8 @@ Description: "Annual update of clinical questionnaire response sarting from year
   * item[+]
     * linkId = "SURGERYAXDATE-04"
     * type = #date
-    * text = "Please provide the date of surgery to the axilla:"  
-    * insert enableWhenTrue(SURGERYAXDATE-Known-04)   
+    * text = "Please provide the date of surgery to the axilla:"
+    * insert enableWhenTrue(SURGERYAXDATE-Known-04)
     * required = true
 
   * item[+]
@@ -127,7 +127,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 // EnableWhen doesnt work with string answerOptions
 
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYAX2DATE-04"
     * type = #date
     * text = "Please provide the date of axillary clearance:"
@@ -152,14 +152,14 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#3)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RECONSTRUCTDATE-04"
     * type = #date
     * text = "Please provide the date of delayed reconstruction:"
     * insert enableWhenTrue(RECONSTRUCTDATE-Known-04)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RADIOTX_BREAST-04"
     * type = #choice
     * text = "Indicate the intent of radiotherapy:"
@@ -170,7 +170,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
     * repeats = true
 
-  * item[+]  
+  * item[+]
     * linkId = "RADIOTXTYPE_BREAST-04"
     * type = #choice
     * text = "Indicate location/type of radiotherapy:"
@@ -195,7 +195,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#4)
     * required = true
 
-  * item[+]  
+  * item[+
     * linkId = "RadioTxStartDate-04"
     * type = #date
     * text = "Please provide the start date of radiotherapy:"
@@ -267,7 +267,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTrue(ChemoTxStopdate-Known-04)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTX_BREAST-04"
     * type = #choice
     * text = "Indicate the intent of hormontherapy:"
@@ -277,7 +277,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#6)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXTYPE-04"
     * type = #choice
     * text = "Indicate the type of hormonal therapy (select all that apply):"
@@ -298,7 +298,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#6)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXSTARTDATE-04"
     * type = #date
     * text = "Please provide the start date of hormonal therapy:"
@@ -313,14 +313,14 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 
 
-  * item[+]  
+  * item[+]
     * linkId = "HORMONTXSTOPDATE-04"
     * type = #date
     * text = "Please provide the stop date of hormonal therapy, if applicable:"
     * insert enableWhenTrue(HORMONTXSTOPDATE-Known-04)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "TARGETTX_BREAST-04"
     * type = #choice
     * text = "Indicate the type of targeted therapy:"
@@ -337,7 +337,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#7)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "TargetTxStartDate-04"
     * type = #date
     * text = "Please provide the start date of targeted therapy, if applicable"
@@ -352,14 +352,14 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 
 
-  * item[+]  
+  * item[+]
     * linkId = "TargetTxStopDate-04"
     * type = #date
     * text = "Please provide the stop date of targeted therapy, if applicable"
     * insert enableWhenTrue(TargetTxStopDate-Known-04)
     * required = true
     
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYPATIENT-04"
     * type = #choice
     * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
@@ -379,17 +379,17 @@ Description: "Annual update of clinical questionnaire response sarting from year
       * question = "SURGERYPATIENT-04"
       * operator = #!=
       * answerCoding = ReoperationsCodeSystem#999
-    * enableBehavior = #all    
+    * enableBehavior = #all
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "SURGERYDATEPATIENT-04"
     * type = #date
     * text = "When was the reoperation?"
     * insert enableWhenTrue(SURGERYDATEPATIENT-Known-04)
     * required = true
 
-  * item[+]  
+  * item[+]
     * linkId = "SYSTPATIENT-04"
     * type = #choice
     * text = "Is the patient currently receiving systemic (ie drug) treatment for breast cancer?"
@@ -413,7 +413,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 // enableWhen is not working here with answerString
 
-  * item[+]     
+  * item[+]
     * linkId = "SYSTDATEPATIENT-04"
     * type = #date
     * text = "When did the systemic treatment stop?"
@@ -423,26 +423,26 @@ Description: "Annual update of clinical questionnaire response sarting from year
 
 // GROUP 5 - Survival and disease control
 * item[+]
-  * linkId =  "Survival-and-Disease-control-04"
+  * linkId = "Survival-and-Disease-control-04"
   * type = #group
   * text = "Survival and disease control at 1 year follow-up"
   * required = true
 
   * item[+]
-    * linkId =  "Survival-Q0-04"
+    * linkId = "Survival-Q0-04"
     * type = #boolean
     * text = "Was the intent of the treatment curative?"
     * required = true
 
   * item[+]
-    * linkId =  "MalignancyRecur-04"
+    * linkId = "MalignancyRecur-04"
     * type = #choice
     * text = "Is there evidence of local, regional or distant recurrence of neoplasm? (In case of multiple recurrences, please report the most severe)"
     * answerValueSet = Canonical(RecurrenceValueSet)
     * insert enableWhenTrue(Survival-Q0-04)
 
   * item[+]
-    * linkId =  "RecurMethod-04"
+    * linkId = "RecurMethod-04"
     * type = #choice
     * text = "What was the method of confirming recurrence of neoplasm?"
     * answerOption[+].valueString = "Radiological diagnosis"
@@ -465,13 +465,13 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 
   * item[+]
-    * linkId =  "RecurDateCancer-04"
+    * linkId = "RecurDateCancer-04"
     * type = #date
     * text = "What is the date of cancer recurrence?"
     * insert enableWhenTrue(RecurDateCancer-Known-04)
 
   * item[+]
-    * linkId =  "VitalStatus-04"
+    * linkId = "VitalStatus-04"
     * type = #boolean
     * text = "Has the person deceased?"
     * required = true
@@ -484,13 +484,13 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * required = true
 
   * item[+]
-    * linkId =  "DeceasedDate-04"
+    * linkId = "DeceasedDate-04"
     * type = #date
     * text = "What was the date of death of the person?"
     * insert enableWhenTrue(DeceasedDate-Known-04)
 
   * item[+]
-    * linkId =  "DEATHBC-04"
+    * linkId = "DEATHBC-04"
     * type = #boolean
     * text = "Is the death attributable to breast cancer?"
     * insert enableWhenTrue(VitalStatus-04)
