@@ -53,6 +53,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * type = #string
     * text = "In what year were you born?"
     * required = true
+    * maxLength = 4
 // How can we constrain the answer type to YYYY only?
 
 
