@@ -195,7 +195,7 @@ Description: "Annual update of clinical questionnaire response sarting from year
     * insert enableWhenTreatment04(#4)
     * required = true
 
-  * item[+
+  * item[+]
     * linkId = "RadioTxStartDate-04"
     * type = #date
     * text = "Please provide the start date of radiotherapy:"
