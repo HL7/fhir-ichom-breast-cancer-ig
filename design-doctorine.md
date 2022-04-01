@@ -4,7 +4,7 @@
   * .fsh file layout will follow from that
 * use groups to mark differences in categories
 * enforce PROM best practice rendering guidelines, list so far:
-  * make sure top of the questionnares has text for how a questionnaire shoud be filled out (sourced from original material (PDF))
+  * make sure top of the questionnares has text for how a questionnaire shoud be filled out (sourced from original material PDF)
 * questionnaires will include auto-scoring capabilities (pending ICHOM providing algorithms)
 * BreastQ:
   * at baseline: ignore surgery type  (for example in breastq-masectomy), questions remain the same anyway
