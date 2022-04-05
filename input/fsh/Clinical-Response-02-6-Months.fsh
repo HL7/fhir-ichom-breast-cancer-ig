@@ -1,54 +1,65 @@
 // shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTreatment02(code)
+RuleSet: enableWhenTreatment(code)
 * enableWhen[+]
-  * question = "TREATMENT_BREAST-02"
+  * question = "TREATMENT_BREAST"
   * operator = #=
   * answerCoding = TreatmentTypesCodeSystem{code}
 
-Instance: 6MonthsClinical
+Instance: ClinicalResponseSixMonths
 InstanceOf: Questionnaire
 Usage: #definition
 Description: "Clinical response questionnaire at 6 months post-treatment follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "SixMonthsClinical"
+* name = "ClinicalResponseSixMonths"
 * title = "Clinical response at 6 months post-treatment follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId = "General-Information-02-Clinical"
+  * linkId = "General-Information-Clinical"
   * type = #group
   * text = "General information"
   * required = true
 
   * item[+]
-    * linkId = "N/A-02-Clinical"
+    * linkId = "N/A-Clinical"
     * type = #integer //or string
     * text = "What is the patient's ID?"
     * required = true
 
   * item[+]
-    * linkId = "LastName-02-Clinical"
+    * linkId = "LastName-Clinical"
     * type = #string
     * text = "Indicate the person's last name"
     * required = true
 
 // GROUP 2 - TUMOR FACTORS
 * item[+]
-  * linkId = "Tumor-Factors-02"
+  * linkId = "Tumor-Factors"
   * type = #group
   * text = "Tumor factors"
   * required = true
+  
+  * item[+]
+    * linkId = "MUTBC"
+    * type = #choice
+    * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
+    * answerOption[+].valueString = "No mutation"
+    * answerOption[+].valueString = "BRCA 1"
+    * answerOption[+].valueString = "BRCA 2"
+    * answerOption[+].valueString = "Other mutation"
+    * answerOption[+].valueString = "Not tested"
+    * required = true
 
   * item[+]
-    * linkId = "received_surgery-02"
+    * linkId = "received_surgery"
     * type = #boolean
     * text = "Has the patient received surgery?"
     * required = true
     
   * item[+]
-    * linkId = "TNMPT_BREAST-02"
+    * linkId = "TNMPT_BREAST"
     * type = #choice
     * text = "Indicate the pathological tumor stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "pTX"
@@ -59,11 +70,11 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "pT3"
     * answerOption[+].valueString = "pT4"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
     * required = true
 
   * item[+]
-    * linkId = "TNMPN_BREAST-02"
+    * linkId = "TNMPN_BREAST"
     * type = #choice
     * text = "Indicate the pathological nodal stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "pNX"
@@ -72,53 +83,53 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "pN2"
     * answerOption[+].valueString = "pN3"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
     * required = true
 
   * item[+]
-    * linkId = "TNMPM_BREAST-02"
+    * linkId = "TNMPM_BREAST"
     * type = #choice
     * text = "Indicate the pathological distant metastasis (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueString = "pMX"
     * answerOption[+].valueString = "pM0"
     * answerOption[+].valueString = "pM1"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
     * required = true
 
   * item[+]
-    * linkId = "SIZEINV-02"
+    * linkId = "SIZEINV"
     * type = #integer
     * text = "Indicate size of invasive component of tumor (in mm, 999 if unknown)"
     * required = true
     * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
 
   * item[+]
-    * linkId = "NumLymphNodesResect-02"
+    * linkId = "NumLymphNodesResect"
     * type = #integer
     * text = "Indicate the number of lymph nodes resected (999 if unknown)"
     * required = true
     * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
 
   * item[+]
-    * linkId = "LYMPHINV_BREAST-02"
+    * linkId = "LYMPHINV_BREAST"
     * type = #integer
     * text = "Indicate the number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown)"
     * required = true
     * initial.valueInteger = 999
-    * insert enableWhenTrue(received_surgery-02)
+    * insert enableWhenTrue(received_surgery)
 
 // GROUP 3 - TREATMENT VARIABLES 
 * item[+]
-  * linkId = "Treatment-Variables-02"
+  * linkId = "Treatment-Variables"
   * type = #group
   * text = "Treatment Variables at 6 months follow-up"
   * required = true
 
   * item[+]
-    * linkId = "TREATMENT_BREAST-02"
+    * linkId = "TREATMENT_BREAST"
     * type = #choice
     * text = "Indicate whether the patient received one of the following treatment during the last year: (select all that apply)"
     * answerValueSet = Canonical(TreatmentTypeValueSet)
@@ -126,123 +137,123 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * repeats = true
 
   * item[+]
-    * linkId = "SURGERY_BREAST-02"
+    * linkId = "SURGERY_BREAST"
     * type = #choice
     * text = "Indicate the type of surgery the patient received during the last year:"
     * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
-    * insert enableWhenTreatment02(#1)
+    * insert enableWhenTreatment(#1)
     * required = true
 
   * item[+]
-    * linkId = "SurgeryDateKnown-02"
+    * linkId = "SurgeryDateKnown"
     * type = #boolean
     * text = "Is the date of surgery known?"
-    * insert enableWhenTreatment02(#1)
+    * insert enableWhenTreatment(#1)
     * required = true
 
   * item[+]
-    * linkId = "SurgeryDate-02"
+    * linkId = "SurgeryDate"
     * type = #date
     * text = "Provide the date of surgery:"
-    * insert enableWhenTrue(SurgeryDateKnown-02)
+    * insert enableWhenTrue(SurgeryDateKnown)
     * required = true
 
   * item[+]
-    * linkId = "SURGERYAX-02"
+    * linkId = "SURGERYAX"
     * type = #choice
     * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
     * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)
-    * insert enableWhenTreatment02(#2)
+    * insert enableWhenTreatment(#2)
     * required = true
 
   * item[+]
-    * linkId = "SURGERYAXDATE-Known-02"
+    * linkId = "SURGERYAXDATE-Known"
     * type = #boolean
     * text = "Is the date of surgery to the axilla known?"
-    * insert enableWhenTreatment02(#2)
+    * insert enableWhenTreatment(#2)
     * required = true
 
   * item[+]
-    * linkId = "SURGERYAXDATE-02"
+    * linkId = "SURGERYAXDATE"
     * type = #date
     * text = "Please provide the date of surgery to the axilla:"
-    * insert enableWhenTrue(SURGERYAXDATE-Known-02)
+    * insert enableWhenTrue(SURGERYAXDATE-Known)
     * required = true
 
   * item[+]
-    * linkId = "SURGERYAX2-02"
+    * linkId = "SURGERYAX2"
     * type = #choice
     * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
     * answerOption[+].valueString = "No"
     * answerOption[+].valueString = "Yes"
     * answerOption[+].valueString = "Unknown"
     * enableWhen[+]
-      * question = "SURGERYAX-02"
+      * question = "SURGERYAX"
       * operator = #=
       * answerCoding = SurgeryAxillaCodeSystem#0
     * enableWhen[+]
-      * question = "SURGERYAX-02"
+      * question = "SURGERYAX"
       * operator = #=
       * answerCoding = SurgeryAxillaCodeSystem#1
     * enableBehavior = #any
     * required = true
 
   * item[+]
-    * linkId = "SURGERYAX2DATE-Known-02"
+    * linkId = "SURGERYAX2DATE-Known"
     * type = #boolean
     * text = "Is the date of axillary clearance known?"
     * enableWhen[+]
-      * question = "SURGERYAX2-02"
+      * question = "SURGERYAX2"
       * operator = #=
       * answerString = "Yes"
     * required = true
 // EnableWhen doesnt work with string answerOptions
 
   * item[+]
-    * linkId = "SURGERYAX2DATE-02"
+    * linkId = "SURGERYAX2DATE"
     * type = #date
     * text = "Please provide the date of axillary clearance:"
-    * enableWhenTrue(SURGERYAX2DATE-Known-02)
+    * enableWhenTrue(SURGERYAX2DATE-Known)
     * required = true
 
   * item[+] 
-    * linkId = "RECONSTRUCT-02"
+    * linkId = "RECONSTRUCT"
     * type = #choice
     * text = "Indicate the type of delayed reconstruction the patient received during the last year:"
     * answerOption[+].valueString = "Delayed reconstruction (direct/staged implant)"
     * answerOption[+].valueString = "Delayed reconstruction ( autologous)"
     * answerOption[+].valueString = "Delayed reconstruction (implant/autologous)"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#3)
+    * insert enableWhenTreatment(#3)
     * required = true
 
   * item[+]
-    * linkId = "RECONSTRUCTDATE-Known-02"
+    * linkId = "RECONSTRUCTDATE-Known"
     * type = #boolean
     * text = "Is the date of the delayed reconstruction known?"
-    * insert enableWhenTreatment02(#3)
+    * insert enableWhenTreatment(#3)
     * required = true
 
   * item[+]
-    * linkId = "RECONSTRUCTDATE-02"
+    * linkId = "RECONSTRUCTDATE"
     * type = #date
     * text = "Please provide the date of delayed reconstruction:"
-    * insert enableWhenTrue(RECONSTRUCTDATE-Known-02)
+    * insert enableWhenTrue(RECONSTRUCTDATE-Known)
     * required = true
 
   * item[+]
-    * linkId = "RADIOTX_BREAST-02"
+    * linkId = "RADIOTX_BREAST"
     * type = #choice
     * text = "Please indicate the intent of radiotherapy:"
     * answerOption[+].valueString = "Neoadjuvant"
     * answerOption[+].valueString = "Adjuvant"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#4)
+    * insert enableWhenTreatment(#4)
     * required = true
     * repeats = true
 
   * item[+]
-    * linkId = "RADIOTXTYPE_BREAST-02"
+    * linkId = "RADIOTXTYPE_BREAST"
     * type = #choice
     * text = "Indicate location/type of radiotherapy:"
     * answerOption[+].valueString = "Breast"
@@ -256,49 +267,49 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "Any metastatic site"
     * answerOption[+].valueString = "Other"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#4)
+    * insert enableWhenTreatment(#4)
     * required = true
 
   * item[+]
-    * linkId = "RadioTxStartDate-Known-02"
+    * linkId = "RadioTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of radiotherapy known?"
-    * insert enableWhenTreatment02(#4)
+    * insert enableWhenTreatment(#4)
     * required = true
 
   * item[+]
-    * linkId = "RadioTxStartDate-02"
+    * linkId = "RadioTxStartDate"
     * type = #date
     * text = "Please provide the start date of radiotherapy:"
-    * insert enableWhenTrue(RadioTxStartDate-Known-02)
+    * insert enableWhenTrue(RadioTxStartDate-Known)
     * required = true
 
   * item[+]
-    * linkId = "RadioTxStopDate-Known-02"
+    * linkId = "RadioTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of radiotherapy known?"
-    * insert enableWhenTreatment02(#4)
+    * insert enableWhenTreatment(#4)
     * required = true
 
   * item[+]
-    * linkId = "RadioTxStopDate-02"
+    * linkId = "RadioTxStopDate"
     * type = #date
     * text = "Please provide the stop date of radiotherapy:"
-    * insert enableWhenTrue(RadioTxStopDate-Known-02)
+    * insert enableWhenTrue(RadioTxStopDate-Known)
     * required = true
 
   * item[+]
-    * linkId = "CHEMOTXINTENT-02"
+    * linkId = "CHEMOTXINTENT"
     * type = #choice
     * text = "Indicate the intent of chemotherapy:"
     * answerOption[+].valueString = "Neoadjuvant"
     * answerOption[+].valueString = "Adjuvant"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#5)
+    * insert enableWhenTreatment(#5)
     * required = true
 
   * item[+]
-    * linkId = "CHEMOTXTYPE_BREAST-02"
+    * linkId = "CHEMOTXTYPE_BREAST"
     * type = #choice
     * text = "Indicate the type of chemotherapy (select all that apply):"
     * answerOption[+].valueString = "Anthracycline containing"
@@ -306,50 +317,50 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "Platinum containing"
     * answerOption[+].valueString = "Other"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#5)
+    * insert enableWhenTreatment(#5)
     * required = true
     * repeats = true
 
   * item[+]
-    * linkId = "ChemoTxStartDate-Known-02"
+    * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment02(#5)
+    * insert enableWhenTreatment(#5)
     * required = true
 
   * item[+]
-    * linkId = "ChemoTxStartDate-02"
+    * linkId = "ChemoTxStartDate"
     * type = #date
     * text = "Please provide the start date of chemotherapy:"
-    * insert enableWhenTrue(ChemoTxStartDate-Known-02)
+    * insert enableWhenTrue(ChemoTxStartDate-Known)
     * required = true
 
   * item[+]
-    * linkId = "ChemoTxStopdate-Known-02"
+    * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment02(#5)
+    * insert enableWhenTreatment(#5)
     * required = true
 
   * item[+]
-    * linkId = "ChemoTxStopdate-02"
+    * linkId = "ChemoTxStopdate"
     * type = #date
     * text = "Please provide the stop date of chemotherapy:"
-    * insert enableWhenTrue(ChemoTxStopdate-Known-02)
+    * insert enableWhenTrue(ChemoTxStopdate-Known)
     * required = true
 
   * item[+]
-    * linkId = "HORMONTX_BREAST-02"
+    * linkId = "HORMONTX_BREAST"
     * type = #choice
     * text = "Please indicate the intent of hormontherapy:"
     * answerOption[+].valueString = "Neoadjuvant"
     * answerOption[+].valueString = "Adjuvant"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#6)
+    * insert enableWhenTreatment(#6)
     * required = true
 
   * item[+]
-    * linkId = "HORMONTXTYPE-02"
+    * linkId = "HORMONTXTYPE"
     * type = #choice
     * text = "Indicate the type of hormonal therapy (select all that apply):"
     * answerOption[+].valueString = "Aromatase inhibitor"
@@ -358,78 +369,78 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "LHRH agonist"
     * answerOption[+].valueString = "Other"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#6)
+    * insert enableWhenTreatment(#6)
     * required = true
     * repeats = true
 
   * item[+]
-    * linkId = "HORMONTXSTARTDATE-Known-02"
+    * linkId = "HORMONTXSTARTDATE-Known"
     * type = #boolean
     * text = "Is the start date of hormonal therapy known?"
-    * insert enableWhenTreatment02(#6)
+    * insert enableWhenTreatment(#6)
     * required = true
 
   * item[+]
-    * linkId = "HORMONTXSTARTDATE-02"
+    * linkId = "HORMONTXSTARTDATE"
     * type = #date
     * text = "Please provide the start date of hormonal therapy:"
-    * insert enableWhenTrue(HORMONTXSTARTDATE-Known-02)
+    * insert enableWhenTrue(HORMONTXSTARTDATE-Known)
     * required = true
 
   * item[+]
-    * linkId = "HORMONTXSTOPDATE-Known-02"
+    * linkId = "HORMONTXSTOPDATE-Known"
     * type = #boolean
     * text = "Is the stop date of hormonal therapy known?"
-    * insert enableWhenTreatment02(#6)
+    * insert enableWhenTreatment(#6)
     * required = true
 
   * item[+]
-    * linkId = "HORMONTXSTOPDATE-02"
+    * linkId = "HORMONTXSTOPDATE"
     * type = #date
     * text = "Please provide the stop date of hormonal therapy, if applicable:"
-    * insert enableWhenTrue(HORMONTXSTOPDATE-Known-02)
+    * insert enableWhenTrue(HORMONTXSTOPDATE-Known)
     * required = true
 
   * item[+]
-    * linkId = "TARGETTX_BREAST-02"
+    * linkId = "TARGETTX_BREAST"
     * type = #choice
     * text = "Indicate the type of targeted therapy:"
     * answerOption[+].valueString = "Her-2 targeting therapy"
     * answerOption[+].valueString = "Other"
     * answerOption[+].valueString = "Unknown"
-    * insert enableWhenTreatment02(#7)
+    * insert enableWhenTreatment(#7)
     * required = true
 
   * item[+]
-    * linkId = "TargetTxStartDate-Known-02"
+    * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment02(#7)
+    * insert enableWhenTreatment(#7)
     * required = true
 
   * item[+]
-    * linkId = "TargetTxStartDate-02"
+    * linkId = "TargetTxStartDate"
     * type = #date
     * text = "Please provide the start date of targeted therapy"
-    * insert enableWhenTrue(TargetTxStartDate-Known-02)
+    * insert enableWhenTrue(TargetTxStartDate-Known)
     * required = true
 
   * item[+]
-    * linkId = "TargetTxStopDate-Known-02"
+    * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment02(#7)
+    * insert enableWhenTreatment(#7)
     * required = true
 
   * item[+]
-    * linkId = "TargetTxStopDate-02"
+    * linkId = "TargetTxStopDate"
     * type = #date
     * text = "Please provide the stop date of targeted therapy"
-    * insert enableWhenTrue(TargetTxStopDate-Known-02)
+    * insert enableWhenTrue(TargetTxStopDate-Known)
     * required = true
     
   * item[+]
-    * linkId = "SURGERYPATIENT-02"
+    * linkId = "SURGERYPATIENT"
     * type = #choice
     * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
     * answerValueSet = Canonical(ReoperationsValueSet)
@@ -437,29 +448,29 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * repeats = true
 
   * item[+]
-    * linkId = "SURGERYDATEPATIENT-Known-02"
+    * linkId = "SURGERYDATEPATIENT-Known"
     * type = #boolean
     * text = "Is the date of the reoperation known?"
     * enableWhen[+]
-      * question = "SURGERYPATIENT-02"
+      * question = "SURGERYPATIENT"
       * operator = #!=
       * answerCoding = ReoperationsCodeSystem#0
     * enableWhen[+]
-      * question = "SURGERYPATIENT-02"
+      * question = "SURGERYPATIENT"
       * operator = #!=
       * answerCoding = ReoperationsCodeSystem#999
     * enableBehavior = #all
     * required = true
 
   * item[+]
-    * linkId = "SURGERYDATEPATIENT-02"
+    * linkId = "SURGERYDATEPATIENT"
     * type = #date
     * text = "When was the reoperation?"
-    * insert enableWhenTrue(SURGERYDATEPATIENT-Known-02)
+    * insert enableWhenTrue(SURGERYDATEPATIENT-Known)
     * required = true
 
   * item[+]
-    * linkId = "SYSTPATIENT-02"
+    * linkId = "SYSTPATIENT"
     * type = #choice
     * text = "Is the patient currently receiving systemic (ie drug) treatment for breast cancer?"
     * answerOption[+].valueString = "no, never had systemic treatment"
@@ -472,74 +483,74 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * repeats = true
 
   * item[+]
-    * linkId = "SYSTDATEPATIENT-Known-02"
+    * linkId = "SYSTDATEPATIENT-Known"
     * type = #boolean
     * text = "Is the stop date of the systemic treatment known?"
     * enableWhen[+]
-      * question = "SYSTPATIENT-02"
+      * question = "SYSTPATIENT"
       * operator = #=
       * answerString = "yes, but the treatment has stopped"
     * required = true
 // enableWhen is not working here with answerString
 
   * item[+]
-    * linkId = "SYSTDATEPATIENT-02"
+    * linkId = "SYSTDATEPATIENT"
     * type = #date
     * text = "When did the systemic treatment stop?"
-    * insert enableWhenTrue(SYSTDATEPATIENT-Known-02)
+    * insert enableWhenTrue(SYSTDATEPATIENT-Known)
     * required = true
 
 // GROUP 4 - DISUTILITY OF CARE
 * item[+]
-  * linkId = "DisutilityofCare-02"
+  * linkId = "DisutilityofCare"
   * type = #group
   * text = "Disutility of care"
   * required = true
 
   * item[+]
-    * linkId = "REOP_BREAST-02"
+    * linkId = "REOP_BREAST"
     * type = #choice
     * text = "Indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
     * answerValueSet = Canonical(InvolvedMarginsValueSet)
     * enableWhen[+]
-      * question = "SURGERY_BREAST-02"
+      * question = "SURGERY_BREAST"
       * operator = #!=
       * answerCoding = BreastSurgeryTypesCodeSystem#999
     * required = true
 
   * item[+]
-    * linkId = "REOPDATE_BREAST-Known-02"
+    * linkId = "REOPDATE_BREAST-Known"
     * type = #boolean
     * text = "Is the date of the reoperation due to positive margins known?"
     * enableWhen[+]
-      * question = "REOP_BREAST-02"
+      * question = "REOP_BREAST"
       * operator = #!=
       * answerCoding = InvolvedMarginsCodeSystem#999
     * enableWhen[+]
-      * question = "REOP_BREAST-02"
+      * question = "REOP_BREAST"
       * operator = #!=
       * answerCoding = InvolvedMarginsCodeSystem#0
     * enableBehavior = #all
     * required = true
 
   * item[+]
-    * linkId = "REOPDATE_BREAST-02"
+    * linkId = "REOPDATE_BREAST"
     * type = #date
     * text = "Please provide the date of the reoperation due to positive margins:"
-    * insert enableWhenTrue(REOPDATE_BREAST-Known-02)
+    * insert enableWhenTrue(REOPDATE_BREAST-Known)
     * required = true
 
   * item[+]
-    * linkId = "ComplicationImpact-02"
+    * linkId = "ComplicationImpact"
     * type = #choice
     * text = "Please state the impact of the complication experienced by the patient:"
     * answerValueSet = Canonical(ComplicationImpactValueSet)
     * enableWhen[+]
-      * question = "TREATMENT_BREAST-02"
+      * question = "TREATMENT_BREAST"
       * operator = #!=
       * answerCoding = TreatmentTypesCodeSystem#0
     * enableWhen[+]
-      * question = "TREATMENT_BREAST-02"
+      * question = "TREATMENT_BREAST"
       * operator = #!=
       * answerCoding = TreatmentTypesCodeSystem#999
     * enableBehavior = #all
@@ -548,25 +559,25 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
 
   * item[+]
-    * linkId = "ComplicationAttrTreatment-02"
+    * linkId = "ComplicationAttrTreatment"
     * type = #choice
     * text = "Indicate whether the complication is attributable to treatment:"
     * answerOption[+].valueString = "No"
     * answerOption[+].valueString = "Yes"
     * answerOption[+].valueString = "Unknown"
     * enableWhen[+]
-      * question = "TREATMENT_BREAST-02"
+      * question = "TREATMENT_BREAST"
       * operator = #!=
       * answerCoding = ComplicationImpactCodeSystem#0
     * enableWhen[+]
-      * question = "TREATMENT_BREAST-02"
+      * question = "TREATMENT_BREAST"
       * operator = #!=
       * answerCoding = ComplicationImpactCodeSystem#999
     * enableBehavior = #all
     * required = true
 
   * item[+]
-    * linkId = "COMPL_BREAST-02"
+    * linkId = "COMPL_BREAST"
     * type = #choice
     * text = "Please indicate the type of complication:"
     * answerOption[+].valueString = "Wound infection"
@@ -584,7 +595,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueString = "Neutropenic sepsis"
     * answerOption[+].valueString = "Unknown"
     * enableWhen[+]
-      * question = "ComplicationAttrTreatment-02"
+      * question = "ComplicationAttrTreatment"
       * operator = #=
       * answerString = "Yes"
     * required = true

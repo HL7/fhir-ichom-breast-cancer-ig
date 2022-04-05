@@ -1,5 +1,5 @@
 // Clinical Response at baseline
-Instance: DebugBundleClinicalBaseline
+Instance: DebugBundleClinical-01-Baseline
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle the clinical response at baseline"
@@ -12,13 +12,13 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = DemographicFactorsSex
 
 * entry[+]
-  * request.url = "Questionnaire/BaselineClinical"
+  * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
-  * resource = BaselineClinical
+  * resource = ClinicalResponseBaseline
 
 
 // Clinical Response at 6 months follow-up
-Instance: DebugBundleClinical6Months
+Instance: DebugBundleClinical-02-SixMonths
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the clinical response at 6 months follow-up"
@@ -86,75 +86,12 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = ComplicationImpactValueSet  
 
 * entry[+]
-  * request.url = "Questionnaire/6MonthsClinical"
+  * request.url = "Questionnaire/ClinicalResponseSixMonths"
   * request.method = #PUT
-  * resource = 6MonthsClinical
-
-// Clinical Response at 1 year follow-up
-Instance: DebugBundleClinical1year
-InstanceOf: Bundle
-Usage: #example
-Title: "Bundle of the clinical response at 1 year follow-up"
-Description: "Bundle of all valuesystems and questionnaires related to the clinical response at 1 year follow-up"
-* type = #transaction
-
-* entry[+]
-  * request.url = "CodeSystem/TreatmentTypesCodeSystem"
-  * request.method = #PUT
-  * resource = TreatmentTypesCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/TreatmentTypeValueSet"
-  * request.method = #PUT
-  * resource = TreatmentTypeValueSet
-
-* entry[+]
-  * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
-  * request.method = #PUT
-  * resource = BreastSurgeryTypesCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/BreastSurgeryTypeValueSet"
-  * request.method = #PUT
-  * resource = BreastSurgeryTypeValueSet
-
-* entry[+]
-  * request.url = "CodeSystem/SurgeryAxillaCodeSystem"
-  * request.method = #PUT
-  * resource = SurgeryAxillaCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/SurgeryAxillaTypeValueSet"
-  * request.method = #PUT
-  * resource = SurgeryAxillaTypeValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/ReoperationsCodeSystem"
-  * request.method = #PUT
-  * resource = ReoperationsCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/ReoperationsValueSet"
-  * request.method = #PUT
-  * resource = ReoperationsValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/RecurrenceCodeSystem"
-  * request.method = #PUT
-  * resource = RecurrenceCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/RecurrenceValueSet"
-  * request.method = #PUT
-  * resource = RecurrenceValueSet  
-
-* entry[+]
-  * request.url = "Questionnaire/1YearClinical"
-  * request.method = #PUT
-  * resource = 1YearClinical
+  * resource = ClinicalResponseSixMonths
 
 // Clinical Response at annual follow-up
-Instance: DebugBundleClinicalAnnual
+Instance: DebugBundleClinical-03-Annual
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the clinical response at annual follow-up after year 1"
@@ -212,12 +149,12 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = RecurrenceValueSet  
 
 * entry[+]
-  * request.url = "Questionnaire/AnnualUpdateClinical"
+  * request.url = "Questionnaire/ClinicalResponseAnnualUpdate"
   * request.method = #PUT
-  * resource = AnnualUpdateClinical
+  * resource = ClinicalResponseAnnualUpdate
 
 // BaselinePatientReported
-Instance: DebugBundleBaselinePatient
+Instance: DebugBundlePatient-01-Baseline
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at baseline"
@@ -285,12 +222,12 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
   * resource = FACTESValueSet
 
 * entry[+]
-  * request.url = "Questionnaire/BaselinePatientReported"
+  * request.url = "Questionnaire/PatientReportedBaseline"
   * request.method = #PUT
-  * resource = BaselinePatientReported
+  * resource = PatientReportedBaseline
 
 // 6MonthsPatientReported
-Instance: DebugBundlePatient6Months
+Instance: DebugBundlePatient-02-SixMonths
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at 6 months follow-up"
@@ -318,12 +255,12 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
   * resource = FACTESValueSet
 
 * entry[+]
-  * request.url = "Questionnaire/6MonthsPatientReported"
+  * request.url = "Questionnaire/PatientReportedSixMonths"
   * request.method = #PUT
-  * resource = 6MonthsPatientReported
+  * resource = PatientReportedSixMonths
 
-// 1YearPatientReported
-Instance: DebugBundlePatientYear1and2
+// Year1and2PatientReported
+Instance: DebugBundlePatient-03-Year1and2
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at 1 and 2 years follow-up"
@@ -361,12 +298,12 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
   * resource = FACTESValueSet
 
 * entry[+]
-  * request.url = "Questionnaire/Year1and2PatientReported"
+  * request.url = "Questionnaire/PatientReportedYear1and2"
   * request.method = #PUT
-  * resource = Year1and2PatientReported
+  * resource = PatientReportedYear1and2
 
 // AnnulPatientReported
-Instance: DebugBundlePatientAnnual
+Instance: DebugBundlePatient-04-Year3and4
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at annual follow-up after two years"
@@ -394,6 +331,6 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
   * resource = FACTESValueSet
 
 * entry[+]
-  * request.url = "Questionnaire/AnnualUpdatePatientReported"
+  * request.url = "Questionnaire/PatientReportedYear3and4"
   * request.method = #PUT
-  * resource = AnnualUpdatePatientReported
+  * resource = PatientReportedYear3and4
