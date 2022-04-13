@@ -22,7 +22,7 @@ pages:
   2_use-cases.md:
     title: Use Cases
   3_standard-set.md:
-    title: Standard Set
+    title: ICHOM Set
   4_security.md:
     title: Security
   5_examples.md:
@@ -34,7 +34,7 @@ pages:
 menu:
   Home: index.html
   Use Cases: 2_use-cases.html
-  Standard Set: 3_standard-set.html
+  ICHOM Set: 3_standard-set.html
   Security: 4_security.html
   Examples: 5_examples.html
   Artifacts: artifacts.html
