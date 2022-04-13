@@ -33,6 +33,9 @@
 * this data will already be available in the health information system (HIT) as part of patient care
 * aim is to extract it for purposes of analytics
 
+## Terminology
+* terminology will not be shared agross IGs, as there is little overlap between the initial [breast cancer](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/) and [autism spectrum disorders](https://connect.ichom.org/patient-centered-outcome-measures/autism-spectrum-disorder/) sets that are proposed for the initial HL7 inclusion
+
 # Tooling
 * stay on top of errors and warnings: both SUSHI and publisher's QA report should always say 0 warnings and 0 errors
 * keep IG publisher and sushi up to date - always use the latest version
