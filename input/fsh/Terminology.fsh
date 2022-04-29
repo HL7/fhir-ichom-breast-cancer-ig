@@ -2,30 +2,31 @@
 
 Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 
-ValueSet: DemographicFactorsSex
-Id: DemographicFactorsSex
-Title: "Sex of patient"
-Description: "Codes used in sex of patient"
+ValueSet: DemographicFactorsAdministrativeGender
+Id: DemographicFactorsAdministrativeGender
+Title: "Administrative gender of patient"
+Description: "Valueset of the gender of a person used for administrative purposes."
 * include codes from system http://hl7.org/fhir/administrative-gender
 
 ValueSet: DemographicFactorsCountry
 Id: DemographicFactorsCountry
-Title: "Country"
-Description: "Country (e.g. of residence)"
+Title: "Country of residence of patient"
+Description: "Valueset of the country (e.g. of residence) of a patient"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 
 ValueSet: DemographicFactorsEthnicity
 Id: DemographicFactorsEthnicity
-Title: "Ethnicity"
-Description: "Codes used in ethnicity of patient"
+Title: "Ethnicity of patient"
+Description: "Valueset of the ethnicity of a patient"
 * include codes from system http://terminology.hl7.org/CodeSystem/v3-Ethnicity
+// this codesystem is not rendering in the SDC form 
 
 ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
-Title: "Race"
-Description: "Codes used in race of patient"
+Title: "Race of patient"
+Description: "Valueset of the race of a patient"
 * include codes from  system http://terminology.hl7.org/CodeSystem/v3-Race
-
+// this codesystem is not rendering in the SDC form 
 
 // BASELINE CLINICAL FACTORS CodeSystems
 Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
@@ -45,7 +46,7 @@ Description: "Codes used in SACQ patient's comorbidity history that are not avai
 ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history"
-Description: "Patient's documented history of comorbidities"
+Description: "Valueset of the patient's documented history of comorbidities"
 * SACQPatientComorbidityCodeSystem#no-other-diseases
 * $SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
 * $SCT#38341003 "High blood pressure"
@@ -62,7 +63,6 @@ Description: "Patient's documented history of comorbidities"
 * $SCT#69896004 "Rheumatoid arthritis"
 * SACQPatientComorbidityCodeSystem#other-medical-problems
 
-
 // TREATMENT VARIABLES
 Alias: $treatment = http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 
@@ -70,7 +70,7 @@ Alias: $treatment = http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
-Description: "Codes indicating the kind of treatment a patient undertook"
+Description: "Codes indicating the kind of treatment a patient underwent"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 * ^caseSensitive = true
 
@@ -88,14 +88,21 @@ Description: "Codes indicating the kind of treatment a patient undertook"
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
 Title: "Treatment variables"
-Description: "Codes indicating the kind of treatment a patient undertook"
+Description: "Valueset of the kind of treatment a patient underwent"
 * include codes from system TreatmentTypesCodeSystem
+
+// Yes-No-Unknown
+ValueSet: YesNoUnknownValueSet
+Id: YesNoUnknownValueSet
+Title: "Yes, no and unknown answers"
+Description: "Valueset of the answers: yes, no and unknown"
+* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
 
 //Surgery Type
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery types"
-Description: "Codes indicating the kind of surgery a patient undertook"
+Description: "Codes indicating the kind of surgery a patient underwent"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/breast-surgery-types
 * ^caseSensitive = true
 
@@ -109,16 +116,16 @@ Description: "Codes indicating the kind of surgery a patient undertook"
 
 ValueSet: BreastSurgeryTypeValueSet
 Id: BreastSurgeryTypeValueSet
-Title: "BreastSurgeryTypes"
-Description: "Codes indicating the kind of surgery a patient undertook"
+Title: "Breast surgery types"
+Description: "Valueset of the kind of surgery a patient underwent"
 * include codes from system BreastSurgeryTypesCodeSystem
 
 
 // Axilla Surgery
 CodeSystem: SurgeryAxillaCodeSystem
 Id: SurgeryAxillaCodeSystem
-Title: "Surgery Axilla Code System"
-Description: "Codes indicating the kind of surgery axilla was performed"
+Title: "Type of surgery to axilla"
+Description: "Codes indicating the kind of axilla surgery was performed"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/surgery-axilla
 * ^caseSensitive = true
 
@@ -129,15 +136,15 @@ Description: "Codes indicating the kind of surgery axilla was performed"
 
 ValueSet: SurgeryAxillaTypeValueSet
 Id: SurgeryAxillaTypeValueSet
-Title: "Surgery Axilla Types"
-Description: "Codes indicating the kind of axilla surgery was performed"
+Title: "Type of surgery to axilla"
+Description: "Valueset of the kind of axilla surgery that was performed"
 * include codes from system SurgeryAxillaCodeSystem
 
 
 // Reoperations
 CodeSystem: ReoperationsCodeSystem
 Id: ReoperationsCodeSystem
-Title: "Reoperations Code System"
+Title: "Reoperations"
 Description: "Codes indicating if the patient received a reoperation"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/Reoperations
 * ^caseSensitive = true
@@ -150,15 +157,15 @@ Description: "Codes indicating if the patient received a reoperation"
 
 ValueSet: ReoperationsValueSet
 Id: ReoperationsValueSet
-Title: "Reoperations ValueSet"
-Description: "Codes indicating if the patient received a reoperation"
+Title: "Reoperations"
+Description: "Valueset of the reoperation of a patient"
 * include codes from system ReoperationsCodeSystem
 
 // DISUTILITY OF CARE
 // Involved margins reoperation
 CodeSystem: InvolvedMarginsCodeSystem
 Id: InvolvedMarginsCodeSystem
-Title: "Involved margins Code System"
+Title: "Involved margins"
 Description: "Codes indicating if the patient received surgery due to involved margins"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/Involved-Margins 
 * ^caseSensitive = true
@@ -173,16 +180,16 @@ Description: "Codes indicating if the patient received surgery due to involved m
 
 ValueSet: InvolvedMarginsValueSet
 Id: InvolvedMarginsValueSet
-Title: "Involved margins ValueSet"
-Description: "Codes indicating if the patient received surgery due to involved margins"
+Title: "Involved margins"
+Description: "Valueset used to indicate if the patient received surgery due to involved margins"
 * include codes from system InvolvedMarginsCodeSystem
 
 
 // Complication impact
 CodeSystem: ComplicationImpactCodeSystem
 Id: ComplicationImpactCodeSystem
-Title: "Complication impact Code System"
-Description: "Codes indicating if the impact of complications"
+Title: "Impact of complication"
+Description: "Codes indicating the impact of complications"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/Complication-Impact
 * ^caseSensitive = true
 * #0 "No complication"
@@ -198,15 +205,15 @@ Description: "Codes indicating if the impact of complications"
 
 ValueSet: ComplicationImpactValueSet
 Id: ComplicationImpactValueSet
-Title: "Complication impact ValueSet"
-Description: "Codes indicating if the impact of complications"
+Title: "Impact of complication"
+Description: "Valueset of the impact of complication"
 * include codes from system ComplicationImpactCodeSystem
 
 
 // DEGREE OF HEALTH - EORTC-QLQ CodeSystem
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
-Title: "Codes used in EORTC-QLQ questionnaire response"
+Title: "EORTC-QLQ questionnaire"
 Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
 * ^caseSensitive = true
@@ -218,15 +225,15 @@ Description: "Codes used in the European Organization for Research and Treatment
 
 ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
-Title: "Values used in EORTC-QLQ questionnaire response"
-Description: "Valueset used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
+Title: "EORTC-QLQ questionnaire"
+Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * ^version  = 0.0.1
 * include codes from system EORTCQLQCodeSystem
 
 // DEGREE OF HEALTH - BreastQ Codesystem
 CodeSystem: BreastQCodeSystem
 Id: BreastQCodeSystem
-Title: "Patient Reported Outcomes Instrument response (BreastQ)"
+Title: "BreastQ response"
 Description: "Codes used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q
 * ^caseSensitive = true
@@ -238,7 +245,7 @@ Description: "Codes used in the Patient Reported Outcomes Instrument about quali
 
 ValueSet: BreastQValueSet 
 Id: BreastQValueSet
-Title: "Patient Reported Outcomes Instrument response (BreastQ)"
+Title: "BreastQ response"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
 * include codes from system BreastQCodeSystem
@@ -247,7 +254,7 @@ Description: "Valueset used in the Patient Reported Outcomes Instrument about qu
 // DEGREE OF HEALTH - FACT-ES CodeSystem
 CodeSystem: FACTESCodeSystem
 Id: FACTESCodeSystem
-Title: "Codesystem of FACT-ES questionnaire"
+Title: "FACT-ES questionnaire"
 Description: "Codes used in the Functional Assessment of Cancer Therapy questionnare"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
 * ^caseSensitive = true
@@ -260,8 +267,8 @@ Description: "Codes used in the Functional Assessment of Cancer Therapy question
 
 ValueSet: FACTESValueSet
 Id: FACTESValueSet
-Title: "Valueset of FACT-ES questionnaire"
-Description: "Valueset used in the Functional Assessment of Cancer Therapy questionnare"
+Title: "FACT-ES questionnaire"
+Description: "Valueset of the Functional Assessment of Cancer Therapy questionnare"
 * ^version  = 0.0.1
 * include codes from system FACTESCodeSystem
 
@@ -283,7 +290,7 @@ Description: "Codes used to indicate recurrence of neoplasm"
 ValueSet: RecurrenceValueSet
 Id: RecurrenceValueSet
 Title: "Recurrence of neoplasm"
-Description: "Codes used to indicate recurrence of neoplasm"
+Description: "Valueset used to indicate recurrence of neoplasm"
 * ^version  = 0.0.1
 * include codes from system RecurrenceCodeSystem
 

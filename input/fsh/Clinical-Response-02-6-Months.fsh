@@ -184,9 +184,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SURGERYAX2"
     * type = #choice
     * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Unknown"
+    * answerValueSet = Canonical(YesNoUnknownValueSet)
     * enableWhen[+]
       * question = "SURGERYAX"
       * operator = #=
@@ -205,9 +203,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERYAX2"
       * operator = #=
-      * answerString = "Yes"
+      * answerCoding = #Y
     * required = true
-// EnableWhen doesnt work with string answerOptions
 
   * item[+]
     * linkId = "SURGERYAX2DATE"
@@ -562,9 +559,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ComplicationAttrTreatment"
     * type = #choice
     * text = "Indicate whether the complication is attributable to treatment:"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Unknown"
+    * answerValueSet = Canonical(YesNoUnknownValueSet)
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=
@@ -597,7 +592,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "ComplicationAttrTreatment"
       * operator = #=
-      * answerString = "Yes"
+      * answerCoding = #Y
     * required = true
     * repeats = true
   //EnableWhen doesn't work here either because of string

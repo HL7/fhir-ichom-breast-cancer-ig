@@ -7,7 +7,7 @@ RuleSet: enableWhenRecurrence(code)
 Instance: ClinicalResponseAnnualUpdate
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Annual post-treatment follow-up of clinical questionnaire response"
+Description: "Clinical response questionnaire at annual post-treatment follow-up"
 * insert PublicationInstanceRuleset
 
 * name = "AnnualClinicalResponse"
@@ -96,9 +96,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "SURGERYAX2"
     * type = #choice
     * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Unknown"
+    * answerValueSet = Canonical(YesNoUnknownValueSet)
     * enableWhen[+]
       * question = "SURGERYAX"
       * operator = #=
@@ -117,9 +115,9 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * enableWhen[+]
       * question = "SURGERYAX2"
       * operator = #=
-      * answerString = "Yes"
+      * answerCoding = #Y
     * required = true
-// EnableWhen doesnt work with string answerOptions
+// enable when is not working here, it doesnt recognize the code from the valueset. 
 
   * item[+]
     * linkId = "SURGERYAX2DATE"

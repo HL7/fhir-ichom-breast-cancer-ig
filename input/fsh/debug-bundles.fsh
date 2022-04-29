@@ -3,19 +3,18 @@ Instance: DebugBundleClinical-01-Baseline
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle the clinical response at baseline"
-Description: "Bundle of all valuesystems and questionnaires related to the clinical response ate baseline"
+Description: "Bundle of all valuesystems and questionnaires related to the clinical response at baseline"
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsSex"
+  * request.url = "ValueSet/DemographicFactorsAdministrativeGender"
   * request.method = #PUT
-  * resource = DemographicFactorsSex
+  * resource = DemographicFactorsAdministrativeGender
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
   * resource = ClinicalResponseBaseline
-
 
 // Clinical Response at 6 months follow-up
 Instance: DebugBundleClinical-02-SixMonths
@@ -34,6 +33,11 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.url = "ValueSet/TreatmentTypeValueSet"
   * request.method = #PUT
   * resource = TreatmentTypeValueSet
+
+* entry[+]
+  * request.url = "ValueSet/YesNoUnknownValueSet"
+  * request.method = #PUT
+  * resource = YesNoUnknownValueSet
 
 * entry[+]
   * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
@@ -94,8 +98,8 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 Instance: DebugBundleClinical-03-Annual
 InstanceOf: Bundle
 Usage: #example
-Title: "Bundle of the clinical response at annual follow-up after year 1"
-Description: "Bundle of all valuesystems and questionnaires related to the clinical response at annual follow-up after year 1"
+Title: "Bundle of the clinical response at annual follow-up"
+Description: "Bundle of all valuesystems and questionnaires related to the clinical response at annual follow-up"
 * type = #transaction
 
 * entry[+]
@@ -107,6 +111,11 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.url = "ValueSet/TreatmentTypeValueSet"
   * request.method = #PUT
   * resource = TreatmentTypeValueSet
+
+* entry[+]
+  * request.url = "ValueSet/YesNoUnknownValueSet"
+  * request.method = #PUT
+  * resource = YesNoUnknownValueSet
 
 * entry[+]
   * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
@@ -158,13 +167,13 @@ Instance: DebugBundlePatient-01-Baseline
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at baseline"
-Description: "Bundle all valuesystems and questionnaires related to the patient response at baseline"
+Description: "Bundle of all valuesystems and questionnaires related to the patient response at baseline"
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsSex"
+  * request.url = "ValueSet/DemographicFactorsAdministrativeGender"
   * request.method = #PUT
-  * resource = DemographicFactorsSex
+  * resource = DemographicFactorsAdministrativeGender
 
 * entry[+]
   * request.url = "ValueSet/DemographicFactorsCountry"
@@ -231,7 +240,7 @@ Instance: DebugBundlePatient-02-SixMonths
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle of the patient response at 6 months follow-up"
-Description: "Bundle all valuesystems and questionnaires related to the patient response at 6 months follow-up"
+Description: "Bundle of all valuesystems and questionnaires related to the patient response at 6 months follow-up"
 * type = #transaction
 
 * entry[+]
@@ -263,8 +272,8 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
 Instance: DebugBundlePatient-03-Year1and2
 InstanceOf: Bundle
 Usage: #example
-Title: "Bundle of the patient response at 1 and 2 years follow-up"
-Description: "Bundle all valuesystems and questionnaires related to the patient response at 1 and 2 years follow-up"
+Title: "Bundle of the patient response at 1 and 2 years of follow-up"
+Description: "Bundle of all valuesystems and questionnaires related to the patient response at 1 and 2 years of follow-up"
 * type = #transaction
 
 * entry[+]
@@ -306,8 +315,8 @@ Description: "Bundle all valuesystems and questionnaires related to the patient 
 Instance: DebugBundlePatient-04-Year3and4
 InstanceOf: Bundle
 Usage: #example
-Title: "Bundle of the patient response at annual follow-up after two years"
-Description: "Bundle all valuesystems and questionnaires related to the patient response at annual follow-up"
+Title: "Bundle of the patient response at 3 and 4 years of follow-up"
+Description: "Bundle of all valuesystems and questionnaires related to the patient response at 3 and 4 years of follow-up"
 * type = #transaction
 
 * entry[+]

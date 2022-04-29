@@ -46,7 +46,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsSex)
+    * answerValueSet = Canonical(DemographicFactorsAdministrativeGender)
     * required = true
 
   * item[+]
