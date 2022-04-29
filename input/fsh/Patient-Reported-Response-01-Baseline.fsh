@@ -26,12 +26,14 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * item[+]
     * linkId = "N/A-PatientReported"
     * type = #integer 
+    // %patient.id
     * text = "What is the patient's ID?"
     * required = true
 
   * item[+]
     * linkId = "LastName-PatientReported"
     * type = #string
+    // %patient.name.first().family.first()
     * text = "Indicate the person's last name"
     * required = true
 
@@ -46,6 +48,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate your sex at birth."
+    // patient.gender
     * answerValueSet = Canonical(DemographicFactorsSex)
     * required = true
 
@@ -81,6 +84,11 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * required = true
    
   * item[+]
+    /*
+    Patient.contact exists with role HUSB (husband) or SPS (spouse)
+    OR
+    a related person if the same role is found as RelatedPerson resource
+    */
     * linkId = "RelationshipStatus"
     * type = #choice
     * text = "Please indicate your current relationship status."
