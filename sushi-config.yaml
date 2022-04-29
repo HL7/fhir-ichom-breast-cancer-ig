@@ -15,6 +15,10 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
   name: ICHOM
   url: https://ichom.org
+dependencies:
+  "hl7.fhir.us.core": "3.1.0"
+  "hl7.fhir.r4.core": "4.0.1"
+  "hl7.fhir.us.mcode": "2.0.0"
 
 pages:
   index.md:

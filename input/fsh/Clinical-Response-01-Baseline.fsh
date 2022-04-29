@@ -14,6 +14,20 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 * name = "ClinicalResponseBaseline"
 * title = "Clinical response questionnaire at baseline"
 * status = #draft
+* extension[0]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  * extension[0]
+    * url = "name"
+    * valueCoding
+      * code = #patient
+      * system = "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+      * display = "Patient"
+  * extension[1]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[2]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
@@ -24,15 +38,25 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #integer 
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.id"
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
     * text = "Indicate the person's last name"
     * required = true
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.name.first().family.first()"
 
 // GROUP 2 - DEMOGRAPHICS
 * item[+]
@@ -45,8 +69,13 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsSex)
+    * answerValueSet = Canonical(AdministrativeGender)
     * required = true
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.gender"
 
   * item[+]
     * linkId = "YearOfBirth"
@@ -54,6 +83,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "In what year were you born?"
     * required = true
     * maxLength = 4
+    * extension[0]
+      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.birthDate.year"
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
