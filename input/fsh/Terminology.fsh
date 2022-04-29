@@ -38,30 +38,27 @@ Description: "Codes used in SACQ patient's comorbidity history that are not avai
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/sacq-patient-comorbidity-history
 * ^caseSensitive = true
 
-* #no-other-diseases "No other diseases known"
-* #cancer-within-5yrs "Cancer/other cancer (within last 5 years)"
-* #other-medical-problems "Other medical problems"
-  "Other medical problems affecting the patient, outside of those that have been asked explicitly"
+* #0  "I have no other diseases"
+* #1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* #2  "High blood pressure"
+* #3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* #4  "Diabetes"
+* #5  "Ulcer or stomach disease"
+* #6  "Kidney disease"
+* #7  "Liver disease"
+* #8  "Anemia or other blood disease"
+* #9  "Cancer/Other cancer (within the last 5 years)"
+* #10 "Depression"
+* #11 "Osteoarthritis, degenerative arthritis"
+* #12 "Back pain"
+* #13 "Rheumatoid arthritis"
+* #14 "Other medical problems"
 
 ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history"
-Description: "Valueset of the patient's documented history of comorbidities"
-* SACQPatientComorbidityCodeSystem#no-other-diseases
-* $SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
-* $SCT#38341003 "High blood pressure"
-* $SCT#19829001 "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
-* $SCT#73211009 "Diabetes"
-* $SCT#429040005 "Ulcer"
-* $SCT#90708001 "Kidney disease"
-* $SCT#235856003 "Liver disease"
-* $SCT#271737000 "Anemia"
-* SACQPatientComorbidityCodeSystem#cancer-within-5yrs
-* $SCT#35489007 "Depression"
-* $SCT#396275006 "Osteoarthritis"
-* $SCT#161891005 "Back pain"
-* $SCT#69896004 "Rheumatoid arthritis"
-* SACQPatientComorbidityCodeSystem#other-medical-problems
+Description: "Patient's documented history of comorbidities"
+* include codes from system SACQPatientComorbidityCodeSystem
 
 // TREATMENT VARIABLES
 Alias: $treatment = http://connect.ichom.org/fhir/CodeSystem/treatment-variables
