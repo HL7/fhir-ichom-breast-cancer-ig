@@ -4,7 +4,7 @@ Usage: #example
 * status = #completed
 * subject = Reference(Patient/pat-113821)
 * authored = "2022-04-25T19:13:09.155Z"
-* questionnaire = "Questionnaire/BaselineClinical"
+* questionnaire = Canonical(BaselineClinical)
 * item[0].linkId = "General-Information-01-Clinical"
 * item[=].text = "General information"
 * item[=].item[0].linkId = "N/A-01-Clinical"
@@ -12,7 +12,7 @@ Usage: #example
 * item[=].item[=].answer.valueInteger = 11577
 * item[=].item[+].linkId = "LastName-01-Clinical"
 * item[=].item[=].text = "Indicate the person's last name"
-* item[=].item[=].answer.valueString = "Carrizosa "
+* item[=].item[=].answer.valueString = "Carrizosa"
 * item[+].linkId = "Demographics-01"
 * item[=].text = "Demographic factors"
 * item[=].item[0].linkId = "Sex-01"

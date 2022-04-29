@@ -4,7 +4,7 @@ Usage: #example
 * status = #completed
 * subject = Reference(Patient/pat-113821)
 * authored = "2022-04-25T19:30:21.678Z"
-* questionnaire = "Questionnaire/BaselinePatientReported"
+* questionnaire = Canonical(BaselinePatientReported)
 * item[0].linkId = "General-Information-01-PatientReported"
 * item[=].text = "General information"
 * item[=].item[0].linkId = "N/A-01-PatientReported"
@@ -12,7 +12,7 @@ Usage: #example
 * item[=].item[=].answer.valueInteger = 11577
 * item[=].item[+].linkId = "LastName-01-PatientReported"
 * item[=].item[=].text = "Indicate the person's last name"
-* item[=].item[=].answer.valueString = "Carrizosa "
+* item[=].item[=].answer.valueString = "Carrizosa"
 * item[+].linkId = "Demographics-01"
 * item[=].text = "Demographic factors"
 * item[=].item[0].linkId = "Sex-01"
@@ -23,7 +23,7 @@ Usage: #example
 * item[=].item[=].answer.valueCoding = urn:iso:std:iso:3166#GBR "United Kingdom"
 * item[=].item[+].linkId = "Ethnicity-01"
 * item[=].item[=].text = "Please indicate the ethnicity that you identify with."
-* item[=].item[=].answer.valueString = "Hispanic/Latino/Spanish Origin "
+* item[=].item[=].answer.valueString = "Hispanic/Latino/Spanish Origin"
 * item[=].item[+].linkId = "Race-01"
 * item[=].item[=].text = "Please indicate the biological race that you identify with."
 * item[=].item[=].answer.valueString = "White"
