@@ -144,7 +144,7 @@ Instance: p1Height
 InstanceOf: Observation
 Description: "The Patient's height is 168 cm"
 * id = "ichom-p1-height"
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height"
+* meta.profile = "http://hl7.org/fhir/StructureDefinition/bodyheight"
 * status = #final
 * subject = Reference(patientWithBreastCancer1)
 * category[0]
