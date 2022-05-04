@@ -31,7 +31,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
-    * text = "Indicate the person's last name"
+    * text = "Indicate the patient's last name"
     * required = true
 
 // GROUP 2 - DEMOGRAPHICS
@@ -44,16 +44,17 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "Sex"
     * type = #choice
-    * text = "Please indicate your sex at birth."
+    * text = "Please indicate the sex of the patient at birth."
     * answerValueSet = Canonical(DemographicFactorsAdministrativeGender)
     * required = true
 
   * item[+]
     * linkId = "YearOfBirth"
     * type = #integer
-    * text = "In what year were you born?"
+    * text = "In what year was the patient born?"
     * required = true
     * maxLength = 4
+
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
@@ -65,29 +66,29 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "HeightValue"
     * type = #integer
-    * text = "Please indicate your body height."
+    * text = "Please indicate the patient's body height."
     * maxLength = 3
     * required = true
     
   * item[+]
     * linkId = "HeightUnit" 
     * type = #choice
-    * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
+    * text = "Please indicate the unit of the measurement that you recorded the patient's height in."
     * answerOption[+].valueString = "cm"
     * answerOption[+].valueString = "inches"
     * required = true
-
+ 
   * item[+]
     * linkId = "WeightValue"
     * type = #integer
-    * text = "Please indicate your body weight." 
+    * text = "Please indicate the patient's body weight." 
     * maxLength = 3
     * required = true
 
   * item[+]
     * linkId = "WeightUnit" 
     * type = #choice
-    * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
+    * text = "Please indicate the unit of the measurement that you recorded the patient's weight in." 
     * answerOption[+].valueString = "kilograms"
     * answerOption[+].valueString = "lbs"
     * required = true
@@ -118,10 +119,17 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * required = true
 
   * item[+]
+    * linkId = "HistologicalDateKnown"
+    * type = #boolean
+    * text = "Is the date of histological diagnosis known?"
+    * required = true
+
+  * item[+]
     * linkId = "HistologicalDiagnosisDate"
     * type = #date
     * text = "Indicate the initial date of histological diagnosis"
     * required = true
+    * enableWhenTrue(HistologicalDateKnown)
 
   * item[+]
     * linkId = "HISTOTYPE"
@@ -205,11 +213,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "ERSTATUS"
     * type = #choice
-    * text = "Indicate if the estrogen receptor status is positive"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
+    * text = "Indicate the status of the estrogen receptor:"
+    * answerOption[+].valueString = "Negative"
+    * answerOption[+].valueString = "Positive"
     * answerOption[+].valueString = "Not performed"
-    * answerOption[+].valueString = "Unkown"
+    * answerOption[+].valueString = "Unknown"
     * required = true
 
 // add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
@@ -217,11 +225,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "PRSTATUS"
     * type = #choice
-    * text = "Indicate if the progesterone receptor status is positive"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
+    * text = "Indicate the status of the progesterone receptor:"
+    * answerOption[+].valueString = "Negative"
+    * answerOption[+].valueString = "Positive"
     * answerOption[+].valueString = "Not performed"
-    * answerOption[+].valueString = "Unkown"
+    * answerOption[+].valueString = "Unknown"
     * required = true
 
 // add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
@@ -229,9 +237,9 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "HER2STATUS"
     * type = #choice
-    * text = "Indicate if the HER2 receptor status is positive"
+    * text = "Indicate the status of the HER2 receptor:"
     * answerOption[+].valueString = "Negative"
     * answerOption[+].valueString = "Positive"
     * answerOption[+].valueString = "Equivocal"
-    * answerOption[+].valueString = "HER2 receptor status not tested"
+    * answerOption[+].valueString = "Not performed"
     * required = true
