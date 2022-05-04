@@ -74,10 +74,10 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "EducationLevel"
     * type = #choice
     * text = "Please indicate your highest level of schooling."
-    * answerOption[+].valueString = "None"
-    * answerOption[+].valueString = "Primary"
-    * answerOption[+].valueString = "Secondary"
-    * answerOption[+].valueString = "Tertiary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#0 "None"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#1 "Primary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#2 "Secondary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#3 "Tertiary"
     * required = true
    
   * item[+]
@@ -85,19 +85,19 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * type = #choice
     * text = "Please indicate your current relationship status."
     * required = true
-    * answerOption[+].valueString = "Not married/partnered"
-    * answerOption[+].valueString = "Married/partnered"
-    * answerOption[+].valueString = "Divorced/separated"
-    * answerOption[+].valueString = "Widowed"
-    * answerOption[+].valueString = "unknown"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#0 "Not married/partnered"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#1 "Married/partnered"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#2 "Divorced/separated"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#3 "Widowed"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#4 "unknown"
 
   * item[+]
     * linkId = "MENOPAUSE"
     * type = #choice
     * text = "What is your current menopausal status?"
-    * answerOption[+].valueString = "Pre-menopause"
-    * answerOption[+].valueString = "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
-    * answerOption[+].valueString = "I don't know what my current menopausal status is"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#0 "Pre-menopause"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#1 "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#3 "I don't know what my current menopausal status is"
     * enableWhen
       * question = "Sex"
       * operator = #=
@@ -798,4 +798,3 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * text = "I have pain or discomfort with intercourse"
     * required = true
     * answerValueSet = Canonical(FACTESValueSet)
-
