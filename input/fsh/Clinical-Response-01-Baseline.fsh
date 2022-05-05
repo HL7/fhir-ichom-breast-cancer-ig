@@ -1,3 +1,13 @@
+Alias: E_Var = http://hl7.org/fhir/StructureDefinition/variable
+Alias: E_IE = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
+Alias: E_MinQ = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity
+Alias: E_MaxQ = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity
+Alias: E_Unit = http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption
+Alias: E_ObsExtract = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract
+Alias: E_ObsLink = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod
+Alias: E_Calc = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression
+Alias: E_Hidden = http://hl7.org/fhir/StructureDefinition/questionnaire-hidden
+
 // shorthand notation to only show a particular question in the context of this questionnaire
 RuleSet: enableWhenTrue(question)
 * enableWhen
@@ -16,6 +26,9 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 * status = #draft
 * extension[0]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  //
+  // Launch Context: always patient
+  //
   * extension[0]
     * url = "name"
     * valueCoding
@@ -42,7 +55,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "What is the patient's medical record number?"
     * required = true
     * extension[0]
-      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * url = E_IE
       * valueExpression[+]
         * language = #text/fhirpath
         * expression = "%patient.id"
@@ -53,7 +66,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "Indicate the person's last name"
     * required = true
     * extension[0]
-      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+      * url = E_IE
       * valueExpression[+]
         * language = #text/fhirpath
         * expression = "%patient.name.first().family.first()"
@@ -71,11 +84,17 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "Please indicate your sex at birth."
     * answerValueSet = Canonical(AdministrativeGender)
     * required = true
-    * extension[0]
-      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+    * extension[+]
+      * url = E_Var
+      * valueExpression[+]
+        * name = "expandedGender"
+        * language = #application/x-fhir-query
+        * expression = "ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/administrative-gender"
+    * extension[+]
+      * url = E_IE
       * valueExpression[+]
         * language = #text/fhirpath
-        * expression = "%patient.gender"
+        * expression = "%expandedGender.expansion.contains.where(code=%patient.gender)"
 
   * item[+]
     * linkId = "YearOfBirth"
@@ -83,11 +102,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "In what year were you born?"
     * required = true
     * maxLength = 4
-    * extension[0]
-      * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+    * extension[+]
+      * url = E_IE
       * valueExpression[+]
         * language = #text/fhirpath
-        * expression = "%patient.birthDate.year"
+        * expression = "%patient.birthDate.substring(0,4)"
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
@@ -95,36 +114,165 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * type = #group
   * text = "Clinical factors"
   * required = true
+  
+  * item[+]
+    * linkId = "Height"
+    * type = #quantity
+    * text = "Please indicate your body height."
+    * required = true
+    * code[+] = LNC#8302-2 "Body height"
+    * extension[+]
+      * url = E_ObsLink
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_ObsExtract
+      * valueBoolean = true
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#cm "cm"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 10
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 320
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#[in_i] "inches"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 3.94
+        * system = UCUM
+        * code = #[in_i]
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 126
+        * system = UCUM 
+        * code = #[in_i]
 
+  // Original question about the height. Kept for reporting purposes
   * item[+]
     * linkId = "HeightValue"
-    * type = #integer
     * text = "Please indicate your body height."
-    * maxLength = 3
-    * required = true
+    * type = #integer
+    * readOnly = true
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Height').answer.valueQuantity.value"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
     
+  // Original question about the height. Kept for reporting purposes
   * item[+]
     * linkId = "HeightUnit" 
-    * type = #choice
+    * type = #string
     * text = "Please indicate what units of measurement (centimeters or inches) that you recorded your height in."
-    * answerOption[+].valueString = "cm"
-    * answerOption[+].valueString = "inches"
+    * readOnly = true
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Height').answer.valueQuantity.code = 'cm', 'cm', 'inches')"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
+  
+  // Weight, as quantity
+  * item[+]
+    * type = #quantity
+    * linkId = "Weight"
+    * text = "Please indicate your body weight."
     * required = true
+    * code[+] = LNC#29463-7 "Body weight"
+    * code[+] = LNC#3141-9 "Body weight Measured"
+    * code[+] = SCT#27113001 "Body weight"
+    * extension[+]
+      * url = E_ObsLink
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_ObsExtract
+      * valueBoolean = true
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#kg "kilograms"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 0.1
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 750
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#[lb_av] "lbs"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 0.22
+        * system = UCUM
+        * code = #[lb_av]
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 1653.47
+        * system = UCUM 
+        * code = #[lb_av]
 
   * item[+]
     * linkId = "WeightValue"
     * type = #integer
     * text = "Please indicate your body weight." 
-    * maxLength = 3
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-observationLinkPeriod"
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.value"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
 
   * item[+]
     * linkId = "WeightUnit" 
-    * type = #choice
+    * type = #string
     * text = "Please indicate what units of measurement (kilograms or pounds) that you recorded your weight in." 
-    * answerOption[+].valueString = "kilograms"
-    * answerOption[+].valueString = "lbs"
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.code = 'kg', 'kilograms', 'lbs')"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
 
   * item[+]
     * linkId = "LATERAL"
