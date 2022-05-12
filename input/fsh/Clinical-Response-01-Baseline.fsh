@@ -185,10 +185,10 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * type = #choice
     * text = "Indicate the clinical nodal stage (per AJCC 5th - 7th Ed.)"
     * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#0 "cNX"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#1 "cN1"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#2 "cN2"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#3 "cN3"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#4 "cN4"
+    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#1 "cN0"
+    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#2 "cN1"
+    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#3 "cN2"
+    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#4 "cN3"
     * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#999 "Unknown"  
     * required = true
 

@@ -60,8 +60,6 @@ Description: "Patient's documented history of comorbidities"
 * include codes from system SACQPatientComorbidityCodeSystem
 
 // TREATMENT VARIABLES
-Alias: $treatment = http://connect.ichom.org/fhir/CodeSystem/treatment-variables
-
 //TreatmentType
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
@@ -87,11 +85,11 @@ Title: "Treatment variables"
 Description: "Codes indicating the kind of treatment a patient undertook"
 * include codes from system TreatmentTypesCodeSystem
 
-//Surgery Type
+// Breast Surgery Type
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
-Title: "Breast surgery types"
-Description: "Codes indicating the kind of surgery a patient undertook"
+Title: "Breast surgery Types"
+Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/breast-surgery-types
 * ^caseSensitive = true
 
@@ -102,102 +100,12 @@ Description: "Codes indicating the kind of surgery a patient undertook"
 * #4 "Mastectomy with immediate reconstruction (autologous)"
 * #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
 * #999 "Unknown"
-
+   
 ValueSet: BreastSurgeryTypeValueSet
 Id: BreastSurgeryTypeValueSet
-Title: "BreastSurgeryTypes"
-Description: "Codes indicating the kind of surgery a patient undertook"
+Title: "Types of breast surgery"
+Description: "Codes indicating the types of breast surgery a patient underwent"
 * include codes from system BreastSurgeryTypesCodeSystem
-
-
-// Axilla Surgery
-CodeSystem: SurgeryAxillaCodeSystem
-Id: SurgeryAxillaCodeSystem
-Title: "Surgery Axilla Code System"
-Description: "Codes indicating the kind of surgery axilla was performed"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/surgery-axilla
-* ^caseSensitive = true
-
-* #0 "Sentinel lymph node biopsy"
-* #1 "Axillary sampling"
-* #2 "Axillary clearance"
-* #999 "Unknown"
-
-ValueSet: SurgeryAxillaTypeValueSet
-Id: SurgeryAxillaTypeValueSet
-Title: "Surgery Axilla Types"
-Description: "Codes indicating the kind of axilla surgery was performed"
-* include codes from system SurgeryAxillaCodeSystem
-
-
-// Reoperations
-CodeSystem: ReoperationsCodeSystem
-Id: ReoperationsCodeSystem
-Title: "Reoperations Code System"
-Description: "Codes indicating if the patient received a reoperation"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Reoperations
-* ^caseSensitive = true
-
-* #0 "No"
-* #1 "Breast reconstruction surgery"
-* #2 "Mastectomy"
-* #3 "Axillary dissection"
-* #999 "Unknown"
-
-ValueSet: ReoperationsValueSet
-Id: ReoperationsValueSet
-Title: "Reoperations ValueSet"
-Description: "Codes indicating if the patient received a reoperation"
-* include codes from system ReoperationsCodeSystem
-
-// DISUTILITY OF CARE
-// Involved margins reoperation
-CodeSystem: InvolvedMarginsCodeSystem
-Id: InvolvedMarginsCodeSystem
-Title: "Involved margins Code System"
-Description: "Codes indicating if the patient received surgery due to involved margins"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Involved-Margins 
-* ^caseSensitive = true
-* #0 "No reoperation due to involved margins" 
-* #1 "Breast conserving surgery (BCS)"
-* #2 "BCS with mammoplasty"
-* #3 "Mastectomy without immediate reconstruction"
-* #4 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* #5 "Mastectomy with immediate reconstruction (autologous)"
-* #6 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
-* #999 "Unknown"
-
-ValueSet: InvolvedMarginsValueSet
-Id: InvolvedMarginsValueSet
-Title: "Involved margins ValueSet"
-Description: "Codes indicating if the patient received surgery due to involved margins"
-* include codes from system InvolvedMarginsCodeSystem
-
-
-// Complication impact
-CodeSystem: ComplicationImpactCodeSystem
-Id: ComplicationImpactCodeSystem
-Title: "Complication impact Code System"
-Description: "Codes indicating if the impact of complications"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/Complication-Impact
-* ^caseSensitive = true
-* #0 "No complication"
-* #1 "Complication requiring intervention (surgical, radiological, endoscopic)"
-* #2 "Complication leading to prolonged hospitalization ( >14days)"
-* #3 "Complication leading to unplanned readmission"
-* #4 "Complication leading to ICU admission"
-* #5 "Complication leading to discontinuing of treatment"
-* #6 "Complication leading to reduced dosing"
-* #7 "Complication leading to death"
-* #8 "Complication, but did not result in any of the abovementioned"
-* #999 "Unknown"
-
-ValueSet: ComplicationImpactValueSet
-Id: ComplicationImpactValueSet
-Title: "Complication impact ValueSet"
-Description: "Codes indicating if the impact of complications"
-* include codes from system ComplicationImpactCodeSystem
-
 
 // DEGREE OF HEALTH - EORTC-QLQ CodeSystem
 CodeSystem: EORTCQLQCodeSystem
@@ -260,27 +168,4 @@ Title: "Valueset of FACT-ES questionnaire"
 Description: "Valueset used in the Functional Assessment of Cancer Therapy questionnare"
 * ^version  = 0.0.1
 * include codes from system FACTESCodeSystem
-
-
-// Survival and disease control
-CodeSystem: RecurrenceCodeSystem
-Id: RecurrenceCodeSystem 
-Title: "Recurrence of neoplasm"
-Description: "Codes used to indicate recurrence of neoplasm"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/recurrence
-* ^caseSensitive = true
-
-* #0 "No"
-* #1 "Yes, local recurrence"
-* #2 "Yes, regional recurrence" 
-* #3 "Yes, distant recurrence"
-* #999 "Unknown"
-
-ValueSet: RecurrenceValueSet
-Id: RecurrenceValueSet
-Title: "Recurrence of neoplasm"
-Description: "Codes used to indicate recurrence of neoplasm"
-* ^version  = 0.0.1
-* include codes from system RecurrenceCodeSystem
-
 

@@ -296,8 +296,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05"
-    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. 
-    There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
+    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
     * type = #group 
 
     * item[+]
@@ -719,82 +718,92 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 // BREASTQ
 * item[+]
   * linkId = "Degree-of-Health-BreastQ"
-  * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
+  * text = "Degree of Health - BreastQ:"
   * type = #group
-  
-  * item[+]
-    * linkId = "BREASTQMAST_Q01"
-    * type = #choice
-    * text = "How you look in the mirror clothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
 
   * item[+]
-    * linkId = "BREASTQMAST_Q02"
-    * type = #choice
-    * text = "How comfortable your bras fit?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * linkId = "IntroBreastQ"
+    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+      how satisfied or dissatisfied have you been with:"
+    * type = #group
+    
+    * item[+]
+      * linkId = "BREASTQMAST_Q01"
+      * type = #choice
+      * text = "How you look in the mirror clothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
-  * item[+]
-    * linkId = "BREASTQMAST_Q03"
-    * type = #choice
-    * text = "Being able to wear clothing that is more fitted?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId = "BREASTQMAST_Q02"
+      * type = #choice
+      * text = "How comfortable your bras fit?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
-  * item[+]
-    * linkId = "BREASTQMAST_Q04"
-    * type = #choice
-    * text = "How you look in the mirror unclothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId = "BREASTQMAST_Q03"
+      * type = #choice
+      * text = "Being able to wear clothing that is more fitted?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "BREASTQMAST_Q04"
+      * type = #choice
+      * text = "How you look in the mirror unclothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
 // FACT-ES
 * item[+]
   * linkId = "Degree-of-Health-FACTES"
   * type = #group
-  * text = "Please indicate your response as it applies to the past 7 days:"
+  * text = "Degree of Health - FACTES"
 
   * item[+]
-    * linkId = "FACTES_BRM1"
-    * type = #choice
-    * text = "I have pain in my joints"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * linkId = "IntroFactes"
+    * type = #group
+    * text = "Please indicate your response as it applies to the past 7 days:"
 
-  * item[+]
-    * linkId = "FACTES_ES4"
-    * type = #choice
-    * text = "I have vaginal discharge"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_BRM1"
+      * type = #choice
+      * text = "I have pain in my joints"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES5"
-    * type = #choice
-    * text = "I have vaginal itching/irritation"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES4"
+      * type = #choice
+      * text = "I have vaginal discharge"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES6"
-    * type = #choice
-    * text = "I have vaginal bleeding or spotting"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES5"
+      * type = #choice
+      * text = "I have vaginal itching/irritation"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES7"
-    * type = #choice
-    * text = "I have vaginal dryness"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES6"
+      * type = #choice
+      * text = "I have vaginal bleeding or spotting"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES8" 
-    * type = #choice
-    * text = "I have pain or discomfort with intercourse"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES7"
+      * type = #choice
+      * text = "I have vaginal dryness"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
+
+    * item[+]
+      * linkId = "FACTES_ES8" 
+      * type = #choice
+      * text = "I have pain or discomfort with intercourse"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
