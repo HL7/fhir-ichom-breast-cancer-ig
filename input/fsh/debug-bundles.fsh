@@ -50,46 +50,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = BreastSurgeryTypeValueSet
 
 * entry[+]
-  * request.url = "CodeSystem/SurgeryAxillaCodeSystem"
-  * request.method = #PUT
-  * resource = SurgeryAxillaCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/SurgeryAxillaTypeValueSet"
-  * request.method = #PUT
-  * resource = SurgeryAxillaTypeValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/ReoperationsCodeSystem"
-  * request.method = #PUT
-  * resource = ReoperationsCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/ReoperationsValueSet"
-  * request.method = #PUT
-  * resource = ReoperationsValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/InvolvedMarginsCodeSystem"
-  * request.method = #PUT
-  * resource = InvolvedMarginsCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/InvolvedMarginsValueSet"
-  * request.method = #PUT
-  * resource = InvolvedMarginsValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/ComplicationImpactCodeSystem"
-  * request.method = #PUT
-  * resource = ComplicationImpactCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/ComplicationImpactValueSet"
-  * request.method = #PUT
-  * resource = ComplicationImpactValueSet  
-
-* entry[+]
   * request.url = "Questionnaire/ClinicalResponseSixMonths"
   * request.method = #PUT
   * resource = ClinicalResponseSixMonths
@@ -126,36 +86,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.url = "ValueSet/BreastSurgeryTypeValueSet"
   * request.method = #PUT
   * resource = BreastSurgeryTypeValueSet
-
-* entry[+]
-  * request.url = "CodeSystem/SurgeryAxillaCodeSystem"
-  * request.method = #PUT
-  * resource = SurgeryAxillaCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/SurgeryAxillaTypeValueSet"
-  * request.method = #PUT
-  * resource = SurgeryAxillaTypeValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/ReoperationsCodeSystem"
-  * request.method = #PUT
-  * resource = ReoperationsCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/ReoperationsValueSet"
-  * request.method = #PUT
-  * resource = ReoperationsValueSet  
-
-* entry[+]
-  * request.url = "CodeSystem/RecurrenceCodeSystem"
-  * request.method = #PUT
-  * resource = RecurrenceCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/RecurrenceValueSet"
-  * request.method = #PUT
-  * resource = RecurrenceValueSet  
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseAnnualUpdate"
@@ -295,7 +225,16 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
   * request.url = "ValueSet/BreastQValueSet"
   * request.method = #PUT
   * resource = BreastQValueSet 
+  
+* entry[+]
+  * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
+  * request.method = #PUT
+  * resource = BreastSurgeryTypesCodeSystem
 
+* entry[+]
+  * request.url = "ValueSet/BreastSurgeryTypeValueSet"
+  * request.method = #PUT
+  * resource = BreastSurgeryTypeValueSet
 * entry[+]
   * request.url = "CodeSystem/FACTESCodeSystem"
   * request.method = #PUT

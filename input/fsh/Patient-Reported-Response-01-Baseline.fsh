@@ -74,10 +74,10 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "EducationLevel"
     * type = #choice
     * text = "Please indicate your highest level of schooling."
-    * answerOption[+].valueString = "None"
-    * answerOption[+].valueString = "Primary"
-    * answerOption[+].valueString = "Secondary"
-    * answerOption[+].valueString = "Tertiary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#0 "None"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#1 "Primary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#2 "Secondary"
+    * answerOption[+].valueCoding = urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96#3 "Tertiary"
     * required = true
    
   * item[+]
@@ -85,19 +85,19 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * type = #choice
     * text = "Please indicate your current relationship status."
     * required = true
-    * answerOption[+].valueString = "Not married/partnered"
-    * answerOption[+].valueString = "Married/partnered"
-    * answerOption[+].valueString = "Divorced/separated"
-    * answerOption[+].valueString = "Widowed"
-    * answerOption[+].valueString = "unknown"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#0 "Not married/partnered"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#1 "Married/partnered"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#2 "Divorced/separated"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#3 "Widowed"
+    * answerOption[+].valueCoding = urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3#4 "unknown"
 
   * item[+]
     * linkId = "MENOPAUSE"
     * type = #choice
     * text = "What is your current menopausal status?"
-    * answerOption[+].valueString = "Pre-menopause"
-    * answerOption[+].valueString = "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
-    * answerOption[+].valueString = "I don't know what my current menopausal status is"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#0 "Pre-menopause"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#1 "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
+    * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#3 "I don't know what my current menopausal status is"
     * enableWhen
       * question = "Sex"
       * operator = #=
@@ -296,8 +296,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05"
-    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. 
-    There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
+    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
     * type = #group 
 
     * item[+]
@@ -719,83 +718,92 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 // BREASTQ
 * item[+]
   * linkId = "Degree-of-Health-BreastQ"
-  * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
-    how satisfied or dissatisfied have you been with:"
+  * text = "Degree of Health - BreastQ:"
   * type = #group
-  
-  * item[+]
-    * linkId = "BREASTQMAST_Q01"
-    * type = #choice
-    * text = "How you look in the mirror clothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
 
   * item[+]
-    * linkId = "BREASTQMAST_Q02"
-    * type = #choice
-    * text = "How comfortable your bras fit?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * linkId = "IntroBreastQ"
+    * text = "With your breasts in mind, or if you have had a mastectomy, with your breast area in mind, in the past 2 weeks, 
+      how satisfied or dissatisfied have you been with:"
+    * type = #group
+    
+    * item[+]
+      * linkId = "BREASTQMAST_Q01"
+      * type = #choice
+      * text = "How you look in the mirror clothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
-  * item[+]
-    * linkId = "BREASTQMAST_Q03"
-    * type = #choice
-    * text = "Being able to wear clothing that is more fitted?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId = "BREASTQMAST_Q02"
+      * type = #choice
+      * text = "How comfortable your bras fit?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
-  * item[+]
-    * linkId = "BREASTQMAST_Q04"
-    * type = #choice
-    * text = "How you look in the mirror unclothed?"
-    * answerValueSet = Canonical(BreastQValueSet)
-    * required = true
+    * item[+]
+      * linkId = "BREASTQMAST_Q03"
+      * type = #choice
+      * text = "Being able to wear clothing that is more fitted?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "BREASTQMAST_Q04"
+      * type = #choice
+      * text = "How you look in the mirror unclothed?"
+      * answerValueSet = Canonical(BreastQValueSet)
+      * required = true
 
 // FACT-ES
 * item[+]
   * linkId = "Degree-of-Health-FACTES"
   * type = #group
-  * text = "Please indicate your response as it applies to the past 7 days:"
+  * text = "Degree of Health - FACTES"
 
   * item[+]
-    * linkId = "FACTES_BRM1"
-    * type = #choice
-    * text = "I have pain in my joints"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * linkId = "IntroFactes"
+    * type = #group
+    * text = "Please indicate your response as it applies to the past 7 days:"
 
-  * item[+]
-    * linkId = "FACTES_ES4"
-    * type = #choice
-    * text = "I have vaginal discharge"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_BRM1"
+      * type = #choice
+      * text = "I have pain in my joints"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES5"
-    * type = #choice
-    * text = "I have vaginal itching/irritation"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES4"
+      * type = #choice
+      * text = "I have vaginal discharge"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES6"
-    * type = #choice
-    * text = "I have vaginal bleeding or spotting"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES5"
+      * type = #choice
+      * text = "I have vaginal itching/irritation"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES7"
-    * type = #choice
-    * text = "I have vaginal dryness"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES6"
+      * type = #choice
+      * text = "I have vaginal bleeding or spotting"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES8" 
-    * type = #choice
-    * text = "I have pain or discomfort with intercourse"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES7"
+      * type = #choice
+      * text = "I have vaginal dryness"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
+    * item[+]
+      * linkId = "FACTES_ES8" 
+      * type = #choice
+      * text = "I have pain or discomfort with intercourse"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
