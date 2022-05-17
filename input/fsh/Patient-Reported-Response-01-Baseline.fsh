@@ -18,21 +18,21 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId = "General-Information-PatientReported"
+  * linkId = "General-Information-Clinical"
   * type = #group
   * text = "General information"
   * required = true
 
   * item[+]
-    * linkId = "N/A-PatientReported"
-    * type = #integer 
-    * text = "What is the patient's ID?"
+    * linkId = "N/A-Clinical"
+    * type = #integer //or string
+    * text = "What is the patient's medical record number?"
     * required = true
 
   * item[+]
-    * linkId = "LastName-PatientReported"
+    * linkId = "LastName-Clinical"
     * type = #string
-    * text = "Indicate the person's last name"
+    * text = "What is the patient's last name?"
     * required = true
 
 // GROUP 2 - DEMOGRAPHIC FACTORS
@@ -46,7 +46,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsAdministrativeGender)
+    * answerValueSet = Canonical(DemographicFactorsSexAtBirth)
     * required = true
 
   * item[+]
@@ -94,7 +94,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * item[+]
     * linkId = "MENOPAUSE"
     * type = #choice
-    * text = "What is your current menopausal status?"
+    * text = "Please indicate your current menopausal status:"
     * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#0 "Pre-menopause"
     * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#1 "Post-menopausei (natural/surgical): if you have not had your period >12 months, caused by natural decline of hormones or due to surgery"
     * answerOption[+].valueCoding = urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f#3 "I don't know what my current menopausal status is"

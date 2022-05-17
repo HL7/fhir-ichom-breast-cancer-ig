@@ -25,13 +25,13 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "N/A-Clinical"
     * type = #integer //or string
-    * text = "What is the patient's ID?"
+    * text = "What is the patient's medical record number?"
     * required = true
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
-    * text = "Indicate the person's last name"
+    * text = "What is the patient's last name?"
     * required = true
 
 // GROUP 2 - TUMOR FACTORS
@@ -44,7 +44,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "MUTBC"
     * type = #choice
-    * text = "Indicate if the patient carries a genetic mutation predisposing breast cancer"
+    * text = "Please indicate if the patient carries a genetic mutation predisposing breast cancer:"
     * answerOption[+].valueCoding = urn:uuid:3006917e-2afc-45f1-872e-b29a270a216e#0 "No mutation"
     * answerOption[+].valueCoding = urn:uuid:3006917e-2afc-45f1-872e-b29a270a216e#1 "BRCA 1"
     * answerOption[+].valueCoding = urn:uuid:3006917e-2afc-45f1-872e-b29a270a216e#2 "BRCA 2"
@@ -61,7 +61,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TNMPT_BREAST"
     * type = #choice
-    * text = "Indicate the pathological tumor stage (per AJCC 5th - 7th Ed.)"
+    * text = "Please indicate the pathological tumor stage (per AJCC 5th - 7th Ed.):"
     * answerOption[+].valueCoding = urn:uuid:e0d4b379-dffd-4eea-b51d-a3c4c2f7ad66#0 "pTX"
     * answerOption[+].valueCoding = urn:uuid:e0d4b379-dffd-4eea-b51d-a3c4c2f7ad66#1 "pT0"
     * answerOption[+].valueCoding = urn:uuid:e0d4b379-dffd-4eea-b51d-a3c4c2f7ad66#2 "pTis"
@@ -76,7 +76,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TNMPN_BREAST"
     * type = #choice
-    * text = "Indicate the pathological nodal stage (per AJCC 5th - 7th Ed.)"
+    * text = "Please indicate the pathological nodal stage (per AJCC 5th - 7th Ed.):"
     * answerOption[+].valueCoding = urn:uuid:0818bdd3-e932-4df4-9a00-6cb719731351#0 "pNX"
     * answerOption[+].valueCoding = urn:uuid:0818bdd3-e932-4df4-9a00-6cb719731351#1 "pN0"
     * answerOption[+].valueCoding = urn:uuid:0818bdd3-e932-4df4-9a00-6cb719731351#2 "pN1"
@@ -89,7 +89,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TNMPM_BREAST"
     * type = #choice
-    * text = "Indicate the pathological distant metastasis (per AJCC 5th - 7th Ed.)"
+    * text = "Please indicate the pathological distant metastasis (per AJCC 5th - 7th Ed.):"
     * answerOption[+].valueCoding = urn:uuid:dd32d5f4-8ef8-4057-9642-9cb20a10ace1#1 "pMX"
     * answerOption[+].valueCoding = urn:uuid:dd32d5f4-8ef8-4057-9642-9cb20a10ace1#2 "pM0"
     * answerOption[+].valueCoding = urn:uuid:dd32d5f4-8ef8-4057-9642-9cb20a10ace1#3 "pM1"
@@ -100,21 +100,21 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "SIZEINV"
     * type = #integer
-    * text = "Indicate size of invasive component of tumor (in mm, 999 if unknown)"
+    * text = "Please indicate size of invasive component of tumor (in mm, 999 if unknown):"
     * required = true
     * insert enableWhenTrue(received_surgery)
 
   * item[+]
     * linkId = "NumLymphNodesResect"
     * type = #integer
-    * text = "Indicate the number of lymph nodes resected (999 if unknown)"
+    * text = "Please indicate the number of lymph nodes resected (999 if unknown):"
     * required = true
     * insert enableWhenTrue(received_surgery)
 
   * item[+]
     * linkId = "LYMPHINV_BREAST"
     * type = #integer
-    * text = "Indicate the number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown)"
+    * text = "Please indicate the number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown):"
     * required = true
     * insert enableWhenTrue(received_surgery)
 
@@ -128,7 +128,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TREATMENT_BREAST"
     * type = #choice
-    * text = "Indicate whether the patient received one of the following treatment during the last year: (select all that apply)"
+    * text = "Please indicate whether the patient received one of the following treatment during the last year (select all that apply):"
     * answerValueSet = Canonical(TreatmentTypeValueSet)
     * required = true
     * repeats = true
@@ -136,7 +136,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "SURGERY_BREAST"
     * type = #choice
-    * text = "Indicate the type of surgery the patient received during the last year:"
+    * text = "Please indicate the type of surgery the patient received during the last year:"
     * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
     * insert enableWhenTreatment(#1)
     * required = true
@@ -158,7 +158,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "SURGERYAX"
     * type = #choice
-    * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
+    * text = "Please indicate the type of surgery to the axilla the patient received during the last year:"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#0 "Sentinel lymph node biopsy"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#1 "Axillary sampling"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#2 "Axillary clearance"
@@ -183,7 +183,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "SURGERYAX2"
     * type = #choice
-    * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
+    * text = "Please indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#0 "No"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#1 "Yes"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#999 "Unkown"
@@ -218,7 +218,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+] 
     * linkId = "RECONSTRUCT"
     * type = #choice
-    * text = "Indicate the type of delayed reconstruction the patient received during the last year:"
+    * text = "Please indicate the type of delayed reconstruction the patient received during the last year:"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#0 "Delayed reconstruction (direct/staged implant)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#1 "Delayed reconstruction ( autologous)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#2 "Delayed reconstruction (implant/autologous)"
@@ -254,7 +254,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "RADIOTXTYPE_BREAST"
     * type = #choice
-    * text = "Indicate location/type of radiotherapy:"
+    * text = "Please indicate location/type of radiotherapy:"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#0 "Breast"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#1 "Chest wall"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#2 "Axillary nodal irradiation"
@@ -300,7 +300,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "CHEMOTXINTENT"
     * type = #choice
-    * text = "Indicate the intent of chemotherapy:"
+    * text = "Please indicate the intent of chemotherapy:"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Neoadjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Adjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
@@ -310,7 +310,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "CHEMOTXTYPE_BREAST"
     * type = #choice
-    * text = "Indicate the type of chemotherapy (select all that apply):"
+    * text = "Please indicate the type of chemotherapy (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Anthracycline containing"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Taxane containing"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#2 "Platinum containing"
@@ -361,7 +361,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "HORMONTXTYPE"
     * type = #choice
-    * text = "Indicate the type of hormonal therapy (select all that apply):"
+    * text = "Please indicate the type of hormonal therapy (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#0 "Aromatase inhibitor"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#1 "Selective estrogen-receptor modulator (e.g. Tamoxifen)"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#2 "Oophorectomy"
@@ -403,7 +403,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TARGETTX_BREAST"
     * type = #choice
-    * text = "Indicate the type of targeted therapy:"
+    * text = "Please indicate the type of targeted therapy:"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#0 "Her-2 targeting therapy"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#1 "Other"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#999 "Unknown"
@@ -420,7 +420,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TargetTxStartDate"
     * type = #date
-    * text = "Please provide the start date of targeted therapy"
+    * text = "Please provide the start date of targeted therapy:"
     * insert enableWhenTrue(TargetTxStartDate-Known)
     * required = true
 
@@ -434,14 +434,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TargetTxStopDate"
     * type = #date
-    * text = "Please provide the stop date of targeted therapy"
+    * text = "Please provide the stop date of targeted therapy:"
     * insert enableWhenTrue(TargetTxStopDate-Known)
     * required = true
     
   * item[+]
     * linkId = "SURGERYPATIENT"
     * type = #choice
-    * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
+    * text = "Please indicate if the patient has had one of the following re-operations since their surgery for breast cancer (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#0 "No"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#1 "Breast reconstruction surgery"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#2 "Mastectomy"
@@ -512,7 +512,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "REOP_BREAST"
     * type = #choice
-    * text = "Indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
+    * text = "Please indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
     * answerOption[+].valueCoding = urn:uuid:267a68fb-42ea-49c8-a43d-c18c71f4ce7e#0 "No reoperation due to involved margins" 
     * answerOption[+].valueCoding = urn:uuid:267a68fb-42ea-49c8-a43d-c18c71f4ce7e#1 "Breast conserving surgery (BCS)"
     * answerOption[+].valueCoding = urn:uuid:267a68fb-42ea-49c8-a43d-c18c71f4ce7e#2 "BCS with mammoplasty"
@@ -582,7 +582,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "ComplicationAttrTreatment"
     * type = #choice
-    * text = "Indicate whether the complication is attributable to treatment:"
+    * text = "Please indicate whether the complication is attributable to treatment:"
     * answerOption[+].valueCoding = urn:uuid:4863f609-1024-4a63-a2a7-e949673b46bc#0 "No"
     * answerOption[+].valueCoding = urn:uuid:4863f609-1024-4a63-a2a7-e949673b46bc#1 "Yes"
     * answerOption[+].valueCoding = urn:uuid:4863f609-1024-4a63-a2a7-e949673b46bc#999 "Unkown"

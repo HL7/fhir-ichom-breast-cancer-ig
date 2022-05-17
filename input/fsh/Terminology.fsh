@@ -2,10 +2,10 @@
 
 Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 
-ValueSet: DemographicFactorsAdministrativeGender
-Id: DemographicFactorsAdministrativeGender
-Title: "Administrative gender of patient"
-Description: "Valueset of the gender of a person used for administrative purposes."
+ValueSet: DemographicFactorsSexAtBirth
+Id: DemographicFactorsSexAtBirth
+Title: "The patient's sex at birth"
+Description: "Valueset of the patient's sex at birth"
 * include codes from system http://hl7.org/fhir/administrative-gender
 
 ValueSet: DemographicFactorsCountry

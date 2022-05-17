@@ -7,9 +7,9 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsAdministrativeGender"
+  * request.url = "ValueSet/DemographicFactorsSexAtBirth"
   * request.method = #PUT
-  * resource = DemographicFactorsAdministrativeGender
+  * resource = DemographicFactorsSexAtBirth
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
@@ -101,9 +101,9 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsAdministrativeGender"
+  * request.url = "ValueSet/DemographicFactorsSexAtBirth"
   * request.method = #PUT
-  * resource = DemographicFactorsAdministrativeGender
+  * resource = DemographicFactorsSexAtBirth
 
 * entry[+]
   * request.url = "ValueSet/DemographicFactorsCountry"
