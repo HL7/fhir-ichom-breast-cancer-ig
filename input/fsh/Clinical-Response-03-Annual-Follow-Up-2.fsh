@@ -2,7 +2,7 @@ RuleSet: enableWhenRecurrence(code)
 * enableWhen[+]
   * question = "MalignancyRecur"
   * operator = #=
-  * answerCoding = RecurrenceCodeSystem{code}
+  * answerCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add{code}
 
 Instance: ClinicalResponseAnnualUpdate
 InstanceOf: Questionnaire
@@ -33,11 +33,11 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * text = "Indicate the person's last name"
     * required = true
 
-// GROUP 2 - TREATMENT VARIABLES 
+// GROUP 3 - TREATMENT VARIABLES 
 * item[+]
   * linkId = "Treatment-Variables"
   * type = #group
-  * text = "Treatment Variables at 1 year follow-up"
+  * text = "Treatment Variables"
   * required = true
 
   * item[+]
@@ -74,7 +74,10 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "SURGERYAX"
     * type = #choice
     * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
-    * answerValueSet = Canonical(SurgeryAxillaTypeValueSet)
+    * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#0 "Sentinel lymph node biopsy"
+    * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#1 "Axillary sampling"
+    * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#2 "Axillary clearance"
+    * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#999 "Unknown"
     * insert enableWhenTreatment(#2)
     * required = true
 
@@ -96,17 +99,17 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "SURGERYAX2"
     * type = #choice
     * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
-    * answerOption[+].valueString = "No"
-    * answerOption[+].valueString = "Yes"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#0 "No"
+    * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#1 "Yes"
+    * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#999 "Unkown"
     * enableWhen[+]
       * question = "SURGERYAX"
       * operator = #=
-      * answerCoding = SurgeryAxillaCodeSystem#0
+      * answerCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#0
     * enableWhen[+]
       * question = "SURGERYAX"
       * operator = #=
-      * answerCoding = SurgeryAxillaCodeSystem#1
+      * answerCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#1
     * enableBehavior = #any
     * required = true
 
@@ -117,32 +120,31 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * enableWhen[+]
       * question = "SURGERYAX2"
       * operator = #=
-      * answerString = "Yes"
+      * answerCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#1
     * required = true
-// EnableWhen doesnt work with string answerOptions
 
   * item[+]
     * linkId = "SURGERYAX2DATE"
     * type = #date
     * text = "Please provide the date of axillary clearance:"
-    * enableWhenTrue(SURGERYAX2DATE-Known)
+    * insert enableWhenTrue(SURGERYAX2DATE-Known)
     * required = true
 
   * item[+] 
     * linkId = "RECONSTRUCT"
     * type = #choice
     * text = "Indicate the type of delayed reconstruction the patient received during the last year:"
-    * answerOption[+].valueString = "Delayed reconstruction  (direct/staged implant)"
-    * answerOption[+].valueString = "Delayed reconstruction ( autologous)"
-    * answerOption[+].valueString = "Delayed reconstruction  (implant/autologous)"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#0 "Delayed reconstruction (direct/staged implant)"
+    * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#1 "Delayed reconstruction ( autologous)"
+    * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#2 "Delayed reconstruction (implant/autologous)"
+    * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#999 "Unknown"
     * insert enableWhenTreatment(#3)
     * required = true
 
   * item[+]
     * linkId = "RECONSTRUCTDATE-Known"
     * type = #boolean
-    * text = "Is the date of delayed reconstruction known?"
+    * text = "Is the date of the delayed reconstruction known?"
     * insert enableWhenTreatment(#3)
     * required = true
 
@@ -156,10 +158,10 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "RADIOTX_BREAST"
     * type = #choice
-    * text = "Indicate the intent of radiotherapy:"
-    * answerOption[+].valueString = "Neoadjuvant"
-    * answerOption[+].valueString = "Adjuvant"
-    * answerOption[+].valueString = "Unknown"
+    * text = "Please indicate the intent of radiotherapy:"
+    * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#0 "Neoadjuvant"
+    * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#1 "Adjuvant"
+    * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#999 "Unknown"
     * insert enableWhenTreatment(#4)
     * required = true
     * repeats = true
@@ -168,17 +170,17 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "RADIOTXTYPE_BREAST"
     * type = #choice
     * text = "Indicate location/type of radiotherapy:"
-    * answerOption[+].valueString = "Breast"
-    * answerOption[+].valueString = "Chest wall"
-    * answerOption[+].valueString = "Axillary nodal irradiation"
-    * answerOption[+].valueString = "Supraclavicular irradiation"
-    * answerOption[+].valueString = "Internal mammary node irradiation"
-    * answerOption[+].valueString = "Tumor bed boost"
-    * answerOption[+].valueString = "Brain metastases"
-    * answerOption[+].valueString = "Bone metastases"
-    * answerOption[+].valueString = "Any metastatic site"
-    * answerOption[+].valueString = "Other"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#0 "Breast"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#1 "Chest wall"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#2 "Axillary nodal irradiation"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#3 "Supraclavicular irradiation"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#4 "Internal mammary node irradiation"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#5 "Tumor bed boost"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#6 "Brain metastases"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#7 "Bone metastases"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#8 "Any metastatic site"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#9 "Other"
+    * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#999 "Unknown"
     * insert enableWhenTreatment(#4)
     * required = true
 
@@ -214,9 +216,9 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "CHEMOTXINTENT"
     * type = #choice
     * text = "Indicate the intent of chemotherapy:"
-    * answerOption[+].valueString = "Neoadjuvant"
-    * answerOption[+].valueString = "Adjuvant"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Neoadjuvant"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Adjuvant"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
     * insert enableWhenTreatment(#5)
     * required = true
 
@@ -224,11 +226,11 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "CHEMOTXTYPE_BREAST"
     * type = #choice
     * text = "Indicate the type of chemotherapy (select all that apply):"
-    * answerOption[+].valueString = "Anthracycline containing"
-    * answerOption[+].valueString = "Taxane containing"
-    * answerOption[+].valueString = "Platinum containing"
-    * answerOption[+].valueString = "Other"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Anthracycline containing"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Taxane containing"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#2 "Platinum containing"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#3 "Other"
+    * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
     * insert enableWhenTreatment(#5)
     * required = true
     * repeats = true
@@ -264,10 +266,10 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "HORMONTX_BREAST"
     * type = #choice
-    * text = "Indicate the intent of hormontherapy:"
-    * answerOption[+].valueString = "Neoadjuvant"
-    * answerOption[+].valueString = "Adjuvant"
-    * answerOption[+].valueString = "Unknown"
+    * text = "Please indicate the intent of hormontherapy:"
+    * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#0 "Neoadjuvant"
+    * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#1 "Adjuvant"
+    * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#999 "Unknown"
     * insert enableWhenTreatment(#6)
     * required = true
 
@@ -275,12 +277,12 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "HORMONTXTYPE"
     * type = #choice
     * text = "Indicate the type of hormonal therapy (select all that apply):"
-    * answerOption[+].valueString = "Aromatase inhibitor"
-    * answerOption[+].valueString = "Selective estrogen-receptor modulator (e.g. Tamoxifen)"
-    * answerOption[+].valueString = "Oophorectomy"
-    * answerOption[+].valueString = "LHRH agonist"
-    * answerOption[+].valueString = "Other"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#0 "Aromatase inhibitor"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#1 "Selective estrogen-receptor modulator (e.g. Tamoxifen)"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#2 "Oophorectomy"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#3 "LHRH agonist"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#4 "Other"
+    * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#999 "Unknown"
     * insert enableWhenTreatment(#6)
     * required = true
     * repeats = true
@@ -306,7 +308,6 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * insert enableWhenTreatment(#6)
     * required = true
 
-
   * item[+]
     * linkId = "HORMONTXSTOPDATE"
     * type = #date
@@ -318,9 +319,9 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "TARGETTX_BREAST"
     * type = #choice
     * text = "Indicate the type of targeted therapy:"
-    * answerOption[+].valueString = "Her-2 targeting therapy"
-    * answerOption[+].valueString = "Other"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#0 "Her-2 targeting therapy"
+    * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#1 "Other"
+    * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#999 "Unknown"
     * insert enableWhenTreatment(#7)
     * required = true
 
@@ -334,7 +335,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "TargetTxStartDate"
     * type = #date
-    * text = "Please provide the start date of targeted therapy, if applicable"
+    * text = "Please provide the start date of targeted therapy"
     * insert enableWhenTrue(TargetTxStartDate-Known)
     * required = true
 
@@ -345,11 +346,10 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * insert enableWhenTreatment(#7)
     * required = true
 
-
   * item[+]
     * linkId = "TargetTxStopDate"
     * type = #date
-    * text = "Please provide the stop date of targeted therapy, if applicable"
+    * text = "Please provide the stop date of targeted therapy"
     * insert enableWhenTrue(TargetTxStopDate-Known)
     * required = true
     
@@ -357,7 +357,11 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "SURGERYPATIENT"
     * type = #choice
     * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
-    * answerValueSet = Canonical(ReoperationsValueSet)
+    * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#0 "No"
+    * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#1 "Breast reconstruction surgery"
+    * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#2 "Mastectomy"
+    * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#3 "Axillary dissection"
+    * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#999 "Unknown"
     * required = true
     * repeats = true
 
@@ -368,11 +372,11 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * enableWhen[+]
       * question = "SURGERYPATIENT"
       * operator = #!=
-      * answerCoding = ReoperationsCodeSystem#0
+      * answerCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#0
     * enableWhen[+]
       * question = "SURGERYPATIENT"
       * operator = #!=
-      * answerCoding = ReoperationsCodeSystem#999
+      * answerCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#999
     * enableBehavior = #all
     * required = true
 
@@ -387,12 +391,12 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "SYSTPATIENT"
     * type = #choice
     * text = "Is the patient currently receiving systemic (ie drug) treatment for breast cancer?"
-    * answerOption[+].valueString = "no, never had systemic treatment"
-    * answerOption[+].valueString = "yes, but the treatment has stopped"
-    * answerOption[+].valueString = "yes, on chemotherapy"
-    * answerOption[+].valueString = "yes, on targeted therapy"
-    * answerOption[+].valueString = "yes, on hormone therapy"
-    * answerOption[+].valueString = "unkown"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#0 "no, never had systemic treatment"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#1 "yes, but the treatment has stopped"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#2 "yes, on chemotherapy"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#3 "yes, on targeted therapy"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#4 "yes, on hormone therapy"
+    * answerOption[+].valueCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#999 "unkown"
     * required = true
     * repeats = true
 
@@ -403,9 +407,8 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * enableWhen[+]
       * question = "SYSTPATIENT"
       * operator = #=
-      * answerString = "yes, but the treatment has stopped"
+      * answerCoding = urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862#1
     * required = true
-// enableWhen is not working here with answerString
 
   * item[+]
     * linkId = "SYSTDATEPATIENT"
@@ -413,13 +416,13 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * text = "When did the systemic treatment stop?"
     * insert enableWhenTrue(SYSTDATEPATIENT-Known)
     * required = true
-// enablewhen is not working here
+
 
 // GROUP 5 - Survival and disease control
 * item[+]
   * linkId = "Survival-and-Disease-control"
   * type = #group
-  * text = "Survival and disease control at 1 year follow-up"
+  * text = "Survival and disease control"
   * required = true
 
   * item[+]
@@ -432,17 +435,21 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
     * linkId = "MalignancyRecur"
     * type = #choice
     * text = "Is there evidence of local, regional or distant recurrence of neoplasm? (In case of multiple recurrences, please report the most severe)"
-    * answerValueSet = Canonical(RecurrenceValueSet)
+    * answerOption[+].valueCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add#0 "No"
+    * answerOption[+].valueCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add#1 "Yes, local recurrence"
+    * answerOption[+].valueCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add#2 "Yes, regional recurrence" 
+    * answerOption[+].valueCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add#3 "Yes, distant recurrence"
+    * answerOption[+].valueCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add#999 "Unknown"
     * insert enableWhenTrue(Survival-Q0)
 
   * item[+]
     * linkId = "RecurMethod"
     * type = #choice
     * text = "What was the method of confirming recurrence of neoplasm?"
-    * answerOption[+].valueString = "Radiological diagnosis"
-    * answerOption[+].valueString = "Histological diagnosis"
-    * answerOption[+].valueString = "Radiological and histological diagnosis"
-    * answerOption[+].valueString = "Unknown"
+    * answerOption[+].valueCoding = urn:uuid:ff0e5d9c-aeba-4415-9f52-f4b36179c648#0 "Radiological diagnosis"
+    * answerOption[+].valueCoding = urn:uuid:ff0e5d9c-aeba-4415-9f52-f4b36179c648#1 "Histological diagnosis"
+    * answerOption[+].valueCoding = urn:uuid:ff0e5d9c-aeba-4415-9f52-f4b36179c648#2 "Radiological and histological diagnosis"
+    * answerOption[+].valueCoding = urn:uuid:ff0e5d9c-aeba-4415-9f52-f4b36179c648#999 "Unknown"
     * insert enableWhenRecurrence(#1)
     * insert enableWhenRecurrence(#2)
     * insert enableWhenRecurrence(#3)

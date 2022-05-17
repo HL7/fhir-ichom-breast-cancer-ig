@@ -465,7 +465,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 // BreastQ
 * item[+]
   * linkId = "Degree-of-Health-BreastQ"
-  * text = "Degree of Health BreastQ"
+  * text = "Degree of Health -  BreastQ"
   * type = #group
     
   * item[+]
@@ -488,7 +488,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
       * insert enableWhenSurgeryType(#2)
 
     * item[+]
@@ -496,7 +495,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How comfortable your bras fit?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
       * insert enableWhenSurgeryType(#2)
 
     * item[+]
@@ -504,7 +502,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
       * insert enableWhenSurgeryType(#2)
 
     * item[+]
@@ -512,7 +509,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
       * insert enableWhenSurgeryType(#2)
 
 
@@ -530,7 +526,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -540,7 +535,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "The shape of your lumpectomy breast when you are wearing a bra?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -550,7 +544,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How normal you feel in your clothes?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -560,7 +553,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -570,7 +562,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How your lumpectomy breast sits/hangs?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "e"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -580,7 +571,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How smoothly shaped your lumpectomy breast looks?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "f"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -590,7 +580,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "The contour (outline) of your lumpectomy breast?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "g"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -600,7 +589,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How equal in size your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "h"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -610,7 +598,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How normal your lumpectomy breast looks?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "i"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -620,7 +607,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How much your breast look the same?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "j"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -630,7 +616,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "k"
       * insert enableWhenSurgeryType(#0)
       * insert enableWhenSurgeryType(#1)
       * enableBehavior = #any
@@ -650,7 +635,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "a"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -661,7 +645,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "The shape of your reconstructed breast(s) when you are wearing a bra?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "b"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -672,7 +655,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How normal you feel in your clothes?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "c"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -683,7 +665,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "The size of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "d"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -694,7 +675,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "e"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -705,7 +685,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How your breasts are lined up in relation to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "f"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -716,7 +695,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How comfortable your bras fit?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "g"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -727,7 +705,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "The softness of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "h"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -738,7 +715,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How equal in size your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "i"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -749,7 +725,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How natural your reconstructed breast(s) looks?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "j"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -759,7 +734,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How naturally your reconstructed breast(s) sits/hangs?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "k"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -770,7 +744,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How your reconstructed breast(s) feel to touch?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "l"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -781,7 +754,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How much your reconstructed breast(s) feels like a natural part of your body?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "m"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -792,7 +764,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How closely matched your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "n"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -802,7 +773,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How your reconstructed breast(s) look now compared to before you had any breast surgery?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "o"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -813,7 +783,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * type = #choice
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
-      * prefix = "p"
       * insert enableWhenSurgeryType(#3)
       * insert enableWhenSurgeryType(#4)
       * insert enableWhenSurgeryType(#5)
@@ -824,47 +793,52 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
 * item[+]
   * linkId = "Degree-of-Health-FACTES"
   * type = #group
-  * text = "Please indicate your response as it applies to the past 7 days:"
+  * text = "Degree of Health - FACTES" 
 
   * item[+]
-    * linkId = "FACTES_BRM1"
-    * type = #choice
-    * text = "I have pain in my joints"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * linkId = "IntroFACTES"
+    * type = #group
+    * text = "Please indicate your response as it applies to the past 7 days:"
 
-  * item[+]
-    * linkId = "FACTES_ES4"
-    * type = #choice
-    * text = "I have vaginal discharge"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_BRM1"
+      * type = #choice
+      * text = "I have pain in my joints"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES5"
-    * type = #choice
-    * text = "I have vaginal itching/irritation"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES4"
+      * type = #choice
+      * text = "I have vaginal discharge"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES6"
-    * type = #choice
-    * text = "I have vaginal bleeding or spotting"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES5"
+      * type = #choice
+      * text = "I have vaginal itching/irritation"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES7"
-    * type = #choice
-    * text = "I have vaginal dryness"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES6"
+      * type = #choice
+      * text = "I have vaginal bleeding or spotting"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
-  * item[+]
-    * linkId = "FACTES_ES8" 
-    * type = #choice
-    * text = "I have pain or discomfort with intercourse"
-    * required = true
-    * answerValueSet = Canonical(FACTESValueSet)
+    * item[+]
+      * linkId = "FACTES_ES7"
+      * type = #choice
+      * text = "I have vaginal dryness"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
+
+    * item[+]
+      * linkId = "FACTES_ES8" 
+      * type = #choice
+      * text = "I have pain or discomfort with intercourse"
+      * required = true
+      * answerValueSet = Canonical(FACTESValueSet)
 
