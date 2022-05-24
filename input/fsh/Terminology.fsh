@@ -1,7 +1,7 @@
-// DEMOGRAPHICS CodeSystems
-
 Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
+Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
 
+// DEMOGRAPHICS CodeSystems
 ValueSet: DemographicFactorsSexAtBirth
 Id: DemographicFactorsSexAtBirth
 Title: "The patient's sex at birth"
@@ -18,19 +18,17 @@ ValueSet: DemographicFactorsEthnicity
 Id: DemographicFactorsEthnicity
 Title: "Ethnicity of patient"
 Description: "Valueset of the ethnicity of a patient"
-* include codes from system http://terminology.hl7.org/CodeSystem/v3-Ethnicity
-// this codesystem is not rendering in the SDC form 
+* include codes from valueset http://terminology.hl7.org/ValueSet/v3-Ethnicity
+// this valueset is not rendering in the SDC form 
 
 ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
 * include codes from  system http://terminology.hl7.org/CodeSystem/v3-Race
-// this codesystem is not rendering in the SDC form 
+// this valueset is not rendering in the SDC form 
 
 // BASELINE CLINICAL FACTORS CodeSystems
-Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
-
 CodeSystem: SACQPatientComorbidityCodeSystem
 Id: SACQPatientComorbidityCodeSystem
 Title: "SACQ patient's comorbidity history"
@@ -125,8 +123,10 @@ ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
 Title: "EORTC-QLQ questionnaire"
 Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^version  = 0.0.1
-* include codes from system EORTCQLQCodeSystem
+* include EORTCQLQCodeSystem#1 "Not at all"
+* include EORTCQLQCodeSystem#2 "A little"
+* include EORTCQLQCodeSystem#3 "Quite a bit"
+* include EORTCQLQCodeSystem#4 "Very much"
 
 // DEGREE OF HEALTH - BreastQ Codesystem
 CodeSystem: BreastQCodeSystem
@@ -146,8 +146,10 @@ Id: BreastQValueSet
 Title: "BreastQ response"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
-* include codes from system BreastQCodeSystem
-
+* include BreastQCodeSystem#1 "Very dissatisfied"
+* include BreastQCodeSystem#2 "Somewhat dissatisfied"
+* include BreastQCodeSystem#3 "Somewhat satisfied"
+* include BreastQCodeSystem#4 "Very satisfied"
 
 // DEGREE OF HEALTH - FACT-ES CodeSystem
 CodeSystem: FACTESCodeSystem
@@ -157,16 +159,19 @@ Description: "Codes used in the Functional Assessment of Cancer Therapy question
 * ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
 * ^caseSensitive = true
 
-* #0 "Not at all"
-* #1 "A little"
-* #2 "Somewhat"
-* #3 "Quite a bit"
-* #4 "Very much"
+* #1 "Not at all"
+* #2 "A little"
+* #3 "Somewhat"
+* #4 "Quite a bit"
+* #5 "Very much"
 
 ValueSet: FACTESValueSet
 Id: FACTESValueSet
 Title: "FACT-ES questionnaire"
 Description: "Valueset of the Functional Assessment of Cancer Therapy questionnare"
 * ^version  = 0.0.1
-* include codes from system FACTESCodeSystem
-
+* include FACTESCodeSystem#1 "Not at all"
+* include FACTESCodeSystem#2 "A little"
+* include FACTESCodeSystem#3 "Somewhat"
+* include FACTESCodeSystem#4 "Quite a bit"
+* include FACTESCodeSystem#5 "Very much"

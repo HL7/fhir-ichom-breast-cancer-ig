@@ -35,11 +35,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = TreatmentTypeValueSet
 
 * entry[+]
-  * request.url = "ValueSet/YesNoUnknownValueSet"
-  * request.method = #PUT
-  * resource = YesNoUnknownValueSet
-
-* entry[+]
   * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
   * request.method = #PUT
   * resource = BreastSurgeryTypesCodeSystem
@@ -71,11 +66,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.url = "ValueSet/TreatmentTypeValueSet"
   * request.method = #PUT
   * resource = TreatmentTypeValueSet
-
-* entry[+]
-  * request.url = "ValueSet/YesNoUnknownValueSet"
-  * request.method = #PUT
-  * resource = YesNoUnknownValueSet
 
 * entry[+]
   * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
