@@ -240,7 +240,7 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
   * request.method = #PUT
   * resource = PatientReportedYear1and2
 
-// AnnulPatientReported
+// AnnualPatientReported
 Instance: DebugBundlePatient-04-Year3and4
 InstanceOf: Bundle
 Usage: #example
