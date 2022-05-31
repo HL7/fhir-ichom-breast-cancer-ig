@@ -7,7 +7,7 @@ RuleSet: enableWhenRecurrence(code)
 Instance: ClinicalResponseAnnualUpdate
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Annual post-treatment follow-up of clinical questionnaire response"
+Description: "Clinical response questionnaire at annual post-treatment follow-up"
 * insert PublicationInstanceRuleset
 
 * name = "AnnualClinicalResponse"
@@ -24,13 +24,13 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "N/A-Clinical"
     * type = #integer //or string
-    * text = "What is the patient's ID?"
+    * text = "What is the patient's medical record number?"
     * required = true
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
-    * text = "Indicate the person's last name"
+    * text = "What is the patient's last name?"
     * required = true
 
 // GROUP 3 - TREATMENT VARIABLES 
@@ -43,7 +43,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "TREATMENT_BREAST"
     * type = #choice
-    * text = "Indicate whether the patient received one of the following treatment during the last year: (select all that apply)"
+    * text = "Please indicate whether the patient received one of the following treatment during the last year: (select all that apply)"
     * answerValueSet = Canonical(TreatmentTypeValueSet)
     * required = true
     * repeats = true
@@ -51,7 +51,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "SURGERY_BREAST"
     * type = #choice
-    * text = "Indicate the type of surgery the patient received during the last year:"
+    * text = "Please indicate the type of surgery the patient received during the last year:"
     * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
     * insert enableWhenTreatment(#1)
     * required = true
@@ -73,7 +73,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "SURGERYAX"
     * type = #choice
-    * text = "Indicate the type of surgery to the axilla the patient received during the last year:"
+    * text = "Please indicate the type of surgery to the axilla the patient received during the last year:"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#0 "Sentinel lymph node biopsy"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#1 "Axillary sampling"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#2 "Axillary clearance"
@@ -98,7 +98,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "SURGERYAX2"
     * type = #choice
-    * text = "Indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
+    * text = "Please indicate whether the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year:"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#0 "No"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#1 "Yes"
     * answerOption[+].valueCoding = urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370#999 "Unkown"
@@ -133,7 +133,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+] 
     * linkId = "RECONSTRUCT"
     * type = #choice
-    * text = "Indicate the type of delayed reconstruction the patient received during the last year:"
+    * text = "Please indicate the type of delayed reconstruction the patient received during the last year:"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#0 "Delayed reconstruction (direct/staged implant)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#1 "Delayed reconstruction ( autologous)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#2 "Delayed reconstruction (implant/autologous)"
@@ -169,7 +169,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "RADIOTXTYPE_BREAST"
     * type = #choice
-    * text = "Indicate location/type of radiotherapy:"
+    * text = "Please indicate location/type of radiotherapy:"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#0 "Breast"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#1 "Chest wall"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#2 "Axillary nodal irradiation"
@@ -215,7 +215,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "CHEMOTXINTENT"
     * type = #choice
-    * text = "Indicate the intent of chemotherapy:"
+    * text = "Please indicate the intent of chemotherapy:"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Neoadjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Adjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
@@ -225,7 +225,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "CHEMOTXTYPE_BREAST"
     * type = #choice
-    * text = "Indicate the type of chemotherapy (select all that apply):"
+    * text = "Please indicate the type of chemotherapy (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Anthracycline containing"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Taxane containing"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#2 "Platinum containing"
@@ -276,7 +276,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "HORMONTXTYPE"
     * type = #choice
-    * text = "Indicate the type of hormonal therapy (select all that apply):"
+    * text = "Please indicate the type of hormonal therapy (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#0 "Aromatase inhibitor"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#1 "Selective estrogen-receptor modulator (e.g. Tamoxifen)"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#2 "Oophorectomy"
@@ -318,7 +318,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "TARGETTX_BREAST"
     * type = #choice
-    * text = "Indicate the type of targeted therapy:"
+    * text = "Please indicate the type of targeted therapy:"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#0 "Her-2 targeting therapy"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#1 "Other"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#999 "Unknown"
@@ -335,7 +335,7 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "TargetTxStartDate"
     * type = #date
-    * text = "Please provide the start date of targeted therapy"
+    * text = "Please provide the start date of targeted therapy:"
     * insert enableWhenTrue(TargetTxStartDate-Known)
     * required = true
 
@@ -349,14 +349,14 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "TargetTxStopDate"
     * type = #date
-    * text = "Please provide the stop date of targeted therapy"
+    * text = "Please provide the stop date of targeted therapy:"
     * insert enableWhenTrue(TargetTxStopDate-Known)
     * required = true
     
   * item[+]
     * linkId = "SURGERYPATIENT"
     * type = #choice
-    * text = "Indicate if the patient has had one of the following re-operations since their surgery for breast cancer? (select all that apply)"
+    * text = "Please indicate if the patient has had one of the following re-operations since their surgery for breast cancer (select all that apply):"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#0 "No"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#1 "Breast reconstruction surgery"
     * answerOption[+].valueCoding = urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3#2 "Mastectomy"
@@ -474,20 +474,20 @@ Description: "Annual post-treatment follow-up of clinical questionnaire response
   * item[+]
     * linkId = "VitalStatus"
     * type = #boolean
-    * text = "Has the person deceased?"
+    * text = "Has the patient deceased?"
     * required = true
 
   * item[+]
     * linkId = "DeceasedDate-Known"
     * type = #boolean
-    * text = "Is the date of death of the person known?"
+    * text = "Is the date of death of the patient known?"
     * insert enableWhenTrue(VitalStatus)
     * required = true
 
   * item[+]
     * linkId = "DeceasedDate"
     * type = #date
-    * text = "What was the date of death of the person?"
+    * text = "What was the date of death of the patient?"
     * insert enableWhenTrue(DeceasedDate-Known)
 
   * item[+]

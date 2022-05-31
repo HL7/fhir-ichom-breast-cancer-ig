@@ -10,21 +10,21 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
-  * linkId = "General-Information-PatientReported"
+  * linkId = "General-Information-Clinical"
   * type = #group
   * text = "General information"
   * required = true
 
   * item[+]
-    * linkId = "N/A-PatientReported"
+    * linkId = "N/A-Clinical"
     * type = #integer //or string
-    * text = "What is the patient's ID?"
+    * text = "What is the patient's medical record number?"
     * required = true
 
   * item[+]
-    * linkId = "LastName-PatientReported"
+    * linkId = "LastName-Clinical"
     * type = #string
-    * text = "Indicate the person's last name"
+    * text = "What is the patient's last name?"
     * required = true
 
 // GROUP 5 - DEGREE OF HEALTH
