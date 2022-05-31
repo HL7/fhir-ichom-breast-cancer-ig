@@ -1,8 +1,7 @@
 Alias: $FHIRMS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
-Alias: $SCT = http://snomed.info/sct // standard set is published separately for re-use in other IGs
+Alias: $SCT = http://snomed.info/sct 
 
-///////////////////////////////////////////////////// DEMOGRAPHICS CodeSystems \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+// DEMOGRAPHICS CodeSystems 
 ValueSet: DemographicFactorsSexAtBirth
 Id: DemographicFactorsSexAtBirth
 Title: "The patient's sex at birth"
@@ -30,7 +29,7 @@ Description: "Valueset of the race of a patient"
 // this valueset is not rendering in the SDC form 
 
 
-///////////////////////////////////////////////////////  BASELINE CLINICAL FACTORS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//  BASELINE CLINICAL FACTORS 
 
 CodeSystem: SACQPatientComorbidityCodeSystem
 Id: SACQPatientComorbidityCodeSystem
@@ -53,15 +52,30 @@ Description: "Codes used in SACQ patient's comorbidity history that are not avai
 * #11 "Osteoarthritis, degenerative arthritis"
 * #12 "Back pain"
 * #13 "Rheumatoid arthritis"
-* #14 "Other medical problems"
+* #14 "Other medical problems" 
 
 ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history"
 Description: "Patient's documented history of comorbidities"
-* include codes from system SACQPatientComorbidityCodeSystem
+* include SACQPatientComorbidityCodeSystem#0  "I have no other diseases"
+* include SACQPatientComorbidityCodeSystem#1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* include SACQPatientComorbidityCodeSystem#2  "High blood pressure"
+* include SACQPatientComorbidityCodeSystem#3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* include SACQPatientComorbidityCodeSystem#4  "Diabetes"
+* include SACQPatientComorbidityCodeSystem#5  "Ulcer or stomach disease"
+* include SACQPatientComorbidityCodeSystem#6  "Kidney disease"
+* include SACQPatientComorbidityCodeSystem#7  "Liver disease"
+* include SACQPatientComorbidityCodeSystem#8  "Anemia or other blood disease"
+* include SACQPatientComorbidityCodeSystem#9  "Cancer/Other cancer (within the last 5 years)"
+* include SACQPatientComorbidityCodeSystem#10 "Depression"
+* include SACQPatientComorbidityCodeSystem#11 "Osteoarthritis, degenerative arthritis"
+* include SACQPatientComorbidityCodeSystem#12 "Back pain"
+* include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
+* include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
-///////////////////////////////////////////////////////  TREATMENT VARIABLES \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//  TREATMENT VARIABLES 
 
 // TreatmentType \\
 CodeSystem: TreatmentTypesCodeSystem
@@ -86,7 +100,16 @@ ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
 Title: "Treatment variables"
 Description: "Valueset of the kind of treatment a patient underwent"
-* include codes from system TreatmentTypesCodeSystem
+* include TreatmentTypesCodeSystem#0 "No treatment"
+* include TreatmentTypesCodeSystem#1 "Surgery"
+* include TreatmentTypesCodeSystem#2 "Surgery to axilla"
+* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
+* include TreatmentTypesCodeSystem#4 "Radiotherapy"
+* include TreatmentTypesCodeSystem#5 "Chemotherapy"
+* include TreatmentTypesCodeSystem#6 "Hormonal therapy"
+* include TreatmentTypesCodeSystem#7 "Targeted therapy"
+* include TreatmentTypesCodeSystem#8 "Best supportive care"
+* include TreatmentTypesCodeSystem#999 "Unknown"
 
 // Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
@@ -107,10 +130,24 @@ Description: "Codes indicating the types of breast surgery a patient underwent"
 ValueSet: BreastSurgeryTypeValueSet
 Id: BreastSurgeryTypeValueSet
 Title: "Types of breast surgery"
-Description: "Codes indicating the types of breast surgery a patient underwent"
-* include codes from system BreastSurgeryTypesCodeSystem
+Description: "Valueset of the types of breast surgery a patient underwent"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction (direct/staged implant)"
+* include BreastSurgeryTypesCodeSystem#4 "Mastectomy with immediate reconstruction (autologous)"
+* include BreastSurgeryTypesCodeSystem#5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
+* include BreastSurgeryTypesCodeSystem#999 "Unknown"
 
-///////////////////////////////////////////////////////  DEGREE OF HEALTH \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ValueSet: NoYesUnknownValueSet
+Id: NoYesUnknownValueSet
+Title: "Yes, No and Unknown Valueset"
+Description: "Valueset with yes, no and unknown answers "
+* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
+
+
+
+//  DEGREE OF HEALTH 
  
 // EORTC-QLQ \\ 
 CodeSystem: EORTCQLQCodeSystem
@@ -185,7 +222,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 // Optional valueset using Snowmed CT
 
-/////////////////////////////////////////////////  DEMOGRAPHICS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//  DEMOGRAPHICS 
 
 // ValueSet: RelationshipStatus
 // Id: RelationshipStatus
@@ -214,7 +251,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * $SCT#307429007 "Post-menopause (natural/surgical) - if you have not had your period >12 months, caused by natural decline of hormones or due to surgery (e.g. menopause that develops after the ovaries are surgically removed)"
 // unknown --> null flavor
 
-/////////////////////////////////////////////////  BASELINE CLINICAL FACTORS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//  BASELINE CLINICAL FACTORS 
 
 // ValueSet: Units
 // Id: Units
@@ -233,7 +270,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * $SCT#73056007 "Right breast"
 // * $SCT#63762007 "Both breasts"
 
-/////////////////////////////////////////////// TUMOR FACTORS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// TUMOR FACTORS 
 
 // ValueSet: HistologicalType
 // Id: HistologicalType
@@ -298,7 +335,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * $SCT#280414007 "Equivocal"
 // * $SCT#416237000 "Not tested"
 
-///////////////////////////////////////////// TREATMENT VARIABLES \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// TREATMENT VARIABLES
 
 // ValueSet: AxillaSurgery
 // Id: AxillaSurgery
@@ -307,14 +344,6 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * $SCT#396487001 "Sentinel lymph node biopsy"
 // * $SCT#178294003 "Axillary sampling"
 // * $SCT#79544006 "Axillary clearance"
-// Unkown --> null flavor
-
-// ValueSet: AxillaClearance
-// Id: AxillaClearance
-// Title: "Clearance of Axilla"
-// Description: "Valueset of the type of axilla clearance"
-// * $SCT#373572006 "No"
-// * $SCT#79544006 "Yes"
 // Unkown --> null flavor
 
 // ValueSet: TherapyIntent
@@ -383,7 +412,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // Unknown --> null flavor
 
 
-///////////////////////////////////////////// SURVIVAL AND DISEASE CONTROL \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// SURVIVAL AND DISEASE CONTROL 
 
 // ValueSet: RecurrenceMethod
 // Id: RecurrenceMethod
