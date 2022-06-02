@@ -159,8 +159,8 @@ Description: "Codes used in the European Organization for Research and Treatment
 
 * #1 "Not at all"
 * #2 "A little"
-* #3 "Quite a bit"
-* #4 "Very much"
+* #4 "Quite a bit"
+* #5 "Very much"
 
 ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
@@ -168,8 +168,8 @@ Title: "EORTC-QLQ questionnaire"
 Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
 * include EORTCQLQCodeSystem#1 "Not at all"
 * include EORTCQLQCodeSystem#2 "A little"
-* include EORTCQLQCodeSystem#3 "Quite a bit"
-* include EORTCQLQCodeSystem#4 "Very much"
+* include EORTCQLQCodeSystem#4 "Quite a bit"
+* include EORTCQLQCodeSystem#5 "Very much"
 
 // BreastQ \\
 CodeSystem: BreastQCodeSystem
