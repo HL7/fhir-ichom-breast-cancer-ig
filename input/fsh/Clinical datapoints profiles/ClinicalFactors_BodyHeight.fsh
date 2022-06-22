@@ -10,4 +10,5 @@ Parent: HL7BodyHeight
 Id: ichom-body-Height
 Title: "Body height profile"
 Description: "The height of a person diagnosed with breastcancer"
+* valueQuantity.unit 1..1
 * valueQuantity.unit from UnitsBodyHeightVS

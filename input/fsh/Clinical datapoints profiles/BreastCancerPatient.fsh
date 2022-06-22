@@ -1,7 +1,7 @@
 Profile: BreastCancerPatient
-Parent: Patient // should be USCorePatient, but that gives an error
+Parent: Patient 
 Id: ichom-patient
-Title: "Breast Caner Patient Profile"
+Title: "Breast Cancer Patient Profile"
 Description: "The patient profiles represent the patient characteristics and demograhic factors"
 * identifier 1..*
 * gender 1..1
@@ -15,3 +15,5 @@ Description: "The patient profiles represent the patient characteristics and dem
 * maritalStatus 1..1
 * extension contains EducationLevelEx named educationLevel 1..1 
 * extension contains MenopausestatusEx named menopausalStatus 1..1 
+* extension contains EthnicityEx named ethnicity 1..1 
+* extension contains RaceEx named race 1..1 

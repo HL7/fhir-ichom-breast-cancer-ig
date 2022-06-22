@@ -10,20 +10,21 @@ Id: DemographicFactorsCountry
 Title: "Country of residence of patient"
 Description: "Valueset of the country (e.g. of residence) of a patient"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
+// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset
 
 ValueSet: DemographicFactorsEthnicity
 Id: DemographicFactorsEthnicity
 Title: "Ethnicity of patient"
 Description: "Valueset of the ethnicity of a patient"
-* include codes from valueset http://terminology.hl7.org/ValueSet/v3-Ethnicity
-// this valueset is not rendering in the SDC form 
+* include codes from valueset EthnicityVS
+// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset. 
 
 ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
-* include codes from  system http://terminology.hl7.org/CodeSystem/v3-Race
-// this valueset is not rendering in the SDC form 
+* include codes from  system RaceVS
+// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS
 Id: RelationshipStatusVS

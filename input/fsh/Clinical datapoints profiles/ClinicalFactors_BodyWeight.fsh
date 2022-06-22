@@ -10,4 +10,5 @@ Parent: HL7BodyWeight
 Id: ichom-body-weight
 Title: "Body weight profile"
 Description: "The weight of a person diagnosed with breastcancer"
+* valueQuantity.unit 1..1
 * valueQuantity.unit from UnitsBodyWeightVS
