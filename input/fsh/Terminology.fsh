@@ -98,6 +98,13 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
+ValueSet: LateralityVS
+Id: LateralityVS
+Title: "Laterality of breastcancer"
+Description: "Valueset of the laterality of breastcancer"
+* SCT#80248007 "Left breast"
+* SCT#73056007 "Right breast"
+* SCT#63762007 "Both breasts"
 
 //  TREATMENT VARIABLES 
 
@@ -245,25 +252,6 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 // Optional valueset using Snowmed CT
-
-//  BASELINE CLINICAL FACTORS 
-
-// ValueSet: Units
-// Id: Units
-// Title: "Units of patient's weight and height"
-// Description: "Valueset of the unit  of the patient's weight and height"
-// * SCT#258683005 "kilogram"
-// * SCT#258693003 "pounds"
-// * SCT#258672001 "Centimeter" 
-// * SCT#258677007 "Inch"
-
-// ValueSet: Laterality
-// Id: Laterality
-// Title: "Laterality of breastcancer"
-// Description: "Valueset of the laterality of breastcancer"
-// * SCT#80248007 "Left breast"
-// * SCT#73056007 "Right breast"
-// * SCT#63762007 "Both breasts"
 
 // TUMOR FACTORS 
 
