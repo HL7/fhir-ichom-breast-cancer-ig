@@ -30,10 +30,10 @@ ValueSet: RelationshipStatusVS
 Id: RelationshipStatusVS
 Title: "Relationship status of patient"
 Description: "Valueset of the relationship status of a patient"
-* RelationshipStatus#U "unmarried"
-* RelationshipStatus#M "Married"
-* RelationshipStatus#D "Divorced"
-* RelationshipStatus#W "Widowed"
+* RelationshipStatusCS#U "unmarried"
+* RelationshipStatusCS#M "Married"
+* RelationshipStatusCS#D "Divorced"
+* RelationshipStatusCS#W "Widowed"
 * NullFlavor#UNK "unknown"
 
 ValueSet: EducationLevelVS

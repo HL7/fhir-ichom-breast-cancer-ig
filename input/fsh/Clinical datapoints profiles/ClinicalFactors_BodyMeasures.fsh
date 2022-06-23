@@ -17,13 +17,11 @@ Parent: HL7BodyHeight
 Id: ichom-body-Height
 Title: "Body height profile"
 Description: "The height of a person diagnosed with breastcancer"
-* valueQuantity.unit 1..1
-* valueQuantity.unit from UnitsBodyHeightVS
+* valueQuantity.unit from UnitsBodyHeightVS //problem: vital signs profile requires a different set of units, we need to create our own
 
 Profile: ClinicalFactorsBodyWeight
 Parent: HL7BodyWeight
 Id: ichom-body-weight
 Title: "Body weight profile"
 Description: "The weight of a person diagnosed with breastcancer"
-* valueQuantity.unit 1..1
-* valueQuantity.unit from UnitsBodyWeightVS
+* valueQuantity.unit from UnitsBodyWeightVS //problem: vital signs profile requires a different set of units, we need to create our own

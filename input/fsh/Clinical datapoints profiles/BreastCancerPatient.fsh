@@ -6,7 +6,7 @@ Description: "The patient profiles represent the patient characteristics and dem
 * birthDate 0..1  // is it possible to set this to datatype = date year?
 * deceased[x] only dateTime 
 * deceased[x] MS 
-* address.country from http://hl7.org/fhir/ValueSet/iso3166-1-3
+* address.country from CountryVS
 * address.country 0..1
 * maritalStatus from RelationshipStatusVS 
 * maritalStatus 0..1
