@@ -1,7 +1,7 @@
 Profile: BreastCancerPatient
 Parent: Patient 
 Id: ichom-patient
-Title: "Breast Cancer Patient"
+Title: "Breast Cancer Patient Profile"
 Description: "The patient profiles represent the patient characteristics and demograhic factors"
 * birthDate 0..1  // is it possible to set this to datatype = date year?
 * deceased[x] only dateTime 
