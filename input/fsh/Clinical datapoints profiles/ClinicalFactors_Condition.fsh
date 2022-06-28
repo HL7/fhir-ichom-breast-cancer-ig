@@ -1,6 +1,6 @@
 Profile: PrimaryBreastCancerCondition
 Parent: Condition 
-Id: ichom-primarybreastcancer
+Id: primary-breastcancer
 Title: "Primary Breast Cancer Condition Profile"
 Description: "The condition profile represent the properties of the primary breast cancer diagnosis"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
