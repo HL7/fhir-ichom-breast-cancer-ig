@@ -16,7 +16,7 @@ Description: "The patient profiles represent the patient characteristics and dem
 
 Profile: MenopausalStatus
 Parent: Observation 
-Id: ichom-meopausalstatus
+Id: menopausal-status
 Title: "Menopausal status Profile"
 Description: "The observation profiles represent the menopausal status of a patient"
 * code = SCT#161712005 "Menopause, function (observable entity)"
