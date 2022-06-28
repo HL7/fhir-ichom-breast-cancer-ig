@@ -1,6 +1,6 @@
 Profile: BreastCancerPatient
 Parent: Patient 
-Id: ichom-patient
+Id: patient
 Title: "Breast Cancer Patient Profile"
 Description: "The patient profiles represent the patient characteristics and demograhic factors"
 * birthDate 0..1  // is it possible to set this to datatype = date year?
@@ -16,7 +16,7 @@ Description: "The patient profiles represent the patient characteristics and dem
 
 Profile: MenopausalStatus
 Parent: Observation 
-Id: ichom-meopausalstatus
+Id: menopausal-status
 Title: "Menopausal status Profile"
 Description: "The observation profiles represent the menopausal status of a patient"
 * code = SCT#161712005 "Menopause, function (observable entity)"

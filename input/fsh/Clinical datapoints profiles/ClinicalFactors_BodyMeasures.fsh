@@ -14,14 +14,14 @@ Description: "Valueset of the unit  of the patient's body weight"
 
 Profile: ClinicalFactorsBodyHeight
 Parent: HL7BodyHeight
-Id: ichom-body-Height
+Id: body-height
 Title: "Body height profile"
 Description: "The height of a person diagnosed with breastcancer"
 * valueQuantity.unit from UnitsBodyHeightVS //problem: vital signs profile requires a different set of units, we need to create our own
 
 Profile: ClinicalFactorsBodyWeight
 Parent: HL7BodyWeight
-Id: ichom-body-weight
+Id: body-weight
 Title: "Body weight profile"
 Description: "The weight of a person diagnosed with breastcancer"
 * valueQuantity.unit from UnitsBodyWeightVS //problem: vital signs profile requires a different set of units, we need to create our own
