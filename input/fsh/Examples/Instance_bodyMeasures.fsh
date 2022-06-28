@@ -6,7 +6,7 @@ Description: "Example of the height of a person diagnosed with breastcancer"
 * valueQuantity.value = 48
 * valueQuantity.unit = "Inch"
 * valueQuantity.code = SCT#258677007
-* effectiveDateTime = "2019-04-01" // this is required in the vital signs profile but is not in the ichom set. What do we do?
+* effectiveDateTime = "2019-04-01" // this is required in the vital signs profile but is not in the ichom set. What do we do? Create our own measures for body weight and height?
 
 Instance: BodyWeightPatient147
 InstanceOf: ClinicalFactorsBodyWeight
