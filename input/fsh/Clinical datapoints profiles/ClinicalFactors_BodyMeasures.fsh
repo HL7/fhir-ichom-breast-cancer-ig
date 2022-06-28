@@ -21,7 +21,7 @@ Description: "The height of a person diagnosed with breastcancer"
 
 Profile: ClinicalFactorsBodyWeight
 Parent: HL7BodyWeight
-Id: ichom-body-weight
+Id: body-weight
 Title: "Body weight profile"
 Description: "The weight of a person diagnosed with breastcancer"
 * valueQuantity.unit from UnitsBodyWeightVS //problem: vital signs profile requires a different set of units, we need to create our own
