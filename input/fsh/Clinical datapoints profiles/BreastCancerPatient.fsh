@@ -3,7 +3,7 @@ Parent: Patient
 Id: patient
 Title: "Breast Cancer Patient Profile"
 Description: "The patient profiles represent the patient characteristics and demograhic factors"
-* birthDate 0..1  // is it possible to set this to datatype = date year?
+* birthDate 0..1
 * deceased[x] only dateTime 
 * deceased[x] MS 
 * address.country from CountryVS
