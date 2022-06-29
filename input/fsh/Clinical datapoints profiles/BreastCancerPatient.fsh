@@ -2,7 +2,7 @@ Profile: BreastCancerPatient
 Parent: Patient 
 Id: patient
 Title: "Breast Cancer Patient Profile"
-Description: "The patient profiles represent the patient characteristics and demograhic factors"
+Description: "Represents the patient characteristics and demographic factors as defined by ICHOM's [Breast Cancer set](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/)."
 * birthDate 0..1
 * deceased[x] only dateTime 
 * deceased[x] MS 
