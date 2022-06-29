@@ -1,7 +1,7 @@
 Profile: BreastCancerPatient
 Parent: Patient 
 Id: patient
-Title: "Breast Cancer Patient Profile"
+Title: "Breast Cancer Patient"
 Description: "The patient profiles represent the patient characteristics and demograhic factors"
 * birthDate 0..1
 * deceased[x] only dateTime 
