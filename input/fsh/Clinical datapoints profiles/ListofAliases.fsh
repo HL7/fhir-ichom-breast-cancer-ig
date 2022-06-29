@@ -1,6 +1,6 @@
 // Profiles HL7 FHIR
-Alias: HL7BodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight 
-Alias: HL7BodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
+Alias: StandardBodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight 
+Alias: StandardBodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
 
 // CodeSystems:
 Alias: SCT = http://snomed.info/sct
@@ -13,6 +13,8 @@ Alias: GenderCS = http://hl7.org/fhir/administrative-gender
 Alias: EthnicityCS = http://terminology.hl7.org/CodeSystem/v3-Ethnicity
 Alias: CountryCS = urn:iso:std:iso:3166
 Alias: ObservationStatusCS = http://hl7.org/fhir/observation-status
+Alias: ConditionStatusCS = http://terminology.hl7.org/CodeSystem/condition-clinical
+Alias: UCUM = http://unitsofmeasure.org
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity

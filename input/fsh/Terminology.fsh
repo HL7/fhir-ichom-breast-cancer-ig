@@ -23,7 +23,7 @@ ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
-* include codes from  system RaceVS
+* include codes from system RaceVS
 // Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS
@@ -405,3 +405,18 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * SCT#67151002 "Histological diagnosis"
 // both --> option to use postcoordinated terms
 // unknown --> null flavor
+
+
+// ValueSet: UnitsBodyHeightVS
+// Id: UnitsBodyHeight
+// Title: "Units of patient's body height"
+// Description: "Valueset of the unit  of the patient's body height"
+// * SCT#258672001 "Centimeter" 
+// * SCT#258677007 "Inch"
+
+// ValueSet: UnitsBodyWeightVS
+// Id: UnitsBodyWeight
+// Title: "Units of patient's body weight"
+// Description: "Valueset of the unit  of the patient's body weight"
+// * SCT#258683005 "kilogram"
+// * SCT#258693003 "pounds"

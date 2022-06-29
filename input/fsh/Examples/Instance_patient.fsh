@@ -13,7 +13,7 @@ Description: "The characteristics and demograhic factors of an example patient"
 
 Instance: MenopausalStatusPatient147
 InstanceOf: MenopausalStatus 
-Title: "Example of menopausal status "
+Title: "Example of menopausal status"
 Description: "An example of the menopausal status of a patient"
 * status = ObservationStatusCS#unknown
 * subject = Reference(BreastCancerPatient147)
