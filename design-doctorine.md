@@ -31,7 +31,11 @@
 
 ## Clinical data points
 * this data will already be available in the health information system (HIT) as part of patient care
-* aim is to extract it for purposes of analytics
+  * aim is to extract it for purposes of analytics
+* will be aligning codes, valuesets, and extensions used with US Core and mCODE
+  * but not introducing a hard dependency on those guides or deriving profiles from them since we are Universal Realm and those are US specs
+* will not be fixing minimum cardinality of elements since this is a low-level, domain of knowledge specification
+  * more concrete implementation guides will be needed here for actual implementation that fix them
 
 ## Terminology
 * terminology will not be shared agross IGs, as there is little overlap between the initial [breast cancer](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/) and [autism spectrum disorders](https://connect.ichom.org/patient-centered-outcome-measures/autism-spectrum-disorder/) sets that are proposed for the initial HL7 inclusion
