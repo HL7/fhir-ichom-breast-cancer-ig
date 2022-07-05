@@ -36,7 +36,7 @@ Description: "A staging system to describe the amount and spread of breast cance
 Profile:  TNMPrimaryTumorCategory
 Id: tnm-primary-tumor-category
 Parent: Observation
-Title: "TNM Primary Tumor Category Profile"
+Title: "TNM Primary Tumor Category"
 Description: "Category of the primary tumor, based on its size and extent, based on evidence such as physical examination, imaging, and/or biopsy."
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
@@ -49,7 +49,7 @@ Description: "Category of the primary tumor, based on its size and extent, based
 Profile:  TNMRegionalNodesCategory
 Id: tnm-regional-nodes-category
 Parent: Observation
-Title: "TNM Regional Nodes Category Profile"
+Title: "TNM Regional Nodes Category"
 Description: "Category of the presence or absence of metastases in regional lymph nodes, based on evidence such as physical examination, imaging, and/or biopsy."
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "Node stage finding"
@@ -62,7 +62,7 @@ Description: "Category of the presence or absence of metastases in regional lymp
 Profile:  TNMDistantMetastasesCategory
 Id: tnm-distant-metastases-category
 Parent: Observation
-Title: "TNM Distant Metastases Category Profile"
+Title: "TNM Distant Metastases Category"
 Description: "Category describing the extent of a tumor metastasis in remote anatomical locations, based on evidence such as physical examination, imaging, and/or biopsy."
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"

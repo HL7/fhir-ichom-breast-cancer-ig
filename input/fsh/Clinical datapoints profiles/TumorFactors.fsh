@@ -95,7 +95,7 @@ Description: "The observation represents if the progesterone receptor status is 
 Profile: HERStatus
 Parent: Observation 
 Id: her-status
-Title: "HER2-receptor status"
+Title: "HER2 receptor status"
 Description: "The observation represents if the HER2 receptor status is positive"
 * insert PublicationProfileRuleset
 * code = LNC#48676-1 "HER2 [Interpretation] in Tissue"

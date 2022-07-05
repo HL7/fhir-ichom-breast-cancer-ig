@@ -4,6 +4,6 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: primaryconditionmapping
 Title: "Primary condition to ICHOM set"
 Description: "Mapping of the primary breast cancer condition to the ICHOM breast cancer PCOM set." 	
-* -> "FIRSTBC" "First breast cancer"
+* -> "First breast cancer"
 * bodySite -> "Laterality"
 * clinicalStatus -> "MalignancyRecur" 

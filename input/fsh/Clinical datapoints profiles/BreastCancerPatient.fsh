@@ -1,7 +1,7 @@
 Profile: BreastCancerPatient
 Parent: Patient 
 Id: patient
-Title: "Breast Cancer Patient Profile"
+Title: "Breast Cancer Patient"
 Description: "Represents the patient characteristics and demographic factors as defined by ICHOM's [Breast Cancer set](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/)."
 * insert PublicationProfileRuleset
 * birthDate 0..1 MS
@@ -18,7 +18,7 @@ Description: "Represents the patient characteristics and demographic factors as 
 Profile: MenopausalStatus
 Parent: Observation 
 Id: menopausal-status
-Title: "Menopausal status Profile"
+Title: "Menopausal status"
 Description: "The observation profiles represent the menopausal status of a patient"
 * insert PublicationProfileRuleset
 * code = SCT#161712005 "Menopause, function (observable entity)"
