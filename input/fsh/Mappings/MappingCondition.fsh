@@ -5,6 +5,5 @@ Id: primaryconditionmapping
 Title: "Primary condition to ICHOM set"
 Description: "Mapping of the primary breast cancer condition to the ICHOM breast cancer PCOM set." 	
 * -> "FIRSTBC" "First breast cancer"
-* bodySite -> "LATERAL" "Laterality"
-* clinicalStatus -> "MalignancyRecur" "Recurrence"
-
+* bodySite -> "Laterality"
+* clinicalStatus -> "MalignancyRecur" 

@@ -4,14 +4,14 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: patientmapping
 Title: "Breast cancer patient to ICHOM set"
 Description: "Mapping of the breast cancer patient profile to the ICHOM breast cancer PCOM set." 	
-* identifier.value -> "N/A" "PatientID"
-* name.family -> "LastName"
-* birthDate -> "YearOfBirth"
+* identifier.value -> "PatientID"
+* name.family -> "Last name"
+* birthDate -> "Year of birth"
 * gender -> "Sex"
-* deceased[x] -> "DeceasedDate"
+* deceased[x] -> "Deceased date"
 * address.country -> "Country"
-* maritalStatus -> "RelationshipStatus"
-* extension[educationLevel] -> "EducationLevel"
+* maritalStatus -> "Relationship status"
+* extension[educationLevel] -> "Education level"
 * extension[ethnicity] -> "Ethnicity"
 * extension[race] -> "Race"
 
@@ -22,5 +22,5 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: MenopausalStatusMapping
 Title: "Observation of menopausal status to ICHOM set"
 Description: "Mapping of the menopausal status to the ICHOM breast cancer PCOM set." 	
-* value[x] -> "MENOPAUSE" "Menopause status"
+* value[x] -> "Menopause status"
 
