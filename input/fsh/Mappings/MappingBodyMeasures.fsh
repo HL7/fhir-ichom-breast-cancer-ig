@@ -1,6 +1,6 @@
 Mapping: BodyHeightToICHOM
 Source:	BodyHeight
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/"
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: BodyHeightMapping
 Title: "Body height to ICHOM set"
 Description: "Mapping of the body height to the ICHOM breast cancer PCOM set." 	
