@@ -2,7 +2,7 @@ Profile: BodyHeight
 Parent: StandardBodyHeight
 Id: ichom-body-height
 Title: "Body height"
-Description: "The height of a person diagnosed with breastcancer"
+Description: "Height of a person diagnosed with breastcancer"
 * insert PublicationProfileRuleset
 * valueQuantity.value MS
 * valueQuantity.unit MS
