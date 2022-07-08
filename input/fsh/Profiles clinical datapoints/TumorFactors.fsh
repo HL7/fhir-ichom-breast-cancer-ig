@@ -1,4 +1,5 @@
 // Tumor factors
+// HISTOTYPE
 Profile: Histotype
 Parent: Observation 
 Id: histo-type
@@ -12,6 +13,13 @@ Description: "Represents the histological type of the tumor"
 * value[x] MS
 * effectiveDateTime MS
 
+Instance: HistotypePatient147
+InstanceOf: Histotype
+Description: "Example of the histological type of the breast cancer tumor"
+* status = ObservationStatusCS#final
+* value[x] = SCT#722524005
+
+// GENETIC MUTATION
 Profile: GeneticMutation
 Parent: Observation 
 Id: genetic-mutation
@@ -25,6 +33,13 @@ Description: "Represents if the patient is a carrier of a genetic mutation predi
 * value[x] MS
 * effectiveDateTime MS
 
+Instance: GeneticMutationPatient147
+InstanceOf: GeneticMutation
+Description: "Example of a genetic mutation predisposing breast cancer"
+* status = ObservationStatusCS#final
+* value[x] = SCT#445180002 
+
+// TUMOR GRADING
 //Need to make sure that both tumor grade and invasion grade fit in the same observation.
 Profile: TumorGrading
 Parent: Observation 
@@ -49,6 +64,15 @@ Description: "Represents if the tumor grade and the invasion grade"
 * component[TumorGrade].value[x] only CodeableConcept
 * component[TumorGrade].valueCodeableConcept from GradingVS (required)
 
+Instance: TumorGradingPatient147
+InstanceOf: TumorGrading
+Description: "Example of the tumor and invasion grade of a breast cancer tumor"
+* status = ObservationStatusCS#final
+* component[InvasionGrade].valueCodeableConcept.coding = SCT#399415002 "Low grade histologic differentiation (finding)"
+* component[TumorGrade].valueCodeableConcept.coding = SCT#399415002 "Low grade histologic differentiation (finding)"
+
+
+// LYMPH NODES
 Profile: LymphNodes
 Parent: Observation 
 Id: lymph-nodes
@@ -72,6 +96,14 @@ Description: "Represents the number of lymph nodes resected and involved"
 * component[LymphNodesInvolved].code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
 * component[LymphNodesInvolved].value[x] only Quantity
 
+Instance: LymphNodesPatient147
+InstanceOf: LymphNodes
+Description: "Example of the number of resected lymph nodes and the number of involved lymph nodes"
+* status = ObservationStatusCS#final
+* component[LymphNodesResected].valueQuantity.value[+] = 11
+* component[LymphNodesInvolved].valueQuantity.value[+] = 28
+
+// ER STATUS
 Profile: ERStatus
 Parent: Observation 
 Id: er-status
@@ -85,6 +117,13 @@ Description: "Represents if the estrogen receptor status is positive"
 * value[x] MS
 * effectiveDateTime MS
 
+Instance: ERStatusPatient147
+InstanceOf: ERStatus
+Description: "Example of the erstrogen receptor status in a patient with breast cancer"
+* status = ObservationStatusCS#final
+* value[x] = SCT#416237000
+
+// PR STATUS
 Profile: PRStatus
 Parent: Observation 
 Id: pr-status
@@ -98,6 +137,13 @@ Description: "Represents if the progesterone receptor status is positive"
 * value[x] MS
 * effectiveDateTime MS
 
+Instance: PRStatusPatient147
+InstanceOf: PRStatus
+Description: "Example of the progesterone receptor status in a patient with breast cancer"
+* status = ObservationStatusCS#final
+* value[x] = NullFlavor#UNK "unknown"
+
+// HER STATUS
 Profile: HERStatus
 Parent: Observation 
 Id: her-status
@@ -110,3 +156,10 @@ Description: "Represents if the HER2 receptor status is positive"
 * value[x] from HER2ReceptorStatusVS (required)
 * value[x] MS
 * effectiveDateTime MS
+
+Instance: HERStatusPatient147
+InstanceOf: HERStatus
+Description: "Example of the HER2 receptor status in a patient with breast cancer"
+* status = ObservationStatusCS#final
+* value[x] = SCT#416237000 "Procedure not done"
+

@@ -524,7 +524,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #!=
-      * answerCoding = BreastSurgeryTypesCodeSystem#999 
+      * answerCoding = NullFlavor#UNK
     * insert enableWhenTreatment(#1)
     * enableBehavior = #all
     * required = true
@@ -573,7 +573,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=
-      * answerCoding = TreatmentTypesCodeSystem#999
+      * answerCoding = NullFlavor#UNK
     * enableBehavior = #all
     * required = true
     * repeats = true
