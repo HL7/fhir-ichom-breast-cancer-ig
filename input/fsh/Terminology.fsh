@@ -24,7 +24,7 @@ Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
 * include codes from system RaceVS
-// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset 
+// Remove this valueset once we have a snowmed-supporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS
 Id: RelationshipStatusVS
@@ -67,7 +67,7 @@ Description: "Valueset of the histological types of tumors"
 ValueSet: GeneticMutationVS
 Id: GeneticMutationVS
 Title: "Genetic Mutation"
-Description: "Valueset of the genetic mutation predisposing breastcancer"
+Description: "Valueset of the genetic mutation predisposing breast cancer"
 * SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
 * SCT#412734009 "BRCA1 gene mutation positive (finding)"
 * SCT#412738007 "BRCA2 gene mutation positive (finding)"
@@ -157,8 +157,8 @@ Description: "Patient's documented history of comorbidities"
 
 ValueSet: LateralityVS
 Id: LateralityVS
-Title: "Laterality of breastcancer"
-Description: "Valueset of the laterality of breastcancer"
+Title: "Laterality of breast cancer"
+Description: "Valueset of the laterality of breast cancer"
 * SCT#80248007 "Left breast structure"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
@@ -196,7 +196,7 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#6 "Hormonal therapy"
 * include TreatmentTypesCodeSystem#7 "Targeted therapy"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
-* include NullFlavor#UNK "unknown"
+* include NullFlavor#ASKU "asked but unknown"
 
 // Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
@@ -284,7 +284,7 @@ Description: "Valueset used in the Patient Reported Outcomes Instrument about qu
 CodeSystem: FACTESCodeSystem
 Id: FACTESCodeSystem
 Title: "FACT-ES questionnaire"
-Description: "Codes used in the Functional Assessment of Cancer Therapy questionnare"
+Description: "Codes used in the Functional Assessment of Cancer Therapy questionnaire"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
 * ^caseSensitive = true
 
@@ -297,7 +297,7 @@ Description: "Codes used in the Functional Assessment of Cancer Therapy question
 ValueSet: FACTESValueSet
 Id: FACTESValueSet
 Title: "FACT-ES questionnaire"
-Description: "Valueset of the Functional Assessment of Cancer Therapy questionnare"
+Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
 * ^version  = 0.0.1
 * include FACTESCodeSystem#1 "Not at all"
 * include FACTESCodeSystem#2 "A little"
@@ -390,7 +390,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // ValueSet: RecurrenceMethod
 // Id: RecurrenceMethod
 // Title: "Method of confirming recurrence"
-// Description: "Valueset of the methods used to confirm recurrence of breastcancer"
+// Description: "Valueset of the methods used to confirm recurrence of breast cancer"
 // * SCT#394914008 "Radiological diagnosis"
 // * SCT#67151002 "Histological diagnosis"
 // both --> option to use postcoordinated terms

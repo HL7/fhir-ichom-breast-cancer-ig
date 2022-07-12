@@ -3,7 +3,7 @@ Profile: BodyHeight
 Parent: StandardBodyHeight
 Id: ichom-body-height
 Title: "Body height"
-Description: "Height of a person diagnosed with breastcancer"
+Description: "Height of a person diagnosed with breast cancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.value MS
@@ -11,7 +11,7 @@ Description: "Height of a person diagnosed with breastcancer"
 
 Instance: BodyHeightPatient147
 InstanceOf: BodyHeight
-Description: "Example of the height of a patient diagnosed with breastcancer"
+Description: "Example of the height of a patient diagnosed with breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 48
@@ -41,7 +41,7 @@ Description: "The weight of a person diagnosed with breastcancer"
 
 Instance: BodyWeightPatient147
 InstanceOf: BodyWeight
-Description: "Example of the weight of a patient diagnosed with breastcancer"
+Description: "Example of the weight of a patient diagnosed with breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 482

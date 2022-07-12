@@ -18,7 +18,7 @@ Description: "Represents the patient characteristics and demographic factors"
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient"
-Description: "The characteristics and demograhic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
+Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1920"
 * name.family = "Letsche"
 * address.country = CountryCS#USA

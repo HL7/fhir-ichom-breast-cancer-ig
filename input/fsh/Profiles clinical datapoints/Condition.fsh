@@ -2,7 +2,7 @@ Profile: PrimaryBreastCancerCondition
 Parent: Condition 
 Id: primary-breastcancer
 Title: "Primary Breast Cancer Condition"
-Description: "Represent the properties of the primary breast cancer diagnosis"
+Description: "Represent the properties of the primary breast cancer diagnosis."
 * insert PublicationProfileRuleset
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
@@ -13,7 +13,7 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 
 Instance: ConditionPatient147
 InstanceOf: PrimaryBreastCancerCondition
-Description: "Example of the condiion breastcance diagnosed in a patient"
+Description: "Example of the condition breast cancer diagnosed in a patient"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * clinicalStatus = ConditionStatusCS#recurrence "Recurrence"
 * bodySite = SCT#80248007 "Left breast"
@@ -24,7 +24,7 @@ Source:	PrimaryBreastCancerCondition
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: primaryconditionmapping
 Title: "Primary condition to ICHOM set"
-Description: "Mapping of the primary breast cancer condition to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the primary breast cancer condition to the ICHOM breast cancer PCOM set. To ensure this is the first breast cancer diagnosed in a patient, the application can search for previous conditions." 	
 * -> "First breast cancer"
 * bodySite -> "Laterality"
 * clinicalStatus -> "Recurrence" 
