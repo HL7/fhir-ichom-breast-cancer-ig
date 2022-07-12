@@ -34,7 +34,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: patientmapping
 Title: "Breast cancer patient to ICHOM set"
 Description: "Mapping of the breast cancer patient profile to the ICHOM breast cancer PCOM set." 	
-* identifier.value -> "PatientID"
+* identifier.value -> "Patient ID"
 * name.family -> "Last name"
 * birthDate -> "Year of birth"
 * gender -> "Sex"
