@@ -38,7 +38,7 @@ Description: "Mapping of the breast cancer patient profile to the ICHOM breast c
 * name.family -> "Last name"
 * birthDate -> "Year of birth"
 * gender -> "Sex"
-* deceased[x] -> "Deceased date"
+* deceased[x] -> "Date of death"
 * address.country -> "Country"
 * maritalStatus -> "Relationship status"
 * extension[educationLevel] -> "Education level"

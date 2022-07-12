@@ -11,7 +11,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: EducationLevelMapping
 Title: "Education level mapping to ICHOM set"
 Description: "Mapping of the education level to the ICHOM breast cancer PCOM set." 	
-* -> "Educationlevel"
+* -> "Level of education"
 
 Extension: Race
 Id: Race
