@@ -74,6 +74,7 @@ Description: "Valueset of the genetic mutation predisposing breastcancer"
 * NullFlavor#OTH "other"
 * SCT#416237000 "Procedure not done"
 
+
 ValueSet: GradingVS
 Id: GradingVS
 Title: "Grading of tumor"
@@ -89,7 +90,7 @@ Title: "Estrogen receptor status"
 Description: "Valueset of the Estrogen receptor status"
 * SCT#373572006 "Clinical finding absent"
 * SCT#416053008 "Estrogen receptor positive tumor"
-* SCT#416237000 "Procedure not done"
+* SCT#262008008 "Not performed"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ProgesteroneStatusVS
