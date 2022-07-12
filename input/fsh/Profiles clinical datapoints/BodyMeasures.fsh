@@ -63,7 +63,7 @@ Profile: MenopausalStatus
 Parent: Observation 
 Id: menopausal-status
 Title: "Menopausal status"
-Description: "The observation profiles represent the menopausal status of a patient"
+Description: "Represents the menopausal status of a patient"
 * insert PublicationProfileRuleset
 * code = SCT#161712005 "Menopause, function (observable entity)"
 * subject only Reference(BreastCancerPatient)
