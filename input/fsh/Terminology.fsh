@@ -10,7 +10,7 @@ Id: DemographicFactorsCountry
 Title: "Country of residence of patient"
 Description: "Valueset of the country (e.g. of residence) of a patient"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
-// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset
+// Remove this valueset once we have a snomed-supporting server since this is only a shell valueset
 
 ValueSet: DemographicFactorsEthnicity
 Id: DemographicFactorsEthnicity
