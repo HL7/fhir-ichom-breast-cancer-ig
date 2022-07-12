@@ -17,7 +17,7 @@ Id: DemographicFactorsEthnicity
 Title: "Ethnicity of patient"
 Description: "Valueset of the ethnicity of a patient"
 * include codes from valueset EthnicityVS
-// Remove this valueset once we have a snowmedsupporting server since this is only a shell valueset. 
+// Remove this valueset once we have a snomed-supporting server since this is only a shell valueset. 
 
 ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
