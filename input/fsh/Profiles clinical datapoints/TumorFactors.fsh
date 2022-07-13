@@ -16,6 +16,7 @@ Instance: HistotypePatient147
 InstanceOf: Histotype
 Description: "Example of the histological type of the breast cancer tumor"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#722524005
 
 Mapping: HistotypeToICHOM
@@ -33,7 +34,7 @@ Id: genetic-mutation
 Title: "Genetic mutation"
 Description: "Represents if the patient is a carrier of a genetic mutation predisposing breast cancer"
 * insert PublicationProfileRuleset
-* code = SCT#55446002 "Genetic mutation (finding)"
+* code = SCT#55446002 "Genetic mutation"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from GeneticMutationVS (required)
@@ -44,6 +45,7 @@ Instance: GeneticMutationPatient147
 InstanceOf: GeneticMutation
 Description: "Example of a genetic mutation predisposing breast cancer"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#445180002 
 
 Mapping: GeneticMutationToICHOM
@@ -55,47 +57,62 @@ Description: "Mapping of the genetic mutation to the ICHOM breast cancer PCOM se
 * valueCodeableConcept -> "Genetic mutation"
 
 // TUMOR GRADING
-// Need to make sure that both tumor grade and invasion grade fit in the same observation.
-Profile: TumorGrading
+Profile: TumorGrade
 Parent: Observation 
 Id: tumor-grade
-Title: "Tumor and invasion grade"
-Description: "Represents if the tumor grade and the invasion grade"
+Title: "Tumor grade"
+Description: "Represents the grade of the breast cancer tumor"
 * insert PublicationProfileRuleset
 * code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
 * subject only Reference(BreastCancerPatient)
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
-* component contains 
-    InvasionGrade 0..1 MS and TumorGrade 0..1 MS
-* component[InvasionGrade] ^short = "Invasion grade"
-* component[InvasionGrade] ^definition = "The grade of invasive component of tumor"
-* component[InvasionGrade].value[x] only CodeableConcept
-* component[InvasionGrade].valueCodeableConcept from GradingVS (required)
-* component[TumorGrade] ^short = "Tumor grade"
-* component[TumorGrade] ^definition = "The grade of DCIS component of the tumor"
-* component[TumorGrade].value[x] only CodeableConcept
-* component[TumorGrade].valueCodeableConcept from GradingVS (required)
+* value[x] only CodeableConcept 
+* value[x] from TumorGradingVS (required)
+* value[x] MS
 
-Instance: TumorGradingPatient147
-InstanceOf: TumorGrading
-Description: "Example of the tumor and invasion grade of a breast cancer tumor"
+Instance: TumorGradePatient147
+InstanceOf: TumorGrade
+Description: "Example of the grade of a breast cancer tumor"
 * status = ObservationStatusCS#final
-* component[InvasionGrade].code = SCT#399415002 "Low grade histologic differentiation (finding)"
-* component[TumorGrade].code = SCT#399415002 "Low grade histologic differentiation (finding)"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = SCT#399415002
 
-Mapping: TumorGradingToICHOM
-Source:	TumorGrading
+Mapping: TumorGradeToICHOM
+Source:	TumorGrade
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: tumorgradingmapping
-Title: "Tumor grading to ICHOM set"
-Description: "Mapping of the tumor grading to the ICHOM breast cancer PCOM set." 	
-* component[InvasionGrade].code ->  "Inavasion grade"
-* component[TumorGrade].code ->  "Tumor grade"
+Id: tumorgrademapping
+Title: "Tumor grade to ICHOM set"
+Description: "Mapping of the tumor grade to the ICHOM breast cancer PCOM set." 	
+* valueCodeableConcept ->  "Tumor grade"
 
-// Size of invasive tumor
+//INVASION GRADE
+Profile: InvasionGrade
+Parent: Observation 
+Id: invasion-grade
+Title: "Invasion grade"
+Description: "Represents the tumor grade of DCIS component of the breast cancer tumor"
+* insert PublicationProfileRuleset
+* code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
+* subject only Reference(BreastCancerPatient)
+* value[x] only CodeableConcept 
+* value[x] from TumorGradingVS (required)
+* value[x] MS
+
+Instance: InvasionGradePatient147
+InstanceOf: InvasionGrade
+Description: "Example of the tumor grade of DCIS component of the breast cancer tumor"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = SCT#399415002
+
+Mapping: InvasionGradeToICHOM
+Source:	InvasionGrade
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: Invasiongrademapping
+Title: "Invasion grade to ICHOM set"
+Description: "Mapping of the invasion grade to the ICHOM breast cancer PCOM set." 	
+* valueCodeableConcept ->  "Invasion grade"
+
+// TUMOR SIZE
 Profile: TumorSize
 Parent: Observation 
 Id: sizeinvasivetumor
@@ -113,6 +130,7 @@ Instance: TumorSizePatient147
 InstanceOf: TumorSize
 Description: "Example of the size of the invasive tumor of a patient with breast cancer"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 59
 
 Mapping: TumorSizeToICHOM
@@ -152,6 +170,7 @@ Instance: LymphNodesPatient147
 InstanceOf: LymphNodes
 Description: "Example of the number of resected lymph nodes and the number of involved lymph nodes"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * component[LymphNodesResected].valueQuantity.value[+] = 11
 * component[LymphNodesInvolved].valueQuantity.value[+] = 28
 
@@ -183,7 +202,8 @@ Instance: ERStatusPatient147
 InstanceOf: ERStatus
 Description: "Example of the estrogen receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
-* valueCodeableConcept = SCT#262008008 
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = SCT#416237000
 
 Mapping: ERStatusToICHOM
 Source:	ERStatus
@@ -211,6 +231,7 @@ Instance: PRStatusPatient147
 InstanceOf: PRStatus
 Description: "Example of the progesterone receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = NullFlavor#UNK "unknown"
 
 Mapping: PRStatusToICHOM
@@ -239,6 +260,7 @@ Instance: HERStatusPatient147
 InstanceOf: HERStatus
 Description: "Example of the HER2 receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#416237000 "Procedure not done"
 
 Mapping: HERStatusToICHOM

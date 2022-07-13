@@ -68,15 +68,14 @@ ValueSet: GeneticMutationVS
 Id: GeneticMutationVS
 Title: "Genetic Mutation"
 Description: "Valueset of the genetic mutation predisposing breastcancer"
-* SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
-* SCT#412734009 "BRCA1 gene mutation positive (finding)"
-* SCT#412738007 "BRCA2 gene mutation positive (finding)"
+* SCT#445180002 "Breast cancer genetic marker of susceptibility negative"
+* SCT#412734009 "BRCA1 gene mutation positive"
+* SCT#412738007 "BRCA2 gene mutation positive"
 * NullFlavor#OTH "other"
 * SCT#416237000 "Procedure not done"
 
-
-ValueSet: GradingVS
-Id: GradingVS
+ValueSet: TumorGradingVS
+Id: TumorGradingVS
 Title: "Grading of tumor"
 Description: "Valueset of the grade of the tumor"
 * SCT#399415002 "Low grade histologic differentiation (finding)"
@@ -90,7 +89,7 @@ Title: "Estrogen receptor status"
 Description: "Valueset of the Estrogen receptor status"
 * SCT#373572006 "Clinical finding absent"
 * SCT#416053008 "Estrogen receptor positive tumor"
-* SCT#262008008 "Not performed"
+* SCT#416237000 "Procedure not done"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ProgesteroneStatusVS
