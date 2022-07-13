@@ -66,7 +66,7 @@ Description: "Represents the grade of the breast cancer tumor"
 * code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from TumorGradingVS (required)
+* value[x] from GradingVS (required)
 * value[x] MS
 
 Instance: TumorGradePatient147
@@ -94,7 +94,7 @@ Description: "Represents the tumor grade of DCIS component of the breast cancer 
 * code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from TumorGradingVS (required)
+* value[x] from GradingVS (required)
 * value[x] MS
 
 Instance: InvasionGradePatient147
@@ -232,7 +232,7 @@ InstanceOf: PRStatus
 Description: "Example of the progesterone receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = NullFlavor#UNK "unknown"
+* valueCodeableConcept = NullFlavor#UNK
 
 Mapping: PRStatusToICHOM
 Source:	PRStatus
@@ -261,7 +261,7 @@ InstanceOf: HERStatus
 Description: "Example of the HER2 receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#416237000 "Procedure not done"
+* valueCodeableConcept = SCT#416237000
 
 Mapping: HERStatusToICHOM
 Source:	HERStatus
