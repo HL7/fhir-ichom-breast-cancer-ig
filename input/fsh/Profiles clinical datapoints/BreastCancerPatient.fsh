@@ -18,7 +18,7 @@ Description: "Represents the patient characteristics and demographic factors"
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient"
-Description: "The characteristics and demograhic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
+Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1920"
 * name.family = "Letsche"
 * address.country = CountryCS#USA
@@ -34,14 +34,14 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: patientmapping
 Title: "Breast cancer patient to ICHOM set"
 Description: "Mapping of the breast cancer patient profile to the ICHOM breast cancer PCOM set." 	
-* identifier.value -> "PatientID"
+* identifier.value -> "Patient ID"
 * name.family -> "Last name"
 * birthDate -> "Year of birth"
 * gender -> "Sex"
-* deceased[x] -> "Deceased date"
+* deceased[x] -> "Date of death"
 * address.country -> "Country"
 * maritalStatus -> "Relationship status"
-* extension[educationLevel] -> "Education level"
+* extension[educationLevel] -> "Level of education"
 * extension[ethnicity] -> "Ethnicity"
 * extension[race] -> "Race"
 
