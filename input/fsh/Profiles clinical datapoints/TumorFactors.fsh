@@ -191,7 +191,7 @@ Id: er-status
 Title: "Estrogen receptor status"
 Description: "Represents if the estrogen receptor status is positive"
 * insert PublicationProfileRuleset
-* code = SCT#445028008 "Status of estrogen receptor of neoplasm (observable entity)"
+* code = SCT#445028008 "Status of estrogen receptors of neoplasm (observable entity)"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from EstrogenStatusVS (required)
