@@ -28,33 +28,33 @@ Description: "Mapping of the histologival type of tumor to the ICHOM breast canc
 * valueCodeableConcept -> "Histological type"
 
 // GENETIC MUTATION
-Profile: GeneticMutation
+Profile: GermlineMutation
 Parent: Observation 
 Id: genetic-mutation
-Title: "Genetic mutation"
-Description: "Represents if the patient is a carrier of a genetic mutation predisposing breast cancer"
+Title: "Germline mutation"
+Description: "Represents if the patient carries a germline mutation predisposing breast cancer"
 * insert PublicationProfileRuleset
 * code = SCT#55446002 "Genetic mutation"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from GeneticMutationVS (required)
+* value[x] from GermlineMutationVS (required)
 * value[x] MS
 * effectiveDateTime MS
 
-Instance: GeneticMutationPatient147
-InstanceOf: GeneticMutation
-Description: "Example of a genetic mutation predisposing breast cancer"
+Instance: GermlineMutationPatient147
+InstanceOf: GermlineMutation
+Description: "Example of whether a patient carries a germline mutation predisposing breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#445180002 
 
-Mapping: GeneticMutationToICHOM
-Source:	GeneticMutation
+Mapping: GermlineMutationToICHOM
+Source:	GermlineMutation
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: geneticmutationmapping
-Title: "Genetic mutation to ICHOM set"
-Description: "Mapping of the genetic mutation to the ICHOM breast cancer PCOM set." 	
-* valueCodeableConcept -> "Genetic mutation"
+Id: GermlineMutationMapping
+Title: "Germline mutation to ICHOM set"
+Description: "Mapping of the germline mutation to the ICHOM breast cancer PCOM set." 	
+* valueCodeableConcept -> "Germline mutation"
 
 // TUMOR GRADING
 Profile: TumorGrade

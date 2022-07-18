@@ -3,7 +3,7 @@ Profile:  ClinicalTNMTumorStage
 Id: clinical-tnm-tumor-stage
 Parent: Observation
 Title: "Clinical TNM tumor stage"
-Description: "Represents the clinical stage of the tumor (per AJCC 5th - 7th Ed.)"
+Description: "Represents the clinical stage of the tumor (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -33,7 +33,7 @@ Profile:  PathologicalTNMTumorStage
 Id: pathological-tnm-tumor-stage
 Parent: Observation
 Title: "Pathological TNM tumor stage"
-Description: "Represents the pathological stage of the tumor (per AJCC 5th - 7th Ed.)"
+Description: "Represents the pathological stage of the tumor (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -65,7 +65,7 @@ Profile: ClinicalTNMNodalStage
 Id: clinical-tnm-nodal-stage
 Parent: Observation
 Title: "Clinical TNM nodal stage"
-Description: "Represents the clinical stage of the presence or absence of metastases in regional lymph nodes (per AJCC 5th - 7th Ed.)"
+Description: "Represents the clinical stage of the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "nodal stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -96,7 +96,7 @@ Profile: PathologicalTNMNodalStage
 Id: pathological-tnm-nodal-stage
 Parent: Observation
 Title: "Pathological TNM nodal stage"
-Description: "Represents the pathological stage of the presence or absence of metastases in regional lymph nodes (per AJCC 5th - 7th Ed.)"
+Description: "Represents the pathological stage of the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "nodal stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -128,7 +128,7 @@ Profile:  ClinicalTNMDistantMetastases
 Id: clinical-tnm-distant-metastases
 Parent: Observation
 Title: "Clinical TNM distant metastases"
-Description: "Represents the clinical stage of the extent of a tumor metastasis in remote anatomical locations (per AJCC 5th - 7th Ed.)"
+Description: "Represents the clinical stage of the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)
@@ -158,7 +158,7 @@ Profile:  PathologicalDistantMetastasesTNM
 Id: pathological-tnm-distant-metastases
 Parent: Observation
 Title: "Pathological TNM distant metastases"
-Description: "Represents the pathological stage of the extent of a tumor metastasis in remote anatomical locations (per AJCC 5th - 7th Ed.)"
+Description: "Represents the pathological stage of the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)

@@ -65,9 +65,9 @@ Description: "Valueset of the histological types of tumors"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-ValueSet: GeneticMutationVS
-Id: GeneticMutationVS
-Title: "Genetic Mutation"
+ValueSet: GermlineMutationVS
+Id: GermlineMutationVS
+Title: "Germline Mutation"
 Description: "Valueset of the genetic mutation predisposing breast cancer"
 * SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
 * SCT#412734009 "BRCA1 gene mutation positive (finding)"
