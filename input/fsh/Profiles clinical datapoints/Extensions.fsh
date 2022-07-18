@@ -18,7 +18,7 @@ Id: Race
 Title:  "Race Extension"
 Description: "Represents the race of a patient. This extension is aligned with USCore."
 * value[x] only CodeableConcept
-* value[x] from RaceVS (required) 
+* value[x] from RaceVS (example) 
 
 Mapping: RaceToICHOM
 Source:	Race
@@ -33,7 +33,7 @@ Id: Ethnicity
 Title:  "Ethnicity Extension"
 Description: "Represents the ethnicity of a patient. This extension is aligned with USCore"
 * value[x] only CodeableConcept
-* value[x] from EthnicityVS (required)
+* value[x] from EthnicityVS (example)
 
 Mapping: EthnicityToICHOM
 Source:	Ethnicity
