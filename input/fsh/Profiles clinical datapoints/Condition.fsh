@@ -2,7 +2,7 @@ Profile: PrimaryBreastCancerCondition
 Parent: Condition 
 Id: primary-breastcancer
 Title: "Primary Breast Cancer Condition"
-Description: "Represent the properties of the primary breast cancer diagnosis."
+Description: "Represent the properties of the primary breast cancer diagnosis"
 * insert PublicationProfileRuleset
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)

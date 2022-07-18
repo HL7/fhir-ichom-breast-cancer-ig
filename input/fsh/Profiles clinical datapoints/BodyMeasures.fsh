@@ -3,7 +3,7 @@ Profile: BodyHeight
 Parent: StandardBodyHeight
 Id: ichom-body-height
 Title: "Body height"
-Description: "Height of a person diagnosed with breast cancer"
+Description: "Represents the height of a person diagnosed with breast cancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.value MS
@@ -33,7 +33,7 @@ Profile: BodyWeight
 Parent: StandardBodyWeight
 Id: ichom-body-weight
 Title: "Body weight"
-Description: "The weight of a person diagnosed with breastcancer"
+Description: "Represents the weight of a person diagnosed with breastcancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.value MS
@@ -74,7 +74,7 @@ Description: "Represents the menopausal status of a patient"
 Instance: MenopausalStatusPatient147
 InstanceOf: MenopausalStatus 
 Title: "Example of menopausal status"
-Description: "An example of the menopausal status of a patient"
+Description: "Example of the menopausal status of a patient"
 * status = ObservationStatusCS#unknown
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#309606002

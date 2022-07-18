@@ -84,6 +84,24 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
+ValueSet: TNMPrimaryTumorVS
+Id: mcode-tnm-primary-tumor-category-vs
+Title: "TNM Primary Tumor Category Value Set"
+Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
+* codes from system AJCC
+
+ValueSet: TNMRegionalNodesVS
+Id: mcode-tnm-regional-nodes-category-vs
+Title: "TNM Regional Nodes Category Value Set"
+Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
+* include codes from system AJCC
+
+ValueSet: TNMDistantMetastasesVS
+Id: mcode-tnm-distant-metastases-category-vs
+Title: "TNM Distant Metastases Category Value Set"
+Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
+* codes from system AJCC
+
 ValueSet: EstrogenStatusVS
 Id: EstrogenStatusVS
 Title: "Estrogen receptor status"
