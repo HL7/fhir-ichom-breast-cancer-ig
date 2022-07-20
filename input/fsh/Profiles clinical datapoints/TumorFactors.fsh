@@ -286,11 +286,11 @@ Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 // * method --> we would need a code for this
 // can we limit the scale to 0.000 to 1.000? And do we want that?
 
-Instance: MammaprintPatient147
-InstanceOf: MammaprintScore
-Description: "Example of the mammaprint score"
-* status = ObservationStatusCS#final
-* subject = Reference(BreastCancerPatient147)
+// Instance: MammaprintPatient147
+// InstanceOf: MammaprintScore
+// Description: "Example of the mammaprint score"
+// * status = ObservationStatusCS#final
+// * subject = Reference(BreastCancerPatient147)
 //-- do we have an example?
 
 Mapping: MammaprintToICHOM
@@ -316,11 +316,11 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 // * method --> we would need a code for this
 // can we limit the scale to 0 to 100? And do we want that?
 
-Instance: OncotypePatient147
-InstanceOf: OncotypeScore
-Description: "Example of the oncotype score "
-* status = ObservationStatusCS#final
-* subject = Reference(BreastCancerPatient147)
+// Instance: OncotypePatient147
+// InstanceOf: OncotypeScore
+// Description: "Example of the oncotype score "
+// * status = ObservationStatusCS#final
+// * subject = Reference(BreastCancerPatient147)
 //-- do we have an example?
 
 Mapping: OncotypeToICHOM
@@ -346,11 +346,11 @@ Description: "Represents the endopredicton score on a scale of 1.1 to 6.2"
 // * method --> we would need a code for this
 // can we limit the scale of 1.1 to 6.2 ? And do we want that?
 
-Instance: EndopredictonPatient147
-InstanceOf: Endopredicton
-Description: "Example of the Endopredicton score"
-* status = ObservationStatusCS#final
-* subject = Reference(BreastCancerPatient147)
+// Instance: EndopredictonPatient147
+// InstanceOf: EndopredictonScore
+// Description: "Example of the Endopredicton score"
+// * status = ObservationStatusCS#final
+// * subject = Reference(BreastCancerPatient147)
 //-- do we have an example?
 
 Mapping: EndopredictonToICHOM
@@ -360,3 +360,35 @@ Id: Endopredictonmapping
 Title: "Endopredicton scoreto ICHOM set"
 Description: "Mapping of the Endopredicton score to the ICHOM breast cancer PCOM set" 	
 * valueQuantity -> "Endopredicton score"
+
+
+// Multidisciplinary meeting 
+Profile: MultidisciplinaryMeeting 
+Parent: CarePlan 
+Id: multidisciplinary-meeting 
+Title: "Multidisciplinary meeting"
+Description: "Represents if a multidisciplinary meeting was conducted and the treatment that was recommended"
+* insert PublicationProfileRuleset
+* intent = CareplanIntentCS#plan // We could also decide to not limit the intent and keep the options open --> ask ICHOM
+* category = #SCT312384001 "Multidisciplinary assessment"
+* subject only Reference(BreastCancerPatient)
+* created MS
+* activity.detail.code from RecommendedTreatmentTypeValueSet //How can we profile that there can be multiple codes in one plan?
+* activity.detail.code MS
+
+Instance: MultidisciplinaryMeetingPatient147
+InstanceOf: MultidisciplinaryMeeting
+Description: "Example of the multidisciplinary meeting"
+* status = CareplanStatusCS#active
+* subject = Reference(BreastCancerPatient147)
+* activity.detail.code = SCT#387713003
+* activity.detail.status = CareplanActivityStatusCS#unknown
+
+Mapping: MultidisciplinaryMeetingToICHOM
+Source:	MultidisciplinaryMeeting
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: MultidisciplinaryMeetingmapping
+Title: "Multidisciplinary meeting to ICHOM set"
+Description: "Mapping of the multidisciplinary meeting to the ICHOM breast cancer PCOM set" 	
+* -> "Multidisciplinary Meeting"
+* activity.detail.code -> "Multidisciplinary Recommended Treatments"

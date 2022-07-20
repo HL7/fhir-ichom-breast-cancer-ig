@@ -201,11 +201,10 @@ Description: "Codes indicating the kind of treatment a patient underwent"
 * #7 "Targeted therapy"
 * #8 "Best supportive care"
 
-
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
-Title: "Treatment variables"
-Description: "Valueset of the kind of treatment a patient underwent"
+Title: "Type of treatments"
+Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
 * include TreatmentTypesCodeSystem#0 "No treatment"
 * include TreatmentTypesCodeSystem#1 "Surgery"
 * include TreatmentTypesCodeSystem#2 "Surgery to axilla"
@@ -215,6 +214,21 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#6 "Hormonal therapy"
 * include TreatmentTypesCodeSystem#7 "Targeted therapy"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
+* include NullFlavor#ASKU "asked but unknown"
+
+ValueSet: RecommendedTreatmentTypeValueSet
+Id: RecommendedTreatmentTypeValueSet
+Title: "Recommended treatment types"
+Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
+* include SCT#387713003 "Surgical procedure"
+* include SCT#69945500 "Operative procedure on axilla "
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy "
+* include SCT#385786002 "Chemotherapy care"
+* include SCT#169413002 "Hormone therapy"
+* include TreatmentTypesCodeSystem#7 "Targeted therapy"
+* include TreatmentTypesCodeSystem#8 "Best supportive care"
+* include TreatmentTypesCodeSystem#0 "No treatment"
+* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
 * include NullFlavor#ASKU "asked but unknown"
 
 // Breast Surgery Type \\
