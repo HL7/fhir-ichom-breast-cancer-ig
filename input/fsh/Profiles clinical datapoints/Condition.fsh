@@ -36,8 +36,11 @@ Title: "Secondary Breast Cancer Condition"
 Description: "Represent the properties of the secondary breast cancer diagnosis"
 * insert PublicationProfileRuleset
 * code = SCT#145501000119108 "Secondary malignant neoplasm of breast"
+* subject only Reference(BreastCancerPatient)
 * bodySite from NewCancerVS
 * bodySite MS
+* clinicalStatus MS
+* recordedDate MS
 
 Instance: SecondaryBreastCancerPatient147
 InstanceOf: SecondaryBreastCancerCondition
@@ -45,6 +48,7 @@ Description: "Example of the secondary condition breast cancer diagnosed in a pa
 * code = SCT#145501000119108 "Secondary malignant neoplasm of breast"
 * clinicalStatus = ConditionStatusCS#active "Active"
 * bodySite = SCT#255209002 "Contralateral"
+* subject = Reference(BreastCancerPatient147)
 
 Mapping: SecondaryBreastCancerConditionToICHOM
 Source:	SecondaryBreastCancerCondition

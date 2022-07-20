@@ -155,6 +155,21 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
+ValueSet: BodyWeightVS
+Id: BodyWeightVS
+Title: "Units of patient's body weight"
+Description: "Valueset of the unit  of the patient's body weight"
+* UCUM#kg "kg"
+* UCUM#[lb_av] "[lb_av]"
+
+// ValueSet: BodyHeightVS
+// Id: BodyHeightVS
+// Title: "Units of patient's body height"
+// Description: "Valueset of the unit  of the patient's body height"
+// * UCUM#cm "cm" 
+// * UCUM#[in_i] "in_i"
+// We probalby need this VS for the questionnaires, so I'll leave it here for now
+
 // ValueSet: LateralityVS
 // Id: LateralityVS
 // Title: "Laterality of breast cancer"
