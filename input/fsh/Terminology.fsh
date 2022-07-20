@@ -24,7 +24,7 @@ ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
-* include codes from system RaceVS
+* include codes from valueset RaceVS
 // Remove this valueset once we have a snowmed-supporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS

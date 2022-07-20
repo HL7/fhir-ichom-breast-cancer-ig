@@ -24,7 +24,7 @@ Source:	Histotype
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: histotypemapping
 Title: "Histotype to ICHOM set"
-Description: "Mapping of the histologival type of tumor to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the histologival type of tumor to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "Histological type"
 
 // GENETIC MUTATION
@@ -53,7 +53,7 @@ Source:	GermlineMutation
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: GermlineMutationMapping
 Title: "Germline mutation to ICHOM set"
-Description: "Mapping of the germline mutation to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the germline mutation to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "Germline mutation"
 
 // TUMOR GRADING
@@ -81,7 +81,7 @@ Source:	TumorGrade
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: tumorgrademapping
 Title: "Tumor grade to ICHOM set"
-Description: "Mapping of the tumor grade to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the tumor grade to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept ->  "Tumor grade"
 
 //INVASION GRADE
@@ -109,7 +109,7 @@ Source:	InvasionGrade
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: Invasiongrademapping
 Title: "Invasion grade to ICHOM set"
-Description: "Mapping of the invasion grade to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the invasion grade to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept ->  "Invasion grade"
 
 // TUMOR SIZE
@@ -138,7 +138,7 @@ Source:	TumorSize
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: tumorsizemapping
 Title: "Size of the invasive tumor to ICHOM set"
-Description: "Mapping of the size of the invasive tumor to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the size of the invasive tumor to the ICHOM breast cancer PCOM set" 	
 * valueQuantity.value -> "Size of the invasive tumor"
 
 
@@ -210,7 +210,7 @@ Source:	ERStatus
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: erstatusmapping
 Title: "ER status to ICHOM set"
-Description: "Mapping of the estrogen receptor status to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the estrogen receptor status to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "Estrogen receptor status"
 
 // PR STATUS
@@ -239,7 +239,7 @@ Source:	PRStatus
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: prstatusmapping
 Title: "PR status to ICHOM set"
-Description: "Mapping of the progesterone receptor status to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the progesterone receptor status to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "Progesterone receptor status"
 
 // HER STATUS
@@ -268,5 +268,95 @@ Source:	HERStatus
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: herstatusmapping
 Title: "HER status to ICHOM set"
-Description: "Mapping of the HER2 receptor status to the ICHOM breast cancer PCOM set." 	
+Description: "Mapping of the HER2 receptor status to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "HER2 receptor status"
+
+
+// Mammaprint score
+Profile: MammaprintScore
+Parent: Observation 
+Id: mammaprint-score
+Title: "Mammaprint score"
+Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
+* insert PublicationProfileRuleset
+* subject only Reference(BreastCancerPatient)
+* value[x] only Quantity
+* value[x] MS
+* effectiveDateTime MS
+// * method --> we would need a code for this
+// can we limit the scale to 0.000 to 1.000? And do we want that?
+
+Instance: MammaprintPatient147
+InstanceOf: MammaprintScore
+Description: "Example of the mammaprint score"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+//-- do we have an example?
+
+Mapping: MammaprintToICHOM
+Source:	MammaprintScore
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: Mammaprintmapping
+Title: "Mammaprint scoreto ICHOM set"
+Description: "Mapping of the mammaprint score to the ICHOM breast cancer PCOM set" 	
+* valueQuantity -> "Mammaprint Score"
+
+
+// Oncotype score
+Profile: OncotypeScore
+Parent: Observation 
+Id: oncotype-score
+Title: "Oncotype Score"
+Description: "Represents the oncotype score on a scale of 0 to 100"
+* insert PublicationProfileRuleset
+* subject only Reference(BreastCancerPatient)
+* value[x] only Quantity
+* value[x] MS
+* effectiveDateTime MS
+// * method --> we would need a code for this
+// can we limit the scale to 0 to 100? And do we want that?
+
+Instance: OncotypePatient147
+InstanceOf: OncotypeScore
+Description: "Example of the oncotype score "
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+//-- do we have an example?
+
+Mapping: OncotypeToICHOM
+Source:	OncotypeScore
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: Oncotypescoremapping
+Title: "Oncotype score to ICHOM set"
+Description: "Mapping of the Oncotype score to the ICHOM breast cancer PCOM set" 	
+* valueQuantity -> "Oncotype score"
+
+
+// Endopredicton score
+Profile: EndopredictonScore
+Parent: Observation 
+Id: endopredicton-score
+Title: "Endopredicton score"
+Description: "Represents the endopredicton score on a scale of 1.1 to 6.2"
+* insert PublicationProfileRuleset
+* subject only Reference(BreastCancerPatient)
+* value[x] only Quantity
+* value[x] MS
+* effectiveDateTime MS
+// * method --> we would need a code for this
+// can we limit the scale of 1.1 to 6.2 ? And do we want that?
+
+Instance: EndopredictonPatient147
+InstanceOf: Endopredicton
+Description: "Example of the Endopredicton score"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+//-- do we have an example?
+
+Mapping: EndopredictonToICHOM
+Source:	EndopredictonScore
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: Endopredictonmapping
+Title: "Endopredicton scoreto ICHOM set"
+Description: "Mapping of the Endopredicton score to the ICHOM breast cancer PCOM set" 	
+* valueQuantity -> "Endopredicton score"
