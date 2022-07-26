@@ -5,7 +5,7 @@ Id: histo-type
 Title: "Histological type of the tumor"
 Description: "Represents the histological type of the tumor"
 * insert PublicationProfileRuleset
-* code = SCT#396984004 "Histologic feature of neoplasm (observable entity)"
+* code = SCT#396984004 "Histologic feature of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from HistologicalTypeVS (required)
@@ -16,8 +16,10 @@ Instance: HistotypePatient147
 InstanceOf: Histotype
 Description: "Example of the histological type of the breast cancer tumor"
 * status = ObservationStatusCS#final
+* code = SCT#396984004 "Histologic feature of neoplasm"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#722524005
+* effectiveDateTime = "1921-01-30"
 
 Mapping: HistotypeToICHOM
 Source:	Histotype
@@ -26,11 +28,12 @@ Id: histotypemapping
 Title: "Histotype to ICHOM set"
 Description: "Mapping of the histologival type of tumor to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "Histological type"
+* effectiveDateTime -> "Date of histological diagnosis"
 
-// GENETIC MUTATION
+// Germline MUTATION
 Profile: GermlineMutation
 Parent: Observation 
-Id: genetic-mutation
+Id: germline-mutation
 Title: "Germline mutation"
 Description: "Represents if the patient carries a germline mutation predisposing breast cancer"
 * insert PublicationProfileRuleset
@@ -39,12 +42,12 @@ Description: "Represents if the patient carries a germline mutation predisposing
 * value[x] only CodeableConcept 
 * value[x] from GermlineMutationVS (required)
 * value[x] MS
-* effectiveDateTime MS
 
 Instance: GermlineMutationPatient147
 InstanceOf: GermlineMutation
 Description: "Example of whether a patient carries a germline mutation predisposing breast cancer"
 * status = ObservationStatusCS#final
+* code = SCT#55446002 "Genetic mutation"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#445180002 
 
@@ -63,7 +66,7 @@ Id: tumor-grade
 Title: "Tumor grade"
 Description: "Represents the grade of the breast cancer tumor"
 * insert PublicationProfileRuleset
-* code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
+* code = SCT#371469007 "Histologic grade of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from GradingVS (required)
@@ -73,6 +76,7 @@ Instance: TumorGradePatient147
 InstanceOf: TumorGrade
 Description: "Example of the grade of a breast cancer tumor"
 * status = ObservationStatusCS#final
+* code = SCT#371469007 "Histologic grade of neoplasm"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#399415002
 
@@ -91,7 +95,7 @@ Id: invasion-grade
 Title: "Invasion grade"
 Description: "Represents the tumor grade of DCIS component of the breast cancer tumor"
 * insert PublicationProfileRuleset
-* code = SCT#371469007 "Histologic grade of neoplasm (observable entity)"
+* code = SCT#371469007 "Histologic grade of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from GradingVS (required)
@@ -101,6 +105,7 @@ Instance: InvasionGradePatient147
 InstanceOf: InvasionGrade
 Description: "Example of the tumor grade of DCIS component of the breast cancer tumor"
 * status = ObservationStatusCS#final
+* code = SCT#371469007 "Histologic grade of neoplasm"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#399415002
 
@@ -124,14 +129,15 @@ Description: "Represents the size of the invasive tumor"
 * value[x] only Quantity
 * value[x] MS
 * valueQuantity.unit = UCUM#mm "mm"
-* effectiveDateTime MS
 
 Instance: TumorSizePatient147
 InstanceOf: TumorSize
 Description: "Example of the size of the invasive tumor of a patient with breast cancer"
 * status = ObservationStatusCS#final
+* code = SCT#384630000 "Tumor size, invasive component"
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 59
+* valueQuantity.unit = UCUM#mm "mm"
 
 Mapping: TumorSizeToICHOM
 Source:	TumorSize
@@ -170,8 +176,11 @@ Instance: LymphNodesPatient147
 InstanceOf: LymphNodes
 Description: "Example of the number of resected lymph nodes and the number of involved lymph nodes"
 * status = ObservationStatusCS#final
+* code = SCT#364108009 "Lymph node observable"
 * subject = Reference(BreastCancerPatient147)
+* component[LymphNodesResected].code = SCT#444025001 "Number of lymph nodes examined"
 * component[LymphNodesResected].valueQuantity.value[+] = 11
+* component[LymphNodesInvolved].code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
 * component[LymphNodesInvolved].valueQuantity.value[+] = 28
 
 Mapping: LymphNodesToICHOM
@@ -180,7 +189,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: lymphnodesmapping
 Title: "Lymph nodes to ICHOM set"
 Description: "Mapping of the lymph nodes to the ICHOM breast cancer PCOM set." 	
-* component[LymphNodesResected].valueQuantity.value ->  "Inavasion grade"
+* component[LymphNodesResected].valueQuantity.value ->  "Invasion grade"
 * component[LymphNodesInvolved].valueQuantity.value ->  "Tumor grade"
 
 
@@ -189,21 +198,21 @@ Profile: ERStatus
 Parent: Observation 
 Id: er-status
 Title: "Estrogen receptor status"
-Description: "Represents if the estrogen receptor status is positive"
+Description: "Represents if the estrogen receptor status is positive in a patient with breast cancer"
 * insert PublicationProfileRuleset
-* code = SCT#445028008 "Status of estrogen receptors of neoplasm (observable entity)"
+* code = SCT#445028008 "Status of estrogen receptors of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from EstrogenStatusVS (required)
 * value[x] MS
-* effectiveDateTime MS
 
 Instance: ERStatusPatient147
 InstanceOf: ERStatus
 Description: "Example of the estrogen receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
+* code = SCT#445028008 "Status of estrogen receptors of neoplasm"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#416237000
+* valueCodeableConcept = SCT#416237000 "Procedure not done"
 
 Mapping: ERStatusToICHOM
 Source:	ERStatus
@@ -218,21 +227,21 @@ Profile: PRStatus
 Parent: Observation 
 Id: pr-status
 Title: "Progesterone receptor status"
-Description: "Represents if the progesterone receptor status is positive"
+Description: "Represents if the progesterone receptor status is positive in a patient with breast cancer"
 * insert PublicationProfileRuleset
-* code = SCT#445029000 "Status of progesterone receptors of neoplasm (observable entity)"
+* code = SCT#445029000 "Status of progesterone receptors of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from ProgesteroneStatusVS (required)
 * value[x] MS
-* effectiveDateTime MS
 
 Instance: PRStatusPatient147
 InstanceOf: PRStatus
 Description: "Example of the progesterone receptor status in a patient with breast cancer"
 * status = ObservationStatusCS#final
+* code = SCT#445029000 "Status of progesterone receptors of neoplasm"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = NullFlavor#UNK
+* valueCodeableConcept = NullFlavor#UNK "unknown"
 
 Mapping: PRStatusToICHOM
 Source:	PRStatus
@@ -247,28 +256,28 @@ Profile: HERStatus
 Parent: Observation 
 Id: her-status
 Title: "HER2 receptor status"
-Description: "Represents if the HER2 receptor status is positive"
+Description: "Represents if the human epidermal growth factor receptor 2 (HER2) receptor status is positive in a patient with breast cancer"
 * insert PublicationProfileRuleset
 * code = LNC#48676-1 "HER2 [Interpretation] in tissue"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from HER2ReceptorStatusVS (required)
 * value[x] MS
-* effectiveDateTime MS
 
 Instance: HERStatusPatient147
 InstanceOf: HERStatus
-Description: "Example of the HER2 receptor status in a patient with breast cancer"
+Description: "Example of the human epidermal growth factor receptor 2 (HER2) status in a patient with breast cancer"
 * status = ObservationStatusCS#final
+* code = LNC#48676-1 "HER2 [Interpretation] in tissue"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#416237000
+* valueCodeableConcept = SCT#416237000 "Procedure not done"
 
 Mapping: HERStatusToICHOM
 Source:	HERStatus
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: herstatusmapping
 Title: "HER status to ICHOM set"
-Description: "Mapping of the HER2 receptor status to the ICHOM breast cancer PCOM set" 	
+Description: "Mapping of the human epidermal growth factor receptor 2 (HER2) status to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "HER2 receptor status"
 
 
@@ -282,8 +291,7 @@ Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-* effectiveDateTime MS
-// * method --> we would need a code for this
+// still need a code for this
 // can we limit the scale to 0.000 to 1.000? And do we want that?
 
 // Instance: MammaprintPatient147
@@ -291,16 +299,15 @@ Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 // Description: "Example of the mammaprint score"
 // * status = ObservationStatusCS#final
 // * subject = Reference(BreastCancerPatient147)
-//-- do we have an example?
+// * valueQuantity.value = 0.761854476345979
 
 Mapping: MammaprintToICHOM
 Source:	MammaprintScore
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: Mammaprintmapping
-Title: "Mammaprint scoreto ICHOM set"
+Title: "Mammaprint score to ICHOM set"
 Description: "Mapping of the mammaprint score to the ICHOM breast cancer PCOM set" 	
 * valueQuantity -> "Mammaprint Score"
-
 
 // Oncotype score
 Profile: OncotypeScore
@@ -312,8 +319,7 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-* effectiveDateTime MS
-// * method --> we would need a code for this
+// still need a code for this
 // can we limit the scale to 0 to 100? And do we want that?
 
 // Instance: OncotypePatient147
@@ -321,7 +327,7 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 // Description: "Example of the oncotype score "
 // * status = ObservationStatusCS#final
 // * subject = Reference(BreastCancerPatient147)
-//-- do we have an example?
+// * valueQuantity.value = 92
 
 Mapping: OncotypeToICHOM
 Source:	OncotypeScore
@@ -332,63 +338,62 @@ Description: "Mapping of the Oncotype score to the ICHOM breast cancer PCOM set"
 * valueQuantity -> "Oncotype score"
 
 
-// Endopredicton score
+// Endopredict Score
 Profile: EndopredictonScore
 Parent: Observation 
 Id: endopredicton-score
-Title: "Endopredicton score"
-Description: "Represents the endopredicton score on a scale of 1.1 to 6.2"
+Title: "Endopredict score"
+Description: "Represents the endopredict score on a scale of 1.1 to 6.2"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-* effectiveDateTime MS
-// * method --> we would need a code for this
+// still need a code for this
 // can we limit the scale of 1.1 to 6.2 ? And do we want that?
 
 // Instance: EndopredictonPatient147
 // InstanceOf: EndopredictonScore
-// Description: "Example of the Endopredicton score"
+// Description: "Example of the endopredict score"
 // * status = ObservationStatusCS#final
 // * subject = Reference(BreastCancerPatient147)
-//-- do we have an example?
+// * valueQuantity.value = 1.86494098478133
 
 Mapping: EndopredictonToICHOM
 Source:	EndopredictonScore
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: Endopredictonmapping
-Title: "Endopredicton scoreto ICHOM set"
-Description: "Mapping of the Endopredicton score to the ICHOM breast cancer PCOM set" 	
-* valueQuantity -> "Endopredicton score"
-
+Title: "Endopredict score to ICHOM set"
+Description: "Mapping of the endopredict score to the ICHOM breast cancer PCOM set" 	
+* valueQuantity -> "Endopredict Score"
 
 // Multidisciplinary meeting 
-Profile: MultidisciplinaryMeeting 
+Profile: TreatmentPlan
 Parent: CarePlan 
-Id: multidisciplinary-meeting 
-Title: "Multidisciplinary meeting"
-Description: "Represents if a multidisciplinary meeting was conducted and the treatment that was recommended"
+Id: treatment-plan 
+Title: "Treatment recommended by a multidisciplinary team"
+Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * insert PublicationProfileRuleset
 * intent = CareplanIntentCS#plan // We could also decide to not limit the intent and keep the options open --> ask ICHOM
-* category = #SCT312384001 "Multidisciplinary assessment"
+* category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * created MS
 * activity.detail.code from RecommendedTreatmentTypeValueSet //How can we profile that there can be multiple codes in one plan?
 * activity.detail.code MS
 
-Instance: MultidisciplinaryMeetingPatient147
-InstanceOf: MultidisciplinaryMeeting
-Description: "Example of the multidisciplinary meeting"
+Instance: TreatmentPlanPatient147
+InstanceOf: TreatmentPlan
+Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * status = CareplanStatusCS#active
+* category = SCT#312384001 "Multidisciplinary assessment"
 * subject = Reference(BreastCancerPatient147)
-* activity.detail.code = SCT#387713003
+* activity.detail.code = SCT#387713003 "Surgical procedure"
 * activity.detail.status = CareplanActivityStatusCS#unknown
 
-Mapping: MultidisciplinaryMeetingToICHOM
-Source:	MultidisciplinaryMeeting
+Mapping: TreatmentPlanToICHOM
+Source:	TreatmentPlan
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: MultidisciplinaryMeetingmapping
-Title: "Multidisciplinary meeting to ICHOM set"
-Description: "Mapping of the multidisciplinary meeting to the ICHOM breast cancer PCOM set" 	
+Id: TreatmentPlanMapping
+Title: "Treatmentplan to ICHOM set"
+Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
 * -> "Multidisciplinary Meeting"
 * activity.detail.code -> "Multidisciplinary Recommended Treatments"

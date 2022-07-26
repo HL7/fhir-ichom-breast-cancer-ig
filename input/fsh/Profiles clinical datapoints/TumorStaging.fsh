@@ -16,6 +16,7 @@ Instance: ClinicalTNMTumorStagePatient147
 InstanceOf: ClinicalTNMTumorStage
 Description: "Example showing TNM staging for tumor stage"
 * status = #final "final"
+* code = SCT#385356007 "Tumor stage finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#cTis
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
@@ -35,7 +36,7 @@ Parent: Observation
 Title: "Pathological TNM tumor stage"
 Description: "Represents the pathological stage of the tumor (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
-* code = SCT#385356007 "Tumor stage finding"
+* code = SCT#385356007 "Tumor stage finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from TNMPrimaryTumorVS (preferred)
@@ -46,6 +47,7 @@ Instance: PathologicalTNMTumorStagePatient147
 InstanceOf: PathologicalTNMTumorStage
 Description: "Example showing TNM staging for tumor stage"
 * status = #final "final"
+* code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#pTis
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
@@ -67,7 +69,7 @@ Parent: Observation
 Title: "Clinical TNM nodal stage"
 Description: "Represents the clinical stage of the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
-* code = SCT#385382003 "nodal stage finding"
+* code = SCT#385382003 "Node stage finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from TNMRegionalNodesVS (preferred)
@@ -78,6 +80,7 @@ Instance: ClinicalTNMNodalStagePatient147
 InstanceOf: ClinicalTNMNodalStage
 Description: "Example showing clinical TNM staging for nodal stage"
 * status = #final "final"
+* code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#cN1
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
@@ -97,8 +100,8 @@ Id: pathological-tnm-nodal-stage
 Parent: Observation
 Title: "Pathological TNM nodal stage"
 Description: "Represents the pathological stage of the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
-* insert PublicationProfileRuleset
-* code = SCT#385382003 "nodal stage finding"
+* insert PublicationProfileRuleset 
+* code = SCT#385382003 "Node stage finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from TNMRegionalNodesVS (preferred)
@@ -109,6 +112,7 @@ Instance: PathologicalTNMNodalStagePatient147
 InstanceOf: PathologicalTNMNodalStage
 Description: "Example showing TNM staging for nodal stage"
 * status = #final "final"
+* code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#pN0
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
@@ -130,7 +134,7 @@ Parent: Observation
 Title: "Clinical TNM distant metastases"
 Description: "Represents the clinical stage of the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
-* code = SCT#385380006 "Metastasis category finding"
+* code = SCT#385380006 "Metastasis category finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * value[x] from TNMDistantMetastasesVS (preferred)
@@ -141,6 +145,7 @@ Instance: ClinicalTNMDistantMetastasesPatient147
 InstanceOf: ClinicalTNMDistantMetastases
 Description: "Example showing TNM staging for distant metastases"
 * status = #final "final"
+* code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#cMX
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
@@ -171,6 +176,7 @@ Instance: PathologicalDistantMetastasesTNMPatient147
 InstanceOf: PathologicalDistantMetastasesTNM
 Description: "Example showing TNM staging for distant metastases"
 * status = #final "final"
+* code = SCT#385380006 "Metastasis category finding" // a code to descriminate between clinical and pathological staging would be better here.
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#pMX
 * method = SCT#897275008 "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
