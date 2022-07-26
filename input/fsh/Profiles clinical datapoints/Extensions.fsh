@@ -42,3 +42,18 @@ Id: EthnicityMapping
 Title: "Ethnicity mapping to ICHOM set"
 Description: "Mapping of the ethnicity to the ICHOM breast cancer PCOM set." 	
 * -> "Ethnicity"
+
+// Extension: DeathBC
+// Id: DeathBC
+// Title: "Death breast cancer Extension"
+// Description: "Represents if death is attributable to breast cancer."
+// * value[x] only CodeableConcept 
+// * value[x] from NoYesUnknownValueSet (example)
+
+// Mapping: DeathBCToICHOM
+// Source:	DeathBC
+// Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+// Id: DeathBCMapping
+// Title: "DeathBC mapping to ICHOM set"
+// Description: "Mapping of the death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
+// * -> "Death attributable to breast cancer"

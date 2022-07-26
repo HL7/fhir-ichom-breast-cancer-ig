@@ -14,6 +14,7 @@ Description: "Represents the patient characteristics and demographic factors"
 * extension contains EducationLevel named educationLevel 0..1 MS
 * extension contains Ethnicity named ethnicity 0..1 MS
 * extension contains Race named race 0..1 MS
+// * extension contains DeathBC named deathbc 0..1 MS
 
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
@@ -27,6 +28,20 @@ Description: "The characteristics and demographic factors of an example patient.
 * extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
 * extension[race].valueCodeableConcept  = RaceCS#2076-8
 * maritalStatus = NullFlavor#UNK
+
+// Instance: BreastCancerPatient121
+// InstanceOf: BreastCancerPatient 
+// Title: "Example of Breast Cancer Patient"
+// Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
+// * birthDate = "1933"
+// * name.family = "Cornetet"
+// * address.country = CountryCS#UK
+// * gender = GenderCS#male
+// * extension[educationLevel].valueCodeableConcept  = SCT#224297003
+// * extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
+// * extension[race].valueCodeableConcept  = RaceCS#2076-8
+// * maritalStatus = NullFlavor#UNK
+// * extension[deathbc].valueCodeableConcept = #N
 
 Mapping: BreastCancerPatientToICHOM
 Source:	BreastCancerPatient
