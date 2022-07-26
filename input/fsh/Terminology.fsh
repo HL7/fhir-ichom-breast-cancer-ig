@@ -162,22 +162,6 @@ Description: "Valueset of the unit  of the patient's body weight"
 * UCUM#kg "kg"
 * UCUM#[lb_av] "[lb_av]"
 
-// ValueSet: BodyHeightVS
-// Id: BodyHeightVS
-// Title: "Units of patient's body height"
-// Description: "Valueset of the unit  of the patient's body height"
-// * UCUM#cm "cm" 
-// * UCUM#[in_i] "in_i"
-// We probalby need this VS for the questionnaires, so I'll leave it here for now
-
-// ValueSet: LateralityVS
-// Id: LateralityVS
-// Title: "Laterality of breast cancer"
-// Description: "Valueset of the laterality of breast cancer"
-// * SCT#80248007 "Left breast structure"
-// * SCT#73056007 "Right breast structure"
-// * SCT#63762007 "Both breasts"
-
 ValueSet: NewCancerVS
 Id: NewCancerVS
 Title: "Laterality of new cancer"
@@ -185,9 +169,10 @@ Description: "Valueset of the laterality of new breast cancer"
 * SCT#255208005 "Ipsilateral"
 * SCT#255209002 "Contralateral"
 
+
 //  TREATMENT VARIABLES 
 
-// TreatmentType \\
+// TreatmentType 
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
@@ -220,7 +205,7 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
 * include NullFlavor#ASKU "asked but unknown"
 
-// Breast Surgery Type \\
+// Breast Surgery Type 
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"
