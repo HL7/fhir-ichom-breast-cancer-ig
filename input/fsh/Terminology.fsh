@@ -23,7 +23,7 @@ ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
-* include codes from system RaceVS
+* include codes from valueset RaceVS
 // Remove this valueset once we have a snowmed-supporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS
@@ -155,17 +155,24 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
-ValueSet: LateralityVS
-Id: LateralityVS
-Title: "Laterality of breast cancer"
-Description: "Valueset of the laterality of breast cancer"
-* SCT#80248007 "Left breast structure"
-* SCT#73056007 "Right breast structure"
-* SCT#63762007 "Both breasts"
+ValueSet: BodyWeightVS
+Id: BodyWeightVS
+Title: "Units of patient's body weight"
+Description: "Valueset of the unit  of the patient's body weight"
+* UCUM#kg "kg"
+* UCUM#[lb_av] "[lb_av]"
+
+ValueSet: NewCancerVS
+Id: NewCancerVS
+Title: "Laterality of new cancer"
+Description: "Valueset of the laterality of new breast cancer"
+* SCT#255208005 "Ipsilateral"
+* SCT#255209002 "Contralateral"
+
 
 //  TREATMENT VARIABLES 
 
-// TreatmentType \\
+// TreatmentType 
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
@@ -198,7 +205,7 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
 * include NullFlavor#ASKU "asked but unknown"
 
-// Breast Surgery Type \\
+// Breast Surgery Type 
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"
