@@ -8,7 +8,7 @@ Description: "Represents the histological type of the tumor"
 * code = SCT#396984004 "Histologic feature of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from HistologicalTypeVS (required)
+* value[x] from HistologicalTypeVS (preferred)
 * value[x] MS
 * effectiveDateTime MS
 
@@ -30,7 +30,7 @@ Description: "Mapping of the histologival type of tumor to the ICHOM breast canc
 * valueCodeableConcept -> "Histological type"
 * effectiveDateTime -> "Date of histological diagnosis"
 
-// Germline MUTATION
+// GERLINE MUTATION
 Profile: GermlineMutation
 Parent: Observation 
 Id: germline-mutation
@@ -40,7 +40,7 @@ Description: "Represents if the patient carries a germline mutation predisposing
 * code = SCT#55446002 "Genetic mutation"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from GermlineMutationVS (required)
+* value[x] from GermlineMutationVS (preferred)
 * value[x] MS
 
 Instance: GermlineMutationPatient147
@@ -279,7 +279,6 @@ Id: herstatusmapping
 Title: "HER status to ICHOM set"
 Description: "Mapping of the human epidermal growth factor receptor 2 (HER2) status to the ICHOM breast cancer PCOM set" 	
 * valueCodeableConcept -> "HER2 receptor status"
-
 
 // Mammaprint score
 Profile: MammaprintScore
