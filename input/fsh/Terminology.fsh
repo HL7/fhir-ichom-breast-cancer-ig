@@ -410,3 +410,21 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // Description: "Valueset of the unit  of the patient's body weight"
 // * SCT#258683005 "kilogram"
 // * SCT#258693003 "pounds"
+
+ValueSet: InvolvedMarginsReoperationType
+Id: InvolvedMarginsReoperationType
+Title: "Re-operation due to involved margins"
+Description: "Kind of re-operation due to involved margins"
+* ^version = "0.0.1"
+* ^status = #active
+* ^date = "2022-07-26T09:18:41+02:00"
+* ^publisher = "ICHOM"
+* ^contact.name = "ICHOM"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://ichom.org"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
+* SCT#64368001 "Partial mastectomy"
+* SCT#172043006 "Simple mastectomy"
+* ICHOM#REOP_BREAST-2 "Breast conserving surgery with mammoplasty"
+* ICHOM#REOP_BREAST-4 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
