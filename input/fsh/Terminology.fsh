@@ -12,7 +12,6 @@ Description: "Valueset of the country (e.g. of residence) of a patient"
 * include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
 // Remove this valueset once we have a snomed-supporting server since this is only a shell valueset
 
-
 ValueSet: DemographicFactorsEthnicity
 Id: DemographicFactorsEthnicity
 Title: "Ethnicity of patient"
@@ -174,24 +173,17 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
-ValueSet: BodyWeightVS
-Id: BodyWeightVS
-Title: "Units of patient's body weight"
-Description: "Valueset of the unit  of the patient's body weight"
-* UCUM#kg "kg"
-* UCUM#[lb_av] "[lb_av]"
-
-ValueSet: NewCancerVS
-Id: NewCancerVS
-Title: "Laterality of new cancer"
-Description: "Valueset of the laterality of new breast cancer"
-* SCT#255208005 "Ipsilateral"
-* SCT#255209002 "Contralateral"
-
+ValueSet: LateralityVS
+Id: LateralityVS
+Title: "Laterality of breast cancer"
+Description: "Valueset of the laterality of breast cancer"
+* SCT#80248007 "Left breast structure"
+* SCT#73056007 "Right breast structure"
+* SCT#63762007 "Both breasts"
 
 //  TREATMENT VARIABLES 
 
-// TreatmentType 
+// TreatmentType \\
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
@@ -238,7 +230,7 @@ Description: "Valueset of the kind of treatment that the multidisciplinary team 
 * include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
 * include NullFlavor#ASKU "asked but unknown"
 
-// Breast Surgery Type 
+// Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"

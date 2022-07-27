@@ -291,7 +291,6 @@ Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 * value[x] only Quantity
 * value[x] MS
 // still need a code for this
-// can we limit the scale to 0.000 to 1.000? And do we want that?
 
 // Instance: MammaprintPatient147
 // InstanceOf: MammaprintScore
@@ -319,7 +318,7 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 * value[x] only Quantity
 * value[x] MS
 // still need a code for this
-// can we limit the scale to 0 to 100? And do we want that?
+
 
 // Instance: OncotypePatient147
 // InstanceOf: OncotypeScore
@@ -348,7 +347,6 @@ Description: "Represents the endopredict score on a scale of 1.1 to 6.2"
 * value[x] only Quantity
 * value[x] MS
 // still need a code for this
-// can we limit the scale of 1.1 to 6.2 ? And do we want that?
 
 // Instance: EndopredictonPatient147
 // InstanceOf: EndopredictonScore
