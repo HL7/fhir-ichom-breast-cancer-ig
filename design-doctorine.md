@@ -2,6 +2,9 @@
 ## Questionnaires
 * separate the questionnaires based on timing + reporting source
   * .fsh file layout will follow from that
+* in case examples exist for a questionnaire, prefix the filename with `2-example`
+  * original questionnaire should have `1-questionnaire` as a prefix
+  * this is until https://github.com/FHIR/sushi/issues/1073 is fixed
 * use groups to mark differences in categories
 * enforce PROM best practice rendering guidelines, list so far:
   * make sure top of the questionnares has text for how a questionnaire shoud be filled out (sourced from original material PDF)
