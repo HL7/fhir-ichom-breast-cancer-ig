@@ -84,21 +84,27 @@ Description: "Valueset of the grade of the tumor"
 * NullFlavor#NI "No information"
 
 ValueSet: TNMPrimaryTumorVS
-Id: mcode-tnm-primary-tumor-category-vs
+Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Category Value Set"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
 * codes from system AJCC
 
 ValueSet: TNMRegionalNodesVS
-Id: mcode-tnm-regional-nodes-category-vs
+Id: tnm-regional-nodes-category-vs
 Title: "TNM Regional Nodes Category Value Set"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
 * include codes from system AJCC
 
 ValueSet: TNMDistantMetastasesVS
-Id: mcode-tnm-distant-metastases-category-vs
+Id: tnm-distant-metastases-category-vs
 Title: "TNM Distant Metastases Category Value Set"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
+* codes from system AJCC
+
+ValueSet: TNMBreastCancerstageVS
+Id: tnm-breast-cancer-stage-vs
+Title: "TNM breast cancer stage value set"
+Description: "Valueset of the TNM stages, according to TNM staging rules"
 * codes from system AJCC
 
 ValueSet: EstrogenStatusVS
@@ -173,6 +179,20 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
+ValueSet: BodyWeightVS
+Id: BodyWeightVS
+Title: "Units of patient's body weight"
+Description: "Valueset of the unit  of the patient's body weight"
+* UCUM#kg "kg"
+* UCUM#[lb_av] "[lb_av]"
+
+ValueSet: LateralityNewCancerVS
+Id: LateralityNewCancerVS
+Title: "Laterality of new cancer"
+Description: "Valueset of the laterality of new breast cancer"
+* SCT#255208005 "Ipsilateral"
+* SCT#255209002 "Contralateral"
+
 ValueSet: LateralityVS
 Id: LateralityVS
 Title: "Laterality of breast cancer"
@@ -180,6 +200,7 @@ Description: "Valueset of the laterality of breast cancer"
 * SCT#80248007 "Left breast structure"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
+
 
 //  TREATMENT VARIABLES 
 
