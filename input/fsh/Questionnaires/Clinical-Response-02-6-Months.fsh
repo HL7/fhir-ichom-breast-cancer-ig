@@ -137,7 +137,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SURGERY_BREAST"
     * type = #choice
     * text = "Please indicate the type of surgery the patient received during the last year:"
-    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
+    * answerValueSet = Canonical(BreastSurgeryTypeVS)
     * insert enableWhenTreatment(#1)
     * required = true
 
