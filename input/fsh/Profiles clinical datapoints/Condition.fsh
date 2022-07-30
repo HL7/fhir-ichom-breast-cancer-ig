@@ -3,13 +3,15 @@ Profile: PrimaryBreastCancerCondition
 Parent: Condition 
 Id: primary-breastcancer
 Title: "Primary Breast Cancer Condition"
-Description: "Represent the properties of the primary breast cancer diagnosis."
+Description: "Represent the properties of the primary breast cancer diagnosis"
 * insert PublicationProfileRuleset
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
-* bodySite MS
+* bodySite from LateralityVS (preferred)
 * clinicalStatus MS
 * recordedDate MS
+* stage.summary from TNMBreastCancerstageVS (preferred)
+* stage.type = SCT#254326001 "TNM Breast tumor staging"
 
 Instance: PrimaryBreastCancerPatient147
 InstanceOf: PrimaryBreastCancerCondition
@@ -37,7 +39,7 @@ Description: "Represent the properties of the secondary breast cancer diagnosis"
 * insert PublicationProfileRuleset
 * code = SCT#145501000119108 "Secondary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
-* bodySite from NewCancerVS
+* bodySite from LateralityNewCancerVS
 * bodySite MS
 * clinicalStatus MS
 * recordedDate MS
@@ -57,5 +59,4 @@ Id: secondaryconditionmapping
 Title: "Secondary condition to ICHOM set"
 Description: "Mapping of the secondary breast cancer condition to the ICHOM breast cancer PCOM set. To ensure this is secondary breast cancer diagnosed in a patient, the application can search for previous conditions." 	
 * -> "New cancer"
-
 
