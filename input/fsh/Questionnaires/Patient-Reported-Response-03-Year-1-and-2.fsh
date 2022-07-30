@@ -472,7 +472,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
     * linkId = "BreastQ_Surgery"
     * type = #choice
     * text = "Which type of surgery did you receive?"
-    * answerValueSet = Canonical(BreastSurgeryTypeValueSet) 
+    * answerValueSet = Canonical(BreastSurgeryTypeVS) 
     * required = true
 
 // Group 1 - Patients with mastectomy without immediate reconstruction

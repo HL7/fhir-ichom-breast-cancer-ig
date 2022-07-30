@@ -220,9 +220,8 @@ Description: "Codes indicating the types of breast surgery a patient underwent"
 * #4 "Mastectomy with immediate reconstruction (autologous)"
 * #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
 
-   
-ValueSet: BreastSurgeryTypeValueSet
-Id: BreastSurgeryTypeValueSet
+ValueSet: BreastSurgeryTypeVS
+Id: BreastSurgeryTypeVS
 Title: "Types of breast surgery"
 Description: "Valueset of the types of breast surgery a patient underwent"
 * include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
@@ -239,6 +238,29 @@ Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
 * include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
 
+ValueSet: AxillaSurgeryVS
+Id: AxillaSurgeryVS
+Title: "Surgery of Axilla"
+Description: "Valueset of surgery types of the axilla"
+* SCT#396487001 "Sentinel lymph node biopsy"
+* SCT#178294003 "Axillary lymph nodes sampling"
+* SCT#79544006 "Complete axillary lymphadenectomy"
+* NullFlavor#UNK "unknown"
+// This one should be updated to V5 when we have the right mappings
+
+ValueSet: LocationRadiotherapyVS
+Id: LocationRadiotherapyVS
+Title: "The location of radiotherapy"
+Description: "Valueset of the location of radiotherapy"
+* SCT#76752008 "Breast structure"
+* SCT#78904004 "Chest wall structure"
+* SCT#68171009 "Axillary lymph node structure"
+* SCT#76838003 "Structure of supraclavicular lymph node"
+* SCT#245282001 "Internal mammary lymph node group"
+* SCT#263601005 "Site of tumor"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+// still need one more code for the partial breast / intraoperative
 
 //  DEGREE OF HEALTH 
  
@@ -318,14 +340,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 // TREATMENT VARIABLES
 
-// ValueSet: AxillaSurgery
-// Id: AxillaSurgery
-// Title: "Surgery of Axilla"
-// Description: "Valueset of surgery type of the axilla"
-// * SCT#396487001 "Sentinel lymph node biopsy"
-// * SCT#178294003 "Axillary lymph nodes sampling"
-// * SCT#79544006 "Complete axillary lymphadenectomy"
-// * NullFlavor#UNK "unknown"
+
 
 // ValueSet: TherapyIntent
 // Id: TherapyIntent
@@ -355,21 +370,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * NullFlavor#OTH "other"
 // * NullFlavor#UNK "unknown"
 
-// ValueSet: LocationRadiotherapy
-// Id: LocationRadiotherapy
-// Title: "The location of radiotherapy"
-// Description: "Valueset of the location of radiotherapy"
-// * SCT#76752008 "Breast structure"
-// * SCT#78904004 "Chest wall structure"
-// * SCT#68171009 "Axillary lymph node structure"
-// * SCT#76838003 "Structure of supraclavicular lymph node"
-// * SCT#245282001 "Internal mammary lymph node group"
-// * SCT#263601005 "Site of tumor"
-// * SCT#119235005 "Brain part"
-// * SCT#280441002 "Regional bone structure"
-// * SCT#14799000 "Neoplasm, metastatic"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
+
 
 // ValueSet: ReoperationType
 // Id: ReoperationType

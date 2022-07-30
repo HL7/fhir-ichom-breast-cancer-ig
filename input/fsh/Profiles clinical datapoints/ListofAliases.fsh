@@ -6,6 +6,7 @@ Alias: StandardBodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
 Alias: SCT = http://snomed.info/sct
 Alias: LNC = http://loinc.org
 Alias: AJCC = http://cancerstaging.org
+Alias: UCUM = http://unitsofmeasure.org
 Alias: NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: RelationshipStatusCS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 Alias: RaceCS = http://terminology.hl7.org/CodeSystem/v3-Race 
@@ -14,7 +15,8 @@ Alias: EthnicityCS = http://terminology.hl7.org/CodeSystem/v3-Ethnicity
 Alias: CountryCS = urn:iso:std:iso:3166
 Alias: ObservationStatusCS = http://hl7.org/fhir/observation-status
 Alias: ConditionStatusCS = http://terminology.hl7.org/CodeSystem/condition-clinical
-Alias: UCUM = http://unitsofmeasure.org
+Alias: ProcedureStatusCS = http://hl7.org/fhir/event-status
+
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
