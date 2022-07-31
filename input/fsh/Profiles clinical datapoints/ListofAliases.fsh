@@ -15,6 +15,7 @@ Alias: CountryCS = urn:iso:std:iso:3166
 Alias: ObservationStatusCS = http://hl7.org/fhir/observation-status
 Alias: ConditionStatusCS = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: UCUM = http://unitsofmeasure.org
+Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity

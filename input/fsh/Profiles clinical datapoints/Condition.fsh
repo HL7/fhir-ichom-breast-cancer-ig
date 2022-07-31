@@ -58,4 +58,28 @@ Title: "Secondary condition to ICHOM set"
 Description: "Mapping of the secondary breast cancer condition to the ICHOM breast cancer PCOM set. To ensure this is secondary breast cancer diagnosed in a patient, the application can search for previous conditions." 	
 * -> "New cancer"
 
+Profile: DeathAttributableBC
+Parent: Observation 
+Id: death-attr-bc
+Title: "Death BC"
+Description: "Death attributable to breast cancer"
+* insert PublicationProfileRuleset
+* code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
+* value[x] only CodeableConcept 
+* value[x] from NoYesUnknownValueSet (required)
+* value[x] MS
 
+Instance: DeathAttributableBCPatient147
+InstanceOf: DeathAttributableBC
+Description: "Example of death attributable to breast cancer"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = YesNoUnkCS#N
+
+Mapping: DeathAttributableBCToICHOM
+Source:	DeathAttributableBC
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: deathbcmapping
+Title: "Death attributable to breast cancer to to ICHOM set"
+Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
+* valueCodeableConcept -> "Death attributable to breast cancer"

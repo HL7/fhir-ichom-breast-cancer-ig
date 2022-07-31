@@ -237,7 +237,9 @@ ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
-* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
+* YesNoUnkCS#Y "Yes" 
+* YesNoUnkCS#N "No"
+* YesNoUnkCS#UNK "Unknown"
 
 
 //  DEGREE OF HEALTH 
@@ -311,6 +313,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
+
 
 
 // Optional valueset using Snowmed CT
