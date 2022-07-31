@@ -230,7 +230,9 @@ ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
-* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
+* YesNoUnkCS#Y "Yes" 
+* YesNoUnkCS#N "No"
+* YesNoUnkCS#UNK "Unknown"
 
 
 //  DEGREE OF HEALTH 
