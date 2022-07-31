@@ -42,23 +42,13 @@ Description: "Mapping of the primary breast cancer condition to the ICHOM breast
 // * bodySite MS
 
 
-// Profile: DeathBC
-// Parent: Observation 
-// Id: death-bc
-// Title: "Death BC"
-// Description: "Cause of death is breast cancer"
-// * insert PublicationProfileRuleset
-// * subject only Reference(BreastCancerPatient)
-// * code = SCT#184305005 "Cause of death"
-// * valueCodeableConcept = SCT#254838004 "Carcinoma of breast (disorder)"
-
 Profile: DeathAttributableBC
 Parent: Observation 
 Id: death-attr-bc
 Title: "Death BC"
 Description: "Death attributable to breast cancer"
 * insert PublicationProfileRuleset
-* code = SCT#419620001:42752001=254838004 "Death due to carcinoma of breast (disorder)"
+* code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
 * value[x] only CodeableConcept 
 * value[x] from NoYesUnknownValueSet (required)
 * value[x] MS
@@ -68,12 +58,12 @@ InstanceOf: DeathAttributableBC
 Description: "Example of death attributable to breast cancer"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = #N
+* valueCodeableConcept = YesNoUnkCS#N
 
-// Mapping: DeathAttributableBCToICHOM
-// Source:	DeathAttributableBC
-// Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-// Id: deathbcmapping
-// Title: "Death attributable to breast cancer to to ICHOM set"
-// Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
-// * valueCodeableConcept -> "Death attributable to breast cancer"
+Mapping: DeathAttributableBCToICHOM
+Source:	DeathAttributableBC
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: deathbcmapping
+Title: "Death attributable to breast cancer to to ICHOM set"
+Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
+* valueCodeableConcept -> "Death attributable to breast cancer"
