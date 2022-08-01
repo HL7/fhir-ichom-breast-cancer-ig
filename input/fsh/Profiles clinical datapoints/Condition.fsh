@@ -10,6 +10,9 @@ Description: "Represent the properties of the primary breast cancer diagnosis."
 * bodySite MS
 * clinicalStatus MS
 * recordedDate MS
+* onset[x] only dateTime 
+* onset[x] MS
+* stage.assessment only Reference(RecurrenceMethod)
 
 Instance: ConditionPatient147
 InstanceOf: PrimaryBreastCancerCondition
@@ -18,6 +21,8 @@ Description: "Example of the condition breast cancer diagnosed in a patient"
 * clinicalStatus = ConditionStatusCS#recurrence "Recurrence"
 * bodySite = SCT#80248007 "Left breast"
 * subject = Reference(BreastCancerPatient147)
+* onsetDateTime = "1921-05-29"
+* stage.assessment = Reference(DeathAttributableBCPatient147)
 
 Mapping: PrimaryBreastCancerConditionToICHOM
 Source:	PrimaryBreastCancerCondition
@@ -28,6 +33,7 @@ Description: "Mapping of the primary breast cancer condition to the ICHOM breast
 * -> "First breast cancer"
 * bodySite -> "Laterality"
 * clinicalStatus -> "Recurrence" 
+* onset[x] -> "recurdatecancer"
 
 
 
@@ -64,6 +70,32 @@ Mapping: DeathAttributableBCToICHOM
 Source:	DeathAttributableBC
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: deathbcmapping
-Title: "Death attributable to breast cancer to to ICHOM set"
+Title: "Death attributable to breast cancer to ICHOM set"
 Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
-* valueCodeableConcept -> "Death attributable to breast cancer"
+* value[x] -> "Death attributable to breast cancer"
+
+
+Profile: RecurrenceMethod
+Parent: Observation 
+Id: recr-method
+Title: "Recurrence Method"
+Description: "The method of confirming recurrence breast cancer"
+* insert PublicationProfileRuleset
+* code = SCT#103693007 "Diagnostic procedure"
+* value[x] only string 
+* value[x] MS
+
+Instance: RecurrenceMethodPatient147
+InstanceOf: RecurrenceMethod
+Description: "Example of method of confirming recurrence breast cancer"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueString = "Histological diagnosis"
+
+Mapping: RecurrenceMethodToICHOM
+Source:	RecurrenceMethod
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: recr-methodmapping
+Title: "Recurrence method to ICHOM set"
+Description: "Mapping of method of confirming recurrence breast cancer to the ICHOM breast cancer PCOM set." 	
+* value[x] -> "Recurrence method"
