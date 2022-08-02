@@ -33,7 +33,7 @@ Description: "Mapping of the primary breast cancer condition to the ICHOM breast
 * -> "First breast cancer"
 * bodySite -> "Laterality"
 * clinicalStatus -> "Recurrence" 
-* onset[x] -> "recurdatecancer"
+* onset[x] -> "Date of cancer recurrence"
 
 
 
