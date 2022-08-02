@@ -148,50 +148,62 @@ Description: "Mapping of the size of the invasive tumor to the ICHOM breast canc
 * valueQuantity.value -> "Size of the invasive tumor"
 
 
-// LYMPH NODES
-Profile: LymphNodes
+// LYMPH NODES RESECTED
+Profile: LymphNodesResected
 Parent: Observation 
-Id: lymph-nodes
-Title: "Lymph nodes"
-Description: "Represents the number of lymph nodes resected and involved"
+Id: lymph-nodes-resected
+Title: "Resected lymph nodes"
+Description: "Represents the number of lymph nodes resected"
 * insert PublicationProfileRuleset
-* code = SCT#364108009 "Lymph node observable"
+* code = SCT#444025001 "Number of lymph nodes examined"
 * subject only Reference(BreastCancerPatient)
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
-* component contains 
-    LymphNodesResected 0..1 MS and LymphNodesInvolved 0..1 MS
-* component[LymphNodesResected] ^short = "Number lymph nodes resected"
-* component[LymphNodesResected] ^definition = "Number of lymph nodes resected"
-* component[LymphNodesResected].code = SCT#444025001 "Number of lymph nodes examined"
-* component[LymphNodesResected].value[x] only Quantity
-* component[LymphNodesInvolved] ^short = "Lymph nodes involved"
-* component[LymphNodesInvolved] ^definition = "Number of lymph nodes involved according to the TNM stage AJCC 7th Ed"
-* component[LymphNodesInvolved].code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
-* component[LymphNodesInvolved].value[x] only Quantity
+* value[x] only Quantity
+* value[x] MS
 
-Instance: LymphNodesPatient147
-InstanceOf: LymphNodes
-Description: "Example of the number of resected lymph nodes and the number of involved lymph nodes"
+Instance: LymphNodesResectedPatient147
+InstanceOf: LymphNodesResected
+Description: "Example of the number of resected lymph nodes in a patient with breast cancer"
 * status = ObservationStatusCS#final
-* code = SCT#364108009 "Lymph node observable"
+* code = SCT#444025001 "Number of lymph nodes examined"
 * subject = Reference(BreastCancerPatient147)
-* component[LymphNodesResected].code = SCT#444025001 "Number of lymph nodes examined"
-* component[LymphNodesResected].valueQuantity.value[+] = 11
-* component[LymphNodesInvolved].code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
-* component[LymphNodesInvolved].valueQuantity.value[+] = 28
+* valueQuantity.value[+] = 11
 
-Mapping: LymphNodesToICHOM
-Source:	LymphNodes
+Mapping: LymphNodesResectedToICHOM
+Source:	LymphNodesResected
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: lymphnodesmapping
-Title: "Lymph nodes to ICHOM set"
-Description: "Mapping of the lymph nodes to the ICHOM breast cancer PCOM set." 	
-* component[LymphNodesResected].valueQuantity.value ->  "Invasion grade"
-* component[LymphNodesInvolved].valueQuantity.value ->  "Tumor grade"
+Id: lymphnodesresectedmapping
+Title: "Resected lymph nodes to ICHOM set"
+Description: "Mapping of the resected lymph nodes to the ICHOM breast cancer PCOM set." 	
+* valueQuantity.value ->  "Number lymph nodes resected"
 
+
+// LYMPH NODES INVOLVED
+Profile: LymphNodesInvolved
+Parent: Observation 
+Id: lymph-nodes-involved
+Title: "Lymph nodes involved"
+Description: "Represents the number of lymph nodes involved"
+* insert PublicationProfileRuleset
+* code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
+* subject only Reference(BreastCancerPatient)
+* value[x] only Quantity
+* value[x] MS
+
+Instance: LymphNodesInvolvedPatient147
+InstanceOf: LymphNodesInvolved
+Description: "Example of the number of involved lymph nodes in a patient with breast cancer"
+* status = ObservationStatusCS#final
+* code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
+* subject = Reference(BreastCancerPatient147)
+* valueQuantity.value[+] = 28
+
+Mapping: LymphNodesInvolvedToICHOM
+Source:	LymphNodesInvolved
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: lymphnodesinvolvedmapping
+Title: "Involved lymph nodes to ICHOM set"
+Description: "Mapping of the involved lymph nodes to the ICHOM breast cancer PCOM set." 	
+* valueQuantity.value ->  "Lymph nodes involved"
 
 // ER STATUS
 Profile: ERStatus
@@ -212,7 +224,7 @@ Description: "Example of the estrogen receptor status in a patient with breast c
 * status = ObservationStatusCS#final
 * code = SCT#445028008 "Status of estrogen receptors of neoplasm"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#416237000 "Procedure not done"
+* valueCodeableConcept = SCT#416053008 "Estrogen receptor positive tumor"
 
 Mapping: ERStatusToICHOM
 Source:	ERStatus
@@ -270,7 +282,7 @@ Description: "Example of the human epidermal growth factor receptor 2 (HER2) sta
 * status = ObservationStatusCS#final
 * code = LNC#48676-1 "HER2 [Interpretation] in tissue"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#416237000 "Procedure not done"
+* valueCodeableConcept = SCT#431396003 "Human epidermal growth factor 2 negative carcinoma of breast"
 
 Mapping: HERStatusToICHOM
 Source:	HERStatus
@@ -370,11 +382,10 @@ Id: treatment-plan
 Title: "Treatment recommended by a multidisciplinary team"
 Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * insert PublicationProfileRuleset
-* intent = CareplanIntentCS#plan // We could also decide to not limit the intent and keep the options open --> ask ICHOM
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * created MS
-* activity.detail.code from RecommendedTreatmentTypeValueSet //How can we profile that there can be multiple codes in one plan?
+* activity.detail.code from RecommendedTreatmentTypeValueSet
 * activity.detail.code MS
 
 Instance: TreatmentPlanPatient147

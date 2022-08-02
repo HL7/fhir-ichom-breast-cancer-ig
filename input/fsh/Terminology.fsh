@@ -83,28 +83,36 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
+CodeSystem: TNMstages
+Id: TNMstages
+Title: "TNM stages for breast cancer"
+Description: "Codes used in the TNM Staging System, which includes the extent of the tumor (T), extent of spread to the lymph nodes (N), and presence of metastasis (M)."
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/TNM-stages
+* ^caseSensitive = true
+
+* #cT "Clinical tumor stage"
+* #cN "Clinical nodal stage"
+* #cM "Clinical distant metastasis"
+* #pT "Pathological tumor stage"
+* #pN "Pathological nodal stage"
+* #pM "Pathological distant metastasis"
+
 ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
-Title: "TNM Primary Tumor Category Value Set"
+Title: "TNM Primary Tumor Value Set"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
 * codes from system AJCC
 
 ValueSet: TNMRegionalNodesVS
 Id: tnm-regional-nodes-category-vs
-Title: "TNM Regional Nodes Category Value Set"
+Title: "TNM Regional Nodes Value Set"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
 * include codes from system AJCC
 
 ValueSet: TNMDistantMetastasesVS
 Id: tnm-distant-metastases-category-vs
-Title: "TNM Distant Metastases Category Value Set"
+Title: "TNM Distant Metastases Value Set"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
-* codes from system AJCC
-
-ValueSet: TNMBreastCancerstageVS
-Id: tnm-breast-cancer-stage-vs
-Title: "TNM breast cancer stage value set"
-Description: "Valueset of the TNM stages, according to TNM staging rules"
 * codes from system AJCC
 
 ValueSet: EstrogenStatusVS
