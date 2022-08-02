@@ -14,7 +14,6 @@ Description: "Represents the patient characteristics and demographic factors"
 * extension contains EducationLevel named educationLevel 0..1 MS
 * extension contains Ethnicity named ethnicity 0..1 MS
 * extension contains Race named race 0..1 MS
-// * extension contains DeathBC named deathbc 0..1 MS
 
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
