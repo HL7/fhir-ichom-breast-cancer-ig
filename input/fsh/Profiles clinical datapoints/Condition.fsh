@@ -62,6 +62,7 @@ Description: "Death attributable to breast cancer"
 Instance: DeathAttributableBCPatient147
 InstanceOf: DeathAttributableBC
 Description: "Example of death attributable to breast cancer"
+* code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = YesNoUnkCS#N
@@ -82,15 +83,17 @@ Title: "Recurrence Method"
 Description: "The method of confirming recurrence breast cancer"
 * insert PublicationProfileRuleset
 * code = SCT#103693007 "Diagnostic procedure"
-* value[x] only string 
+* value[x] only CodeableConcept 
+* value[x] from RecurrenceMethod (required)
 * value[x] MS
 
 Instance: RecurrenceMethodPatient147
 InstanceOf: RecurrenceMethod
 Description: "Example of method of confirming recurrence breast cancer"
+* code = SCT#103693007 "Diagnostic procedure"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueString = "Histological diagnosis"
+* valueCodeableConcept = SCT#67151002 "Histological diagnosis"
 
 Mapping: RecurrenceMethodToICHOM
 Source:	RecurrenceMethod

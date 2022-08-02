@@ -390,14 +390,14 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 // SURVIVAL AND DISEASE CONTROL 
-// ValueSet: RecurrenceMethod
-// Id: RecurrenceMethod
-// Title: "Method of confirming recurrence"
-// Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-// * SCT#394914008 "Radiological diagnosis"
-// * SCT#67151002 "Histological diagnosis"
-// both --> option to use postcoordinated terms
-// * NullFlavor#UNK "unknown"
+ValueSet: RecurrenceMethod
+Id: RecurrenceMethod
+Title: "Method of confirming recurrence"
+Description: "Valueset of the methods used to confirm recurrence of breast cancer"
+* SCT#394914008 "Radiological diagnosis"
+* SCT#67151002 "Histological diagnosis"
+//both --> option to use postcoordinated terms
+* NullFlavor#UNK "unknown"
 
 
 // ValueSet: UnitsBodyHeightVS
