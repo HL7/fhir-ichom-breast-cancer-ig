@@ -335,7 +335,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#5 "Very much"
 
 
-// Optional valueset using Snowmed CT
+// Optional valueset using Snomed CT
 
 
 // TREATMENT VARIABLES
@@ -372,15 +372,15 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 
-// ValueSet: ReoperationType
-// Id: ReoperationType
-// Title: "Type of re-operation"
-// Description: "Valueset of the types of re-operation"
-// * SCT#373572006 "No"
-// * SCT#33496007 "Reconstruction of breast"
-// * SCT#69031006 "Excision of breast tissue"
-// * SCT#234254000 "Excision of axillary lymph nodes group"
-// * NullFlavor#UNK "unknown"
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#373572006 "Clinical finding absent"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* NullFlavor#UNK "unknown"
 
 // ValueSet: SystemicTreatment
 // Id: SystemicTreatment
