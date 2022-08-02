@@ -93,7 +93,7 @@ Description: "Example of method of confirming recurrence breast cancer"
 * code = SCT#103693007 "Diagnostic procedure"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = SCT#67151002 "Histological diagnosis"
+* valueCodeableConcept = SCT#67151002 "Histologic"
 
 Mapping: RecurrenceMethodToICHOM
 Source:	RecurrenceMethod
