@@ -390,13 +390,22 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 // SURVIVAL AND DISEASE CONTROL 
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
+Title: "Recurrence Method"
+Description: "Additional code covering combination of radiological and histological diagnosis method"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^caseSensitive = true
+
+* #2 "Radiological and histological diagnosis"
+
 ValueSet: RecurrenceMethod
 Id: RecurrenceMethod
 Title: "Method of confirming recurrence"
 Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-* SCT#394914008 "Radiological diagnosis"
-* SCT#67151002 "Histological diagnosis"
-//both --> option to use postcoordinated terms
+* SCT#394914008 "Radiology"
+* SCT#67151002 "Histologic"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
 * NullFlavor#UNK "unknown"
 
 
