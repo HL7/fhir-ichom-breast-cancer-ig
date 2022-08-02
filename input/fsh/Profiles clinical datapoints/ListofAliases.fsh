@@ -19,6 +19,7 @@ Alias: RaceCS = http://terminology.hl7.org/CodeSystem/v3-Race
 Alias: GenderCS = http://hl7.org/fhir/administrative-gender
 Alias: EthnicityCS = http://terminology.hl7.org/CodeSystem/v3-Ethnicity
 Alias: CountryCS = urn:iso:std:iso:3166
+Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
