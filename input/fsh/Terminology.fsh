@@ -23,7 +23,7 @@ ValueSet: DemographicFactorsRace
 Id: DemographicFactorsRace
 Title: "Race of patient"
 Description: "Valueset of the race of a patient"
-* include codes from system RaceVS
+* include codes from valueset RaceVS
 // Remove this valueset once we have a snowmed-supporting server since this is only a shell valueset 
 
 ValueSet: RelationshipStatusVS
@@ -155,17 +155,24 @@ Description: "Patient's documented history of comorbidities"
 * include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
 * include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
-ValueSet: LateralityVS
-Id: LateralityVS
-Title: "Laterality of breast cancer"
-Description: "Valueset of the laterality of breast cancer"
-* SCT#80248007 "Left breast structure"
-* SCT#73056007 "Right breast structure"
-* SCT#63762007 "Both breasts"
+ValueSet: BodyWeightVS
+Id: BodyWeightVS
+Title: "Units of patient's body weight"
+Description: "Valueset of the unit  of the patient's body weight"
+* UCUM#kg "kg"
+* UCUM#[lb_av] "[lb_av]"
+
+ValueSet: NewCancerVS
+Id: NewCancerVS
+Title: "Laterality of new cancer"
+Description: "Valueset of the laterality of new breast cancer"
+* SCT#255208005 "Ipsilateral"
+* SCT#255209002 "Contralateral"
+
 
 //  TREATMENT VARIABLES 
 
-// TreatmentType \\
+// TreatmentType 
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
@@ -198,7 +205,7 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
 * include NullFlavor#ASKU "asked but unknown"
 
-// Breast Surgery Type \\
+// Breast Surgery Type 
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"
@@ -230,7 +237,9 @@ ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
-* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
+* YesNoUnkCS#Y "Yes" 
+* YesNoUnkCS#N "No"
+* YesNoUnkCS#UNK "Unknown"
 
 
 //  DEGREE OF HEALTH 
@@ -304,6 +313,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
+
 
 
 // Optional valueset using Snowmed CT
@@ -387,14 +397,23 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 // SURVIVAL AND DISEASE CONTROL 
-// ValueSet: RecurrenceMethod
-// Id: RecurrenceMethod
-// Title: "Method of confirming recurrence"
-// Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-// * SCT#394914008 "Radiological diagnosis"
-// * SCT#67151002 "Histological diagnosis"
-// both --> option to use postcoordinated terms
-// * NullFlavor#UNK "unknown"
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
+Title: "Recurrence Method"
+Description: "Additional code covering combination of radiological and histological diagnosis method"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^caseSensitive = true
+
+* #2 "Radiological and histological diagnosis"
+
+ValueSet: RecurrenceMethod
+Id: RecurrenceMethod
+Title: "Method of confirming recurrence"
+Description: "Valueset of the methods used to confirm recurrence of breast cancer"
+* SCT#394914008 "Radiology"
+* SCT#67151002 "Histologic"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
+* NullFlavor#UNK "unknown"
 
 
 // ValueSet: UnitsBodyHeightVS

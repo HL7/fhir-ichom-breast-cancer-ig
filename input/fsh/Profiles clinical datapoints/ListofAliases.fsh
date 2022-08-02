@@ -16,6 +16,7 @@ Alias: ObservationStatusCS = http://hl7.org/fhir/observation-status
 Alias: ConditionStatusCS = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: UCUM = http://unitsofmeasure.org
 Alias: IchomReoperation = https://connect.ichom.org/CodeSystem/reop-breast
+Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
