@@ -385,13 +385,14 @@ Description: "Represents the treatment that a multidisciplinary team recommended
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * created MS
-* activity.detail.code from RecommendedTreatmentTypeValueSet
+* activity.detail.code from RecommendedTreatmentTypeValueSet 
 * activity.detail.code MS
 
 Instance: TreatmentPlanPatient147
 InstanceOf: TreatmentPlan
 Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * status = CareplanStatusCS#active
+* intent = CareplanIntentCS#plan 
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject = Reference(BreastCancerPatient147)
 * activity.detail.code = SCT#387713003 "Surgical procedure"

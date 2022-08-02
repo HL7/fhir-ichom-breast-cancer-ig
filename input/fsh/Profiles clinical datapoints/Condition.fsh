@@ -38,7 +38,7 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 * stage[ClinicalMetastasesStage] ^definition = "Represents the clinical distant metastases stage according to the tumor-node-metastasis (TNM) staging (per AJCC 8th Ed.)"
 * stage[ClinicalMetastasesStage].type = TNMstages#cM "Clinical distant metastatsis"
 * stage[ClinicalMetastasesStage].summary only CodeableConcept
-* stage[ClinicalMetastasesStage].summary from TNMRegionalNodesVS (required)
+* stage[ClinicalMetastasesStage].summary from TNMDistantMetastasesVS (required)
 
 * stage[PathologicalTumorStage] ^short = "Pathological TNM tumor stage"
 * stage[PathologicalTumorStage] ^definition = "Represents the pathological tumor stage according to the tumor-node-metastasis (TNM) staging (per AJCC 8th Ed.)"
@@ -56,7 +56,7 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 * stage[PathologicalMetastasesStage] ^definition = "Represents the pathological distant metastases stage according to the tumor-node-metastasis (TNM) staging (per AJCC 8th Ed.)"
 * stage[PathologicalMetastasesStage].type = TNMstages#pM "Pathological distant metastasis"
 * stage[PathologicalMetastasesStage].summary only CodeableConcept
-* stage[PathologicalMetastasesStage].summary from TNMRegionalNodesVS (required)
+* stage[PathologicalMetastasesStage].summary from TNMDistantMetastasesVS (required)
 
 Instance: PrimaryBreastCancerPatient147
 InstanceOf: PrimaryBreastCancerCondition
