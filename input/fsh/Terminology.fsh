@@ -237,7 +237,9 @@ ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
-* include codes from valueset http://hl7.org/fhir/ValueSet/yesnodontknow
+* YesNoUnkCS#Y "Yes" 
+* YesNoUnkCS#N "No"
+* YesNoUnkCS#UNK "Unknown"
 
 
 //  DEGREE OF HEALTH 
@@ -311,6 +313,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
+
 
 
 // Optional valueset using Snowmed CT
@@ -394,14 +397,23 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 // SURVIVAL AND DISEASE CONTROL 
-// ValueSet: RecurrenceMethod
-// Id: RecurrenceMethod
-// Title: "Method of confirming recurrence"
-// Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-// * SCT#394914008 "Radiological diagnosis"
-// * SCT#67151002 "Histological diagnosis"
-// both --> option to use postcoordinated terms
-// * NullFlavor#UNK "unknown"
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
+Title: "Recurrence Method"
+Description: "Additional code covering combination of radiological and histological diagnosis method"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^caseSensitive = true
+
+* #2 "Radiological and histological diagnosis"
+
+ValueSet: RecurrenceMethod
+Id: RecurrenceMethod
+Title: "Method of confirming recurrence"
+Description: "Valueset of the methods used to confirm recurrence of breast cancer"
+* SCT#394914008 "Radiology"
+* SCT#67151002 "Histologic"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
+* NullFlavor#UNK "unknown"
 
 
 // ValueSet: UnitsBodyHeightVS
