@@ -227,7 +227,8 @@ Description: "Codes indicating the kind of treatment a patient underwent"
 * #5 "Chemotherapy"
 * #6 "Hormonal therapy"
 * #7 "Targeted therapy"
-* #8 "Best supportive care"
+* #8 "Immunotherapy"
+* #9 "Best supportive care"
 
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
@@ -241,7 +242,8 @@ Description: "Valueset of the kind of treatment a patient with breastcancer unde
 * include TreatmentTypesCodeSystem#5 "Chemotherapy"
 * include TreatmentTypesCodeSystem#6 "Hormonal therapy"
 * include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#8 "Best supportive care"
+* include TreatmentTypesCodeSystem#8 "Immunotherapy"
+* include TreatmentTypesCodeSystem#9 "Best supportive care"
 * include NullFlavor#ASKU "asked but unknown"
 
 ValueSet: RecommendedTreatmentTypeValueSet
@@ -249,8 +251,8 @@ Id: RecommendedTreatmentTypeValueSet
 Title: "Recommended treatment types"
 Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
 * include SCT#387713003 "Surgical procedure"
-* include SCT#69945500 "Operative procedure on axilla "
-* include SCT#108290001 "Radiation oncology AND/OR radiotherapy "
+* include SCT#699455008 "Operative procedure on axilla"
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
 * include SCT#385786002 "Chemotherapy care"
 * include SCT#169413002 "Hormone therapy"
 * include TreatmentTypesCodeSystem#7 "Targeted therapy"
@@ -266,13 +268,10 @@ Title: "Breast surgery Types"
 Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/breast-surgery-types
 * ^caseSensitive = true
-
 * #0 "Breast conserving surgery (BCS)"
 * #1 "BCS with mammoplasty"
 * #2 "Mastectomy without immediate reconstruction"
-* #3 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* #4 "Mastectomy with immediate reconstruction (autologous)"
-* #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
+* #3 "Mastectomy with immediate reconstruction"
 
 ValueSet: BreastSurgeryTypeVS
 Id: BreastSurgeryTypeVS
@@ -281,10 +280,8 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 * include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
 * include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
 * include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* include BreastSurgeryTypesCodeSystem#4 "Mastectomy with immediate reconstruction (autologous)"
-* include BreastSurgeryTypesCodeSystem#5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
-* include NullFlavor#UNK "unknown"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
 
 ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet

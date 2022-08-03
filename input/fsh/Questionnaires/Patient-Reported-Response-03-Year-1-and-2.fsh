@@ -626,8 +626,7 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
     * type = #group
     * text = "With your breasts in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType(#3)
-    * insert enableWhenSurgeryType(#4)
-    * insert enableWhenSurgeryType(#5)
+
     * enableBehavior = #any
 
     * item[+]
@@ -636,8 +635,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How you look in the mirror clothed?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -646,8 +643,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "The shape of your reconstructed breast(s) when you are wearing a bra?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -656,8 +651,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How normal you feel in your clothes?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -666,8 +659,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "The size of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -676,8 +667,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "Being able to wear clothing that is more fitted?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -686,8 +675,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How your breasts are lined up in relation to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -696,8 +683,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How comfortable your bras fit?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -706,8 +691,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "The softness of your reconstructed breast(s)?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -716,8 +699,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How equal in size your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -726,8 +707,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How natural your reconstructed breast(s) looks?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
     * item[+]
       * linkId = "BREASTQRECP_Q11"
@@ -735,8 +714,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How naturally your reconstructed breast(s) sits/hangs?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -745,8 +722,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How your reconstructed breast(s) feel to touch?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -755,8 +730,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How much your reconstructed breast(s) feels like a natural part of your body?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -765,8 +738,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How closely matched your breasts are to each other?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
     * item[+]
       * linkId = "BREASTQRECP_Q15"
@@ -774,8 +745,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How your reconstructed breast(s) look now compared to before you had any breast surgery?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
     * item[+]
@@ -784,8 +753,6 @@ Description: "Patient-reported response at year 1 and 2 of post-treatment follow
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
       * insert enableWhenSurgeryType(#3)
-      * insert enableWhenSurgeryType(#4)
-      * insert enableWhenSurgeryType(#5)
       * enableBehavior = #any
 
 

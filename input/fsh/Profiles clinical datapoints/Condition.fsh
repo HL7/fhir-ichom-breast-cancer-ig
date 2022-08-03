@@ -36,7 +36,7 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 
 * stage[ClinicalMetastasesStage] ^short = "Clinical TNM distant metastases stage"
 * stage[ClinicalMetastasesStage] ^definition = "Represents the clinical distant metastases stage according to the tumor-node-metastasis (TNM) staging (per AJCC 8th Ed.)"
-* stage[ClinicalMetastasesStage].type = TNMstages#cM "Clinical distant metastatsis"
+* stage[ClinicalMetastasesStage].type = TNMstages#cM "Clinical distant metastasis"
 * stage[ClinicalMetastasesStage].summary only CodeableConcept
 * stage[ClinicalMetastasesStage].summary from TNMDistantMetastasesVS (required)
 
