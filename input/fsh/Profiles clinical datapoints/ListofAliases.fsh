@@ -17,6 +17,9 @@ Alias: CareplanStatusCS = http://hl7.org/fhir/request-status
 Alias: CareplanIntentCS = http://hl7.org/fhir/request-intent
 Alias: CareplanActivityStatusCS = http://hl7.org/fhir/care-plan-activity-status
 Alias: RelationshipStatusCS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
+Alias: MedicationRequestStatusCS = http://hl7.org/fhir/CodeSystem/medicationrequest-status
+Alias: MedicationRequestIntentCS = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
+Alias: MedicationAdministrationStatusCS = http://terminology.hl7.org/CodeSystem/medication-admin-status
 
 Alias: RaceCS = http://terminology.hl7.org/CodeSystem/v3-Race 
 Alias: GenderCS = http://hl7.org/fhir/administrative-gender

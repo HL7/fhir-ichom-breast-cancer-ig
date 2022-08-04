@@ -315,6 +315,25 @@ Description: "Valueset of the location of radiotherapy"
 * NullFlavor#UNK "unknown"
 // still need one more code for the partial breast / intraoperative
 
+ValueSet: ChemoTherapyTypeVS
+Id: ChemoTherapyType
+Title: "Type of chemotherapy"
+Description: "Valueset of the types of chemotherapy"
+* SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
+* SCT#418965003 "Taxane derivative"
+* SCT#768621002 "Product containing platinum and platinum compound"
+* SCT#386906001 "Capecitabine"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: TherapyIntentVS
+Id: TherapyIntentVS
+Title: "Intent of therapy"
+Description: "Valueset of intent of therapy"
+* SCT#373847000 "Neo-adjuvant - intent"
+* SCT#373846009 "Adjuvant - intent"
+* NullFlavor#UNK "unknown"
+
 //  DEGREE OF HEALTH 
  
 // EORTC-QLQ \\ 
@@ -396,22 +415,8 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 
-// ValueSet: TherapyIntent
-// Id: TherapyIntent
-// Title: "Intent of therapy"
-// Description: "Valueset of intent of therapy"
-// * SCT#373847000 "Neo-adjuvant - intent"
-// * SCT#373846009 "Adjuvant - intent"
 
-// ValueSet: ChemoTherapyType
-// Id: ChemoTherapyType
-// Title: "Type of chemotherapy"
-// Description: "Valueset of the types of chemotherapy"
-// * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
-// * SCT#418965003 "Taxane derivative"
-// * SCT#768621002 "Product containing platinum and platinum compound"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
+
 
 // ValueSet: HormonalTherapyType
 // Id: HormonalTherapyType
@@ -423,8 +428,6 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * SCT#41897400 "Gonad regulating hormone agent"
 // * NullFlavor#OTH "other"
 // * NullFlavor#UNK "unknown"
-
-
 
 // ValueSet: ReoperationType
 // Id: ReoperationType

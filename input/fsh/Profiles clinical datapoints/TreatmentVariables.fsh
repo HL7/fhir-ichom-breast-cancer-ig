@@ -3,13 +3,12 @@
 Profile: Treatment
 Parent: Procedure 
 Id: breast-cancer-treatment
-Title: "Treatment the breast cancer patient received"
+Title: "Breast cancer treatment"
 Description: "Represents the treatment the breast cancer patient received during the last year"
 * code from TreatmentTypeValueSet (required)
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
+* performedDateTime and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* complication MS
 
 Instance: TreatmentPatient147
 InstanceOf: Treatment 
@@ -31,14 +30,13 @@ Description: "Mapping of the breast cancer treatment to the ICHOM breast cancer 
 Profile: BreastCancerSurgery
 Parent: Procedure 
 Id: breast-cancer-surgery
-Title: "Surgery of a breast cancer patient"
+Title: "Breast cancer surgery"
 Description: "Represents the surgery the breast cancer patient received during the last year"
 * category = SCT#387713003 "Surgical procedure" // this code is a bit too generic in my opinion, better to have one for breast (cancer) surgery
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
+* performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* complication MS
 
 Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
@@ -62,14 +60,13 @@ Description: "Mapping of the breast cancer surgery to the ICHOM breast cancer PC
 Profile: AxillaSurgery
 Parent: Procedure 
 Id: axilla-surgery
-Title: "Surgery to the axilla of the breast cancer patient"
+Title: "Axilla surgery"
 Description: "Represents if the patient received surgery to the axilla during the last year"
 * category = SCT#699455008 "Operative procedure on axilla"
 * code from AxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
+* performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* complication MS
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
@@ -96,14 +93,13 @@ Description: "Mapping of the axilla surgery to the ICHOM breast cancer PCOM set.
 Profile: AxillaryClearance
 Parent: Procedure 
 Id: axillary-clearance
-Title: "Axillary clearance of the breast cancer patient"
+Title: "Axillary clearance"
 Description: "Represents if the patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year"
 * partOf only Reference(AxillaSurgery)
 * code = SCT#234254000 "Excision of axillary lymph nodes group"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
+* performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* complication MS
 
 Instance: AxillaryClearancePatient147
 InstanceOf: AxillaryClearance
@@ -127,14 +123,13 @@ Description: "Mapping of axillary clearance to the ICHOM breast cancer PCOM set"
 Profile: ReconstructionSurgery
 Parent: Procedure 
 Id: reconstruction-surgery
-Title: "Reconstruction surgery of a breast cancer patient"
+Title: "Reconstruction surgery"
 Description: "Represents the reconstruction surgery the breast cancer patient received during the last year"
 * code = LNC#21974-1 "Surgery reconstruction Cancer Rx" // found this code myself
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
+* performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * bodySite MS // need codes for pre pectoral and sub-pectoral reconstruction
-* complication MS
 * focalDevice MS // need codes for the different types of impants (direct, staged, autologous implants)
 
 Instance: ReconstructionSurgeryPatient147
@@ -162,12 +157,13 @@ Description: "Mapping of the reconstruction surgery to the ICHOM breast cancer P
 Profile: Radiotherapy
 Parent: Procedure 
 Id: radiotherapy
-Title: "Radiotherapy of a breast cancer patient"
+Title: "Radiotherapy"
 Description: "Represents if the patient received radiotherapy during the last year"
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy" // how to profile the intent?
 * subject only Reference(BreastCancerPatient)
 * performedPeriod MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
 
 Instance: RadiotherapyPatient147
@@ -178,23 +174,90 @@ Description: "Example of radiotherapy the breast cancer patient received during 
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2021-06-19"
 * performedPeriod.end = "2021-12-01"
+* reasonCode = SCT#373846009 "Adjuvant - intent" 
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
 * bodySite = SCT#263601005 "Site of tumor"
 
 Mapping: RadiotherapyToICHOM
 Source:	Radiotherapy
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: radiotherapymapping
+Id: radiotherapy-mapping
 Title: "Radiotherapy to ICHOM set"
 Description: "Mapping of radiotherapy to the ICHOM breast cancer PCOM set" 	
 * performedPeriod.start -> "Radiotherapy start date" 
 * performedPeriod.end -> "Radiotherapy stop date" 
+* reasonCode -> "Radiotherapy"
 * bodySite -> "Radiotherapy type"
 
 // CHEMOTHERAPY
+Profile: Chemotherapy
+Parent: MedicationAdministration
+Id: chemotherapy-medication-administration
+Title: "Chemotherapy"
+Description: "Represents if the patient received chemotherapy during the last year. This profile is in alignment with mCODE."
+* medication[x] only CodeableConcept 
+* medication[x] from ChemoTherapyTypeVS (preferred)
+* subject only Reference(BreastCancerPatient)
+* reasonCode from TherapyIntentVS (required)
+* reasonReference only Reference (PrimaryBreastCancerCondition)
+* medication[x] and subject and effectivePeriod and reasonCode and reasonReference MS
 
+Instance: ChemotherapyPatient147
+InstanceOf: Chemotherapy
+Description: "Example of chemotherapy of the breast cancer patient received during the last year"
+* status = MedicationAdministrationStatusCS#completed
+* medicationCodeableConcept = NullFlavor#OTH "other"
+* subject = Reference(BreastCancerPatient147)
+* reasonCode = SCT#373846009 "Adjuvant - intent"
+* reasonReference = Reference(PrimaryBreastCancerPatient147)
+* effectivePeriod.start = "2019-01-09"
+* effectivePeriod.end = "2019-09-04"
 
+Mapping: ChemotherapyToICHOM
+Source:	Chemotherapy
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: chemotherapy-mapping
+Title: "Chemotherapy to ICHOM set"
+Description: "Mapping of chemotherapy to the ICHOM breast cancer PCOM set" 	
+* effectivePeriod.start -> "Chemotherapy start date" 
+* effectivePeriod.end -> "Chemotherapy stop date" 
+* medication[x] -> "Type of chemotherapy"
+* reasonCode -> "Chemotherapy"
 
+Profile: ChemotherapyRequest
+Parent: MedicationRequest
+Id: chemotherapy-medication-request
+Title: "Chemotherapy request"
+Description: "Represents the order or request for chemotherapy of a breast cancer patient. This profile is in alignment with mCODE."
+* medication[x] only CodeableConcept 
+* medication[x] from ChemoTherapyTypeVS (preferred)
+* subject only Reference(BreastCancerPatient)
+* reasonCode from TherapyIntentVS (required)
+* reasonReference only Reference (PrimaryBreastCancerCondition)
+* medication[x] and subject and dispenseRequest.validityPeriod and reasonCode and reasonReference MS
+
+Instance: ChemotherapyRequestPatient147
+InstanceOf: ChemotherapyRequest
+Description: "Example of chemotherapy request of the breast cancer patient received during the last year"
+* status = MedicationRequestStatusCS#completed
+* intent = MedicationRequestIntentCS#order
+* medicationCodeableConcept = NullFlavor#OTH "other"
+* subject = Reference(BreastCancerPatient147)
+* reasonCode = SCT#373846009 "Adjuvant - intent"
+* reasonReference = Reference(PrimaryBreastCancerPatient147)
+* dispenseRequest.validityPeriod.start = "2019-01-09"
+* dispenseRequest.validityPeriod.end = "2019-09-04"
+
+Mapping: ChemotherapyRequestToICHOM
+Source:	ChemotherapyRequest
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: chemotherapy-request-mapping
+Title: "Chemotherapy request to ICHOM set"
+Description: "Mapping of chemotherapy request to the ICHOM breast cancer PCOM set" 	
+* dispenseRequest.validityPeriod.start -> "Chemotherapy start date" 
+* dispenseRequest.validityPeriod.end -> "Chemotherapy stop date" 
+* medication[x] -> "Type of chemotherapy"
+* reasonCode -> "Chemotherapy"
 
 // HORMONAL THERAPY
 
