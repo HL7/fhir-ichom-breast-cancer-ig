@@ -334,9 +334,41 @@ Description: "Valueset of intent of therapy"
 * SCT#373846009 "Adjuvant - intent"
 * NullFlavor#UNK "unknown"
 
+ValueSet: HormonalTherapyTypeVS
+Id: HormonalTherapyTypeVS
+Title: "Type of hormonal therapy"
+Description: "Valueset of the types of hormonal therapy"
+* SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
+* SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
+* SCT#83152002 "Oophorectomy"
+* SCT#41897400 "Gonad regulating hormone agent"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#373572006 "No"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* NullFlavor#UNK "unknown"
+
+ValueSet: SystemicTreatmentVS
+Id: SystemicTreatmentVS
+Title: "Type of systemic treatment"
+Description: "Valueset of the types of systemic treatment"
+* SCT#373572006 "Clinical finding absent"
+* SCT#438553004 "History of drug therapy" //--> not really a reflection of the answeroption in the ICHOM set
+* SCT#367336001 "Chemotherapy"
+//no code for "yes, on targeted therapy"
+* SCT#169413002 "Hormone therapy"
+* NullFlavor#UNK "unknown"
+
 //  DEGREE OF HEALTH 
  
-// EORTC-QLQ \\ 
+// EORTC-QLQ
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
 Title: "EORTC-QLQ questionnaire"
@@ -408,47 +440,7 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 
 
 
-// Optional valueset using Snowmed CT
 
-
-// TREATMENT VARIABLES
-
-
-
-
-
-
-// ValueSet: HormonalTherapyType
-// Id: HormonalTherapyType
-// Title: "Type of hormonal therapy"
-// Description: "Valueset of the types of hormonal therapy"
-// * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
-// * SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
-// * SCT#8315200 "Oophorectomy"
-// * SCT#41897400 "Gonad regulating hormone agent"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: ReoperationType
-// Id: ReoperationType
-// Title: "Type of re-operation"
-// Description: "Valueset of the types of re-operation"
-// * SCT#373572006 "No"
-// * SCT#33496007 "Reconstruction of breast"
-// * SCT#69031006 "Excision of breast tissue"
-// * SCT#234254000 "Excision of axillary lymph nodes group"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: SystemicTreatment
-// Id: SystemicTreatment
-// Title: "Type of systemic treatment"
-// Description: "Valueset of the types of systemic treatment"
-// * SCT#373572006 "Clinical finding absent"
-// * SCT#438553004 "History of drug therapy" //--> not really a reflection of the answeroption in the ICHOM set
-// * SCT#367336001 "Chemotherapy"
-// no code for "yes, on targeted therapy"
-// * SCT#169413002 "Hormone therapy"
-// * NullFlavor#UNK "unknown"
 
 
 // SURVIVAL AND DISEASE CONTROL 
