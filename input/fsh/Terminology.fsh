@@ -255,8 +255,9 @@ Description: "Valueset of the kind of treatment that the multidisciplinary team 
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
 * include SCT#385786002 "Chemotherapy care"
 * include SCT#169413002 "Hormone therapy"
+* include SCT#76334006 "Immunotherapy"
+* include SCT#243114000 "Support"
 * include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#8 "Best supportive care"
 * include TreatmentTypesCodeSystem#0 "No treatment"
 * include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
 * include NullFlavor#ASKU "asked but unknown"
@@ -339,9 +340,9 @@ Id: HormonalTherapyTypeVS
 Title: "Type of hormonal therapy"
 Description: "Valueset of the types of hormonal therapy"
 * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
-* SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
+* SCT#373336003 "Substance with estrogen receptor antagonist mechanism of action"
 * SCT#83152002 "Oophorectomy"
-* SCT#41897400 "Gonad regulating hormone agent"
+* SCT#418974001 "Gonad regulating hormone agent"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
@@ -438,11 +439,6 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
 
-
-
-
-
-
 // SURVIVAL AND DISEASE CONTROL 
 CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
@@ -461,18 +457,3 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 * SCT#67151002 "Histologic"
 * RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
 * NullFlavor#UNK "unknown"
-
-
-// ValueSet: UnitsBodyHeightVS
-// Id: UnitsBodyHeight
-// Title: "Units of patient's body height"
-// Description: "Valueset of the unit  of the patient's body height"
-// * SCT#258672001 "Centimeter"
-// * SCT#258677007 "Inch"
-
-// ValueSet: UnitsBodyWeightVS
-// Id: UnitsBodyWeight
-// Title: "Units of patient's body weight"
-// Description: "Valueset of the unit  of the patient's body weight"
-// * SCT#258683005 "kilogram"
-// * SCT#258693003 "pounds"
