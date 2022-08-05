@@ -423,7 +423,27 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 // * NullFlavor#OTH "other"
 // * NullFlavor#UNK "unknown"
 
+// until other codes are available!
+CodeSystem: TargetedTherapyCodeSystem
+Id: TargetedTherapyCodeSystem
+Title: "Targeted Therapy"
+Description: "Codes covering targeted therapy options with unknown/unavailable codes"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
+* ^caseSensitive = true
 
+* #0 "Her-2 targeting therapy"
+* #1 "CDK-46 inhibitors"
+* #2 "PARP inhibitors"
+
+ValueSet: TargetedTherapyVS
+Id: TargetedTherapyVS
+Title: "Type of targeted therapy"
+Description: "Valueset of the types of targeted therapy"
+* TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
+* TargetedTherapyCodeSystem#1 "CDK-46 inhibitors"
+* TargetedTherapyCodeSystem#2 "PARP inhibitors"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
 
 ValueSet: ReoperationTypeVS
 Id: ReoperationTypeVS
