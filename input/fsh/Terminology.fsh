@@ -346,16 +346,6 @@ Description: "Valueset of the types of hormonal therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* SCT#373572006 "No"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
 ValueSet: SystemicTreatmentVS
 Id: SystemicTreatmentVS
 Title: "Type of systemic treatment"
