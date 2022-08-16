@@ -64,9 +64,9 @@ Description: "Valueset of the histological types of tumors"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-ValueSet: GeneticMutationVS
-Id: GeneticMutationVS
-Title: "Genetic Mutation"
+ValueSet: GermlineMutationVS
+Id: GermlineMutationVS
+Title: "Germline Mutation"
 Description: "Valueset of the genetic mutation predisposing breast cancer"
 * SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
 * SCT#412734009 "BRCA1 gene mutation positive (finding)"
@@ -82,6 +82,38 @@ Description: "Valueset of the grade of the tumor"
 * SCT#405986005 "Intermediate grade histologic differentiation (finding)"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
+
+CodeSystem: TNMstages
+Id: TNMstages
+Title: "TNM stages for breast cancer"
+Description: "Codes used in the TNM Staging System, which includes the extent of the tumor (T), extent of spread to the lymph nodes (N), and presence of metastasis (M)."
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/TNM-stages
+* ^caseSensitive = true
+
+* #cT "Clinical tumor stage"
+* #cN "Clinical nodal stage"
+* #cM "Clinical distant metastasis"
+* #pT "Pathological tumor stage"
+* #pN "Pathological nodal stage"
+* #pM "Pathological distant metastasis"
+
+ValueSet: TNMPrimaryTumorVS
+Id: tnm-primary-tumor-category-vs
+Title: "TNM Primary Tumor Value Set"
+Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
+* codes from system AJCC
+
+ValueSet: TNMRegionalNodesVS
+Id: tnm-regional-nodes-category-vs
+Title: "TNM Regional Nodes Value Set"
+Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
+* include codes from system AJCC
+
+ValueSet: TNMDistantMetastasesVS
+Id: tnm-distant-metastases-category-vs
+Title: "TNM Distant Metastases Value Set"
+Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
+* codes from system AJCC
 
 ValueSet: EstrogenStatusVS
 Id: EstrogenStatusVS
@@ -162,17 +194,25 @@ Description: "Valueset of the unit  of the patient's body weight"
 * UCUM#kg "kg"
 * UCUM#[lb_av] "[lb_av]"
 
-ValueSet: NewCancerVS
-Id: NewCancerVS
+ValueSet: LateralityNewCancerVS
+Id: LateralityNewCancerVS
 Title: "Laterality of new cancer"
 Description: "Valueset of the laterality of new breast cancer"
 * SCT#255208005 "Ipsilateral"
 * SCT#255209002 "Contralateral"
 
+ValueSet: LateralityVS
+Id: LateralityVS
+Title: "Laterality of breast cancer"
+Description: "Valueset of the laterality of breast cancer"
+* SCT#80248007 "Left breast structure"
+* SCT#73056007 "Right breast structure"
+* SCT#63762007 "Both breasts"
+
 
 //  TREATMENT VARIABLES 
 
-// TreatmentType 
+// TreatmentType \\
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
@@ -189,11 +229,10 @@ Description: "Codes indicating the kind of treatment a patient underwent"
 * #7 "Targeted therapy"
 * #8 "Best supportive care"
 
-
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
-Title: "Treatment variables"
-Description: "Valueset of the kind of treatment a patient underwent"
+Title: "Type of treatments"
+Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
 * include TreatmentTypesCodeSystem#0 "No treatment"
 * include TreatmentTypesCodeSystem#1 "Surgery"
 * include TreatmentTypesCodeSystem#2 "Surgery to axilla"
@@ -205,7 +244,22 @@ Description: "Valueset of the kind of treatment a patient underwent"
 * include TreatmentTypesCodeSystem#8 "Best supportive care"
 * include NullFlavor#ASKU "asked but unknown"
 
-// Breast Surgery Type 
+ValueSet: RecommendedTreatmentTypeValueSet
+Id: RecommendedTreatmentTypeValueSet
+Title: "Recommended treatment types"
+Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
+* include SCT#387713003 "Surgical procedure"
+* include SCT#69945500 "Operative procedure on axilla "
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy "
+* include SCT#385786002 "Chemotherapy care"
+* include SCT#169413002 "Hormone therapy"
+* include TreatmentTypesCodeSystem#7 "Targeted therapy"
+* include TreatmentTypesCodeSystem#8 "Best supportive care"
+* include TreatmentTypesCodeSystem#0 "No treatment"
+* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
+* include NullFlavor#ASKU "asked but unknown"
+
+// Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"
