@@ -447,3 +447,50 @@ Description: "Kind of re-operation due to involved margins"
 * IchomReoperation#2 "Breast conserving surgery with mammoplasty"
 * IchomReoperation#4 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
+
+ValueSet: ReconstructionTypeVS
+Id: ReconstructionTypeVS
+Title: "Type of reconstruction surgery"
+Description: "ValueSet with the type of reconstruction surgery"
+* SCT#172061002 "Reconstruction of breast with expander or prosthesis"
+* SCT#303445008 "Reconstruction of breast with flap"
+* NullFlavor#UNK "unknown"
+// still need a code for both options
+
+ValueSet: ComplicationImpactVS
+Id: ComplicationImpactVS
+Title: "Impact of complication"
+Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
+* SCT#240917005 "Interventional radiology"  
+* SCT#303577009 "Interventional debulking surgery" 
+* SCT#417005 "Hospital re-admission"
+* SCT#397945004 "Unexpected admission to intensive care unit"
+* SCT#274512008 "Drug therapy discontinued"
+* SCT#182879007 "Medication decreased"
+* SCT#419620001 "Death"
+* NullFlavor#UNK "unknown"
+// still need (single) codes for complication leading to prolonged hospitalization, discontinuing of treatment and none of the above. 
+
+
+ValueSet: ComplicationTypeVS
+Id: ComplicationTypeVS
+Title: "Type of complication"
+Description: "ValueSet of the type of complication experienced by the breast cancer patient"
+* SCT#76844004  "Local infection of wound"
+* SCT#715068009 "Seroma"
+// alternative SCT#444555004 "Seroma of breast as complication of procedure"
+// or SCT#145411000119105 "Seroma following procedure"
+* SCT#385494008 "Hematoma"
+* SCT#131148009 "Bleeding"
+* SCT#403678005 "Skin flap necrosis"
+* SCT#213192008 "Skin graft failure"
+* SCT#27315000  "Removal of breast implant"
+// alternative:  SCT#19220005 "Complication of implant"
+* SCT#371039008 "Thromboembolic disorder"
+* SCT#57182000  "Nerve injury"
+* SCT#403675008 "Drug-induced dermatosis"
+* SCT#233604007 "Pneumonia"
+* SCT#443980004 "Neutropenic sepsis"
+* NullFlavor#UNK "unknown"
+* NullFlavor#OTH "other"
+// still need (single) codes for delayed wound healing, partial and total skin graft loss and immune related toxicity. 
