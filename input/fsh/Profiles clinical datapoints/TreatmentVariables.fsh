@@ -166,147 +166,75 @@ Description: "Mapping of radiotherapy to the ICHOM breast cancer PCOM set"
 
 // CHEMOTHERAPY
 Profile: Chemotherapy
-Parent: MedicationAdministration
-Id: chemotherapy-medication-administration
+Parent: Procedure 
+Id: chemotherapy
 Title: "Chemotherapy"
-Description: "Represents if the patient received chemotherapy during the last year. This profile is in alignment with mCODE."
-* medication[x] only CodeableConcept 
-* medication[x] from ChemoTherapyTypeVS (preferred)
+Description: "Represents if the patient received chemotherapy during the last year."
+* code from ChemoTherapyTypeVS (preferred)
 * subject only Reference(BreastCancerPatient)
-* reasonCode from TherapyIntentVS (required)
+* performedPeriod MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* medication[x] and subject and effectivePeriod and reasonCode and reasonReference MS
+* reasonCode from TherapyIntentVS (required)
 
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
-Description: "Example of chemotherapy of the breast cancer patient received during the last year"
-* status = MedicationAdministrationStatusCS#completed
-* medicationCodeableConcept = NullFlavor#OTH "other"
+Description: "Example of a breast cancer patient who received chemotherapy"
+* status = ProcedureStatusCS#completed
+* code = NullFlavor#OTH "other"
 * subject = Reference(BreastCancerPatient147)
-* reasonCode = SCT#373846009 "Adjuvant - intent"
+* performedPeriod.start = "2019-01-09"
+* performedPeriod.end = "2019-09-04"
+* reasonCode = SCT#373846009 "Adjuvant - intent" 
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-* effectivePeriod.start = "2019-01-09"
-* effectivePeriod.end = "2019-09-04"
 
 Mapping: ChemotherapyToICHOM
 Source:	Chemotherapy
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: chemotherapy-mapping
 Title: "Chemotherapy to ICHOM set"
-Description: "Mapping of chemotherapy to the ICHOM breast cancer PCOM set" 	
+Description: "Mapping of chemotherapy to the ICHOM breast cancer PCOM set" 
 * -> "Treatment"
-* effectivePeriod.start -> "Chemotherapy start date" 
-* effectivePeriod.end -> "Chemotherapy stop date" 
-* medication[x] -> "Type of chemotherapy"
+* performedPeriod.start -> "Chemotherapy start date" 
+* performedPeriod.end -> "Chemotherapy stop date" 
+* code -> "Type of chemotherapy"
 * reasonCode -> "Chemotherapy"
 
-Profile: ChemotherapyRequest
-Parent: MedicationRequest
-Id: chemotherapy-medication-request
-Title: "Chemotherapy request"
-Description: "Represents the order or request for chemotherapy of a breast cancer patient. This profile is in alignment with mCODE."
-* medication[x] only CodeableConcept 
-* medication[x] from ChemoTherapyTypeVS (preferred)
-* subject only Reference(BreastCancerPatient)
-* reasonCode from TherapyIntentVS (required)
-* reasonReference only Reference (PrimaryBreastCancerCondition)
-* medication[x] and subject and dispenseRequest.validityPeriod and reasonCode and reasonReference MS
-
-Instance: ChemotherapyRequestPatient147
-InstanceOf: ChemotherapyRequest
-Description: "Example of chemotherapy request of the breast cancer patient received during the last year"
-* status = MedicationRequestStatusCS#completed
-* intent = MedicationRequestIntentCS#order
-* medicationCodeableConcept = NullFlavor#OTH "other"
-* subject = Reference(BreastCancerPatient147)
-* reasonCode = SCT#373846009 "Adjuvant - intent"
-* reasonReference = Reference(PrimaryBreastCancerPatient147)
-* dispenseRequest.validityPeriod.start = "2019-01-09"
-* dispenseRequest.validityPeriod.end = "2019-09-04"
-
-Mapping: ChemotherapyRequestToICHOM
-Source:	ChemotherapyRequest
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: chemotherapy-request-mapping
-Title: "Chemotherapy request to ICHOM set"
-Description: "Mapping of chemotherapy request to the ICHOM breast cancer PCOM set" 	
-* -> "Treatment"
-* dispenseRequest.validityPeriod.start -> "Chemotherapy start date" 
-* dispenseRequest.validityPeriod.end -> "Chemotherapy stop date" 
-* medication[x] -> "Type of chemotherapy"
-* reasonCode -> "Chemotherapy"
 
 // HORMONAL THERAPY
 Profile: Hormonaltherapy
-Parent: MedicationAdministration
-Id: hormonaltherapy-medication-administration
+Parent: Procedure 
+Id: hormonal-therpay
 Title: "Hormonal therapy"
-Description: "Represents if the patient received hormonal therapy during the last year. This profile is in alignment with mCODE."
-* medication[x] only CodeableConcept 
-* medication[x] from HormonalTherapyTypeVS (preferred)
+Description: "Represents if the patient received hormonal therapy during the last year."
+* code from HormonalTherapyTypeVS (preferred)
 * subject only Reference(BreastCancerPatient)
-* reasonCode from TherapyIntentVS (required)
+* performedPeriod MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* medication[x] and subject and effectivePeriod and reasonCode and reasonReference MS
+* reasonCode from TherapyIntentVS (required)
 
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
-Description: "Example of hormonal therapy in a breast cancer patient"
-* status = MedicationAdministrationStatusCS#completed
-* medicationCodeableConcept = SCT#83152002 "Oophorectomy"
+Description: "Example of a breast cancer patient who received hormonal therapy"
+* status = ProcedureStatusCS#completed
+* code = SCT#83152002 "Oophorectomy"
 * subject = Reference(BreastCancerPatient147)
+* performedPeriod.start = "2020-10-06"
+* performedPeriod.end = "2021-06-04"
 * reasonCode = SCT#373847000 "Neo-adjuvant - intent"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-* effectivePeriod.start = "2020-10-06"
-* effectivePeriod.end = "2021-06-04"
 
 Mapping: HormonaltherapyToICHOM
 Source:	Hormonaltherapy
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: hormonaltherapy-mapping
+Id: hormonal-therapy-mapping
 Title: "Hormonal therapy to ICHOM set"
-Description: "Mapping of hormonal therapy to the ICHOM breast cancer PCOM set" 	
+Description: "Mapping of hormonal therapy to the ICHOM breast cancer PCOM set" 
 * -> "Treatment"
-* effectivePeriod.start -> "Start of hormonal therapy" 
-* effectivePeriod.end -> "Stop of hormonal therapy" 
-* medication[x] -> "Type of hormonal therapy"
-* reasonCode -> "Hormonal therapy"
+* performedPeriod.start -> "Start of hormonal therapy" 
+* performedPeriod.end -> "Stop of hormonal therapy" 
+* code -> "Type of hormonal therapy"
+* reasonCode -> "hormonal therapy"
 
-Profile: HormonaltherapyRequest
-Parent: MedicationRequest
-Id: hormonaltherapy-medication-request
-Title: "Hormonal therapy request"
-Description: "Represents the order or request for hormonal therapy of a breast cancer patient. This profile is in alignment with mCODE."
-* medication[x] only CodeableConcept 
-* medication[x] from HormonalTherapyTypeVS (preferred)
-* subject only Reference(BreastCancerPatient)
-* reasonCode from TherapyIntentVS (required)
-* reasonReference only Reference (PrimaryBreastCancerCondition)
-* medication[x] and subject and dispenseRequest.validityPeriod and reasonCode and reasonReference MS
-
-Instance: HormonaltherapyRequestPatient147
-InstanceOf: HormonaltherapyRequest
-Description: "Example of a hormonal therapy request in a breast cancer patient"
-* status = MedicationRequestStatusCS#completed
-* intent = MedicationRequestIntentCS#order
-* medicationCodeableConcept = SCT#83152002 "Oophorectomy"
-* subject = Reference(BreastCancerPatient147)
-* reasonCode = SCT#373847000 "Neo-adjuvant - intent"
-* reasonReference = Reference(PrimaryBreastCancerPatient147)
-* dispenseRequest.validityPeriod.start = "2020-10-06"
-* dispenseRequest.validityPeriod.end = "2021-06-04"
-
-Mapping: HormonaltherapyRequestToICHOM
-Source:	HormonaltherapyRequest
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: hormonal-therapy-request-mapping
-Title: "Hormonal therapy request to ICHOM set"
-Description: "Mapping of hormonal therapy request to the ICHOM breast cancer PCOM set" 	
-* -> "Treatment"
-* dispenseRequest.validityPeriod.start -> "Start of hormonal therapy" 
-* dispenseRequest.validityPeriod.end -> "Stop of hormonal therapy" 
-* medication[x] -> "Type of hormonal therapy"
-* reasonCode -> "Hormonal therapy"
 
 // BEST SUPPORTIVE CARE
 Profile: BestSupportiveCare
