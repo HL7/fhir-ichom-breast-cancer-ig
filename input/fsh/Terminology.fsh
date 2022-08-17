@@ -346,16 +346,6 @@ Description: "Valueset of the types of hormonal therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* SCT#373572006 "No"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
 ValueSet: SystemicTreatmentVS
 Id: SystemicTreatmentVS
 Title: "Type of systemic treatment"
@@ -438,6 +428,86 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
+
+
+// Optional valueset using Snomed CT
+
+
+// TREATMENT VARIABLES
+
+
+
+// ValueSet: TherapyIntent
+// Id: TherapyIntent
+// Title: "Intent of therapy"
+// Description: "Valueset of intent of therapy"
+// * SCT#373847000 "Neo-adjuvant - intent"
+// * SCT#373846009 "Adjuvant - intent"
+
+// ValueSet: ChemoTherapyType
+// Id: ChemoTherapyType
+// Title: "Type of chemotherapy"
+// Description: "Valueset of the types of chemotherapy"
+// * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
+// * SCT#418965003 "Taxane derivative"
+// * SCT#768621002 "Product containing platinum and platinum compound"
+// * NullFlavor#OTH "other"
+// * NullFlavor#UNK "unknown"
+
+// ValueSet: HormonalTherapyType
+// Id: HormonalTherapyType
+// Title: "Type of hormonal therapy"
+// Description: "Valueset of the types of hormonal therapy"
+// * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
+// * SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
+// * SCT#8315200 "Oophorectomy"
+// * SCT#41897400 "Gonad regulating hormone agent"
+// * NullFlavor#OTH "other"
+// * NullFlavor#UNK "unknown"
+
+// until other codes are available!
+CodeSystem: TargetedTherapyCodeSystem
+Id: TargetedTherapyCodeSystem
+Title: "Targeted Therapy"
+Description: "Codes covering targeted therapy options with unknown/unavailable codes"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
+* ^caseSensitive = true
+
+* #0 "Her-2 targeting therapy"
+* #1 "CDK-46 inhibitors"
+* #2 "PARP inhibitors"
+
+ValueSet: TargetedTherapyVS
+Id: TargetedTherapyVS
+Title: "Type of targeted therapy"
+Description: "Valueset of the types of targeted therapy"
+* TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
+* TargetedTherapyCodeSystem#1 "CDK-46 inhibitors"
+* TargetedTherapyCodeSystem#2 "PARP inhibitors"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#373572006 "Clinical finding absent"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* NullFlavor#UNK "unknown"
+
+// ValueSet: SystemicTreatment
+// Id: SystemicTreatment
+// Title: "Type of systemic treatment"
+// Description: "Valueset of the types of systemic treatment"
+// * SCT#373572006 "Clinical finding absent"
+// * SCT#438553004 "History of drug therapy" //--> not really a reflection of the answeroption in the ICHOM set
+// * SCT#367336001 "Chemotherapy"
+// no code for "yes, on targeted therapy"
+// * SCT#169413002 "Hormone therapy"
+// * NullFlavor#UNK "unknown"
+
 
 // SURVIVAL AND DISEASE CONTROL 
 CodeSystem: RecurrenceMethodCodeSystem

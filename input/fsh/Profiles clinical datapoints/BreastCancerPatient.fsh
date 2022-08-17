@@ -42,6 +42,20 @@ Description: "The characteristics and demographic factors of an example patient.
 * maritalStatus = RelationshipStatusCS#D "Divorced"
 * deceasedDateTime = "1990-05-26"
 
+Instance: BreastCancerPatient134
+InstanceOf: BreastCancerPatient 
+Title: "Example of Breast Cancer Patient"
+Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
+* birthDate = "1978"
+* name.family = "Mortera"
+* address.country = CountryCS#GB
+* gender = GenderCS#unknown
+* extension[educationLevel].valueCodeableConcept  = SCT#224297003
+* extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
+* extension[race].valueCodeableConcept  = RaceCS#2028-9
+* maritalStatus = RelationshipStatusCS#D "Divorced"
+* deceasedDateTime = "2014-01-13"
+
 Mapping: BreastCancerPatientToICHOM
 Source:	BreastCancerPatient
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
