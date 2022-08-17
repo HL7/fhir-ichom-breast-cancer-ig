@@ -38,8 +38,9 @@
   * more concrete implementation guides will be needed here for actual implementation that fix them
 * the binding of the valuesets will be set to required to represent the ICHOM BC set
 * in case of drug treatments, such as hormonal and immunotherapy, we will cover all the different types of medication resources and have implementers decide for themselves what fits their needs.
-* for the TNM staging of breastcancer we decided to use the stage element in Condition and slice it into six different types to accommodate the clinical and pathological TNM stages. This way we deviate from the way mCODE profiled the TNM scores.  We decided to do this because using observations as TNM scores (like mCODE did) seemed cumbersome here. We still need to discuss this with mCODE to discover the reason (and context) of their choice to use observations to profile TNM scoring. 
-
+* staging modelling is aligned with mCODE and represented as Observations instead of `Condition.stage` - reason being that different practitioners at different times could be recording the staging information
+  * a single Condition would not allow recording of this, but multiple Observations do
+* all therapies will be modelled as Procedures instead of MedicationRequests/MedicationAdministrations as it is in mCODE, since our variables have a high-level view of just the therapy type, start and end date, while mCODE has a lower-level view of what medication was administered to whom without making assumptions as to the reason behind them
 
 ## Terminology
 * terminology will not be shared agross IGs, as there is little overlap between the initial [breast cancer](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/) and [autism spectrum disorders](https://connect.ichom.org/patient-centered-outcome-measures/autism-spectrum-disorder/) sets that are proposed for the initial HL7 inclusion
