@@ -34,15 +34,25 @@ Description: "A staging system to describe the amount and spread of breast cance
 * hasMember[TNMDistantMetastases] ^short = "TNM Distant Metastases"
 * hasMember[TNMDistantMetastases] ^definition = "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 5th - 7th Ed.)"
 
-// Instance: BreastCancerStageGroupPatient147
-// InstanceOf: BreastCancerStageGroup
-// Description: "Example showing TNM staging in patient with breast cancer"
-// * status = #final "final"
-// * code = LNC#21908-9 "Stage group.clinical Cancer"
-// * subject = Reference(BreastCancerPatient147)
-// * hasMember[+] = Reference(TNMPrimaryTumorStagePatient147)
-// * hasMember[+] = Reference(TNMRegionalNodalStagePatient147)
-// * hasMember[+] = Reference(TNMDistantMetastasesPatient147)
+Instance: ClinicalTNMStagePatient147
+InstanceOf: BreastCancerStageGroup
+Description: "Example showing TNM staging in patient with breast cancer"
+* status = #final "final"
+* code = LNC#21908-9 "Stage group.clinical Cancer"
+* subject = Reference(BreastCancerPatient147)
+* hasMember[+] = Reference(ClinicalTumorStagePatient147)
+* hasMember[+] = Reference(ClinicalNodalStagePatient147)
+* hasMember[+] = Reference(ClinicalMetastasesPatient147)
+
+Instance: PathologicalTNMStagePatient147
+InstanceOf: BreastCancerStageGroup
+Description: "Example showing TNM staging in patient with breast cancer"
+* status = #final "final"
+* code = LNC#21902-2 "Stage group.pathology Cancer"
+* subject = Reference(BreastCancerPatient147)
+* hasMember[+] = Reference(PathologicalTumorStagePatient147)
+* hasMember[+] = Reference(PathologicalNodalStagePatient147)
+* hasMember[+] = Reference(PathologicalMetastasesPatient147)
 
 // TNM TUMOR STAGE
 Profile:  TNMPrimaryTumorStage
@@ -53,17 +63,25 @@ Description: "Represents the stage of the primary tumor (per AJCC 5th - 7th Ed.)
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
+* value[x] only CodeableConcept 
+* value[x] from TNMPrimaryTumorVS (required)
+* value[x] MS
 
-// First we need to have codes for the TNM stages
-// * value[x] only CodeableConcept 
-// * value[x] from  (required)
-// * value[x] MS
+Instance: ClinicalTumorStagePatient147
+InstanceOf: TNMPrimaryTumorStage
+Description: "Extended example: example showing clinical TNM staging (T)"
+* status = #final "final"
+* code = SCT#385356007 "Tumor stage finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#cTis
 
-// Instance: TNMPrimaryTumorStagePatient147
-// InstanceOf: TNMPrimaryTumorStage
-// Description: "Extended example: example showing TNM staging (T)"
-// * status = #final "final"
-// * subject = Reference(BreastCancerPatient147)
+Instance: PathologicalTumorStagePatient147
+InstanceOf: TNMPrimaryTumorStage
+Description: "Extended example: example showing patholgical TNM staging (T)"
+* status = #final "final"
+* code = SCT#385356007 "Tumor stage finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#pTis
 
 Mapping: TNMPrimaryTumorStageToICHOM
 Source:	TNMPrimaryTumorStage
@@ -82,18 +100,25 @@ Description: "Represents the presence or absence of metastases in regional lymph
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "Node stage finding"
 * subject only Reference(BreastCancerPatient)
+* value[x] only CodeableConcept 
+* value[x] from TNMRegionalNodesVS (required)
+* value[x] MS
 
-// First we need to have codes for the TNM stages
-// * value[x] only CodeableConcept 
-// * value[x] from  (required)
-// * value[x] MS
+Instance: ClinicalNodalStagePatient147
+InstanceOf: TNMRegionalNodalStage
+Description: "Extended example: example showing clinical TNM staging (N)"
+* status = #final "final"
+* code = SCT#385382003 "Node stage finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#cN1
 
-// Instance: TNMRegionalNodalStagePatient147
-// InstanceOf: TNMRegionalNodalStage
-// Description: "Extended example: example showing TNM staging (N)"
-// * status = #final "final"
-// * subject = Reference(BreastCancerPatient147)
-// * valueCodeableConcept = AJCC#cN0
+Instance: PathologicalNodalStagePatient147
+InstanceOf: TNMRegionalNodalStage
+Description: "Extended example: example showing patholgical TNM staging (N)"
+* status = #final "final"
+* code = SCT#385382003 "Node stage finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#pN0
 
 Mapping: TNMRegionalNodalStageToICHOM
 Source:	TNMRegionalNodalStage
@@ -112,18 +137,25 @@ Description: "Represents the extent of a tumor metastasis in remote anatomical l
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)
+* value[x] only CodeableConcept 
+* value[x] from TNMDistantMetastasesVS (required)
+* value[x] MS
 
-// First we need to have codes for the TNM stages
-// * value[x] only CodeableConcept 
-// * value[x] from  (required)
-// * value[x] MS
+Instance: ClinicalMetastasesPatient147
+InstanceOf: TNMDistantMetastases
+Description: "Extended example: example showing clinical TNM staging (M)"
+* status = #final "final"
+* code = SCT#385380006 "Metastasis category finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#cMX
 
-// Instance: TNMDistantMetastasesPatient147
-// InstanceOf: TNMDistantMetastases
-// Description: "Extended example: example showing TNM staging (M)"
-// * status = #final "final"
-// * subject = Reference(BreastCancerPatient147)
-// * valueCodeableConcept = AJCC#cM0
+Instance: PathologicalMetastasesPatient147
+InstanceOf: TNMDistantMetastases
+Description: "Extended example: example showing patholgical TNM staging (M)"
+* status = #final "final"
+* code = SCT#385380006 "Metastasis category finding"
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = AJCC#pMX
 
 Mapping: TNMDistantMetastasesToICHOM
 Source:	TNMDistantMetastases
