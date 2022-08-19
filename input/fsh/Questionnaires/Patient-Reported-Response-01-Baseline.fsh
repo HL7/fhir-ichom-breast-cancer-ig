@@ -1,11 +1,3 @@
-// Rulesets:
-// shorthand notation to only show a particular question based on the type of comorbidity
-RuleSet: enableWhenComorbidity(code)
-* enableWhen
-  * question = "ComorbiditiesSACQ"
-  * operator = #=
-  * answerCoding = {code}
-
 Instance: PatientReportedBaseline
 InstanceOf: Questionnaire
 Usage: #definition

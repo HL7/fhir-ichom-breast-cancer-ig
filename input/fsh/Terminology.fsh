@@ -216,51 +216,41 @@ Description: "Valueset of the laterality of breast cancer"
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
-Description: "Codes indicating the kind of treatment a patient underwent"
+Description: "Codes defining types of treatment a breast cancer patient could receive"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 * ^caseSensitive = true
-* #0 "No treatment"
-* #1 "Surgery"
-* #2 "Surgery to axilla"
-* #3 "Delayed reconstruction"
-* #4 "Radiotherapy"
-* #5 "Chemotherapy"
-* #6 "Hormonal therapy"
-* #7 "Targeted therapy"
-* #8 "Immunotherapy"
-* #9 "Best supportive care"
+* #A_chemo "Adjuvant chemotherapy"
+* #N_A_chemo "Neoadjuvant chemotherapy"
+* #Targ_Thrpy "Targeted therapy"
 
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
-* include TreatmentTypesCodeSystem#0 "No treatment"
-* include TreatmentTypesCodeSystem#1 "Surgery"
-* include TreatmentTypesCodeSystem#2 "Surgery to axilla"
-* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
-* include TreatmentTypesCodeSystem#4 "Radiotherapy"
-* include TreatmentTypesCodeSystem#5 "Chemotherapy"
-* include TreatmentTypesCodeSystem#6 "Hormonal therapy"
-* include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#8 "Immunotherapy"
-* include TreatmentTypesCodeSystem#9 "Best supportive care"
-* include NullFlavor#ASKU "asked but unknown"
+* include SCT#387713003 "Surgical procedure"
+* include SCT#699455008 "Operative procedure on axilla"
+* include SCT#33496007 "Reconstruction of breast" 
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
+* include SCT#169413002 "Hormone therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* include SCT#76334006 "Immunotherapy"
+* include SCT#243114000 "Support"
+* NullFlavor#UNK "unknown"
 
 ValueSet: RecommendedTreatmentTypeValueSet
 Id: RecommendedTreatmentTypeValueSet
 Title: "Recommended treatment types"
 Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
 * include SCT#387713003 "Surgical procedure"
-* include SCT#699455008 "Operative procedure on axilla"
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
-* include SCT#385786002 "Chemotherapy care"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * include SCT#76334006 "Immunotherapy"
 * include SCT#243114000 "Support"
-* include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#0 "No treatment"
-* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
-* include NullFlavor#ASKU "asked but unknown"
 
 // Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
@@ -297,10 +287,46 @@ Id: AxillaSurgeryVS
 Title: "Surgery of Axilla"
 Description: "Valueset of surgery types of the axilla"
 * SCT#396487001 "Sentinel lymph node biopsy"
-* SCT#178294003 "Axillary lymph nodes sampling"
+* SCT#234262008 "Excision of axillary lymph node"
 * SCT#79544006 "Complete axillary lymphadenectomy"
 * NullFlavor#UNK "unknown"
-// This one should be updated to V5 when we have the right mappings
+
+CodeSystem: ReconstructionTypeCodeSystem
+Id: ReconstructionTypeCodeSystem
+Title: "Type of reconstruction surgery"
+Description: "Codes indicating the type of reconstruction surgery that is performed"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/reconstuction-type
+* ^caseSensitive = true
+* #Direct_imp "Direct implant"
+* #Staged_imp "Staged implant"
+* #Autologous "Autologous"
+* #Both "Both implant and autologous"
+
+ValueSet: ReconstructionTypeVS
+Id: ReconstructionTypeVS
+Title: "Type of reconstruction surgery"
+Description: "Valueset of the type of reconstruction surgery that is performed"
+* include ReconstructionTypeCodeSystem#Direct_imp "Direct implant"
+* include ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* include ReconstructionTypeCodeSystem#Autologous "Autologous"
+* include ReconstructionTypeCodeSystem#Both "Both implant and autologous"
+* NullFlavor#UNK "unknown"
+
+CodeSystem: ImplantLocationCodeSystem
+Id: ImplantLocationCodeSystem
+Title: "Location of the implant"
+Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/implant-location
+* ^caseSensitive = true
+* #Pre_pect "Pre-pectoral"
+* #Sub_pect "Sub-pectoral"
+
+ValueSet: ImplantLocationVS
+Id: ImplantLocationVS
+Title: "Location of the implant"
+Description: "Valueset of the location of the implant during reconstruction surgery"
+* include ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
+* include ImplantLocationCodeSystem#Sub_pect "Sub-pectoral"
 
 ValueSet: LocationRadiotherapyVS
 Id: LocationRadiotherapyVS
@@ -312,9 +338,9 @@ Description: "Valueset of the location of radiotherapy"
 * SCT#76838003 "Structure of supraclavicular lymph node"
 * SCT#245282001 "Internal mammary lymph node group"
 * SCT#263601005 "Site of tumor"
+* SCT#277671009 "Intraoperative"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
-// still need one more code for the partial breast / intraoperative
 
 ValueSet: ChemoTherapyTypeVS
 Id: ChemoTherapyType
@@ -344,17 +370,6 @@ Description: "Valueset of the types of hormonal therapy"
 * SCT#83152002 "Oophorectomy"
 * SCT#418974001 "Gonad regulating hormone agent"
 * NullFlavor#OTH "other"
-* NullFlavor#UNK "unknown"
-
-ValueSet: SystemicTreatmentVS
-Id: SystemicTreatmentVS
-Title: "Type of systemic treatment"
-Description: "Valueset of the types of systemic treatment"
-* SCT#373572006 "Clinical finding absent"
-* SCT#438553004 "History of drug therapy" //--> not really a reflection of the answeroption in the ICHOM set
-* SCT#367336001 "Chemotherapy"
-//no code for "yes, on targeted therapy"
-* SCT#169413002 "Hormone therapy"
 * NullFlavor#UNK "unknown"
 
 //  DEGREE OF HEALTH 

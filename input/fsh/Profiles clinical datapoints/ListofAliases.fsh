@@ -8,11 +8,10 @@ Alias: LNC = http://loinc.org
 Alias: AJCC = http://cancerstaging.org
 Alias: UCUM = http://unitsofmeasure.org
 Alias: NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
-Alias: UCUM = http://unitsofmeasure.org
 
 Alias: ObservationStatusCS = http://hl7.org/fhir/observation-status
 Alias: ConditionStatusCS = http://terminology.hl7.org/CodeSystem/condition-clinical
-Alias: ProcedureStatusCS = http://hl7.org/fhir/event-status
+Alias: EventStatusCS = http://hl7.org/fhir/event-status
 Alias: CareplanStatusCS = http://hl7.org/fhir/request-status
 Alias: CareplanIntentCS = http://hl7.org/fhir/request-intent
 Alias: CareplanActivityStatusCS = http://hl7.org/fhir/care-plan-activity-status

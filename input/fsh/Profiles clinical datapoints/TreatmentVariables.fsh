@@ -4,7 +4,7 @@ Parent: Procedure
 Id: breast-cancer-surgery
 Title: "Breast cancer surgery"
 Description: "Represents if the breast cancer patient received surgery during the last year. This profile is in alignment with mCODE."
-* category = SCT#387713003 "Surgical procedure" // this code is a bit too generic in my opinion, better to have one for breast (cancer) surgery
+* category = SCT#387713003 "Surgical procedure" 
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
@@ -13,7 +13,7 @@ Description: "Represents if the breast cancer patient received surgery during th
 Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
 Description: "Example of the surgical procedure the breast cancer patient underwent"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1989-03-25"
@@ -44,7 +44,7 @@ Description: "Represents if the breast cancer patient received surgery to the ax
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
 Description: "Example of a breast cancer patient who underwent surgery to the axilla"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#178294003 "Axillary lymph nodes sampling"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
@@ -76,7 +76,7 @@ Description: "Represents if the breast cancer patient received axillary clearanc
 Instance: AxillaryClearancePatient147
 InstanceOf: AxillaryClearance
 Description: "Example of a breast cancer patient who received axilla clearance"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
@@ -98,22 +98,24 @@ Parent: Procedure
 Id: reconstruction-surgery
 Title: "Reconstruction surgery"
 Description: "Represents if the breast cancer patient received reconstruction surgery during the last year. This profile is in alignment with mCODE."
-* code = SCT#33496007 "Reconstruction of breast" // found this code myself, is not specifically delayed
+* code = SCT#33496007 "Reconstruction of breast" 
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* bodySite MS // need codes for pre pectoral and sub-pectoral reconstruction
-* focalDevice MS // need codes for the different types of impants (direct, staged, autologous implants)
+* bodySite from ImplantLocationVS (required)
+* usedCode from ReconstructionTypeVS (required)
+* bodySite and usedCode MS 
 
 Instance: ReconstructionSurgeryPatient147
 InstanceOf: ReconstructionSurgery
 Description: "Example of a breast cancer patient who underwent reconstruction surgery"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#33496007 "Reconstruction of breast"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1999-02-13"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-// need codes to create examples of location and type of reconstruction
+* bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
+* usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
 
 Mapping: ReconstructionSurgeryToICHOM
 Source:	ReconstructionSurgery
@@ -125,7 +127,7 @@ Description: "Mapping of the reconstruction surgery to the ICHOM breast cancer P
 * code -> "Delayed Reconstruction"
 * performedDateTime -> "Surgery date" 
 * bodySite -> "Implant Reconstruction"
-* focalDevice -> "Reconstruction Type"
+* usedCode -> "Reconstruction Type"
 
 // RADIOTHERAPY
 Profile: Radiotherapy
@@ -143,7 +145,7 @@ Description: "Represents if the breast cancer patient received radiotherapy duri
 Instance: RadiotherapyPatient147
 InstanceOf: Radiotherapy
 Description: "Example of a breast cancer patient who received radiotherapy"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy"
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2021-06-19"
@@ -170,6 +172,7 @@ Parent: Procedure
 Id: chemotherapy
 Title: "Chemotherapy"
 Description: "Represents if the patient received chemotherapy during the last year."
+* category = SCT#385786002 "Chemotherapy care"
 * code from ChemoTherapyTypeVS (preferred)
 * subject only Reference(BreastCancerPatient)
 * performedPeriod MS
@@ -179,7 +182,8 @@ Description: "Represents if the patient received chemotherapy during the last ye
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
 Description: "Example of a breast cancer patient who received chemotherapy"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
+* category = SCT#385786002 "Chemotherapy care"
 * code = NullFlavor#OTH "other"
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2019-01-09"
@@ -206,6 +210,7 @@ Parent: Procedure
 Id: hormonal-therpay
 Title: "Hormonal therapy"
 Description: "Represents if the patient received hormonal therapy during the last year."
+* category = SCT#169413002 "Hormone therapy" 
 * code from HormonalTherapyTypeVS (preferred)
 * subject only Reference(BreastCancerPatient)
 * performedPeriod MS
@@ -215,7 +220,7 @@ Description: "Represents if the patient received hormonal therapy during the las
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
 Description: "Example of a breast cancer patient who received hormonal therapy"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#83152002 "Oophorectomy"
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2020-10-06"
@@ -250,7 +255,7 @@ Description: "Represents if breast cancer patient received best supportive care 
 Instance: BestSupportiveCarePatient147
 InstanceOf: BestSupportiveCare 
 Description: "Example of a breast cancer patient who received best supportive care"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#243114000 "Support"
 * subject = Reference(BreastCancerPatient147)
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -277,7 +282,7 @@ Description: "Represents if the breast cancer patient received immunotherapy dur
 Instance: ImmunotherapyPatient147
 InstanceOf: Immunotherapy 
 Description: "Example of a breast cancer patient who received immunotherapy"
-* status = ProcedureStatusCS#completed
+* status = EventStatusCS#completed
 * code = SCT#76334006 "Immunotherapy"
 * subject = Reference(BreastCancerPatient147)
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -289,6 +294,7 @@ Id: immunotherapy-mapping
 Title: "Immunotherapy of the breast cancer patient to ICHOM set"
 Description: "Mapping of immunotherapy to the ICHOM breast cancer PCOM set" 	
 * -> "Treatment"
+
 // TARGETED THERAPY
 Profile: TargetedTherapy
 Parent: Procedure 
@@ -304,7 +310,7 @@ Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
 Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
-* status = ProcedureStatusCS#unknown
+* status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
 * code = TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
 * performedPeriod.start = "1979-11-21"
@@ -319,7 +325,6 @@ Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set
 * code -> "Targeted therapy"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
-
 
 // REOPERATION
 Profile: ReoperationSurgery
@@ -336,7 +341,7 @@ Instance: ReoperationSurgeryPatient147
 InstanceOf: ReoperationSurgery 
 Title: "Example of Reoperation Surgery"
 Description: "Example of the surgery the patient has received since their surgery for breast cancer."
-* status = ProcedureStatusCS#unknown
+* status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient147)
 * code = SCT#373572006 "Clinical finding absent"
 * performedDateTime = "1921-06-27"
@@ -349,20 +354,6 @@ Title: "ReoperationSurgery to ICHOM set"
 Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set" 	
 * code -> "Surgery"
 * performedDateTime -> "Surgery date"
-
-
-
-// SYSTEMIC THERAPY
-
-
-
-
-
-// TreatmentPlanFollowed	
-
-
-
-
 
 
 
