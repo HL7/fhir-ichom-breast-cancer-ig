@@ -12,7 +12,6 @@ Description: "A reoperation due to involved margins after primary surgery"
 * performed[x] only dateTime 
 * performedDateTime and code and subject MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-// TODO include a refence to the original procedure once treatment variables are modelled
 
 Instance: ReoperationPatient147
 InstanceOf: InvolvedMarginsReoperation
