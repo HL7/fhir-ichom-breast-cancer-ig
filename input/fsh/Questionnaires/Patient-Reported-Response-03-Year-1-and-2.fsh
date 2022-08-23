@@ -1,10 +1,3 @@
-// shorthand notation to only show questions based on the surgery the patient received
-RuleSet: enableWhenSurgeryType(code)
-* enableWhen[+]
-  * question = "BreastQ_Surgery"
-  * operator = #=
-  * answerCoding = BreastSurgeryTypesCodeSystem{code}
-
 Instance: PatientReportedYear1and2
 InstanceOf: Questionnaire
 Usage: #definition

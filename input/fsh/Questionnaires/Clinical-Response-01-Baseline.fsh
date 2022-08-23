@@ -1,10 +1,3 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTrue(question)
-* enableWhen
-  * question = "{question}"
-  * operator = #=
-  * answerBoolean = true
-
 Instance: ClinicalResponseBaseline
 InstanceOf: Questionnaire
 Usage: #definition
