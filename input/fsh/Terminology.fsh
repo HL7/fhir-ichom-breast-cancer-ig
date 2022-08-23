@@ -259,14 +259,6 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 * include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
-ValueSet: NoYesUnknownValueSet
-Id: NoYesUnknownValueSet
-Title: "Yes, No and Unknown Valueset"
-Description: "Valueset with yes, no and unknown answers"
-* YesNoUnkCS#Y "Yes" 
-* YesNoUnkCS#N "No"
-* YesNoUnkCS#UNK "Unknown"
-
 ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
 Title: "Surgery of Axilla"
@@ -357,8 +349,136 @@ Description: "Valueset of the types of hormonal therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
+ValueSet: TargetedTherapyVS
+Id: TargetedTherapyVS
+Title: "Type of targeted therapy"
+Description: "Valueset of the types of targeted therapy"
+* SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
+* SCT#426265004 "Substance with protein kinase inhibitor mechanism of action"
+* SCT#432253008 "Substance with nicotinamide adenine dinucleotide adenosine diphosphate ribosyltransferase inhibitor mechanism of action"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#373572006 "Clinical finding absent"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* NullFlavor#UNK "unknown"
+
+// DISUTILITY OF CARE
+
+// Reoperations
+ValueSet: InvolvedMarginsReoperationType
+Id: InvolvedMarginsReoperationType
+Title: "Re-operation due to involved margins"
+Description: "Kind of re-operation due to involved margins"
+* ^version = "0.0.1"
+* ^status = #active
+* ^date = "2022-07-26T09:18:41+02:00"
+* ^publisher = "ICHOM"
+* ^contact.name = "ICHOM"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://ichom.org"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
+* SCT#64368001 "Partial mastectomy"
+* SCT#172043006 "Simple mastectomy"
+* IchomReoperation#2 "Breast conserving surgery with mammoplasty"
+* IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
+
+
+// Complications
+CodeSystem: ComplicationImpactCodeSystem
+Id: ComplicationImpactCodeSystem
+Title: "Impact of complication"
+Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-impact
+* ^caseSensitive = true
+* #2 "Complication leading to prolonged hospitalization (>14days)"
+* #5 "Complication leading to discontinuing of treatment"
+* #8 "Complication, but did not result in any of the abovementioned"
+
+ValueSet: ComplicationImpactVS
+Id: ComplicationImpactVS
+Title: "Impact of complication"
+Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
+* SCT#240917005 "Interventional radiology"  
+* SCT#303577009 "Interventional debulking surgery" 
+* ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
+* SCT#417005 "Hospital re-admission"
+* SCT#397945004 "Unexpected admission to intensive care unit"
+* ComplicationImpactCodeSystem#5 "Complication leading to discontinuing of treatment"
+* SCT#182879007 "Medication decreased"
+* SCT#419620001 "Death"
+* ComplicationImpactCodeSystem#8 "Complication, but did not result in any of the abovementioned"
+* NullFlavor#UNK "unknown"
+
+CodeSystem: ComplicationTypeCodeSystem
+Id: ComplicationTypeCodeSystem
+Title: "Type of complication"
+Description: "Codes indicating the type of a complication experienced by the breast cancer patient"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-type
+* ^caseSensitive = true
+* #4 "Partial autologous graft loss"
+* #5 "Total autologous graft loss"
+* #9 "Delay wound healing/dehiscence"
+* #13 "Immune related toxicity"
+
+ValueSet: ComplicationTypeVS
+Id: ComplicationTypeVS
+Title: "Type of complication"
+Description: "ValueSet of the type of complication experienced by the breast cancer patient"
+* SCT#76844004  "Local infection of wound"
+* SCT#715068009 "Seroma"
+* SCT#385494008 "Hematoma"
+* SCT#131148009 "Bleeding"
+* SCT#403678005 "Skin flap necrosis"
+* ComplicationTypeCodeSystem#4 "Partial autologous graft loss"
+* ComplicationTypeCodeSystem#5 "Total autologous graft loss"
+* SCT#27315000 "Removal of breast implant"
+* SCT#371039008 "Thromboembolic disorder"
+* SCT#57182000  "Nerve injury"
+* ComplicationTypeCodeSystem#9 "Delay wound healing/dehiscence"
+* SCT#403675008 "Drug-induced dermatosis"
+* SCT#233604007 "Pneumonia"
+* SCT#443980004 "Neutropenic sepsis"
+* ComplicationTypeCodeSystem#13 "Immune related toxicity"
+* NullFlavor#UNK "unknown"
+* NullFlavor#OTH "other"
+
+// SURVIVAL AND DISEASE CONTROL 
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
+Title: "Recurrence Method"
+Description: "Additional code covering combination of radiological and histological diagnosis method"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^caseSensitive = true
+* #2 "Radiological and histological diagnosis"
+
+ValueSet: RecurrenceMethod
+Id: RecurrenceMethod
+Title: "Method of confirming recurrence"
+Description: "Valueset of the methods used to confirm recurrence of breast cancer"
+* SCT#394914008 "Radiology"
+* SCT#67151002 "Histologic"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
+* NullFlavor#UNK "unknown"
+
+ValueSet: NoYesUnknownValueSet
+Id: NoYesUnknownValueSet
+Title: "Yes, No and Unknown Valueset"
+Description: "Valueset with yes, no and unknown answers"
+* YesNoUnkCS#Y "Yes" 
+* YesNoUnkCS#N "No"
+* YesNoUnkCS#UNK "Unknown"
+
+
 //  DEGREE OF HEALTH 
- 
+
 // EORTC-QLQ
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
@@ -430,65 +550,3 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#5 "Very much"
 
 
-// until other codes are available!
-CodeSystem: TargetedTherapyCodeSystem
-Id: TargetedTherapyCodeSystem
-Title: "Targeted Therapy"
-Description: "Codes covering targeted therapy options with unknown/unavailable codes"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
-* ^caseSensitive = true
-
-* #0 "Her-2 targeting therapy"
-* #1 "CDK-46 inhibitors"
-* #2 "PARP inhibitors"
-
-ValueSet: TargetedTherapyVS
-Id: TargetedTherapyVS
-Title: "Type of targeted therapy"
-Description: "Valueset of the types of targeted therapy"
-* TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
-* TargetedTherapyCodeSystem#1 "CDK-46 inhibitors"
-* TargetedTherapyCodeSystem#2 "PARP inhibitors"
-* NullFlavor#OTH "other"
-* NullFlavor#UNK "unknown"
-
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* SCT#373572006 "Clinical finding absent"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
-// ValueSet: SystemicTreatment
-// Id: SystemicTreatment
-// Title: "Type of systemic treatment"
-// Description: "Valueset of the types of systemic treatment"
-// * SCT#373572006 "Clinical finding absent"
-// * SCT#438553004 "History of drug therapy" //--> not really a reflection of the answeroption in the ICHOM set
-// * SCT#367336001 "Chemotherapy"
-// no code for "yes, on targeted therapy"
-// * SCT#169413002 "Hormone therapy"
-// * NullFlavor#UNK "unknown"
-
-
-// SURVIVAL AND DISEASE CONTROL 
-CodeSystem: RecurrenceMethodCodeSystem
-Id: RecurrenceMethodCodeSystem
-Title: "Recurrence Method"
-Description: "Additional code covering combination of radiological and histological diagnosis method"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
-* ^caseSensitive = true
-
-* #2 "Radiological and histological diagnosis"
-
-ValueSet: RecurrenceMethod
-Id: RecurrenceMethod
-Title: "Method of confirming recurrence"
-Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-* SCT#394914008 "Radiology"
-* SCT#67151002 "Histologic"
-* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
-* NullFlavor#UNK "unknown"

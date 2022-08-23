@@ -15,6 +15,7 @@ Alias: EventStatusCS = http://hl7.org/fhir/event-status
 Alias: CareplanStatusCS = http://hl7.org/fhir/request-status
 Alias: CareplanIntentCS = http://hl7.org/fhir/request-intent
 Alias: CareplanActivityStatusCS = http://hl7.org/fhir/care-plan-activity-status
+Alias: ProcedureStatusCS = http://hl7.org/fhir/event-status
 Alias: RelationshipStatusCS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
 Alias: MedicationRequestStatusCS = http://hl7.org/fhir/CodeSystem/medicationrequest-status
 Alias: MedicationRequestIntentCS = http://hl7.org/fhir/CodeSystem/medicationrequest-intent
@@ -24,6 +25,7 @@ Alias: RaceCS = http://terminology.hl7.org/CodeSystem/v3-Race
 Alias: GenderCS = http://hl7.org/fhir/administrative-gender
 Alias: EthnicityCS = http://terminology.hl7.org/CodeSystem/v3-Ethnicity
 Alias: CountryCS = urn:iso:std:iso:3166
+Alias: IchomReoperation = https://connect.ichom.org/CodeSystem/reop-breast
 Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Valuesets
@@ -32,6 +34,6 @@ Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
 Alias: CountryVS = 	http://hl7.org/fhir/ValueSet/iso3166-1-3
 Alias: RaceVS = http://terminology.hl7.org/ValueSet/v3-Race 
 
-
 // Extensions
+Alias: DueToEx = http://hl7.org/fhir/StructureDefinition/condition-dueTo
 Alias: ProcedureMethodEx = http://hl7.org/fhir/StructureDefinition/procedure-method

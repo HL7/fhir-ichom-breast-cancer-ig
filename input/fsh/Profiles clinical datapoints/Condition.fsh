@@ -55,6 +55,7 @@ Description: "Mapping of the secondary breast cancer condition to the ICHOM brea
 * -> "New cancer"
 * bodySite -> "New cancer"
 
+// Vital status
 Profile: DeathAttributableBC
 Parent: Observation 
 Id: death-attr-bc
@@ -82,6 +83,8 @@ Title: "Death attributable to breast cancer to ICHOM set"
 Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
 * value[x] -> "Death attributable to breast cancer"
 
+
+// Cancer recurrence
 Profile: RecurrenceMethod
 Parent: Observation 
 Id: recr-method
