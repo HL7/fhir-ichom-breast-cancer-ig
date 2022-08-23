@@ -172,24 +172,25 @@ Parent: Procedure
 Id: chemotherapy
 Title: "Chemotherapy"
 Description: "Represents if the patient received chemotherapy during the last year."
-* category = SCT#385786002 "Chemotherapy care"
-* code from ChemoTherapyTypeVS (preferred)
+* code = SCT#385786002 "Chemotherapy care"
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
+* performedPeriod and subject and reasonReference and reasonCode MS
+* extension contains ProcedureMethodEx named method 0..1 MS
+* extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
 
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
 Description: "Example of a breast cancer patient who received chemotherapy"
 * status = EventStatusCS#completed
-* category = SCT#385786002 "Chemotherapy care"
-* code = NullFlavor#OTH "other"
+* code = SCT#385786002 "Chemotherapy care"
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2019-01-09"
 * performedPeriod.end = "2019-09-04"
 * reasonCode = SCT#373846009 "Adjuvant - intent" 
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
+* extension[method].valueCodeableConcept = NullFlavor#OTH "other"
 
 Mapping: ChemotherapyToICHOM
 Source:	Chemotherapy
@@ -200,9 +201,8 @@ Description: "Mapping of chemotherapy to the ICHOM breast cancer PCOM set"
 * -> "Treatment"
 * performedPeriod.start -> "Chemotherapy start date" 
 * performedPeriod.end -> "Chemotherapy stop date" 
-* code -> "Type of chemotherapy"
 * reasonCode -> "Chemotherapy"
-
+* extension[method] -> "Type of chemotherapy"
 
 // HORMONAL THERAPY
 Profile: Hormonaltherapy
@@ -210,23 +210,25 @@ Parent: Procedure
 Id: hormonal-therpay
 Title: "Hormonal therapy"
 Description: "Represents if the patient received hormonal therapy during the last year."
-* category = SCT#169413002 "Hormone therapy" 
-* code from HormonalTherapyTypeVS (preferred)
+* code = SCT#169413002 "Hormone therapy" 
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
+* performedPeriod and subject and reasonReference and reasonCode MS
+* extension contains ProcedureMethodEx named method 0..1 MS
+* extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
 
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
 Description: "Example of a breast cancer patient who received hormonal therapy"
 * status = EventStatusCS#completed
-* code = SCT#83152002 "Oophorectomy"
+* code = SCT#169413002 "Hormone therapy" 
 * subject = Reference(BreastCancerPatient147)
 * performedPeriod.start = "2020-10-06"
 * performedPeriod.end = "2021-06-04"
 * reasonCode = SCT#373847000 "Neo-adjuvant - intent"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
+* extension[method].valueCodeableConcept = SCT#83152002 "Oophorectomy"
 
 Mapping: HormonaltherapyToICHOM
 Source:	Hormonaltherapy
@@ -237,9 +239,8 @@ Description: "Mapping of hormonal therapy to the ICHOM breast cancer PCOM set"
 * -> "Treatment"
 * performedPeriod.start -> "Start of hormonal therapy" 
 * performedPeriod.end -> "Stop of hormonal therapy" 
-* code -> "Type of hormonal therapy"
 * reasonCode -> "hormonal therapy"
-
+* extension[method] -> "Type of hormonal therapy"
 
 // BEST SUPPORTIVE CARE
 Profile: BestSupportiveCare
@@ -302,7 +303,7 @@ Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
 * category = SCT#397747003 "Assertion"
-* code from TargetedTherapyVS (required)
+* code from TargetedTherapyVS (preferred)
 * subject only Reference(BreastCancerPatient)
 * performedPeriod MS
 

@@ -445,41 +445,6 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#5 "Very much"
 
 
-// Optional valueset using Snomed CT
-
-
-// TREATMENT VARIABLES
-
-
-
-// ValueSet: TherapyIntent
-// Id: TherapyIntent
-// Title: "Intent of therapy"
-// Description: "Valueset of intent of therapy"
-// * SCT#373847000 "Neo-adjuvant - intent"
-// * SCT#373846009 "Adjuvant - intent"
-
-// ValueSet: ChemoTherapyType
-// Id: ChemoTherapyType
-// Title: "Type of chemotherapy"
-// Description: "Valueset of the types of chemotherapy"
-// * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
-// * SCT#418965003 "Taxane derivative"
-// * SCT#768621002 "Product containing platinum and platinum compound"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: HormonalTherapyType
-// Id: HormonalTherapyType
-// Title: "Type of hormonal therapy"
-// Description: "Valueset of the types of hormonal therapy"
-// * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
-// * SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
-// * SCT#8315200 "Oophorectomy"
-// * SCT#41897400 "Gonad regulating hormone agent"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
 // until other codes are available!
 CodeSystem: TargetedTherapyCodeSystem
 Id: TargetedTherapyCodeSystem
