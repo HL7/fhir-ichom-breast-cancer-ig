@@ -83,20 +83,6 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
-CodeSystem: TNMstages
-Id: TNMstages
-Title: "TNM stages for breast cancer"
-Description: "Codes used in the TNM Staging System, which includes the extent of the tumor (T), extent of spread to the lymph nodes (N), and presence of metastasis (M)."
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/TNM-stages
-* ^caseSensitive = true
-
-* #cT "Clinical tumor stage"
-* #cN "Clinical nodal stage"
-* #cM "Clinical distant metastasis"
-* #pT "Pathological tumor stage"
-* #pN "Pathological nodal stage"
-* #pM "Pathological distant metastasis"
-
 ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
@@ -194,13 +180,6 @@ Description: "Valueset of the unit  of the patient's body weight"
 * UCUM#kg "kg"
 * UCUM#[lb_av] "[lb_av]"
 
-ValueSet: LateralityNewCancerVS
-Id: LateralityNewCancerVS
-Title: "Laterality of new cancer"
-Description: "Valueset of the laterality of new breast cancer"
-* SCT#255208005 "Ipsilateral"
-* SCT#255209002 "Contralateral"
-
 ValueSet: LateralityVS
 Id: LateralityVS
 Title: "Laterality of breast cancer"
@@ -209,6 +188,12 @@ Description: "Valueset of the laterality of breast cancer"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
 
+ValueSet: LateralityNewCancerVS
+Id: LateralityNewCancerVS
+Title: "Laterality of new cancer"
+Description: "Valueset of the laterality of new breast cancer"
+* SCT#255208005 "Ipsilateral"
+* SCT#255209002 "Contralateral"
 
 //  TREATMENT VARIABLES 
 
