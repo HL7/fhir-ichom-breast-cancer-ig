@@ -83,20 +83,6 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
-CodeSystem: TNMstages
-Id: TNMstages
-Title: "TNM stages for breast cancer"
-Description: "Codes used in the TNM Staging System, which includes the extent of the tumor (T), extent of spread to the lymph nodes (N), and presence of metastasis (M)."
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/TNM-stages
-* ^caseSensitive = true
-
-* #cT "Clinical tumor stage"
-* #cN "Clinical nodal stage"
-* #cM "Clinical distant metastasis"
-* #pT "Pathological tumor stage"
-* #pN "Pathological nodal stage"
-* #pM "Pathological distant metastasis"
-
 ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
@@ -194,13 +180,6 @@ Description: "Valueset of the unit  of the patient's body weight"
 * UCUM#kg "kg"
 * UCUM#[lb_av] "[lb_av]"
 
-ValueSet: LateralityNewCancerVS
-Id: LateralityNewCancerVS
-Title: "Laterality of new cancer"
-Description: "Valueset of the laterality of new breast cancer"
-* SCT#255208005 "Ipsilateral"
-* SCT#255209002 "Contralateral"
-
 ValueSet: LateralityVS
 Id: LateralityVS
 Title: "Laterality of breast cancer"
@@ -209,6 +188,12 @@ Description: "Valueset of the laterality of breast cancer"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
 
+ValueSet: LateralityNewCancerVS
+Id: LateralityNewCancerVS
+Title: "Laterality of new cancer"
+Description: "Valueset of the laterality of new breast cancer"
+* SCT#255208005 "Ipsilateral"
+* SCT#255209002 "Contralateral"
 
 //  TREATMENT VARIABLES 
 
@@ -216,48 +201,41 @@ Description: "Valueset of the laterality of breast cancer"
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
-Description: "Codes indicating the kind of treatment a patient underwent"
+Description: "Codes defining types of treatment a breast cancer patient could receive"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/treatment-variables
 * ^caseSensitive = true
-* #0 "No treatment"
-* #1 "Surgery"
-* #2 "Surgery to axilla"
-* #3 "Delayed reconstruction"
-* #4 "Radiotherapy"
-* #5 "Chemotherapy"
-* #6 "Hormonal therapy"
-* #7 "Targeted therapy"
-* #8 "Best supportive care"
+* #A_chemo "Adjuvant chemotherapy"
+* #N_A_chemo "Neoadjuvant chemotherapy"
+* #Targ_Thrpy "Targeted therapy"
 
 ValueSet: TreatmentTypeValueSet
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
-* include TreatmentTypesCodeSystem#0 "No treatment"
-* include TreatmentTypesCodeSystem#1 "Surgery"
-* include TreatmentTypesCodeSystem#2 "Surgery to axilla"
-* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
-* include TreatmentTypesCodeSystem#4 "Radiotherapy"
-* include TreatmentTypesCodeSystem#5 "Chemotherapy"
-* include TreatmentTypesCodeSystem#6 "Hormonal therapy"
-* include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#8 "Best supportive care"
-* include NullFlavor#ASKU "asked but unknown"
+* include SCT#387713003 "Surgical procedure"
+* include SCT#699455008 "Operative procedure on axilla"
+* include SCT#33496007 "Reconstruction of breast" 
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
+* include SCT#169413002 "Hormone therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* include SCT#76334006 "Immunotherapy"
+* include SCT#243114000 "Support"
+* NullFlavor#UNK "unknown"
 
 ValueSet: RecommendedTreatmentTypeValueSet
 Id: RecommendedTreatmentTypeValueSet
 Title: "Recommended treatment types"
 Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
 * include SCT#387713003 "Surgical procedure"
-* include SCT#69945500 "Operative procedure on axilla "
-* include SCT#108290001 "Radiation oncology AND/OR radiotherapy "
-* include SCT#385786002 "Chemotherapy care"
+* include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
-* include TreatmentTypesCodeSystem#7 "Targeted therapy"
-* include TreatmentTypesCodeSystem#8 "Best supportive care"
-* include TreatmentTypesCodeSystem#0 "No treatment"
-* include TreatmentTypesCodeSystem#3 "Delayed reconstruction"
-* include NullFlavor#ASKU "asked but unknown"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* include SCT#76334006 "Immunotherapy"
+* include SCT#243114000 "Support"
 
 // Breast Surgery Type \\
 CodeSystem: BreastSurgeryTypesCodeSystem
@@ -266,26 +244,20 @@ Title: "Breast surgery Types"
 Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/breast-surgery-types
 * ^caseSensitive = true
-
 * #0 "Breast conserving surgery (BCS)"
 * #1 "BCS with mammoplasty"
 * #2 "Mastectomy without immediate reconstruction"
-* #3 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* #4 "Mastectomy with immediate reconstruction (autologous)"
-* #5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
+* #3 "Mastectomy with immediate reconstruction"
 
-   
-ValueSet: BreastSurgeryTypeValueSet
-Id: BreastSurgeryTypeValueSet
+ValueSet: BreastSurgeryTypeVS
+Id: BreastSurgeryTypeVS
 Title: "Types of breast surgery"
 Description: "Valueset of the types of breast surgery a patient underwent"
 * include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
 * include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
 * include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction (direct/staged implant)"
-* include BreastSurgeryTypesCodeSystem#4 "Mastectomy with immediate reconstruction (autologous)"
-* include BreastSurgeryTypesCodeSystem#5 "Mastectomy with immediate reconstruction (direct/staged implant and autologous)"
-* include NullFlavor#UNK "unknown"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
 
 ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
@@ -295,10 +267,99 @@ Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#N "No"
 * YesNoUnkCS#UNK "Unknown"
 
+ValueSet: AxillaSurgeryVS
+Id: AxillaSurgeryVS
+Title: "Surgery of Axilla"
+Description: "Valueset of surgery types of the axilla"
+* SCT#396487001 "Sentinel lymph node biopsy"
+* SCT#234262008 "Excision of axillary lymph node"
+* SCT#79544006 "Complete axillary lymphadenectomy"
+* NullFlavor#UNK "unknown"
+
+CodeSystem: ReconstructionTypeCodeSystem
+Id: ReconstructionTypeCodeSystem
+Title: "Type of reconstruction surgery"
+Description: "Codes indicating the type of reconstruction surgery that is performed"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/reconstuction-type
+* ^caseSensitive = true
+* #Direct_imp "Direct implant"
+* #Staged_imp "Staged implant"
+* #Autologous "Autologous"
+* #Both "Both implant and autologous"
+
+ValueSet: ReconstructionTypeVS
+Id: ReconstructionTypeVS
+Title: "Type of reconstruction surgery"
+Description: "Valueset of the type of reconstruction surgery that is performed"
+* include ReconstructionTypeCodeSystem#Direct_imp "Direct implant"
+* include ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* include ReconstructionTypeCodeSystem#Autologous "Autologous"
+* include ReconstructionTypeCodeSystem#Both "Both implant and autologous"
+* NullFlavor#UNK "unknown"
+
+CodeSystem: ImplantLocationCodeSystem
+Id: ImplantLocationCodeSystem
+Title: "Location of the implant"
+Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/implant-location
+* ^caseSensitive = true
+* #Pre_pect "Pre-pectoral"
+* #Sub_pect "Sub-pectoral"
+
+ValueSet: ImplantLocationVS
+Id: ImplantLocationVS
+Title: "Location of the implant"
+Description: "Valueset of the location of the implant during reconstruction surgery"
+* include ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
+* include ImplantLocationCodeSystem#Sub_pect "Sub-pectoral"
+
+ValueSet: LocationRadiotherapyVS
+Id: LocationRadiotherapyVS
+Title: "The location of radiotherapy"
+Description: "Valueset of the location of radiotherapy"
+* SCT#76752008 "Breast structure"
+* SCT#78904004 "Chest wall structure"
+* SCT#68171009 "Axillary lymph node structure"
+* SCT#76838003 "Structure of supraclavicular lymph node"
+* SCT#245282001 "Internal mammary lymph node group"
+* SCT#263601005 "Site of tumor"
+* SCT#277671009 "Intraoperative"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: ChemoTherapyTypeVS
+Id: ChemoTherapyType
+Title: "Type of chemotherapy"
+Description: "Valueset of the types of chemotherapy"
+* SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
+* SCT#418965003 "Taxane derivative"
+* SCT#768621002 "Product containing platinum and platinum compound"
+* SCT#386906001 "Capecitabine"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+ValueSet: TherapyIntentVS
+Id: TherapyIntentVS
+Title: "Intent of therapy"
+Description: "Valueset of intent of therapy"
+* SCT#373847000 "Neo-adjuvant - intent"
+* SCT#373846009 "Adjuvant - intent"
+* NullFlavor#UNK "unknown"
+
+ValueSet: HormonalTherapyTypeVS
+Id: HormonalTherapyTypeVS
+Title: "Type of hormonal therapy"
+Description: "Valueset of the types of hormonal therapy"
+* SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
+* SCT#373336003 "Substance with estrogen receptor antagonist mechanism of action"
+* SCT#83152002 "Oophorectomy"
+* SCT#418974001 "Gonad regulating hormone agent"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
 
 //  DEGREE OF HEALTH 
  
-// EORTC-QLQ \\ 
+// EORTC-QLQ
 CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
 Title: "EORTC-QLQ questionnaire"
@@ -369,74 +430,37 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#5 "Very much"
 
 
+// until other codes are available!
+CodeSystem: TargetedTherapyCodeSystem
+Id: TargetedTherapyCodeSystem
+Title: "Targeted Therapy"
+Description: "Codes covering targeted therapy options with unknown/unavailable codes"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
+* ^caseSensitive = true
 
-// Optional valueset using Snowmed CT
+* #0 "Her-2 targeting therapy"
+* #1 "CDK-46 inhibitors"
+* #2 "PARP inhibitors"
 
+ValueSet: TargetedTherapyVS
+Id: TargetedTherapyVS
+Title: "Type of targeted therapy"
+Description: "Valueset of the types of targeted therapy"
+* TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
+* TargetedTherapyCodeSystem#1 "CDK-46 inhibitors"
+* TargetedTherapyCodeSystem#2 "PARP inhibitors"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
 
-// TREATMENT VARIABLES
-
-// ValueSet: AxillaSurgery
-// Id: AxillaSurgery
-// Title: "Surgery of Axilla"
-// Description: "Valueset of surgery type of the axilla"
-// * SCT#396487001 "Sentinel lymph node biopsy"
-// * SCT#178294003 "Axillary lymph nodes sampling"
-// * SCT#79544006 "Complete axillary lymphadenectomy"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: TherapyIntent
-// Id: TherapyIntent
-// Title: "Intent of therapy"
-// Description: "Valueset of intent of therapy"
-// * SCT#373847000 "Neo-adjuvant - intent"
-// * SCT#373846009 "Adjuvant - intent"
-
-// ValueSet: ChemoTherapyType
-// Id: ChemoTherapyType
-// Title: "Type of chemotherapy"
-// Description: "Valueset of the types of chemotherapy"
-// * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
-// * SCT#418965003 "Taxane derivative"
-// * SCT#768621002 "Product containing platinum and platinum compound"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: HormonalTherapyType
-// Id: HormonalTherapyType
-// Title: "Type of hormonal therapy"
-// Description: "Valueset of the types of hormonal therapy"
-// * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
-// * SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
-// * SCT#8315200 "Oophorectomy"
-// * SCT#41897400 "Gonad regulating hormone agent"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: LocationRadiotherapy
-// Id: LocationRadiotherapy
-// Title: "The location of radiotherapy"
-// Description: "Valueset of the location of radiotherapy"
-// * SCT#76752008 "Breast structure"
-// * SCT#78904004 "Chest wall structure"
-// * SCT#68171009 "Axillary lymph node structure"
-// * SCT#76838003 "Structure of supraclavicular lymph node"
-// * SCT#245282001 "Internal mammary lymph node group"
-// * SCT#263601005 "Site of tumor"
-// * SCT#119235005 "Brain part"
-// * SCT#280441002 "Regional bone structure"
-// * SCT#14799000 "Neoplasm, metastatic"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: ReoperationType
-// Id: ReoperationType
-// Title: "Type of re-operation"
-// Description: "Valueset of the types of re-operation"
-// * SCT#373572006 "No"
-// * SCT#33496007 "Reconstruction of breast"
-// * SCT#69031006 "Excision of breast tissue"
-// * SCT#234254000 "Excision of axillary lymph nodes group"
-// * NullFlavor#UNK "unknown"
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#373572006 "Clinical finding absent"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* NullFlavor#UNK "unknown"
 
 // ValueSet: SystemicTreatment
 // Id: SystemicTreatment
@@ -457,7 +481,6 @@ Title: "Recurrence Method"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
 * ^caseSensitive = true
-
 * #2 "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethod
@@ -468,21 +491,6 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 * SCT#67151002 "Histologic"
 * RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
 * NullFlavor#UNK "unknown"
-
-
-// ValueSet: UnitsBodyHeightVS
-// Id: UnitsBodyHeight
-// Title: "Units of patient's body height"
-// Description: "Valueset of the unit  of the patient's body height"
-// * SCT#258672001 "Centimeter"
-// * SCT#258677007 "Inch"
-
-// ValueSet: UnitsBodyWeightVS
-// Id: UnitsBodyWeight
-// Title: "Units of patient's body weight"
-// Description: "Valueset of the unit  of the patient's body weight"
-// * SCT#258683005 "kilogram"
-// * SCT#258693003 "pounds"
 
 ValueSet: InvolvedMarginsReoperationType
 Id: InvolvedMarginsReoperationType
@@ -525,7 +533,6 @@ Description: "ValueSet of the impact of a complication experienced by the breast
 * NullFlavor#UNK "unknown"
 // still need (single) codes for complication leading to prolonged hospitalization, discontinuing of treatment and none of the above. 
 
-
 ValueSet: ComplicationTypeVS
 Id: ComplicationTypeVS
 Title: "Type of complication"
@@ -548,3 +555,4 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * NullFlavor#UNK "unknown"
 * NullFlavor#OTH "other"
 // still need (single) codes for delayed wound healing, partial and total skin graft loss and immune related toxicity. 
+
