@@ -1,10 +1,3 @@
-// shorthand notation to only show a particular question in the context of this questionnaire
-RuleSet: enableWhenTreatment(code)
-* enableWhen[+]
-  * question = "TREATMENT_BREAST"
-  * operator = #=
-  * answerCoding = TreatmentTypesCodeSystem{code}
-
 Instance: ClinicalResponseSixMonths
 InstanceOf: Questionnaire
 Usage: #definition
@@ -133,19 +126,20 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * required = true
     * repeats = true
 
+// Breast surgery 
   * item[+]
     * linkId = "SURGERY_BREAST"
     * type = #choice
     * text = "Please indicate the type of surgery the patient received during the last year:"
-    * answerValueSet = Canonical(BreastSurgeryTypeValueSet)
-    * insert enableWhenTreatment(#1)
+    * answerValueSet = Canonical(BreastSurgeryTypeVS)
+    * insert enableWhenTreatmentSCT(SCT#387713003)
     * required = true
 
   * item[+]
     * linkId = "SurgeryDateKnown"
     * type = #boolean
     * text = "Is the date of surgery known?"
-    * insert enableWhenTreatment(#1)
+    * insert enableWhenTreatmentSCT(SCT#387713003)
     * required = true
 
   * item[+]
@@ -155,6 +149,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(SurgeryDateKnown)
     * required = true
 
+// Axilla surgery
   * item[+]
     * linkId = "SURGERYAX"
     * type = #choice
@@ -163,14 +158,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#1 "Axillary sampling"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#2 "Axillary clearance"
     * answerOption[+].valueCoding = urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4#999 "Unknown"
-    * insert enableWhenTreatment(#2)
+    * insert enableWhenTreatmentSCT(SCT#699455008)
     * required = true
 
   * item[+]
     * linkId = "SURGERYAXDATE-Known"
     * type = #boolean
     * text = "Is the date of surgery to the axilla known?"
-    * insert enableWhenTreatment(#2)
+    * insert enableWhenTreatmentSCT(SCT#699455008)
     * required = true
 
   * item[+]
@@ -180,6 +175,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(SURGERYAXDATE-Known)
     * required = true
 
+// Axilla clearance
   * item[+]
     * linkId = "SURGERYAX2"
     * type = #choice
@@ -215,6 +211,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(SURGERYAX2DATE-Known)
     * required = true
 
+// Reconstuction surgery
   * item[+] 
     * linkId = "RECONSTRUCT"
     * type = #choice
@@ -223,14 +220,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#1 "Delayed reconstruction ( autologous)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#2 "Delayed reconstruction (implant/autologous)"
     * answerOption[+].valueCoding = urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269#999 "Unknown"
-    * insert enableWhenTreatment(#3)
+    * insert enableWhenTreatmentSCT(SCT#33496007)
     * required = true
 
   * item[+]
     * linkId = "RECONSTRUCTDATE-Known"
     * type = #boolean
     * text = "Is the date of the delayed reconstruction known?"
-    * insert enableWhenTreatment(#3)
+    * insert enableWhenTreatmentSCT(SCT#33496007)
     * required = true
 
   * item[+]
@@ -240,6 +237,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(RECONSTRUCTDATE-Known)
     * required = true
 
+// Radiotherapy
   * item[+]
     * linkId = "RADIOTX_BREAST"
     * type = #choice
@@ -247,7 +245,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#0 "Neoadjuvant"
     * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#1 "Adjuvant"
     * answerOption[+].valueCoding = urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0#999 "Unknown"
-    * insert enableWhenTreatment(#4)
+    * insert enableWhenTreatmentSCT(SCT#108290001)
     * required = true
     * repeats = true
 
@@ -266,14 +264,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#8 "Any metastatic site"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#9 "Other"
     * answerOption[+].valueCoding = urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33#999 "Unknown"
-    * insert enableWhenTreatment(#4)
+    * insert enableWhenTreatmentSCT(SCT#108290001)
     * required = true
 
   * item[+]
     * linkId = "RadioTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of radiotherapy known?"
-    * insert enableWhenTreatment(#4)
+    * insert enableWhenTreatmentSCT(SCT#108290001)
     * required = true
 
   * item[+]
@@ -287,7 +285,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "RadioTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of radiotherapy known?"
-    * insert enableWhenTreatment(#4)
+    * insert enableWhenTreatmentSCT(SCT#108290001)
     * required = true
 
   * item[+]
@@ -297,6 +295,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(RadioTxStopDate-Known)
     * required = true
 
+// Chemotherapy
   * item[+]
     * linkId = "CHEMOTXINTENT"
     * type = #choice
@@ -304,7 +303,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#0 "Neoadjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#1 "Adjuvant"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
-    * insert enableWhenTreatment(#5)
+    * insert enableWhenTreatment(#A_chemo)
+    * insert enableWhenTreatment(#N_A_chemo)
+    * enableBehavior = #any
     * required = true
 
   * item[+]
@@ -316,7 +317,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#2 "Platinum containing"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#3 "Other"
     * answerOption[+].valueCoding = urn:uuid:de25b812-330d-4e4e-9791-22efa124c222#999 "Unknown"
-    * insert enableWhenTreatment(#5)
+    * insert enableWhenTreatment(#A_chemo)
+    * insert enableWhenTreatment(#N_A_chemo)
+    * enableBehavior = #any
     * required = true
     * repeats = true
 
@@ -324,7 +327,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment(#5)
+    * insert enableWhenTreatment(#A_chemo)
+    * insert enableWhenTreatment(#N_A_chemo)
+    * enableBehavior = #any
     * required = true
 
   * item[+]
@@ -338,7 +343,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment(#5)
+    * insert enableWhenTreatment(#A_chemo)
+    * insert enableWhenTreatment(#N_A_chemo)
+    * enableBehavior = #any
     * required = true
 
   * item[+]
@@ -348,14 +355,15 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(ChemoTxStopdate-Known)
     * required = true
 
+// Hormonal therapy 
   * item[+]
     * linkId = "HORMONTX_BREAST"
     * type = #choice
-    * text = "Please indicate the intent of hormontherapy:"
+    * text = "Please indicate the intent of hormonal therapy:"
     * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#0 "Neoadjuvant"
     * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#1 "Adjuvant"
     * answerOption[+].valueCoding = urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15#999 "Unknown"
-    * insert enableWhenTreatment(#6)
+    * insert enableWhenTreatmentSCT(SCT#169413002)
     * required = true
 
   * item[+]
@@ -368,7 +376,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#3 "LHRH agonist"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#4 "Other"
     * answerOption[+].valueCoding = urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb#999 "Unknown"
-    * insert enableWhenTreatment(#6)
+    * insert enableWhenTreatmentSCT(SCT#169413002)
     * required = true
     * repeats = true
 
@@ -376,7 +384,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "HORMONTXSTARTDATE-Known"
     * type = #boolean
     * text = "Is the start date of hormonal therapy known?"
-    * insert enableWhenTreatment(#6)
+    * insert enableWhenTreatmentSCT(SCT#169413002)
     * required = true
 
   * item[+]
@@ -390,7 +398,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "HORMONTXSTOPDATE-Known"
     * type = #boolean
     * text = "Is the stop date of hormonal therapy known?"
-    * insert enableWhenTreatment(#6)
+    * insert enableWhenTreatmentSCT(SCT#169413002)
     * required = true
 
   * item[+]
@@ -400,6 +408,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(HORMONTXSTOPDATE-Known)
     * required = true
 
+// Targeted therapy
   * item[+]
     * linkId = "TARGETTX_BREAST"
     * type = #choice
@@ -407,14 +416,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#0 "Her-2 targeting therapy"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#1 "Other"
     * answerOption[+].valueCoding = urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d#999 "Unknown"
-    * insert enableWhenTreatment(#7)
+    * insert enableWhenTreatment(#Targ_Thrpy)
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment(#7)
+    * insert enableWhenTreatment(#Targ_Thrpy)
     * required = true
 
   * item[+]
@@ -428,7 +437,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment(#7)
+    * insert enableWhenTreatment(#Targ_Thrpy)
     * required = true
 
   * item[+]
@@ -437,7 +446,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * text = "Please provide the stop date of targeted therapy:"
     * insert enableWhenTrue(TargetTxStopDate-Known)
     * required = true
-    
+  
+// Reoperations   
   * item[+]
     * linkId = "SURGERYPATIENT"
     * type = #choice
@@ -472,6 +482,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(SURGERYDATEPATIENT-Known)
     * required = true
 
+// Systemic therapy
   * item[+]
     * linkId = "SYSTPATIENT"
     * type = #choice
@@ -525,7 +536,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "SURGERY_BREAST"
       * operator = #!=
       * answerCoding = NullFlavor#UNK
-    * insert enableWhenTreatment(#1)
+    * insert enableWhenTreatmentSCT(SCT#387713003)
     * enableBehavior = #all
     * required = true
 
@@ -541,7 +552,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "REOP_BREAST"
       * operator = #!=
       * answerCoding = urn:uuid:267a68fb-42ea-49c8-a43d-c18c71f4ce7e#0
-    * insert enableWhenTreatment(#1)
+    * insert enableWhenTreatmentSCT(SCT#387713003)
     * enableBehavior = #all
     * required = true
 
@@ -566,10 +577,6 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerOption[+].valueCoding = urn:uuid:c77c16c3-17ba-4f16-a3f8-afd8a24b2aad#7 "Complication leading to death"
     * answerOption[+].valueCoding = urn:uuid:c77c16c3-17ba-4f16-a3f8-afd8a24b2aad#8 "Complication, but did not result in any of the abovementioned"
     * answerOption[+].valueCoding = urn:uuid:c77c16c3-17ba-4f16-a3f8-afd8a24b2aad#999 "Unknown"
-    * enableWhen[+]
-      * question = "TREATMENT_BREAST"
-      * operator = #!=
-      * answerCoding = TreatmentTypesCodeSystem#0
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=

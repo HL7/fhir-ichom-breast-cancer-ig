@@ -8,7 +8,6 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
 * bodySite from LateralityVS (preferred)
-* clinicalStatus and recordedDate MS
 
 Instance: PrimaryBreastCancerPatient147
 InstanceOf: PrimaryBreastCancerCondition

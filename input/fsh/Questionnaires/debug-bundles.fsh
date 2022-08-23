@@ -40,9 +40,9 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = BreastSurgeryTypesCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/BreastSurgeryTypeValueSet"
+  * request.url = "ValueSet/BreastSurgeryTypeVS"
   * request.method = #PUT
-  * resource = BreastSurgeryTypeValueSet
+  * resource = BreastSurgeryTypeVS
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseSixMonths"
@@ -73,9 +73,9 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = BreastSurgeryTypesCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/BreastSurgeryTypeValueSet"
+  * request.url = "ValueSet/BreastSurgeryTypeVS"
   * request.method = #PUT
-  * resource = BreastSurgeryTypeValueSet
+  * resource = BreastSurgeryTypeVS
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseAnnualUpdate"
@@ -222,9 +222,9 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
   * resource = BreastSurgeryTypesCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/BreastSurgeryTypeValueSet"
+  * request.url = "ValueSet/BreastSurgeryTypeVS"
   * request.method = #PUT
-  * resource = BreastSurgeryTypeValueSet
+  * resource = BreastSurgeryTypeVS
 * entry[+]
   * request.url = "CodeSystem/FACTESCodeSystem"
   * request.method = #PUT
