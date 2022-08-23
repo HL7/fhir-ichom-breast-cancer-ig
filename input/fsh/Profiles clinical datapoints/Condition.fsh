@@ -120,8 +120,8 @@ Description: "Mapping of the secondary breast cancer condition to the ICHOM brea
 Profile: DeathAttributableBC
 Parent: Observation 
 Id: death-attr-bc
-Title: "Death BC"
-Description: "Death attributable to breast cancer"
+Title: "Death attributable to breast cancer"
+Description: "Represents if breast cancer was the cause of death"
 * insert PublicationProfileRuleset
 * code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
 * value[x] only CodeableConcept 
