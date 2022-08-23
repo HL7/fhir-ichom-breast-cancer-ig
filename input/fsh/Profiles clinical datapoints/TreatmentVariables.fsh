@@ -313,15 +313,16 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = SCT#784176007 "Substance with human epidermal growth factor receptor 2 inhibitor mechanism of action"
+* code = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
 
+Mapping: TargetedTherapyToICHOM
 Source:	TargetedTherapy
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
 Id: targetedtherapymapping
-Title: "ReoperationSurgery to ICHOM set"
-Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set" 	
+Title: "Targeted therapy to ICHOM set"
+Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set" 	
 * code -> "Targeted therapy"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"

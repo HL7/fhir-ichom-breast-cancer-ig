@@ -353,7 +353,7 @@ ValueSet: TargetedTherapyVS
 Id: TargetedTherapyVS
 Title: "Type of targeted therapy"
 Description: "Valueset of the types of targeted therapy"
-* SCT#784176007 "Substance with human epidermal growth factor receptor 2 inhibitor mechanism of action"
+* SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 * SCT#426265004 "Substance with protein kinase inhibitor mechanism of action"
 * SCT#432253008 "Substance with nicotinamide adenine dinucleotide adenosine diphosphate ribosyltransferase inhibitor mechanism of action"
 * NullFlavor#OTH "other"
@@ -390,13 +390,6 @@ Description: "Kind of re-operation due to involved margins"
 * IchomReoperation#4 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
-ValueSet: ReconstructionTypeVS
-Id: ReconstructionTypeVS
-Title: "Type of reconstruction surgery"
-Description: "ValueSet with the type of reconstruction surgery"
-* SCT#172061002 "Reconstruction of breast with expander or prosthesis"
-* SCT#303445008 "Reconstruction of breast with flap"
-* NullFlavor#UNK "unknown"
 
 // Complications
 CodeSystem: ComplicationImpactCodeSystem
@@ -428,7 +421,7 @@ CodeSystem: ComplicationTypeCodeSystem
 Id: ComplicationTypeCodeSystem
 Title: "Type of complication"
 Description: "Codes indicating the type of a complication experienced by the breast cancer patient"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-impact
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-type
 * ^caseSensitive = true
 * #4 "Partial autologous graft loss"
 * #5 "Total autologous graft loss"
