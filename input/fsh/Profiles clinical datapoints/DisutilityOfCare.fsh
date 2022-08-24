@@ -4,7 +4,7 @@ Id: involved-margins-reoperation
 Title: "Involved Margins Reoperation"
 Description: "A reoperation due to involved margins after primary surgery"
 * insert PublicationProfileRuleset
-* code from InvolvedMarginsReoperationType (required)
+* code from InvolvedMarginsReoperationTypeVS (required)
 * subject only Reference(BreastCancerPatient)
 * partOf MS
   * ^short = "Original procedure that prompted the reoperation"

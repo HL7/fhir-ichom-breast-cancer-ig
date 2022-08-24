@@ -40,6 +40,7 @@ ValueSet: EducationLevelVS
 Id: EducationLevelVS
 Title: "Education level of patient"
 Description: "Valueset of the education level of a patient"
+* insert SNOMEDCopyrightForVS
 * SCT#224294005 "No formal education (finding)"
 * SCT#224295006 "Only received primary school education (finding)"
 * SCT#224297003 "Educated to secondary school level (finding)"
@@ -49,6 +50,7 @@ ValueSet: MenopausalStatusVS
 Id: MenopausalStatusVS
 Title: "Menopausal status of patient"
 Description: "Valueset of the menopausal status of a patient"
+* insert SNOMEDCopyrightForVS
 * SCT#309606002 "Before menopause"
 * SCT#307429007 "After menopause"
 * NullFlavor#ASKU "Asked but unknown"
@@ -58,6 +60,7 @@ ValueSet: HistologicalTypeVS
 Id: HistologicalTypeVS
 Title: "Histological type of the tumor"
 Description: "Valueset of the histological types of tumors"
+* insert SNOMEDCopyrightForVS
 * SCT#399935008 "Ductal carcinoma in situ - category"
 * SCT#373395001 "Invasive ductal carcinoma with an extensive intraductal component"
 * SCT#722524005 "Primary invasive pleomorphic lobular carcinoma of breast"
@@ -68,6 +71,7 @@ ValueSet: GermlineMutationVS
 Id: GermlineMutationVS
 Title: "Germline Mutation"
 Description: "Valueset of the genetic mutation predisposing breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
 * SCT#412734009 "BRCA1 gene mutation positive (finding)"
 * SCT#412738007 "BRCA2 gene mutation positive (finding)"
@@ -78,6 +82,7 @@ ValueSet: GradingVS
 Id: GradingVS
 Title: "Grading of tumor"
 Description: "Valueset of the grade of the tumor"
+* insert SNOMEDCopyrightForVS
 * SCT#399415002 "Low grade histologic differentiation (finding)"
 * SCT#405986005 "Intermediate grade histologic differentiation (finding)"
 * SCT#399611001 "High grade histologic differentiation (finding)"
@@ -87,24 +92,28 @@ ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
+* insert AJCCCopyrightForVS
 * codes from system AJCC
 
 ValueSet: TNMRegionalNodesVS
 Id: tnm-regional-nodes-category-vs
 Title: "TNM Regional Nodes Value Set"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
+* insert AJCCCopyrightForVS
 * include codes from system AJCC
 
 ValueSet: TNMDistantMetastasesVS
 Id: tnm-distant-metastases-category-vs
 Title: "TNM Distant Metastases Value Set"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
+* insert AJCCCopyrightForVS
 * codes from system AJCC
 
 ValueSet: EstrogenStatusVS
 Id: EstrogenStatusVS
 Title: "Estrogen receptor status"
 Description: "Valueset of the Estrogen receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
 * SCT#416053008 "Estrogen receptor positive tumor"
 * SCT#416237000 "Procedure not done"
@@ -114,6 +123,7 @@ ValueSet: ProgesteroneStatusVS
 Id: ProgesteroneStatusVS
 Title: "Progesterone receptor status"
 Description: "Valueset of the Progesterone receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#441118006 "Progesterone receptor negative neoplasm"
 * SCT#416561008 "Progesterone receptor positive tumor"
 * SCT#416237000 "Procedure not done"
@@ -123,6 +133,7 @@ ValueSet: HER2ReceptorStatusVS
 Id: HER2ReceptorStatusVS
 Title: "HER2 receptor status"
 Description: "Valueset of the HER2 receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#431396003 "Human epidermal growth factor 2 negative carcinoma of breast"
 * SCT#427685000 "Human epidermal growth factor 2 positive carcinoma of breast"
 * SCT#280414007 "Equivocal result"
@@ -184,6 +195,7 @@ ValueSet: LateralityVS
 Id: LateralityVS
 Title: "Laterality of breast cancer"
 Description: "Valueset of the laterality of breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#80248007 "Left breast structure"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
@@ -192,6 +204,7 @@ ValueSet: LateralityNewCancerVS
 Id: LateralityNewCancerVS
 Title: "Laterality of new cancer"
 Description: "Valueset of the laterality of new breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#255208005 "Ipsilateral"
 * SCT#255209002 "Contralateral"
 
@@ -208,10 +221,11 @@ Description: "Codes defining types of treatment a breast cancer patient could re
 * #N_A_chemo "Neoadjuvant chemotherapy"
 * #Targ_Thrpy "Targeted therapy"
 
-ValueSet: TreatmentTypeValueSet
+ValueSet: TreatmentTypeVS
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
+* insert SNOMEDCopyrightForVS
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
@@ -224,10 +238,11 @@ Description: "Valueset of the kind of treatment a patient with breastcancer unde
 * include SCT#243114000 "Support"
 * NullFlavor#UNK "unknown"
 
-ValueSet: RecommendedTreatmentTypeValueSet
-Id: RecommendedTreatmentTypeValueSet
+ValueSet: RecommendedTreatmentTypeVS
+Id: RecommendedTreatmentTypeVS
 Title: "Recommended treatment types"
 Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
+* insert SNOMEDCopyrightForVS
 * include SCT#387713003 "Surgical procedure"
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
 * include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
@@ -263,6 +278,7 @@ ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
 Title: "Surgery of Axilla"
 Description: "Valueset of surgery types of the axilla"
+* insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
 * SCT#234262008 "Excision of axillary lymph node"
 * SCT#79544006 "Complete axillary lymphadenectomy"
@@ -309,6 +325,7 @@ ValueSet: LocationRadiotherapyVS
 Id: LocationRadiotherapyVS
 Title: "The location of radiotherapy"
 Description: "Valueset of the location of radiotherapy"
+* insert SNOMEDCopyrightForVS
 * SCT#76752008 "Breast structure"
 * SCT#78904004 "Chest wall structure"
 * SCT#68171009 "Axillary lymph node structure"
@@ -320,9 +337,10 @@ Description: "Valueset of the location of radiotherapy"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ChemoTherapyTypeVS
-Id: ChemoTherapyType
+Id: ChemoTherapyTypeVS
 Title: "Type of chemotherapy"
 Description: "Valueset of the types of chemotherapy"
+* insert SNOMEDCopyrightForVS
 * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
 * SCT#418965003 "Taxane derivative"
 * SCT#768621002 "Product containing platinum and platinum compound"
@@ -334,6 +352,7 @@ ValueSet: TherapyIntentVS
 Id: TherapyIntentVS
 Title: "Intent of therapy"
 Description: "Valueset of intent of therapy"
+* insert SNOMEDCopyrightForVS
 * SCT#373847000 "Neo-adjuvant - intent"
 * SCT#373846009 "Adjuvant - intent"
 * NullFlavor#UNK "unknown"
@@ -342,6 +361,7 @@ ValueSet: HormonalTherapyTypeVS
 Id: HormonalTherapyTypeVS
 Title: "Type of hormonal therapy"
 Description: "Valueset of the types of hormonal therapy"
+* insert SNOMEDCopyrightForVS
 * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
 * SCT#373336003 "Substance with estrogen receptor antagonist mechanism of action"
 * SCT#83152002 "Oophorectomy"
@@ -353,6 +373,7 @@ ValueSet: TargetedTherapyVS
 Id: TargetedTherapyVS
 Title: "Type of targeted therapy"
 Description: "Valueset of the types of targeted therapy"
+* insert SNOMEDCopyrightForVS
 * SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 * SCT#426265004 "Substance with protein kinase inhibitor mechanism of action"
 * SCT#432253008 "Substance with nicotinamide adenine dinucleotide adenosine diphosphate ribosyltransferase inhibitor mechanism of action"
@@ -363,19 +384,96 @@ ValueSet: ReoperationTypeVS
 Id: ReoperationTypeVS
 Title: "Type of re-operation"
 Description: "Valueset of the types of re-operation"
+* insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
 * SCT#33496007 "Reconstruction of breast"
 * SCT#69031006 "Excision of breast tissue"
 * SCT#234254000 "Excision of axillary lymph nodes group"
 * NullFlavor#UNK "unknown"
 
+// Treatmentplan
+CodeSystem: TreatmentPlanFollowedCodeSystem
+Id: TreatmentPlanFollowedCodeSystem
+Title: "Real Treatment Plan Followed"
+Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
+* ^caseSensitive = true
+
+* #0 "No, not followed"
+* #1 "Yes, fully followed"
+* #2 "Some treatments followed"
+
+ValueSet: TreatmentPlanFollowedVS
+Id: TreatmentPlanFollowedVS
+Title: "Real Treatment Plan Followed"
+Description: "Valueset of if the patient followed the multidisciplinary recommended treatment plan"
+* TreatmentPlanFollowedCodeSystem#0 "No, not followed"
+* TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* TreatmentPlanFollowedCodeSystem#2 "Some treatments followed"
+
+CodeSystem: TreatmentPlanNotFollowedCodeSystem
+Id: TreatmentPlanNotFollowedCodeSystem
+Title: "Real Treatment Plan Followed"
+Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowed
+* ^caseSensitive = true
+
+* #1 "Patient preference"
+* #2 "Clinical reasons"
+
+ValueSet: TreatmentPlanNotFollowedVS
+Id: TreatmentPlanNotFollowedVS
+Title: "Treatment Plan Not Followed"
+Description: "Valueset of reason for the treatment plan not being followed"
+* TreatmentPlanNotFollowedCodeSystem#1 "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
+* TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
+* NullFlavor#UNK "unknown"
+
+CodeSystem: PatientTreatPrefCodeSystem
+Id: PatientTreatPrefCodeSystem
+Title: "Real Treatment Plan Followed"
+Description: "Codes covering for why the treatment plan was not followed"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/PatientTreatPref
+* ^caseSensitive = true
+
+* #1 "Personal preference"
+* #2 "Treatment unavailable"
+* #3 "Different plan recommended by clinical team"
+
+ValueSet: PatientTreatPrefVS
+Id: PatientTreatPrefVS
+Title: "Patient Treatment Preference"
+Description: "Valueset of reason for why the treatment plan was not followed"
+* PatientTreatPrefCodeSystem#1 "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
+* PatientTreatPrefCodeSystem#2 "Treatment unavailable" // SCT#309846006 "Treatment not available"
+* PatientTreatPrefCodeSystem#3 "Different plan recommended by clinical team"
+* NullFlavor#OTH "other"
+
+CodeSystem: TreatmentPlanComplianceCodeSystem
+Id: TreatmentPlanComplianceCodeSystem
+Title: "Observation identifiers for treatment plan non-compliance reason"
+Description: "Codes covering observation identifiers for treatment plan non-compliance reaso"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanCompliance
+* ^caseSensitive = true
+* #1 "Reason for not following original treatment plan"
+* #2 "Patient reported reason for not following recommened treatment"
+
+ValueSet: TreatmentPlanComplianceVS
+Id: TreatmentPlanComplianceVS
+Title: "Observation identifiers for treatment plan non-compliance reason"
+Description: "Valueset of reason for why the treatment plan was not followed"
+* TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
+
+
 // DISUTILITY OF CARE
 
 // Reoperations
-ValueSet: InvolvedMarginsReoperationType
-Id: InvolvedMarginsReoperationType
+ValueSet: InvolvedMarginsReoperationTypeVS
+Id: InvolvedMarginsReoperationTypeVS
 Title: "Re-operation due to involved margins"
 Description: "Kind of re-operation due to involved margins"
+* insert SNOMEDCopyrightForVS
 * ^version = "0.0.1"
 * ^status = #active
 * ^date = "2022-07-26T09:18:41+02:00"
@@ -389,7 +487,6 @@ Description: "Kind of re-operation due to involved margins"
 * IchomReoperation#2 "Breast conserving surgery with mammoplasty"
 * IchomReoperation#4 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
-
 
 // Complications
 CodeSystem: ComplicationImpactCodeSystem
@@ -406,6 +503,7 @@ ValueSet: ComplicationImpactVS
 Id: ComplicationImpactVS
 Title: "Impact of complication"
 Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
+* insert SNOMEDCopyrightForVS
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
 * ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
@@ -432,6 +530,7 @@ ValueSet: ComplicationTypeVS
 Id: ComplicationTypeVS
 Title: "Type of complication"
 Description: "ValueSet of the type of complication experienced by the breast cancer patient"
+* insert SNOMEDCopyrightForVS
 * SCT#76844004  "Local infection of wound"
 * SCT#715068009 "Seroma"
 * SCT#385494008 "Hematoma"
@@ -451,13 +550,31 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * NullFlavor#OTH "other"
 
 // SURVIVAL AND DISEASE CONTROL 
-ValueSet: NoYesUnknownValueSet
-Id: NoYesUnknownValueSet
+ValueSet: NoYesUnknownVS
+Id: NoYesUnknownVS
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#Y "Yes" 
 * YesNoUnkCS#N "No"
 * YesNoUnkCS#UNK "Unknown"
+
+CodeSystem: RecurrenceMethodCodeSystem
+Id: RecurrenceMethodCodeSystem
+Title: "Recurrence Method"
+Description: "Additional code covering combination of radiological and histological diagnosis method"
+* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^caseSensitive = true
+* #2 "Radiological and histological diagnosis"
+
+ValueSet: RecurrenceMethodVS
+Id: RecurrenceMethodVS
+Title: "Method of confirming recurrence"
+Description: "Valueset of the methods used to confirm recurrence of breast cancer"
+* insert SNOMEDCopyrightForVS
+* SCT#394914008 "Radiology"
+* SCT#67151002 "Histologic"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
+* NullFlavor#UNK "unknown"
 
 
 //  DEGREE OF HEALTH 
@@ -531,160 +648,3 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
-
-
-
-// Optional valueset using Snomed CT
-
-
-// TREATMENT VARIABLES
-
-// ValueSet: TherapyIntent
-// Id: TherapyIntent
-// Title: "Intent of therapy"
-// Description: "Valueset of intent of therapy"
-// * SCT#373847000 "Neo-adjuvant - intent"
-// * SCT#373846009 "Adjuvant - intent"
-
-// ValueSet: ChemoTherapyType
-// Id: ChemoTherapyType
-// Title: "Type of chemotherapy"
-// Description: "Valueset of the types of chemotherapy"
-// * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
-// * SCT#418965003 "Taxane derivative"
-// * SCT#768621002 "Product containing platinum and platinum compound"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// ValueSet: HormonalTherapyType
-// Id: HormonalTherapyType
-// Title: "Type of hormonal therapy"
-// Description: "Valueset of the types of hormonal therapy"
-// * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
-// * SCT#37333600 "Substance with estrogen receptor antagonist mechanism of action"
-// * SCT#8315200 "Oophorectomy"
-// * SCT#41897400 "Gonad regulating hormone agent"
-// * NullFlavor#OTH "other"
-// * NullFlavor#UNK "unknown"
-
-// until other codes are available!
-CodeSystem: TargetedTherapyCodeSystem
-Id: TargetedTherapyCodeSystem
-Title: "Targeted Therapy"
-Description: "Codes covering targeted therapy options with unknown/unavailable codes"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
-* ^caseSensitive = true
-
-* #0 "Her-2 targeting therapy"
-* #1 "CDK-46 inhibitors"
-* #2 "PARP inhibitors"
-
-CodeSystem: TreatmentPlanFollowedCodeSystem
-Id: TreatmentPlanFollowedCodeSystem
-Title: "Real Treatment Plan Followed"
-Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
-* ^caseSensitive = true
-
-* #0 "No, not followed"
-* #1 "Yes, fully followed"
-* #2 "Some treatments followed"
-
-ValueSet: TreatmentPlanFollowedVS
-Id: TreatmentPlanFollowedVS
-Title: "Real Treatment Plan Followed"
-Description: "Valueset of if the patient followed the multidisciplinary recommended treatment plan"
-* TreatmentPlanFollowedCodeSystem#0 "No, not followed"
-* TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
-* TreatmentPlanFollowedCodeSystem#2 "Some treatments followed"
-
-CodeSystem: TreatmentPlanNotFollowedCodeSystem
-Id: TreatmentPlanNotFollowedCodeSystem
-Title: "Real Treatment Plan Followed"
-Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowed
-* ^caseSensitive = true
-
-* #1 "Patient preference"
-* #2 "Clinical reasons"
-
-ValueSet: TreatmentPlanNotFollowedVS
-Id: TreatmentPlanNotFollowedVS
-Title: "Treatment Plan Not Followed"
-Description: "Valueset of reason for the treatment plan not being followed"
-* TreatmentPlanNotFollowedCodeSystem#1 "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
-* TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
-* NullFlavor#UNK "unknown"
-
-CodeSystem: PatientTreatPrefCodeSystem
-Id: PatientTreatPrefCodeSystem
-Title: "Real Treatment Plan Followed"
-Description: "Codes covering for why the treatment plan was not followed"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/PatientTreatPref
-* ^caseSensitive = true
-
-* #1 "Personal preference"
-* #2 "Treatment unavailable"
-* #3 "Different plan recommended by clinical team"
-
-ValueSet: PatientTreatPrefVS
-Id: PatientTreatPrefVS
-Title: "Patient Treatment Preference"
-Description: "Valueset of reason for why the treatment plan was not followed"
-* PatientTreatPrefCodeSystem#1 "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
-* PatientTreatPrefCodeSystem#2 "Treatment unavailable" // SCT#309846006 "Treatment not available"
-* PatientTreatPrefCodeSystem#3 "Different plan recommended by clinical team"
-* NullFlavor#OTH "other"
-
-CodeSystem: TreatmentPlanComplianceCodeSystem
-Id: TreatmentPlanComplianceCodeSystem
-Title: "Observation identifiers for treatment plan non-compliance reason"
-Description: "Codes covering observation identifiers for treatment plan non-compliance reaso"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanCompliance
-* ^caseSensitive = true
-
-* #1 "Reason for not following original treatment plan"
-* #2 "Patient reported reason for not following recommened treatment"
-
-ValueSet: TreatmentPlanComplianceVS
-Id: TreatmentPlanComplianceVS
-Title: "Observation identifiers for treatment plan non-compliance reason"
-Description: "Valueset of reason for why the treatment plan was not followed"
-* TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
-* TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
-
-
-// SURVIVAL AND DISEASE CONTROL 
-CodeSystem: RecurrenceMethodCodeSystem
-Id: RecurrenceMethodCodeSystem
-Title: "Recurrence Method"
-Description: "Additional code covering combination of radiological and histological diagnosis method"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
-* ^caseSensitive = true
-
-* #2 "Radiological and histological diagnosis"
-
-ValueSet: RecurrenceMethod
-Id: RecurrenceMethod
-Title: "Method of confirming recurrence"
-Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-* SCT#394914008 "Radiology"
-* SCT#67151002 "Histologic"
-* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
-* NullFlavor#UNK "unknown"
-
-
-// ValueSet: UnitsBodyHeightVS
-// Id: UnitsBodyHeight
-// Title: "Units of patient's body height"
-// Description: "Valueset of the unit  of the patient's body height"
-// * SCT#258672001 "Centimeter"
-// * SCT#258677007 "Inch"
-
-// ValueSet: UnitsBodyWeightVS
-// Id: UnitsBodyWeight
-// Title: "Units of patient's body weight"
-// Description: "Valueset of the unit  of the patient's body weight"
-// * SCT#258683005 "kilogram"
-// * SCT#258693003 "pounds"
-
