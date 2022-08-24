@@ -4,6 +4,8 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 
 ### Clinical data points
 
+# mention mapping tab within each profile
+
 | Variable ID                      | ITEM                                     | FHIR profile                     |
 |:---------------------------------|:-----------------------------------------|:---------------------------------|
 | **Demographic factors**          |                                          |                                  |
@@ -93,5 +95,6 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | VitalStatus                      | Vital status                             | [BreastCancerPatient]            |
 | DeceasedDate                     | Date of death                            | [BreastCancerPatient]            |
 | DEATHBC                          | Death attributable to breast cancer      | [DeathAttributableBC]            |
+{: .grid }
 
 {% include markdown-link-references.md %}
