@@ -94,3 +94,4 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | DeceasedDate                     | Date of death                            | [BreastCancerPatient]            |
 | DEATHBC                          | Death attributable to breast cancer      | [DeathAttributableBC]            |
 
+{% include markdown-link-references.md %}
