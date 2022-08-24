@@ -357,6 +357,96 @@ Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set
 * performedDateTime -> "Surgery date"
 
 
+// TreatmentPlanFollowed	
+Profile: TreatmentPlanFollowed
+Parent: Observation
+Id: treatment-plan-followed
+Title: "Real Treatment Plan Followed"
+Description: "Indicate if the patient followed the multidisciplinary recommended treatment plan"
+* insert PublicationProfileRuleset
+* code = SCT#410110000 "Compliance care assessment"
+* value[x] only CodeableConcept 
+* value[x] from TreatmentPlanFollowedVS (required)
+* value[x] MS
+
+// no example yet available, this one is made up
+Instance: TreatmentPlanFollowedPatient147
+InstanceOf: TreatmentPlanFollowed 
+Title: "Example Real Treatment Plan Followed"
+Description: "Example of how the real treatment plan was followed"
+* code = SCT#410110000 "Compliance care assessment"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+
+Mapping: TreatmentPlanFollowedToICHOM
+Source:	TreatmentPlanFollowed
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: treatmentplanfollowedmapping
+Title: "TreatmentPlanFollowed to ICHOM set"
+Description: "Mapping of Treatment Plan Followed to the ICHOM breast cancer PCOM set" 	
+* value[x] -> "Real Treatment Plan Followed"
+
+// TreatmentPlanNotFollowed	
+Profile: TreatmentPlanNotFollowed
+Parent: Observation
+Id: treatment-plan-not-followed
+Title: "Treatment Plan Not Followed"
+Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
+* insert PublicationProfileRuleset
+* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* value[x] only CodeableConcept 
+* value[x] from TreatmentPlanNotFollowedVS (required)
+* value[x] MS
+
+// no example yet available, this one is made up
+Instance: TreatmentPlanNotFollowedPatient147
+InstanceOf: TreatmentPlanNotFollowed 
+Title: "Example Treatment Plan Not Followed"
+Description: "Example of why the treatment plan was not followed"
+* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#1 "Patient preference"
+
+Mapping: TreatmentPlanNotFollowedToICHOM
+Source:	TreatmentPlanNotFollowed
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: treatmentplannotfollowedmapping
+Title: "TreatmentPlanNotFollowed to ICHOM set"
+Description: "Mapping of Treatment Plan Not Followed to the ICHOM breast cancer PCOM set" 	
+* value[x] -> "Treatment Plan Not Followed"
+
+// TreatmentPlanNotFollowed	
+Profile: PatientTreatPref
+Parent: Observation
+Id: patient-treat-pref
+Title: "Patient Treatment Preference"
+Description: "Indicate why the recommended treatment was not followed"
+* insert PublicationProfileRuleset
+* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
+* value[x] only CodeableConcept 
+* value[x] from PatientTreatPrefVS (required)
+* value[x] MS
+
+// no example yet available, this one is made up
+Instance: PatientTreatPrefPatient147
+InstanceOf: PatientTreatPref 
+Title: "Example Patient Treatment Preference"
+Description: "Example of why the patient did not follow the recommended treatment"
+* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
+* status = ObservationStatusCS#final
+* subject = Reference(BreastCancerPatient147)
+* valueCodeableConcept = PatientTreatPrefCodeSystem#2 "Treatment unavailable"
+
+Mapping: PatientTreatPrefToICHOM
+Source:	PatientTreatPref
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: patienttreatprefmapping
+Title: "PatientTreatPref to ICHOM set"
+Description: "Mapping of Patient Treatment Preference  to the ICHOM breast cancer PCOM set" 	
+* value[x] -> "Patient Treatment Preference"
+
 
 
 
