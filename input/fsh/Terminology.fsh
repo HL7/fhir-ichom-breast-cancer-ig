@@ -600,7 +600,7 @@ Description: "Valueset of if the patient followed the multidisciplinary recommen
 
 CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
-Title: "Real Treatment Plan Followed"
+Title: "Real Treatment Plan Not Followed"
 Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowed
 * ^caseSensitive = true
@@ -618,7 +618,7 @@ Description: "Valueset of reason for the treatment plan not being followed"
 
 CodeSystem: PatientTreatPrefCodeSystem
 Id: PatientTreatPrefCodeSystem
-Title: "Real Treatment Plan Followed"
+Title: "Real Treatment Plan Not Followed"
 Description: "Codes covering for why the treatment plan was not followed"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/PatientTreatPref
 * ^caseSensitive = true
