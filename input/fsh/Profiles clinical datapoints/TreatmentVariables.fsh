@@ -45,7 +45,7 @@ Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
 Description: "Example of a breast cancer patient who underwent surgery to the axilla"
 * status = EventStatusCS#completed
-* code = SCT#178294003 "Axillary lymph nodes sampling"
+* code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
