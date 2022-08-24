@@ -451,23 +451,6 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * NullFlavor#OTH "other"
 
 // SURVIVAL AND DISEASE CONTROL 
-CodeSystem: RecurrenceMethodCodeSystem
-Id: RecurrenceMethodCodeSystem
-Title: "Recurrence Method"
-Description: "Additional code covering combination of radiological and histological diagnosis method"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
-* ^caseSensitive = true
-* #2 "Radiological and histological diagnosis"
-
-ValueSet: RecurrenceMethod
-Id: RecurrenceMethod
-Title: "Method of confirming recurrence"
-Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-* SCT#394914008 "Radiology"
-* SCT#67151002 "Histologic"
-* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
-* NullFlavor#UNK "unknown"
-
 ValueSet: NoYesUnknownValueSet
 Id: NoYesUnknownValueSet
 Title: "Yes, No and Unknown Valueset"
@@ -595,27 +578,6 @@ Description: "Codes covering targeted therapy options with unknown/unavailable c
 * #0 "Her-2 targeting therapy"
 * #1 "CDK-46 inhibitors"
 * #2 "PARP inhibitors"
-
-ValueSet: TargetedTherapyVS
-Id: TargetedTherapyVS
-Title: "Type of targeted therapy"
-Description: "Valueset of the types of targeted therapy"
-* TargetedTherapyCodeSystem#0 "Her-2 targeting therapy"
-* TargetedTherapyCodeSystem#1 "CDK-46 inhibitors"
-* TargetedTherapyCodeSystem#2 "PARP inhibitors"
-* NullFlavor#OTH "other"
-* NullFlavor#UNK "unknown"
-
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* SCT#373572006 "Clinical finding absent"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
 
 CodeSystem: TreatmentPlanFollowedCodeSystem
 Id: TreatmentPlanFollowedCodeSystem
