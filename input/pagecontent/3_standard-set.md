@@ -14,7 +14,7 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | Race                             | Race                                     | [BreastCancerPatient]            |
 | EducationLevel                   | Level of education                       | [BreastCancerPatient]            |
 | RelationshipStatus               | Relationship status                      | [BreastCancerPatient]            |
-| MENOPAUSE                        | Menopause status                         | [ImplantLocationCodeSystem]      |
+| MENOPAUSE                        | Menopause status                         | [MenopausalStatus]               |
 | **Baseline clinical factors**    |                                          |                                  |
 | HeightValue                      | Body height                              | [BodyHeight]                     |
 | HeightUnit                       | Body height units                        | [BodyHeight]                     |
@@ -24,11 +24,11 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | FIRSTBC                          | First breast cancer                      | [PrimaryBreastCancerCondition]   |
 | NEWBC                            |                                          | [SecondaryBreastCancerCondition] |
 | **Baseline tumor factors**       |                                          |                                  |
-| HistologicalDiagnosisDate        | Date of histological diagnosis           | [FACTESCodeSystem]               |
-| HISTOTYPE                        | Histological type                        | [FACTESCodeSystem]               |
+| HistologicalDiagnosisDate        | Date of histological diagnosis           | [Histotype]                      |
+| HISTOTYPE                        | Histological type                        | [Histotype]                      |
 | MUTBC                            | Genetic mutation                         | [GermlineMutation]               |
 | GRADEINV                         | Invasion grade                           | [InvasionGrade]                  |
-| GRADEDCIS                        | Tumor grade                              | [Tumor grade]                    |
+| GRADEDCIS                        | Tumor grade                              | [TumorGrade]                     |
 | TNMCT\_BREAST                    | Clinical tumor stage                     | [Chemotherapy]                   |
 | TNMCN\_BREAST                    | Clinical nodal stage                     | [Chemotherapy]                   |
 | TNMCM\_BREAST                    | Clinical distant metastatsis             | [Chemotherapy]                   |
@@ -36,21 +36,21 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | TNMPN\_BREAST                    | Pathological nodal stage                 | [TNMRegionalNodalStage]          |
 | TNMPM\_BREAST                    | Pathological distant metastasis          | [TNMDistantMetastases]           |
 | SIZEINV                          | Size of invasive tumor                   | [TumorSize]                      |
-| NumLymphNodesResect              | Number lymph nodes resected              | [ImplantLocationCodeSystem]      |
-| LYMPHINV\_BREAST                 | Lymph nodes involved                     | [ImplantLocationCodeSystem]      |
+| NumLymphNodesResect              | Number lymph nodes resected              | [LymphNodesResected]             |
+| LYMPHINV\_BREAST                 | Lymph nodes involved                     | [LymphNodesInvolved]             |
 | ERSTATUS                         | Estrogen receptor status                 | [EndopredictonScore]             |
-| PRSTATUS                         | Progesterone receptor status             | [null]                           |
-| HER2STATUS                       | HER2 receptor status                     | [HER2ReceptorStatusVS]           |
-| MolecularProfiling               | Molecular profiling                      |                                  |
-| Mammaprint                       | Mammaprint score                         | [ImplantLocationCodeSystem]      |
+| PRSTATUS                         | Progesterone receptor status             | [PRStatus]                       |
+| HER2STATUS                       | HER2 receptor status                     | [HERStatus]                      |
+| MolecularProfiling               | Molecular profiling                      | -                                |
+| Mammaprint                       | Mammaprint score                         | [MammaprintScore]                |
 | Oncotype                         | Oncotype Score                           | [OncotypeScore]                  |
 | Endopredict                      | Endopredict Score                        | [EndopredictonScore]             |
-| MultMeet                         | Multidisciplinary meeting                | [ImplantLocationCodeSystem]      |
-| MultRecTreatments                | Multidisciplinary Recommended Treatments | [ImplantLocationCodeSystem]      |
+| MultMeet                         | Multidisciplinary meeting                | [TreatmentPlan]                  |
+| MultRecTreatments                | Multidisciplinary Recommended Treatments | [TreatmentPlan]                  |
 | **Treatment variables**          |                                          |                                  |
-| TREATMENT\_BREAST                | Treatment                                |                                  |
-| SURGERY\_BREAST                  | Surgery                                  | [BreastCancerPatient]            |
-| SurgeryDate                      | Surgery date                             | [BreastCancerPatient]            |
+| TREATMENT\_BREAST                | Treatment                                | All the procedures               |
+| SURGERY\_BREAST                  | Surgery                                  | [BreastCancerSurgery]            |
+| SurgeryDate                      | Surgery date                             | [BreastCancerSurgery]            |
 | SURGERYAX                        | Surgery axilla                           | [AxillaSurgery]                  |
 | SURGERYAXDATE                    | Surgery axilla date                      | [AxillaSurgery]                  |
 | SURGERYAX2                       | Axillary clearance                       | [AxillaryClearance]              |
@@ -67,10 +67,10 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | CHEMOTXTYPE\_BREAST              | Type of chemotherapy                     | [Chemotherapy]                   |
 | ChemoTxStartDate                 | Chemotherapy start date                  | [Chemotherapy]                   |
 | ChemoTxStopdate                  | Chemotherapy stop date                   | [Chemotherapy]                   |
-| HORMONTX\_BREAST                 | Hormonal therapy                         | [FACTESCodeSystem]               |
-| HORMONTXTYPE                     | Hormonal therapy type                    | [FACTESCodeSystem]               |
-| HORMONTXSTARTDATE                | Start of hormonal therapy                | [FACTESCodeSystem]               |
-| HORMONTXSTOPDATE                 | Stop of hormonal therapy                 | [FACTESCodeSystem]               |
+| HORMONTX\_BREAST                 | Hormonal therapy                         | [Hormonaltherapy]                |
+| HORMONTXTYPE                     | Hormonal therapy type                    | [Hormonaltherapy]                |
+| HORMONTXSTARTDATE                | Start of hormonal therapy                | [Hormonaltherapy]                |
+| HORMONTXSTOPDATE                 | Stop of hormonal therapy                 | [Hormonaltherapy]                |
 | TARGETTX\_BREAST                 | Targeted therapy                         | [TargetedTherapy]                |
 | TargetTxStartDate                | Targeted therapy start date              | [TargetedTherapy]                |
 | TargetTxStopDate                 | Targeted therapy stop date               | [TargetedTherapy]                |
@@ -80,9 +80,9 @@ You may notice that this FHIR IG is organized differently than the ICHOM referen
 | TreatmentPlanNotFollowed         | Treatment plan not followed              | [TreatmentPlanNotFollowed]       |
 | PatientTreatPref                 | Patient Treatment Preference             | [PatientTreatPref]               |
 | **Disutility of care**           |                                          |                                  |
-| REOP\_BREAST                     | Involved margins reoperation             | [FACTESCodeSystem]               |
+| REOP\_BREAST                     | Involved margins reoperation             | [InvolvedMarginsReoperation]     |
 | REOP\_RECONSTRUCTION             | Reconstruction reoperation               | [ReconstructionSurgery]          |
-| REOPDATE\_BREAST                 | Positive margins reoperation date        | [FACTESCodeSystem]               |
+| REOPDATE\_BREAST                 | Positive margins reoperation date        | [InvolvedMarginsReoperation]     |
 | ComplicationImpact0              | Impact of complication                   | [Complication]                   |
 | ComplicationAttrTreatment        | Complication attributed to treatment     | [Complication]                   |
 | COMPL\_BREAST                    | Complication type                        | [Complication]                   |
