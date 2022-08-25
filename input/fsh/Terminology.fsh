@@ -93,13 +93,14 @@ Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
 * insert AJCCCopyrightForVS
-* AJCC#Tx
-* AJCC#T0
-* AJCC#Tis
-* AJCC#T1
-* AJCC#T2
-* AJCC#T3
-* AJCC#T4
+* AJCC#Tx "Tx"
+* AJCC#T0 "T0"
+* AJCC#Tis(DCIS) "Tis (DCIS)"
+* AJCC#Tis(Paget) "Tis (Paget)"
+* AJCC#T1 "T1"
+* AJCC#T2 "T2"
+* AJCC#T3 "T3"
+* AJCC#T4 "T4"
 * NullFlavor#UNK "unknown"
 
 ValueSet: TNMRegionalNodesVS
@@ -107,11 +108,11 @@ Id: tnm-regional-nodes-category-vs
 Title: "TNM Regional Nodes Value Set"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
 * insert AJCCCopyrightForVS
-* AJCC#Nx
-* AJCC#N0
-* AJCC#N1
-* AJCC#N2
-* AJCC#N3
+* AJCC#Nx "Nx"
+* AJCC#N0 "N0"
+* AJCC#N1 "N1"
+* AJCC#N2 "N2"
+* AJCC#N3 "N3"
 * NullFlavor#UNK "unknown"
 
 ValueSet: TNMDistantMetastasesVS
@@ -119,8 +120,8 @@ Id: tnm-distant-metastases-category-vs
 Title: "TNM Distant Metastases Value Set"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
 * insert AJCCCopyrightForVS
-* AJCC#M0
-* AJCC#M1
+* AJCC#M0 "M0"
+* AJCC#M1 "M1"
 * NullFlavor#UNK "unknown"
 
 ValueSet: EstrogenStatusVS
