@@ -335,7 +335,7 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 
 Instance: OncotypePatient147
 InstanceOf: OncotypeScore
-Description: "Example of the oncotype score "
+Description: "Example of the oncotype score"
 * status = ObservationStatusCS#final
 * code = MolecularProfilingCodeSystem#OncoT "Oncotype" 
 * subject = Reference(BreastCancerPatient147)
