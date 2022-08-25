@@ -39,13 +39,15 @@ Description: "Represents if the breast cancer patient received surgery to the ax
 * code from AxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
+* subject and performedDateTime and reasonReference MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
 Description: "Example of a breast cancer patient who underwent surgery to the axilla"
 * status = EventStatusCS#completed
-* code = SCT#79544006 "Complete axillary lymphadenectomy"
+* category = SCT#699455008 "Operative procedure on axilla"
+* code = SCT#234262008 "Excision of axillary lymph node"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -66,11 +68,10 @@ Profile: AxillaryClearance
 Parent: Procedure 
 Id: axillary-clearance
 Title: "Axillary clearance"
-Description: "Represents if the breast cancer patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year. This profile is in alignment with mCODE."
-* partOf only Reference(AxillaSurgery)
+Description: "Represents if the breast cancer patient received axillary clearance during the last year. Axilla clearance could be due to lymph node involvement after sentinel lymph node biopsy."
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	and complication MS
+* subject and performedDateTime	and complication and reasonReference MS
 * reasonReference only Reference (AxillaSurgery)
 
 Instance: AxillaryClearancePatient147
