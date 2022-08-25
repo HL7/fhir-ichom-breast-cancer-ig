@@ -299,7 +299,7 @@ Id: mammaprint-score
 Title: "Mammaprint score"
 Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 * insert PublicationProfileRuleset
-* code = MolecularProfilingCodeSystem#MammaP "Mammaprint" 
+* code = MolecularProfilingCodeSystem#MammaP "Mammaprint Score"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
@@ -308,7 +308,7 @@ Instance: MammaprintPatient147
 InstanceOf: MammaprintScore
 Description: "Example of the mammaprint score"
 * status = ObservationStatusCS#final
-* code = MolecularProfilingCodeSystem#MammaP "Mammaprint" 
+* code = MolecularProfilingCodeSystem#MammaP "Mammaprint Score"
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 0.761854476345979
 
@@ -327,7 +327,7 @@ Parent: Observation
 Id: oncotype-score
 Title: "Oncotype Score"
 Description: "Represents the oncotype score on a scale of 0 to 100"
-* code = MolecularProfilingCodeSystem#OncoT "Oncotype" 
+* code = MolecularProfilingCodeSystem#OncoT "Oncotype Score" 
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
@@ -337,7 +337,7 @@ Instance: OncotypePatient147
 InstanceOf: OncotypeScore
 Description: "Example of the oncotype score"
 * status = ObservationStatusCS#final
-* code = MolecularProfilingCodeSystem#OncoT "Oncotype" 
+* code = MolecularProfilingCodeSystem#OncoT "Oncotype Score" 
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 92
 
@@ -357,7 +357,7 @@ Id: endopredicton-score
 Title: "Endopredict score"
 Description: "Represents the endopredict score on a scale of 1.1 to 6.2"
 * insert PublicationProfileRuleset
-* code = MolecularProfilingCodeSystem#EndoP "Endopredict" 
+* code = MolecularProfilingCodeSystem#EndoP "Endopredict Score" 
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
@@ -366,7 +366,7 @@ Instance: EndopredictonPatient147
 InstanceOf: EndopredictonScore
 Description: "Example of the endopredict score"
 * status = ObservationStatusCS#final
-* code = MolecularProfilingCodeSystem#EndoP "Endopredict" 
+* code = MolecularProfilingCodeSystem#EndoP "Endopredict Score" 
 * subject = Reference(BreastCancerPatient147)
 * valueQuantity.value = 1.86494098478133
 
