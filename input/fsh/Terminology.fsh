@@ -288,6 +288,7 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 * include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
+// Axilla surgery
 ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
 Title: "Surgery of Axilla"
@@ -298,6 +299,7 @@ Description: "Valueset of surgery types of the axilla"
 * SCT#79544006 "Complete axillary lymphadenectomy"
 * NullFlavor#UNK "unknown"
 
+// Reconstruction surgery 
 CodeSystem: ReconstructionTypeCodeSystem
 Id: ReconstructionTypeCodeSystem
 Title: "Type of reconstruction surgery"
@@ -335,6 +337,16 @@ Description: "Valueset of the location of the implant during reconstruction surg
 * include ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
 * include ImplantLocationCodeSystem#Sub_pect "Sub-pectoral"
 
+// Therapy intent
+ValueSet: TherapyIntentVS
+Id: TherapyIntentVS
+Title: "Intent of therapy"
+Description: "Valueset of intent of therapy"
+* SCT#373847000 "Neo-adjuvant - intent"
+* SCT#373846009 "Adjuvant - intent"
+* NullFlavor#UNK "unknown"
+
+// Radiotherapy
 ValueSet: LocationRadiotherapyVS
 Id: LocationRadiotherapyVS
 Title: "The location of radiotherapy"
@@ -350,6 +362,7 @@ Description: "Valueset of the location of radiotherapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
+// Chemotherapy
 ValueSet: ChemoTherapyTypeVS
 Id: ChemoTherapyTypeVS
 Title: "Type of chemotherapy"
@@ -362,15 +375,7 @@ Description: "Valueset of the types of chemotherapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-ValueSet: TherapyIntentVS
-Id: TherapyIntentVS
-Title: "Intent of therapy"
-Description: "Valueset of intent of therapy"
-* insert SNOMEDCopyrightForVS
-* SCT#373847000 "Neo-adjuvant - intent"
-* SCT#373846009 "Adjuvant - intent"
-* NullFlavor#UNK "unknown"
-
+// Hormonal therapy
 ValueSet: HormonalTherapyTypeVS
 Id: HormonalTherapyTypeVS
 Title: "Type of hormonal therapy"
@@ -383,6 +388,7 @@ Description: "Valueset of the types of hormonal therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
+// Targeted therapy
 ValueSet: TargetedTherapyVS
 Id: TargetedTherapyVS
 Title: "Type of targeted therapy"
@@ -394,6 +400,7 @@ Description: "Valueset of the types of targeted therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
+// Reoperations
 ValueSet: ReoperationTypeVS
 Id: ReoperationTypeVS
 Title: "Type of re-operation"
@@ -405,7 +412,8 @@ Description: "Valueset of the types of re-operation"
 * SCT#234254000 "Excision of axillary lymph nodes group"
 * NullFlavor#UNK "unknown"
 
-// Treatmentplan
+
+// Treatment plan
 CodeSystem: TreatmentPlanFollowedCodeSystem
 Id: TreatmentPlanFollowedCodeSystem
 Title: "Real Treatment Plan Followed"
@@ -427,8 +435,8 @@ Description: "Valueset of if the patient followed the multidisciplinary recommen
 
 CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
-Title: "Real Treatment Plan Followed"
-Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
+Title: "Real Treatment Plan Not Followed"
+Description: "Codes covering if the patient has not followed the multidisciplinary recommended treatment plan"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowed
 * ^caseSensitive = true
 
@@ -443,9 +451,11 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
 
+
+// Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
 Id: PatientTreatPrefCodeSystem
-Title: "Real Treatment Plan Followed"
+Title: "Real Treatment Plan Not Followed"
 Description: "Codes covering for why the treatment plan was not followed"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/PatientTreatPref
 * ^caseSensitive = true
@@ -469,6 +479,7 @@ Title: "Observation identifiers for treatment plan non-compliance reason"
 Description: "Codes covering observation identifiers for treatment plan non-compliance reaso"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanCompliance
 * ^caseSensitive = true
+
 * #1 "Reason for not following original treatment plan"
 * #2 "Patient reported reason for not following recommened treatment"
 
@@ -572,19 +583,20 @@ Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#N "No"
 * YesNoUnkCS#UNK "Unknown"
 
+// Recurrence
 CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
 Title: "Recurrence Method"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
 * ^caseSensitive = true
+
 * #2 "Radiological and histological diagnosis"
 
-ValueSet: RecurrenceMethodVS
-Id: RecurrenceMethodVS
+ValueSet: RecurrenceMethod
+Id: RecurrenceMethod
 Title: "Method of confirming recurrence"
 Description: "Valueset of the methods used to confirm recurrence of breast cancer"
-* insert SNOMEDCopyrightForVS
 * SCT#394914008 "Radiology"
 * SCT#67151002 "Histologic"
 * RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"

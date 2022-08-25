@@ -8,3 +8,55 @@
 Error from server: Unable to provide support for code system https://connect.ichom.org
 [Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org' is unknown so the code cannot be validated]
 WARNING: ValueSet/InvolvedMarginsReoperationType: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated]
+
+# AJCC is being added as a recognised codesystem (https://jira.hl7.org/browse/HTA-27), we share these warnings with mCODE (https://github.com/HL7/fhir-mCODE-ig/blob/master/input/ignoreWarnings.txt)
+Error from server: Unable to provide support for code system http://cancerstaging.org
+Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-distant-metastases-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-regional-nodes-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-primary-tumor-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-distant-metastases-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-regional-nodes-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-primary-tumor-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+
+# Custom UUID-based codesystems embedded in Questionnaires for answer options
+Code System URI 'urn:uuid:0051a06f-34ee-4db1-9270-8c4fed35dde9' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:02d110fd-1183-41fa-bacb-a689e0c67149' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:0818bdd3-e932-4df4-9a00-6cb719731351' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:103a95b9-d961-4ef1-8cd2-21d21a60dd15' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:17b96500-8800-4371-87d3-1498c8d2e039' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:23e2a296-dce5-447d-9a7c-7f4ac97b6ebe' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:267a68fb-42ea-49c8-a43d-c18c71f4ce7e' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:28afa2eb-fab0-4985-85c0-b560b1de5cb4' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:3006917e-2afc-45f1-872e-b29a270a216e' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:47dcf78e-3c63-4a6b-8ac7-f4f669be2b96' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:4863f609-1024-4a63-a2a7-e949673b46bc' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:5f8d75d7-3fd5-4899-a6af-6e1ea80520b3' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:7e263f5e-2bfc-45d7-a4fb-19078a3c0a8d' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:848b3292-4a18-43c8-a0dc-a133443a4b33' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:8c808fb0-0b36-4623-9c13-e2caee216df4' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:93e05a33-3b00-4ae9-b4cd-ba7ba3e1f54e' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:98b0862c-ffe9-46a3-ad47-f4e2ede907c3' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:9fa16cf2-ad20-46d9-b4d6-b4782a222370' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:c6d1ad7a-4a40-4f06-b518-88a34063bdf3' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:c77c16c3-17ba-4f16-a3f8-afd8a24b2aad' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:cc3b3106-bc4b-4b9b-bf15-249ae1c3443f' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:ce2aba40-12ae-41cd-85a6-fa8ae68d3284' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:dd32d5f4-8ef8-4057-9642-9cb20a10ace1' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:de25b812-330d-4e4e-9791-22efa124c222' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:dff8b0ba-47f8-48bd-9e81-021783c9d0d0' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:e0d4b379-dffd-4eea-b51d-a3c4c2f7ad66' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:e5a35a65-0b47-4c3b-bbd8-8682d9064abb' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:e7d240f0-ea4c-4206-b488-f83c055fc1d4' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:ee9a6809-ec45-43be-9070-8a7c4b364269' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:f59e0a1c-f0a0-4d12-b5ed-9720c91cf862' is unknown so the code cannot be validated
+Code System URI 'urn:uuid:ff0e5d9c-aeba-4415-9f52-f4b36179c648' is unknown so the code cannot be validated
