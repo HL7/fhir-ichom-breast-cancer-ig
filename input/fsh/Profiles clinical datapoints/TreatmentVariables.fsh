@@ -303,10 +303,11 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* category = SCT#397747003 "Assertion"
-* code from TargetedTherapyVS (preferred)
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
+* code and subject and performedPeriod MS
+* extension contains ProcedureMethodEx named method 0..1 MS
+* extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
@@ -314,9 +315,10 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
+* extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 
 Mapping: TargetedTherapyToICHOM
 Source:	TargetedTherapy
@@ -324,9 +326,9 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: targetedtherapymapping
 Title: "Targeted therapy to ICHOM set"
 Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set" 	
-* code -> "Targeted therapy"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
+* extension[method] -> "Targeted therapy"
 
 // REOPERATION
 Profile: ReoperationSurgery
