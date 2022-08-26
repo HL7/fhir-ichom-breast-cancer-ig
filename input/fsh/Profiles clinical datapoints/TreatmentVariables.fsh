@@ -105,6 +105,9 @@ Description: "Represents if the breast cancer patient received reconstruction su
 * bodySite from ImplantLocationVS (required)
 * usedCode from ReconstructionTypeVS (required)
 * bodySite and usedCode MS 
+* partOf MS
+  * ^short = "Original procedure that prompted the reconstruction"
+  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 
 Instance: ReconstructionSurgeryPatient147
 InstanceOf: ReconstructionSurgery
@@ -116,6 +119,7 @@ Description: "Example of a breast cancer patient who underwent reconstruction su
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
 * bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
 * usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* partOf = Reference(ReoperationSurgeryPatient147)
 
 Mapping: ReconstructionSurgeryToICHOM
 Source:	ReconstructionSurgery
@@ -128,6 +132,7 @@ Description: "Mapping of the reconstruction surgery to the ICHOM breast cancer P
 * performedDateTime -> "Surgery date" 
 * bodySite -> "Implant Reconstruction"
 * usedCode -> "Reconstruction Type"
+* partOf -> "Reconstruction reoperation"
 
 // RADIOTHERAPY
 Profile: Radiotherapy
