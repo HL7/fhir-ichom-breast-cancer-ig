@@ -456,9 +456,7 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 
 
 // DISUTILITY OF CARE
-
 // Reoperations
-
 ValueSet: ReoperationTypeVS
 Id: ReoperationTypeVS
 Title: "Type of re-operation"
@@ -466,10 +464,10 @@ Description: "Valueset of the types of re-operation"
 * SCT#33496007 "Reconstruction of breast"
 * SCT#69031006 "Excision of breast tissue"
 * SCT#234254000 "Excision of axillary lymph nodes group"
-* SCT#64368001 "Partial mastectomy"
-* SCT#172043006 "Simple mastectomy"
-* IchomReoperation#2 "Breast conserving surgery with mammoplasty"
-* IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "Breast conserving surgery with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ReoperationReasonVS
@@ -478,9 +476,6 @@ Title: "Reasoncode of the re-operation"
 Description: "Valueset of the reasons of a re-operation"
 * SCT#1156344002 "Presence of primary malignant neoplasm of breast at surgical margin in excised specimen of breast"
 * NullFlavor#OTH "other"
-* NullFlavor#UNK "unknown"
-
-
 * NullFlavor#UNK "unknown"
 
 // Complications

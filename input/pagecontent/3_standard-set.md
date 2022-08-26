@@ -86,9 +86,9 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | TreatmentPlanNotFollowed         | Treatment plan not followed              | [TreatmentPlanNotFollowed]                                       |
 | PatientTreatPref                 | Patient Treatment Preference             | [PatientTreatPref]                                               |
 | **Disutility of care**           |                                          |                                                                  |
-| REOP\_BREAST                     | Involved margins reoperation             | [InvolvedMarginsReoperation]                                     |
+| REOP\_BREAST                     | Involved margins reoperation             | [ReoperationSurgery]                                             |
 | REOP\_RECONSTRUCTION             | Reconstruction reoperation               | [ReconstructionSurgery]                                          |
-| REOPDATE\_BREAST                 | Positive margins reoperation date        | [InvolvedMarginsReoperation]                                     |
+| REOPDATE\_BREAST                 | Positive margins reoperation date        | [ReoperationSurgery]                                             |
 | ComplicationImpact0              | Impact of complication                   | [Complication]                                                   |
 | ComplicationAttrTreatment        | Complication attributed to treatment     | [Complication]                                                   |
 | COMPL\_BREAST                    | Complication type                        | [Complication]                                                   |
