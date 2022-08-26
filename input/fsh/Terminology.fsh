@@ -136,7 +136,7 @@ Description: "Codes used to describe the different types of molecular profiling 
 * ^caseSensitive = true
 * #Mammaprint "Mammaprint Score" 
 * #Oncotype "Oncotype Score" 
-* #EndoP "Endopredict Score" 
+* #Endopredict "Endopredict Score" 
 
 
 //  BASELINE CLINICAL FACTORS 
