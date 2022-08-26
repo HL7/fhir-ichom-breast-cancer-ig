@@ -594,8 +594,8 @@ Description: "Additional code covering combination of radiological and histologi
 
 * #2 "Radiological and histological diagnosis"
 
-ValueSet: RecurrenceMethod
-Id: RecurrenceMethod
+ValueSet: RecurrenceMethodVS
+Id: RecurrenceMethodVS
 Title: "Method of confirming recurrence"
 Description: "Valueset of the methods used to confirm recurrence of breast cancer"
 * SCT#394914008 "Radiology"
