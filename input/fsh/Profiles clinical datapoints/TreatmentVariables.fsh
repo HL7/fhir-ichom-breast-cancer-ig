@@ -327,36 +327,6 @@ Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
 
-// REOPERATION
-Profile: ReoperationSurgery
-Parent: Procedure 
-Id: reoperation-surgery
-Title: "Re-operations since surgery for breast cancer"
-Description: "Represents the type of surgery the patient has received since their surgery for breast cancer"
-* category = SCT#387713003 "Surgical procedure"
-* code from ReoperationTypeVS (required)
-* subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
-
-Instance: ReoperationSurgeryPatient147
-InstanceOf: ReoperationSurgery 
-Title: "Example of Reoperation Surgery"
-Description: "Example of the surgery the patient has received since their surgery for breast cancer."
-* status = EventStatusCS#unknown
-* subject = Reference(BreastCancerPatient147)
-* code = SCT#373572006 "Clinical finding absent"
-* performedDateTime = "1921-06-27"
-
-Mapping: ReoperationSurgeryToICHOM
-Source:	ReoperationSurgery
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: reoperationsurgerymapping
-Title: "ReoperationSurgery to ICHOM set"
-Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set" 	
-* code -> "Surgery"
-* performedDateTime -> "Surgery date"
-
-
 // TreatmentPlanFollowed	
 Profile: TreatmentPlanFollowed
 Parent: Observation

@@ -1,20 +1,22 @@
-Profile: InvolvedMarginsReoperation
+Profile: ReoperationSurgery
 Parent: Procedure 
-Id: involved-margins-reoperation
-Title: "Involved Margins Reoperation"
-Description: "A reoperation due to involved margins after primary surgery"
+Id: reoperation-surgery
+Title: "Re-operation surgery"
+Description: "Represents whether the patient has had a re-operation since their surgery for breast cancer and whether it was due to involved margins"
 * insert PublicationProfileRuleset
-* code from InvolvedMarginsReoperationType (required)
+* category = SCT#261554009 "Reoperation"
+* code from ReoperationTypeVS (required)
 * subject only Reference(BreastCancerPatient)
 * partOf MS
   * ^short = "Original procedure that prompted the reoperation"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 * performed[x] only dateTime 
-* performedDateTime and code and subject MS
+* Reasoncode from ReoperationReasonVS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* category and code and subject and performedDateTime and reasonCode and reasonReference MS
 
-Instance: ReoperationPatient147
-InstanceOf: InvolvedMarginsReoperation
+Instance: ReoperationSurgeryPatient147
+InstanceOf: ReoperationSurgery
 Description: "Example of a reoperation due to involved margins after primary surgery"
 * status = ProcedureStatusCS#completed 
 * code = IchomReoperation#4 "Mastectomy with immediate reconstruction"
@@ -22,12 +24,12 @@ Description: "Example of a reoperation due to involved margins after primary sur
 * performedDateTime = "2022-07-09"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
 
-Mapping: InvolvedMarginsReoperationToICHOM
-Source:	InvolvedMarginsReoperation
+Mapping: ReoperationSurgeryToICHOM
+Source:	ReoperationSurgery
 Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: reoperationmapping
-Title: "Involved margins reoperation to ICHOM set"
-Description: "Mapping of the involved margins reoperation procedure to the ICHOM breast cancer PCOM set." 	
+Id: reoperation-surgery-mapping
+Title: "Reoperation surgery to ICHOM set"
+Description: "Mapping of the reoperation surgery to the ICHOM breast cancer PCOM set" 	
 * -> "Involved margins reoperation"
 * performed[x] -> "Positive margins reoperation date"
 

@@ -377,17 +377,6 @@ Description: "Valueset of the types of targeted therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-// Reoperations
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* SCT#373572006 "Clinical finding absent"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
 // Treatment plan
 
 CodeSystem: TreatmentPlanFollowedCodeSystem
@@ -469,22 +458,29 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 // DISUTILITY OF CARE
 
 // Reoperations
-ValueSet: InvolvedMarginsReoperationType
-Id: InvolvedMarginsReoperationType
-Title: "Re-operation due to involved margins"
-Description: "Kind of re-operation due to involved margins"
-* ^version = "0.0.1"
-* ^status = #active
-* ^date = "2022-07-26T09:18:41+02:00"
-* ^publisher = "ICHOM"
-* ^contact.name = "ICHOM"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "https://ichom.org"
-* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
+
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
 * SCT#64368001 "Partial mastectomy"
 * SCT#172043006 "Simple mastectomy"
 * IchomReoperation#2 "Breast conserving surgery with mammoplasty"
 * IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
+
+ValueSet: ReoperationReasonVS
+Id: ReoperationReasonVS
+Title: "Reasoncode of the re-operation"
+Description: "Valueset of the reasons of a re-operation"
+* SCT#1156344002 "Presence of primary malignant neoplasm of breast at surgical margin in excised specimen of breast"
+* NullFlavor#OTH "other"
+* NullFlavor#UNK "unknown"
+
+
 * NullFlavor#UNK "unknown"
 
 // Complications
