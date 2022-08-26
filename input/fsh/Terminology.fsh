@@ -134,7 +134,7 @@ Title: "SACQ patient's comorbidity history"
 Description: "Codes used to describe the different types of molecular profiling scoring"
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/molecular-profiling
 * ^caseSensitive = true
-* #MammaP "Mammaprint Score" 
+* #Mammaprint "Mammaprint Score" 
 * #OncoT "Oncotype Score" 
 * #EndoP "Endopredict Score" 
 
