@@ -135,7 +135,7 @@ Description: "Codes used to describe the different types of molecular profiling 
 * ^url =  http://connect.ichom.org/fhir/CodeSystem/molecular-profiling
 * ^caseSensitive = true
 * #Mammaprint "Mammaprint Score" 
-* #OncoT "Oncotype Score" 
+* #Oncotype "Oncotype Score" 
 * #EndoP "Endopredict Score" 
 
 
