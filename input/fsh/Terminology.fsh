@@ -128,6 +128,17 @@ Description: "Valueset of the HER2 receptor status"
 * SCT#280414007 "Equivocal result"
 * SCT#416237000 "Procedure not done"
 
+CodeSystem: MolecularProfilingCodeSystem
+Id: MolecularProfilingCodeSystem
+Title: "SACQ patient's comorbidity history"
+Description: "Codes used to describe the different types of molecular profiling scoring"
+* ^url =  http://connect.ichom.org/fhir/CodeSystem/molecular-profiling
+* ^caseSensitive = true
+* #Mammaprint "Mammaprint Score" 
+* #Oncotype "Oncotype Score" 
+* #Endopredict "Endopredict Score" 
+
+
 //  BASELINE CLINICAL FACTORS 
 
 CodeSystem: SACQPatientComorbidityCodeSystem

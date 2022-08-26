@@ -299,17 +299,18 @@ Id: mammaprint-score
 Title: "Mammaprint score"
 Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 * insert PublicationProfileRuleset
+* code = MolecularProfilingCodeSystem#MammaP "Mammaprint Score"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-// still need a code for this
 
-// Instance: MammaprintPatient147
-// InstanceOf: MammaprintScore
-// Description: "Example of the mammaprint score"
-// * status = ObservationStatusCS#final
-// * subject = Reference(BreastCancerPatient147)
-// * valueQuantity.value = 0.761854476345979
+Instance: MammaprintPatient147
+InstanceOf: MammaprintScore
+Description: "Example of the mammaprint score"
+* status = ObservationStatusCS#final
+* code = MolecularProfilingCodeSystem#MammaP "Mammaprint Score"
+* subject = Reference(BreastCancerPatient147)
+* valueQuantity.value = 0.761854476345979
 
 Mapping: MammaprintToICHOM
 Source:	MammaprintScore
@@ -317,6 +318,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: Mammaprintmapping
 Title: "Mammaprint score to ICHOM set"
 Description: "Mapping of the mammaprint score to the ICHOM breast cancer PCOM set" 	
+* code -> "Molecular Profiling"
 * valueQuantity -> "Mammaprint Score"
 
 // Oncotype score
@@ -325,19 +327,19 @@ Parent: Observation
 Id: oncotype-score
 Title: "Oncotype Score"
 Description: "Represents the oncotype score on a scale of 0 to 100"
+* code = MolecularProfilingCodeSystem#OncoT "Oncotype Score" 
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-// still need a code for this
 
-
-// Instance: OncotypePatient147
-// InstanceOf: OncotypeScore
-// Description: "Example of the oncotype score "
-// * status = ObservationStatusCS#final
-// * subject = Reference(BreastCancerPatient147)
-// * valueQuantity.value = 92
+Instance: OncotypePatient147
+InstanceOf: OncotypeScore
+Description: "Example of the oncotype score"
+* status = ObservationStatusCS#final
+* code = MolecularProfilingCodeSystem#OncoT "Oncotype Score" 
+* subject = Reference(BreastCancerPatient147)
+* valueQuantity.value = 92
 
 Mapping: OncotypeToICHOM
 Source:	OncotypeScore
@@ -345,8 +347,8 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: Oncotypescoremapping
 Title: "Oncotype score to ICHOM set"
 Description: "Mapping of the Oncotype score to the ICHOM breast cancer PCOM set" 	
+* code -> "Molecular Profiling"
 * valueQuantity -> "Oncotype score"
-
 
 // Endopredict Score
 Profile: EndopredictonScore
@@ -355,17 +357,18 @@ Id: endopredicton-score
 Title: "Endopredict score"
 Description: "Represents the endopredict score on a scale of 1.1 to 6.2"
 * insert PublicationProfileRuleset
+* code = MolecularProfilingCodeSystem#EndoP "Endopredict Score" 
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
 * value[x] MS
-// still need a code for this
 
-// Instance: EndopredictonPatient147
-// InstanceOf: EndopredictonScore
-// Description: "Example of the endopredict score"
-// * status = ObservationStatusCS#final
-// * subject = Reference(BreastCancerPatient147)
-// * valueQuantity.value = 1.86494098478133
+Instance: EndopredictonPatient147
+InstanceOf: EndopredictonScore
+Description: "Example of the endopredict score"
+* status = ObservationStatusCS#final
+* code = MolecularProfilingCodeSystem#EndoP "Endopredict Score" 
+* subject = Reference(BreastCancerPatient147)
+* valueQuantity.value = 1.86494098478133
 
 Mapping: EndopredictonToICHOM
 Source:	EndopredictonScore
@@ -373,6 +376,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: Endopredictonmapping
 Title: "Endopredict score to ICHOM set"
 Description: "Mapping of the endopredict score to the ICHOM breast cancer PCOM set" 	
+* code -> "Molecular Profiling"
 * valueQuantity -> "Endopredict Score"
 
 // Multidisciplinary meeting 
