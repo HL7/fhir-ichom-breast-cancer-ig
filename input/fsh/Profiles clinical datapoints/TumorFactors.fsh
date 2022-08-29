@@ -389,7 +389,7 @@ Description: "Represents the treatment that a multidisciplinary team recommended
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * created MS
-* activity.detail.code from RecommendedTreatmentTypeValueSet 
+* activity.detail.code from RecommendedTreatmentTypeVS
 * activity.detail.code MS
 
 Instance: TreatmentPlanPatient147

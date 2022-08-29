@@ -3,6 +3,7 @@ ValueSet: TNMStageGroupVS
 Id: tnm-stage-group-vs
 Title: "Value Set of Staging Type for Stage Group"
 Description: "Valueset indicating the type of staging, clinical or pathological, of breast cancer."
+* insert LOINCCopyrightForVS
 * LNC#21908-9 "Stage group.clinical Cancer"
 * LNC#21902-2 "Stage group.pathology Cancer"
 
@@ -73,7 +74,7 @@ Description: "Extended example: example showing clinical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#cTis
+* valueCodeableConcept = AJCC#Tis
 
 Instance: PathologicalTumorStagePatient147
 InstanceOf: TNMPrimaryTumorStage
@@ -81,7 +82,7 @@ Description: "Extended example: example showing patholgical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#pTis
+* valueCodeableConcept = AJCC#Tis
 
 Mapping: TNMPrimaryTumorStageToICHOM
 Source:	TNMPrimaryTumorStage
@@ -110,7 +111,7 @@ Description: "Extended example: example showing clinical TNM staging (N)"
 * status = #final "final"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#cN1
+* valueCodeableConcept = AJCC#N1
 
 Instance: PathologicalNodalStagePatient147
 InstanceOf: TNMRegionalNodalStage
@@ -118,7 +119,7 @@ Description: "Extended example: example showing patholgical TNM staging (N)"
 * status = #final "final"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#pN0
+* valueCodeableConcept = AJCC#N0
 
 Mapping: TNMRegionalNodalStageToICHOM
 Source:	TNMRegionalNodalStage
@@ -147,7 +148,7 @@ Description: "Extended example: example showing clinical TNM staging (M)"
 * status = #final "final"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#cMX
+* valueCodeableConcept = AJCC#M1
 
 Instance: PathologicalMetastasesPatient147
 InstanceOf: TNMDistantMetastases
@@ -155,7 +156,7 @@ Description: "Extended example: example showing patholgical TNM staging (M)"
 * status = #final "final"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#pMX
+* valueCodeableConcept = AJCC#M1
 
 Mapping: TNMDistantMetastasesToICHOM
 Source:	TNMDistantMetastases

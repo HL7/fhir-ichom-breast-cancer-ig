@@ -64,7 +64,7 @@ Description: "Represents if breast cancer was the cause of death"
 * insert PublicationProfileRuleset
 * code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
 * value[x] only CodeableConcept 
-* value[x] from NoYesUnknownValueSet (required)
+* value[x] from NoYesUnknownVS (required)
 * value[x] MS
 
 Instance: DeathAttributableBCPatient147
@@ -93,7 +93,7 @@ Description: "The method of confirming recurrence breast cancer"
 * insert PublicationProfileRuleset
 * code = SCT#103693007 "Diagnostic procedure"
 * value[x] only CodeableConcept 
-* value[x] from RecurrenceMethod (required)
+* value[x] from RecurrenceMethodVS (required)
 * value[x] MS
 
 Instance: RecurrenceMethodPatient147

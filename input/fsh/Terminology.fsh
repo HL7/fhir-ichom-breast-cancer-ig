@@ -40,6 +40,7 @@ ValueSet: EducationLevelVS
 Id: EducationLevelVS
 Title: "Education level of patient"
 Description: "Valueset of the education level of a patient"
+* insert SNOMEDCopyrightForVS
 * SCT#224294005 "No formal education (finding)"
 * SCT#224295006 "Only received primary school education (finding)"
 * SCT#224297003 "Educated to secondary school level (finding)"
@@ -49,6 +50,7 @@ ValueSet: MenopausalStatusVS
 Id: MenopausalStatusVS
 Title: "Menopausal status of patient"
 Description: "Valueset of the menopausal status of a patient"
+* insert SNOMEDCopyrightForVS
 * SCT#309606002 "Before menopause"
 * SCT#307429007 "After menopause"
 * NullFlavor#ASKU "Asked but unknown"
@@ -58,6 +60,7 @@ ValueSet: HistologicalTypeVS
 Id: HistologicalTypeVS
 Title: "Histological type of the tumor"
 Description: "Valueset of the histological types of tumors"
+* insert SNOMEDCopyrightForVS
 * SCT#399935008 "Ductal carcinoma in situ - category"
 * SCT#373395001 "Invasive ductal carcinoma with an extensive intraductal component"
 * SCT#722524005 "Primary invasive pleomorphic lobular carcinoma of breast"
@@ -68,6 +71,7 @@ ValueSet: GermlineMutationVS
 Id: GermlineMutationVS
 Title: "Germline Mutation"
 Description: "Valueset of the genetic mutation predisposing breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#445180002 "Breast cancer genetic marker of susceptibility negative (finding)"
 * SCT#412734009 "BRCA1 gene mutation positive (finding)"
 * SCT#412738007 "BRCA2 gene mutation positive (finding)"
@@ -78,6 +82,7 @@ ValueSet: GradingVS
 Id: GradingVS
 Title: "Grading of tumor"
 Description: "Valueset of the grade of the tumor"
+* insert SNOMEDCopyrightForVS
 * SCT#399415002 "Low grade histologic differentiation (finding)"
 * SCT#405986005 "Intermediate grade histologic differentiation (finding)"
 * SCT#399611001 "High grade histologic differentiation (finding)"
@@ -87,24 +92,43 @@ ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
-* codes from system AJCC
+* insert AJCCCopyrightForVS
+* AJCC#Tx "Tx"
+* AJCC#T0 "T0"
+* AJCC#Tis(DCIS) "Tis (DCIS)"
+* AJCC#Tis(Paget) "Tis (Paget)"
+* AJCC#T1 "T1"
+* AJCC#T2 "T2"
+* AJCC#T3 "T3"
+* AJCC#T4 "T4"
+* NullFlavor#UNK "unknown"
 
 ValueSet: TNMRegionalNodesVS
 Id: tnm-regional-nodes-category-vs
 Title: "TNM Regional Nodes Value Set"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
-* include codes from system AJCC
+* insert AJCCCopyrightForVS
+* AJCC#Nx "Nx"
+* AJCC#N0 "N0"
+* AJCC#N1 "N1"
+* AJCC#N2 "N2"
+* AJCC#N3 "N3"
+* NullFlavor#UNK "unknown"
 
 ValueSet: TNMDistantMetastasesVS
 Id: tnm-distant-metastases-category-vs
 Title: "TNM Distant Metastases Value Set"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
-* codes from system AJCC
+* insert AJCCCopyrightForVS
+* AJCC#M0 "M0"
+* AJCC#M1 "M1"
+* NullFlavor#UNK "unknown"
 
 ValueSet: EstrogenStatusVS
 Id: EstrogenStatusVS
 Title: "Estrogen receptor status"
 Description: "Valueset of the Estrogen receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
 * SCT#416053008 "Estrogen receptor positive tumor"
 * SCT#416237000 "Procedure not done"
@@ -114,6 +138,7 @@ ValueSet: ProgesteroneStatusVS
 Id: ProgesteroneStatusVS
 Title: "Progesterone receptor status"
 Description: "Valueset of the Progesterone receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#441118006 "Progesterone receptor negative neoplasm"
 * SCT#416561008 "Progesterone receptor positive tumor"
 * SCT#416237000 "Procedure not done"
@@ -123,6 +148,7 @@ ValueSet: HER2ReceptorStatusVS
 Id: HER2ReceptorStatusVS
 Title: "HER2 receptor status"
 Description: "Valueset of the HER2 receptor status"
+* insert SNOMEDCopyrightForVS
 * SCT#431396003 "Human epidermal growth factor 2 negative carcinoma of breast"
 * SCT#427685000 "Human epidermal growth factor 2 positive carcinoma of breast"
 * SCT#280414007 "Equivocal result"
@@ -195,6 +221,7 @@ ValueSet: LateralityVS
 Id: LateralityVS
 Title: "Laterality of breast cancer"
 Description: "Valueset of the laterality of breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#80248007 "Left breast structure"
 * SCT#73056007 "Right breast structure"
 * SCT#63762007 "Both breasts"
@@ -203,6 +230,7 @@ ValueSet: LateralityNewCancerVS
 Id: LateralityNewCancerVS
 Title: "Laterality of new cancer"
 Description: "Valueset of the laterality of new breast cancer"
+* insert SNOMEDCopyrightForVS
 * SCT#255208005 "Ipsilateral"
 * SCT#255209002 "Contralateral"
 
@@ -219,10 +247,11 @@ Description: "Codes defining types of treatment a breast cancer patient could re
 * #N_A_chemo "Neoadjuvant chemotherapy"
 * #Targ_Thrpy "Targeted therapy"
 
-ValueSet: TreatmentTypeValueSet
+ValueSet: TreatmentTypeVS
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
+* insert SNOMEDCopyrightForVS
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
@@ -235,10 +264,11 @@ Description: "Valueset of the kind of treatment a patient with breastcancer unde
 * include SCT#243114000 "Support"
 * NullFlavor#UNK "unknown"
 
-ValueSet: RecommendedTreatmentTypeValueSet
-Id: RecommendedTreatmentTypeValueSet
+ValueSet: RecommendedTreatmentTypeVS
+Id: RecommendedTreatmentTypeVS
 Title: "Recommended treatment types"
 Description: "Valueset of the kind of treatment that the multidisciplinary team recommended"
+* insert SNOMEDCopyrightForVS
 * include SCT#387713003 "Surgical procedure"
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
 * include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
@@ -275,6 +305,7 @@ ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
 Title: "Surgery of Axilla"
 Description: "Valueset of surgery types of the axilla"
+* insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
 * SCT#234262008 "Excision of axillary lymph node"
 * SCT#79544006 "Complete axillary lymphadenectomy"
@@ -332,6 +363,7 @@ ValueSet: LocationRadiotherapyVS
 Id: LocationRadiotherapyVS
 Title: "The location of radiotherapy"
 Description: "Valueset of the location of radiotherapy"
+* insert SNOMEDCopyrightForVS
 * SCT#76752008 "Breast structure"
 * SCT#78904004 "Chest wall structure"
 * SCT#68171009 "Axillary lymph node structure"
@@ -344,9 +376,10 @@ Description: "Valueset of the location of radiotherapy"
 
 // Chemotherapy
 ValueSet: ChemoTherapyTypeVS
-Id: ChemoTherapyType
+Id: ChemoTherapyTypeVS
 Title: "Type of chemotherapy"
 Description: "Valueset of the types of chemotherapy"
+* insert SNOMEDCopyrightForVS
 * SCT#108787006 "Medicinal product containing anthracycline and acting as antineoplastic agent"
 * SCT#418965003 "Taxane derivative"
 * SCT#768621002 "Product containing platinum and platinum compound"
@@ -359,6 +392,7 @@ ValueSet: HormonalTherapyTypeVS
 Id: HormonalTherapyTypeVS
 Title: "Type of hormonal therapy"
 Description: "Valueset of the types of hormonal therapy"
+* insert SNOMEDCopyrightForVS
 * SCT#413575009 "Substance with aromatase inhibitor mechanism of action"
 * SCT#373336003 "Substance with estrogen receptor antagonist mechanism of action"
 * SCT#83152002 "Oophorectomy"
@@ -371,6 +405,7 @@ ValueSet: TargetedTherapyVS
 Id: TargetedTherapyVS
 Title: "Type of targeted therapy"
 Description: "Valueset of the types of targeted therapy"
+* insert SNOMEDCopyrightForVS
 * SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 * SCT#426265004 "Substance with protein kinase inhibitor mechanism of action"
 * SCT#432253008 "Substance with nicotinamide adenine dinucleotide adenosine diphosphate ribosyltransferase inhibitor mechanism of action"
@@ -382,14 +417,15 @@ ValueSet: ReoperationTypeVS
 Id: ReoperationTypeVS
 Title: "Type of re-operation"
 Description: "Valueset of the types of re-operation"
+* insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
 * SCT#33496007 "Reconstruction of breast"
 * SCT#69031006 "Excision of breast tissue"
 * SCT#234254000 "Excision of axillary lymph nodes group"
 * NullFlavor#UNK "unknown"
 
-// Treatment plan
 
+// Treatment plan
 CodeSystem: TreatmentPlanFollowedCodeSystem
 Id: TreatmentPlanFollowedCodeSystem
 Title: "Real Treatment Plan Followed"
@@ -426,6 +462,7 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * TreatmentPlanNotFollowedCodeSystem#1 "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
 * TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
+
 
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
@@ -469,10 +506,11 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 // DISUTILITY OF CARE
 
 // Reoperations
-ValueSet: InvolvedMarginsReoperationType
-Id: InvolvedMarginsReoperationType
+ValueSet: InvolvedMarginsReoperationTypeVS
+Id: InvolvedMarginsReoperationTypeVS
 Title: "Re-operation due to involved margins"
 Description: "Kind of re-operation due to involved margins"
+* insert SNOMEDCopyrightForVS
 * ^version = "0.0.1"
 * ^status = #active
 * ^date = "2022-07-26T09:18:41+02:00"
@@ -502,6 +540,7 @@ ValueSet: ComplicationImpactVS
 Id: ComplicationImpactVS
 Title: "Impact of complication"
 Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
+* insert SNOMEDCopyrightForVS
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
 * ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
@@ -528,6 +567,7 @@ ValueSet: ComplicationTypeVS
 Id: ComplicationTypeVS
 Title: "Type of complication"
 Description: "ValueSet of the type of complication experienced by the breast cancer patient"
+* insert SNOMEDCopyrightForVS
 * SCT#76844004  "Local infection of wound"
 * SCT#715068009 "Seroma"
 * SCT#385494008 "Hematoma"
@@ -547,8 +587,8 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * NullFlavor#OTH "other"
 
 // SURVIVAL AND DISEASE CONTROL 
-ValueSet: NoYesUnknownValueSet
-Id: NoYesUnknownValueSet
+ValueSet: NoYesUnknownVS
+Id: NoYesUnknownVS
 Title: "Yes, No and Unknown Valueset"
 Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#Y "Yes" 
@@ -565,8 +605,8 @@ Description: "Additional code covering combination of radiological and histologi
 
 * #2 "Radiological and histological diagnosis"
 
-ValueSet: RecurrenceMethod
-Id: RecurrenceMethod
+ValueSet: RecurrenceMethodVS
+Id: RecurrenceMethodVS
 Title: "Method of confirming recurrence"
 Description: "Valueset of the methods used to confirm recurrence of breast cancer"
 * SCT#394914008 "Radiology"
@@ -646,7 +686,3 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
-
-
-
-
