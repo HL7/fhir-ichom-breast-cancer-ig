@@ -37,3 +37,4 @@ Alias: RaceVS = http://terminology.hl7.org/ValueSet/v3-Race
 // Extensions
 Alias: DueToEx = http://hl7.org/fhir/StructureDefinition/condition-dueTo
 Alias: ProcedureMethodEx = http://hl7.org/fhir/StructureDefinition/procedure-method
+Alias: ProcedureCausedByEx = http://hl7.org/fhir/StructureDefinition/procedure-causedBy
