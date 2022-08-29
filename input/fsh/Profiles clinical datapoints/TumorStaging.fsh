@@ -11,7 +11,7 @@ Profile: BreastCancerStageGroup
 Id: breast-cancer-stage-group
 Parent: Observation
 Title: "Cancer Stage Group"
-Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 5th - 7th Ed.)"
+Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code from TNMStageGroupVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -27,13 +27,13 @@ Description: "A staging system to describe the amount and spread of breast cance
     TNMDistantMetastases 0..1 MS
 * hasMember[TNMPrimaryTumorStage] only Reference(TNMPrimaryTumorStage)
 * hasMember[TNMPrimaryTumorStage] ^short = "TNM Primary Tumor Stage"
-* hasMember[TNMPrimaryTumorStage] ^definition = "Represents the stage of the primary tumor (per AJCC 5th - 7th Ed.)"
+* hasMember[TNMPrimaryTumorStage] ^definition = "Represents the stage of the primary tumor (per AJCC 8th Ed.)"
 * hasMember[TNMRegionalNodalStage] only Reference(TNMRegionalNodalStage)
 * hasMember[TNMRegionalNodalStage] ^short = "TNM Regional Nodal Stage"
-* hasMember[TNMRegionalNodalStage] ^definition = "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 5th - 7th Ed.)"
+* hasMember[TNMRegionalNodalStage] ^definition = "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
 * hasMember[TNMDistantMetastases] only Reference(TNMDistantMetastases)
 * hasMember[TNMDistantMetastases] ^short = "TNM Distant Metastases"
-* hasMember[TNMDistantMetastases] ^definition = "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 5th - 7th Ed.)"
+* hasMember[TNMDistantMetastases] ^definition = "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
 
 Instance: ClinicalTNMStagePatient147
 InstanceOf: BreastCancerStageGroup
@@ -60,7 +60,7 @@ Profile:  TNMPrimaryTumorStage
 Id: tnm-primary-tumor-stage
 Parent: Observation
 Title: "TNM Primary Tumor Stage"
-Description: "Represents the stage of the primary tumor (per AJCC 5th - 7th Ed.)"
+Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -97,7 +97,7 @@ Profile:  TNMRegionalNodalStage
 Id: tnm-regional-nodes-stage
 Parent: Observation
 Title: "TNM Regional Nodal Stage"
-Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 5th - 7th Ed.)"
+Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "Node stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -134,7 +134,7 @@ Profile:  TNMDistantMetastases
 Id: tnm-distant-metastases
 Parent: Observation
 Title: "TNM Distant Metastases"
-Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 5th - 7th Ed.)"
+Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)
