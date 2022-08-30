@@ -11,8 +11,7 @@ Description: "A reoperation due to involved margins after primary surgery"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * extension contains ProcedureCausedByEx named causedBy 0..* MS
 * extension[causedBy] ^short = "Original procedure that prompted the reoperation"
-* extension[causedBy].value[x] only Reference
-* extension[causedBy].valueReference only Reference(Procedure)
+* extension[causedBy].value[x] only Reference(Procedure)
 
 Instance: ReoperationPatient147
 InstanceOf: InvolvedMarginsReoperation
