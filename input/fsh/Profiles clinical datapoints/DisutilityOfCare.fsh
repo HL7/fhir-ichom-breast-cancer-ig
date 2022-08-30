@@ -6,12 +6,12 @@ Description: "A reoperation due to involved margins after primary surgery"
 * insert PublicationProfileRuleset
 * code from InvolvedMarginsReoperationTypeVS (required)
 * subject only Reference(BreastCancerPatient)
-* partOf MS
-  * ^short = "Original procedure that prompted the reoperation"
-  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 * performed[x] only dateTime 
 * performedDateTime and code and subject MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* extension contains ProcedureCausedByEx named causedBy 0..* MS
+* extension[causedBy] ^short = "Original procedure that prompted the reoperation"
+* extension[causedBy].value[x] only Reference(Procedure)
 
 Instance: ReoperationPatient147
 InstanceOf: InvolvedMarginsReoperation
