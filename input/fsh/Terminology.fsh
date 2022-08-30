@@ -88,6 +88,15 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
+// BREAST CANCER STAGING GROUP
+ValueSet: TNMStageGroupVS
+Id: tnm-stage-group-vs
+Title: "Value Set of Staging Type for Stage Group"
+Description: "Valueset indicating the type of staging, clinical or pathological, of breast cancer."
+* insert LOINCCopyrightForVS
+* LNC#21908-9 "Stage group.clinical Cancer"
+* LNC#21902-2 "Stage group.pathology Cancer"
+
 ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"

@@ -3,7 +3,7 @@ Profile: BreastCancerSurgery
 Parent: Procedure 
 Id: breast-cancer-surgery
 Title: "Breast cancer surgery"
-Description: "Represents if the breast cancer patient received surgery during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received surgery during the last year."
 * category = SCT#387713003 "Surgical procedure" 
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -34,7 +34,7 @@ Profile: AxillaSurgery
 Parent: Procedure 
 Id: axilla-surgery
 Title: "Axilla surgery"
-Description: "Represents if the breast cancer patient received surgery to the axilla during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received surgery to the axilla during the last year."
 * category = SCT#699455008 "Operative procedure on axilla"
 * code from AxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -66,7 +66,7 @@ Profile: AxillaryClearance
 Parent: Procedure 
 Id: axillary-clearance
 Title: "Axillary clearance"
-Description: "Represents if the breast cancer patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year."
 * partOf only Reference(AxillaSurgery)
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
@@ -97,7 +97,7 @@ Profile: ReconstructionSurgery
 Parent: Procedure 
 Id: reconstruction-surgery
 Title: "Reconstruction surgery"
-Description: "Represents if the breast cancer patient received reconstruction surgery during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received reconstruction surgery during the last year."
 * code = SCT#33496007 "Reconstruction of breast" 
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS

@@ -8,10 +8,11 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
 * bodySite from LateralityVS (preferred)
+* subject and bodySite MS
 
 Instance: PrimaryBreastCancerPatient147
 InstanceOf: PrimaryBreastCancerCondition
-Description: "Example of the primary condition breast cancer diagnosed in a patient"
+Description: "Example of the primary breast cancer diagnosis of a patient"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * clinicalStatus = ConditionStatusCS#recurrence "Recurrence"
 * subject = Reference(BreastCancerPatient147)
@@ -36,7 +37,7 @@ Description: "Represent the properties of the secondary breast cancer diagnosis"
 * code = SCT#145501000119108 "Secondary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
 * bodySite from LateralityNewCancerVS
-* bodySite and clinicalStatus and recordedDate MS
+* subject and bodySite MS
 
 Instance: SecondaryBreastCancerPatient147
 InstanceOf: SecondaryBreastCancerCondition
@@ -55,6 +56,7 @@ Description: "Mapping of the secondary breast cancer condition to the ICHOM brea
 * -> "New cancer"
 * bodySite -> "New cancer"
 
+// SURIVAL AND DISEASE CONTROL
 // Vital status
 Profile: DeathAttributableBC
 Parent: Observation 
@@ -83,7 +85,6 @@ Title: "Death attributable to breast cancer to ICHOM set"
 Description: "Mapping of death attributable to breast cancer to the ICHOM breast cancer PCOM set." 	
 * value[x] -> "Death attributable to breast cancer"
 
-
 // Cancer recurrence
 Profile: RecurrenceMethod
 Parent: Observation 
@@ -91,6 +92,7 @@ Id: recr-method
 Title: "Recurrence Method"
 Description: "The method of confirming recurrence breast cancer"
 * insert PublicationProfileRuleset
+* focus only Reference(PrimaryBreastCancerCondition)
 * code = SCT#103693007 "Diagnostic procedure"
 * value[x] only CodeableConcept 
 * value[x] from RecurrenceMethodVS (required)
@@ -99,6 +101,7 @@ Description: "The method of confirming recurrence breast cancer"
 Instance: RecurrenceMethodPatient147
 InstanceOf: RecurrenceMethod
 Description: "Example of method of confirming recurrence breast cancer"
+* focus = Reference(PrimaryBreastCancerPatient147)
 * code = SCT#103693007 "Diagnostic procedure"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
