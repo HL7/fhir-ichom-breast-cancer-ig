@@ -308,7 +308,6 @@ Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
 * SCT#234262008 "Excision of axillary lymph node"
-* SCT#79544006 "Complete axillary lymphadenectomy"
 * NullFlavor#UNK "unknown"
 
 // Reconstruction surgery 
