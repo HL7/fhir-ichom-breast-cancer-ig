@@ -14,6 +14,9 @@ There is a growing need for representing the ICHOM Patient-Centered Outcome Meas
 
 The aim of this IG is to develop and publish the HL7 FHIR representation of the already internationally validated and peer-reviewed ICHOM patient-centered outcome measure set for breast cancer. This will provide the support for interoperability in exchange of data related to the measurement of value-based healthcare as defined by our international community of experts who were gathered to create the set.
 
+### Prerequisites
+Users of this guide must be familiar with the ICHOM Breast Cancer Set and the accompanying Data Dictionary that lists all the variables needed for data collection by implementers, [available here](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/). Users should also be familiar with [FHIR resources](http://hl7.org/fhir/R4/resourcelist.html) to understand how the ICHOM Breast Cancer variables are represented in the Implementation Guide - see below for basics.
+
 ### HL7 FHIR basics
 
 The ICHOM Breast Cancer implementation guide uses terminology, notations and design principles that are specific to the HL7 FHIR standard. It is important to be familiar with the basic principles of FHIR and how to read FHIR specifications. Readers who are unfamiliar with FHIR are therefore encouraged to review the following explanation prior to reading the rest of this implementation guide. 
