@@ -1,9 +1,20 @@
-// Clinical Response at baseline
+// Massive bundle containing everything in the IG
+// backup option for loading all data into a FHIR server in case it does not support FHIR packages
+
+// created from output/ImplementationGuide-hl7.fhir.uv.ichom.breastcancer.json using regex:
+// \{\n +"reference": \{\n +"reference": "(\w+)\/(.+)"\n.+\n.+\n.+\n.+\n.+
+// with replacement:
+// * entry[+]
+//   * request.url = "$1/$2"
+//   * request.method = #PUT
+//   * resource = $2
+
 Instance: DebugBundleEverything
 InstanceOf: Bundle
 Usage: #example
-Title: "Bundle the clinical response at baseline"
-Description: "Bundle of all valuesystems and questionnaires related to the clinical response at baseline"
+Title: "Bundle of everything"
+Description: "Bundle of all conformance and instance resources in the IG"
+// batch as some servers have a limit on the number of transactions possible
 * type = #batch
 
 * entry[+]
