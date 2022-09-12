@@ -38,3 +38,6 @@ menu:
   Security: 4_security.html
   Examples: 5_examples.html
   Artifacts: artifacts.html
+
+parameters:
+  usage-stats-opt-out: true
