@@ -36,8 +36,9 @@ menu:
   Use Cases: 2_use-cases.html
   ICHOM Set: 3_standard-set.html
   Security: 4_security.html
-  Examples: 5_examples.html
+  Examples: artifacts.html#example-example-instances
   Artifacts: artifacts.html
 
 parameters:
   usage-stats-opt-out: true
+  show-inherited-invariants: false
