@@ -3,7 +3,8 @@ This domain of knowledge IG focuses on representing the same variables in the me
 ### Questionnaires
 [Questionnaires](artifacts.html#structures-questionnaires) in this IG are organized differently than the ICHOM reference guide and data dictionary, and this is due to their different focuses or intended uses. The reference guide and data dictionary are meant to describe all of the data elements included in the set, so they are organized by data or variable type (e.g. Demographics, Baseline Clinical Factors). In contrast, this IG is meant to facilitate collection of the data elements. Therefore, it is organized by when in the patient's care pathway the data is to be collected (e.g. Baseline, 1 year follow-up) and the source of the data (clinical or patient reported). Despite this difference in organization, the data elements with the FHIR IG and ICHOM's reference guide and data dictionary are completely aligned.
 
-*include graphic created by ICHOM here*
+<object data="Questionnaires-layout.svg" type="image/svg+xml"></object>
+<br/>
 
 ### Discrete resources
 [Discrete resources](artifacts.html#structures-resource-profiles) follow the ICHOM reference guide and data dictionary organisation, as laid out in the table below. Each variable is mapped to a single FHIR resource, or several variables are mapped to the same FHIR resource. The mappings themselves are communicated using [a FHIR profile](https://www.hl7.org/fhir/profiling.html). 

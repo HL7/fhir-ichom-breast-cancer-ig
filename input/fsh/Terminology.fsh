@@ -88,6 +88,15 @@ Description: "Valueset of the grade of the tumor"
 * SCT#399611001 "High grade histologic differentiation (finding)"
 * NullFlavor#NI "No information"
 
+// BREAST CANCER STAGING GROUP
+ValueSet: TNMStageGroupVS
+Id: tnm-stage-group-vs
+Title: "Value Set of Staging Type for Stage Group"
+Description: "Valueset indicating the type of staging, clinical or pathological, of breast cancer."
+* insert LOINCCopyrightForVS
+* LNC#21908-9 "Stage group.clinical Cancer"
+* LNC#21902-2 "Stage group.pathology Cancer"
+
 ValueSet: TNMPrimaryTumorVS
 Id: tnm-primary-tumor-category-vs
 Title: "TNM Primary Tumor Value Set"
@@ -158,7 +167,7 @@ CodeSystem: MolecularProfilingCodeSystem
 Id: MolecularProfilingCodeSystem
 Title: "SACQ patient's comorbidity history"
 Description: "Codes used to describe the different types of molecular profiling scoring"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/molecular-profiling
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/MolecularProfilingCodeSystem 
 * ^caseSensitive = true
 * #Mammaprint "Mammaprint Score" 
 * #Oncotype "Oncotype Score" 
@@ -171,7 +180,7 @@ CodeSystem: SACQPatientComorbidityCodeSystem
 Id: SACQPatientComorbidityCodeSystem
 Title: "SACQ patient's comorbidity history"
 Description: "Codes used in SACQ patient's comorbidity history that are not available yet in standard terminologies"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/sacq-patient-comorbidity-history
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/SACQPatientComorbidityCodeSystem 
 * ^caseSensitive = true
 
 * #0  "I have no other diseases"
@@ -241,7 +250,7 @@ CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
 Title: "Treatment variables"
 Description: "Codes defining types of treatment a breast cancer patient could receive"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/treatment-variables
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/TreatmentTypesCodeSystem 
 * ^caseSensitive = true
 * #A_chemo "Adjuvant chemotherapy"
 * #N_A_chemo "Neoadjuvant chemotherapy"
@@ -283,7 +292,7 @@ CodeSystem: BreastSurgeryTypesCodeSystem
 Id: BreastSurgeryTypesCodeSystem
 Title: "Breast surgery Types"
 Description: "Codes indicating the types of breast surgery a patient underwent"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/breast-surgery-types
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesCodeSystem 
 * ^caseSensitive = true
 * #0 "Breast conserving surgery (BCS)"
 * #1 "BCS with mammoplasty"
@@ -308,7 +317,6 @@ Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
 * SCT#234262008 "Excision of axillary lymph node"
-* SCT#79544006 "Complete axillary lymphadenectomy"
 * NullFlavor#UNK "unknown"
 
 // Reconstruction surgery 
@@ -316,7 +324,7 @@ CodeSystem: ReconstructionTypeCodeSystem
 Id: ReconstructionTypeCodeSystem
 Title: "Type of reconstruction surgery"
 Description: "Codes indicating the type of reconstruction surgery that is performed"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/reconstuction-type
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ReconstructionTypeCodeSystem
 * ^caseSensitive = true
 * #Direct_imp "Direct implant"
 * #Staged_imp "Staged implant"
@@ -337,7 +345,7 @@ CodeSystem: ImplantLocationCodeSystem
 Id: ImplantLocationCodeSystem
 Title: "Location of the implant"
 Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/implant-location
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ImplantLocationCodeSystem
 * ^caseSensitive = true
 * #Pre_pect "Pre-pectoral"
 * #Sub_pect "Sub-pectoral"
@@ -430,7 +438,7 @@ CodeSystem: TreatmentPlanFollowedCodeSystem
 Id: TreatmentPlanFollowedCodeSystem
 Title: "Real Treatment Plan Followed"
 Description: "Codes covering if the patient followed the multidisciplinary recommended treatment plan"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TargetedTherapy
+* ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanFollowedCodeSystem
 * ^caseSensitive = true
 
 * #0 "No, not followed"
@@ -449,7 +457,7 @@ CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
 Title: "Real Treatment Plan Not Followed"
 Description: "Codes covering if the patient has not followed the multidisciplinary recommended treatment plan"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowed
+* ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowedCodeSystem
 * ^caseSensitive = true
 
 * #1 "Patient preference"
@@ -469,7 +477,7 @@ CodeSystem: PatientTreatPrefCodeSystem
 Id: PatientTreatPrefCodeSystem
 Title: "Real Treatment Plan Not Followed"
 Description: "Codes covering for why the treatment plan was not followed"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/PatientTreatPref
+* ^url = https://connect.ichom.org/fhir/CodeSystem/PatientTreatPrefCodeSystem
 * ^caseSensitive = true
 
 * #1 "Personal preference"
@@ -489,7 +497,7 @@ CodeSystem: TreatmentPlanComplianceCodeSystem
 Id: TreatmentPlanComplianceCodeSystem
 Title: "Observation identifiers for treatment plan non-compliance reason"
 Description: "Codes covering observation identifiers for treatment plan non-compliance reaso"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/TreatmentPlanCompliance
+* ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanComplianceCodeSystem
 * ^caseSensitive = true
 
 * #1 "Reason for not following original treatment plan"
@@ -530,7 +538,7 @@ CodeSystem: ComplicationImpactCodeSystem
 Id: ComplicationImpactCodeSystem
 Title: "Impact of complication"
 Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-impact
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * ^caseSensitive = true
 * #2 "Complication leading to prolonged hospitalization (>14days)"
 * #5 "Complication leading to discontinuing of treatment"
@@ -556,7 +564,7 @@ CodeSystem: ComplicationTypeCodeSystem
 Id: ComplicationTypeCodeSystem
 Title: "Type of complication"
 Description: "Codes indicating the type of a complication experienced by the breast cancer patient"
-* ^url =  http://connect.ichom.org/fhir/CodeSystem/complication-type
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationTypeCodeSystem
 * ^caseSensitive = true
 * #4 "Partial autologous graft loss"
 * #5 "Total autologous graft loss"
@@ -600,7 +608,7 @@ CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
 Title: "Recurrence Method"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/RecurrenceMethod
+* ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * ^caseSensitive = true
 
 * #2 "Radiological and histological diagnosis"
@@ -622,7 +630,7 @@ CodeSystem: EORTCQLQCodeSystem
 Id: EORTCQLQCodeSystem
 Title: "EORTC-QLQ questionnaire"
 Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/EORTC-QLQ
+* ^url = https://connect.ichom.org/fhir/CodeSystem/EORTCQLQCodeSystem
 * ^caseSensitive = true
 
 * #1 "Not at all"
@@ -644,7 +652,7 @@ CodeSystem: BreastQCodeSystem
 Id: BreastQCodeSystem
 Title: "BreastQ response"
 Description: "Codes used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/Breast-Q
+* ^url = https://connect.ichom.org/fhir/CodeSystem/BreastQCodeSystem
 * ^caseSensitive = true
 
 * #1 "Very dissatisfied"
@@ -667,7 +675,7 @@ CodeSystem: FACTESCodeSystem
 Id: FACTESCodeSystem
 Title: "FACT-ES questionnaire"
 Description: "Codes used in the Functional Assessment of Cancer Therapy questionnaire"
-* ^url = http://connect.ichom.org/fhir/CodeSystem/FACT-ES
+* ^url = https://connect.ichom.org/fhir/CodeSystem/FACTESCodeSystem
 * ^caseSensitive = true
 
 * #1 "Not at all"
