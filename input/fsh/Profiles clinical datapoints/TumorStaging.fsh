@@ -1,17 +1,8 @@
-// BREAST CANCER STAGING GROUP
-ValueSet: TNMStageGroupVS
-Id: tnm-stage-group-vs
-Title: "Value Set of Staging Type for Stage Group"
-Description: "Valueset indicating the type of staging, clinical or pathological, of breast cancer."
-* insert LOINCCopyrightForVS
-* LNC#21908-9 "Stage group.clinical Cancer"
-* LNC#21902-2 "Stage group.pathology Cancer"
-
 Profile: BreastCancerStageGroup
 Id: breast-cancer-stage-group
 Parent: Observation
 Title: "Cancer Stage Group"
-Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 8th Ed.)"
+Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 8th Ed.). This profile is in alignment with mCODE."
 * insert PublicationProfileRuleset
 * code from TNMStageGroupVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -60,13 +51,15 @@ Profile:  TNMPrimaryTumorStage
 Id: tnm-primary-tumor-stage
 Parent: Observation
 Title: "TNM Primary Tumor Stage"
-Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.)"
+Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.). This profile is in alignment with mCODE."
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
+* subject ^definition = "The patient associated with staging data."
 * value[x] only CodeableConcept 
 * value[x] from TNMPrimaryTumorVS (required)
-* value[x] MS
+* focus only Reference(PrimaryBreastCancerCondition)
+* status and code and subject and value[x] and focus MS
 
 Instance: ClinicalTumorStagePatient147
 InstanceOf: TNMPrimaryTumorStage
@@ -75,6 +68,7 @@ Description: "Extended example: example showing clinical TNM staging (T)"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#Tis
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalTumorStagePatient147
 InstanceOf: TNMPrimaryTumorStage
@@ -83,6 +77,7 @@ Description: "Extended example: example showing patholgical TNM staging (T)"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#Tis
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMPrimaryTumorStageToICHOM
 Source:	TNMPrimaryTumorStage
@@ -97,13 +92,15 @@ Profile:  TNMRegionalNodalStage
 Id: tnm-regional-nodes-stage
 Parent: Observation
 Title: "TNM Regional Nodal Stage"
-Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.)"
+Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.). This profile is in alignment with mCODE."
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "Node stage finding"
 * subject only Reference(BreastCancerPatient)
+* subject ^definition = "The patient associated with staging data."
 * value[x] only CodeableConcept 
 * value[x] from TNMRegionalNodesVS (required)
-* value[x] MS
+* focus only Reference(PrimaryBreastCancerCondition)
+* status and code and subject and value[x] and focus MS
 
 Instance: ClinicalNodalStagePatient147
 InstanceOf: TNMRegionalNodalStage
@@ -112,6 +109,7 @@ Description: "Extended example: example showing clinical TNM staging (N)"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#N1
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalNodalStagePatient147
 InstanceOf: TNMRegionalNodalStage
@@ -120,6 +118,7 @@ Description: "Extended example: example showing patholgical TNM staging (N)"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#N0
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMRegionalNodalStageToICHOM
 Source:	TNMRegionalNodalStage
@@ -134,13 +133,15 @@ Profile:  TNMDistantMetastases
 Id: tnm-distant-metastases
 Parent: Observation
 Title: "TNM Distant Metastases"
-Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.)"
+Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.). This profile is in alignment with mCODE."
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)
+* subject ^definition = "The patient associated with staging data."
 * value[x] only CodeableConcept 
 * value[x] from TNMDistantMetastasesVS (required)
-* value[x] MS
+* focus only Reference(PrimaryBreastCancerCondition)
+* status and code and subject and value[x] and focus MS
 
 Instance: ClinicalMetastasesPatient147
 InstanceOf: TNMDistantMetastases
@@ -149,6 +150,7 @@ Description: "Extended example: example showing clinical TNM staging (M)"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#M1
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalMetastasesPatient147
 InstanceOf: TNMDistantMetastases
@@ -157,6 +159,7 @@ Description: "Extended example: example showing patholgical TNM staging (M)"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = AJCC#M1
+* focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMDistantMetastasesToICHOM
 Source:	TNMDistantMetastases

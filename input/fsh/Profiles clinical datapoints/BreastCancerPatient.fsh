@@ -2,7 +2,7 @@ Profile: BreastCancerPatient
 Parent: Patient 
 Id: patient
 Title: "Breast cancer patient"
-Description: "Represents the patient characteristics and demographic factors"
+Description: "A patient who has been diagnosed with or is receiving medical treatment for breast cancer. This profile includes the ICHOM patient characteristics and demographic factors."
 * insert PublicationProfileRuleset
 * birthDate 0..1 MS
 * deceased[x] only dateTime 
@@ -18,7 +18,7 @@ Description: "Represents the patient characteristics and demographic factors"
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient"
-Description: "Example of the characteristics and demographic factors of a patient with breastcancer"
+Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1920"
 * name.family = "Letsche"
 * address.country = CountryCS#USA
