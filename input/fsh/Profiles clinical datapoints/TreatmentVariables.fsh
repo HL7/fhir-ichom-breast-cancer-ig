@@ -39,13 +39,15 @@ Description: "Represents if the breast cancer patient received surgery to the ax
 * code from AxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
+* subject and performedDateTime and reasonReference MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
 Description: "Example of a breast cancer patient who underwent surgery to the axilla"
 * status = EventStatusCS#completed
-* code = SCT#79544006 "Complete axillary lymphadenectomy"
+* category = SCT#699455008 "Operative procedure on axilla"
+* code = SCT#234262008 "Excision of axillary lymph node"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -66,11 +68,10 @@ Profile: AxillaryClearance
 Parent: Procedure 
 Id: axillary-clearance
 Title: "Axillary clearance"
-Description: "Represents if the breast cancer patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year."
-* partOf only Reference(AxillaSurgery)
+Description: "Represents if the breast cancer patient received axillary clearance during the last year. Axilla clearance could be due to lymph node involvement after sentinel lymph node biopsy."
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	and complication MS
+* subject and performedDateTime	and complication and reasonReference MS
 * reasonReference only Reference (AxillaSurgery)
 
 Instance: AxillaryClearancePatient147
@@ -302,10 +303,11 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* category = SCT#397747003 "Assertion"
-* code from TargetedTherapyVS (preferred)
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
+* code and subject and performedPeriod MS
+* extension contains ProcedureMethodEx named method 0..1 MS
+* extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
@@ -313,9 +315,10 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
+* extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 
 Mapping: TargetedTherapyToICHOM
 Source:	TargetedTherapy
@@ -323,9 +326,9 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: targetedtherapymapping
 Title: "Targeted therapy to ICHOM set"
 Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set" 	
-* code -> "Targeted therapy"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
+* extension[method] -> "Targeted therapy"
 
 // REOPERATION
 Profile: ReoperationSurgery
