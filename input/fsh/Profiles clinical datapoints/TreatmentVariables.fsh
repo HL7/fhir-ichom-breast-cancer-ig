@@ -360,6 +360,40 @@ Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set
 * performedDateTime -> "Surgery date"
 
 
+// Multidisciplinary meeting 
+Profile: TreatmentPlan
+Parent: CarePlan 
+Id: treatment-plan 
+Title: "Treatment recommended by a multidisciplinary team"
+Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
+* insert PublicationProfileRuleset
+* category = SCT#312384001 "Multidisciplinary assessment"
+* subject only Reference(BreastCancerPatient)
+* created MS
+* activity.detail.code from RecommendedTreatmentTypeVS
+* activity.detail.code MS
+
+Instance: TreatmentPlanPatient147
+InstanceOf: TreatmentPlan
+Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
+* status = CareplanStatusCS#active
+* intent = CareplanIntentCS#plan 
+* category = SCT#312384001 "Multidisciplinary assessment"
+* subject = Reference(BreastCancerPatient147)
+* activity.detail.code = SCT#387713003 "Surgical procedure"
+* activity.detail.status = CareplanActivityStatusCS#unknown
+
+Mapping: TreatmentPlanToICHOM
+Source:	TreatmentPlan
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: TreatmentPlanMapping
+Title: "Treatmentplan to ICHOM set"
+Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
+* -> "Multidisciplinary Meeting"
+* activity.detail.code -> "Multidisciplinary Recommended Treatments"
+
+
+
 // TreatmentPlanFollowed	
 Profile: TreatmentPlanFollowed
 Parent: Observation
@@ -367,6 +401,7 @@ Id: treatment-plan-followed
 Title: "Real Treatment Plan Followed"
 Description: "Indicate if the patient followed the multidisciplinary recommended treatment plan"
 * insert PublicationProfileRuleset
+* basedOn only Reference(TreatmentPlan)
 * code = SCT#410110000 "Compliance care assessment"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanFollowedVS (required)
@@ -377,6 +412,7 @@ Instance: TreatmentPlanFollowedPatient147
 InstanceOf: TreatmentPlanFollowed 
 Title: "Example Real Treatment Plan Followed"
 Description: "Example of how the real treatment plan was followed"
+* basedOn = Reference(TreatmentPlanPatient147)
 * code = SCT#410110000 "Compliance care assessment"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
@@ -397,6 +433,7 @@ Id: treatment-plan-not-followed
 Title: "Treatment Plan Not Followed"
 Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
 * insert PublicationProfileRuleset
+* basedOn only Reference(TreatmentPlan)
 * code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanNotFollowedVS (required)
@@ -407,6 +444,7 @@ Instance: TreatmentPlanNotFollowedPatient147
 InstanceOf: TreatmentPlanNotFollowed 
 Title: "Example Treatment Plan Not Followed"
 Description: "Example of why the treatment plan was not followed"
+* basedOn = Reference(TreatmentPlanPatient147)
 * code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
@@ -419,37 +457,6 @@ Id: treatmentplannotfollowedmapping
 Title: "TreatmentPlanNotFollowed to ICHOM set"
 Description: "Mapping of Treatment Plan Not Followed to the ICHOM breast cancer PCOM set" 	
 * value[x] -> "Treatment Plan Not Followed"
-
-// TreatmentPlanNotFollowed	
-Profile: PatientTreatPref
-Parent: Observation
-Id: patient-treat-pref
-Title: "Patient Treatment Preference"
-Description: "Indicate why the recommended treatment was not followed"
-* insert PublicationProfileRuleset
-* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
-* value[x] only CodeableConcept 
-* value[x] from PatientTreatPrefVS (required)
-* value[x] MS
-
-// no example yet available, this one is made up
-Instance: PatientTreatPrefPatient147
-InstanceOf: PatientTreatPref 
-Title: "Example Patient Treatment Preference"
-Description: "Example of why the patient did not follow the recommended treatment"
-* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
-* status = ObservationStatusCS#final
-* subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = PatientTreatPrefCodeSystem#2 "Treatment unavailable"
-
-Mapping: PatientTreatPrefToICHOM
-Source:	PatientTreatPref
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: patienttreatprefmapping
-Title: "PatientTreatPref to ICHOM set"
-Description: "Mapping of Patient Treatment Preference  to the ICHOM breast cancer PCOM set" 	
-* value[x] -> "Patient Treatment Preference"
-
 
 
 

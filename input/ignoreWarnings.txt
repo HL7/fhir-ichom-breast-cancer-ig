@@ -5,11 +5,10 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Custom ICHOM codesystem is not known to the validator
-Error from server: Unable to provide support for code system https://connect.ichom.org
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org' is unknown so the code cannot be validated]
-WARNING: ValueSet/InvolvedMarginsReoperationType: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet/InvolvedMarginsReoperationTypeVS: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
 Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationType because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationTypeVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated]
+Error from server: Unable to provide support for code system https://connect.ichom.org/CodeSystem/reop-breast
 
 # AJCC is being added as a recognised codesystem (https://jira.hl7.org/browse/HTA-27), we share these warnings with mCODE (https://github.com/HL7/fhir-mCODE-ig/blob/master/input/ignoreWarnings.txt)
 Error from server: Unable to provide support for code system http://cancerstaging.org
@@ -20,6 +19,10 @@ Code System URI 'http://cancerstaging.org' is unknown so the code cannot be vali
 [Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-distant-metastases-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-regional-nodes-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-primary-tumor-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+WARNING: ValueSet/tnm-distant-metastases-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet/tnm-primary-tumor-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+WARNING: ValueSet/tnm-regional-nodes-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+
 
 # Custom UUID-based codesystems embedded in Questionnaires for answer options
 Code System URI 'urn:uuid:0051a06f-34ee-4db1-9270-8c4fed35dde9' is unknown so the code cannot be validated

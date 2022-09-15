@@ -379,34 +379,3 @@ Description: "Mapping of the endopredict score to the ICHOM breast cancer PCOM s
 * code -> "Molecular Profiling"
 * valueQuantity -> "Endopredict Score"
 
-// Multidisciplinary meeting 
-Profile: TreatmentPlan
-Parent: CarePlan 
-Id: treatment-plan 
-Title: "Treatment recommended by a multidisciplinary team"
-Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
-* insert PublicationProfileRuleset
-* category = SCT#312384001 "Multidisciplinary assessment"
-* subject only Reference(BreastCancerPatient)
-* created MS
-* activity.detail.code from RecommendedTreatmentTypeVS
-* activity.detail.code MS
-
-Instance: TreatmentPlanPatient147
-InstanceOf: TreatmentPlan
-Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
-* status = CareplanStatusCS#active
-* intent = CareplanIntentCS#plan 
-* category = SCT#312384001 "Multidisciplinary assessment"
-* subject = Reference(BreastCancerPatient147)
-* activity.detail.code = SCT#387713003 "Surgical procedure"
-* activity.detail.status = CareplanActivityStatusCS#unknown
-
-Mapping: TreatmentPlanToICHOM
-Source:	TreatmentPlan
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: TreatmentPlanMapping
-Title: "Treatmentplan to ICHOM set"
-Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
-* -> "Multidisciplinary Meeting"
-* activity.detail.code -> "Multidisciplinary Recommended Treatments"
