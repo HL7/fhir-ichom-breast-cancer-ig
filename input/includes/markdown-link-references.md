@@ -79,7 +79,7 @@
 [ReconstructionTypeCodeSystem]: CodeSystem-ReconstructionTypeCodeSystem.html
 [ReconstructionTypeVS]: ValueSet-ReconstructionTypeVS.html
 [RecurrenceMethod]: StructureDefinition-recr-method.html
-[RecurrenceMethod]: ValueSet-RecurrenceMethod.html
+[RecurrenceMethod]: ValueSet-RecurrenceMethodVS.html
 [RecurrenceMethodCodeSystem]: CodeSystem-RecurrenceMethodCodeSystem.html
 [RelationshipStatusVS]: ValueSet-RelationshipStatusVS.html
 [ReoperationSurgery]: StructureDefinition-reoperation-surgery.html
