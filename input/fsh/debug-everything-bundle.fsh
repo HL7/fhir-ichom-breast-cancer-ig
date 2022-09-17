@@ -148,11 +148,6 @@
 //   * resource = pr-status
 
 // * entry[+]
-//   * request.url = "StructureDefinition/patient-treat-pref"
-//   * request.method = #PUT
-//   * resource = patient-treat-pref
-
-// * entry[+]
 //   * request.url = "StructureDefinition/primary-breastcancer"
 //   * request.method = #PUT
 //   * resource = primary-breastcancer
@@ -786,11 +781,6 @@
 //   * request.url = "Questionnaire/PatientReportedYear3and4"
 //   * request.method = #PUT
 //   * resource = PatientReportedYear3and4
-
-// * entry[+]
-//   * request.url = "Observation/PatientTreatPrefPatient147"
-//   * request.method = #PUT
-//   * resource = PatientTreatPrefPatient147
 
 // * entry[+]
 //   * request.url = "Condition/PrimaryBreastCancerPatient147"
