@@ -34,6 +34,10 @@ jobs:
       
       - name: Install IG publisher
         run: |
-          # sudo apt-get -y install iputils-ping
           chmod +x ./_updatePublisher.sh
           ./_updatePublisher.sh -y
+
+      - name: Validate IG
+        run: |
+          chmod +x ./_genonce.sh
+          ./_genonce.sh
