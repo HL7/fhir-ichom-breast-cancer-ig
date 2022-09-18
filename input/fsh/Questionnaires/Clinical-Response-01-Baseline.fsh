@@ -23,7 +23,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * valueCode = #Patient
   * extension[2]
     * url = "description"
-    * valueString = "The patient that is to be used to pre-populate the form"
+    * valueString = "Patient information to pre-populate the form with"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
