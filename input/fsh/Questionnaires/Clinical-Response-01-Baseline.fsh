@@ -1,3 +1,13 @@
+Alias: E_Var = http://hl7.org/fhir/StructureDefinition/variable
+Alias: E_InitialExpression = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
+Alias: E_MinQ = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-minQuantity
+Alias: E_MaxQ = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-maxQuantity
+Alias: E_Unit = http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption
+Alias: E_ObsExtract = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract
+Alias: E_ObsLink = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod
+Alias: E_Calc = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression
+Alias: E_Hidden = http://hl7.org/fhir/StructureDefinition/questionnaire-hidden
+
 Instance: ClinicalResponseBaseline
 InstanceOf: Questionnaire
 Usage: #definition
@@ -7,6 +17,23 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 * name = "ClinicalResponseBaseline"
 * title = "Clinical response questionnaire at baseline"
 * status = #draft
+* extension[0]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  //
+  // Launch Context: always patient
+  //
+  * extension[0]
+    * url = "name"
+    * valueCoding
+      * code = #patient
+      * system = "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+      * display = "Patient"
+  * extension[1]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[2]
+    * url = "description"
+    * valueString = "The patient that is to be used to pre-populate the form"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
@@ -17,15 +44,25 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #integer 
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
+    * extension[+]
+      * url = E_InitialExpression
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.id"
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
     * text = "What is the patient's last name?"
     * required = true
+    * extension[+]
+      * url = E_InitialExpression
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.name.first().family.first()"
 
 // GROUP 2 - DEMOGRAPHICS
 * item[+]
@@ -40,6 +77,17 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "Please indicate the sex of the patient at birth:"
     * answerValueSet = Canonical(DemographicFactorsSexAtBirth)
     * required = true
+    * extension[+]
+      * url = E_Var
+      * valueExpression[+]
+        * name = "expandedGender"
+        * language = #application/x-fhir-query
+        * expression = "ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/administrative-gender"
+    * extension[+]
+      * url = E_InitialExpression
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%expandedGender.expansion.contains.where(code=%patient.gender)"
 
   * item[+]
     * linkId = "YearOfBirth"
@@ -47,7 +95,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "In what year was the patient born?"
     * required = true
     * maxLength = 4
-
+    * extension[+]
+      * url = E_InitialExpression
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.birthDate.substring(0,4)"
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
@@ -57,11 +109,65 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * required = true
 
   * item[+]
+    * linkId = "Height"
+    * type = #quantity
+    * text = "Please indicate your body height."
+    * required = true
+    * code[+] = LNC#8302-2 "Body height"
+    * extension[+]
+      * url = E_ObsLink
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_ObsExtract
+      * valueBoolean = true
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#cm "cm"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 10
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 320
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#[in_i] "inches"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 3.94
+        * system = UCUM
+        * code = #[in_i]
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 126
+        * system = UCUM 
+        * code = #[in_i]
+
+  * item[+]
     * linkId = "HeightValue"
     * type = #integer
     * text = "Please indicate the patient's body height:"
-    * maxLength = 3
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Height').answer.valueQuantity.value"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
+
     
   * item[+]
     * linkId = "HeightUnit" 
@@ -70,13 +176,83 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1 "cm"
     * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2 "inches"
     * required = true
- 
+    * readOnly = true
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Height').answer.valueQuantity.code = 'cm', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2')"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
+  // Weight, as quantity
+  * item[+]
+    * type = #quantity
+    * linkId = "Weight"
+    * text = "Please indicate your body weight."
+    * required = true
+    * code[+] = LNC#29463-7 "Body weight"
+    * code[+] = LNC#3141-9 "Body weight Measured"
+    * code[+] = SCT#27113001 "Body weight"
+    * extension[+]
+      * url = E_ObsLink
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_ObsExtract
+      * valueBoolean = true
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#kg "kilograms"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 0.1
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 750
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = E_Unit
+      * valueCoding[+] = UCUM#[lb_av] "lbs"
+    * extension[+]
+      * url = E_MinQ
+      * valueQuantity[+]
+        * value = 0.22
+        * system = UCUM
+        * code = #[lb_av]
+    * extension[+]
+      * url = E_MaxQ
+      * valueQuantity[+]
+        * value = 1653.47
+        * system = UCUM 
+        * code = #[lb_av]
+
   * item[+]
     * linkId = "WeightValue"
     * type = #integer
     * text = "Please indicate the patient's body weight:" 
-    * maxLength = 3
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = E_ObsLink
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.value"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
 
   * item[+]
     * linkId = "WeightUnit" 
@@ -85,7 +261,15 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1 "kilograms"
     * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2 "lbs"
     * required = true
-
+    * extension[+]
+      * url = E_Calc
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.code = 'kg', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2')"
+    * extension[+]
+      * url = E_Hidden
+      * valueBoolean = true
+      
   * item[+]
     * linkId = "LATERAL"
     * type = #choice
