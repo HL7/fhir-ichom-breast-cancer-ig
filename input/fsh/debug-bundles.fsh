@@ -7,6 +7,50 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
+  * request.url = "ValueSet/tnm-primary-tumor-category-vs"
+  * request.method = #PUT
+  * resource = TNMPrimaryTumorVS
+* entry[+]
+  * request.url = "ValueSet/tnm-regional-nodes-category-vs"
+  * request.method = #PUT
+  * resource = TNMRegionalNodesVS
+* entry[+]
+  * request.url = "ValueSet/tnm-distant-metastases-category-vs"
+  * request.method = #PUT
+  * resource = TNMDistantMetastasesVS
+* entry[+]
+  * request.url = "ValueSet/EstrogenStatusVS"
+  * request.method = #PUT
+  * resource = EstrogenStatusVS
+* entry[+]
+  * request.url = "ValueSet/ProgesteroneStatusVS"
+  * request.method = #PUT
+  * resource = ProgesteroneStatusVS
+* entry[+]
+  * request.url = "ValueSet/HER2ReceptorStatusVS"
+  * request.method = #PUT
+  * resource = HER2ReceptorStatusVS
+* entry[+]
+  * request.url = "ValueSet/GradingVS"
+  * request.method = #PUT
+  * resource = GradingVS
+* entry[+]
+  * request.url = "ValueSet/GermlineMutationVS"
+  * request.method = #PUT
+  * resource = GermlineMutationVS
+* entry[+]
+  * request.url = "ValueSet/HistologicalTypeVS"
+  * request.method = #PUT
+  * resource = HistologicalTypeVS
+* entry[+]
+  * request.url = "ValueSet/LateralityNewCancerVS"
+  * request.method = #PUT
+  * resource = LateralityNewCancerVS
+* entry[+]
+  * request.url = "ValueSet/LateralityVS"
+  * request.method = #PUT
+  * resource = LateralityVS
+* entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
   * resource = ClinicalResponseBaseline
