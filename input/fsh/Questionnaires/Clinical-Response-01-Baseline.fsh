@@ -65,7 +65,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate the sex of the patient at birth:"
-    * answerValueSet = Canonical(DemographicFactorsSexAtBirth)
+    * answerValueSet = Canonical(AdministrativeGenderVS)
     * required = true
     * extension[+]
       * url = VariableEx
@@ -130,7 +130,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * code = #cm
     * extension[+]
       * url = UnitOptionEx
-      * valueCoding[+] = UCUM#[in_i] "inches"
+      * valueCoding[+] = UCUM#[in_i] "[in_i]"
     * extension[+]
       * url = MinQuantityEx
       * valueQuantity[+]
@@ -163,8 +163,8 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "HeightUnit" 
     * type = #choice
     * text = "Please indicate the units of measurement you recorded the patient's height in:"
-    * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1 "cm"
-    * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2 "inches"
+    * answerOption[+].valueCoding = UCUM#cm "cm"
+    * answerOption[+].valueCoding = UCUM#[in_i] "[in_i]"
     * required = true
     * readOnly = true
     * extension[+]
@@ -195,7 +195,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
       * valueBoolean = true
     * extension[+]
       * url = UnitOptionEx
-      * valueCoding[+] = UCUM#kg "kilograms"
+      * valueCoding[+] = UCUM#kg "kg"
     * extension[+]
       * url = MinQuantityEx
       * valueQuantity[+]
@@ -210,7 +210,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * code = #kg
     * extension[+]
       * url = UnitOptionEx
-      * valueCoding[+] = UCUM#[lb_av] "lbs"
+      * valueCoding[+] = UCUM#[lb_av] "[lb_av]"
     * extension[+]
       * url = MinQuantityEx
       * valueQuantity[+]
@@ -248,8 +248,8 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "WeightUnit" 
     * type = #choice
     * text = "Please indicate the units of measurement you recorded the patient's weight in:" 
-    * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1 "kilograms"
-    * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2 "lbs"
+    * answerOption[+].valueCoding = UCUM#kg "kg"
+    * answerOption[+].valueCoding = UCUM#[lb_av] "[lb_av]"
     * required = true
     * extension[+]
       * url = CalculatedExpressionEx

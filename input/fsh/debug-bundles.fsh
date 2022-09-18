@@ -7,11 +7,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsSexAtBirth"
-  * request.method = #PUT
-  * resource = DemographicFactorsSexAtBirth
-
-* entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
   * resource = ClinicalResponseBaseline
@@ -89,26 +84,6 @@ Usage: #example
 Title: "Bundle of the patient response at baseline"
 Description: "Bundle of all valuesystems and questionnaires related to the patient response at baseline"
 * type = #transaction
-
-* entry[+]
-  * request.url = "ValueSet/DemographicFactorsSexAtBirth"
-  * request.method = #PUT
-  * resource = DemographicFactorsSexAtBirth
-
-* entry[+]
-  * request.url = "ValueSet/DemographicFactorsCountry"
-  * request.method = #PUT
-  * resource = DemographicFactorsCountry
-
-* entry[+]
-  * request.url = "ValueSet/DemographicFactorsEthnicity"
-  * request.method = #PUT
-  * resource = DemographicFactorsEthnicity
-  
-* entry[+]
-  * request.url = "ValueSet/DemographicFactorsRace"
-  * request.method = #PUT
-  * resource = DemographicFactorsRace  
 
 * entry[+]
   * request.url = "CodeSystem/SACQPatientComorbidityCodeSystem"

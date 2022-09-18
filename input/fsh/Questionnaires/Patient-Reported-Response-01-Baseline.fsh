@@ -38,29 +38,29 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate your sex at birth."
-    * answerValueSet = Canonical(DemographicFactorsSexAtBirth)
+    * answerValueSet = Canonical(AdministrativeGenderVS)
     * required = true
 
   * item[+]
     * linkId = "COUNTRY"
     * type = #choice
     * text = "What is your country of residence?"
-    * answerValueSet = Canonical(DemographicFactorsCountry)
+    * answerValueSet = Canonical(CountryVS)
     * required = true
 
   * item[+]
     * linkId = "Ethnicity"
-    * type = #string
+    * type = #choice
     * text = "Please indicate the ethnicity that you identify with."
     * required = true
-    * answerValueSet = Canonical(DemographicFactorsEthnicity)
+    * answerValueSet = Canonical(EthnicityVS)
 
   * item[+]
     * linkId = "Race"
-    * type = #string
+    * type = #choice
     * text = "Please indicate the biological race that you identify with."
     * required = true
-    * answerValueSet = Canonical(DemographicFactorsRace)
+    * answerValueSet = Canonical(RaceVS)
  
   * item[+]
     * linkId = "EducationLevel"
