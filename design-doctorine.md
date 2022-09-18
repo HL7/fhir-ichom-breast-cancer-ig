@@ -5,7 +5,6 @@
 * use groups to mark differences in categories
 * enforce PROM best practice rendering guidelines, list so far:
   * make sure top of the questionnares has text for how a questionnaire shoud be filled out (sourced from original material PDF)
-* questionnaires will include auto-scoring capabilities (pending ICHOM providing algorithms)
 * BreastQ:
   * at baseline: ignore surgery type  (for example in breastq-masectomy), questions remain the same anyway
   * during follow-up: we need to be able to know the context of the patient that answers these questions. It is not an option to have the patient fill in the type of surgery they had, this should be filled in by a clinician. Therefore we need to be able to do some sort of prefill based on the CROMs. 
