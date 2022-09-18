@@ -17,5 +17,5 @@ jobs:
       - name: Install Sushi
         run: sudo npm install -g fsh-sushi
 
-      - name: Run Sushi
+      - name: Validate with Sushi
         run: sushi .
