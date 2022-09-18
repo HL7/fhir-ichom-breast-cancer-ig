@@ -67,7 +67,7 @@ Description: "Extended example: example showing clinical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#Tis
+* valueCodeableConcept = AJCC#Tis(Paget)
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalTumorStagePatient147
@@ -76,7 +76,7 @@ Description: "Extended example: example showing patholgical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#Tis
+* valueCodeableConcept = AJCC#Tis(Paget)
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMPrimaryTumorStageToICHOM
