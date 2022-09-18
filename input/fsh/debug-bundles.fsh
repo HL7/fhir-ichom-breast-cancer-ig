@@ -7,7 +7,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
-<<<<<<< HEAD
   * request.url = "ValueSet/DemographicFactorsSexAtBirth"
   * request.method = #PUT
   * resource = DemographicFactorsSexAtBirth
@@ -56,8 +55,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.method = #PUT
   * resource = LateralityVS
 * entry[+]
-=======
->>>>>>> origin/release/connectathon-sep2022
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
   * resource = ClinicalResponseBaseline

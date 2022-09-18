@@ -144,40 +144,6 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * system = UCUM 
         * code = #[in_i]
 
-<<<<<<< HEAD
-=======
-  * item[+]
-    * linkId = "HeightValue"
-    * type = #integer
-    * text = "Please indicate the patient's body height:"
-    * readOnly = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "%resource.repeat(item).where(linkId='Height').answer.valueQuantity.value"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-
-    
-  * item[+]
-    * linkId = "HeightUnit" 
-    * type = #choice
-    * text = "Please indicate the units of measurement you recorded the patient's height in:"
-    * answerOption[+].valueCoding = UCUM#cm "cm"
-    * answerOption[+].valueCoding = UCUM#[in_i] "[in_i]"
-    * required = true
-    * readOnly = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "iif(%resource.repeat(item).where(linkId='Height').answer.valueQuantity.code = 'cm', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2')"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
->>>>>>> origin/release/connectathon-sep2022
   // Weight, as quantity
   * item[+]
     * type = #quantity
@@ -226,47 +192,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * value = 1653.47
         * system = UCUM 
         * code = #[lb_av]
-<<<<<<< HEAD
-     
-=======
 
-  * item[+]
-    * linkId = "WeightValue"
-    * type = #integer
-    * text = "Please indicate the patient's body weight:" 
-    * readOnly = true
-    * extension[+]
-      * url = ObservationLinkPeriodEx
-      * valueDuration[+]
-        * value = 300
-        * system = UCUM
-        * code = #a
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.value"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-
-  * item[+]
-    * linkId = "WeightUnit" 
-    * type = #choice
-    * text = "Please indicate the units of measurement you recorded the patient's weight in:" 
-    * answerOption[+].valueCoding = UCUM#kg "kg"
-    * answerOption[+].valueCoding = UCUM#[lb_av] "[lb_av]"
-    * required = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "iif(%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.code = 'kg', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2')"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-      
->>>>>>> origin/release/connectathon-sep2022
   * item[+]
     * linkId = "LATERAL"
     * type = #choice
