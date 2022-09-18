@@ -7,10 +7,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
-  * request.url = "ValueSet/DemographicFactorsSexAtBirth"
-  * request.method = #PUT
-  * resource = DemographicFactorsSexAtBirth
-* entry[+]
   * request.url = "ValueSet/tnm-primary-tumor-category-vs"
   * request.method = #PUT
   * resource = TNMPrimaryTumorVS
