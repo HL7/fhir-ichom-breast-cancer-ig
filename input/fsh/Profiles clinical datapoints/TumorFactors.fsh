@@ -89,7 +89,7 @@ Description: "Mapping of the tumor grade to the ICHOM breast cancer PCOM set"
 * valueCodeableConcept ->  "Tumor grade"
 
 //INVASION GRADE
-Profile: InvasionGrade
+Profile: InvasionGrad
 Parent: Observation 
 Id: invasion-grade
 Title: "Invasion grade"
