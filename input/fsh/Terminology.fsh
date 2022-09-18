@@ -667,3 +667,99 @@ Description: "Valueset of the Functional Assessment of Cancer Therapy questionna
 * include FACTESCodeSystem#3 "Somewhat"
 * include FACTESCodeSystem#4 "Quite a bit"
 * include FACTESCodeSystem#5 "Very much"
+
+CodeSystem: BreastSurgeryTypesDueToReoperationCodeSystem
+Id: BreastSurgeryTypesDueToReoperationCodeSystem
+Title: "Breast surgery Types for Reoperation"
+Description: "Codes indicating the types of breast surgery a patient underwent in a reoperation"
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesDueToReoperationCodeSystem 
+* ^caseSensitive = true
+* #0 "No reoperation due to involved margins "
+* #1 "Breast conserving surgery (BCS)"
+* #2 "BCS with mammoplasty"
+* #3 "Mastectomy without immediate reconstruction"
+* #4 "Mastectomy with immediate reconstruction"
+
+ValueSet: TypeOfReoperationVS
+Id: TypeOfReoperationVS
+Title: "Type of reoperation"
+Description: "Type of reoperation due to disutility of care"
+* ^version = 0.0.1
+* include BreastSurgeryTypesDueToReoperationCodeSystem#0 "No reoperation due to involved margins "
+* include BreastSurgeryTypesDueToReoperationCodeSystem#1 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesDueToReoperationCodeSystem#2 "BCS with mammoplasty"
+* include BreastSurgeryTypesDueToReoperationCodeSystem#3 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesDueToReoperationCodeSystem#4 "Mastectomy with immediate reconstruction"
+* include NullFlavor#UNK "unknown"
+
+CodeSystem: ImpactOfTheComplicationCodeSystem
+Id: ImpactOfTheComplicationCodeSystem
+Title: "Impact of the complication experienced by the patient"
+Description: "Codes indicating the types of complications arising from a breast surgery a patient underwent"
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ImpactOfTheComplicationCodeSystem 
+* ^caseSensitive = true
+* #0 "No complication"
+* #1 "Complication requiring intervention (surgical, radiological, endoscopic)"
+* #2 "Complication leading to prolonged hospitalization ( >14days)"
+* #3 "Complication leading to unplanned readmission"
+* #4 "Complication leading to ICU admission"
+* #5 "Complication leading to discontinuing of treatment"
+* #6 "Complication leading to reduced dosing"
+* #7 "Complication leading to death"
+* #8 "Complication, but did not result in any of the abovementioned"
+
+ValueSet: DisutilityOfCareComplicationImpactVS
+Id: DisutilityOfCareComplicationImpactVS
+Title: "Disutility of Care Complication Impact"
+Description: "Impact of the complication"
+* ^version = 0.0.1
+* include ImpactOfTheComplicationCodeSystem#0 "No complication"
+* include ImpactOfTheComplicationCodeSystem#1 "Complication requiring intervention (surgical, radiological, endoscopic)"
+* include ImpactOfTheComplicationCodeSystem#2 "Complication leading to prolonged hospitalization ( >14days)"
+* include ImpactOfTheComplicationCodeSystem#3 "Complication leading to unplanned readmission"
+* include ImpactOfTheComplicationCodeSystem#4 "Complication leading to ICU admission"
+* include ImpactOfTheComplicationCodeSystem#5 "Complication leading to discontinuing of treatment"
+* include ImpactOfTheComplicationCodeSystem#6 "Complication leading to reduced dosing"
+* include ImpactOfTheComplicationCodeSystem#7 "Complication leading to death"
+* include ImpactOfTheComplicationCodeSystem#8 "Complication, but did not result in any of the abovementioned"
+* include NullFlavor#UNK "unknown"
+
+CodeSystem: ImpactAttributableToTreatmentCodeSystem
+Id: ImpactAttributableToTreatmentCodeSystem
+Title: "Complication Impact, attributable to treatment Code System"
+Description: "Complication of the impact attributable to treatment disutility of care"
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/ImpactAttributableToTreatmentCodeSystem 
+* ^caseSensitive = true
+* #0 "Wound infection"
+* #1 "Seroma/hematoma"
+* #2 "Hemorrhage"
+* #3 "Mastectomy skin flap necrosis"
+* #4 "Partial autologous graft loss"
+* #5 "Total autologous graft loss"
+* #6 "Loss of implant"
+* #7 "Thromboembolic event"
+* #8 "Nerve damage"
+* #9 "Delay wound healing/dehiscence"
+* #10 "Skin toxicity"
+* #11 "Pneumonia"
+* #12 "Neutropenic sepsis"
+
+ValueSet: ImpactAttributableToTreatmentVS
+Id: ImpactAttributableToTreatmentVS
+Title: "Complication Impact Attributable to Treatment Value Set"
+Description: "Complication of the impact due to disutility of care"
+* ^version = 0.0.1
+* include ImpactAttributableToTreatmentCodeSystem#0 "Wound infection"
+* include ImpactAttributableToTreatmentCodeSystem#1 "Seroma/hematoma"
+* include ImpactAttributableToTreatmentCodeSystem#2 "Hemorrhage"
+* include ImpactAttributableToTreatmentCodeSystem#3 "Mastectomy skin flap necrosis"
+* include ImpactAttributableToTreatmentCodeSystem#4 "Partial autologous graft loss"
+* include ImpactAttributableToTreatmentCodeSystem#5 "Total autologous graft loss"
+* include ImpactAttributableToTreatmentCodeSystem#6 "Loss of implant"
+* include ImpactAttributableToTreatmentCodeSystem#7 "Thromboembolic event"
+* include ImpactAttributableToTreatmentCodeSystem#8 "Nerve damage"
+* include ImpactAttributableToTreatmentCodeSystem#9 "Delay wound healing/dehiscence"
+* include ImpactAttributableToTreatmentCodeSystem#10 "Skin toxicity"
+* include ImpactAttributableToTreatmentCodeSystem#11 "Pneumonia"
+* include ImpactAttributableToTreatmentCodeSystem#12 "Neutropenic sepsis"
+* include NullFlavor#UNK "unknown"
