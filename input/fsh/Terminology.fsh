@@ -1,31 +1,4 @@
 // DEMOGRAPHICS CodeSystems 
-ValueSet: DemographicFactorsSexAtBirth
-Id: DemographicFactorsSexAtBirth
-Title: "The patient's sex at birth"
-Description: "Valueset of the patient's sex at birth"
-* include codes from system http://hl7.org/fhir/administrative-gender
-
-ValueSet: DemographicFactorsCountry
-Id: DemographicFactorsCountry
-Title: "Country of residence of patient"
-Description: "Valueset of the country (e.g. of residence) of a patient"
-* include codes from valueset http://hl7.org/fhir/ValueSet/iso3166-1-3
-// Remove this valueset once we have a snomed-supporting server since this is only a shell valueset
-
-ValueSet: DemographicFactorsEthnicity
-Id: DemographicFactorsEthnicity
-Title: "Ethnicity of patient"
-Description: "Valueset of the ethnicity of a patient"
-* include codes from valueset EthnicityVS
-// Remove this valueset once we have a snomed-supporting server since this is only a shell valueset. 
-
-ValueSet: DemographicFactorsRace
-Id: DemographicFactorsRace
-Title: "Race of patient"
-Description: "Valueset of the race of a patient"
-* include codes from valueset RaceVS
-// Remove this valueset once we have a snowmed-supporting server since this is only a shell valueset 
-
 ValueSet: RelationshipStatusVS
 Id: RelationshipStatusVS
 Title: "Relationship status of patient"

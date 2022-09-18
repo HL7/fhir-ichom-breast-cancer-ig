@@ -273,26 +273,6 @@
 //   * resource = ComplicationTypeVS
 
 // * entry[+]
-//   * request.url = "ValueSet/DemographicFactorsCountry"
-//   * request.method = #PUT
-//   * resource = DemographicFactorsCountry
-
-// * entry[+]
-//   * request.url = "ValueSet/DemographicFactorsEthnicity"
-//   * request.method = #PUT
-//   * resource = DemographicFactorsEthnicity
-
-// * entry[+]
-//   * request.url = "ValueSet/DemographicFactorsRace"
-//   * request.method = #PUT
-//   * resource = DemographicFactorsRace
-
-// * entry[+]
-//   * request.url = "ValueSet/DemographicFactorsSexAtBirth"
-//   * request.method = #PUT
-//   * resource = DemographicFactorsSexAtBirth
-
-// * entry[+]
 //   * request.url = "ValueSet/EORTCQLQValueSet"
 //   * request.method = #PUT
 //   * resource = EORTCQLQValueSet
