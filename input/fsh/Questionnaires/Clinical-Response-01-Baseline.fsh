@@ -105,11 +105,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * required = true
     * code[+] = LNC#8302-2 "Body height"
     * extension[+]
-      * url = ObservationLinkPeriodEx
+      * url = ObservationLinkPeriodEx // limit the observation fetching to (300 years before current date)
       * valueDuration[+]
         * value = 300
         * system = UCUM
-        * code = #a
+        * code = #a  // years
       * extension[+]
         * url = ObservationExtractEx
         * valueBoolean = true
@@ -185,11 +185,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * code[+] = LNC#3141-9 "Body weight Measured"
     * code[+] = SCT#27113001 "Body weight"
     * extension[+]
-      * url = ObservationLinkPeriodEx
+      * url = ObservationLinkPeriodEx  // limit the observation fetching to (300 years before current date)
       * valueDuration[+]
         * value = 300
         * system = UCUM
-        * code = #a
+        * code = #a // years
     * extension[+]
       * url = ObservationExtractEx
       * valueBoolean = true
