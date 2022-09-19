@@ -615,10 +615,7 @@ ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
 Title: "EORTC-QLQ questionnaire"
 Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* include EORTCQLQCodeSystem#1 "Not at all"
-* include EORTCQLQCodeSystem#2 "A little"
-* include EORTCQLQCodeSystem#3 "Quite a bit"
-* include EORTCQLQCodeSystem#4 "Very much"
+* include codes from system EORTCQLQCodeSystem
 
 // BreastQ \\
 CodeSystem: BreastQCodeSystem
@@ -638,10 +635,7 @@ Id: BreastQValueSet
 Title: "BreastQ response"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
-* include BreastQCodeSystem#1 "Very dissatisfied"
-* include BreastQCodeSystem#2 "Somewhat dissatisfied"
-* include BreastQCodeSystem#3 "Somewhat satisfied"
-* include BreastQCodeSystem#4 "Very satisfied"
+* include codes from system BreastQCodeSystem
 
 // FACT-ES \\
 CodeSystem: FACTESCodeSystem
@@ -662,11 +656,7 @@ Id: FACTESValueSet
 Title: "FACT-ES questionnaire"
 Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
 * ^version  = 0.0.1
-* include FACTESCodeSystem#1 "Not at all"
-* include FACTESCodeSystem#2 "A little"
-* include FACTESCodeSystem#3 "Somewhat"
-* include FACTESCodeSystem#4 "Quite a bit"
-* include FACTESCodeSystem#5 "Very much"
+* include codes from system FACTESCodeSystem
 
 CodeSystem: BreastSurgeryTypesDueToReoperationCodeSystem
 Id: BreastSurgeryTypesDueToReoperationCodeSystem
@@ -685,11 +675,7 @@ Id: TypeOfReoperationVS
 Title: "Type of reoperation"
 Description: "Type of reoperation due to disutility of care"
 * ^version = 0.0.1
-* include BreastSurgeryTypesDueToReoperationCodeSystem#0 "No reoperation due to involved margins "
-* include BreastSurgeryTypesDueToReoperationCodeSystem#1 "Breast conserving surgery (BCS)"
-* include BreastSurgeryTypesDueToReoperationCodeSystem#2 "BCS with mammoplasty"
-* include BreastSurgeryTypesDueToReoperationCodeSystem#3 "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesDueToReoperationCodeSystem#4 "Mastectomy with immediate reconstruction"
+* include codes from system BreastSurgeryTypesDueToReoperationCodeSystem
 * include NullFlavor#UNK "unknown"
 
 CodeSystem: ImpactOfTheComplicationCodeSystem
@@ -713,15 +699,7 @@ Id: DisutilityOfCareComplicationImpactVS
 Title: "Disutility of Care Complication Impact"
 Description: "Impact of the complication"
 * ^version = 0.0.1
-* include ImpactOfTheComplicationCodeSystem#0 "No complication"
-* include ImpactOfTheComplicationCodeSystem#1 "Complication requiring intervention (surgical, radiological, endoscopic)"
-* include ImpactOfTheComplicationCodeSystem#2 "Complication leading to prolonged hospitalization ( >14days)"
-* include ImpactOfTheComplicationCodeSystem#3 "Complication leading to unplanned readmission"
-* include ImpactOfTheComplicationCodeSystem#4 "Complication leading to ICU admission"
-* include ImpactOfTheComplicationCodeSystem#5 "Complication leading to discontinuing of treatment"
-* include ImpactOfTheComplicationCodeSystem#6 "Complication leading to reduced dosing"
-* include ImpactOfTheComplicationCodeSystem#7 "Complication leading to death"
-* include ImpactOfTheComplicationCodeSystem#8 "Complication, but did not result in any of the abovementioned"
+* include codes from system ImpactOfTheComplicationCodeSystem
 * include NullFlavor#UNK "unknown"
 
 CodeSystem: ImpactAttributableToTreatmentCodeSystem
@@ -749,17 +727,5 @@ Id: ImpactAttributableToTreatmentVS
 Title: "Complication Impact Attributable to Treatment Value Set"
 Description: "Complication of the impact due to disutility of care"
 * ^version = 0.0.1
-* include ImpactAttributableToTreatmentCodeSystem#0 "Wound infection"
-* include ImpactAttributableToTreatmentCodeSystem#1 "Seroma/hematoma"
-* include ImpactAttributableToTreatmentCodeSystem#2 "Hemorrhage"
-* include ImpactAttributableToTreatmentCodeSystem#3 "Mastectomy skin flap necrosis"
-* include ImpactAttributableToTreatmentCodeSystem#4 "Partial autologous graft loss"
-* include ImpactAttributableToTreatmentCodeSystem#5 "Total autologous graft loss"
-* include ImpactAttributableToTreatmentCodeSystem#6 "Loss of implant"
-* include ImpactAttributableToTreatmentCodeSystem#7 "Thromboembolic event"
-* include ImpactAttributableToTreatmentCodeSystem#8 "Nerve damage"
-* include ImpactAttributableToTreatmentCodeSystem#9 "Delay wound healing/dehiscence"
-* include ImpactAttributableToTreatmentCodeSystem#10 "Skin toxicity"
-* include ImpactAttributableToTreatmentCodeSystem#11 "Pneumonia"
-* include ImpactAttributableToTreatmentCodeSystem#12 "Neutropenic sepsis"
+* include codes from system ImpactAttributableToTreatmentCodeSystem
 * include NullFlavor#UNK "unknown"
