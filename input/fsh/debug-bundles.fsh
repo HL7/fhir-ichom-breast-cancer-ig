@@ -144,19 +144,19 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * resource = ReoperationTypeVS
 
 * entry[+]
-  * request.url = "ValueSet/TypeOfReoperationVS"
+  * request.url = "ValueSet/InvolvedMarginsReoperationTypeVS"
   * request.method = #PUT
-  * resource = TypeOfReoperationVS
+  * resource = InvolvedMarginsReoperationTypeVS
 
 * entry[+]
-  * request.url = "ValueSet/DisutilityOfCareComplicationImpactVS"
+  * request.url = "ValueSet/ComplicationImpactVS"
   * request.method = #PUT
-  * resource = DisutilityOfCareComplicationImpactVS
+  * resource = ComplicationImpactVS
 
 * entry[+]
-  * request.url = "ValueSet/ImpactAttributableToTreatmentVS"
+  * request.url = "ValueSet/ComplicationTypeVS"
   * request.method = #PUT
-  * resource = ImpactAttributableToTreatmentVS
+  * resource = ComplicationTypeVS
 
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseSixMonths"

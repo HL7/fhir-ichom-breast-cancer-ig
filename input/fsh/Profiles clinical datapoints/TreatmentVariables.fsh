@@ -36,7 +36,7 @@ Id: axilla-surgery
 Title: "Axilla surgery"
 Description: "Represents if the breast cancer patient received surgery to the axilla during the last year."
 * category = SCT#699455008 "Operative procedure on axilla"
-* code from AxillaSurgeryVS (required)
+* code from TargetedAxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
 * subject and performedDateTime and reasonReference MS

@@ -228,12 +228,14 @@ Description: "Codes defining types of treatment a breast cancer patient could re
 * #A_chemo "Adjuvant chemotherapy"
 * #N_A_chemo "Neoadjuvant chemotherapy"
 * #Targ_Thrpy "Targeted therapy"
+* #no_treat "No treatment"
 
 ValueSet: TreatmentTypeVS
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
 * insert SNOMEDCopyrightForVS
+* include TreatmentTypesCodeSystem#no_treat "No treatment"
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
@@ -285,6 +287,16 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 // Axilla surgery
 ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
+Title: "Surgery of Axilla"
+Description: "Valueset of surgery types of the axilla"
+* insert SNOMEDCopyrightForVS
+* SCT#396487001 "Sentinel lymph node biopsy"
+* SCT#234262008 "Excision of axillary lymph node"
+* SCT#79544006 "Complete axillary lymphadenectomy"
+* NullFlavor#UNK "unknown"
+
+ValueSet: TargetedAxillaSurgeryVS
+Id: TargetedAxillaSurgeryVS
 Title: "Surgery of Axilla"
 Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
@@ -492,18 +504,11 @@ Id: InvolvedMarginsReoperationTypeVS
 Title: "Re-operation due to involved margins"
 Description: "Kind of re-operation due to involved margins"
 * insert SNOMEDCopyrightForVS
-* ^version = "0.0.1"
-* ^status = #active
-* ^date = "2022-07-26T09:18:41+02:00"
-* ^publisher = "ICHOM"
-* ^contact.name = "ICHOM"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "https://ichom.org"
-* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
-* SCT#64368001 "Partial mastectomy"
-* SCT#172043006 "Simple mastectomy"
-* IchomReoperation#2 "Breast conserving surgery with mammoplasty"
-* IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* SCT#373572006 "Clinical finding absent"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 // Complications
@@ -513,6 +518,7 @@ Title: "Impact of complication"
 Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * ^caseSensitive = true
+* #1 "No complication"
 * #2 "Complication leading to prolonged hospitalization (>14days)"
 * #5 "Complication leading to discontinuing of treatment"
 * #8 "Complication, but did not result in any of the abovementioned"
@@ -522,6 +528,7 @@ Id: ComplicationImpactVS
 Title: "Impact of complication"
 Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
 * insert SNOMEDCopyrightForVS
+* ComplicationImpactCodeSystem#1 "No complication"
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
 * ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
@@ -657,75 +664,3 @@ Title: "FACT-ES questionnaire"
 Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
 * ^version  = 0.0.1
 * include codes from system FACTESCodeSystem
-
-CodeSystem: BreastSurgeryTypesDueToReoperationCodeSystem
-Id: BreastSurgeryTypesDueToReoperationCodeSystem
-Title: "Breast surgery Types for Reoperation"
-Description: "Codes indicating the types of breast surgery a patient underwent in a reoperation"
-* ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesDueToReoperationCodeSystem 
-* ^caseSensitive = true
-* #0 "No reoperation due to involved margins "
-* #1 "Breast conserving surgery (BCS)"
-* #2 "BCS with mammoplasty"
-* #3 "Mastectomy without immediate reconstruction"
-* #4 "Mastectomy with immediate reconstruction"
-
-ValueSet: TypeOfReoperationVS
-Id: TypeOfReoperationVS
-Title: "Type of reoperation"
-Description: "Type of reoperation due to disutility of care"
-* ^version = 0.0.1
-* include codes from system BreastSurgeryTypesDueToReoperationCodeSystem
-* include NullFlavor#UNK "unknown"
-
-CodeSystem: ImpactOfTheComplicationCodeSystem
-Id: ImpactOfTheComplicationCodeSystem
-Title: "Impact of the complication experienced by the patient"
-Description: "Codes indicating the types of complications arising from a breast surgery a patient underwent"
-* ^url =  https://connect.ichom.org/fhir/CodeSystem/ImpactOfTheComplicationCodeSystem 
-* ^caseSensitive = true
-* #0 "No complication"
-* #1 "Complication requiring intervention (surgical, radiological, endoscopic)"
-* #2 "Complication leading to prolonged hospitalization ( >14days)"
-* #3 "Complication leading to unplanned readmission"
-* #4 "Complication leading to ICU admission"
-* #5 "Complication leading to discontinuing of treatment"
-* #6 "Complication leading to reduced dosing"
-* #7 "Complication leading to death"
-* #8 "Complication, but did not result in any of the abovementioned"
-
-ValueSet: DisutilityOfCareComplicationImpactVS
-Id: DisutilityOfCareComplicationImpactVS
-Title: "Disutility of Care Complication Impact"
-Description: "Impact of the complication"
-* ^version = 0.0.1
-* include codes from system ImpactOfTheComplicationCodeSystem
-* include NullFlavor#UNK "unknown"
-
-CodeSystem: ImpactAttributableToTreatmentCodeSystem
-Id: ImpactAttributableToTreatmentCodeSystem
-Title: "Complication Impact, attributable to treatment Code System"
-Description: "Complication of the impact attributable to treatment disutility of care"
-* ^url =  https://connect.ichom.org/fhir/CodeSystem/ImpactAttributableToTreatmentCodeSystem 
-* ^caseSensitive = true
-* #0 "Wound infection"
-* #1 "Seroma/hematoma"
-* #2 "Hemorrhage"
-* #3 "Mastectomy skin flap necrosis"
-* #4 "Partial autologous graft loss"
-* #5 "Total autologous graft loss"
-* #6 "Loss of implant"
-* #7 "Thromboembolic event"
-* #8 "Nerve damage"
-* #9 "Delay wound healing/dehiscence"
-* #10 "Skin toxicity"
-* #11 "Pneumonia"
-* #12 "Neutropenic sepsis"
-
-ValueSet: ImpactAttributableToTreatmentVS
-Id: ImpactAttributableToTreatmentVS
-Title: "Complication Impact Attributable to Treatment Value Set"
-Description: "Complication of the impact due to disutility of care"
-* ^version = 0.0.1
-* include codes from system ImpactAttributableToTreatmentCodeSystem
-* include NullFlavor#UNK "unknown"

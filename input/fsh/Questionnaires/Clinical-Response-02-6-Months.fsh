@@ -17,7 +17,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #string //or string
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
 
@@ -35,22 +35,15 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * required = true
   
   * item[+]
-    * linkId = "MUTBC"
-    * type = #choice
-    * text = "Please indicate if the patient carries a genetic mutation predisposing breast cancer:"
-    * answerValueSet = Canonical(GermlineMutationVS)
-    * required = true
-
-  * item[+]
     * linkId = "received_surgery"
     * type = #boolean
     * text = "Has the patient received surgery?"
     * required = true
-    
+
   * item[+]
     * linkId = "TNMPT_BREAST"
     * type = #choice
-    * text = "Please indicate the pathological tumor stage (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the pathological tumor stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMPrimaryTumorVS)
     * insert enableWhenTrue(received_surgery)
     * required = true
@@ -58,7 +51,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TNMPN_BREAST"
     * type = #choice
-    * text = "Please indicate the pathological nodal stage (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the pathological nodal stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMRegionalNodesVS)
     * insert enableWhenTrue(received_surgery)
     * required = true
@@ -66,7 +59,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "TNMPM_BREAST"
     * type = #choice
-    * text = "Please indicate the pathological distant metastasis (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the pathological distant metastasis (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMDistantMetastasesVS)
     * insert enableWhenTrue(received_surgery)
     * required = true
@@ -75,22 +68,22 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SIZEINV"
     * type = #integer
     * text = "Please indicate size of invasive component of tumor (in mm, 999 if unknown):"
-    * required = true
     * insert enableWhenTrue(received_surgery)
+    * required = true
 
   * item[+]
     * linkId = "NumLymphNodesResect"
     * type = #integer
     * text = "Please indicate the number of lymph nodes resected (999 if unknown):"
-    * required = true
     * insert enableWhenTrue(received_surgery)
+    * required = true
 
   * item[+]
     * linkId = "LYMPHINV_BREAST"
     * type = #integer
-    * text = "Please indicate the number of lymph nodes involved according to the TNM stage AJCC 7th Ed. (999 if unknown):"
-    * required = true
+    * text = "Please indicate the number of lymph nodes involved according to the TNM stage AJCC 8th Ed. (999 if unknown):"
     * insert enableWhenTrue(received_surgery)
+    * required = true
 
 // GROUP 3 - TREATMENT VARIABLES 
 * item[+]
@@ -161,8 +154,13 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * answerValueSet = Canonical(NoYesUnknownVS)
     * enableWhen[+]
       * question = "SURGERYAX"
-      * operator = #!=
-      * answerCoding = NullFlavor#UNK
+      * operator = #=
+      * answerCoding = SCT#396487001 "Sentinel lymph node biopsy"
+    * enableWhen[+]
+      * question = "SURGERYAX"
+      * operator = #=
+      * answerCoding = SCT#234262008 "Excision of axillary lymph node"
+    * enableBehavior = #any
     * required = true
 
   * item[+]
@@ -186,19 +184,19 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * item[+]
     * linkId = "RECONSTRUCTION_DELAY"
     * type = #choice
-    * text = "Indicate whether the patient received a delayed reconstruction"
+    * text = "Indicate whether the patient received a delayed reconstruction:"
     * answerValueSet = Canonical(NoYesUnknownVS) 
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
       * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * required = true
+
   * item[+]
     * linkId = "SURGERY_RECONSTRUCTION"
     * type = #choice
-    * text = "Indicate what type of reconstruction the patient received"
+    * text = "Indicate what type of reconstruction the patient received:"
     * answerValueSet = Canonical(ReconstructionTypeVS) 
-    * enableBehavior = #any
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
@@ -207,13 +205,33 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "SURGERY_BREAST"
       * operator = #=
       * answerCoding = BreastSurgeryTypesCodeSystem#3 // Mastectomy with reconstruction
+    * enableBehavior = #any
+    * required = true
+
+  * item[+]
+    * linkId = "ImplantReconstruction"
+    * type = #choice
+    * text = "Indicate the location of the implant"
+    * answerValueSet = Canonical(ImplantLocationVS) 
+    * enableWhen[+]
+      * question = "SURGERY_RECONSTRUCTION"
+      * operator = #!=
+      * answerCoding = ReconstructionTypeCodeSystem#Autologous
+    * enableWhen[+]
+      * question = "SURGERY_RECONSTRUCTION"
+      * operator = #!=
+      * answerCoding = NullFlavor#UNK
+    * enableBehavior = #all
     * required = true
 
   * item[+]
     * linkId = "RECONSTRUCTDATE-Known"
     * type = #boolean
     * text = "Is the date of the delayed reconstruction known?"
-    * insert enableWhenTreatmentSCT(SCT#33496007)
+    * enableWhen[+]
+      * question = "RECONSTRUCTION_DELAY"
+      * operator = #=
+      * answerCoding = YesNoUnkCS#Y
     * required = true
 
   * item[+]
@@ -422,7 +440,12 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERYPATIENT"
       * operator = #!=
-      * answerCoding = #UNK
+      * answerCoding = NullFlavor#UNK
+    * enableWhen[+]
+      * question = "SURGERYPATIENT"
+      * operator = #!=
+      * answerCoding = SCT#373572006
+    * enableBehavior = #all
     * required = true
 
   * item[+]
@@ -439,17 +462,27 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
   * text = "Disutility of care"
   * required = true
 
+// Reoperation
   * item[+]
     * linkId = "REOP_BREAST"
     * type = #choice
     * text = "Please indicate if the patient has undergone a reoperation due to involved margins after primary surgery:"
-    * answerValueSet = Canonical(TypeOfReoperationVS)
+    * answerValueSet = Canonical(InvolvedMarginsReoperationTypeVS)
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #!=
       * answerCoding = NullFlavor#UNK
-    * insert enableWhenTreatmentSCT(SCT#387713003)
-    * enableBehavior = #all
+    * required = true
+
+  * item[+]
+    * linkId = "REOP_RECONSTRUCTION"
+    * type = #choice
+    * text = "What type of reconstruction did the patient receive during reoperation?"
+    * answerValueSet = Canonical(ReconstructionTypeVS) 
+    * enableWhen[+]
+      * question = "REOP_BREAST"
+      * operator = #=
+      * answerCoding = BreastSurgeryTypesCodeSystem#3
     * required = true
 
   * item[+]
@@ -459,12 +492,11 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "REOP_BREAST"
       * operator = #!=
-      * answerCoding = NullFlavor#999
+      * answerCoding = NullFlavor#UNK
     * enableWhen[+]
       * question = "REOP_BREAST"
       * operator = #!=
-      * answerCoding = BreastSurgeryTypesDueToReoperationCodeSystem#0
-    * insert enableWhenTreatmentSCT(SCT#387713003)
+      * answerCoding = SCT#373572006 
     * enableBehavior = #all
     * required = true
 
@@ -475,11 +507,16 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(REOPDATE_BREAST-Known)
     * required = true
 
+// Comlication
   * item[+]
     * linkId = "ComplicationImpact"
     * type = #choice
     * text = "Please state the impact of the complication experienced by the patient:"
-    * answerValueSet = Canonical(DisutilityOfCareComplicationImpactVS)
+    * answerValueSet = Canonical(ComplicationImpactVS)
+    * enableWhen[+]
+      * question = "TREATMENT_BREAST"
+      * operator = #!=
+      * answerCoding = TreatmentTypesCodeSystem#no_treat
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=
@@ -488,20 +525,19 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * required = true
     * repeats = true
 
-
   * item[+]
     * linkId = "ComplicationAttrTreatment"
     * type = #choice
     * text = "Please indicate whether the complication is attributable to treatment:"
     * answerValueSet = Canonical(NoYesUnknownVS)
     * enableWhen[+]
-      * question = "TREATMENT_BREAST"
+      * question = "ComplicationImpact"
       * operator = #!=
-      * answerCoding = ImpactOfTheComplicationCodeSystem#0
+      * answerCoding = ComplicationImpactCodeSystem#1 
     * enableWhen[+]
-      * question = "TREATMENT_BREAST"
+      * question = "ComplicationImpact"
       * operator = #!=
-      * answerCoding = NullFlavor#999
+      * answerCoding = NullFlavor#UNK
     * enableBehavior = #all
     * required = true
 
@@ -509,10 +545,9 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "COMPL_BREAST"
     * type = #choice
     * text = "Please indicate the type of complication:"
-    * answerValueSet = Canonical(ImpactAttributableToTreatmentVS)
+    * answerValueSet = Canonical(ComplicationTypeVS)
     * enableWhen[+]
       * question = "ComplicationAttrTreatment"
       * operator = #=
       * answerCoding = YesNoUnkCS#Y
     * required = true
-    * repeats = true
