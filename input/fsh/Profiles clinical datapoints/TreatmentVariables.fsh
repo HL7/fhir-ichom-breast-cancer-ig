@@ -3,7 +3,7 @@ Profile: BreastCancerSurgery
 Parent: Procedure 
 Id: breast-cancer-surgery
 Title: "Breast cancer surgery"
-Description: "Represents if the breast cancer patient received surgery during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received surgery during the last year."
 * category = SCT#387713003 "Surgical procedure" 
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -34,18 +34,20 @@ Profile: AxillaSurgery
 Parent: Procedure 
 Id: axilla-surgery
 Title: "Axilla surgery"
-Description: "Represents if the breast cancer patient received surgery to the axilla during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received surgery to the axilla during the last year."
 * category = SCT#699455008 "Operative procedure on axilla"
 * code from AxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
+* subject and performedDateTime and reasonReference MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
 Description: "Example of a breast cancer patient who underwent surgery to the axilla"
 * status = EventStatusCS#completed
-* code = SCT#79544006 "Complete axillary lymphadenectomy"
+* category = SCT#699455008 "Operative procedure on axilla"
+* code = SCT#234262008 "Excision of axillary lymph node"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-02-12"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -66,11 +68,10 @@ Profile: AxillaryClearance
 Parent: Procedure 
 Id: axillary-clearance
 Title: "Axillary clearance"
-Description: "Represents if the breast cancer patient received axillary clearance due to lymph node involvement after sentinel lymph node biopsy during the last year. This profile is in alignment with mCODE."
-* partOf only Reference(AxillaSurgery)
+Description: "Represents if the breast cancer patient received axillary clearance during the last year. Axilla clearance could be due to lymph node involvement after sentinel lymph node biopsy."
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	and complication MS
+* subject and performedDateTime	and complication and reasonReference MS
 * reasonReference only Reference (AxillaSurgery)
 
 Instance: AxillaryClearancePatient147
@@ -97,7 +98,7 @@ Profile: ReconstructionSurgery
 Parent: Procedure 
 Id: reconstruction-surgery
 Title: "Reconstruction surgery"
-Description: "Represents if the breast cancer patient received reconstruction surgery during the last year. This profile is in alignment with mCODE."
+Description: "Represents if the breast cancer patient received reconstruction surgery during the last year."
 * code = SCT#33496007 "Reconstruction of breast" 
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
@@ -307,10 +308,11 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* category = SCT#397747003 "Assertion"
-* code from TargetedTherapyVS (preferred)
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
+* code and subject and performedPeriod MS
+* extension contains ProcedureMethodEx named method 0..1 MS
+* extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
@@ -318,9 +320,10 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
+* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
+* extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
 
 Mapping: TargetedTherapyToICHOM
 Source:	TargetedTherapy
@@ -328,9 +331,41 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: targetedtherapymapping
 Title: "Targeted therapy to ICHOM set"
 Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set" 	
-* code -> "Targeted therapy"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
+* extension[method] -> "Targeted therapy"
+
+// Multidisciplinary meeting 
+Profile: TreatmentPlan
+Parent: CarePlan 
+Id: treatment-plan 
+Title: "Treatment recommended by a multidisciplinary team"
+Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
+* insert PublicationProfileRuleset
+* category = SCT#312384001 "Multidisciplinary assessment"
+* subject only Reference(BreastCancerPatient)
+* created MS
+* activity.detail.code from RecommendedTreatmentTypeVS
+* activity.detail.code MS
+
+Instance: TreatmentPlanPatient147
+InstanceOf: TreatmentPlan
+Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
+* status = CareplanStatusCS#active
+* intent = CareplanIntentCS#plan 
+* category = SCT#312384001 "Multidisciplinary assessment"
+* subject = Reference(BreastCancerPatient147)
+* activity.detail.code = SCT#387713003 "Surgical procedure"
+* activity.detail.status = CareplanActivityStatusCS#unknown
+
+Mapping: TreatmentPlanToICHOM
+Source:	TreatmentPlan
+Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
+Id: TreatmentPlanMapping
+Title: "Treatmentplan to ICHOM set"
+Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
+* -> "Multidisciplinary Meeting"
+* activity.detail.code -> "Multidisciplinary Recommended Treatments"
 
 // TreatmentPlanFollowed	
 Profile: TreatmentPlanFollowed
@@ -339,6 +374,7 @@ Id: treatment-plan-followed
 Title: "Real Treatment Plan Followed"
 Description: "Indicate if the patient followed the multidisciplinary recommended treatment plan"
 * insert PublicationProfileRuleset
+* basedOn only Reference(TreatmentPlan)
 * code = SCT#410110000 "Compliance care assessment"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanFollowedVS (required)
@@ -349,6 +385,7 @@ Instance: TreatmentPlanFollowedPatient147
 InstanceOf: TreatmentPlanFollowed 
 Title: "Example Real Treatment Plan Followed"
 Description: "Example of how the real treatment plan was followed"
+* basedOn = Reference(TreatmentPlanPatient147)
 * code = SCT#410110000 "Compliance care assessment"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
@@ -369,6 +406,7 @@ Id: treatment-plan-not-followed
 Title: "Treatment Plan Not Followed"
 Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
 * insert PublicationProfileRuleset
+* basedOn only Reference(TreatmentPlan)
 * code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanNotFollowedVS (required)
@@ -379,6 +417,7 @@ Instance: TreatmentPlanNotFollowedPatient147
 InstanceOf: TreatmentPlanNotFollowed 
 Title: "Example Treatment Plan Not Followed"
 Description: "Example of why the treatment plan was not followed"
+* basedOn = Reference(TreatmentPlanPatient147)
 * code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
@@ -391,37 +430,6 @@ Id: treatmentplannotfollowedmapping
 Title: "TreatmentPlanNotFollowed to ICHOM set"
 Description: "Mapping of Treatment Plan Not Followed to the ICHOM breast cancer PCOM set" 	
 * value[x] -> "Treatment Plan Not Followed"
-
-// TreatmentPlanNotFollowed	
-Profile: PatientTreatPref
-Parent: Observation
-Id: patient-treat-pref
-Title: "Patient Treatment Preference"
-Description: "Indicate why the recommended treatment was not followed"
-* insert PublicationProfileRuleset
-* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
-* value[x] only CodeableConcept 
-* value[x] from PatientTreatPrefVS (required)
-* value[x] MS
-
-// no example yet available, this one is made up
-Instance: PatientTreatPrefPatient147
-InstanceOf: PatientTreatPref 
-Title: "Example Patient Treatment Preference"
-Description: "Example of why the patient did not follow the recommended treatment"
-* code = TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
-* status = ObservationStatusCS#final
-* subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = PatientTreatPrefCodeSystem#2 "Treatment unavailable"
-
-Mapping: PatientTreatPrefToICHOM
-Source:	PatientTreatPref
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: patienttreatprefmapping
-Title: "PatientTreatPref to ICHOM set"
-Description: "Mapping of Patient Treatment Preference  to the ICHOM breast cancer PCOM set" 	
-* value[x] -> "Patient Treatment Preference"
-
 
 
 

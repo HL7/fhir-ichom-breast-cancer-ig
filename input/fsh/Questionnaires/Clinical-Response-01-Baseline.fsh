@@ -7,6 +7,23 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 * name = "ClinicalResponseBaseline"
 * title = "Clinical response questionnaire at baseline"
 * status = #draft
+* extension[0]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext"
+  //
+  // Launch Context: always patient
+  //
+  * extension[0]
+    * url = "name"
+    * valueCoding
+      * code = #patient
+      * system = "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+      * display = "Patient"
+  * extension[1]
+    * url = "type"
+    * valueCode = #Patient
+  * extension[2]
+    * url = "description"
+    * valueString = "Patient information to pre-populate the form with"
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
 * item[+]
@@ -17,15 +34,25 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #integer 
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
+    * extension[+]
+      * url = InitialExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.id"
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
     * text = "What is the patient's last name?"
     * required = true
+    * extension[+]
+      * url = InitialExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.name.first().family.first()"
 
 // GROUP 2 - DEMOGRAPHICS
 * item[+]
@@ -38,8 +65,19 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "Sex"
     * type = #choice
     * text = "Please indicate the sex of the patient at birth:"
-    * answerValueSet = Canonical(DemographicFactorsSexAtBirth)
+    * answerValueSet = Canonical(AdministrativeGenderVS)
     * required = true
+    * extension[+]
+      * url = VariableEx
+      * valueExpression[+]
+        * name = "expandedGender"
+        * language = #application/x-fhir-query
+        * expression = "ValueSet/$expand?url=http://hl7.org/fhir/ValueSet/administrative-gender"
+    * extension[+]
+      * url = InitialExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%expandedGender.expansion.contains.where(code=%patient.gender)"
 
   * item[+]
     * linkId = "YearOfBirth"
@@ -47,7 +85,11 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * text = "In what year was the patient born?"
     * required = true
     * maxLength = 4
-
+    * extension[+]
+      * url = InitialExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%patient.birthDate.substring(0,4)"
 
 // GROUP 3 - CLINICAL FACTORS
 * item[+]
@@ -57,35 +99,167 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * required = true
 
   * item[+]
+    * linkId = "Height"
+    * type = #quantity
+    * text = "Please indicate your body height."
+    * required = true
+    * code[+] = LNC#8302-2 "Body height"
+    * extension[+]
+      * url = ObservationLinkPeriodEx // limit the observation fetching to (300 years before current date)
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a  // years
+      * extension[+]
+        * url = ObservationExtractEx
+        * valueBoolean = true
+    * extension[+]
+      * url = UnitOptionEx
+      * valueCoding[+] = UCUM#cm "cm"
+    * extension[+]
+      * url = MinQuantityEx
+      * valueQuantity[+]
+        * value = 10
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = MaxQuantityEx
+      * valueQuantity[+]
+        * value = 320
+        * system = UCUM
+        * code = #cm
+    * extension[+]
+      * url = UnitOptionEx
+      * valueCoding[+] = UCUM#[in_i] "[in_i]"
+    * extension[+]
+      * url = MinQuantityEx
+      * valueQuantity[+]
+        * value = 3.94
+        * system = UCUM
+        * code = #[in_i]
+    * extension[+]
+      * url = MaxQuantityEx
+      * valueQuantity[+]
+        * value = 126
+        * system = UCUM 
+        * code = #[in_i]
+
+  * item[+]
     * linkId = "HeightValue"
     * type = #integer
     * text = "Please indicate the patient's body height:"
-    * maxLength = 3
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = CalculatedExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Height').answer.valueQuantity.value"
+    * extension[+]
+      * url = HiddenEx
+      * valueBoolean = true
+
     
   * item[+]
     * linkId = "HeightUnit" 
     * type = #choice
     * text = "Please indicate the units of measurement you recorded the patient's height in:"
-    * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1 "cm"
-    * answerOption[+].valueCoding = urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2 "inches"
+    * answerOption[+].valueCoding = UCUM#cm "cm"
+    * answerOption[+].valueCoding = UCUM#[in_i] "[in_i]"
     * required = true
- 
+    * readOnly = true
+    * extension[+]
+      * url = CalculatedExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Height').answer.valueQuantity.code = 'cm', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2')"
+    * extension[+]
+      * url = HiddenEx
+      * valueBoolean = true
+  // Weight, as quantity
+  * item[+]
+    * type = #quantity
+    * linkId = "Weight"
+    * text = "Please indicate your body weight."
+    * required = true
+    * code[+] = LNC#29463-7 "Body weight"
+    * code[+] = LNC#3141-9 "Body weight Measured"
+    * code[+] = SCT#27113001 "Body weight"
+    * extension[+]
+      * url = ObservationLinkPeriodEx  // limit the observation fetching to (300 years before current date)
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a // years
+    * extension[+]
+      * url = ObservationExtractEx
+      * valueBoolean = true
+    * extension[+]
+      * url = UnitOptionEx
+      * valueCoding[+] = UCUM#kg "kg"
+    * extension[+]
+      * url = MinQuantityEx
+      * valueQuantity[+]
+        * value = 0.1
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = MaxQuantityEx
+      * valueQuantity[+]
+        * value = 750
+        * system = UCUM
+        * code = #kg
+    * extension[+]
+      * url = UnitOptionEx
+      * valueCoding[+] = UCUM#[lb_av] "[lb_av]"
+    * extension[+]
+      * url = MinQuantityEx
+      * valueQuantity[+]
+        * value = 0.22
+        * system = UCUM
+        * code = #[lb_av]
+    * extension[+]
+      * url = MaxQuantityEx
+      * valueQuantity[+]
+        * value = 1653.47
+        * system = UCUM 
+        * code = #[lb_av]
+
   * item[+]
     * linkId = "WeightValue"
     * type = #integer
     * text = "Please indicate the patient's body weight:" 
-    * maxLength = 3
-    * required = true
+    * readOnly = true
+    * extension[+]
+      * url = ObservationLinkPeriodEx
+      * valueDuration[+]
+        * value = 300
+        * system = UCUM
+        * code = #a
+    * extension[+]
+      * url = CalculatedExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.value"
+    * extension[+]
+      * url = HiddenEx
+      * valueBoolean = true
 
   * item[+]
     * linkId = "WeightUnit" 
     * type = #choice
     * text = "Please indicate the units of measurement you recorded the patient's weight in:" 
-    * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1 "kilograms"
-    * answerOption[+].valueCoding = urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2 "lbs"
+    * answerOption[+].valueCoding = UCUM#kg "kg"
+    * answerOption[+].valueCoding = UCUM#[lb_av] "[lb_av]"
     * required = true
-
+    * extension[+]
+      * url = CalculatedExpressionEx
+      * valueExpression[+]
+        * language = #text/fhirpath
+        * expression = "iif(%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.code = 'kg', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2')"
+    * extension[+]
+      * url = HiddenEx
+      * valueBoolean = true
+      
   * item[+]
     * linkId = "LATERAL"
     * type = #choice

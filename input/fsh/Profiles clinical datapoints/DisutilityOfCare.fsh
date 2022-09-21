@@ -49,6 +49,10 @@ Description: "Represents the type and impact of a complication experienced by a 
 * severity from ComplicationImpactVS (required)
 * code and subject and severity MS
 * extension contains DueToEx named dueTo 0..* MS
+* extension[dueTo] ^short = "Previous procedure that prompted this complication"
+* extension[dueTo] ^definition = "This element indicates whether the complication was attributable to the breast cancer treatment the patient received"
+* extension[dueTo].value[x] only Reference
+* extension[dueTo].valueReference only Reference (Procedure)
 
 Instance: ComplicationPatient147
 InstanceOf: Complication
@@ -57,6 +61,7 @@ Description: "Example of a complication in patient with breast cancer"
 * code = SCT#233604007 "Pneumonia"
 * subject = Reference(BreastCancerPatient147)
 * severity = SCT#397945004 "Unexpected admission to intensive care unit"
+* extension[dueTo].valueReference = Reference(BreastCancerSurgeryPatient147)
 
 Mapping: ComplicationToICHOM
 Source:	Complication

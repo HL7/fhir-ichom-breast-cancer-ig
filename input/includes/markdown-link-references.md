@@ -64,7 +64,6 @@
 [PatientReportedSixMonths]: Questionnaire-PatientReportedSixMonths.html
 [PatientReportedYear1and2]: Questionnaire-PatientReportedYear1and2.html
 [PatientReportedYear3and4]: Questionnaire-PatientReportedYear3and4.html
-[PatientTreatPref]: StructureDefinition-patient-treat-pref.html
 [PatientTreatPrefCodeSystem]: CodeSystem-PatientTreatPrefCodeSystem.html
 [PatientTreatPrefVS]: ValueSet-PatientTreatPrefVS.html
 [PrimaryBreastCancerCondition]: StructureDefinition-primary-breastcancer.html
@@ -77,7 +76,7 @@
 [ReconstructionTypeCodeSystem]: CodeSystem-ReconstructionTypeCodeSystem.html
 [ReconstructionTypeVS]: ValueSet-ReconstructionTypeVS.html
 [RecurrenceMethod]: StructureDefinition-recr-method.html
-[RecurrenceMethod]: ValueSet-RecurrenceMethod.html
+[RecurrenceMethodVS]: ValueSet-RecurrenceMethodVS.html
 [RecurrenceMethodCodeSystem]: CodeSystem-RecurrenceMethodCodeSystem.html
 [RelationshipStatusVS]: ValueSet-RelationshipStatusVS.html
 [ReoperationSurgery]: StructureDefinition-reoperation-surgery.html
