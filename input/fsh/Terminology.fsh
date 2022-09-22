@@ -290,6 +290,16 @@ Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
 * SCT#234262008 "Excision of axillary lymph node"
+* SCT#79544006 "Complete axillary lymphadenectomy"
+* NullFlavor#UNK "unknown"
+
+ValueSet: TargetedAxillaSurgeryVS
+Id: TargetedAxillaSurgeryVS
+Title: "Surgery of Axilla"
+Description: "Valueset of surgery types of the axilla"
+* insert SNOMEDCopyrightForVS
+* SCT#396487001 "Sentinel lymph node biopsy"
+* SCT#234262008 "Excision of axillary lymph node"
 * NullFlavor#UNK "unknown"
 
 // Reconstruction surgery 
@@ -577,13 +587,32 @@ Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#UNK "Unknown"
 
 // Recurrence
+CodeSystem: RecurrenceCodeSystem
+Id: RecurrenceCodeSystem
+Title: "Recurrence of neoplasm"
+Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
+* ^caseSensitive = true
+* #1 "Yes, local recurrence"
+* #2 "Yes, regional recurrence" 
+* #3 "Yes, distant recurrence"
+
+ValueSet: RecurrenceVS
+Id: RecurrenceVS
+Title: "Recurrence of neoplasm"
+Description: "Valueset about whether there is evidence of local, regional or distant recurrence of neoplasm"
+* YesNoUnkCS#N "No"
+* RecurrenceCodeSystem#1 "Yes, local recurrence"
+* RecurrenceCodeSystem#2 "Yes, regional recurrence" 
+* RecurrenceCodeSystem#3 "Yes, distant recurrence"
+* NullFlavor#UNK "unknown"
+
 CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
 Title: "Recurrence Method"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * ^caseSensitive = true
-
 * #2 "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethodVS

@@ -33,7 +33,7 @@ RuleSet: enableWhenRecurrence(code)
 * enableWhen[+]
   * question = "MalignancyRecur"
   * operator = #=
-  * answerCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add{code}
+  * answerCoding = RecurrenceCodeSystem{code}
 
 // identifies the type of breast cancer surgery the patient received
 RuleSet: enableWhenSurgeryType(code)
