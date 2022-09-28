@@ -138,7 +138,9 @@ Title: "Radiotherapy"
 Description: "Represents if the breast cancer patient received radiotherapy during the last year." 
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy" 
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
+* performedPeriod MS 
+* performedPeriod.start ^short = "Radiotherapy start date"
+* performedPeriod.end ^short = "Radiotherapy stop date"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
@@ -178,6 +180,8 @@ Description: "Represents if the patient received chemotherapy during the last ye
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * performedPeriod and subject and reasonReference and reasonCode MS
+* performedPeriod.start ^short = "Chemotherapy start date"
+* performedPeriod.end ^short = "Chemotherapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
 
@@ -216,6 +220,8 @@ Description: "Represents if the patient received hormonal therapy during the las
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * performedPeriod and subject and reasonReference and reasonCode MS
+* performedPeriod.start ^short = "Hormonal therapy start date"
+* performedPeriod.end ^short = "Hormonal therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
 
@@ -306,6 +312,8 @@ Description: "Type and duration of targeted therapy"
 * code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
 * code and subject and performedPeriod MS
+* performedPeriod.start ^short = "Targeted therapy start date"
+* performedPeriod.end ^short = "Targeted therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
 
