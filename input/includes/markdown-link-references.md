@@ -23,10 +23,6 @@
 [ComplicationTypeCodeSystem]: CodeSystem-ComplicationTypeCodeSystem.html
 [ComplicationTypeVS]: ValueSet-ComplicationTypeVS.html
 [DeathAttributableBC]: StructureDefinition-death-attr-bc.html
-[DemographicFactorsCountry]: ValueSet-DemographicFactorsCountry.html
-[DemographicFactorsEthnicity]: ValueSet-DemographicFactorsEthnicity.html
-[DemographicFactorsRace]: ValueSet-DemographicFactorsRace.html
-[DemographicFactorsSexAtBirth]: ValueSet-DemographicFactorsSexAtBirth.html
 [EducationLevel]: StructureDefinition-EducationLevel.html
 [EducationLevelVS]: ValueSet-EducationLevelVS.html
 [EndopredictonScore]: StructureDefinition-endopredicton-score.html

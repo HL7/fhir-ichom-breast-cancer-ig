@@ -16,6 +16,9 @@ publisher:
   name: ICHOM
   url: https://ichom.org
 
+dependencies:
+  hl7.fhir.uv.sdc: 3.0.0
+
 pages:
   index.md:
     title: Introduction

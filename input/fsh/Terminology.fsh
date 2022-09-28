@@ -228,12 +228,14 @@ Description: "Codes defining types of treatment a breast cancer patient could re
 * #A_chemo "Adjuvant chemotherapy"
 * #N_A_chemo "Neoadjuvant chemotherapy"
 * #Targ_Thrpy "Targeted therapy"
+* #no_treat "No treatment"
 
 ValueSet: TreatmentTypeVS
 Id: TreatmentTypeValueSet
 Title: "Type of treatments"
 Description: "Valueset of the kind of treatment a patient with breastcancer underwent"
 * insert SNOMEDCopyrightForVS
+* include TreatmentTypesCodeSystem#no_treat "No treatment"
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
@@ -502,18 +504,11 @@ Id: InvolvedMarginsReoperationTypeVS
 Title: "Re-operation due to involved margins"
 Description: "Kind of re-operation due to involved margins"
 * insert SNOMEDCopyrightForVS
-* ^version = "0.0.1"
-* ^status = #active
-* ^date = "2022-07-26T09:18:41+02:00"
-* ^publisher = "ICHOM"
-* ^contact.name = "ICHOM"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "https://ichom.org"
-* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
-* SCT#64368001 "Partial mastectomy"
-* SCT#172043006 "Simple mastectomy"
-* IchomReoperation#2 "Breast conserving surgery with mammoplasty"
-* IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* SCT#373572006 "Clinical finding absent"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 // Complications
@@ -523,6 +518,7 @@ Title: "Impact of complication"
 Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * ^caseSensitive = true
+* #1 "No complication"
 * #2 "Complication leading to prolonged hospitalization (>14days)"
 * #5 "Complication leading to discontinuing of treatment"
 * #8 "Complication, but did not result in any of the abovementioned"
@@ -532,6 +528,7 @@ Id: ComplicationImpactVS
 Title: "Impact of complication"
 Description: "ValueSet of the impact of a complication experienced by the breast cancer patient"
 * insert SNOMEDCopyrightForVS
+* ComplicationImpactCodeSystem#1 "No complication"
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
 * ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
@@ -644,10 +641,7 @@ ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
 Title: "EORTC-QLQ questionnaire"
 Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* include EORTCQLQCodeSystem#1 "Not at all"
-* include EORTCQLQCodeSystem#2 "A little"
-* include EORTCQLQCodeSystem#3 "Quite a bit"
-* include EORTCQLQCodeSystem#4 "Very much"
+* include codes from system EORTCQLQCodeSystem
 
 // BreastQ \\
 CodeSystem: BreastQCodeSystem
@@ -667,10 +661,7 @@ Id: BreastQValueSet
 Title: "BreastQ response"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
 * ^version  = 0.0.1
-* include BreastQCodeSystem#1 "Very dissatisfied"
-* include BreastQCodeSystem#2 "Somewhat dissatisfied"
-* include BreastQCodeSystem#3 "Somewhat satisfied"
-* include BreastQCodeSystem#4 "Very satisfied"
+* include codes from system BreastQCodeSystem
 
 // FACT-ES \\
 CodeSystem: FACTESCodeSystem
@@ -691,8 +682,4 @@ Id: FACTESValueSet
 Title: "FACT-ES questionnaire"
 Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
 * ^version  = 0.0.1
-* include FACTESCodeSystem#1 "Not at all"
-* include FACTESCodeSystem#2 "A little"
-* include FACTESCodeSystem#3 "Somewhat"
-* include FACTESCodeSystem#4 "Quite a bit"
-* include FACTESCodeSystem#5 "Very much"
+* include codes from system FACTESCodeSystem

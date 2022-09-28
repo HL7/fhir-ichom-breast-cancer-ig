@@ -110,9 +110,9 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * value = 300
         * system = UCUM
         * code = #a  // years
-      * extension[+]
-        * url = ObservationExtractEx
-        * valueBoolean = true
+    * extension[+]
+      * url = ObservationExtractEx
+      * valueBoolean = true
     * extension[+]
       * url = UnitOptionEx
       * valueCoding[+] = UCUM#cm "cm"
@@ -144,37 +144,6 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * system = UCUM 
         * code = #[in_i]
 
-  * item[+]
-    * linkId = "HeightValue"
-    * type = #integer
-    * text = "Please indicate the patient's body height:"
-    * readOnly = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "%resource.repeat(item).where(linkId='Height').answer.valueQuantity.value"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-
-    
-  * item[+]
-    * linkId = "HeightUnit" 
-    * type = #choice
-    * text = "Please indicate the units of measurement you recorded the patient's height in:"
-    * answerOption[+].valueCoding = UCUM#cm "cm"
-    * answerOption[+].valueCoding = UCUM#[in_i] "[in_i]"
-    * required = true
-    * readOnly = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "iif(%resource.repeat(item).where(linkId='Height').answer.valueQuantity.code = 'cm', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#1', 'urn:uuid:f36dcb8d-aede-4634-9194-f0f948d87ddd#2')"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
   // Weight, as quantity
   * item[+]
     * type = #quantity
@@ -225,57 +194,17 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
         * code = #[lb_av]
 
   * item[+]
-    * linkId = "WeightValue"
-    * type = #integer
-    * text = "Please indicate the patient's body weight:" 
-    * readOnly = true
-    * extension[+]
-      * url = ObservationLinkPeriodEx
-      * valueDuration[+]
-        * value = 300
-        * system = UCUM
-        * code = #a
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.value"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-
-  * item[+]
-    * linkId = "WeightUnit" 
-    * type = #choice
-    * text = "Please indicate the units of measurement you recorded the patient's weight in:" 
-    * answerOption[+].valueCoding = UCUM#kg "kg"
-    * answerOption[+].valueCoding = UCUM#[lb_av] "[lb_av]"
-    * required = true
-    * extension[+]
-      * url = CalculatedExpressionEx
-      * valueExpression[+]
-        * language = #text/fhirpath
-        * expression = "iif(%resource.repeat(item).where(linkId='Weight').answer.valueQuantity.code = 'kg', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#1', 'urn:uuid:6d020c76-9ac1-4dfd-bfad-c084afd9f045#2')"
-    * extension[+]
-      * url = HiddenEx
-      * valueBoolean = true
-      
-  * item[+]
     * linkId = "LATERAL"
     * type = #choice
     * text = "Please indicate the laterality of breast cancer:"
-    * answerOption[+].valueCoding = urn:uuid:e7d240f0-ea4c-4206-b488-f83c055fc1d4#0 "Left breast"
-    * answerOption[+].valueCoding = urn:uuid:e7d240f0-ea4c-4206-b488-f83c055fc1d4#1 "Right breast"
-    * answerOption[+].valueCoding = urn:uuid:e7d240f0-ea4c-4206-b488-f83c055fc1d4#3 "Both breasts"
+    * answerValueSet = Canonical(LateralityVS)
     * required = true
 
   * item[+]
     * linkId = "FIRSTBC"
     * type = #choice
     * text = "Please indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
-    * answerOption[+].valueCoding = urn:uuid:23e2a296-dce5-447d-9a7c-7f4ac97b6ebe#0 "Primary tumor"
-    * answerOption[+].valueCoding = urn:uuid:23e2a296-dce5-447d-9a7c-7f4ac97b6ebe#1 "New ipsilateral"
-    * answerOption[+].valueCoding = urn:uuid:23e2a296-dce5-447d-9a7c-7f4ac97b6ebe#2 "New contralateral"
+    * answerValueSet = Canonical(LateralityNewCancerVS)
     * required = true
 
 // GROUP 4 - TUMOR FACTORS
@@ -302,11 +231,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "HISTOTYPE"
     * type = #choice
     * text = "Please indicate the histologic type of the tumor (select all that apply):"
-    * answerOption[+].valueCoding = urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0#0 "Ductal carcinoma in situ"
-    * answerOption[+].valueCoding = urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0#1 "Invasive ductal carcinoma"
-    * answerOption[+].valueCoding = urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0#2 "Invasive lobular carcinoma"
-    * answerOption[+].valueCoding = urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0#3 "Other"
-    * answerOption[+].valueCoding = urn:uuid:54f3b593-e92c-49c2-838a-5e59196de2f0#999 "Unknown"
+    * answerValueSet = Canonical(HistologicalTypeVS)
     * required = true
     * repeats = true
 
@@ -314,77 +239,49 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "MUTBC"
     * type = #choice
     * text = "Please indicate if the patient carries a genetic mutation predisposing breast cancer:"
-    * answerOption[+].valueCoding = urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505#0 "No mutation"
-    * answerOption[+].valueCoding = urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505#1 "BRCA 1"
-    * answerOption[+].valueCoding = urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505#2 "BRCA 2"
-    * answerOption[+].valueCoding = urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505#3 "Other mutation"
-    * answerOption[+].valueCoding = urn:uuid:4574904d-f3a9-44c4-9349-40ea58076505#4 "Not tested"
+    * answerValueSet = Canonical(GermlineMutationVS)
     * required = true
 
   * item[+]
     * linkId = "GRADEINV"
     * type = #choice
     * text = "Please indicate the grade of the invasive component of tumor:"
-    * answerOption[+].valueCoding = urn:uuid:ce2aba40-12ae-41cd-85a6-fa8ae68d3284#0 "Grade 1"
-    * answerOption[+].valueCoding = urn:uuid:ce2aba40-12ae-41cd-85a6-fa8ae68d3284#1 "Grade 2"
-    * answerOption[+].valueCoding = urn:uuid:ce2aba40-12ae-41cd-85a6-fa8ae68d3284#2 "Grade 3"
-    * answerOption[+].valueCoding = urn:uuid:ce2aba40-12ae-41cd-85a6-fa8ae68d3284#3 "Not reported"
+    * answerValueSet = Canonical(GradingVS)
     * required = true
 
   * item[+]
     * linkId = "GRADEDCIS"
     * type = #choice
     * text = "Please indicate the tumor grade of DCIS component of tumor:"
-    * answerOption[+].valueCoding = urn:uuid:28afa2eb-fab0-4985-85c0-b560b1de5cb4#0 "Low"
-    * answerOption[+].valueCoding = urn:uuid:28afa2eb-fab0-4985-85c0-b560b1de5cb4#1 "Intermediate"
-    * answerOption[+].valueCoding = urn:uuid:28afa2eb-fab0-4985-85c0-b560b1de5cb4#2 "High"
-    * answerOption[+].valueCoding = urn:uuid:28afa2eb-fab0-4985-85c0-b560b1de5cb4#3 "Not reported"
+    * answerValueSet = Canonical(GradingVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCT_BREAST"
     * type = #choice
     * text = "Please indicate the clinical tumor stage (per AJCC 5th - 7th Ed.):"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#0 "cTX"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#1 "cT0"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#2 "cTis"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#3 "cT1"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#4 "cT2"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#5 "cT3"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#6 "cT4"
-    * answerOption[+].valueCoding = urn:uuid:bbf043ae-77f6-4d72-9c26-54120c64877a#999 "Unknown"    
+    * answerValueSet = Canonical(TNMPrimaryTumorVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCN_BREAST"
     * type = #choice
     * text = "Please indicate the clinical nodal stage (per AJCC 5th - 7th Ed.):"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#0 "cNX"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#1 "cN0"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#2 "cN1"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#3 "cN2"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#4 "cN3"
-    * answerOption[+].valueCoding = urn:uuid:aac07446-dc50-4dfe-a241-77d0fa203591#999 "Unknown"  
+    * answerValueSet = Canonical(TNMRegionalNodesVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCM_BREAST"
     * type = #choice
     * text = "Please indicate the clinical distant metastasis (per AJCC 5th - 7th Ed.):"
-    * answerOption[+].valueCoding = urn:uuid:5f8d75d7-3fd5-4899-a6af-6e1ea80520b3#1 "cMX"
-    * answerOption[+].valueCoding = urn:uuid:5f8d75d7-3fd5-4899-a6af-6e1ea80520b3#2 "cM0"
-    * answerOption[+].valueCoding = urn:uuid:5f8d75d7-3fd5-4899-a6af-6e1ea80520b3#3 "cM1"
-    * answerOption[+].valueCoding = urn:uuid:5f8d75d7-3fd5-4899-a6af-6e1ea80520b3#999 "Unknown"      
+    * answerValueSet = Canonical(TNMDistantMetastasesVS)     
     * required = true
 
   * item[+]
     * linkId = "ERSTATUS"
     * type = #choice
     * text = "Please indicate if the estrogen receptor status is positive:"
-    * answerOption[+].valueCoding = urn:uuid:93e05a33-3b00-4ae9-b4cd-ba7ba3e1f54e#0 "No"
-    * answerOption[+].valueCoding = urn:uuid:93e05a33-3b00-4ae9-b4cd-ba7ba3e1f54e#1 "Yes"
-    * answerOption[+].valueCoding = urn:uuid:93e05a33-3b00-4ae9-b4cd-ba7ba3e1f54e#2 "Not performed"
-    * answerOption[+].valueCoding = urn:uuid:93e05a33-3b00-4ae9-b4cd-ba7ba3e1f54e#999 "Unkown"
+    * answerValueSet = Canonical(EstrogenStatusVS)
     * required = true
 
 // add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
@@ -393,10 +290,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "PRSTATUS"
     * type = #choice
     * text = "Please indicate if the progesterone receptor status is positive:"
-    * answerOption[+].valueCoding = urn:uuid:02d110fd-1183-41fa-bacb-a689e0c67149#0 "No"
-    * answerOption[+].valueCoding = urn:uuid:02d110fd-1183-41fa-bacb-a689e0c67149#1 "Yes"
-    * answerOption[+].valueCoding = urn:uuid:02d110fd-1183-41fa-bacb-a689e0c67149#2 "Not performed"
-    * answerOption[+].valueCoding = urn:uuid:02d110fd-1183-41fa-bacb-a689e0c67149#999 "Unkown"
+    * answerValueSet = Canonical(ProgesteroneStatusVS)
     * required = true
 
 // add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
@@ -405,8 +299,5 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "HER2STATUS"
     * type = #choice
     * text = "Please indicate if the HER2 receptor status is positive:"
-    * answerOption[+].valueCoding = urn:uuid:17b96500-8800-4371-87d3-1498c8d2e039#0 "Negative"
-    * answerOption[+].valueCoding = urn:uuid:17b96500-8800-4371-87d3-1498c8d2e039#1 "Positive"
-    * answerOption[+].valueCoding = urn:uuid:17b96500-8800-4371-87d3-1498c8d2e039#2 "Equivocal"
-    * answerOption[+].valueCoding = urn:uuid:17b96500-8800-4371-87d3-1498c8d2e039#3 "HER2 receptor status not tested"
+    * answerValueSet = Canonical(HER2ReceptorStatusVS)
     * required = true
