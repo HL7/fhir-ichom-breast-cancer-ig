@@ -31,13 +31,9 @@ Alias: AdministrativeGenderCS = http://hl7.org/fhir/administrative-gender
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
-// http://hl7.org/fhir/us/core/ValueSet/detailed-ethnicity --> other option
 Alias: CountryVS = 	http://hl7.org/fhir/ValueSet/iso3166-1-3
 Alias: RaceVS = http://terminology.hl7.org/ValueSet/v3-Race 
 Alias: AdministrativeGenderVS = http://hl7.org/fhir/ValueSet/administrative-gender
-
-
-
 
 // Extensions
 Alias: DueToEx = http://hl7.org/fhir/StructureDefinition/condition-dueTo

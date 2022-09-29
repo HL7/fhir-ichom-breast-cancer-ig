@@ -106,14 +106,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the type of surgery the patient received during the last year:"
     * answerValueSet = Canonical(BreastSurgeryTypeVS)
-    * insert enableWhenTreatmentSCT(SCT#387713003)
+    * insert enableWhenTreatmentSCT(SCT#387713003) //Surgical procedure
     * required = true
 
   * item[+]
     * linkId = "SurgeryDateKnown"
     * type = #boolean
     * text = "Is the date of surgery known?"
-    * insert enableWhenTreatmentSCT(SCT#387713003)
+    * insert enableWhenTreatmentSCT(SCT#387713003) //Surgical procedure
     * required = true
 
   * item[+]
@@ -128,15 +128,15 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "SURGERYAX"
     * type = #choice
     * text = "Please indicate the type of surgery to the axilla the patient received during the last year:"
-    * answerValueSet = Canonical(AxillaSurgeryVS)
-    * insert enableWhenTreatmentSCT(SCT#699455008)
+    * answerValueSet = Canonical(AxillaSurgeryVS) 
+    * insert enableWhenTreatmentSCT(SCT#699455008) // Operative procedure on axilla
     * required = true
 
   * item[+]
     * linkId = "SURGERYAXDATE-Known"
     * type = #boolean
     * text = "Is the date of surgery to the axilla known?"
-    * insert enableWhenTreatmentSCT(SCT#699455008)
+    * insert enableWhenTreatmentSCT(SCT#699455008) // Operative procedure on axilla
     * required = true
 
   * item[+]
@@ -247,7 +247,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the intent of radiotherapy:"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatmentSCT(SCT#108290001)
+    * insert enableWhenTreatmentSCT(SCT#108290001) // Radiation oncology AND/OR radiotherapy
     * required = true
     * repeats = true
 
@@ -256,14 +256,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate location/type of radiotherapy:"
     * answerValueSet(LocationRadiotherapyVS)
-    * insert enableWhenTreatmentSCT(SCT#108290001)
+    * insert enableWhenTreatmentSCT(SCT#108290001) // Radiation oncology AND/OR radiotherapy
     * required = true
 
   * item[+]
     * linkId = "RadioTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of radiotherapy known?"
-    * insert enableWhenTreatmentSCT(SCT#108290001)
+    * insert enableWhenTreatmentSCT(SCT#108290001) // Radiation oncology AND/OR radiotherapy
     * required = true
 
   * item[+]
@@ -277,7 +277,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "RadioTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of radiotherapy known?"
-    * insert enableWhenTreatmentSCT(SCT#108290001)
+    * insert enableWhenTreatmentSCT(SCT#108290001) // Radiation oncology AND/OR radiotherapy
     * required = true
 
   * item[+]
@@ -293,8 +293,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the intent of chemotherapy:"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatment(#A_chemo)
-    * insert enableWhenTreatment(#N_A_chemo)
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -303,8 +303,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the type of chemotherapy (select all that apply):"
     * answerValueSet(ChemoTherapyTypeVS)
-    * insert enableWhenTreatment(#A_chemo)
-    * insert enableWhenTreatment(#N_A_chemo)
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
     * repeats = true
@@ -313,8 +313,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment(#A_chemo)
-    * insert enableWhenTreatment(#N_A_chemo)
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -329,8 +329,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment(#A_chemo)
-    * insert enableWhenTreatment(#N_A_chemo)
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -347,7 +347,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the intent of hormonal therapy:"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatmentSCT(SCT#169413002)
+    * insert enableWhenTreatmentSCT(SCT#169413002) //Hormone therapy
     * required = true
 
   * item[+]
@@ -355,7 +355,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the type of hormonal therapy (select all that apply):"
     * answerValueSet = Canonical(HormonalTherapyTypeVS)
-    * insert enableWhenTreatmentSCT(SCT#169413002)
+    * insert enableWhenTreatmentSCT(SCT#169413002) // Hormone therapy
     * required = true
     * repeats = true
 
@@ -363,7 +363,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "HORMONTXSTARTDATE-Known"
     * type = #boolean
     * text = "Is the start date of hormonal therapy known?"
-    * insert enableWhenTreatmentSCT(SCT#169413002)
+    * insert enableWhenTreatmentSCT(SCT#169413002) // Hormone therapy
     * required = true
 
   * item[+]
@@ -377,7 +377,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "HORMONTXSTOPDATE-Known"
     * type = #boolean
     * text = "Is the stop date of hormonal therapy known?"
-    * insert enableWhenTreatmentSCT(SCT#169413002)
+    * insert enableWhenTreatmentSCT(SCT#169413002) // Hormone therapy
     * required = true
 
   * item[+]
@@ -393,28 +393,28 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Please indicate the type of targeted therapy:"
     * answerValueSet = Canonical(TargetedTherapyVS)
-    * insert enableWhenTreatment(#Targ_Thrpy)
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment(#Targ_Thrpy)
+    * insert enableWhenTreatment(#Targ_Thrpy) //Targeted therapy
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate"
     * type = #date
     * text = "Please provide the start date of targeted therapy:"
-    * insert enableWhenTrue(TargetTxStartDate-Known)
+    * insert enableWhenTrue(TargetTxStartDate-Known) 
     * required = true
 
   * item[+]
     * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment(#Targ_Thrpy)
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
@@ -482,7 +482,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "REOP_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#3
+      * answerCoding = BreastSurgeryTypesCodeSystem#3 //Mastectomy with immediate reconstruction
     * required = true
 
   * item[+]
@@ -493,11 +493,6 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
       * question = "REOP_BREAST"
       * operator = #!=
       * answerCoding = NullFlavor#UNK
-    * enableWhen[+]
-      * question = "REOP_BREAST"
-      * operator = #!=
-      * answerCoding = SCT#373572006 
-    * enableBehavior = #all
     * required = true
 
   * item[+]
@@ -533,7 +528,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
-      * answerCoding = ComplicationImpactCodeSystem#1 
+      * answerCoding = ComplicationImpactCodeSystem#1  // No complication
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
