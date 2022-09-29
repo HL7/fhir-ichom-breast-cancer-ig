@@ -463,6 +463,28 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
 
+// Patient education
+CodeSystem: PatientEducationCodeSystem
+Id: PatientEducationCodeSystem
+Title: "Patient Treatment Education Codesystem"
+Description: "Codes covering if the patient received sufficient information about the treatment options"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/PatientEducationCodeSystem
+* ^caseSensitive = true
+* #1 "Strongly agree"
+* #2 "Agree"
+* #3 "Somewhat agree"
+* #4 "Disagree"
+* #5 "Strongly disagree"
+
+ValueSet: PatientEducationVS
+Id: PatientEducationVS
+Title: "Patient Treatment Education ValueSet"
+Description: "Valueset covering if the patient received sufficient information about the treatment options"
+* PatientEducationCodeSystem#1 "Strongly agree"
+* PatientEducationCodeSystem#2 "Agree"
+* PatientEducationCodeSystem#3 "Somewhat agree"
+* PatientEducationCodeSystem#4 "Disagree" 
+* PatientEducationCodeSystem#5 "Strongly disagree"
 
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
@@ -512,10 +534,10 @@ Title: "Re-operation due to involved margins"
 Description: "Kind of re-operation due to involved margins"
 * insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
-* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
-* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
-* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 // Complications
@@ -648,7 +670,10 @@ ValueSet: EORTCQLQValueSet
 Id: EORTCQLQValueSet
 Title: "EORTC-QLQ questionnaire"
 Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* include codes from system EORTCQLQCodeSystem
+* EORTCQLQCodeSystem#1 "Not at all"
+* EORTCQLQCodeSystem#2 "A little"
+* EORTCQLQCodeSystem#3 "Quite a bit"
+* EORTCQLQCodeSystem#4 "Very much"
 
 // BreastQ \\
 CodeSystem: BreastQCodeSystem
@@ -667,8 +692,10 @@ ValueSet: BreastQValueSet
 Id: BreastQValueSet
 Title: "BreastQ response"
 Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^version  = 0.0.1
-* include codes from system BreastQCodeSystem
+* BreastQCodeSystem#1 "Very dissatisfied"
+* BreastQCodeSystem#2 "Somewhat dissatisfied"
+* BreastQCodeSystem#3 "Somewhat satisfied"
+* BreastQCodeSystem#4 "Very satisfied"
 
 // FACT-ES \\
 CodeSystem: FACTESCodeSystem
@@ -688,5 +715,8 @@ ValueSet: FACTESValueSet
 Id: FACTESValueSet
 Title: "FACT-ES questionnaire"
 Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
-* ^version  = 0.0.1
-* include codes from system FACTESCodeSystem
+* FACTESCodeSystem#1 "Not at all"
+* FACTESCodeSystem#2 "A little"
+* FACTESCodeSystem#3 "Somewhat"
+* FACTESCodeSystem#4 "Quite a bit"
+* FACTESCodeSystem#5 "Very much"

@@ -62,7 +62,6 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * answerValueSet = Canonical(RaceVS)
     * required = true
  
- 
   * item[+]
     * linkId = "EducationLevel"
     * type = #choice
@@ -271,6 +270,20 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   //   * text = "What is the total summed score of the patient's SACQ responses?"
   //   * maxLength = 2
   // Add answerOptions to limit the possible answers?
+
+// GROUP 4 - TREATMENT VARIABLES
+* item[+]
+  * linkId = "Treatment-Variables"
+  * type = #group
+  * text = "Treatment Variables"
+  * required = true
+
+  * item[+]
+    * linkId = "PatientEducation" 
+    * text = "Did you feel you received sufficient information about your treatment options?"
+    * type = #choice
+    * answerValueSet = Canonical(PatientEducationVS)
+    * required = true
 
 // GROUP 5 - DEGREE OF HEALTH
 * item[+]
@@ -554,7 +567,10 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * type = #choice
       * text = "Were you upset by the loss of your hair?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
-      * insert enableWhenTrue(EORTCQLQBR23_Q34) 
+      * enableWhen[+]
+        * question = "EORTCQLQBR23_Q34"
+        * operator = #!=
+        * answerCoding = EORTCQLQCodeSystem#1 "Not at all"
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q36"
@@ -636,7 +652,10 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * type = #choice
       * text = "To what extent was sex enjoyable for you?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
-      * insert enableWhenTrue(EORTCQLQBR23_Q45) 
+      * enableWhen[+]
+        * question = "EORTCQLQBR23_Q45"
+        * operator = #!=
+        * answerCoding = EORTCQLQCodeSystem#1 "Not at all"
 
   * item[+]
     * linkId = "EORTC-QLQ-Q47-Q53"
@@ -693,9 +712,171 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * required = true
 
     * item[+]
-      * linkId = "EORTC QLQ-LMC21"
+      * linkId = "EORTCQLQBR45_Q54"
       * type = #choice
-      * text = "Have you had tingling hands or feet?"
+      * text = "Have you sweated excessively?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q55"
+      * type = #choice
+      * text = "Have you had mood swings?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q56"
+      * type = #choice
+      * text = "Have you been dizzy?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q57"
+      * type = #choice
+      * text = "Have you had soreness in your mouth?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q58"
+      * type = #choice
+      * text = "Have you had any reddening in your mouth?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q59"
+      * type = #choice
+      * text = "Have you had pain in your hands or feet?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q60"
+      * type = #choice
+      * text = "Have you had any redenning on your hands or feet?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q61"
+      * type = #choice
+      * text = "Have you had tingling in your fingers or toes?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q62"
+      * type = #choice
+      * text = "Have you had numbness in your fingers or toes?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q63"
+      * type = #choice
+      * text = "Have you had problems with your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q64"
+      * type = #choice
+      * text = "Have you had stiffness in your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q65"
+      * type = #choice
+      * text = "Have you had pain in your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q66"
+      * type = #choice
+      * text = "Have you had aches or pains in your bones?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q67"
+      * type = #choice
+      * text = "Have you had aches or pains in your muscles?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q68"
+      * type = #choice
+      * text = "Have you gained weight?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q69"
+      * type = #choice
+      * text = "Has weight gain been a problem for you?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+  * item[+]
+    * linkId = "EORTC-QLQ-Q70-Q71"
+    * type = #group
+    * text = "During the past four weeks:"
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q70"
+      * type = #choice
+      * text = "Have you had a dry vagina?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q71"
+      * type = #choice
+      * text = "Have you had discomfort in your vagina?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+  * item[+]
+    * linkId = "EORTC-QLQ-Q72-Q73"
+    * type = #group
+    * text = "Please answer the following two questions only if you have been sexually active:"
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q72"
+      * type = #choice
+      * text = "Have you had pain in your vagina during sexual activity?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q73"
+      * type = #choice
+      * text = "Have you experienced a dry vagina during sexual activity?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+  * item[+]
+    * linkId = "EORTC-QLQ-Q74-Q75"
+    * type = #group
+    * text = "During the past week:"
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q74"
+      * type = #choice
+      * text = "Have you been satisfied with the cosmetic result of the surgery?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q75"
+      * type = #choice
+      * text = "Have you been satisfied with the appearance of the skin of your affected breast (thoracic area)?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -738,56 +919,3 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * text = "How you look in the mirror unclothed?"
       * answerValueSet = Canonical(BreastQValueSet)
       * required = true
-
-// FACT-ES
-* item[+]
-  * linkId = "Degree-of-Health-FACTES"
-  * type = #group
-  * text = "Degree of Health - FACTES"
-
-  * item[+]
-    * linkId = "IntroFactes"
-    * type = #group
-    * text = "Please indicate your response as it applies to the past 7 days:"
-
-    * item[+]
-      * linkId = "FACTES_BRM1"
-      * type = #choice
-      * text = "I have pain in my joints"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-    * item[+]
-      * linkId = "FACTES_ES4"
-      * type = #choice
-      * text = "I have vaginal discharge"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-    * item[+]
-      * linkId = "FACTES_ES5"
-      * type = #choice
-      * text = "I have vaginal itching/irritation"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-    * item[+]
-      * linkId = "FACTES_ES6"
-      * type = #choice
-      * text = "I have vaginal bleeding or spotting"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-    * item[+]
-      * linkId = "FACTES_ES7"
-      * type = #choice
-      * text = "I have vaginal dryness"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-    * item[+]
-      * linkId = "FACTES_ES8" 
-      * type = #choice
-      * text = "I have pain or discomfort with intercourse"
-      * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
