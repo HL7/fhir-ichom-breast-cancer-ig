@@ -203,11 +203,22 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "FIRSTBC"
     * type = #choice
-    * text = "Please indicate if this is first breast cancer or new cancer on contralateral or ipsilateral breast:"
-    * answerValueSet = Canonical(LateralityNewCancerVS)
+    * text = "Indicate if this is the first breast cancer"
+    * answerValueSet = Canonical(NoYesUnknownVS)
     * required = true
 
-// GROUP 4 - TUMOR FACTORS
+  * item[+]
+    * linkId = "NewBC"
+    * type = #choice
+    * text = "Indicate if this is a new cancer on contralateral or ipsilateral breast"
+    * answerValueSet = Canonical(LateralityNewCancerVS)
+    * enableWhen[+]
+      * question = "FIRSTBC"
+      * operator = #=
+      * answerCoding = YesNoUnkCS#N
+    * required = true
+
+   // GROUP 4 - TUMOR FACTORS
 * item[+]
   * linkId = "Tumor-Factors"
   * type = #group
@@ -225,7 +236,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * type = #date
     * text = "Please indicate the initial date of histological diagnosis:"
     * required = true
-    * enableWhenTrue(HistologicalDateKnown)
+    * insert enableWhenTrue(HistologicalDateKnown)
 
   * item[+]
     * linkId = "HISTOTYPE"
@@ -238,7 +249,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "MUTBC"
     * type = #choice
-    * text = "Please indicate if the patient carries a genetic mutation predisposing breast cancer:"
+    * text = "Please indicate if the patient carries a germline mutation predisposing breast cancer:"
     * answerValueSet = Canonical(GermlineMutationVS)
     * required = true
 
@@ -259,21 +270,21 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "TNMCT_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical tumor stage (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the clinical tumor stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMPrimaryTumorVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCN_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical nodal stage (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the clinical nodal stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMRegionalNodesVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCM_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical distant metastasis (per AJCC 5th - 7th Ed.):"
+    * text = "Please indicate the clinical distant metastasis (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMDistantMetastasesVS)     
     * required = true
 
@@ -284,8 +295,6 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerValueSet = Canonical(EstrogenStatusVS)
     * required = true
 
-// add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
-
   * item[+]
     * linkId = "PRSTATUS"
     * type = #choice
@@ -293,11 +302,71 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * answerValueSet = Canonical(ProgesteroneStatusVS)
     * required = true
 
-// add existing valueset link: https://www.hl7.org/fhir/valueset-example-yesnodontknow.html and add not performed into it
-
   * item[+]
     * linkId = "HER2STATUS"
     * type = #choice
     * text = "Please indicate if the HER2 receptor status is positive:"
     * answerValueSet = Canonical(HER2ReceptorStatusVS)
     * required = true
+
+  * item[+]
+    * linkId = "MolecularProfiling"
+    * type = #choice
+    * text = "Indicate if a molecular profiling tool was used. If so, which one?" 
+    * answerValueSet = Canonical(MolecularProfilingStatusVS)
+    * required = true
+
+  * item[+]
+    * linkId = "Mammaprint" 
+    * type = #decimal
+    * text = "Indicate the mammaprint score on a scale of 0.000 to 1.000"
+    * insert enableWhenSMolecularProfiling(#Mammaprint)
+    * required = true
+
+  * item[+]
+    * linkId = "Oncotype"
+    * type = #decimal
+    * text = "Indicate the oncotype score on a scale of 0 to 100"
+    * insert enableWhenSMolecularProfiling(#Oncotype)
+    * required = true
+
+  * item[+]
+    * linkId = "Endopredict"
+    * type = #decimal
+    * text = "Indicate the endopredict score on a scale of 1.1 to 6.2"
+    * insert enableWhenSMolecularProfiling(#Endopredict)
+    * required = true
+
+// Group 5 - TREATMENT VARIABLES
+* item[+]
+  * linkId = "Treatment-Variables"
+  * type = #group
+  * text = "Treatment variables"
+  * required = true
+
+  * item[+]
+    * linkId = "MultMeet"
+    * type = #choice
+    * text = "Indicate if a multidisciplinary meeting was conducted"
+    * answerValueSet = Canonical(NoYesUnknownVS)
+    * required = true
+
+  * item[+]
+    * linkId = "MultRecTreatments"
+    * type = #choice   
+    * text = "Indicate each treatment that the multidisciplinary team recommended (select all that apply):"
+    * answerValueSet = Canonical(RecommendedTreatmentTypeVS)
+    * enableWhen[+]
+      * question = "MultMeet"
+      * operator = #=
+      * answerCoding = YesNoUnkCS#Y
+    * required = true
+    * repeats = true
+
+
+
+
+
+
+
+

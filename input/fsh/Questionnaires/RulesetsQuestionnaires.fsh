@@ -41,3 +41,11 @@ RuleSet: enableWhenSurgeryType(code)
   * question = "BreastQ_Surgery"
   * operator = #=
   * answerCoding = BreastSurgeryTypesCodeSystem{code}
+
+
+// identifies the which molecular profiling tool was used
+RuleSet: enableWhenSMolecularProfiling(code)
+* enableWhen[+]
+  * question = "MolecularProfiling"
+  * operator = #=
+  * answerCoding = MolecularProfilingCodeSystem{code}

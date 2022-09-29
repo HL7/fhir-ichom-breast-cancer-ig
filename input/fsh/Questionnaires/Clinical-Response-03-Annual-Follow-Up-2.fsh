@@ -185,7 +185,6 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "RECONSTRUCTDATE-Known"
     * type = #boolean
     * text = "Is the date of the delayed reconstruction known?"
-    * insert enableWhenTreatmentSCT(SCT#33496007)
     * enableWhen[+]
       * question = "RECONSTRUCTION_DELAY"
       * operator = #=

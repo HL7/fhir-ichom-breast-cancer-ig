@@ -7,6 +7,30 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
+  * request.url = "ValueSet/NoYesUnknownVS"
+  * request.method = #PUT
+  * resource = NoYesUnknownVS
+* entry[+]
+  * request.url = "ValueSet/LateralityVS"
+  * request.method = #PUT
+  * resource = LateralityVS
+* entry[+]
+  * request.url = "ValueSet/LateralityNewCancerVS"
+  * request.method = #PUT
+  * resource = LateralityNewCancerVS
+* entry[+]
+  * request.url = "ValueSet/HistologicalTypeVS"
+  * request.method = #PUT
+  * resource = HistologicalTypeVS
+* entry[+]
+  * request.url = "ValueSet/GermlineMutationVS"
+  * request.method = #PUT
+  * resource = GermlineMutationVS
+* entry[+]
+  * request.url = "ValueSet/GradingVS"
+  * request.method = #PUT
+  * resource = GradingVS
+* entry[+]
   * request.url = "ValueSet/tnm-primary-tumor-category-vs"
   * request.method = #PUT
   * resource = TNMPrimaryTumorVS
@@ -31,25 +55,13 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.method = #PUT
   * resource = HER2ReceptorStatusVS
 * entry[+]
-  * request.url = "ValueSet/GradingVS"
+  * request.url = "ValueSet/MolecularProfilingStatusVS"
   * request.method = #PUT
-  * resource = GradingVS
+  * resource = MolecularProfilingStatusVS
 * entry[+]
-  * request.url = "ValueSet/GermlineMutationVS"
+  * request.url = "ValueSet/RecommendedTreatmentTypeVS"
   * request.method = #PUT
-  * resource = GermlineMutationVS
-* entry[+]
-  * request.url = "ValueSet/HistologicalTypeVS"
-  * request.method = #PUT
-  * resource = HistologicalTypeVS
-* entry[+]
-  * request.url = "ValueSet/LateralityNewCancerVS"
-  * request.method = #PUT
-  * resource = LateralityNewCancerVS
-* entry[+]
-  * request.url = "ValueSet/LateralityVS"
-  * request.method = #PUT
-  * resource = LateralityVS
+  * resource = RecommendedTreatmentTypeVS
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT

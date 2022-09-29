@@ -17,7 +17,7 @@ Instance: ReoperationPatient147
 InstanceOf: InvolvedMarginsReoperation
 Description: "Example of a reoperation due to involved margins after primary surgery"
 * status = ProcedureStatusCS#completed 
-* code = IchomReoperation#4 "Mastectomy with immediate reconstruction"
+* code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-07-09"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)

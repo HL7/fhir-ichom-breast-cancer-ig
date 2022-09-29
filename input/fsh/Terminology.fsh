@@ -146,6 +146,13 @@ Description: "Codes used to describe the different types of molecular profiling 
 * #Oncotype "Oncotype Score" 
 * #Endopredict "Endopredict Score" 
 
+ValueSet: MolecularProfilingStatusVS
+Id: MolecularProfilingStatusVS
+Title: "Molecular profiling"
+Description: "Valueset indicating if a molecular profiling tool was used"
+* include MolecularProfilingCodeSystem#Mammaprint "Mammaprint Score" 
+* include MolecularProfilingCodeSystem#Oncotype "Oncotype Score" 
+* include MolecularProfilingCodeSystem#Endopredict "Endopredict Score" 
 
 //  BASELINE CLINICAL FACTORS 
 
