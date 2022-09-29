@@ -180,7 +180,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * insert enableWhenTrue(SURGERYAX2DATE-Known)
     * required = true
 
-// Reconstuction surgery
+// Reconstruction surgery
   * item[+]
     * linkId = "RECONSTRUCTION_DELAY"
     * type = #choice
@@ -255,7 +255,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "RADIOTXTYPE_BREAST"
     * type = #choice
     * text = "Please indicate location/type of radiotherapy:"
-    * answerValueSet(LocationRadiotherapyVS)
+    * answerValueSet = Canonical(LocationRadiotherapyVS)
     * insert enableWhenTreatmentSCT(SCT#108290001) // Radiation oncology AND/OR radiotherapy
     * required = true
 
@@ -302,7 +302,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "CHEMOTXTYPE_BREAST"
     * type = #choice
     * text = "Please indicate the type of chemotherapy (select all that apply):"
-    * answerValueSet(ChemoTherapyTypeVS)
+    * answerValueSet = Canonical(ChemoTherapyTypeVS)
     * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
     * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
