@@ -13,8 +13,8 @@ copyrightYear: 2021+
 releaseLabel: ci-build
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
-  name: ICHOM
-  url: https://ichom.org
+  name: HL7 International - Clinical Interoperability Council Group
+  url: http://www.hl7.org/Special/committees/cic/index.cfm
 
 dependencies:
   hl7.fhir.uv.sdc: 3.0.0
@@ -43,3 +43,4 @@ menu:
 parameters:
   usage-stats-opt-out: true
   show-inherited-invariants: false
+  jira-code: ichom-breastcancer
