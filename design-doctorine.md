@@ -49,3 +49,7 @@
 # Tooling
 * stay on top of errors and warnings: both SUSHI and publisher's QA report should always say 0 warnings and 0 errors
 * keep IG publisher and sushi up to date - always use the latest version
+
+# Versioning
+* Base IG, profile, and valueset version on the measure set version
+ * for example if the measure set is 5.0, our versions shall start with 5.x
