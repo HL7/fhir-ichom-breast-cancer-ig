@@ -498,6 +498,18 @@ Description: "Valueset of the types of re-operation"
 * BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
+ValueSet: InvolvedMarginsReoperationTypeVS
+Id: InvolvedMarginsReoperationTypeVS
+Title: "Re-operation due to involved margins"
+Description: "Kind of re-operation due to involved margins"
+* insert SNOMEDCopyrightForVS
+* SCT#373572006 "Clinical finding absent"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
+
 ValueSet: ReoperationReasonVS
 Id: ReoperationReasonVS
 Title: "Reasoncode of the re-operation"
