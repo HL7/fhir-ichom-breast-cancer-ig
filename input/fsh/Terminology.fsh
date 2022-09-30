@@ -287,7 +287,7 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 // Axilla surgery
 ValueSet: AxillaSurgeryVS
 Id: AxillaSurgeryVS
-Title: "Surgery of axilla ValueSet (FIXME)"
+Title: "Surgery of axilla ValueSet FIXME"
 Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
@@ -297,7 +297,7 @@ Description: "Valueset of surgery types of the axilla"
 
 ValueSet: TargetedAxillaSurgeryVS
 Id: TargetedAxillaSurgeryVS
-Title: "Surgery of axilla ValueSet (FIXME 2)"
+Title: "Surgery of axilla ValueSet FIXME 2"
 Description: "Valueset of surgery types of the axilla"
 * insert SNOMEDCopyrightForVS
 * SCT#396487001 "Sentinel lymph node biopsy"
@@ -440,7 +440,7 @@ Description: "Valueset of if the patient followed the multidisciplinary recommen
 
 CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
-Title: "Real Treatment Plan Not Followed CodeSystem (FIXME)"
+Title: "Real Treatment Plan Not Followed CodeSystem FIXME"
 Description: "Codes covering if the patient has not followed the multidisciplinary recommended treatment plan"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowedCodeSystem
 * ^caseSensitive = true
@@ -460,7 +460,7 @@ Description: "Valueset of reason for the treatment plan not being followed"
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
 Id: PatientTreatPrefCodeSystem
-Title: "Real Treatment Plan Not Followed Codesystem (FIXME 2)"
+Title: "Real Treatment Plan Not Followed Codesystem FIXME 2"
 Description: "Codes covering for why the treatment plan was not followed"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientTreatPrefCodeSystem
 * ^caseSensitive = true
