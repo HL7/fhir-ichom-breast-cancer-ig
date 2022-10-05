@@ -345,6 +345,7 @@ Instance: ReoperationSurgeryPatient147
 InstanceOf: ReoperationSurgery 
 Title: "Example of Reoperation Surgery"
 Description: "Example of the surgery the patient has received since their surgery for breast cancer."
+* category = SCT#387713003 "Surgical procedure"
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient147)
 * code = SCT#373572006 "Clinical finding absent"
@@ -391,8 +392,6 @@ Title: "Treatmentplan to ICHOM set"
 Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
 * -> "Multidisciplinary Meeting"
 * activity.detail.code -> "Multidisciplinary Recommended Treatments"
-
-
 
 // TreatmentPlanFollowed	
 Profile: TreatmentPlanFollowed
