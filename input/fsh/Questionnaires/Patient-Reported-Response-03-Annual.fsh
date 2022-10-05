@@ -1,11 +1,11 @@
-Instance: PatientReportedSixMonths
+Instance: PatientReportedAnnual
 InstanceOf: Questionnaire
 Usage: #definition
-Description: "Patient-reported response at 6 months of post-treatment follow-up"
+Description: "Patient-reported response annual follow-up"
 * insert PublicationInstanceRuleset
 
-* name = "PatientReportedSixMonths"
-* title = "Patient reported response at 6 months of post-treatment follow-up"
+* name = "PatientReportedAnnual"
+* title = "Patient reported response annual follow-up"
 * status = #draft
 
 // GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
@@ -17,7 +17,7 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #integer //or string
+    * type = #string
     * text = "What is the patient's medical record number?"
     * required = true
 
@@ -34,3 +34,5 @@ Description: "Patient-reported response at 6 months of post-treatment follow-up"
 
 // BreastQ
 * insert BreastQFollowup
+
+

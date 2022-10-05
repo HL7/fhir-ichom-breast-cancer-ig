@@ -1,33 +1,4 @@
-Instance: PatientReportedYear3and4
-InstanceOf: Questionnaire
-Usage: #definition
-Description: "Patient-reported response at year 3 and 4 of post-treatment follow-up"
-* insert PublicationInstanceRuleset
-
-* name = "PatientReportedYear3and4"
-* title = "Patient-reported response at year 3 and 4 of post-treatment follow-up"
-* status = #draft
-
-// GROUP 1 - GENERAL INFORMATION (ON ALL FORMS)
-* item[+]
-  * linkId = "General-Information-Clinical"
-  * type = #group
-  * text = "General information"
-  * required = true
-
-  * item[+]
-    * linkId = "N/A-Clinical"
-    * type = #integer //or string
-    * text = "What is the patient's medical record number?"
-    * required = true
-
-  * item[+]
-    * linkId = "LastName-Clinical"
-    * type = #string
-    * text = "What is the patient's last name?"
-    * required = true
-
-// GROUP 5 - DEGREE OF HEALTH
+RuleSet: EORTCQuestionnaire
 * item[+]
   * linkId = "Degree-of-Health-EORTC-QLQ"
   * text = "Degree of Health - EORTC-QLQ"
@@ -35,8 +6,7 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
 
   * item[+]
     * linkId = "EORTC-QLQ-Q01-Q05"
-    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. 
-    There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
+    * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
     * type = #group 
 
     * item[+]
@@ -274,27 +244,26 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
   * item[+]
     * linkId = "EORTC-QLQ-Q31-Q43"
     * type = #group
-    * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. 
-  Please answer by selecting the answer that best applies to you. During the past week:"
+    * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. Please answer by selecting the answer that best applies to you. During the past week:"
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q31"
       * type = #choice
-      * text = "Did you have a dry mouth?"
+      * text = "Have you had dry mouth? "
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q32"
       * type = #choice
-      * text = "Did food and drink taste different than usual?"
+      * text = "Have food and drink tasted different than usual?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q33"
       * type = #choice
-      * text = "Were your eyes painful, irritated or watery?"
+      * text = "Have your eyes been painful, irritated or watery?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -308,28 +277,31 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q35"
       * type = #choice
-      * text = "Were you upset by the loss of your hair?"
+      * text = "Have you been upset by the loss of your hair?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
-      * insert enableWhenTrue(EORTCQLQBR23_Q34) 
+      * enableWhen[+]
+        * question = "EORTCQLQBR23_Q34"
+        * operator = #!=
+        * answerCoding = EORTCQLQCodeSystem#1 "Not at all"
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q36"
       * type = #choice
-      * text = "Did you feel ill or unwell?"
+      * text = "Have you felt ill or unwell?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q37"
       * type = #choice
-      * text = "Did you have hot flushes?"
+      * text = "Have you had hot flushes?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q38"
       * type = #choice
-      * text = "Did you have headaches?"
+      * text = "Have you had headaches?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -343,14 +315,14 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q40"
       * type = #choice
-      * text = "Have you been feeling less feminine as a result of your disease or treatment?"
+      * text = "Have you felt less feminine as a result of your disease or treatment?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q41"
       * type = #choice
-      * text = "Did you find it difficult to look at yourself naked?"
+      * text = "Have you had problems looking at yourself naked? "
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -364,7 +336,7 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q43"
       * type = #choice
-      * text = "Were you worried about your health in the future?"
+      * text = "Have you worried about your health in the future?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -376,7 +348,7 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q44"
       * type = #choice
-      * text = "To what extent were you interested in sex?"
+      * text = "Have you been sexually active? (with or without intercourse)"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -390,9 +362,12 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q46"
       * type = #choice
-      * text = "To what extent was sex enjoyable for you?"
+      * text = "Has sex been enjoyable for you?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
-      * insert enableWhenTrue(EORTCQLQBR23_Q45) 
+      * enableWhen[+]
+        * question = "EORTCQLQBR23_Q45"
+        * operator = #!=
+        * answerCoding = EORTCQLQCodeSystem#1 "Not at all"
 
   * item[+]
     * linkId = "EORTC-QLQ-Q47-Q53"
@@ -402,21 +377,21 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q47"
       * type = #choice
-      * text = "Did you have any pain in your arm or shoulder?"
+      * text = "Have you had any pain in your arm or shoulder?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
       * item[+]
       * linkId = "EORTCQLQBR23_Q48"
       * type = #choice
-      * text = "Did you have a swollen arm or hand?"
+      * text = "Have you had a swollen arm or hand?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q49"
       * type = #choice
-      * text = "Was it difficult to raise your arm or to move it sideways?"
+      * text = "Have you had problems raising your arm or moving it sideways? "
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -430,14 +405,14 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
     * item[+]
       * linkId = "EORTCQLQBR23_Q51"
       * type = #choice
-      * text = "Was the area of your affected breast swollen?"
+      * text = "Has the area of your affected breast been swollen?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q52"
       * type = #choice
-      * text = "Was the area of your affected breast oversensitive?"
+      * text = "Has the area of your affected breast been oversensitive?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
@@ -449,64 +424,170 @@ Description: "Patient-reported response at year 3 and 4 of post-treatment follow
       * required = true
 
     * item[+]
-      * linkId = "EORTC QLQ-LMC21"
+      * linkId = "EORTCQLQBR45_Q54"
       * type = #choice
-      * text = "Have you had tingling hands or feet?"
+      * text = "Have you sweated excessively?"
       * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
 
-// FACT-ES
-* item[+]
-  * linkId = "Degree-of-Health-FACTES"
-  * type = #group
-  * text = "Degree of Health - FACTES" 
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q55"
+      * type = #choice
+      * text = "Have you had mood swings?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q56"
+      * type = #choice
+      * text = "Have you been dizzy?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q57"
+      * type = #choice
+      * text = "Have you had soreness in your mouth?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q58"
+      * type = #choice
+      * text = "Have you had any reddening in your mouth?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q59"
+      * type = #choice
+      * text = "Have you had pain in your hands or feet?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q60"
+      * type = #choice
+      * text = "Have you had any redenning on your hands or feet?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q61"
+      * type = #choice
+      * text = "Have you had tingling in your fingers or toes?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q62"
+      * type = #choice
+      * text = "Have you had numbness in your fingers or toes?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q63"
+      * type = #choice
+      * text = "Have you had problems with your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q64"
+      * type = #choice
+      * text = "Have you had stiffness in your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q65"
+      * type = #choice
+      * text = "Have you had pain in your joints?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q66"
+      * type = #choice
+      * text = "Have you had aches or pains in your bones?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q67"
+      * type = #choice
+      * text = "Have you had aches or pains in your muscles?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q68"
+      * type = #choice
+      * text = "Have you gained weight?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
+
+    * item[+]
+      * linkId = "EORTCQLQBR45_Q69"
+      * type = #choice
+      * text = "Has weight gain been a problem for you?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
+      * required = true
 
   * item[+]
-    * linkId = "IntroFACTES"
+    * linkId = "EORTC-QLQ-Q70-Q71"
     * type = #group
-    * text = "Please indicate your response as it applies to the past 7 days:"
+    * text = "During the past four weeks:"
 
     * item[+]
-      * linkId = "FACTES_BRM1"
+      * linkId = "EORTCQLQBR45_Q70"
       * type = #choice
-      * text = "I have pain in my joints"
+      * text = "Have you had a dry vagina?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
 
     * item[+]
-      * linkId = "FACTES_ES4"
+      * linkId = "EORTCQLQBR45_Q71"
       * type = #choice
-      * text = "I have vaginal discharge"
+      * text = "Have you had discomfort in your vagina?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
+
+  * item[+]
+    * linkId = "EORTC-QLQ-Q72-Q73"
+    * type = #group
+    * text = "Please answer the following two questions only if you have been sexually active:"
 
     * item[+]
-      * linkId = "FACTES_ES5"
+      * linkId = "EORTCQLQBR45_Q72"
       * type = #choice
-      * text = "I have vaginal itching/irritation"
+      * text = "Have you had pain in your vagina during sexual activity?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
 
     * item[+]
-      * linkId = "FACTES_ES6"
+      * linkId = "EORTCQLQBR45_Q73"
       * type = #choice
-      * text = "I have vaginal bleeding or spotting"
+      * text = "Have you experienced a dry vagina during sexual activity?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
+
+  * item[+]
+    * linkId = "EORTC-QLQ-Q74-Q75"
+    * type = #group
+    * text = "During the past week:"
 
     * item[+]
-      * linkId = "FACTES_ES7"
+      * linkId = "EORTCQLQBR45_Q74"
       * type = #choice
-      * text = "I have vaginal dryness"
+      * text = "Have you been satisfied with the cosmetic result of the surgery?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
 
     * item[+]
-      * linkId = "FACTES_ES8" 
+      * linkId = "EORTCQLQBR45_Q75"
       * type = #choice
-      * text = "I have pain or discomfort with intercourse"
+      * text = "Have you been satisfied with the appearance of the skin of your affected breast (thoracic area)?"
+      * answerValueSet = Canonical(EORTCQLQValueSet)
       * required = true
-      * answerValueSet = Canonical(FACTESValueSet)
-
-
-
