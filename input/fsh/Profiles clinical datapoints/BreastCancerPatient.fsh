@@ -17,7 +17,7 @@ Description: "A patient who has been diagnosed with or is receiving medical trea
 
 Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
-Title: "Example of Breast Cancer Patient"
+Title: "Example of Breast Cancer Patient Letsche"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1920"
 * name.family = "Letsche"
@@ -30,7 +30,7 @@ Description: "The characteristics and demographic factors of an example patient.
 
 Instance: BreastCancerPatient121
 InstanceOf: BreastCancerPatient 
-Title: "Example of Breast Cancer Patient"
+Title: "Example of Breast Cancer Patient Cornetet"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1933"
 * name.family = "Cornetet"
@@ -44,7 +44,7 @@ Description: "The characteristics and demographic factors of an example patient.
 
 Instance: BreastCancerPatient134
 InstanceOf: BreastCancerPatient 
-Title: "Example of Breast Cancer Patient"
+Title: "Example of Breast Cancer Patient Mortera"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
 * birthDate = "1978"
 * name.family = "Mortera"
