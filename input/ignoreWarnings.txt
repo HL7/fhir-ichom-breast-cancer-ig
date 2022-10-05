@@ -5,6 +5,8 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Custom ICHOM codesystem is not known to the validator
+Error from server: Unable to provide support for code system https://connect.ichom.org
+Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated
 WARNING: ValueSet/InvolvedMarginsReoperationTypeVS: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
 Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated
 [Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationTypeVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://connect.ichom.org/CodeSystem/reop-breast' is unknown so the code cannot be validated]

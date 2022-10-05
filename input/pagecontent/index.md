@@ -61,3 +61,16 @@ For further reading, we recommend to use the following links:
 * [References between resources](http://hl7.org/fhir/r4/references.html)
 * [How to read resource & profile definitions](http://hl7.org/fhir/r4/formats.html#table)
 * [Base resource definitions](http://hl7.org/fhir/r4/resource.html)
+
+### Authors
+
+This body of work would not have been possible without the following individuals:
+
+* Chris Melo (Facilitator)
+* Greg Robinson (Project lead)
+* Marieke Span (FHIR Modeller)
+* Mica Carr (Former project coordinator)
+* Umanga DeSilva (Project coordinator)
+* Vadim Peretokin (Technical lead)
+
+The authors recognize HL7 sponsorship and input from Clinical Interoperability Council, with special thanks to Laura Heermann Langford, Russell Leftwich, and James McClay.

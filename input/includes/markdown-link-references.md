@@ -46,8 +46,6 @@
 [ImplantLocationCodeSystem]: CodeSystem-ImplantLocationCodeSystem.html
 [ImplantLocationVS]: ValueSet-ImplantLocationVS.html
 [InvasionGrade]: StructureDefinition-invasion-grade.html
-[InvolvedMarginsReoperation]: StructureDefinition-involved-margins-reoperation.html
-[InvolvedMarginsReoperationType]: ValueSet-InvolvedMarginsReoperationType.html
 [LateralityNewCancerVS]: ValueSet-LateralityNewCancerVS.html
 [LateralityVS]: ValueSet-LateralityVS.html
 [LocationRadiotherapyVS]: ValueSet-LocationRadiotherapyVS.html
