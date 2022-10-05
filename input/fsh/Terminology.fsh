@@ -412,19 +412,6 @@ Description: "Valueset of the types of targeted therapy"
 * NullFlavor#OTH "other"
 * NullFlavor#UNK "unknown"
 
-// Reoperations
-ValueSet: ReoperationTypeVS
-Id: ReoperationTypeVS
-Title: "Type of re-operation"
-Description: "Valueset of the types of re-operation"
-* insert SNOMEDCopyrightForVS
-* SCT#373572006 "Clinical finding absent"
-* SCT#33496007 "Reconstruction of breast"
-* SCT#69031006 "Excision of breast tissue"
-* SCT#234254000 "Excision of axillary lymph nodes group"
-* NullFlavor#UNK "unknown"
-
-
 // Treatment plan
 CodeSystem: TreatmentPlanFollowedCodeSystem
 Id: TreatmentPlanFollowedCodeSystem
@@ -526,8 +513,20 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 
 
 // DISUTILITY OF CARE
-
 // Reoperations
+ValueSet: ReoperationTypeVS
+Id: ReoperationTypeVS
+Title: "Type of re-operation"
+Description: "Valueset of the types of re-operation"
+* SCT#33496007 "Reconstruction of breast"
+* SCT#69031006 "Excision of breast tissue"
+* SCT#234254000 "Excision of axillary lymph nodes group"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "Breast conserving surgery with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* NullFlavor#UNK "unknown"
+
 ValueSet: InvolvedMarginsReoperationTypeVS
 Id: InvolvedMarginsReoperationTypeVS
 Title: "Re-operation due to involved margins"
@@ -539,6 +538,13 @@ Description: "Kind of re-operation due to involved margins"
 * BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
 * BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
+
+ValueSet: ReoperationReasonVS
+Id: ReoperationReasonVS
+Title: "Reasoncode of the re-operation"
+Description: "Valueset of the reasons of a re-operation"
+* SCT#1156344002 "Presence of primary malignant neoplasm of breast at surgical margin in excised specimen of breast"
+* NullFlavor#OTH "other"
 
 // Complications
 CodeSystem: ComplicationImpactCodeSystem

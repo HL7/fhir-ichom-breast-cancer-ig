@@ -106,6 +106,9 @@ Description: "Represents if the breast cancer patient received reconstruction su
 * bodySite from ImplantLocationVS (required)
 * usedCode from ReconstructionTypeVS (required)
 * bodySite and usedCode MS 
+* partOf MS
+  * ^short = "Original procedure that preceded the reconstruction (e.g. mastectomy)"
+  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure (e.g. mastectomy) that preceded the reoperation."
 
 Instance: ReconstructionSurgeryPatient147
 InstanceOf: ReconstructionSurgery
@@ -117,6 +120,7 @@ Description: "Example of a breast cancer patient who underwent reconstruction su
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
 * bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
 * usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* partOf = Reference(ReoperationSurgeryPatient147)
 
 Mapping: ReconstructionSurgeryToICHOM
 Source:	ReconstructionSurgery
@@ -129,6 +133,7 @@ Description: "Mapping of the reconstruction surgery to the ICHOM breast cancer P
 * performedDateTime -> "Surgery date" 
 * bodySite -> "Implant Reconstruction"
 * usedCode -> "Reconstruction Type"
+* partOf -> "Reconstruction reoperation"
 
 // RADIOTHERAPY
 Profile: Radiotherapy
@@ -138,7 +143,9 @@ Title: "Radiotherapy"
 Description: "Represents if the breast cancer patient received radiotherapy during the last year." 
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy" 
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS
+* performedPeriod MS 
+* performedPeriod.start ^short = "Radiotherapy start date"
+* performedPeriod.end ^short = "Radiotherapy stop date"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
@@ -178,6 +185,8 @@ Description: "Represents if the patient received chemotherapy during the last ye
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * performedPeriod and subject and reasonReference and reasonCode MS
+* performedPeriod.start ^short = "Chemotherapy start date"
+* performedPeriod.end ^short = "Chemotherapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
 
@@ -216,6 +225,8 @@ Description: "Represents if the patient received hormonal therapy during the las
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * performedPeriod and subject and reasonReference and reasonCode MS
+* performedPeriod.start ^short = "Hormonal therapy start date"
+* performedPeriod.end ^short = "Hormonal therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
 
@@ -306,6 +317,8 @@ Description: "Type and duration of targeted therapy"
 * code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
 * code and subject and performedPeriod MS
+* performedPeriod.start ^short = "Targeted therapy start date"
+* performedPeriod.end ^short = "Targeted therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
 
@@ -329,36 +342,6 @@ Description: "Mapping of targeted thereapy to the ICHOM breast cancer PCOM set"
 * performedPeriod.start -> "Targeted therapy start date"
 * performedPeriod.end -> "Targeted therapy start date"
 * extension[method] -> "Targeted therapy"
-
-// REOPERATION
-Profile: ReoperationSurgery
-Parent: Procedure 
-Id: reoperation-surgery
-Title: "Re-operations since surgery for breast cancer"
-Description: "Represents the type of surgery the patient has received since their surgery for breast cancer"
-* category = SCT#387713003 "Surgical procedure"
-* code from ReoperationTypeVS (required)
-* subject only Reference(BreastCancerPatient)
-* performedDateTime	MS
-
-Instance: ReoperationSurgeryPatient147
-InstanceOf: ReoperationSurgery 
-Title: "Example of Reoperation Surgery"
-Description: "Example of the surgery the patient has received since their surgery for breast cancer."
-* status = EventStatusCS#unknown
-* subject = Reference(BreastCancerPatient147)
-* code = SCT#373572006 "Clinical finding absent"
-* performedDateTime = "1921-06-27"
-
-Mapping: ReoperationSurgeryToICHOM
-Source:	ReoperationSurgery
-Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer"
-Id: reoperationsurgerymapping
-Title: "ReoperationSurgery to ICHOM set"
-Description: "Mapping of reoperation surgery to the ICHOM breast cancer PCOM set" 	
-* code -> "Surgery"
-* performedDateTime -> "Surgery date"
-
 
 // Multidisciplinary meeting 
 Profile: TreatmentPlan
@@ -391,8 +374,6 @@ Title: "Treatmentplan to ICHOM set"
 Description: "Mapping of the treatment that a multidisciplinary team recommended to the ICHOM breast cancer PCOM set" 	
 * -> "Multidisciplinary Meeting"
 * activity.detail.code -> "Multidisciplinary Recommended Treatments"
-
-
 
 // TreatmentPlanFollowed	
 Profile: TreatmentPlanFollowed
