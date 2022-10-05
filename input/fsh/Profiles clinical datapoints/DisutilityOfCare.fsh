@@ -12,6 +12,7 @@ Description: "Represents whether the patient has had a re-operation since their 
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 * performed[x] only dateTime 
 * reasonCode from ReoperationReasonVS (preferred)
+  * ^short = "The reasonCode explains whether or not the reoperation was due to involved margins"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * category and code and subject and performedDateTime and reasonCode and reasonReference MS
 

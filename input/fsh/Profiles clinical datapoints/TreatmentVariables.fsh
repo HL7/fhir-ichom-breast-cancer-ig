@@ -107,8 +107,8 @@ Description: "Represents if the breast cancer patient received reconstruction su
 * usedCode from ReconstructionTypeVS (required)
 * bodySite and usedCode MS 
 * partOf MS
-  * ^short = "Original procedure that prompted the reconstruction"
-  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
+  * ^short = "Original procedure that preceded the reconstruction (e.g. mastectomy)"
+  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure (e.g. mastectomy) that preceded the reoperation."
 
 Instance: ReconstructionSurgeryPatient147
 InstanceOf: ReconstructionSurgery
