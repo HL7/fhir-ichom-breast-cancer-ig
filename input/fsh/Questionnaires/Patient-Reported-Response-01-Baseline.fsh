@@ -305,26 +305,26 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
       * linkId = "BREASTQMAST_Q01"
       * type = #choice
       * text = "How you look in the mirror clothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
+      * answerValueSet = Canonical(SatisfactionResponseVS)
       * required = true
 
     * item[+]
       * linkId = "BREASTQMAST_Q02"
       * type = #choice
       * text = "How comfortable your bras fit?"
-      * answerValueSet = Canonical(BreastQValueSet)
+      * answerValueSet = Canonical(SatisfactionResponseVS)
       * required = true
 
     * item[+]
       * linkId = "BREASTQMAST_Q03"
       * type = #choice
       * text = "Being able to wear clothing that is more fitted?"
-      * answerValueSet = Canonical(BreastQValueSet)
+      * answerValueSet = Canonical(SatisfactionResponseVS)
       * required = true
 
     * item[+]
       * linkId = "BREASTQMAST_Q04"
       * type = #choice
       * text = "How you look in the mirror unclothed?"
-      * answerValueSet = Canonical(BreastQValueSet)
+      * answerValueSet = Canonical(SatisfactionResponseVS)
       * required = true

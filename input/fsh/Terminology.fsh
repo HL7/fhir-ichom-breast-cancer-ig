@@ -660,33 +660,32 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 //  DEGREE OF HEALTH 
 
 // EORTC-QLQ
-CodeSystem: EORTCQLQCodeSystem
-Id: EORTCQLQCodeSystem
-Title: "EORTC-QLQ questionnaire"
-Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/EORTCQLQCodeSystem
+CodeSystem: AgreementResponseCodeSystem
+Id: AgreementResponseCodeSystem
+Title: "Agreement response"
+Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * ^caseSensitive = true
-
 * #1 "Not at all"
 * #2 "A little"
 * #3 "Quite a bit"
 * #4 "Very much"
 
-ValueSet: EORTCQLQValueSet
-Id: EORTCQLQValueSet
-Title: "EORTC-QLQ questionnaire"
-Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* EORTCQLQCodeSystem#1 "Not at all"
-* EORTCQLQCodeSystem#2 "A little"
-* EORTCQLQCodeSystem#3 "Quite a bit"
-* EORTCQLQCodeSystem#4 "Very much"
+ValueSet: AgreementResponseVS
+Id: AgreementResponseValueSet
+Title: "Agreement response"
+Description: "Valueset used in a Patient Reported Outcomes Instrument to express the degree of agreement"
+* AgreementResponseCodeSystem#1 "Not at all"
+* AgreementResponseCodeSystem#2 "A little"
+* AgreementResponseCodeSystem#3 "Quite a bit"
+* AgreementResponseCodeSystem#4 "Very much"
 
 // BreastQ \\
-CodeSystem: BreastQCodeSystem
-Id: BreastQCodeSystem
-Title: "BreastQ response"
-Description: "Codes used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/BreastQCodeSystem
+CodeSystem: SatisfactionResponseCodeSystem
+Id: SatisfactionResponseCodeSystem
+Title: "Satisfaction response"
+Description: "Codes used in a Patient Reported Outcomes Instrument to express the statisfation response"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * ^caseSensitive = true
 
 * #1 "Very dissatisfied"
@@ -694,35 +693,12 @@ Description: "Codes used in the Patient Reported Outcomes Instrument about quali
 * #3 "Somewhat satisfied"
 * #4 "Very satisfied"
 
-ValueSet: BreastQValueSet 
-Id: BreastQValueSet
-Title: "BreastQ response"
-Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* BreastQCodeSystem#1 "Very dissatisfied"
-* BreastQCodeSystem#2 "Somewhat dissatisfied"
-* BreastQCodeSystem#3 "Somewhat satisfied"
-* BreastQCodeSystem#4 "Very satisfied"
+ValueSet: SatisfactionResponseVS 
+Id: SatisfactionResponseVS
+Title: "Satisfaction response"
+Description: "Valueset used in a Patient Reported Outcomes Instrument to express the statisfation response"
+* SatisfactionResponseCodeSystem#1 "Very dissatisfied"
+* SatisfactionResponseCodeSystem#2 "Somewhat dissatisfied"
+* SatisfactionResponseCodeSystem#3 "Somewhat satisfied"
+* SatisfactionResponseCodeSystem#4 "Very satisfied"
 
-// FACT-ES \\
-CodeSystem: FACTESCodeSystem
-Id: FACTESCodeSystem
-Title: "FACT-ES questionnaire"
-Description: "Codes used in the Functional Assessment of Cancer Therapy questionnaire"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/FACTESCodeSystem
-* ^caseSensitive = true
-
-* #1 "Not at all"
-* #2 "A little"
-* #3 "Somewhat"
-* #4 "Quite a bit"
-* #5 "Very much"
-
-ValueSet: FACTESValueSet
-Id: FACTESValueSet
-Title: "FACT-ES questionnaire"
-Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
-* FACTESCodeSystem#1 "Not at all"
-* FACTESCodeSystem#2 "A little"
-* FACTESCodeSystem#3 "Somewhat"
-* FACTESCodeSystem#4 "Quite a bit"
-* FACTESCodeSystem#5 "Very much"
