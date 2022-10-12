@@ -17,7 +17,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
 
   * item[+]
     * linkId = "N/A-Clinical"
-    * type = #integer //or string
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
 
