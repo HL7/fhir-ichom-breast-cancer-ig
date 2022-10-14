@@ -64,7 +64,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "Sex"
     * type = #choice
-    * text = "Please indicate the sex of the patient at birth:"
+    * text = "Indicate the sex of the patient at birth:"
     * answerValueSet = Canonical(AdministrativeGenderVS)
     * required = true
     * extension[+]
@@ -101,7 +101,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "Height"
     * type = #quantity
-    * text = "Please indicate your body height."
+    * text = "Indicate the patient's body height"
     * required = true
     * code[+] = LNC#8302-2 "Body height"
     * extension[+]
@@ -148,7 +148,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * type = #quantity
     * linkId = "Weight"
-    * text = "Please indicate your body weight."
+    * text = "Indicate the patient's weight."
     * required = true
     * code[+] = LNC#29463-7 "Body weight"
     * code[+] = LNC#3141-9 "Body weight Measured"
@@ -196,7 +196,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "LATERAL"
     * type = #choice
-    * text = "Please indicate the laterality of breast cancer:"
+    * text = "Indicate the laterality of breast cancer"
     * answerValueSet = Canonical(LateralityVS)
     * required = true
 
@@ -234,14 +234,14 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "HistologicalDiagnosisDate"
     * type = #date
-    * text = "Please indicate the initial date of histological diagnosis:"
+    * text = "Indicate the initial date of histological diagnosis:"
     * required = true
     * insert enableWhenTrue(HistologicalDateKnown)
 
   * item[+]
     * linkId = "HISTOTYPE"
     * type = #choice
-    * text = "Please indicate the histologic type of the tumor (select all that apply):"
+    * text = "Indicate the histologic type of the tumor (select all that apply)"
     * answerValueSet = Canonical(HistologicalTypeVS)
     * required = true
     * repeats = true
@@ -249,63 +249,64 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "MUTBC"
     * type = #choice
-    * text = "Please indicate if the patient carries a germline mutation predisposing breast cancer:"
+    * text = "Indicate if the patient carries a germline mutation predisposing breast cancer"
     * answerValueSet = Canonical(GermlineMutationVS)
     * required = true
+    * repeats = true
 
   * item[+]
     * linkId = "GRADEINV"
     * type = #choice
-    * text = "Please indicate the grade of the invasive component of tumor:"
+    * text = "Indicate the grade of the invasive component of tumor"
     * answerValueSet = Canonical(GradingVS)
     * required = true
 
   * item[+]
     * linkId = "GRADEDCIS"
     * type = #choice
-    * text = "Please indicate the tumor grade of DCIS component of tumor:"
+    * text = "Indicate the tumor grade of DCIS component of tumor"
     * answerValueSet = Canonical(GradingVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCT_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical tumor stage (per AJCC 8th Ed.):"
+    * text = "Indicate the clinical tumor stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMPrimaryTumorVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCN_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical nodal stage (per AJCC 8th Ed.):"
+    * text = "Indicate the clinical nodal stage (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMRegionalNodesVS)
     * required = true
 
   * item[+]
     * linkId = "TNMCM_BREAST"
     * type = #choice
-    * text = "Please indicate the clinical distant metastasis (per AJCC 8th Ed.):"
+    * text = "Indicate the clinical distant metastasis (per AJCC 8th Ed.):"
     * answerValueSet = Canonical(TNMDistantMetastasesVS)     
     * required = true
 
   * item[+]
     * linkId = "ERSTATUS"
     * type = #choice
-    * text = "Please indicate if the estrogen receptor status is positive:"
+    * text = "Indicate if the estrogen receptor status is positive:"
     * answerValueSet = Canonical(EstrogenStatusVS)
     * required = true
 
   * item[+]
     * linkId = "PRSTATUS"
     * type = #choice
-    * text = "Please indicate if the progesterone receptor status is positive:"
+    * text = "Indicate if the progesterone receptor status is positive:"
     * answerValueSet = Canonical(ProgesteroneStatusVS)
     * required = true
 
   * item[+]
     * linkId = "HER2STATUS"
     * type = #choice
-    * text = "Please indicate if the HER2 receptor status is positive:"
+    * text = "Indicate if the HER2 receptor status is positive:"
     * answerValueSet = Canonical(HER2ReceptorStatusVS)
     * required = true
 
@@ -354,7 +355,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * item[+]
     * linkId = "MultRecTreatments"
     * type = #choice   
-    * text = "Indicate each treatment that the multidisciplinary team recommended (select all that apply):"
+    * text = "Which treatments did the multidisciplinary team recommend (select all that apply)?"
     * answerValueSet = Canonical(RecommendedTreatmentTypeVS)
     * enableWhen[+]
       * question = "MultMeet"

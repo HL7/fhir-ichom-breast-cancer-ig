@@ -18,13 +18,13 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * item[+]
     * linkId = "N/A-Clinical"
     * type = #string 
-    * text = "What is the patient's medical record number?"
+    * text = "What is your medical record number?"
     * required = true
 
   * item[+]
     * linkId = "LastName-Clinical"
     * type = #string
-    * text = "What is the patient's last name?"
+    * text = "What is your last name?"
     * required = true
 
 // GROUP 2 - DEMOGRAPHIC FACTORS
@@ -37,7 +37,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * item[+]
     * linkId = "Sex"
     * type = #choice
-    * text = "Please indicate your sex at birth."
+    * text = "Please indicate your sex at birth"
     * answerValueSet = Canonical(AdministrativeGenderVS)
     * required = true
 
@@ -51,35 +51,35 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * item[+]
     * linkId = "Ethnicity"
     * type = #choice
-    * text = "Please indicate the ethnicity that you identify with."
+    * text = "Please indicate the ethnicity that you identify with"
     * answerValueSet = Canonical(EthnicityVS)
     * required = true
     
   * item[+]
     * linkId = "Race"
     * type = #choice
-    * text = "Please indicate the biological race that you identify with."
+    * text = "Please indicate the biological race that you identify with"
     * answerValueSet = Canonical(RaceVS)
     * required = true
  
   * item[+]
     * linkId = "EducationLevel"
     * type = #choice
-    * text = "Please indicate your highest level of schooling."
+    * text = "Please indicate your highest level of schooling"
     * answerValueSet = Canonical(EducationLevelVS)
     * required = true
    
   * item[+]
     * linkId = "RelationshipStatus"
     * type = #choice
-    * text = "Please indicate your current relationship status."
+    * text = "Please indicate your current relationship status"
     * answerValueSet = Canonical(RelationshipStatusVS)
     * required = true
 
   * item[+]
     * linkId = "MENOPAUSE"
     * type = #choice
-    * text = "Please indicate your current menopausal status:"
+    * text = "Please indicate your current menopausal status"
     * answerValueSet = Canonical(MenopausalStatusVS)   
     * enableWhen
       * question = "Sex"

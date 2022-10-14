@@ -5,7 +5,7 @@ RuleSet: EORTCQuestionnaire
   * type = #group
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q01-Q05"
+    * linkId = "EORTCQLQ-Question01-05"
     * text = "We are interested in some things about you and your health. Please answer all of the questions yourself by selecting the answer that best applies to you. There are no 'right' or 'wrong' answers. The information that you provide will remain strictly confidential."
     * type = #group 
 
@@ -45,7 +45,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q06-Q28"
+    * linkId = "EORTCQLQ-Question06-28"
     * type = #group
     * text = "During the past week:"
 
@@ -211,7 +211,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q29-Q30"
+    * linkId = "EORTCQLQ-Question29-30"
     * type = #group
     * text = "For the following questions please select the number between 1 and 7 that best applies to you, with 1 = Very poor and 7 = Excellent."
 
@@ -242,7 +242,7 @@ RuleSet: EORTCQuestionnaire
       * answerOption[+].valueInteger = 7
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q31-Q43"
+    * linkId = "EORTCQLQ-Question31-43"
     * type = #group
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. Please answer by selecting the answer that best applies to you. During the past week:"
 
@@ -341,7 +341,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q44-Q46"
+    * linkId = "EORTCQLQ-Question44-46"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -370,7 +370,7 @@ RuleSet: EORTCQuestionnaire
         * answerCoding = AgreementResponseCodeSystem#1 "Not at all"
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q47-Q53"
+    * linkId = "EORTCQLQ-Question47-69"
     * type = #group
     * text = "During the past week:"
 
@@ -536,7 +536,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q70-Q71"
+    * linkId = "EORTCQLQ-Question70-71"
     * type = #group
     * text = "During the past four weeks:"
 
@@ -555,7 +555,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q72-Q73"
+    * linkId = "EORTCQLQ-Question72-73"
     * type = #group
     * text = "Please answer the following two questions only if you have been sexually active:"
 
@@ -574,7 +574,7 @@ RuleSet: EORTCQuestionnaire
       * required = true
 
   * item[+]
-    * linkId = "EORTC-QLQ-Q74-Q75"
+    * linkId = "EORTCQLQ-Question74-75"
     * type = #group
     * text = "During the past week:"
 

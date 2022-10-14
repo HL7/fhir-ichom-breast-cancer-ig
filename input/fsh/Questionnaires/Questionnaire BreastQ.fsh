@@ -13,7 +13,7 @@ RuleSet: BreastQFollowup
 
 // Group 1 - Patients with mastectomy without immediate reconstruction
   * item[+]
-    * linkId = "Group_mastectomy-posttreatment"
+    * linkId = "MastectomyFollowUp"
     * type = #group
     * text = "With your breast area in mind, in the past 2 weeks, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType(#2)
@@ -50,7 +50,7 @@ RuleSet: BreastQFollowup
 
   // Group 2 - Patients with breast conserving therapy (#0 and #1)
   * item[+]
-    * linkId = "Group-BCT-posttreatment"
+    * linkId = "BreastConservingTherapyFollowUp"
     * type = #group
     * text = "The following questions are about your breasts and your breast cancer treatment (by treatment, we mean lumpectomy with or without radiation). If you have had a lumpectomy and radiation of both breasts, answer these questions thinking of the breast you are least satisfied with. With your breasts in mind, in the past week, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType(#0)
@@ -158,7 +158,7 @@ RuleSet: BreastQFollowup
 
   // Group 3 - Patients with reconstruction (#3) 
   * item[+]
-    * linkId = "Group_reconstruction-posttreatment"
+    * linkId = "ReconstructionFollowUp"
     * type = #group
     * text = "If you have had a mastectomy and reconstruction of both breasts, answer these questions thinking of the breast you are least satisfied with. With your breasts in mind ,in the past week, how satisfied or dissatisfied have you been with:"
     * insert enableWhenSurgeryType(#3)
