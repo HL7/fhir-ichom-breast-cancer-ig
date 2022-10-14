@@ -7,6 +7,30 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
 * type = #transaction
 
 * entry[+]
+  * request.url = "ValueSet/NoYesUnknownVS"
+  * request.method = #PUT
+  * resource = NoYesUnknownVS
+* entry[+]
+  * request.url = "ValueSet/LateralityVS"
+  * request.method = #PUT
+  * resource = LateralityVS
+* entry[+]
+  * request.url = "ValueSet/LateralityNewCancerVS"
+  * request.method = #PUT
+  * resource = LateralityNewCancerVS
+* entry[+]
+  * request.url = "ValueSet/HistologicalTypeVS"
+  * request.method = #PUT
+  * resource = HistologicalTypeVS
+* entry[+]
+  * request.url = "ValueSet/GermlineMutationVS"
+  * request.method = #PUT
+  * resource = GermlineMutationVS
+* entry[+]
+  * request.url = "ValueSet/GradingVS"
+  * request.method = #PUT
+  * resource = GradingVS
+* entry[+]
   * request.url = "ValueSet/tnm-primary-tumor-category-vs"
   * request.method = #PUT
   * resource = TNMPrimaryTumorVS
@@ -31,25 +55,13 @@ Description: "Bundle of all valuesystems and questionnaires related to the clini
   * request.method = #PUT
   * resource = HER2ReceptorStatusVS
 * entry[+]
-  * request.url = "ValueSet/GradingVS"
+  * request.url = "ValueSet/MolecularProfilingStatusVS"
   * request.method = #PUT
-  * resource = GradingVS
+  * resource = MolecularProfilingStatusVS
 * entry[+]
-  * request.url = "ValueSet/GermlineMutationVS"
+  * request.url = "ValueSet/RecommendedTreatmentTypeVS"
   * request.method = #PUT
-  * resource = GermlineMutationVS
-* entry[+]
-  * request.url = "ValueSet/HistologicalTypeVS"
-  * request.method = #PUT
-  * resource = HistologicalTypeVS
-* entry[+]
-  * request.url = "ValueSet/LateralityNewCancerVS"
-  * request.method = #PUT
-  * resource = LateralityNewCancerVS
-* entry[+]
-  * request.url = "ValueSet/LateralityVS"
-  * request.method = #PUT
-  * resource = LateralityVS
+  * resource = RecommendedTreatmentTypeVS
 * entry[+]
   * request.url = "Questionnaire/ClinicalResponseBaseline"
   * request.method = #PUT
@@ -215,154 +227,60 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
   * resource = SACQPatientComorbidityHistory
 
 * entry[+]
-  * request.url = "CodeSystem/EORTCQLQCodeSystem"
+  * request.url = "CodeSystem/AgreementResponseCodeSystem"
   * request.method = #PUT
-  * resource = EORTCQLQCodeSystem
+  * resource = AgreementResponseCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/EORTCQLQValueSet"
+  * request.url = "ValueSet/AgreementResponseVS"
   * request.method = #PUT
-  * resource = EORTCQLQValueSet
+  * resource = AgreementResponseVS
 
 * entry[+]
-  * request.url = "CodeSystem/BreastQCodeSystem"
+  * request.url = "CodeSystem/SatisfactionResponseCodeSystem"
   * request.method = #PUT
-  * resource = BreastQCodeSystem
+  * resource = SatisfactionResponseCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/BreastQValueSet"
+  * request.url = "ValueSet/SatisfactionResponseVS"
   * request.method = #PUT
-  * resource = BreastQValueSet 
-
-* entry[+]
-  * request.url = "CodeSystem/FACTESCodeSystem"
-  * request.method = #PUT
-  * resource = FACTESCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/FACTESValueSet"
-  * request.method = #PUT
-  * resource = FACTESValueSet
+  * resource = SatisfactionResponseVS 
 
 * entry[+]
   * request.url = "Questionnaire/PatientReportedBaseline"
   * request.method = #PUT
   * resource = PatientReportedBaseline
 
-// 6MonthsPatientReported
-Instance: DebugBundlePatient-02-SixMonths
+// FollowUpPatientReported
+Instance: DebugBundlePatient-02-Follow-Up
 InstanceOf: Bundle
 Usage: #example
-Title: "Bundle of the patient response at 6 months follow-up"
-Description: "Bundle of all valuesystems and questionnaires related to the patient response at 6 months follow-up"
+Title: "Bundle of the patient response during post-treatment follow-up"
+Description: "Bundle of all valuesystems and questionnaires related to the patient response during post-treatment follow-up"
 * type = #transaction
 
 * entry[+]
-  * request.url = "CodeSystem/EORTCQLQCodeSystem"
+  * request.url = "CodeSystem/AgreementResponseCodeSystem"
   * request.method = #PUT
-  * resource = EORTCQLQCodeSystem
+  * resource = AgreementResponseCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/EORTCQLQValueSet"
+  * request.url = "ValueSet/AgreementResponseVS"
   * request.method = #PUT
-  * resource = EORTCQLQValueSet
+  * resource = AgreementResponseVS
 
 * entry[+]
-  * request.url = "CodeSystem/FACTESCodeSystem"
+  * request.url = "CodeSystem/SatisfactionResponseCodeSystem"
   * request.method = #PUT
-  * resource = FACTESCodeSystem
+  * resource = SatisfactionResponseCodeSystem
 
 * entry[+]
-  * request.url = "ValueSet/FACTESValueSet"
+  * request.url = "ValueSet/SatisfactionResponseVS"
   * request.method = #PUT
-  * resource = FACTESValueSet
+  * resource = SatisfactionResponseVS 
 
 * entry[+]
-  * request.url = "Questionnaire/PatientReportedSixMonths"
+  * request.url = "Questionnaire/PatientReportedFollowUp"
   * request.method = #PUT
-  * resource = PatientReportedSixMonths
+  * resource = PatientReportedFollowUp
 
-// Year1and2PatientReported
-Instance: DebugBundlePatient-03-Year1and2
-InstanceOf: Bundle
-Usage: #example
-Title: "Bundle of the patient response at 1 and 2 years of follow-up"
-Description: "Bundle of all valuesystems and questionnaires related to the patient response at 1 and 2 years of follow-up"
-* type = #transaction
-
-* entry[+]
-  * request.url = "CodeSystem/EORTCQLQCodeSystem"
-  * request.method = #PUT
-  * resource = EORTCQLQCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/EORTCQLQValueSet"
-  * request.method = #PUT
-  * resource = EORTCQLQValueSet
-
-* entry[+]
-  * request.url = "CodeSystem/BreastQCodeSystem"
-  * request.method = #PUT
-  * resource = BreastQCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/BreastQValueSet"
-  * request.method = #PUT
-  * resource = BreastQValueSet 
-  
-* entry[+]
-  * request.url = "CodeSystem/BreastSurgeryTypesCodeSystem"
-  * request.method = #PUT
-  * resource = BreastSurgeryTypesCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/BreastSurgeryTypeVS"
-  * request.method = #PUT
-  * resource = BreastSurgeryTypeVS
-* entry[+]
-  * request.url = "CodeSystem/FACTESCodeSystem"
-  * request.method = #PUT
-  * resource = FACTESCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/FACTESValueSet"
-  * request.method = #PUT
-  * resource = FACTESValueSet
-
-* entry[+]
-  * request.url = "Questionnaire/PatientReportedYear1and2"
-  * request.method = #PUT
-  * resource = PatientReportedYear1and2
-
-// AnnualPatientReported
-Instance: DebugBundlePatient-04-Year3and4
-InstanceOf: Bundle
-Usage: #example
-Title: "Bundle of the patient response at 3 and 4 years of follow-up"
-Description: "Bundle of all valuesystems and questionnaires related to the patient response at 3 and 4 years of follow-up"
-* type = #transaction
-
-* entry[+]
-  * request.url = "CodeSystem/EORTCQLQCodeSystem"
-  * request.method = #PUT
-  * resource = EORTCQLQCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/EORTCQLQValueSet"
-  * request.method = #PUT
-  * resource = EORTCQLQValueSet
-
-* entry[+]
-  * request.url = "CodeSystem/FACTESCodeSystem"
-  * request.method = #PUT
-  * resource = FACTESCodeSystem
-
-* entry[+]
-  * request.url = "ValueSet/FACTESValueSet"
-  * request.method = #PUT
-  * resource = FACTESValueSet
-
-* entry[+]
-  * request.url = "Questionnaire/PatientReportedYear3and4"
-  * request.method = #PUT
-  * resource = PatientReportedYear3and4

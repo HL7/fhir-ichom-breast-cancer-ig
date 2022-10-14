@@ -146,6 +146,13 @@ Description: "Codes used to describe the different types of molecular profiling 
 * #Oncotype "Oncotype Score" 
 * #Endopredict "Endopredict Score" 
 
+ValueSet: MolecularProfilingStatusVS
+Id: MolecularProfilingStatusVS
+Title: "Molecular profiling"
+Description: "Valueset indicating if a molecular profiling tool was used"
+* include MolecularProfilingCodeSystem#Mammaprint "Mammaprint Score" 
+* include MolecularProfilingCodeSystem#Oncotype "Oncotype Score" 
+* include MolecularProfilingCodeSystem#Endopredict "Endopredict Score" 
 
 //  BASELINE CLINICAL FACTORS 
 
@@ -443,6 +450,29 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
 
+// Patient education
+CodeSystem: PatientEducationCodeSystem
+Id: PatientEducationCodeSystem
+Title: "Patient Treatment Education Codesystem"
+Description: "Codes covering if the patient received sufficient information about the treatment options"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/PatientEducationCodeSystem
+* ^caseSensitive = true
+* #1 "Strongly agree"
+* #2 "Agree"
+* #3 "Somewhat agree"
+* #4 "Disagree"
+* #5 "Strongly disagree"
+
+ValueSet: PatientEducationVS
+Id: PatientEducationVS
+Title: "Patient Treatment Education ValueSet"
+Description: "Valueset covering if the patient received sufficient information about the treatment options"
+* PatientEducationCodeSystem#1 "Strongly agree"
+* PatientEducationCodeSystem#2 "Agree"
+* PatientEducationCodeSystem#3 "Somewhat agree"
+* PatientEducationCodeSystem#4 "Disagree" 
+* PatientEducationCodeSystem#5 "Strongly disagree"
+
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
 Id: PatientTreatPrefCodeSystem
@@ -503,10 +533,10 @@ Title: "Re-operation due to involved margins ValueSet"
 Description: "Kind of re-operation due to involved margins"
 * insert SNOMEDCopyrightForVS
 * SCT#373572006 "Clinical finding absent"
-* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
-* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
-* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ReoperationReasonVS
@@ -589,13 +619,32 @@ Description: "Valueset with yes, no and unknown answers"
 * YesNoUnkCS#UNK "Unknown"
 
 // Recurrence
+CodeSystem: RecurrenceCodeSystem
+Id: RecurrenceCodeSystem
+Title: "Recurrence of neoplasm"
+Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
+* ^caseSensitive = true
+* #1 "Yes, local recurrence"
+* #2 "Yes, regional recurrence" 
+* #3 "Yes, distant recurrence"
+
+ValueSet: RecurrenceVS
+Id: RecurrenceVS
+Title: "Recurrence of neoplasm"
+Description: "Valueset about whether there is evidence of local, regional or distant recurrence of neoplasm"
+* YesNoUnkCS#N "No"
+* RecurrenceCodeSystem#1 "Yes, local recurrence"
+* RecurrenceCodeSystem#2 "Yes, regional recurrence" 
+* RecurrenceCodeSystem#3 "Yes, distant recurrence"
+* NullFlavor#UNK "unknown"
+
 CodeSystem: RecurrenceMethodCodeSystem
 Id: RecurrenceMethodCodeSystem
 Title: "Recurrence method CodeSystem"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * ^caseSensitive = true
-
 * #2 "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethodVS
@@ -611,61 +660,42 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 //  DEGREE OF HEALTH 
 
 // EORTC-QLQ
-CodeSystem: EORTCQLQCodeSystem
-Id: EORTCQLQCodeSystem
-Title: "EORTC-QLQ questionnaire CodeSystem"
-Description: "Codes used in the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/EORTCQLQCodeSystem
+CodeSystem: AgreementResponseCodeSystem
+Id: AgreementResponseCodeSystem
+Title: "Agreement response"
+Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * ^caseSensitive = true
-
 * #1 "Not at all"
 * #2 "A little"
 * #3 "Quite a bit"
 * #4 "Very much"
 
-ValueSet: EORTCQLQValueSet
-Id: EORTCQLQValueSet
-Title: "EORTC-QLQ questionnaire ValueSet"
-Description: "Valueset of the European Organization for Research and Treatment of Cancer Quality-of-Life Questionnaire"
-* include codes from system EORTCQLQCodeSystem
+ValueSet: AgreementResponseVS
+Id: AgreementResponseValueSet
+Title: "Agreement response"
+Description: "Valueset used in a Patient Reported Outcomes Instrument to express the degree of agreement"
+* AgreementResponseCodeSystem#1 "Not at all"
+* AgreementResponseCodeSystem#2 "A little"
+* AgreementResponseCodeSystem#3 "Quite a bit"
+* AgreementResponseCodeSystem#4 "Very much"
 
 // BreastQ \\
-CodeSystem: BreastQCodeSystem
-Id: BreastQCodeSystem
-Title: "BreastQ response CodeSystem"
-Description: "Codes used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/BreastQCodeSystem
-* ^caseSensitive = true
-
+CodeSystem: SatisfactionResponseCodeSystem
+Id: SatisfactionResponseCodeSystem
+Title: "Satisfaction response"
+Description: "Codes used in a Patient Reported Outcomes Instrument to express the statisfation response"
+* ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * #1 "Very dissatisfied"
 * #2 "Somewhat dissatisfied"
 * #3 "Somewhat satisfied"
 * #4 "Very satisfied"
 
-ValueSet: BreastQValueSet 
-Id: BreastQValueSet
-Title: "BreastQ response ValueSet"
-Description: "Valueset used in the Patient Reported Outcomes Instrument about quality of life of patients with breast cancer"
-* ^version  = 0.0.1
-* include codes from system BreastQCodeSystem
-
-// FACT-ES \\
-CodeSystem: FACTESCodeSystem
-Id: FACTESCodeSystem
-Title: "FACT-ES questionnaire CodeSystem"
-Description: "Codes used in the Functional Assessment of Cancer Therapy questionnaire"
-* ^url = https://connect.ichom.org/fhir/CodeSystem/FACTESCodeSystem
-* ^caseSensitive = true
-
-* #1 "Not at all"
-* #2 "A little"
-* #3 "Somewhat"
-* #4 "Quite a bit"
-* #5 "Very much"
-
-ValueSet: FACTESValueSet
-Id: FACTESValueSet
-Title: "FACT-ES questionnaire ValueSet"
-Description: "Valueset of the Functional Assessment of Cancer Therapy questionnaire"
-* ^version  = 0.0.1
-* include codes from system FACTESCodeSystem
+ValueSet: SatisfactionResponseVS 
+Id: SatisfactionResponseVS
+Title: "Satisfaction response"
+Description: "Valueset used in a Patient Reported Outcomes Instrument to express the statisfation response"
+* SatisfactionResponseCodeSystem#1 "Very dissatisfied"
+* SatisfactionResponseCodeSystem#2 "Somewhat dissatisfied"
+* SatisfactionResponseCodeSystem#3 "Somewhat satisfied"
+* SatisfactionResponseCodeSystem#4 "Very satisfied"

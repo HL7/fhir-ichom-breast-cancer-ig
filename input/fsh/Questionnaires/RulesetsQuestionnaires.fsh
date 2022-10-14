@@ -33,7 +33,7 @@ RuleSet: enableWhenRecurrence(code)
 * enableWhen[+]
   * question = "MalignancyRecur"
   * operator = #=
-  * answerCoding = urn:uuid:dc449654-ad57-40af-ae6c-2bcf6b570add{code}
+  * answerCoding = RecurrenceCodeSystem{code}
 
 // identifies the type of breast cancer surgery the patient received
 RuleSet: enableWhenSurgeryType(code)
@@ -41,3 +41,11 @@ RuleSet: enableWhenSurgeryType(code)
   * question = "BreastQ_Surgery"
   * operator = #=
   * answerCoding = BreastSurgeryTypesCodeSystem{code}
+
+
+// identifies the which molecular profiling tool was used
+RuleSet: enableWhenSMolecularProfiling(code)
+* enableWhen[+]
+  * question = "MolecularProfiling"
+  * operator = #=
+  * answerCoding = MolecularProfilingCodeSystem{code}
