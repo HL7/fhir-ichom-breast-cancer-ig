@@ -9,3 +9,11 @@ RuleSet: LOINCCopyrightForVS
 // Copyrights AJCC
 RuleSet: AJCCCopyrightForVS
 * ^copyright = "Used with permission of the American College of Surgeons, Chicago, Illinois. The original source for this information is the AJCC Cancer Staging System (2020)."
+
+// Copyrights HL7
+RuleSet: HL7CopyrightForVS
+* ^copyright = "Copyright HL7. Licensed under creative commons public domain"
+
+// Copyrights UCUM
+RuleSet: UCUMCopyrightForVS
+* ^copyright = "UCUM is Copyright © 1999-2013 Regenstrief Institute, Inc. and The UCUM Organization, Indianapolis, IN. All rights reserved. See http://unitsofmeasure.org/trac//wiki/TermsOfUse for details"
