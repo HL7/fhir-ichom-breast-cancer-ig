@@ -249,7 +249,7 @@ RuleSet: EORTCQuestionnaire
     * item[+]
       * linkId = "EORTCQLQBR23_Q31"
       * type = #choice
-      * text = "Have you had dry mouth? "
+      * text = "Have you had dry mouth?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
@@ -322,7 +322,7 @@ RuleSet: EORTCQuestionnaire
     * item[+]
       * linkId = "EORTCQLQBR23_Q41"
       * type = #choice
-      * text = "Have you had problems looking at yourself naked? "
+      * text = "Have you had problems looking at yourself naked?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
@@ -391,7 +391,7 @@ RuleSet: EORTCQuestionnaire
     * item[+]
       * linkId = "EORTCQLQBR23_Q49"
       * type = #choice
-      * text = "Have you had problems raising your arm or moving it sideways? "
+      * text = "Have you had problems raising your arm or moving it sideways?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 

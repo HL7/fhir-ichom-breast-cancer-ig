@@ -53,7 +53,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "TREATMENT_BREAST"
     * type = #choice
     * text = "Indicate whether the patient received one of the following treatment during the last year (select all that apply)"
-    * answerValueSet = Canonical(TreatmentTypeValueSet)
+    * answerValueSet = Canonical(TreatmentTypeVS)
     * required = true
     * repeats = true
 
