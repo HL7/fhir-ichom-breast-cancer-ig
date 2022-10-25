@@ -810,6 +810,8 @@ Id: AgreementResponseVS
 Title: "Agreement response"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * insert ValuesetRuleset
+* insert EORTCBR45Copyrights
+* insert EORTCC30Copyrights
 * ^url = https://connect.ichom.org/fhir/ValueSet/AgreementResponseVS
 
 * AgreementResponseCodeSystem#1 "Not at all"
@@ -835,6 +837,7 @@ Id: SatisfactionResponseVS
 Title: "Satisfaction response"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the statisfation response"
 * insert ValuesetRuleset
+* insert BreastQCopyrights
 * ^url = https://connect.ichom.org/fhir/ValueSet/SatisfactionResponseVS
 
 * SatisfactionResponseCodeSystem#1 "Very dissatisfied"

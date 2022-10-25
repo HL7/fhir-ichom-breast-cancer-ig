@@ -49,3 +49,15 @@ RuleSet: enableWhenSMolecularProfiling(code)
   * question = "MolecularProfiling"
   * operator = #=
   * answerCoding = MolecularProfilingCodeSystem{code}
+
+// Copyrights BreastQ
+RuleSet: BreastQCopyrights
+* ^copyright = "BREAST-Q® VERSION 2.0 © Memorial Sloan Kettering Cancer Center and The University of British Columbia, 2017, All rights reserved"
+
+// Copyrights EORTC-QLQ-BR-45
+RuleSet: EORTCBR45Copyrights
+* ^copyright = "QLQ-BR45 © 2018 EORTC Quality of Life Group. All right reserved. Phase IV module"
+
+// Copyrights EORTC-QLQ-C-30
+RuleSet: EORTCC30Copyrights
+* ^copyright = "© Copyright 1995, 1999, 2001 EORTC, Brussels. EORTC Quality of Life Group. All rights reserved. Version 3.0"
