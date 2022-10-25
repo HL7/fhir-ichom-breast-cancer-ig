@@ -99,6 +99,8 @@ Description: "Valueset of the TNM stage for the T category, according to TNM sta
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMPrimaryTumorVS
 
+* SCT#1222604002 "American Joint Committee on Cancer cTX"
+* SCT#1228882005 "American Joint Committee on Cancer cT0"
 * SCT#1228885007 "American Joint Committee on Cancer cTis(DCIS)"
 * SCT#1228888009 "American Joint Committee on Cancer cTis(Paget)"
 * SCT#1228889001 "American Joint Committee on Cancer cT1"
@@ -106,6 +108,8 @@ Description: "Valueset of the TNM stage for the T category, according to TNM sta
 * SCT#1228938002 "American Joint Committee on Cancer cT3"
 * SCT#1228944003 "American Joint Committee on Cancer cT4"
 
+* SCT#1228950008 "American Joint Committee on Cancer pTX"
+* SCT#1228951007 "American Joint Committee on Cancer pT0"
 * SCT#1228954004 "American Joint Committee on Cancer pTis(DCIS)"
 * SCT#1228956002 "American Joint Committee on Cancer pTis(Paget)"
 * SCT#1228957006 "American Joint Committee on Cancer pT1"
