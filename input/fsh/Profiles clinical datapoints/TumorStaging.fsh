@@ -67,7 +67,7 @@ Description: "Extended example: example showing clinical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#Tis(Paget)
+* valueCodeableConcept = SCT#1228888009 "American Joint Committee on Cancer cTis(Paget)"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalTumorStagePatient147
@@ -76,7 +76,7 @@ Description: "Extended example: example showing patholgical TNM staging (T)"
 * status = #final "final"
 * code = SCT#385356007 "Tumor stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#Tis(Paget)
+* valueCodeableConcept = SCT#1228956002 "American Joint Committee on Cancer pTis(Paget)"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMPrimaryTumorStageToICHOM
@@ -108,7 +108,7 @@ Description: "Extended example: example showing clinical TNM staging (N)"
 * status = #final "final"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#N1
+* valueCodeableConcept = SCT#1229973008 "American Joint Committee on Cancer cN1"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalNodalStagePatient147
@@ -117,7 +117,7 @@ Description: "Extended example: example showing patholgical TNM staging (N)"
 * status = #final "final"
 * code = SCT#385382003 "Node stage finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#N0
+* valueCodeableConcept = SCT#1229947003 "American Joint Committee on Cancer pN0"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMRegionalNodalStageToICHOM
@@ -149,7 +149,7 @@ Description: "Extended example: example showing clinical TNM staging (M)"
 * status = #final "final"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#M1
+* valueCodeableConcept = SCT#1229903009 "American Joint Committee on Cancer cM1"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Instance: PathologicalMetastasesPatient147
@@ -158,7 +158,7 @@ Description: "Extended example: example showing patholgical TNM staging (M)"
 * status = #final "final"
 * code = SCT#385380006 "Metastasis category finding"
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = AJCC#M1
+* valueCodeableConcept = SCT#1229916009 "American Joint Committee on Cancer pM1"
 * focus = Reference(PrimaryBreastCancerPatient147)
 
 Mapping: TNMDistantMetastasesToICHOM
