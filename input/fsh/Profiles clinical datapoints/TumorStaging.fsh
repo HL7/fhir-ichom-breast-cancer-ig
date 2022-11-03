@@ -6,6 +6,7 @@ Description: "A staging system to describe the amount and spread of breast cance
 * insert PublicationProfileRuleset
 * code from TNMStageGroupVS (required)
 * subject only Reference(BreastCancerPatient)
+* subject MS
 * hasMember MS
 * hasMember only Reference(Observation)
 * hasMember ^slicing.discriminator.type = #pattern  
@@ -55,11 +56,11 @@ Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.). This
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
-* subject ^definition = "The patient associated with staging data."
+* subject ^definition = "The patient associated with staging data"
 * value[x] only CodeableConcept 
-* value[x] from TNMPrimaryTumorVS (required)
+* valueCodeableConcept from TNMPrimaryTumorVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* status and code and subject and value[x] and focus MS
+* subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalTumorStagePatient147
 InstanceOf: TNMPrimaryTumorStage
@@ -98,9 +99,9 @@ Description: "Represents the presence or absence of metastases in regional lymph
 * subject only Reference(BreastCancerPatient)
 * subject ^definition = "The patient associated with staging data."
 * value[x] only CodeableConcept 
-* value[x] from TNMRegionalNodesVS (required)
+* valueCodeableConcept from TNMRegionalNodesVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* status and code and subject and value[x] and focus MS
+* subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalNodalStagePatient147
 InstanceOf: TNMRegionalNodalStage
@@ -139,9 +140,9 @@ Description: "Represents the extent of a tumor metastasis in remote anatomical l
 * subject only Reference(BreastCancerPatient)
 * subject ^definition = "The patient associated with staging data."
 * value[x] only CodeableConcept 
-* value[x] from TNMDistantMetastasesVS (required)
+* valueCodeableConcept from TNMDistantMetastasesVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* status and code and subject and value[x] and focus MS
+* subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalMetastasesPatient147
 InstanceOf: TNMDistantMetastases

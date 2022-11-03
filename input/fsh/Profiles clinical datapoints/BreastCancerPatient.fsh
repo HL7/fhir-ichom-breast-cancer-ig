@@ -4,13 +4,11 @@ Id: patient
 Title: "Breast cancer patient"
 Description: "A patient who has been diagnosed with or is receiving medical treatment for breast cancer. This profile includes the ICHOM patient characteristics and demographic factors."
 * insert PublicationProfileRuleset
-* birthDate 0..1 MS
+* identifier.value and name.family and birthDate and gender and maritalStatus and deceased[x] MS 
 * deceased[x] only dateTime 
-* deceased[x] MS 
 * address.country from CountryVS (required)
 * address.country 0..1 MS
 * maritalStatus from RelationshipStatusVS (required)
-* maritalStatus 0..1 MS
 * extension contains EducationLevel named educationLevel 0..1 MS
 * extension contains Ethnicity named ethnicity 0..1 MS
 * extension contains Race named race 0..1 MS
@@ -19,8 +17,9 @@ Instance: BreastCancerPatient147
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient Letsche"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
-* birthDate = "1920"
+* identifier.value = "147"
 * name.family = "Letsche"
+* birthDate = "1920"
 * address.country = CountryCS#USA
 * gender = GenderCS#male
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003
@@ -32,8 +31,9 @@ Instance: BreastCancerPatient121
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient Cornetet"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
-* birthDate = "1933"
+* identifier.value = "121"
 * name.family = "Cornetet"
+* birthDate = "1933"
 * address.country = CountryCS#GB
 * gender = GenderCS#male
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003
@@ -46,8 +46,9 @@ Instance: BreastCancerPatient134
 InstanceOf: BreastCancerPatient 
 Title: "Example of Breast Cancer Patient Mortera"
 Description: "The characteristics and demographic factors of an example patient. The aim is to align with UScore or mCODE here in the future."
-* birthDate = "1978"
+* identifier.value = "134"
 * name.family = "Mortera"
+* birthDate = "1978"
 * address.country = CountryCS#GB
 * gender = GenderCS#unknown
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003

@@ -7,13 +7,13 @@ Description: "Represents whether the patient has had a re-operation since their 
 * category = SCT#261554009 "Reoperation"
 * code from ReoperationTypeVS (required)
 * subject only Reference(BreastCancerPatient)
-* partOf MS
-  * ^short = "Original procedure that prompted the reoperation"
-  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 * performed[x] only dateTime 
 * reasonCode from ReoperationReasonVS (preferred)
   * ^short = "The reasonCode explains whether or not the reoperation was due to involved margins"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* partOf MS
+  * ^short = "Original procedure that prompted the reoperation"
+  * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
 * category and code and subject and performedDateTime and reasonCode and reasonReference MS
 
 Instance: ReoperationSurgeryPatient147
