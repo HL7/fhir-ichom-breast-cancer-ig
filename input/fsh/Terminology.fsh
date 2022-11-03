@@ -748,7 +748,7 @@ Description: "Valueset with yes, no and unknown answers"
 // Recurrence
 CodeSystem: RecurrenceCodeSystem
 Id: RecurrenceCodeSystem
-Title: "Recurrence of neoplasm"
+Title: "Recurrence of neoplasm CodeSystem"
 Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
 * insert CodeSystemRuleset
@@ -758,7 +758,7 @@ Description: "Additional code covering whether there is evidence of local, regio
 
 ValueSet: RecurrenceVS
 Id: RecurrenceVS
-Title: "Recurrence of neoplasm"
+Title: "Recurrence of neoplasm ValueSet"
 Description: "Valueset about whether there is evidence of local, regional or distant recurrence of neoplasm"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/RecurrenceVS
@@ -796,7 +796,7 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 // EORTC-QLQ
 CodeSystem: AgreementResponseCodeSystem
 Id: AgreementResponseCodeSystem
-Title: "Agreement response"
+Title: "Agreement response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * insert CodeSystemRuleset
@@ -807,7 +807,7 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 
 ValueSet: AgreementResponseVS
 Id: AgreementResponseVS
-Title: "Agreement response"
+Title: "Agreement response ValueSet"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/AgreementResponseVS
@@ -820,7 +820,7 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 // BreastQ \\
 CodeSystem: SatisfactionResponseCodeSystem
 Id: SatisfactionResponseCodeSystem
-Title: "Satisfaction response"
+Title: "Satisfaction response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the statisfation response"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * insert CodeSystemRuleset
@@ -832,7 +832,7 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 
 ValueSet: SatisfactionResponseVS 
 Id: SatisfactionResponseVS
-Title: "Satisfaction response"
+Title: "Satisfaction response ValueSet"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the statisfation response"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SatisfactionResponseVS
