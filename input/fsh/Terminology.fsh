@@ -107,7 +107,6 @@ Description: "Valueset of the TNM stage for the T category, according to TNM sta
 * SCT#1228929004 "American Joint Committee on Cancer cT2"
 * SCT#1228938002 "American Joint Committee on Cancer cT3"
 * SCT#1228944003 "American Joint Committee on Cancer cT4"
-
 * SCT#1228950008 "American Joint Committee on Cancer pTX"
 * SCT#1228951007 "American Joint Committee on Cancer pT0"
 * SCT#1228954004 "American Joint Committee on Cancer pTis(DCIS)"
@@ -122,7 +121,7 @@ ValueSet: TNMRegionalNodesVS
 Id: TNMRegionalNodesVS
 Title: "TNM Regional Nodes ValueSet"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
-* insert AJCCCopyrightForVS
+* insert SNOMEDCopyrightForVS
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMRegionalNodesVS
 * SCT#1229966003 "American Joint Committee on Cancer cNX"
@@ -130,20 +129,18 @@ Description: "Valueset of the TNM stage for the N category, according to TNM sta
 * SCT#1229973008 "American Joint Committee on Cancer cN1"
 * SCT#1229978004 "American Joint Committee on Cancer cN2"
 * SCT#1229984001 "American Joint Committee on Cancer cN3"
-
 * SCT#1229945006 "American Joint Committee on Cancer pNX"
 * SCT#1229947003 "American Joint Committee on Cancer pN0"
 * SCT#1229951001 "American Joint Committee on Cancer pN1"
 * SCT#1229957002 "American Joint Committee on Cancer pN2"
 * SCT#1229962001 "American Joint Committee on Cancer pN3"
-
 * NullFlavor#UNK "unknown"
 
 ValueSet: TNMDistantMetastasesVS
 Id: TNMDistantMetastasesVS
 Title: "TNM Distant Metastases ValueSet"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
-* insert AJCCCopyrightForVS
+* insert SNOMEDCopyrightForVS
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMDistantMetastasesVS
 
