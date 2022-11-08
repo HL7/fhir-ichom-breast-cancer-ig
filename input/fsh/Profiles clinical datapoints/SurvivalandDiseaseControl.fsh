@@ -38,7 +38,7 @@ Description: "The method of confirming recurrence breast cancer"
 * code = SCT#103693007 "Diagnostic procedure"
 * value[x] only CodeableConcept 
 * valueCodeableConcept from RecurrenceMethodVS (required)
-* focus and subject and valueCodeableConceptMS
+* focus and subject and valueCodeableConcept MS
 
 Instance: RecurrenceMethodPatient147
 InstanceOf: RecurrenceMethod

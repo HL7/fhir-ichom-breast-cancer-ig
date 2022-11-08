@@ -6,7 +6,7 @@ Title: "Body height"
 Description: "Represents the height of a person diagnosed with breast cancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
-* subject and valueQuantity.value and valueQuantity.unit and valueQuantity.code MS
+* valueQuantity MS
 
 Instance: BodyHeightPatient147
 InstanceOf: BodyHeight
@@ -36,7 +36,7 @@ Description: "Represents the weight of a person diagnosed with breastcancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.unit from BodyWeightVS
-* subject and valueQuantity.value and valueQuantity.unit and valueQuantity.code MS
+* valueQuantity MS
 
 Instance: BodyWeightPatient147
 InstanceOf: BodyWeight
