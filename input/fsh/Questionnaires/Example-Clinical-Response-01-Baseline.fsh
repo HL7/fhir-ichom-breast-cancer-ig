@@ -6,7 +6,7 @@
 // * authored = "2022-09-02T15:41:07.412Z"
 // * item[0].linkId = "General-Information-Clinical"
 // * item[=].text = "General information"
-// * item[=].item[0].linkId = "N/A-Clinical"
+// * item[=].item[0].linkId = "NA-Clinical"
 // * item[=].item[=].text = "What is the patient's medical record number?"
 // * item[=].item[=].answer.valueInteger = 11577
 // * item[=].item[+].linkId = "LastName-Clinical"

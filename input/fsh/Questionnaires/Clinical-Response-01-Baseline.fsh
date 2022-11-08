@@ -33,7 +33,8 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
   * required = true
 
   * item[+]
-    * linkId = "N/A-Clinical"
+//    * linkId = "N/A-Clinical"
+    * linkId = "NA-Clinical"
     * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
@@ -318,7 +319,7 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * required = true
 
   * item[+]
-    * linkId = "Mammaprint" 
+    * linkId = "Mammaprint"
     * type = #decimal
     * text = "Indicate the mammaprint score on a scale of 0.000 to 1.000"
     * insert enableWhenSMolecularProfiling(#Mammaprint)
