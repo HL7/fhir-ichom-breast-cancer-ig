@@ -322,21 +322,21 @@ Description: "Clinical response questionnaire at baseline (first doctors' visit)
     * linkId = "Mammaprint"
     * type = #decimal
     * text = "Indicate the mammaprint score on a scale of 0.000 to 1.000"
-    * insert enableWhenSMolecularProfiling(#Mammaprint)
+    * insert enableWhenSMolecularProfiling(#mammaprint)
     * required = true
 
   * item[+]
     * linkId = "Oncotype"
     * type = #decimal
     * text = "Indicate the oncotype score on a scale of 0 to 100"
-    * insert enableWhenSMolecularProfiling(#Oncotype)
+    * insert enableWhenSMolecularProfiling(#oncotype)
     * required = true
 
   * item[+]
     * linkId = "Endopredict"
     * type = #decimal
     * text = "Indicate the endopredict score on a scale of 1.1 to 6.2"
-    * insert enableWhenSMolecularProfiling(#Endopredict)
+    * insert enableWhenSMolecularProfiling(#endopredict)
     * required = true
 
 // Group 5 - TREATMENT VARIABLES

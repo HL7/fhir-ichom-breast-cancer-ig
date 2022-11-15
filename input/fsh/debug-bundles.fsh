@@ -344,11 +344,6 @@ Description: "Bundle of all valuesystems and questionnaires related to the patie
 * type = #transaction
 
 * entry[+]
-  * request.url = "CodeSystem/SACQPatientComorbidityCodeSystem"
-  * request.method = #PUT
-  * resource = SACQPatientComorbidityCodeSystem
-
-* entry[+]
   * request.url = "ValueSet/SACQPatientComorbidityHistory"
   * request.method = #PUT
   * resource = SACQPatientComorbidityHistory

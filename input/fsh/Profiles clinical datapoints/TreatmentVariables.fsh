@@ -14,7 +14,7 @@ Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
 Description: "Example of the surgical procedure the breast cancer patient underwent"
 * status = EventStatusCS#completed
-* code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* code = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1989-03-25"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -118,8 +118,8 @@ Description: "Example of a breast cancer patient who underwent reconstruction su
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1999-02-13"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-* bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
-* usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* bodySite = ImplantLocationCodeSystem#pre-pectoral "Pre-pectoral"
+* usedCode = ReconstructionTypeCodeSystem#staged-implant "Staged implant"
 * partOf = Reference(ReoperationSurgeryPatient147)
 
 Mapping: ReconstructionSurgeryToICHOM
@@ -314,7 +314,7 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
 * code and subject and performedPeriod MS
 * performedPeriod.start ^short = "Targeted therapy start date"
@@ -328,7 +328,7 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
 * extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
@@ -397,7 +397,7 @@ Description: "Example of how the real treatment plan was followed"
 * code = SCT#410110000 "Compliance care assessment"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#yes "Yes, fully followed"
 
 Mapping: TreatmentPlanFollowedToICHOM
 Source:	TreatmentPlanFollowed
@@ -415,7 +415,7 @@ Title: "Treatment Plan Not Followed"
 Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
 * insert PublicationProfileRuleset
 * basedOn only Reference(TreatmentPlan)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanNotFollowedVS (required)
 * value[x] MS
@@ -426,10 +426,10 @@ InstanceOf: TreatmentPlanNotFollowed
 Title: "Example Treatment Plan Not Followed"
 Description: "Example of why the treatment plan was not followed"
 * basedOn = Reference(TreatmentPlanPatient147)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#1 "Patient preference"
+* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference"
 
 Mapping: TreatmentPlanNotFollowedToICHOM
 Source:	TreatmentPlanNotFollowed
