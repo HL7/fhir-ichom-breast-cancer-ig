@@ -118,8 +118,8 @@ Description: "Example of a breast cancer patient who underwent reconstruction su
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1999-02-13"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-* bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
-* usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* bodySite = ImplantLocationCodeSystem#pre-pectoral "Pre-pectoral"
+* usedCode = ReconstructionTypeCodeSystem#staged-implant "Staged implant"
 * partOf = Reference(ReoperationSurgeryPatient147)
 
 Mapping: ReconstructionSurgeryToICHOM
@@ -314,7 +314,7 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
 * code and subject and performedPeriod MS
 * performedPeriod.start ^short = "Targeted therapy start date"
@@ -328,7 +328,7 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
 * extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"

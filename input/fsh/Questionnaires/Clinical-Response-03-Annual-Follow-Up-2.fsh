@@ -174,7 +174,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
-      * answerCoding = ReconstructionTypeCodeSystem#Autologous
+      * answerCoding = ReconstructionTypeCodeSystem#autologous
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
@@ -251,8 +251,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the intent of chemotherapy"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -261,8 +261,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the type of chemotherapy (select all that apply)"
     * answerValueSet = Canonical(ChemoTherapyTypeVS)
-    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
     * repeats = true
@@ -271,8 +271,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -287,8 +287,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -351,14 +351,14 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the type of targeted therapy"
     * answerValueSet = Canonical(TargetedTherapyVS)
-    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
+    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment(#Targ_Thrpy) //Targeted therapy
+    * insert enableWhenTreatment(#targeted-therapy) //Targeted therapy
     * required = true
 
   * item[+]
@@ -372,7 +372,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
+    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
     * required = true
 
   * item[+]
