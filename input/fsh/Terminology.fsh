@@ -506,9 +506,9 @@ Description: "Codes covering if the patient followed the multidisciplinary recom
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanFollowedCodeSystem
 * insert CodeSystemRuleset
 
-* #no "No, not followed"
-* #yes "Yes, fully followed"
-* #some "Some treatments followed"
+* #0 "No, not followed"
+* #1 "Yes, fully followed"
+* #2 "Some treatments followed"
 
 ValueSet: TreatmentPlanFollowedVS
 Id: TreatmentPlanFollowedVS
@@ -517,9 +517,9 @@ Description: "Valueset of if the patient followed the multidisciplinary recommen
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanFollowedVS
 
-* TreatmentPlanFollowedCodeSystem#no "No, not followed"
-* TreatmentPlanFollowedCodeSystem#yes "Yes, fully followed"
-* TreatmentPlanFollowedCodeSystem#some "Some treatments followed"
+* TreatmentPlanFollowedCodeSystem#0 "No, not followed"
+* TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* TreatmentPlanFollowedCodeSystem#2 "Some treatments followed"
 
 CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
