@@ -775,7 +775,7 @@ Description: "Additional code covering combination of radiological and histologi
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * insert CodeSystemRuleset
 
-* #2 "Radiological and histological diagnosis"
+* #radiological-histological "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethodVS
 Id: RecurrenceMethodVS
@@ -787,7 +787,7 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 
 * SCT#394914008 "Radiology"
 * SCT#67151002 "Histologic"
-* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
+* RecurrenceMethodCodeSystem#radiological-histological "Radiological and histological diagnosis"
 * NullFlavor#UNK "unknown"
 
 
@@ -801,10 +801,10 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 * ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "Not at all"
-* #2 "A little"
-* #3 "Quite a bit"
-* #4 "Very much"
+* #no "Not at all"
+* #little "A little"
+* #quite "Quite a bit"
+* #very "Very much"
 
 ValueSet: AgreementResponseVS
 Id: AgreementResponseVS
@@ -813,10 +813,10 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/AgreementResponseVS
 
-* AgreementResponseCodeSystem#1 "Not at all"
-* AgreementResponseCodeSystem#2 "A little"
-* AgreementResponseCodeSystem#3 "Quite a bit"
-* AgreementResponseCodeSystem#4 "Very much"
+* AgreementResponseCodeSystem#no "Not at all"
+* AgreementResponseCodeSystem#little "A little"
+* AgreementResponseCodeSystem#quite "Quite a bit"
+* AgreementResponseCodeSystem#very "Very much"
 
 // BreastQ \\
 CodeSystem: SatisfactionResponseCodeSystem
@@ -826,10 +826,10 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 * ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "Very dissatisfied"
-* #2 "Somewhat dissatisfied"
-* #3 "Somewhat satisfied"
-* #4 "Very satisfied"
+* #very-dissatisfied "Very dissatisfied"
+* #somewhat-dissatisfied "Somewhat dissatisfied"
+* #somewhat-satisfied "Somewhat satisfied"
+* #very-satisfied "Very satisfied"
 
 ValueSet: SatisfactionResponseVS 
 Id: SatisfactionResponseVS
@@ -838,7 +838,7 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SatisfactionResponseVS
 
-* SatisfactionResponseCodeSystem#1 "Very dissatisfied"
-* SatisfactionResponseCodeSystem#2 "Somewhat dissatisfied"
-* SatisfactionResponseCodeSystem#3 "Somewhat satisfied"
-* SatisfactionResponseCodeSystem#4 "Very satisfied"
+* SatisfactionResponseCodeSystem#very-dissatisfied "Very dissatisfied"
+* SatisfactionResponseCodeSystem#somewhat-dissatisfied "Somewhat dissatisfied"
+* SatisfactionResponseCodeSystem#somewhat-satisfied "Somewhat satisfied"
+* SatisfactionResponseCodeSystem#very-satisfied "Very satisfied"
