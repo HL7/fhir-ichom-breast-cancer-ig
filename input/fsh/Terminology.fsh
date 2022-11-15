@@ -577,8 +577,8 @@ Description: "Codes covering for why the treatment plan was not followed"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientTreatPrefCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "Personal preference"
-* #2 "Different plan recommended by clinical team"
+* #personal-preference "Personal preference"
+* #different-plan-recommended "Different plan recommended by clinical team"
 
 ValueSet: PatientTreatPrefVS
 Id: PatientTreatPrefVS
@@ -588,9 +588,9 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/PatientTreatPrefVS
 
-* PatientTreatPrefCodeSystem#1 "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
+* PatientTreatPrefCodeSystem#personal-preference "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
 * SCT#309846006 "Treatment not available"
-* PatientTreatPrefCodeSystem#2 "Different plan recommended by clinical team"
+* PatientTreatPrefCodeSystem#different-plan-recommended "Different plan recommended by clinical team"
 * NullFlavor#OTH "other"
 
 CodeSystem: TreatmentPlanComplianceCodeSystem
@@ -600,8 +600,8 @@ Description: "Codes covering observation identifiers for treatment plan non-comp
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanComplianceCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "Reason for not following original treatment plan"
-* #2 "Patient reported reason for not following recommened treatment"
+* #reason-for-not-following "Reason for not following original treatment plan"
+* #patient-reason-for-not-following "Patient reported reason for not following recommened treatment"
 
 ValueSet: TreatmentPlanComplianceVS
 Id: TreatmentPlanComplianceVS
@@ -610,8 +610,8 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanComplianceVS
 
-* TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
-* TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
+* TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
+* TreatmentPlanComplianceCodeSystem#patient-reason-for-not-following "Patient reported reason for not following recommened treatment"
 
 
 // DISUTILITY OF CARE

@@ -415,7 +415,7 @@ Title: "Treatment Plan Not Followed"
 Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
 * insert PublicationProfileRuleset
 * basedOn only Reference(TreatmentPlan)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
 * value[x] only CodeableConcept 
 * value[x] from TreatmentPlanNotFollowedVS (required)
 * value[x] MS
@@ -426,7 +426,7 @@ InstanceOf: TreatmentPlanNotFollowed
 Title: "Example Treatment Plan Not Followed"
 Description: "Example of why the treatment plan was not followed"
 * basedOn = Reference(TreatmentPlanPatient147)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference"
