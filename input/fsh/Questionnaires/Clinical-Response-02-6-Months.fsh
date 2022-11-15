@@ -529,7 +529,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
-      * answerCoding = ComplicationImpactCodeSystem#no-complication  // No complication
+      * answerCoding = ComplicationImpactCodeSystem#1  // No complication
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
