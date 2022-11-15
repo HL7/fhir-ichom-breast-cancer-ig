@@ -429,7 +429,7 @@ Description: "Example of why the treatment plan was not followed"
 * code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference"
+* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#1 "Patient preference"
 
 Mapping: TreatmentPlanNotFollowedToICHOM
 Source:	TreatmentPlanNotFollowed

@@ -528,8 +528,8 @@ Description: "Codes covering if the patient has not followed the multidisciplina
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowedCodeSystem
 * insert CodeSystemRuleset
 
-* #patient-preference "Patient preference"
-* #clinical-reasons "Clinical reasons"
+* #1 "Patient preference"
+* #2 "Clinical reasons"
 
 ValueSet: TreatmentPlanNotFollowedVS
 Id: TreatmentPlanNotFollowedVS
@@ -538,8 +538,8 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanNotFollowedVS
 
-* TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
-* TreatmentPlanNotFollowedCodeSystem#clinical-reasons "Clinical reasons"
+* TreatmentPlanNotFollowedCodeSystem#1 "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
+* TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
 
 // Patient education
@@ -550,11 +550,11 @@ Description: "Codes covering if the patient received sufficient information abou
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientEducationCodeSystem
 * insert CodeSystemRuleset
 
-* #strongly-agree "Strongly agree"
-* #agree "Agree"
-* #somewhat-agree "Somewhat agree"
-* #disagree "Disagree"
-* #strongly-disagree "Strongly disagree"
+* #1 "Strongly agree"
+* #2 "Agree"
+* #3 "Somewhat agree"
+* #4 "Disagree"
+* #5 "Strongly disagree"
 
 ValueSet: PatientEducationVS
 Id: PatientEducationVS
@@ -563,11 +563,11 @@ Description: "Valueset covering if the patient received sufficient information a
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/PatientEducationVS
 
-* PatientEducationCodeSystem#strongly-agree "Strongly agree"
-* PatientEducationCodeSystem#agree "Agree"
-* PatientEducationCodeSystem#somewhat-agree "Somewhat agree"
-* PatientEducationCodeSystem#disagree "Disagree" 
-* PatientEducationCodeSystem#strongly-disagree "Strongly disagree"
+* PatientEducationCodeSystem#1 "Strongly agree"
+* PatientEducationCodeSystem#2 "Agree"
+* PatientEducationCodeSystem#3 "Somewhat agree"
+* PatientEducationCodeSystem#4 "Disagree" 
+* PatientEducationCodeSystem#5 "Strongly disagree"
 
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
