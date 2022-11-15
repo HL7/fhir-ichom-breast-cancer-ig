@@ -667,10 +667,10 @@ Description: "Codes indicating the impact of a complication experienced by the b
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "No complication"
-* #2 "Complication leading to prolonged hospitalization (>14days)"
-* #5 "Complication leading to discontinuing of treatment"
-* #8 "Complication, but did not result in any of the abovementioned"
+* #no-complication "No complication"
+* #prolonged-hospitalization "Complication leading to prolonged hospitalization (>14days)"
+* #treatment-discontinuation "Complication leading to discontinuing of treatment"
+* #no-changes "Complication, but did not result in any of the abovementioned"
 
 ValueSet: ComplicationImpactVS
 Id: ComplicationImpactVS
@@ -680,16 +680,16 @@ Description: "ValueSet of the impact of a complication experienced by the breast
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ComplicationImpactVS
 
-* ComplicationImpactCodeSystem#1 "No complication"
+* ComplicationImpactCodeSystem#no-complication "No complication"
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
-* ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
+* ComplicationImpactCodeSystem#prolonged-hospitalization "Complication leading to prolonged hospitalization (>14days)"
 * SCT#417005 "Hospital re-admission"
 * SCT#397945004 "Unexpected admission to intensive care unit"
-* ComplicationImpactCodeSystem#5 "Complication leading to discontinuing of treatment"
+* ComplicationImpactCodeSystem#treatment-discontinuation "Complication leading to discontinuing of treatment"
 * SCT#182879007 "Medication decreased"
 * SCT#419620001 "Death"
-* ComplicationImpactCodeSystem#8 "Complication, but did not result in any of the abovementioned"
+* ComplicationImpactCodeSystem#no-changes "Complication, but did not result in any of the abovementioned"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: ComplicationTypeCodeSystem
@@ -699,10 +699,10 @@ Description: "Codes indicating the type of a complication experienced by the bre
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationTypeCodeSystem
 * insert CodeSystemRuleset
 
-* #4 "Partial autologous graft loss"
-* #5 "Total autologous graft loss"
-* #9 "Delay wound healing/dehiscence"
-* #13 "Immune related toxicity"
+* #partial-loss "Partial autologous graft loss"
+* #total-loss "Total autologous graft loss"
+* #delay-wound "Delay wound healing/dehiscence"
+* #immune-toxicity "Immune related toxicity"
 
 ValueSet: ComplicationTypeVS
 Id: ComplicationTypeVS
@@ -717,16 +717,16 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * SCT#385494008 "Hematoma"
 * SCT#131148009 "Bleeding"
 * SCT#403678005 "Skin flap necrosis"
-* ComplicationTypeCodeSystem#4 "Partial autologous graft loss"
-* ComplicationTypeCodeSystem#5 "Total autologous graft loss"
+* ComplicationTypeCodeSystem#partial-loss "Partial autologous graft loss"
+* ComplicationTypeCodeSystem#total-loss "Total autologous graft loss"
 * SCT#27315000 "Removal of breast implant"
 * SCT#371039008 "Thromboembolic disorder"
 * SCT#57182000  "Nerve injury"
-* ComplicationTypeCodeSystem#9 "Delay wound healing/dehiscence"
+* ComplicationTypeCodeSystem#delay-wound "Delay wound healing/dehiscence"
 * SCT#403675008 "Drug-induced dermatosis"
 * SCT#233604007 "Pneumonia"
 * SCT#443980004 "Neutropenic sepsis"
-* ComplicationTypeCodeSystem#13 "Immune related toxicity"
+* ComplicationTypeCodeSystem#immune-toxicity "Immune related toxicity"
 * NullFlavor#UNK "unknown"
 * NullFlavor#OTH "other"
 
@@ -751,9 +751,9 @@ Description: "Additional code covering whether there is evidence of local, regio
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
 * insert CodeSystemRuleset
 
-* #1 "Yes, local recurrence"
-* #2 "Yes, regional recurrence" 
-* #3 "Yes, distant recurrence"
+* #local-recurrence "Yes, local recurrence"
+* #regional-recurrence "Yes, regional recurrence" 
+* #distant-recurrence "Yes, distant recurrence"
 
 ValueSet: RecurrenceVS
 Id: RecurrenceVS
@@ -763,9 +763,9 @@ Description: "Valueset about whether there is evidence of local, regional or dis
 * ^url = https://connect.ichom.org/fhir/ValueSet/RecurrenceVS
 
 * YesNoUnkCS#N "No"
-* RecurrenceCodeSystem#1 "Yes, local recurrence"
-* RecurrenceCodeSystem#2 "Yes, regional recurrence" 
-* RecurrenceCodeSystem#3 "Yes, distant recurrence"
+* RecurrenceCodeSystem#local-recurrence "Yes, local recurrence"
+* RecurrenceCodeSystem#regional-recurrence "Yes, regional recurrence" 
+* RecurrenceCodeSystem#distant-recurrence "Yes, distant recurrence"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: RecurrenceMethodCodeSystem
