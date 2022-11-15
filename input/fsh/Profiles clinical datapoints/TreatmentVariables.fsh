@@ -397,7 +397,7 @@ Description: "Example of how the real treatment plan was followed"
 * code = SCT#410110000 "Compliance care assessment"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#yes "Yes, fully followed"
 
 Mapping: TreatmentPlanFollowedToICHOM
 Source:	TreatmentPlanFollowed
