@@ -147,7 +147,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * required = true
 
   * item[+]
@@ -158,11 +158,11 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction // Mastectomy with reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#3 // Mastectomy with reconstruction
     * enableBehavior = #any
     * required = true
 

@@ -21,7 +21,7 @@ InstanceOf: ReoperationSurgery
 Description: "Example of a reoperation due to involved margins after primary surgery"
 * status = ProcedureStatusCS#completed 
 * category = SCT#261554009 "Reoperation"
-* code = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "2022-07-09"
 * reasonCode = SCT#1156344002 "Presence of primary malignant neoplasm of breast at surgical margin in excised specimen of breast"

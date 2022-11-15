@@ -329,10 +329,10 @@ Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesCodeSystem 
 * insert CodeSystemRuleset
 
-* #bcs "Breast conserving surgery (BCS)"
-* #bcs-with-mammoplasty "BCS with mammoplasty"
-* #mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* #mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* #0 "Breast conserving surgery (BCS)"
+* #1 "BCS with mammoplasty"
+* #2 "Mastectomy without immediate reconstruction"
+* #3 "Mastectomy with immediate reconstruction"
 
 ValueSet: BreastSurgeryTypeVS
 Id: BreastSurgeryTypeVS
@@ -341,10 +341,10 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/BreastSurgeryTypeVS
 
-* include BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* include BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "BCS with mammoplasty"
-* include BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 // Axilla surgery
@@ -627,10 +627,10 @@ Description: "Valueset of the types of re-operation"
 * SCT#33496007 "Reconstruction of breast"
 * SCT#69031006 "Excision of breast tissue"
 * SCT#234254000 "Excision of axillary lymph nodes group"
-* BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "Breast conserving surgery with mammoplasty"
-* BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "Breast conserving surgery with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: InvolvedMarginsReoperationTypeVS
@@ -642,10 +642,10 @@ Description: "Kind of re-operation due to involved margins"
 * ^url = https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationTypeVS
 
 * SCT#373572006 "Clinical finding absent"
-* BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "BCS with mammoplasty"
-* BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ReoperationReasonVS
