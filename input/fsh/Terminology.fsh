@@ -195,6 +195,7 @@ Title: "Molecular Profiling CodeSystem"
 Description: "Codes used to describe the different types of molecular profiling scoring"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/MolecularProfilingCodeSystem 
 * insert CodeSystemRuleset
+
 * #mammaprint "Mammaprint Score" 
 * #oncotype "Oncotype Score" 
 * #endopredict "Endopredict Score" 
@@ -276,6 +277,7 @@ Title: "Treatment variables CodeSytem"
 Description: "Codes defining types of treatment a breast cancer patient could receive"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/TreatmentTypesCodeSystem 
 * insert CodeSystemRuleset
+
 * #adjuvant-chemotherapy "Adjuvant chemotherapy"
 * #neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
 * #targeted-therapy "Targeted therapy"
@@ -326,6 +328,7 @@ Title: "Breast surgery types CodeSystem"
 Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesCodeSystem 
 * insert CodeSystemRuleset
+
 * #0 "Breast conserving surgery (BCS)"
 * #1 "BCS with mammoplasty"
 * #2 "Mastectomy without immediate reconstruction"
@@ -377,6 +380,7 @@ Title: "Type of reconstruction surgery CodeSystem"
 Description: "Codes indicating the type of reconstruction surgery that is performed"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ReconstructionTypeCodeSystem
 * insert CodeSystemRuleset
+
 * #direct-implant "Direct implant"
 * #staged-implant "Staged implant"
 * #autologous "Autologous"
@@ -401,6 +405,7 @@ Title: "Location of the implant CodeSystem"
 Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ImplantLocationCodeSystem
 * insert CodeSystemRuleset
+
 * #pre-pectoral "Pre-pectoral"
 * #sub-pectoral "Sub-pectoral"
 
@@ -544,6 +549,7 @@ Title: "Patient Treatment Education Codesystem"
 Description: "Codes covering if the patient received sufficient information about the treatment options"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientEducationCodeSystem
 * insert CodeSystemRuleset
+
 * #1 "Strongly agree"
 * #2 "Agree"
 * #3 "Somewhat agree"
@@ -660,6 +666,7 @@ Title: "Impact of complication CodeSystem"
 Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * insert CodeSystemRuleset
+
 * #1 "No complication"
 * #2 "Complication leading to prolonged hospitalization (>14days)"
 * #5 "Complication leading to discontinuing of treatment"
@@ -691,6 +698,7 @@ Title: "Type of complication CodeSystem"
 Description: "Codes indicating the type of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationTypeCodeSystem
 * insert CodeSystemRuleset
+
 * #4 "Partial autologous graft loss"
 * #5 "Total autologous graft loss"
 * #9 "Delay wound healing/dehiscence"
@@ -742,6 +750,7 @@ Title: "Recurrence of neoplasm CodeSystem"
 Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
 * insert CodeSystemRuleset
+
 * #1 "Yes, local recurrence"
 * #2 "Yes, regional recurrence" 
 * #3 "Yes, distant recurrence"
@@ -765,6 +774,7 @@ Title: "Recurrence method CodeSystem"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * insert CodeSystemRuleset
+
 * #2 "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethodVS
@@ -790,6 +800,7 @@ Title: "Agreement response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * insert CodeSystemRuleset
+
 * #1 "Not at all"
 * #2 "A little"
 * #3 "Quite a bit"
