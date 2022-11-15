@@ -195,9 +195,9 @@ Title: "Molecular Profiling CodeSystem"
 Description: "Codes used to describe the different types of molecular profiling scoring"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/MolecularProfilingCodeSystem 
 * insert CodeSystemRuleset
-* #mammaprint "Mammaprint Score" 
-* #oncotype "Oncotype Score" 
-* #endopredict "Endopredict Score" 
+* #Mammaprint "Mammaprint Score" 
+* #Oncotype "Oncotype Score" 
+* #Endopredict "Endopredict Score" 
 
 ValueSet: MolecularProfilingStatusVS
 Id: MolecularProfilingStatusVS
@@ -206,33 +206,57 @@ Description: "Valueset indicating if a molecular profiling tool was used"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/MolecularProfilingStatusVS
 
-* include MolecularProfilingCodeSystem#mammaprint "Mammaprint Score" 
-* include MolecularProfilingCodeSystem#oncotype "Oncotype Score" 
-* include MolecularProfilingCodeSystem#endopredict "Endopredict Score" 
+* include MolecularProfilingCodeSystem#Mammaprint "Mammaprint Score" 
+* include MolecularProfilingCodeSystem#Oncotype "Oncotype Score" 
+* include MolecularProfilingCodeSystem#Endopredict "Endopredict Score" 
 
 //  BASELINE CLINICAL FACTORS 
+
+CodeSystem: SACQPatientComorbidityCodeSystem
+Id: SACQPatientComorbidityCodeSystem
+Title: "SACQ patient's comorbidity history CodeSystem"
+Description: "Codes used in SACQ patient's comorbidity history that are not available yet in standard terminologies"
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/SACQPatientComorbidityCodeSystem 
+* insert CodeSystemRuleset
+
+* #0  "I have no other diseases"
+* #1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* #2  "High blood pressure"
+* #3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* #4  "Diabetes"
+* #5  "Ulcer or stomach disease"
+* #6  "Kidney disease"
+* #7  "Liver disease"
+* #8  "Anemia or other blood disease"
+* #9  "Cancer/Other cancer (within the last 5 years)"
+* #10 "Depression"
+* #11 "Osteoarthritis, degenerative arthritis"
+* #12 "Back pain"
+* #13 "Rheumatoid arthritis"
+* #14 "Other medical problems"
+
 ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history ValueSet"
 Description: "Patient's documented history of comorbidities"
-* insert ValuesetRuleset 
+* insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SACQPatientComorbidityHistory
- 
-* include SCT#373572006 "I have no other diseases"
-* include SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
-* include SCT#38341003 "High blood pressure"
-* include SCT#19829001 "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
-* include SCT#73211009 "Diabetes"
-* include SCT#29384001 "Ulcer or stomach disease"
-* include SCT#90708001 "Kidney disease"
-* include SCT#235856003 "Liver disease"
-* include SCT#414022008 "Anemia or other blood disease"
-* include SCT#363346000 "Cancer/Other cancer (within the last 5 years)"
-* include SCT#35489007 "Depression"
-* include SCT#396275006 "Osteoarthritis, degenerative arthritis"
-* include SCT#161891005 "Back pain" 
-* include SCT#69896004 "Rheumatoid arthritis"
-* include NullFlavor#OTH "Other medical problems" 
+
+* include SACQPatientComorbidityCodeSystem#0  "I have no other diseases"
+* include SACQPatientComorbidityCodeSystem#1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* include SACQPatientComorbidityCodeSystem#2  "High blood pressure"
+* include SACQPatientComorbidityCodeSystem#3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* include SACQPatientComorbidityCodeSystem#4  "Diabetes"
+* include SACQPatientComorbidityCodeSystem#5  "Ulcer or stomach disease"
+* include SACQPatientComorbidityCodeSystem#6  "Kidney disease"
+* include SACQPatientComorbidityCodeSystem#7  "Liver disease"
+* include SACQPatientComorbidityCodeSystem#8  "Anemia or other blood disease"
+* include SACQPatientComorbidityCodeSystem#9  "Cancer/Other cancer (within the last 5 years)"
+* include SACQPatientComorbidityCodeSystem#10 "Depression"
+* include SACQPatientComorbidityCodeSystem#11 "Osteoarthritis, degenerative arthritis"
+* include SACQPatientComorbidityCodeSystem#12 "Back pain"
+* include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
+* include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
 ValueSet: BodyWeightVS
 Id: BodyWeightVS
@@ -269,6 +293,7 @@ Description: "Valueset of the laterality of new breast cancer"
 * SCT#255209002 "Contralateral"
 
 //  TREATMENT VARIABLES 
+
 // TreatmentType \\
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
@@ -276,10 +301,10 @@ Title: "Treatment variables CodeSytem"
 Description: "Codes defining types of treatment a breast cancer patient could receive"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/TreatmentTypesCodeSystem 
 * insert CodeSystemRuleset
-* #adjuvant-chemotherapy "Adjuvant chemotherapy"
-* #neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
-* #targeted-therapy "Targeted therapy"
-* #no-treatment "No treatment"
+* #A_chemo "Adjuvant chemotherapy"
+* #N_A_chemo "Neoadjuvant chemotherapy"
+* #Targ_Thrpy "Targeted therapy"
+* #no_treat "No treatment"
 
 ValueSet: TreatmentTypeVS
 Id: TreatmentTypeVS
@@ -289,15 +314,15 @@ Description: "Valueset of the kind of treatment a patient with breastcancer unde
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentTypeVS
 
-* include TreatmentTypesCodeSystem#no-treatment "No treatment"
+* include TreatmentTypesCodeSystem#no_treat "No treatment"
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
-* include TreatmentTypesCodeSystem#adjuvant-chemotherapy "Adjuvant chemotherapy"
-* include TreatmentTypesCodeSystem#neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
-* include TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * include SCT#76334006 "Immunotherapy"
 * include SCT#243114000 "Support"
 * NullFlavor#UNK "unknown"
@@ -312,10 +337,10 @@ Description: "Valueset of the kind of treatment that the multidisciplinary team 
 
 * include SCT#387713003 "Surgical procedure"
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
-* include TreatmentTypesCodeSystem#adjuvant-chemotherapy "Adjuvant chemotherapy"
-* include TreatmentTypesCodeSystem#neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
-* include TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * include SCT#76334006 "Immunotherapy"
 * include SCT#243114000 "Support"
 
@@ -377,10 +402,10 @@ Title: "Type of reconstruction surgery CodeSystem"
 Description: "Codes indicating the type of reconstruction surgery that is performed"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ReconstructionTypeCodeSystem
 * insert CodeSystemRuleset
-* #direct-implant "Direct implant"
-* #staged-implant "Staged implant"
-* #autologous "Autologous"
-* #both "Both implant and autologous"
+* #Direct_imp "Direct implant"
+* #Staged_imp "Staged implant"
+* #Autologous "Autologous"
+* #Both "Both implant and autologous"
 
 ValueSet: ReconstructionTypeVS
 Id: ReconstructionTypeVS
@@ -389,10 +414,10 @@ Description: "Valueset of the type of reconstruction surgery that is performed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ReconstructionTypeVS
 
-* include ReconstructionTypeCodeSystem#direct-implant "Direct implant"
-* include ReconstructionTypeCodeSystem#staged-implant "Staged implant"
-* include ReconstructionTypeCodeSystem#autologous "Autologous"
-* include ReconstructionTypeCodeSystem#both "Both implant and autologous"
+* include ReconstructionTypeCodeSystem#Direct_imp "Direct implant"
+* include ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* include ReconstructionTypeCodeSystem#Autologous "Autologous"
+* include ReconstructionTypeCodeSystem#Both "Both implant and autologous"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: ImplantLocationCodeSystem
@@ -401,8 +426,8 @@ Title: "Location of the implant CodeSystem"
 Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ImplantLocationCodeSystem
 * insert CodeSystemRuleset
-* #pre-pectoral "Pre-pectoral"
-* #sub-pectoral "Sub-pectoral"
+* #Pre_pect "Pre-pectoral"
+* #Sub_pect "Sub-pectoral"
 
 ValueSet: ImplantLocationVS
 Id: ImplantLocationVS
@@ -411,8 +436,8 @@ Description: "Valueset of the location of the implant during reconstruction surg
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ImplantLocationVS
 
-* include ImplantLocationCodeSystem#pre-pectoral "Pre-pectoral"
-* include ImplantLocationCodeSystem#sub-pectoral "Sub-pectoral"
+* include ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
+* include ImplantLocationCodeSystem#Sub_pect "Sub-pectoral"
 
 // Therapy intent
 ValueSet: TherapyIntentVS

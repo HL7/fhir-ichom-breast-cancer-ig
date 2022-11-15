@@ -107,163 +107,163 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
     * linkId = "ComorbiditiesSACQ_HeartDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for heart disease (For example, angina, heart failure, or heart attack)?"
-    * insert enableWhenComorbidity(SCT#56265001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#1)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_HeartDiseaseFU2"
     * type = #boolean
     * text = "Does your heart disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#56265001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#1)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_HighBloodPressureFU1"
     * type = #boolean
     * text = "Do you receive treatment for high blood pressure?"
-    * insert enableWhenComorbidity(SCT#38341003)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#2)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_HighBloodPressureFU2"
     * type = #boolean
     * text = "Does your high blood pressure limit your activities?"
-    * insert enableWhenComorbidity(SCT#38341003)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#2)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_LungDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for lung disease?"
-    * insert enableWhenComorbidity(SCT#19829001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#3)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_LungDiseaseFU2"
     * type = #boolean
     * text = "Does your lung disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#19829001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#3)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_DiabetesFU1"
     * type = #boolean
     * text = "Do you receive treatment for diabetes?"
-    * insert enableWhenComorbidity(SCT#73211009)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#4)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_DiabetesFU2"
     * type = #boolean
     * text = "Does your diabetes limit your activities?"
-    * insert enableWhenComorbidity(SCT#73211009)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#4)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_StomachDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for an ulcer or stomach disease?"
-    * insert enableWhenComorbidity(SCT#29384001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#5)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_StomachDiseaseFU2"
     * type = #boolean
     * text = "Does your ulcer or stomach disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#29384001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#5)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_KidneyDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for kidney disease?"
-    * insert enableWhenComorbidity(SCT#90708001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#6)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_KidneyDiseaseFU2"
     * type = #boolean
     * text = "Does your kidney disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#90708001)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#6)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_LiverDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for liver disease?"
-    * insert enableWhenComorbidity(SCT#235856003)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#7)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_LiverDiseaseFU2"
     * type = #boolean
     * text = "Does your liver disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#235856003)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#7)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_BloodDiseaseFU1"
     * type = #boolean
     * text = "Do you receive treatment for anemia or other blood disease?"
-    * insert enableWhenComorbidity(SCT#414022008)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#8)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_BloodDiseaseFU2"
     * type = #boolean
     * text = "Does your anemia or other blood disease limit your activities?"
-    * insert enableWhenComorbidity(SCT#414022008)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#8)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_CancerFU1"
     * type = #boolean
     * text = "Do you receive treatment for cancer/another cancer?"
-    * insert enableWhenComorbidity(SCT#363346000)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#9)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_CancerFU2"
     * type = #boolean
     * text = "Does your cancer/other cancer limit your activities?"
-    * insert enableWhenComorbidity(SCT#363346000)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#9)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_DepressionFU1"
     * type = #boolean
     * text = "Do you receive treatment for depression?"
-    * insert enableWhenComorbidity(SCT#35489007)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#10)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_DepressionFU2"
     * type = #boolean
     * text = "Does your depression limit your activities?"
-    * insert enableWhenComorbidity(SCT#35489007)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#10)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_OsteoarthritisFU1"
     * type = #boolean
     * text = "Do you receive treatment for osteoarthritis/degenerative arthritis?"
-    * insert enableWhenComorbidity(SCT#396275006)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#11)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_OsteoarthritisFU2"
     * type = #boolean
     * text = "Does your osteoarthritis/degenerative arthritis limit your activities?"
-    * insert enableWhenComorbidity(SCT#396275006)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#11)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_BackPainFU1"
     * type = #boolean
     * text = "Do you receive treatment for back pain?"
-    * insert enableWhenComorbidity(SCT#161891005)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#12)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_BackPainFU2"
     * type = #boolean
     * text = "Does your back pain limit your activities?"
-    * insert enableWhenComorbidity(SCT#161891005)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#12)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_RheumatoidArthritisFU1"
     * type = #boolean
     * text = "Do you receive treatment for rheumatoid arthritis?"
-    * insert enableWhenComorbidity(SCT#69896004)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#13)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_RheumatoidArthritisFU2"
     * type = #boolean
     * text = "Does your rheumatoid arthritis limit your activities?"
-    * insert enableWhenComorbidity(SCT#69896004)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#13)
 
   * item[+]
     * linkId = "ComorbiditiesSACQ_Other"
     * type = #text
     * text = "What other medical problems are you experiencing?"
-    * insert enableWhenComorbidity(NullFlavor#OTH)
+    * insert enableWhenComorbidity(SACQPatientComorbidityCodeSystem#14)
 
   // * item[+]
   //   * linkId = "ComorbiditiesSACQ_Score"
