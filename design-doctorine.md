@@ -44,8 +44,7 @@
 
 ## Terminology
 * terminology will not be shared agross IGs, as there is little overlap between the initial [breast cancer](https://connect.ichom.org/patient-centered-outcome-measures/breast-cancer/) and [autism spectrum disorders](https://connect.ichom.org/patient-centered-outcome-measures/autism-spectrum-disorder/) sets that are proposed for the initial HL7 inclusion
-* The nullflavors as available in mappings will remain in the valueSets we created, as these are also used in the questionnaires and we can therefore not remove them from the profiles.
-* naming convention of custom codes is all lowercase with dashes - for spaces (ie `adjuvant-chemotherapy`)
+* The nullflavors, mapped by Linda, will remain in the valueSets we created, as these are also used in the questionnaires and we can therefore not remove them from the profiles.
 
 # Tooling
 * stay on top of errors and warnings: both SUSHI and publisher's QA report should always say 0 warnings and 0 errors
