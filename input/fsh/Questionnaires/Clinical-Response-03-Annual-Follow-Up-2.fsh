@@ -18,7 +18,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
   * item[+]
     * linkId = "NA-Clinical"
 //    * linkId = "N/A-Clinical"
-    * type = #string
+    * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true
 
@@ -147,7 +147,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * required = true
 
   * item[+]
@@ -158,11 +158,11 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction // Mastectomy with reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#3 // Mastectomy with reconstruction
     * enableBehavior = #any
     * required = true
 
@@ -174,7 +174,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
-      * answerCoding = ReconstructionTypeCodeSystem#autologous
+      * answerCoding = ReconstructionTypeCodeSystem#Autologous
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
@@ -251,8 +251,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the intent of chemotherapy"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -261,8 +261,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the type of chemotherapy (select all that apply)"
     * answerValueSet = Canonical(ChemoTherapyTypeVS)
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
     * repeats = true
@@ -271,8 +271,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -287,8 +287,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -351,14 +351,14 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "Indicate the type of targeted therapy"
     * answerValueSet = Canonical(TargetedTherapyVS)
-    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment(#targeted-therapy) //Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) //Targeted therapy
     * required = true
 
   * item[+]
@@ -372,7 +372,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
@@ -440,9 +440,9 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "What was the method of confirming recurrence of neoplasm?"
     * answerValueSet = Canonical(RecurrenceMethodVS)
-    * insert enableWhenRecurrence(#local-recurrence)
-    * insert enableWhenRecurrence(#regional-recurrence)
-    * insert enableWhenRecurrence(#distant-recurrence)
+    * insert enableWhenRecurrence(#1)
+    * insert enableWhenRecurrence(#2)
+    * insert enableWhenRecurrence(#3)
     * enableBehavior = #any
     * required = true
 
@@ -450,9 +450,9 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "RecurDateCancer-Known"
     * type = #boolean
     * text = "Is the date of cancer recurrence known?"
-    * insert enableWhenRecurrence(#local-recurrence)
-    * insert enableWhenRecurrence(#regional-recurrence)
-    * insert enableWhenRecurrence(#distant-recurrence)
+    * insert enableWhenRecurrence(#1)
+    * insert enableWhenRecurrence(#2)
+    * insert enableWhenRecurrence(#3)
     * enableBehavior = #any
     * required = true
 
@@ -497,5 +497,4 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
       * operator = #=
       * answerCoding = YesNoUnkCS#Y "Yes" 
     * required = true
-
 

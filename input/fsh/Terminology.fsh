@@ -195,10 +195,9 @@ Title: "Molecular Profiling CodeSystem"
 Description: "Codes used to describe the different types of molecular profiling scoring"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/MolecularProfilingCodeSystem 
 * insert CodeSystemRuleset
-
-* #mammaprint "Mammaprint Score" 
-* #oncotype "Oncotype Score" 
-* #endopredict "Endopredict Score" 
+* #Mammaprint "Mammaprint Score" 
+* #Oncotype "Oncotype Score" 
+* #Endopredict "Endopredict Score" 
 
 ValueSet: MolecularProfilingStatusVS
 Id: MolecularProfilingStatusVS
@@ -207,33 +206,57 @@ Description: "Valueset indicating if a molecular profiling tool was used"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/MolecularProfilingStatusVS
 
-* include MolecularProfilingCodeSystem#mammaprint "Mammaprint Score" 
-* include MolecularProfilingCodeSystem#oncotype "Oncotype Score" 
-* include MolecularProfilingCodeSystem#endopredict "Endopredict Score" 
+* include MolecularProfilingCodeSystem#Mammaprint "Mammaprint Score" 
+* include MolecularProfilingCodeSystem#Oncotype "Oncotype Score" 
+* include MolecularProfilingCodeSystem#Endopredict "Endopredict Score" 
 
 //  BASELINE CLINICAL FACTORS 
+
+CodeSystem: SACQPatientComorbidityCodeSystem
+Id: SACQPatientComorbidityCodeSystem
+Title: "SACQ patient's comorbidity history CodeSystem"
+Description: "Codes used in SACQ patient's comorbidity history that are not available yet in standard terminologies"
+* ^url =  https://connect.ichom.org/fhir/CodeSystem/SACQPatientComorbidityCodeSystem 
+* insert CodeSystemRuleset
+
+* #0  "I have no other diseases"
+* #1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* #2  "High blood pressure"
+* #3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* #4  "Diabetes"
+* #5  "Ulcer or stomach disease"
+* #6  "Kidney disease"
+* #7  "Liver disease"
+* #8  "Anemia or other blood disease"
+* #9  "Cancer/Other cancer (within the last 5 years)"
+* #10 "Depression"
+* #11 "Osteoarthritis, degenerative arthritis"
+* #12 "Back pain"
+* #13 "Rheumatoid arthritis"
+* #14 "Other medical problems"
+
 ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history ValueSet"
 Description: "Patient's documented history of comorbidities"
-* insert ValuesetRuleset 
+* insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SACQPatientComorbidityHistory
- 
-* include SCT#373572006 "I have no other diseases"
-* include SCT#56265001 "Heart disease (For example, angina, heart attack, or heart failure)"
-* include SCT#38341003 "High blood pressure"
-* include SCT#19829001 "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
-* include SCT#73211009 "Diabetes"
-* include SCT#29384001 "Ulcer or stomach disease"
-* include SCT#90708001 "Kidney disease"
-* include SCT#235856003 "Liver disease"
-* include SCT#414022008 "Anemia or other blood disease"
-* include SCT#363346000 "Cancer/Other cancer (within the last 5 years)"
-* include SCT#35489007 "Depression"
-* include SCT#396275006 "Osteoarthritis, degenerative arthritis"
-* include SCT#161891005 "Back pain" 
-* include SCT#69896004 "Rheumatoid arthritis"
-* include NullFlavor#OTH "Other medical problems" 
+
+* include SACQPatientComorbidityCodeSystem#0  "I have no other diseases"
+* include SACQPatientComorbidityCodeSystem#1  "Heart disease (For example, angina, heart attack, or heart failure)"
+* include SACQPatientComorbidityCodeSystem#2  "High blood pressure"
+* include SACQPatientComorbidityCodeSystem#3  "Lung disease (For example,  asthma, chronic bronchitis, or emphysema)"
+* include SACQPatientComorbidityCodeSystem#4  "Diabetes"
+* include SACQPatientComorbidityCodeSystem#5  "Ulcer or stomach disease"
+* include SACQPatientComorbidityCodeSystem#6  "Kidney disease"
+* include SACQPatientComorbidityCodeSystem#7  "Liver disease"
+* include SACQPatientComorbidityCodeSystem#8  "Anemia or other blood disease"
+* include SACQPatientComorbidityCodeSystem#9  "Cancer/Other cancer (within the last 5 years)"
+* include SACQPatientComorbidityCodeSystem#10 "Depression"
+* include SACQPatientComorbidityCodeSystem#11 "Osteoarthritis, degenerative arthritis"
+* include SACQPatientComorbidityCodeSystem#12 "Back pain"
+* include SACQPatientComorbidityCodeSystem#13 "Rheumatoid arthritis"
+* include SACQPatientComorbidityCodeSystem#14 "Other medical problems"
 
 ValueSet: BodyWeightVS
 Id: BodyWeightVS
@@ -270,6 +293,7 @@ Description: "Valueset of the laterality of new breast cancer"
 * SCT#255209002 "Contralateral"
 
 //  TREATMENT VARIABLES 
+
 // TreatmentType \\
 CodeSystem: TreatmentTypesCodeSystem
 Id: TreatmentTypesCodeSystem
@@ -277,11 +301,10 @@ Title: "Treatment variables CodeSytem"
 Description: "Codes defining types of treatment a breast cancer patient could receive"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/TreatmentTypesCodeSystem 
 * insert CodeSystemRuleset
-
-* #adjuvant-chemotherapy "Adjuvant chemotherapy"
-* #neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
-* #targeted-therapy "Targeted therapy"
-* #no-treatment "No treatment"
+* #A_chemo "Adjuvant chemotherapy"
+* #N_A_chemo "Neoadjuvant chemotherapy"
+* #Targ_Thrpy "Targeted therapy"
+* #no_treat "No treatment"
 
 ValueSet: TreatmentTypeVS
 Id: TreatmentTypeVS
@@ -291,15 +314,15 @@ Description: "Valueset of the kind of treatment a patient with breastcancer unde
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentTypeVS
 
-* include TreatmentTypesCodeSystem#no-treatment "No treatment"
+* include TreatmentTypesCodeSystem#no_treat "No treatment"
 * include SCT#387713003 "Surgical procedure"
 * include SCT#699455008 "Operative procedure on axilla"
 * include SCT#33496007 "Reconstruction of breast" 
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
-* include TreatmentTypesCodeSystem#adjuvant-chemotherapy "Adjuvant chemotherapy"
-* include TreatmentTypesCodeSystem#neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
-* include TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * include SCT#76334006 "Immunotherapy"
 * include SCT#243114000 "Support"
 * NullFlavor#UNK "unknown"
@@ -314,10 +337,10 @@ Description: "Valueset of the kind of treatment that the multidisciplinary team 
 
 * include SCT#387713003 "Surgical procedure"
 * include SCT#108290001 "Radiation oncology AND/OR radiotherapy"
-* include TreatmentTypesCodeSystem#adjuvant-chemotherapy "Adjuvant chemotherapy"
-* include TreatmentTypesCodeSystem#neoadjuvant-chemotherapy "Neoadjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#A_chemo "Adjuvant chemotherapy"
+* include TreatmentTypesCodeSystem#N_A_chemo "Neoadjuvant chemotherapy"
 * include SCT#169413002 "Hormone therapy"
-* include TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
+* include TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
 * include SCT#76334006 "Immunotherapy"
 * include SCT#243114000 "Support"
 
@@ -328,11 +351,10 @@ Title: "Breast surgery types CodeSystem"
 Description: "Codes indicating the types of breast surgery a patient underwent"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/BreastSurgeryTypesCodeSystem 
 * insert CodeSystemRuleset
-
-* #bcs "Breast conserving surgery (BCS)"
-* #bcs-with-mammoplasty "BCS with mammoplasty"
-* #mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* #mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* #0 "Breast conserving surgery (BCS)"
+* #1 "BCS with mammoplasty"
+* #2 "Mastectomy without immediate reconstruction"
+* #3 "Mastectomy with immediate reconstruction"
 
 ValueSet: BreastSurgeryTypeVS
 Id: BreastSurgeryTypeVS
@@ -341,10 +363,10 @@ Description: "Valueset of the types of breast surgery a patient underwent"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/BreastSurgeryTypeVS
 
-* include BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* include BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "BCS with mammoplasty"
-* include BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* include BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* include BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* include BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* include BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 // Axilla surgery
@@ -380,11 +402,10 @@ Title: "Type of reconstruction surgery CodeSystem"
 Description: "Codes indicating the type of reconstruction surgery that is performed"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ReconstructionTypeCodeSystem
 * insert CodeSystemRuleset
-
-* #direct-implant "Direct implant"
-* #staged-implant "Staged implant"
-* #autologous "Autologous"
-* #both "Both implant and autologous"
+* #Direct_imp "Direct implant"
+* #Staged_imp "Staged implant"
+* #Autologous "Autologous"
+* #Both "Both implant and autologous"
 
 ValueSet: ReconstructionTypeVS
 Id: ReconstructionTypeVS
@@ -393,10 +414,10 @@ Description: "Valueset of the type of reconstruction surgery that is performed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ReconstructionTypeVS
 
-* include ReconstructionTypeCodeSystem#direct-implant "Direct implant"
-* include ReconstructionTypeCodeSystem#staged-implant "Staged implant"
-* include ReconstructionTypeCodeSystem#autologous "Autologous"
-* include ReconstructionTypeCodeSystem#both "Both implant and autologous"
+* include ReconstructionTypeCodeSystem#Direct_imp "Direct implant"
+* include ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* include ReconstructionTypeCodeSystem#Autologous "Autologous"
+* include ReconstructionTypeCodeSystem#Both "Both implant and autologous"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: ImplantLocationCodeSystem
@@ -405,9 +426,8 @@ Title: "Location of the implant CodeSystem"
 Description: "Codes indicating the location of the implant that was placed during reconstruction surgery"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ImplantLocationCodeSystem
 * insert CodeSystemRuleset
-
-* #pre-pectoral "Pre-pectoral"
-* #sub-pectoral "Sub-pectoral"
+* #Pre_pect "Pre-pectoral"
+* #Sub_pect "Sub-pectoral"
 
 ValueSet: ImplantLocationVS
 Id: ImplantLocationVS
@@ -416,8 +436,8 @@ Description: "Valueset of the location of the implant during reconstruction surg
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ImplantLocationVS
 
-* include ImplantLocationCodeSystem#pre-pectoral "Pre-pectoral"
-* include ImplantLocationCodeSystem#sub-pectoral "Sub-pectoral"
+* include ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
+* include ImplantLocationCodeSystem#Sub_pect "Sub-pectoral"
 
 // Therapy intent
 ValueSet: TherapyIntentVS
@@ -506,9 +526,9 @@ Description: "Codes covering if the patient followed the multidisciplinary recom
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanFollowedCodeSystem
 * insert CodeSystemRuleset
 
-* #no "No, not followed"
-* #yes "Yes, fully followed"
-* #some "Some treatments followed"
+* #0 "No, not followed"
+* #1 "Yes, fully followed"
+* #2 "Some treatments followed"
 
 ValueSet: TreatmentPlanFollowedVS
 Id: TreatmentPlanFollowedVS
@@ -517,9 +537,9 @@ Description: "Valueset of if the patient followed the multidisciplinary recommen
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanFollowedVS
 
-* TreatmentPlanFollowedCodeSystem#no "No, not followed"
-* TreatmentPlanFollowedCodeSystem#yes "Yes, fully followed"
-* TreatmentPlanFollowedCodeSystem#some "Some treatments followed"
+* TreatmentPlanFollowedCodeSystem#0 "No, not followed"
+* TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* TreatmentPlanFollowedCodeSystem#2 "Some treatments followed"
 
 CodeSystem: TreatmentPlanNotFollowedCodeSystem
 Id: TreatmentPlanNotFollowedCodeSystem
@@ -528,8 +548,8 @@ Description: "Codes covering if the patient has not followed the multidisciplina
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanNotFollowedCodeSystem
 * insert CodeSystemRuleset
 
-* #patient-preference "Patient preference"
-* #clinical-reasons "Clinical reasons"
+* #1 "Patient preference"
+* #2 "Clinical reasons"
 
 ValueSet: TreatmentPlanNotFollowedVS
 Id: TreatmentPlanNotFollowedVS
@@ -538,8 +558,8 @@ Description: "Valueset of reason for the treatment plan not being followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanNotFollowedVS
 
-* TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
-* TreatmentPlanNotFollowedCodeSystem#clinical-reasons "Clinical reasons"
+* TreatmentPlanNotFollowedCodeSystem#1 "Patient preference" // SCT#105480006 "Refusal of treatment by patient"
+* TreatmentPlanNotFollowedCodeSystem#2 "Clinical reasons"
 * NullFlavor#UNK "unknown"
 
 // Patient education
@@ -549,12 +569,11 @@ Title: "Patient Treatment Education Codesystem"
 Description: "Codes covering if the patient received sufficient information about the treatment options"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientEducationCodeSystem
 * insert CodeSystemRuleset
-
-* #strongly-agree "Strongly agree"
-* #agree "Agree"
-* #somewhat-agree "Somewhat agree"
-* #disagree "Disagree"
-* #strongly-disagree "Strongly disagree"
+* #1 "Strongly agree"
+* #2 "Agree"
+* #3 "Somewhat agree"
+* #4 "Disagree"
+* #5 "Strongly disagree"
 
 ValueSet: PatientEducationVS
 Id: PatientEducationVS
@@ -563,11 +582,11 @@ Description: "Valueset covering if the patient received sufficient information a
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/PatientEducationVS
 
-* PatientEducationCodeSystem#strongly-agree "Strongly agree"
-* PatientEducationCodeSystem#agree "Agree"
-* PatientEducationCodeSystem#somewhat-agree "Somewhat agree"
-* PatientEducationCodeSystem#disagree "Disagree" 
-* PatientEducationCodeSystem#strongly-disagree "Strongly disagree"
+* PatientEducationCodeSystem#1 "Strongly agree"
+* PatientEducationCodeSystem#2 "Agree"
+* PatientEducationCodeSystem#3 "Somewhat agree"
+* PatientEducationCodeSystem#4 "Disagree" 
+* PatientEducationCodeSystem#5 "Strongly disagree"
 
 // Patient preference 
 CodeSystem: PatientTreatPrefCodeSystem
@@ -577,8 +596,8 @@ Description: "Codes covering for why the treatment plan was not followed"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/PatientTreatPrefCodeSystem
 * insert CodeSystemRuleset
 
-* #personal-preference "Personal preference"
-* #different-plan-recommended "Different plan recommended by clinical team"
+* #1 "Personal preference"
+* #2 "Different plan recommended by clinical team"
 
 ValueSet: PatientTreatPrefVS
 Id: PatientTreatPrefVS
@@ -588,9 +607,9 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/PatientTreatPrefVS
 
-* PatientTreatPrefCodeSystem#personal-preference "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
+* PatientTreatPrefCodeSystem#1 "Personal preference" // SCT#105480006 "Refusal of treatment by patient"
 * SCT#309846006 "Treatment not available"
-* PatientTreatPrefCodeSystem#different-plan-recommended "Different plan recommended by clinical team"
+* PatientTreatPrefCodeSystem#2 "Different plan recommended by clinical team"
 * NullFlavor#OTH "other"
 
 CodeSystem: TreatmentPlanComplianceCodeSystem
@@ -600,8 +619,8 @@ Description: "Codes covering observation identifiers for treatment plan non-comp
 * ^url = https://connect.ichom.org/fhir/CodeSystem/TreatmentPlanComplianceCodeSystem
 * insert CodeSystemRuleset
 
-* #reason-for-not-following "Reason for not following original treatment plan"
-* #patient-reason-for-not-following "Patient reported reason for not following recommened treatment"
+* #1 "Reason for not following original treatment plan"
+* #2 "Patient reported reason for not following recommened treatment"
 
 ValueSet: TreatmentPlanComplianceVS
 Id: TreatmentPlanComplianceVS
@@ -610,8 +629,8 @@ Description: "Valueset of reason for why the treatment plan was not followed"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TreatmentPlanComplianceVS
 
-* TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
-* TreatmentPlanComplianceCodeSystem#patient-reason-for-not-following "Patient reported reason for not following recommened treatment"
+* TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* TreatmentPlanComplianceCodeSystem#2 "Patient reported reason for not following recommened treatment"
 
 
 // DISUTILITY OF CARE
@@ -627,10 +646,10 @@ Description: "Valueset of the types of re-operation"
 * SCT#33496007 "Reconstruction of breast"
 * SCT#69031006 "Excision of breast tissue"
 * SCT#234254000 "Excision of axillary lymph nodes group"
-* BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "Breast conserving surgery with mammoplasty"
-* BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "Breast conserving surgery with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: InvolvedMarginsReoperationTypeVS
@@ -642,10 +661,10 @@ Description: "Kind of re-operation due to involved margins"
 * ^url = https://connect.ichom.org/fhir/ValueSet/InvolvedMarginsReoperationTypeVS
 
 * SCT#373572006 "Clinical finding absent"
-* BreastSurgeryTypesCodeSystem#bcs "Breast conserving surgery (BCS)"
-* BreastSurgeryTypesCodeSystem#bcs-with-mammoplasty "BCS with mammoplasty"
-* BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction "Mastectomy without immediate reconstruction"
-* BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#0 "Breast conserving surgery (BCS)"
+* BreastSurgeryTypesCodeSystem#1 "BCS with mammoplasty"
+* BreastSurgeryTypesCodeSystem#2 "Mastectomy without immediate reconstruction"
+* BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
 * NullFlavor#UNK "unknown"
 
 ValueSet: ReoperationReasonVS
@@ -666,11 +685,10 @@ Title: "Impact of complication CodeSystem"
 Description: "Codes indicating the impact of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationImpactCodeSystem
 * insert CodeSystemRuleset
-
-* #no-complication "No complication"
-* #prolonged-hospitalization "Complication leading to prolonged hospitalization (>14days)"
-* #treatment-discontinuation "Complication leading to discontinuing of treatment"
-* #no-changes "Complication, but did not result in any of the abovementioned"
+* #1 "No complication"
+* #2 "Complication leading to prolonged hospitalization (>14days)"
+* #5 "Complication leading to discontinuing of treatment"
+* #8 "Complication, but did not result in any of the abovementioned"
 
 ValueSet: ComplicationImpactVS
 Id: ComplicationImpactVS
@@ -680,16 +698,16 @@ Description: "ValueSet of the impact of a complication experienced by the breast
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/ComplicationImpactVS
 
-* ComplicationImpactCodeSystem#no-complication "No complication"
+* ComplicationImpactCodeSystem#1 "No complication"
 * SCT#240917005 "Interventional radiology"  
 * SCT#303577009 "Interventional debulking surgery" 
-* ComplicationImpactCodeSystem#prolonged-hospitalization "Complication leading to prolonged hospitalization (>14days)"
+* ComplicationImpactCodeSystem#2 "Complication leading to prolonged hospitalization (>14days)"
 * SCT#417005 "Hospital re-admission"
 * SCT#397945004 "Unexpected admission to intensive care unit"
-* ComplicationImpactCodeSystem#treatment-discontinuation "Complication leading to discontinuing of treatment"
+* ComplicationImpactCodeSystem#5 "Complication leading to discontinuing of treatment"
 * SCT#182879007 "Medication decreased"
 * SCT#419620001 "Death"
-* ComplicationImpactCodeSystem#no-changes "Complication, but did not result in any of the abovementioned"
+* ComplicationImpactCodeSystem#8 "Complication, but did not result in any of the abovementioned"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: ComplicationTypeCodeSystem
@@ -698,11 +716,10 @@ Title: "Type of complication CodeSystem"
 Description: "Codes indicating the type of a complication experienced by the breast cancer patient"
 * ^url =  https://connect.ichom.org/fhir/CodeSystem/ComplicationTypeCodeSystem
 * insert CodeSystemRuleset
-
-* #partial-loss "Partial autologous graft loss"
-* #total-loss "Total autologous graft loss"
-* #delay-wound "Delay wound healing/dehiscence"
-* #immune-toxicity "Immune related toxicity"
+* #4 "Partial autologous graft loss"
+* #5 "Total autologous graft loss"
+* #9 "Delay wound healing/dehiscence"
+* #13 "Immune related toxicity"
 
 ValueSet: ComplicationTypeVS
 Id: ComplicationTypeVS
@@ -717,16 +734,16 @@ Description: "ValueSet of the type of complication experienced by the breast can
 * SCT#385494008 "Hematoma"
 * SCT#131148009 "Bleeding"
 * SCT#403678005 "Skin flap necrosis"
-* ComplicationTypeCodeSystem#partial-loss "Partial autologous graft loss"
-* ComplicationTypeCodeSystem#total-loss "Total autologous graft loss"
+* ComplicationTypeCodeSystem#4 "Partial autologous graft loss"
+* ComplicationTypeCodeSystem#5 "Total autologous graft loss"
 * SCT#27315000 "Removal of breast implant"
 * SCT#371039008 "Thromboembolic disorder"
 * SCT#57182000  "Nerve injury"
-* ComplicationTypeCodeSystem#delay-wound "Delay wound healing/dehiscence"
+* ComplicationTypeCodeSystem#9 "Delay wound healing/dehiscence"
 * SCT#403675008 "Drug-induced dermatosis"
 * SCT#233604007 "Pneumonia"
 * SCT#443980004 "Neutropenic sepsis"
-* ComplicationTypeCodeSystem#immune-toxicity "Immune related toxicity"
+* ComplicationTypeCodeSystem#13 "Immune related toxicity"
 * NullFlavor#UNK "unknown"
 * NullFlavor#OTH "other"
 
@@ -750,10 +767,9 @@ Title: "Recurrence of neoplasm CodeSystem"
 Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
 * insert CodeSystemRuleset
-
-* #local-recurrence "Yes, local recurrence"
-* #regional-recurrence "Yes, regional recurrence" 
-* #distant-recurrence "Yes, distant recurrence"
+* #1 "Yes, local recurrence"
+* #2 "Yes, regional recurrence" 
+* #3 "Yes, distant recurrence"
 
 ValueSet: RecurrenceVS
 Id: RecurrenceVS
@@ -763,9 +779,9 @@ Description: "Valueset about whether there is evidence of local, regional or dis
 * ^url = https://connect.ichom.org/fhir/ValueSet/RecurrenceVS
 
 * YesNoUnkCS#N "No"
-* RecurrenceCodeSystem#local-recurrence "Yes, local recurrence"
-* RecurrenceCodeSystem#regional-recurrence "Yes, regional recurrence" 
-* RecurrenceCodeSystem#distant-recurrence "Yes, distant recurrence"
+* RecurrenceCodeSystem#1 "Yes, local recurrence"
+* RecurrenceCodeSystem#2 "Yes, regional recurrence" 
+* RecurrenceCodeSystem#3 "Yes, distant recurrence"
 * NullFlavor#UNK "unknown"
 
 CodeSystem: RecurrenceMethodCodeSystem
@@ -774,8 +790,7 @@ Title: "Recurrence method CodeSystem"
 Description: "Additional code covering combination of radiological and histological diagnosis method"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceMethodCodeSystem
 * insert CodeSystemRuleset
-
-* #radiological-histological "Radiological and histological diagnosis"
+* #2 "Radiological and histological diagnosis"
 
 ValueSet: RecurrenceMethodVS
 Id: RecurrenceMethodVS
@@ -787,7 +802,7 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 
 * SCT#394914008 "Radiology"
 * SCT#67151002 "Histologic"
-* RecurrenceMethodCodeSystem#radiological-histological "Radiological and histological diagnosis"
+* RecurrenceMethodCodeSystem#2 "Radiological and histological diagnosis"
 * NullFlavor#UNK "unknown"
 
 
@@ -800,11 +815,10 @@ Title: "Agreement response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * insert CodeSystemRuleset
-
-* #no "Not at all"
-* #little "A little"
-* #quite "Quite a bit"
-* #very "Very much"
+* #1 "Not at all"
+* #2 "A little"
+* #3 "Quite a bit"
+* #4 "Very much"
 
 ValueSet: AgreementResponseVS
 Id: AgreementResponseVS
@@ -813,10 +827,10 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/AgreementResponseVS
 
-* AgreementResponseCodeSystem#no "Not at all"
-* AgreementResponseCodeSystem#little "A little"
-* AgreementResponseCodeSystem#quite "Quite a bit"
-* AgreementResponseCodeSystem#very "Very much"
+* AgreementResponseCodeSystem#1 "Not at all"
+* AgreementResponseCodeSystem#2 "A little"
+* AgreementResponseCodeSystem#3 "Quite a bit"
+* AgreementResponseCodeSystem#4 "Very much"
 
 // BreastQ \\
 CodeSystem: SatisfactionResponseCodeSystem
@@ -826,10 +840,10 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 * ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * insert CodeSystemRuleset
 
-* #very-dissatisfied "Very dissatisfied"
-* #somewhat-dissatisfied "Somewhat dissatisfied"
-* #somewhat-satisfied "Somewhat satisfied"
-* #very-satisfied "Very satisfied"
+* #1 "Very dissatisfied"
+* #2 "Somewhat dissatisfied"
+* #3 "Somewhat satisfied"
+* #4 "Very satisfied"
 
 ValueSet: SatisfactionResponseVS 
 Id: SatisfactionResponseVS
@@ -838,7 +852,7 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SatisfactionResponseVS
 
-* SatisfactionResponseCodeSystem#very-dissatisfied "Very dissatisfied"
-* SatisfactionResponseCodeSystem#somewhat-dissatisfied "Somewhat dissatisfied"
-* SatisfactionResponseCodeSystem#somewhat-satisfied "Somewhat satisfied"
-* SatisfactionResponseCodeSystem#very-satisfied "Very satisfied"
+* SatisfactionResponseCodeSystem#1 "Very dissatisfied"
+* SatisfactionResponseCodeSystem#2 "Somewhat dissatisfied"
+* SatisfactionResponseCodeSystem#3 "Somewhat satisfied"
+* SatisfactionResponseCodeSystem#4 "Very satisfied"

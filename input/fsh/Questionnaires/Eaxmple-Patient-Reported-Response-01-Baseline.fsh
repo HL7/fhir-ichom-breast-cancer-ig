@@ -39,7 +39,7 @@
 // * item[=].text = "Clinical factors"
 // * item[=].item[0].linkId = "ComorbiditiesSACQ"
 // * item[=].item[=].text = "Have you been told by a doctor that you have any of the following?"
-// * item[=].item[=].answer.valueCoding = SCT#363346000 "Cancer/Other cancer (within the last 5 years)"
+// * item[=].item[=].answer.valueCoding = SACQPatientComorbidityCodeSystem#9 "Cancer/Other cancer (within the last 5 years)"
 // * item[=].item[+].linkId = "ComorbiditiesSACQ_CancerFU1"
 // * item[=].item[=].text = "Do you receive treatment for cancer/another cancer?"
 // * item[=].item[=].answer.valueBoolean = true

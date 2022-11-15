@@ -190,7 +190,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * required = true
 
   * item[+]
@@ -201,11 +201,11 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction // Mastectomy with reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#3 // Mastectomy with reconstruction
     * enableBehavior = #any
     * required = true
 
@@ -217,7 +217,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
-      * answerCoding = ReconstructionTypeCodeSystem#autologous
+      * answerCoding = ReconstructionTypeCodeSystem#Autologous
     * enableWhen[+]
       * question = "SURGERY_RECONSTRUCTION"
       * operator = #!=
@@ -294,8 +294,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Indicate the intent of chemotherapy"
     * answerValueSet = Canonical(TherapyIntentVS)
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -304,8 +304,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Indicate the type of chemotherapy (select all that apply)"
     * answerValueSet = Canonical(ChemoTherapyTypeVS)
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
     * repeats = true
@@ -314,8 +314,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of chemotherapy known?"
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -330,8 +330,8 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "ChemoTxStopdate-Known"
     * type = #boolean
     * text = "Is the stop date of chemotherapy known?"
-    * insert enableWhenTreatment(#adjuvant-chemotherapy) // Adjuvant chemotherapy
-    * insert enableWhenTreatment(#neoadjuvant-chemotherapy) // Neoadjuvant chemotherapy
+    * insert enableWhenTreatment(#A_chemo) // Adjuvant chemotherapy
+    * insert enableWhenTreatment(#N_A_chemo) // Neoadjuvant chemotherapy
     * enableBehavior = #any
     * required = true
 
@@ -394,14 +394,14 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * type = #choice
     * text = "Indicate the type of targeted therapy"
     * answerValueSet = Canonical(TargetedTherapyVS)
-    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
     * linkId = "TargetTxStartDate-Known"
     * type = #boolean
     * text = "Is the start date of targeted therapy known?"
-    * insert enableWhenTreatment(#targeted-therapy) //Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) //Targeted therapy
     * required = true
 
   * item[+]
@@ -415,7 +415,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * linkId = "TargetTxStopDate-Known"
     * type = #boolean
     * text = "Is the stop date of targeted therapy known?"
-    * insert enableWhenTreatment(#targeted-therapy) // Targeted therapy
+    * insert enableWhenTreatment(#Targ_Thrpy) // Targeted therapy
     * required = true
 
   * item[+]
@@ -483,7 +483,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "REOP_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction //Mastectomy with immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#3 //Mastectomy with immediate reconstruction
     * required = true
 
   * item[+]
@@ -512,7 +512,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=
-      * answerCoding = TreatmentTypesCodeSystem#no-treatment
+      * answerCoding = TreatmentTypesCodeSystem#no_treat
     * enableWhen[+]
       * question = "TREATMENT_BREAST"
       * operator = #!=
@@ -529,7 +529,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
-      * answerCoding = ComplicationImpactCodeSystem#no-complication  // No complication
+      * answerCoding = ComplicationImpactCodeSystem#1  // No complication
     * enableWhen[+]
       * question = "ComplicationImpact"
       * operator = #!=
