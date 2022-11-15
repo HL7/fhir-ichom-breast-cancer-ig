@@ -18,7 +18,7 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
   * item[+]
     * linkId = "NA-Clinical"
 //    * linkId = "N/A-Clinical"
-    * type = #string 
+    * type = #string
     * text = "What is the patient's medical record number?"
     * required = true
 
@@ -440,9 +440,9 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * type = #choice
     * text = "What was the method of confirming recurrence of neoplasm?"
     * answerValueSet = Canonical(RecurrenceMethodVS)
-    * insert enableWhenRecurrence(#1)
-    * insert enableWhenRecurrence(#2)
-    * insert enableWhenRecurrence(#3)
+    * insert enableWhenRecurrence(#local-recurrence)
+    * insert enableWhenRecurrence(#regional-recurrence)
+    * insert enableWhenRecurrence(#distant-recurrence)
     * enableBehavior = #any
     * required = true
 
@@ -450,9 +450,9 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
     * linkId = "RecurDateCancer-Known"
     * type = #boolean
     * text = "Is the date of cancer recurrence known?"
-    * insert enableWhenRecurrence(#1)
-    * insert enableWhenRecurrence(#2)
-    * insert enableWhenRecurrence(#3)
+    * insert enableWhenRecurrence(#local-recurrence)
+    * insert enableWhenRecurrence(#regional-recurrence)
+    * insert enableWhenRecurrence(#distant-recurrence)
     * enableBehavior = #any
     * required = true
 
@@ -497,4 +497,5 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
       * operator = #=
       * answerCoding = YesNoUnkCS#Y "Yes" 
     * required = true
+
 
