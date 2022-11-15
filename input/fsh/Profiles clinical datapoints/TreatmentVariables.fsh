@@ -14,7 +14,7 @@ Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
 Description: "Example of the surgical procedure the breast cancer patient underwent"
 * status = EventStatusCS#completed
-* code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* code = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1989-03-25"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)

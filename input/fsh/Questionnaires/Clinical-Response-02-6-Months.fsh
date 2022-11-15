@@ -190,7 +190,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
     * required = true
 
   * item[+]
@@ -201,11 +201,11 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#2 // Mastectomy without immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-without-immediate-reconstruction // Mastectomy without immediate reconstruction
     * enableWhen[+]
       * question = "SURGERY_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#3 // Mastectomy with reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction // Mastectomy with reconstruction
     * enableBehavior = #any
     * required = true
 
@@ -483,7 +483,7 @@ Description: "Clinical response questionnaire at 6 months post-treatment follow-
     * enableWhen[+]
       * question = "REOP_BREAST"
       * operator = #=
-      * answerCoding = BreastSurgeryTypesCodeSystem#3 //Mastectomy with immediate reconstruction
+      * answerCoding = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction //Mastectomy with immediate reconstruction
     * required = true
 
   * item[+]
