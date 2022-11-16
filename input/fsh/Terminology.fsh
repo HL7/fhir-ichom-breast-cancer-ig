@@ -95,44 +95,59 @@ ValueSet: TNMPrimaryTumorVS
 Id: TNMPrimaryTumorVS
 Title: "TNM Primary Tumor ValueSet"
 Description: "Valueset of the TNM stage for the T category, according to TNM staging rules"
-* insert AJCCCopyrightForVS
+* insert SNOMEDCopyrightForVS
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMPrimaryTumorVS
-* AJCC#Tx "Tx"
-* AJCC#T0 "T0"
-* AJCC#Tis(DCIS) "Tis (DCIS)"
-* AJCC#Tis(Paget) "Tis (Paget)"
-* AJCC#T1 "T1"
-* AJCC#T2 "T2"
-* AJCC#T3 "T3"
-* AJCC#T4 "T4"
+
+* SCT#1222604002 "American Joint Committee on Cancer cTX"
+* SCT#1228882005 "American Joint Committee on Cancer cT0"
+* SCT#1228885007 "American Joint Committee on Cancer cTis(DCIS)"
+* SCT#1228888009 "American Joint Committee on Cancer cTis(Paget)"
+* SCT#1228889001 "American Joint Committee on Cancer cT1"
+* SCT#1228929004 "American Joint Committee on Cancer cT2"
+* SCT#1228938002 "American Joint Committee on Cancer cT3"
+* SCT#1228944003 "American Joint Committee on Cancer cT4"
+* SCT#1228950008 "American Joint Committee on Cancer pTX"
+* SCT#1228951007 "American Joint Committee on Cancer pT0"
+* SCT#1228954004 "American Joint Committee on Cancer pTis(DCIS)"
+* SCT#1228956002 "American Joint Committee on Cancer pTis(Paget)"
+* SCT#1228957006 "American Joint Committee on Cancer pT1"
+* SCT#1229852009 "American Joint Committee on Cancer pT2"
+* SCT#1229859000 "American Joint Committee on Cancer pT3"
+* SCT#1229864001 "American Joint Committee on Cancer pT4"
 * NullFlavor#UNK "unknown"
 
 ValueSet: TNMRegionalNodesVS
 Id: TNMRegionalNodesVS
 Title: "TNM Regional Nodes ValueSet"
 Description: "Valueset of the TNM stage for the N category, according to TNM staging rules"
-* insert AJCCCopyrightForVS
+* insert SNOMEDCopyrightForVS
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMRegionalNodesVS
-
-* AJCC#Nx "Nx"
-* AJCC#N0 "N0"
-* AJCC#N1 "N1"
-* AJCC#N2 "N2"
-* AJCC#N3 "N3"
+* SCT#1229966003 "American Joint Committee on Cancer cNX"
+* SCT#1229967007 "American Joint Committee on Cancer cN0"
+* SCT#1229973008 "American Joint Committee on Cancer cN1"
+* SCT#1229978004 "American Joint Committee on Cancer cN2"
+* SCT#1229984001 "American Joint Committee on Cancer cN3"
+* SCT#1229945006 "American Joint Committee on Cancer pNX"
+* SCT#1229947003 "American Joint Committee on Cancer pN0"
+* SCT#1229951001 "American Joint Committee on Cancer pN1"
+* SCT#1229957002 "American Joint Committee on Cancer pN2"
+* SCT#1229962001 "American Joint Committee on Cancer pN3"
 * NullFlavor#UNK "unknown"
 
 ValueSet: TNMDistantMetastasesVS
 Id: TNMDistantMetastasesVS
 Title: "TNM Distant Metastases ValueSet"
 Description: "Valueset of the TNM stage for the M category, according to TNM staging rules"
-* insert AJCCCopyrightForVS
+* insert SNOMEDCopyrightForVS
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/TNMDistantMetastasesVS
 
-* AJCC#M0 "M0"
-* AJCC#M1 "M1"
+* SCT#1229901006 "American Joint Committee on Cancer cM0"
+* SCT#1229903009 "American Joint Committee on Cancer cM1"
+// also need a code here for pM0
+* SCT#1229916009 "American Joint Committee on Cancer pM1"
 * NullFlavor#UNK "unknown"
 
 ValueSet: EstrogenStatusVS
@@ -748,7 +763,7 @@ Description: "Valueset with yes, no and unknown answers"
 // Recurrence
 CodeSystem: RecurrenceCodeSystem
 Id: RecurrenceCodeSystem
-Title: "Recurrence of neoplasm"
+Title: "Recurrence of neoplasm CodeSystem"
 Description: "Additional code covering whether there is evidence of local, regional or distant recurrence of neoplasm"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/RecurrenceCodeSystem
 * insert CodeSystemRuleset
@@ -758,7 +773,7 @@ Description: "Additional code covering whether there is evidence of local, regio
 
 ValueSet: RecurrenceVS
 Id: RecurrenceVS
-Title: "Recurrence of neoplasm"
+Title: "Recurrence of neoplasm ValueSet"
 Description: "Valueset about whether there is evidence of local, regional or distant recurrence of neoplasm"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/RecurrenceVS
@@ -796,7 +811,7 @@ Description: "Valueset of the methods used to confirm recurrence of breast cance
 // EORTC-QLQ
 CodeSystem: AgreementResponseCodeSystem
 Id: AgreementResponseCodeSystem
-Title: "Agreement response"
+Title: "Agreement response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/AgreementResponseCodeSystem
 * insert CodeSystemRuleset
@@ -807,7 +822,7 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 
 ValueSet: AgreementResponseVS
 Id: AgreementResponseVS
-Title: "Agreement response"
+Title: "Agreement response ValueSet"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the degree of agreement"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/AgreementResponseVS
@@ -820,7 +835,7 @@ Description: "Valueset used in a Patient Reported Outcomes Instrument to express
 // BreastQ \\
 CodeSystem: SatisfactionResponseCodeSystem
 Id: SatisfactionResponseCodeSystem
-Title: "Satisfaction response"
+Title: "Satisfaction response CodeSystem"
 Description: "Codes used in a Patient Reported Outcomes Instrument to express the statisfation response"
 * ^url = https://connect.ichom.org/fhir/CodeSystem/SatisfactionResponseCodeSystem
 * insert CodeSystemRuleset
@@ -832,7 +847,7 @@ Description: "Codes used in a Patient Reported Outcomes Instrument to express th
 
 ValueSet: SatisfactionResponseVS 
 Id: SatisfactionResponseVS
-Title: "Satisfaction response"
+Title: "Satisfaction response ValueSet"
 Description: "Valueset used in a Patient Reported Outcomes Instrument to express the statisfation response"
 * insert ValuesetRuleset
 * ^url = https://connect.ichom.org/fhir/ValueSet/SatisfactionResponseVS

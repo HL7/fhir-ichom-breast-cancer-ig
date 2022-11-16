@@ -15,15 +15,11 @@ Error from server: Unable to provide support for code system https://connect.ich
 # AJCC is being added as a recognised codesystem (https://jira.hl7.org/browse/HTA-27), we share these warnings with mCODE (https://github.com/HL7/fhir-mCODE-ig/blob/master/input/ignoreWarnings.txt)
 Error from server: Unable to provide support for code system http://cancerstaging.org
 Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-distant-metastases-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-regional-nodes-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-primary-tumor-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-distant-metastases-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-regional-nodes-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/tnm-primary-tumor-category-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
-WARNING: ValueSet/tnm-distant-metastases-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
-WARNING: ValueSet/tnm-primary-tumor-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
-WARNING: ValueSet/tnm-regional-nodes-category-vs: ValueSet.compose[0].include[1]: Unknown System specified, so Concepts and Filters can''t be checked
+Unknown System 'http://cancerstaging.org' specified, so Concepts and Filters cant be checked
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/TNMDistantMetastasesVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/TNMRegionalNodesVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/TNMPrimaryTumorVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
+[Unable to determine whether the provided codes are in the value set https://connect.ichom.org/fhir/ValueSet/TNMDistantMetastasesVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://cancerstaging.org' is unknown so the code cannot be validated]
 
 
 # Custom UUID-based codesystems embedded in Questionnaires for answer options

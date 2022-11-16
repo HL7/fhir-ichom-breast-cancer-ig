@@ -16,7 +16,8 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * required = true
 
   * item[+]
-    * linkId = "N/A-Clinical"
+//    * linkId = "N/A-Clinical"
+    * linkId = "NA-Clinical"
     * type = #string 
     * text = "What is your medical record number?"
     * required = true
@@ -279,7 +280,7 @@ Description: "Patient-reported response at baseline (first doctors' visit)"
   * required = true
 
   * item[+]
-    * linkId = "PatientEducation" 
+    * linkId = "PatientEducation"
     * text = "Did you feel you received sufficient information about your treatment options?"
     * type = #choice
     * answerValueSet = Canonical(PatientEducationVS)

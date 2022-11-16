@@ -16,7 +16,8 @@ Description: "Clinical response questionnaire at annual post-treatment follow-up
   * required = true
 
   * item[+]
-    * linkId = "N/A-Clinical"
+    * linkId = "NA-Clinical"
+//    * linkId = "N/A-Clinical"
     * type = #string 
     * text = "What is the patient's medical record number?"
     * required = true

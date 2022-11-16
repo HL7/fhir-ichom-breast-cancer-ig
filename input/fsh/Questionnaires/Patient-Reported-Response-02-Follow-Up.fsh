@@ -16,7 +16,8 @@ Description: "Patient-reported response at every 6 months for first 2 years post
   * required = true
 
   * item[+]
-    * linkId = "N/A-Clinical"
+//    * linkId = "N/A-Clinical"
+    * linkId = "NA-Clinical"
     * type = #string
     * text = "What is the patient's medical record number?"
     * required = true
