@@ -66,11 +66,11 @@ For further reading, we recommend to use the following links:
 
 You can download:
 
-* [this entire guide](full-ig.zip)
+* [this entire guide](full-ig.zip), also as an [npm package](package.tgz)
 * the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip) or
 * the example resources in [json](examples.json.zip), [xml](examples.xml.zip) format.
 
-The source code for this Implementation Guide can be found on GitHub [https://github.com/HL7/fhir-ichom-breast-cancer-ig]().
+The source code for this IG can be found [on Github](https://github.com/HL7/fhir-ichom-breast-cancer-ig).
 
 #### IP Statements
 
