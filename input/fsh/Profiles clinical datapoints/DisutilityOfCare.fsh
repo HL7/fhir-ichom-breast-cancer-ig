@@ -14,7 +14,7 @@ Description: "Represents whether the patient has had a re-operation since their 
 * partOf MS
   * ^short = "Original procedure that prompted the reoperation"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
-* category and code and performedDateTime and reasonCode and reasonReference MS
+* status and subject and category and code and performedDateTime and reasonCode and reasonReference MS
 
 Instance: ReoperationSurgeryPatient147
 InstanceOf: ReoperationSurgery
@@ -48,7 +48,7 @@ Description: "Represents the type and impact of a complication experienced by a 
 * code from ComplicationTypeVS (preferred)
 * subject only Reference(BreastCancerPatient)
 * severity from ComplicationImpactVS (required)
-* code and severity MS
+* subject and code and severity MS
 * extension contains DueToEx named dueTo 0..* MS
 * extension[dueTo] ^short = "Previous procedure that prompted this complication"
 * extension[dueTo] ^definition = "This element indicates whether the complication was attributable to the breast cancer treatment the patient received"

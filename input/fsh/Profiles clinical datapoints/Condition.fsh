@@ -8,7 +8,7 @@ Description: "Represent the properties of the primary breast cancer diagnosis"
 * code = SCT#372137005 "Primary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
 * bodySite from LateralityVS (preferred)
-* code and bodySite and clinicalStatus MS
+* subject and code and bodySite and clinicalStatus MS
 
 Instance: PrimaryBreastCancerPatient147
 InstanceOf: PrimaryBreastCancerCondition
@@ -36,7 +36,7 @@ Description: "Represent the properties of the secondary breast cancer diagnosis"
 * code = SCT#145501000119108 "Secondary malignant neoplasm of breast"
 * subject only Reference(BreastCancerPatient)
 * bodySite from LateralityNewCancerVS
-* code and bodySite and clinicalStatus MS
+* subject and code and bodySite and clinicalStatus MS
 
 Instance: SecondaryBreastCancerPatient147
 InstanceOf: SecondaryBreastCancerCondition

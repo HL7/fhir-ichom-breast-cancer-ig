@@ -8,7 +8,7 @@ Description: "Represents if the breast cancer patient received surgery during th
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* category and code and performedDateTime	and reasonReference MS
+* status and subject and category and code and performedDateTime	and reasonReference MS
 
 Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
@@ -40,7 +40,7 @@ Description: "Represents if the breast cancer patient received surgery to the ax
 * code from TargetedAxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* category and code and performedDateTime	and reasonReference MS
+* status and subject and category and code and performedDateTime	and reasonReference MS
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
@@ -72,7 +72,7 @@ Description: "Represents if the breast cancer patient received axillary clearanc
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (AxillaSurgery)
-* code and performedDateTime and reasonReference MS
+* status and subject and code and performedDateTime and reasonReference MS
 
 Instance: AxillaryClearancePatient147
 InstanceOf: AxillaryClearance
@@ -105,7 +105,7 @@ Description: "Represents if the breast cancer patient received reconstruction su
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * bodySite from ImplantLocationVS (required)
 * usedCode from ReconstructionTypeVS (required)
-* code and performedDateTime and reasonReference and bodySite and usedCode MS 
+* status and subject and code and performedDateTime and reasonReference and bodySite and usedCode MS 
 * partOf MS
   * ^short = "Original procedure that preceded the reconstruction (e.g. mastectomy)"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure (e.g. mastectomy) that preceded the reoperation."
@@ -148,7 +148,7 @@ Description: "Represents if the breast cancer patient received radiotherapy duri
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
-* code and performedPeriod and reasonReference and reasonCode and bodySite MS 
+* status and subject and code and performedPeriod and reasonReference and reasonCode and bodySite MS 
 
 Instance: RadiotherapyPatient147
 InstanceOf: Radiotherapy
@@ -188,7 +188,7 @@ Description: "Represents if the patient received chemotherapy during the last ye
 * reasonCode from TherapyIntentVS (required)
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
-* code and performedPeriod and reasonReference and reasonCode MS 
+* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
@@ -228,7 +228,7 @@ Description: "Represents if the patient received hormonal therapy during the las
 * performedPeriod.end ^short = "Hormonal therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
-* code and performedPeriod and reasonReference and reasonCode MS 
+* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
@@ -263,7 +263,7 @@ Description: "Represents if breast cancer patient received best supportive care 
 * code = SCT#243114000 "Support"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* code and reasonReference MS
+* status and subject and code and reasonReference MS
 
 Instance: BestSupportiveCarePatient147
 InstanceOf: BestSupportiveCare 
@@ -290,7 +290,7 @@ Description: "Represents if the breast cancer patient received immunotherapy dur
 * code = SCT#76334006 "Immunotherapy"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* code and reasonReference MS
+* status and subject and code and reasonReference MS
 
 Instance: ImmunotherapyPatient147
 InstanceOf: Immunotherapy 
@@ -320,7 +320,7 @@ Description: "Type and duration of targeted therapy"
 * performedPeriod.end ^short = "Targeted therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
-* code and performedPeriod MS
+* status and subject and code and performedPeriod MS
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
@@ -353,7 +353,7 @@ Description: "Represents the treatment that a multidisciplinary team recommended
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * activity.detail.code from RecommendedTreatmentTypeVS
-* category and created and activity.detail.code MS
+* status and intent and subject and category and created and activity.detail.code MS
 
 Instance: TreatmentPlanPatient147
 InstanceOf: TreatmentPlan
@@ -386,7 +386,7 @@ Description: "Indicate if the patient followed the multidisciplinary recommended
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * valueCodeableConcept from TreatmentPlanFollowedVS (required)
-* basedOn and subject and valueCodeableConcept MS
+* status and code and basedOn and subject and valueCodeableConcept MS
 
 Instance: TreatmentPlanFollowedPatient147
 InstanceOf: TreatmentPlanFollowed 
@@ -418,7 +418,7 @@ Description: "Indicate why the multidisciplinary recommended treatment plan was 
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * valueCodeableConcept from TreatmentPlanNotFollowedVS (required)
-* basedOn and subject and valueCodeableConcept MS
+* status and code and basedOn and subject and valueCodeableConcept MS
 
 Instance: TreatmentPlanNotFollowedPatient147
 InstanceOf: TreatmentPlanNotFollowed 

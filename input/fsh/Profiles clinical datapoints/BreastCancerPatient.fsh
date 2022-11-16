@@ -74,5 +74,3 @@ Description: "Mapping of the breast cancer patient profile to the ICHOM breast c
 * extension[educationLevel] -> "Level of education"
 * extension[ethnicity] -> "Ethnicity"
 * extension[race] -> "Race"
-
-

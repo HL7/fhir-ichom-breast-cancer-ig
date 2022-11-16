@@ -9,7 +9,7 @@ Description: "Represents if breast cancer was the cause of death"
 * code = SCT#419620001:42752001=254837009 "Death where Due to = Malignant tumor of breast"
 * value[x] only CodeableConcept 
 * valueCodeableConcept from NoYesUnknownVS (required)
-* valueCodeableConcept and subject MS
+* code and status and valueCodeableConcept and subject MS
 
 Instance: DeathAttributableBCPatient147
 InstanceOf: DeathAttributableBC
@@ -38,7 +38,7 @@ Description: "The method of confirming recurrence breast cancer"
 * code = SCT#103693007 "Diagnostic procedure"
 * value[x] only CodeableConcept 
 * valueCodeableConcept from RecurrenceMethodVS (required)
-* focus and subject and valueCodeableConcept MS
+* code and status and focus and subject and valueCodeableConcept MS
 
 Instance: RecurrenceMethodPatient147
 InstanceOf: RecurrenceMethod

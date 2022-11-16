@@ -6,7 +6,7 @@ Title: "Body height"
 Description: "Represents the height of a person diagnosed with breast cancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
-* valueQuantity MS
+* code and status and valueQuantity MS
 
 Instance: BodyHeightPatient147
 InstanceOf: BodyHeight
@@ -36,7 +36,7 @@ Description: "Represents the weight of a person diagnosed with breastcancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.unit from BodyWeightVS
-* valueQuantity MS
+* code and status and valueQuantity MS
 
 Instance: BodyWeightPatient147
 InstanceOf: BodyWeight
@@ -69,7 +69,7 @@ Description: "Represents the menopausal status of a patient"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
 * valueCodeableConcept from MenopausalStatusVS (required)
-* subject and valueCodeableConcept MS
+* code and status and subject and valueCodeableConcept MS
 
 Instance: MenopausalStatusPatient147
 InstanceOf: MenopausalStatus 

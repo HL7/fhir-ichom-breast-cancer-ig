@@ -6,8 +6,7 @@ Description: "A staging system to describe the amount and spread of breast cance
 * insert PublicationProfileRuleset
 * code from TNMStageGroupVS (required)
 * subject only Reference(BreastCancerPatient)
-* subject MS
-* hasMember MS
+* code and subject and hasMember MS
 * hasMember only Reference(Observation)
 * hasMember ^slicing.discriminator.type = #pattern  
 * hasMember ^slicing.discriminator.path = "$this.resolve().code"
@@ -60,7 +59,7 @@ Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.). This
 * value[x] only CodeableConcept 
 * valueCodeableConcept from TNMPrimaryTumorVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* subject and valueCodeableConcept and focus MS
+* code and status and subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalTumorStagePatient147
 InstanceOf: TNMPrimaryTumorStage
@@ -101,7 +100,7 @@ Description: "Represents the presence or absence of metastases in regional lymph
 * value[x] only CodeableConcept 
 * valueCodeableConcept from TNMRegionalNodesVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* subject and valueCodeableConcept and focus MS
+* code and status and subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalNodalStagePatient147
 InstanceOf: TNMRegionalNodalStage
@@ -142,7 +141,7 @@ Description: "Represents the extent of a tumor metastasis in remote anatomical l
 * value[x] only CodeableConcept 
 * valueCodeableConcept from TNMDistantMetastasesVS (required)
 * focus only Reference(PrimaryBreastCancerCondition)
-* subject and valueCodeableConcept and focus MS
+* code and status and subject and valueCodeableConcept and focus MS
 
 Instance: ClinicalMetastasesPatient147
 InstanceOf: TNMDistantMetastases
