@@ -14,7 +14,12 @@ releaseLabel: ci-build
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
   name: HL7 International - Clinical Interoperability Council Group
-  url: http://www.hl7.org/Special/committees/cic/index.cfm
+  url: http://www.hl7.org/Special/committees/cic
+# contact:
+#   - name: HL7 International - Clinical Interoperability Council Group
+#     telecom: 
+#       - system: url
+#         value: http://www.hl7.org/Special/committees/cic
 
 dependencies:
   hl7.fhir.uv.sdc: 3.0.0
