@@ -146,7 +146,6 @@ Description: "Valueset of the TNM stage for the M category, according to TNM sta
 
 * SCT#1229901006 "American Joint Committee on Cancer cM0"
 * SCT#1229903009 "American Joint Committee on Cancer cM1"
-// also need a code here for pM0
 * SCT#1229916009 "American Joint Committee on Cancer pM1"
 * NullFlavor#UNK "unknown"
 

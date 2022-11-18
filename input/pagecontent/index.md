@@ -62,6 +62,20 @@ For further reading, we recommend to use the following links:
 * [How to read resource & profile definitions](http://hl7.org/fhir/r4/formats.html#table)
 * [Base resource definitions](http://hl7.org/fhir/r4/resource.html)
 
+### Download
+
+You can download:
+
+* [this entire guide](full-ig.zip), also as an [npm package](package.tgz)
+* the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip) or
+* the example resources in [json](examples.json.zip), [xml](examples.xml.zip) format.
+
+The source code for this IG can be found [on Github](https://github.com/HL7/fhir-ichom-breast-cancer-ig).
+
+#### IP Statements
+
+{% include ip-statements.xhtml %}
+
 ### Authors
 
 This body of work would not have been possible without the following individuals:
