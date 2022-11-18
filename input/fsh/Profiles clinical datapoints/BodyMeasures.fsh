@@ -6,9 +6,7 @@ Title: "Body height"
 Description: "Represents the height of a person diagnosed with breast cancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
-* valueQuantity.value MS
-* valueQuantity.unit MS
-* valueQuantity.code MS
+* code and status and valueQuantity MS
 
 Instance: BodyHeightPatient147
 InstanceOf: BodyHeight
@@ -37,10 +35,8 @@ Title: "Body weight"
 Description: "Represents the weight of a person diagnosed with breastcancer"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
-* valueQuantity.value MS
 * valueQuantity.unit from BodyWeightVS
-* valueQuantity.unit MS
-* valueQuantity.code MS
+* code and status and valueQuantity MS
 
 Instance: BodyWeightPatient147
 InstanceOf: BodyWeight
@@ -72,14 +68,15 @@ Description: "Represents the menopausal status of a patient"
 * code = SCT#161712005 "Menopause, function (observable entity)"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from MenopausalStatusVS (required)
-* value[x] MS
+* valueCodeableConcept from MenopausalStatusVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: MenopausalStatusPatient147
 InstanceOf: MenopausalStatus 
 Title: "Example of menopausal status"
 Description: "Example of the menopausal status of a patient"
 * status = ObservationStatusCS#unknown
+* code = SCT#161712005 "Menopause, function (observable entity)"
 * subject = Reference(BreastCancerPatient147)
 * valueCodeableConcept = SCT#309606002
 
@@ -89,4 +86,4 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: MenopausalStatusMapping
 Title: "Observation of menopausal status to ICHOM set"
 Description: "Mapping of the menopausal status to the ICHOM breast cancer PCOM set." 	
-* value[x] -> "Menopause status"
+* valueCodeableConcept -> "Menopause status"

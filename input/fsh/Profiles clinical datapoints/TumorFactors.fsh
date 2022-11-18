@@ -8,9 +8,8 @@ Description: "Represents the histological type of the tumor"
 * code = SCT#396984004 "Histologic feature of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from HistologicalTypeVS (preferred)
-* value[x] MS
-* effectiveDateTime MS
+* valueCodeableConcept from HistologicalTypeVS (preferred)
+* code and status and effectiveDateTime and subject and valueCodeableConcept MS
 
 Instance: HistotypePatient147
 InstanceOf: Histotype
@@ -40,8 +39,8 @@ Description: "Represents if the patient carries a germline mutation predisposing
 * code = SCT#55446002 "Genetic mutation"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from GermlineMutationVS (preferred)
-* value[x] MS
+* valueCodeableConcept from GermlineMutationVS (preferred)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: GermlineMutationPatient147
 InstanceOf: GermlineMutation
@@ -69,8 +68,8 @@ Description: "Represents the grade of the breast cancer tumor"
 * code = SCT#371469007 "Histologic grade of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from GradingVS (required)
-* value[x] MS
+* valueCodeableConcept from GradingVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: TumorGradePatient147
 InstanceOf: TumorGrade
@@ -98,8 +97,8 @@ Description: "Represents the tumor grade of DCIS component of the breast cancer 
 * code = SCT#371469007 "Histologic grade of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from GradingVS (required)
-* value[x] MS
+* valueCodeableConcept from GradingVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: InvasionGradePatient147
 InstanceOf: InvasionGrade
@@ -127,8 +126,8 @@ Description: "Represents the size of the invasive tumor"
 * code = SCT#384630000 "Tumor size, invasive component"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
 * valueQuantity.unit = UCUM#mm "mm"
+* code and status and subject and valueQuantity.value and valueQuantity.unit MS
 
 Instance: TumorSizePatient147
 InstanceOf: TumorSize
@@ -147,7 +146,6 @@ Title: "Size of the invasive tumor to ICHOM set"
 Description: "Mapping of the size of the invasive tumor to the ICHOM breast cancer PCOM set" 	
 * valueQuantity.value -> "Size of the invasive tumor"
 
-
 // LYMPH NODES RESECTED
 Profile: LymphNodesResected
 Parent: Observation 
@@ -158,7 +156,7 @@ Description: "Represents the number of lymph nodes resected"
 * code = SCT#444025001 "Number of lymph nodes examined"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
+* code and status and subject and valueQuantity MS
 
 Instance: LymphNodesResectedPatient147
 InstanceOf: LymphNodesResected
@@ -166,7 +164,7 @@ Description: "Example of the number of resected lymph nodes in a patient with br
 * status = ObservationStatusCS#final
 * code = SCT#444025001 "Number of lymph nodes examined"
 * subject = Reference(BreastCancerPatient147)
-* valueQuantity.value[+] = 11
+* valueQuantity.value = 11
 
 Mapping: LymphNodesResectedToICHOM
 Source:	LymphNodesResected
@@ -175,7 +173,6 @@ Id: lymphnodesresectedmapping
 Title: "Resected lymph nodes to ICHOM set"
 Description: "Mapping of the resected lymph nodes to the ICHOM breast cancer PCOM set." 	
 * valueQuantity.value ->  "Number lymph nodes resected"
-
 
 // LYMPH NODES INVOLVED
 Profile: LymphNodesInvolved
@@ -187,7 +184,7 @@ Description: "Represents the number of lymph nodes involved"
 * code = SCT#443527007 "Number of lymph nodes involved by malignant neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
+* code and status and subject and valueQuantity MS
 
 Instance: LymphNodesInvolvedPatient147
 InstanceOf: LymphNodesInvolved
@@ -215,8 +212,8 @@ Description: "Represents if the estrogen receptor status is positive in a patien
 * code = SCT#445028008 "Status of estrogen receptors of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from EstrogenStatusVS (required)
-* value[x] MS
+* valueCodeableConcept from EstrogenStatusVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: ERStatusPatient147
 InstanceOf: ERStatus
@@ -244,8 +241,8 @@ Description: "Represents if the progesterone receptor status is positive in a pa
 * code = SCT#445029000 "Status of progesterone receptors of neoplasm"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from ProgesteroneStatusVS (required)
-* value[x] MS
+* valueCodeableConcept from ProgesteroneStatusVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: PRStatusPatient147
 InstanceOf: PRStatus
@@ -273,8 +270,8 @@ Description: "Represents if the human epidermal growth factor receptor 2 (HER2) 
 * code = LNC#48676-1 "HER2 [Interpretation] in tissue"
 * subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from HER2ReceptorStatusVS (required)
-* value[x] MS
+* valueCodeableConcept from HER2ReceptorStatusVS (required)
+* code and status and subject and valueCodeableConcept MS
 
 Instance: HERStatusPatient147
 InstanceOf: HERStatus
@@ -302,7 +299,7 @@ Description: "Represents the mammaprintscore on a scale of 0.000 to 1.000"
 * code = MolecularProfilingCodeSystem#Mammaprint "Mammaprint Score"
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
+* code and status and subject and valueQuantity MS
 
 Instance: MammaprintPatient147
 InstanceOf: MammaprintScore
@@ -331,7 +328,7 @@ Description: "Represents the oncotype score on a scale of 0 to 100"
 * insert PublicationProfileRuleset
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
+* code and status and subject and valueQuantity MS
 
 Instance: OncotypePatient147
 InstanceOf: OncotypeScore
@@ -360,7 +357,7 @@ Description: "Represents the endopredict score on a scale of 1.1 to 6.2"
 * code = MolecularProfilingCodeSystem#Endopredict "Endopredict Score" 
 * subject only Reference(BreastCancerPatient)
 * value[x] only Quantity
-* value[x] MS
+* code and status and subject and valueQuantity MS
 
 Instance: EndopredictonPatient147
 InstanceOf: EndopredictonScore
