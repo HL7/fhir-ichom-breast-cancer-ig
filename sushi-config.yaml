@@ -3,7 +3,7 @@
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.uv.ichom.breastcancer
-canonical: https://connect.ichom.org/fhir
+canonical: http://hl7.org/fhir/uv/ichom.breastcancer
 name: Breast Cancer - ICHOM
 title: "ICHOM FHIR Implementation Guide: Breast Cancer"
 status: draft
