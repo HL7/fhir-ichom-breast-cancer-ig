@@ -282,7 +282,7 @@ RuleSet: EORTCQuestionnaire
       * enableWhen[+]
         * question = "EORTCQLQBR23_Q34"
         * operator = #!=
-        * answerCoding = AgreementResponseCodeSystem#1 "Not at all"
+        * answerCoding = AgreementResponseCodeSystem#no "Not at all"
 
     * item[+]
       * linkId = "EORTCQLQBR23_Q36"
@@ -367,7 +367,7 @@ RuleSet: EORTCQuestionnaire
       * enableWhen[+]
         * question = "EORTCQLQBR23_Q45"
         * operator = #!=
-        * answerCoding = AgreementResponseCodeSystem#1 "Not at all"
+        * answerCoding = AgreementResponseCodeSystem#no "Not at all"
 
   * item[+]
     * linkId = "EORTCQLQ-Question47-69"
