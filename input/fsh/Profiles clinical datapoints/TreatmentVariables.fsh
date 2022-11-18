@@ -7,14 +7,15 @@ Description: "Represents if the breast cancer patient received surgery during th
 * category = SCT#387713003 "Surgical procedure" 
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* status and subject and category and code and performedDateTime	and reasonReference MS
 
 Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
 Description: "Example of the surgical procedure the breast cancer patient underwent"
+* category = SCT#387713003 "Surgical procedure" 
 * status = EventStatusCS#completed
-* code = BreastSurgeryTypesCodeSystem#3 "Mastectomy with immediate reconstruction"
+* code = BreastSurgeryTypesCodeSystem#mastectomy-with-immediate-reconstruction "Mastectomy with immediate reconstruction"
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1989-03-25"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
@@ -38,9 +39,8 @@ Description: "Represents if the breast cancer patient received surgery to the ax
 * category = SCT#699455008 "Operative procedure on axilla"
 * code from TargetedAxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
-* performedDateTime	and complication MS
-* subject and performedDateTime and reasonReference MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* status and subject and category and code and performedDateTime	and reasonReference MS
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
@@ -71,8 +71,8 @@ Title: "Axillary clearance"
 Description: "Represents if the breast cancer patient received axillary clearance during the last year. Axilla clearance could be due to lymph node involvement after sentinel lymph node biopsy."
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
-* subject and performedDateTime	and complication and reasonReference MS
 * reasonReference only Reference (AxillaSurgery)
+* status and subject and code and performedDateTime and reasonReference MS
 
 Instance: AxillaryClearancePatient147
 InstanceOf: AxillaryClearance
@@ -105,7 +105,7 @@ Description: "Represents if the breast cancer patient received reconstruction su
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * bodySite from ImplantLocationVS (required)
 * usedCode from ReconstructionTypeVS (required)
-* bodySite and usedCode MS 
+* status and subject and code and performedDateTime and reasonReference and bodySite and usedCode MS 
 * partOf MS
   * ^short = "Original procedure that preceded the reconstruction (e.g. mastectomy)"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure (e.g. mastectomy) that preceded the reoperation."
@@ -118,8 +118,8 @@ Description: "Example of a breast cancer patient who underwent reconstruction su
 * subject = Reference(BreastCancerPatient147)
 * performedDateTime = "1999-02-13"
 * reasonReference = Reference(PrimaryBreastCancerPatient147)
-* bodySite = ImplantLocationCodeSystem#Pre_pect "Pre-pectoral"
-* usedCode = ReconstructionTypeCodeSystem#Staged_imp "Staged implant"
+* bodySite = ImplantLocationCodeSystem#pre-pectoral "Pre-pectoral"
+* usedCode = ReconstructionTypeCodeSystem#staged-implant "Staged implant"
 * partOf = Reference(ReoperationSurgeryPatient147)
 
 Mapping: ReconstructionSurgeryToICHOM
@@ -143,12 +143,12 @@ Title: "Radiotherapy"
 Description: "Represents if the breast cancer patient received radiotherapy during the last year." 
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy" 
 * subject only Reference(BreastCancerPatient)
-* performedPeriod MS 
 * performedPeriod.start ^short = "Radiotherapy start date"
 * performedPeriod.end ^short = "Radiotherapy stop date"
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
+* status and subject and code and performedPeriod and reasonReference and reasonCode and bodySite MS 
 
 Instance: RadiotherapyPatient147
 InstanceOf: Radiotherapy
@@ -182,13 +182,13 @@ Title: "Chemotherapy"
 Description: "Represents if the patient received chemotherapy during the last year."
 * code = SCT#385786002 "Chemotherapy care"
 * subject only Reference(BreastCancerPatient)
-* reasonReference only Reference (PrimaryBreastCancerCondition)
-* reasonCode from TherapyIntentVS (required)
-* performedPeriod and subject and reasonReference and reasonCode MS
 * performedPeriod.start ^short = "Chemotherapy start date"
 * performedPeriod.end ^short = "Chemotherapy stop date"
+* reasonReference only Reference (PrimaryBreastCancerCondition)
+* reasonCode from TherapyIntentVS (required)
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
+* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
@@ -224,11 +224,11 @@ Description: "Represents if the patient received hormonal therapy during the las
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
-* performedPeriod and subject and reasonReference and reasonCode MS
 * performedPeriod.start ^short = "Hormonal therapy start date"
 * performedPeriod.end ^short = "Hormonal therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
+* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
@@ -262,8 +262,8 @@ Title: "Best supportive care"
 Description: "Represents if breast cancer patient received best supportive care during the last year."
 * code = SCT#243114000 "Support"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* status and subject and code and reasonReference MS
 
 Instance: BestSupportiveCarePatient147
 InstanceOf: BestSupportiveCare 
@@ -289,8 +289,8 @@ Title: "Immunotherapy"
 Description: "Represents if the breast cancer patient received immunotherapy during the last year."
 * code = SCT#76334006 "Immunotherapy"
 * subject only Reference(BreastCancerPatient)
-* performedDateTime and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
+* status and subject and code and reasonReference MS
 
 Instance: ImmunotherapyPatient147
 InstanceOf: Immunotherapy 
@@ -314,13 +314,13 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
-* code and subject and performedPeriod MS
 * performedPeriod.start ^short = "Targeted therapy start date"
 * performedPeriod.end ^short = "Targeted therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
+* status and subject and code and performedPeriod MS
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
@@ -328,7 +328,7 @@ Title: "Example of Targeted therapy"
 Description: "Example of the targeted therapy for this patient."
 * status = EventStatusCS#unknown
 * subject = Reference(BreastCancerPatient134)
-* code = TreatmentTypesCodeSystem#Targ_Thrpy "Targeted therapy"
+* code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * performedPeriod.start = "1979-11-21"
 * performedPeriod.end = "1979-11-23"
 * extension[method].valueCodeableConcept = SCT#784176007 "HER2 (Human epidermal growth factor receptor 2) inhibitor"
@@ -352,9 +352,8 @@ Description: "Represents the treatment that a multidisciplinary team recommended
 * insert PublicationProfileRuleset
 * category = SCT#312384001 "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
-* created MS
 * activity.detail.code from RecommendedTreatmentTypeVS
-* activity.detail.code MS
+* status and intent and subject and category and created and activity.detail.code MS
 
 Instance: TreatmentPlanPatient147
 InstanceOf: TreatmentPlan
@@ -384,11 +383,11 @@ Description: "Indicate if the patient followed the multidisciplinary recommended
 * insert PublicationProfileRuleset
 * basedOn only Reference(TreatmentPlan)
 * code = SCT#410110000 "Compliance care assessment"
+* subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from TreatmentPlanFollowedVS (required)
-* value[x] MS
+* valueCodeableConcept from TreatmentPlanFollowedVS (required)
+* status and code and basedOn and subject and valueCodeableConcept MS
 
-// no example yet available, this one is made up
 Instance: TreatmentPlanFollowedPatient147
 InstanceOf: TreatmentPlanFollowed 
 Title: "Example Real Treatment Plan Followed"
@@ -397,7 +396,7 @@ Description: "Example of how the real treatment plan was followed"
 * code = SCT#410110000 "Compliance care assessment"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#1 "Yes, fully followed"
+* valueCodeableConcept = TreatmentPlanFollowedCodeSystem#yes "Yes, fully followed"
 
 Mapping: TreatmentPlanFollowedToICHOM
 Source:	TreatmentPlanFollowed
@@ -405,7 +404,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: treatmentplanfollowedmapping
 Title: "TreatmentPlanFollowed to ICHOM set"
 Description: "Mapping of Treatment Plan Followed to the ICHOM breast cancer PCOM set" 	
-* value[x] -> "Real Treatment Plan Followed"
+* valueCodeableConcept -> "Real Treatment Plan Followed"
 
 // TreatmentPlanNotFollowed	
 Profile: TreatmentPlanNotFollowed
@@ -415,21 +414,21 @@ Title: "Treatment Plan Not Followed"
 Description: "Indicate why the multidisciplinary recommended treatment plan was not followed"
 * insert PublicationProfileRuleset
 * basedOn only Reference(TreatmentPlan)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
+* subject only Reference(BreastCancerPatient)
 * value[x] only CodeableConcept 
-* value[x] from TreatmentPlanNotFollowedVS (required)
-* value[x] MS
+* valueCodeableConcept from TreatmentPlanNotFollowedVS (required)
+* status and code and basedOn and subject and valueCodeableConcept MS
 
-// no example yet available, this one is made up
 Instance: TreatmentPlanNotFollowedPatient147
 InstanceOf: TreatmentPlanNotFollowed 
 Title: "Example Treatment Plan Not Followed"
 Description: "Example of why the treatment plan was not followed"
 * basedOn = Reference(TreatmentPlanPatient147)
-* code = TreatmentPlanComplianceCodeSystem#1 "Reason for not following original treatment plan"
+* code = TreatmentPlanComplianceCodeSystem#reason-for-not-following "Reason for not following original treatment plan"
 * status = ObservationStatusCS#final
 * subject = Reference(BreastCancerPatient147)
-* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#1 "Patient preference"
+* valueCodeableConcept = TreatmentPlanNotFollowedCodeSystem#patient-preference "Patient preference"
 
 Mapping: TreatmentPlanNotFollowedToICHOM
 Source:	TreatmentPlanNotFollowed
@@ -437,7 +436,7 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: treatmentplannotfollowedmapping
 Title: "TreatmentPlanNotFollowed to ICHOM set"
 Description: "Mapping of Treatment Plan Not Followed to the ICHOM breast cancer PCOM set" 	
-* value[x] -> "Treatment Plan Not Followed"
+* valueCodeableConcept -> "Treatment Plan Not Followed"
 
 
 

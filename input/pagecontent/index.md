@@ -25,6 +25,20 @@ Artifacts in this Implementation Guide are in alignment with:
 * [QI-Core, 5.0.0-ballot](http://hl7.org/fhir/us/qicore/2022Sep/)
 * [US Core, 5.0.1 - STU5](http://hl7.org/fhir/us/core/STU5.0.1/)
 
+### Download
+
+You can download:
+
+* [this entire guide](full-ig.zip), also as an [npm package](package.tgz)
+* the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip) or
+* the example resources in [json](examples.json.zip), [xml](examples.xml.zip) format.
+
+The source code for this IG can be found [on Github](https://github.com/HL7/fhir-ichom-breast-cancer-ig).
+
+#### IP Statements
+
+{% include ip-statements.xhtml %}
+
 ### Authors
 
 This body of work would not have been possible without the following individuals:
