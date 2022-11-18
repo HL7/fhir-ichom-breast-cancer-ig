@@ -22,11 +22,13 @@ dependencies:
 pages:
   index.md:
     title: Introduction
-  2_use-cases.md:
+  fhir-basics.md:
+    title: FHIR basics
+  use-cases.md:
     title: Use Cases
-  3_standard-set.md:
+  standard-set.md:
     title: ICHOM Set
-  4_security.md:
+  security.md:
     title: Security
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -34,9 +36,10 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Use Cases: 2_use-cases.html
-  ICHOM Set: 3_standard-set.html
-  Security: 4_security.html
+  FHIR basics: fhir-basics.html
+  Use Cases: use-cases.html
+  ICHOM Set: standard-set.html
+  Security: security.html
   Examples: artifacts.html#example-example-instances
   Artifacts: artifacts.html
 
