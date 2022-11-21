@@ -22,8 +22,15 @@ Artifacts in this Implementation Guide are in alignment with:
 
 * [Breast Radiology Reporting, 0.1.0](http://hl7.org/fhir/us/breast-radiology/2019Sep/)
 * [minimal Common Oncology Data Elements (mCODE), STU2](http://hl7.org/fhir/us/mcode/STU2/)
+    * Alignment on the TNM staging artifacts
 * [QI-Core, 5.0.0-ballot](http://hl7.org/fhir/us/qicore/2022Sep/)
 * [US Core, 5.0.1 - STU5](http://hl7.org/fhir/us/core/STU5.0.1/)
+* [QI-Core, 5.0.0-ballot](http://hl7.org/fhir/us/qicore/2022Sep/)
+* [US Core, 5.0.1 - STU5](http://hl7.org/fhir/us/core/STU5.0.1/)
+* [International Patient Summary, 1.0.0 - STU 1](http://hl7.org/fhir/uv/ips/)
+    * The IPS artifacts for patient and procedure can be used to represent the ICHOM artifacts for patient and procedure.
+* [International Patient Access, 1.0.0-preview - STU 1](http://build.fhir.org/ig/HL7/fhir-ipa/index.html)
+    * The IPA artifacts for patient, obeservation and condition can be used to represent the ICHOM artifacts.
 
 ### Download
 
