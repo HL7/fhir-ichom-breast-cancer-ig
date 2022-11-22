@@ -1,15 +1,16 @@
 RuleSet: PublicationInstanceRuleset
-* status = #draft
+* status = #active
 * experimental = true
 * publisher = "ICHOM"
 
 RuleSet: PublicationProfileRuleset
-* ^status = #draft
+* ^version = "5.1"
+* ^status = #active
 * ^experimental = true
 * ^publisher = "ICHOM"
 
 RuleSet: CodeSystemRuleset
-* ^version = "5.0"
+* ^version = "5.1"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "ICHOM"
@@ -17,7 +18,7 @@ RuleSet: CodeSystemRuleset
 * ^content = #complete
 
 RuleSet: ValuesetRuleset
-* ^version = "5.0"
+* ^version = "5.1"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "ICHOM"
