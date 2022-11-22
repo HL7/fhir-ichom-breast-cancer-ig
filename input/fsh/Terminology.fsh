@@ -215,7 +215,8 @@ ValueSet: SACQPatientComorbidityHistory
 Id: SACQPatientComorbidityHistory
 Title: "SACQ Patient's comorbidity history ValueSet"
 Description: "Patient's documented history of comorbidities"
-* insert ValuesetRuleset 
+* insert ValuesetRuleset
+* insert SNOMEDCopyrightForVS
 * ^url = https://connect.ichom.org/fhir/ValueSet/SACQPatientComorbidityHistory
  
 * include SCT#373572006 "I have no other diseases"
