@@ -1,6 +1,6 @@
 {
     "package-id" : "hl7.fhir.uv.ichom-breastcancer",
-    "version" : "0.1.0-ballot",
+    "version" : "1.0.0-ballot",
     "path" : "http://hl7.org/fhir/uv/ichom-breastcancer/2023Jan",
     "milestone" : false,
     "status" : "ballot",
