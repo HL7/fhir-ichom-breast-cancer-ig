@@ -30,6 +30,8 @@ pages:
     title: ICHOM Set
   security.md:
     title: Security
+  downloads.md:
+    title: Downloads
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -42,6 +44,7 @@ menu:
   Security: security.html
   Examples: artifacts.html#example-example-instances
   Artifacts: artifacts.html
+  Downloads: downloads.html
 
 parameters:
   usage-stats-opt-out: true
