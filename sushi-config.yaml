@@ -2,12 +2,12 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.uv.ichom.breastcancer
-canonical: https://connect.ichom.org/fhir
+id: hl7.fhir.uv.ichom-breastcancer
+canonical: http://hl7.org/fhir/uv/ichom-breastcancer
 name: Breast Cancer - ICHOM
 title: "ICHOM FHIR Implementation Guide: Breast Cancer"
 status: draft
-version: 0.0.1
+version: 1.0.0-ballot
 fhirVersion: 4.0.1
 copyrightYear: 2021+
 releaseLabel: ci-build
@@ -30,6 +30,8 @@ pages:
     title: ICHOM Set
   security.md:
     title: Security
+  downloads.md:
+    title: Downloads
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -42,6 +44,7 @@ menu:
   Security: security.html
   Examples: artifacts.html#example-example-instances
   Artifacts: artifacts.html
+  Downloads: downloads.html
 
 parameters:
   usage-stats-opt-out: true

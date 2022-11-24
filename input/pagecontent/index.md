@@ -57,4 +57,4 @@ This body of work would not have been possible without the following individuals
 * Umanga DeSilva (ICHOM, Project coordinator)
 * Vadim Peretokin (Philips, Technical lead)
 
-The authors recognize HL7 sponsorship and input from Clinical Interoperability Council, with special thanks to Laura Heermann Langford, Russell Leftwich, and James McClay.
+The authors recognize HL7 sponsorship and input from Clinical Interoperability Council, with special thanks to Laura Heermann Langford, Russell Leftwich, James McClay, and Kurt Allen.

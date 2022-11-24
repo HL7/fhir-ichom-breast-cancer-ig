@@ -350,7 +350,19 @@ Id: treatment-plan
 Title: "Treatment recommended by a multidisciplinary team"
 Description: "Represents the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * insert PublicationProfileRuleset
-* category = SCT#312384001 "Multidisciplinary assessment"
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding.code"
+* category ^slicing.rules = #open
+* category ^slicing.ordered = false
+* category contains
+  multidisciplinaryAssessment 0..1 MS
+* category[multidisciplinaryAssessment]
+  * coding 1..1
+  * coding.system 1..1
+  * coding.code 1..1
+  * coding.system = SCT
+  * coding.code = #312384001
+  * coding.display = "Multidisciplinary assessment"
 * subject only Reference(BreastCancerPatient)
 * activity.detail.code from RecommendedTreatmentTypeVS
 * status and intent and subject and category and created and activity.detail.code MS
@@ -360,7 +372,7 @@ InstanceOf: TreatmentPlan
 Description: "Example of the treatment that a multidisciplinary team recommended during a multidisciplinary meeting"
 * status = CareplanStatusCS#active
 * intent = CareplanIntentCS#plan 
-* category = SCT#312384001 "Multidisciplinary assessment"
+* category[multidisciplinaryAssessment] = SCT#312384001 "Multidisciplinary assessment"
 * subject = Reference(BreastCancerPatient147)
 * activity.detail.code = SCT#387713003 "Surgical procedure"
 * activity.detail.status = CareplanActivityStatusCS#unknown
