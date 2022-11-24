@@ -100,3 +100,6 @@
 [TreatmentTypeValueSet]: ValueSet-TreatmentTypeValueSet.html
 [TumorGrade]: StructureDefinition-tumor-grade.html
 [TumorSize]: StructureDefinition-sizeinvasivetumor.html
+[validating profiles and resources]: {{site.data.fhir.path}}validation.html
+[Must Support]: {{site.data.fhir.path}}profiling.html#mustsupport
+Data Absent Reason: {{site.data.fhir.path}}extension-data-absent-reason.html
