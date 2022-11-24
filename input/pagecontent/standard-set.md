@@ -9,7 +9,7 @@ This domain of knowledge IG focuses on representing the same variables in the me
 ### Profiles
 [Profiles](artifacts.html#structures-resource-profiles) follow the ICHOM reference guide and data dictionary organisation, as laid out in the table below. Each variable is mapped to a single FHIR resource, or several variables are mapped to the same FHIR resource. The mappings themselves are communicated using [a FHIR profile](https://www.hl7.org/fhir/profiling.html). 
 
-In these profiles the elements necessary to represent the ICHOM breast cancer set completely are labeled as must support and not as mandatory elements. So, when implementers populate all the must support elements they are then able to completely represent the ICHOM breast cancer set. However, in situations where information on a particular data element is missing, implementers can still use the artifacts from this IG. It is important to be aware that in that case the ICHOM set is not fully represented in the data.
+The profile elements necessary to fully represent the ICHOM breast cancer set are labeled as must support. So, when implementers populate all the must support elements in our profiles their data completely represents the ICHOM breast cancer set. However, in situations where information on a particular data element is missing, for any reason, implementers can still use the artifacts from this IG.
 
 The table below lays out the measure set variable to FHIR profile mappings. A backwards FHIR to ICHOM mapping is available within each profile's `Mappings` tab.
 
