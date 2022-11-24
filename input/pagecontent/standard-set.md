@@ -9,8 +9,6 @@ This domain of knowledge IG focuses on representing the same variables in the me
 ### Profiles
 [Profiles](artifacts.html#structures-resource-profiles) follow the ICHOM reference guide and data dictionary organisation, as laid out in the table below. Each variable is mapped to a single FHIR resource, or several variables are mapped to the same FHIR resource. The mappings themselves are communicated using [a FHIR profile](https://www.hl7.org/fhir/profiling.html). 
 
-The profile elements necessary to fully represent the ICHOM breast cancer set are labeled as must support. So, when implementers populate all the must support elements in our profiles their data completely represents the ICHOM breast cancer set. However, in situations where information on a particular data element is missing, for any reason, implementers can still use the artifacts from this IG.
-
 The table below lays out the measure set variable to FHIR profile mappings. A backwards FHIR to ICHOM mapping is available within each profile's `Mappings` tab.
 
 | Variable ID                      | ITEM                                     | FHIR profile                                                     |
@@ -102,5 +100,10 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | DeceasedDate                     | Date of death                            | [BreastCancerPatient]                                            |
 | DEATHBC                          | Death attributable to breast cancer      | [DeathAttributableBC]                                            |
 {: .grid }
+
+### Must Support
+[Must Support] in this implementation guide is used to indicate that a particular element is mapped a measure set variable, and must be populated with data should it be available in the system.
+
+In case an element cannot be populated because it is not available in the source system, if the cardinality rules allow it, the element can be left unfilled. In case the cardinality rules require an element to be populated, the [Data Absent Reason] extension SHALL be used.
 
 {% include markdown-link-references.md %}
