@@ -103,7 +103,3 @@
 [validating profiles and resources]: {{site.data.fhir.path}}validation.html
 [Must Support]: {{site.data.fhir.path}}profiling.html#mustsupport
 [Data Absent Reason]: {{site.data.fhir.path}}extension-data-absent-reason.html
-[mCODE TNM Stage Group Profile]: http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-stage-group.html
-[mCODE TNM Distant Metastases Category Profile]: http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-distant-metastases-category.html
-[mCODE TNM Primary Tumor Category Profile]: http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-primary-tumor-category.html
-[mCODE TNM Regional Nodes Category Profile]: http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-regional-nodes-category.html
