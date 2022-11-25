@@ -2,7 +2,7 @@ Profile: BreastCancerStageGroup
 Id: breast-cancer-stage-group
 Parent: Observation
 Title: "Cancer Stage Group"
-Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 8th Ed.). This profile is in alignment with mCODE."
+Description: "A staging system to describe the amount and spread of breast cancer in a patient's body, using TNM staging (per AJCC 8th Ed.). This profile is in alignment with the [mCODE TNM Stage Group Profile](http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-stage-group.html)."
 * insert PublicationProfileRuleset
 * code from TNMStageGroupVS (required)
 * subject only Reference(BreastCancerPatient)
@@ -47,11 +47,11 @@ Description: "Example showing TNM staging in patient with breast cancer"
 * hasMember[+] = Reference(PathologicalMetastasesPatient147)
 
 // TNM TUMOR STAGE
-Profile:  TNMPrimaryTumorStage
+Profile: TNMPrimaryTumorStage
 Id: tnm-primary-tumor-stage
 Parent: Observation
 Title: "TNM Primary Tumor Stage"
-Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.). This profile is in alignment with mCODE."
+Description: "Represents the stage of the primary tumor (per AJCC 8th Ed.). This profile is in alignment with [mCODE TNM Primary Tumor Category Profile](http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-primary-tumor-category.html)."
 * insert PublicationProfileRuleset
 * code = SCT#385356007 "Tumor stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -88,11 +88,11 @@ Description: "Mapping of the TNM primary tumor stage to the ICHOM breast cancer 
 * valueCodeableConcept -> "Clinical or pathological tumor stage"
 
 // TNM NODAL STAGE
-Profile:  TNMRegionalNodalStage
+Profile: TNMRegionalNodalStage
 Id: tnm-regional-nodes-stage
 Parent: Observation
 Title: "TNM Regional Nodal Stage"
-Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.). This profile is in alignment with mCODE."
+Description: "Represents the presence or absence of metastases in regional lymph nodes (per AJCC 8th Ed.). This profile is in alignment with [mCODE TNM Regional Nodes Category Profile](http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-regional-nodes-category.html)."
 * insert PublicationProfileRuleset
 * code = SCT#385382003 "Node stage finding"
 * subject only Reference(BreastCancerPatient)
@@ -129,11 +129,11 @@ Description: "Mapping of the TNM regional nodal stage to the ICHOM breast cancer
 * valueCodeableConcept -> "Clinical or pathological nodal stage"
 
 // TNM DISTANT METASTASES
-Profile:  TNMDistantMetastases
+Profile: TNMDistantMetastases
 Id: tnm-distant-metastases
 Parent: Observation
 Title: "TNM Distant Metastases"
-Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.). This profile is in alignment with mCODE."
+Description: "Represents the extent of a tumor metastasis in remote anatomical locations (per AJCC 8th Ed.). This profile is in alignment with [mCODE TNM Distant Metastases Category Profile](http://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-tnm-distant-metastases-category.html)."
 * insert PublicationProfileRuleset
 * code = SCT#385380006 "Metastasis category finding"
 * subject only Reference(BreastCancerPatient)

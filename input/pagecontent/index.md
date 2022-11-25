@@ -22,8 +22,14 @@ Artifacts in this Implementation Guide are in alignment with:
 
 * [Breast Radiology Reporting, 0.1.0](http://hl7.org/fhir/us/breast-radiology/2019Sep/)
 * [minimal Common Oncology Data Elements (mCODE), STU2](http://hl7.org/fhir/us/mcode/STU2/)
+    * Alignment on the TNM staging profiles
 * [QI-Core, 5.0.0-ballot](http://hl7.org/fhir/us/qicore/2022Sep/)
 * [US Core, 5.0.1 - STU5](http://hl7.org/fhir/us/core/STU5.0.1/)
+    * Alignment on demographic information
+* [International Patient Summary, 1.0.0 - STU 1](http://hl7.org/fhir/uv/ips/)
+    * Alignment on the patient and procedure profiles
+* [International Patient Access, 1.0.0-preview - STU 1](http://build.fhir.org/ig/HL7/fhir-ipa/index.html)
+    * Alignment on the patient, obeservation and condition profiles 
 
 ### Download
 

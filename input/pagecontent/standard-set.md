@@ -101,4 +101,9 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | DEATHBC                          | Death attributable to breast cancer      | [DeathAttributableBC]                                            |
 {: .grid }
 
+### Must Support
+[Must Support] in this implementation guide is used to indicate that a particular element is mapped a measure set variable, and must be populated with data should it be available in the system.
+
+In case an element cannot be populated because it is not available in the source system, if the cardinality rules allow it, the element can be left unfilled. In case the cardinality rules require an element to be populated, the [Data Absent Reason] extension SHALL be used.
+
 {% include markdown-link-references.md %}
