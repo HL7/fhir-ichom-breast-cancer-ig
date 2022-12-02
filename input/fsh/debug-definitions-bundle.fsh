@@ -1,6 +1,6 @@
 // // Bundle containing all definitions from the ICHOM's IG
 
-// // created from output/ImplementationGuide-hl7.fhir.uv.ichom-breastcancer.json using regex:
+// // created from output/ImplementationGuide-hl7.fhir.uv.ichom-breast-cancer.json using regex:
 // // \{\n +"reference": \{\n +"reference": "(\w+)\/(.+)"\n.+\n.+\n.+\n.+\n.+
 // // with replacement:
 // // * entry[+]

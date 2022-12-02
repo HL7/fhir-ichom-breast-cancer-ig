@@ -1,7 +1,7 @@
 // // Bundle containing all the examples in the IG
 // // backup option for loading all data into a FHIR server in case it does not support FHIR packages
 
-// // created from output/ImplementationGuide-hl7.fhir.uv.ichom-breastcancer.json using regex:
+// // created from output/ImplementationGuide-hl7.fhir.uv.ichom-breast-cancer.json using regex:
 // // \{\n +"reference": \{\n +"reference": "(\w+)\/(.+)"\n.+\n.+\n.+\n.+\n.+
 // // with replacement:
 // // * entry[+]
