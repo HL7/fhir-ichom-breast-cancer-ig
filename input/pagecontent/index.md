@@ -28,7 +28,7 @@ Artifacts in this Implementation Guide are in alignment with:
     * Alignment on demographic information
 * [International Patient Summary, 1.0.0 - STU 1](http://hl7.org/fhir/uv/ips/)
     * Alignment on the patient and procedure profiles
-* [International Patient Access, 1.0.0-preview - STU 1](http://build.fhir.org/ig/HL7/fhir-ipa/index.html)
+* [International Patient Access, 0.1.0 - STU 1 ballot](http://hl7.org/fhir/uv/ipa/2022Jan/)
     * Alignment on the patient, obeservation and condition profiles 
 
 #### IP Statements
