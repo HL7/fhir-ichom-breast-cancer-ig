@@ -29,7 +29,7 @@ Artifacts in this Implementation Guide are in alignment with:
 * [International Patient Summary, 1.0.0 - STU 1](http://hl7.org/fhir/uv/ips/)
     * Alignment on the patient and procedure profiles
 * [International Patient Access, 0.1.0 - STU 1 ballot](http://hl7.org/fhir/uv/ipa/2022Jan/)
-    * Alignment on the patient, obeservation and condition profiles 
+    * Alignment on the patient, observation and condition profiles
 
 #### IP Statements
 
