@@ -49,4 +49,5 @@ menu:
 parameters:
   usage-stats-opt-out: true
   show-inherited-invariants: false
+  shownav: true
   jira-code: ichom-breastcancer
