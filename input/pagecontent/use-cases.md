@@ -11,7 +11,7 @@ That said, to give you an idea where this set is applicable, here are a few exam
 
 ### Actors
 * Health informaticist or IT professionals working within a healthcare provider organization.
-* Clinical researcher with a health informatics background.
+* Clinical research informatics expert.
 
 ### Definitions
 * PROM (Patient reported outcome measure: A scientifically validated questionnaire that assesses specific aspects of a patient’s experience of their health. Responses to each question receive a score and the scores are tallied based on a published algorithm. Typically both responses to individual questions and summary scores are saved but analytics are only performed on summary scores. (Examples: PHQ-9, PROMIS Global).
