@@ -36,12 +36,12 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | MUTBC                            | Genetic mutation                         | [GermlineMutation]                                               |
 | GRADEINV                         | Invasion grade                           | [InvasionGrade]                                                  |
 | GRADEDCIS                        | Tumor grade                              | [TumorGrade]                                                     |
-| TNMCT\_BREAST                    | Clinical tumor stage                     | [Chemotherapy]                                                   |
-| TNMCN\_BREAST                    | Clinical nodal stage                     | [Chemotherapy]                                                   |
-| TNMCM\_BREAST                    | Clinical distant metastatsis             | [Chemotherapy]                                                   |
-| TNMPT\_BREAST                    | Pathological tumor stage                 | [TNMPrimaryTumorStage]                                           |
-| TNMPN\_BREAST                    | Pathological nodal stage                 | [TNMRegionalNodalStage]                                          |
-| TNMPM\_BREAST                    | Pathological distant metastasis          | [TNMDistantMetastases]                                           |
+| TNMCT\_BREAST                    | Clinical tumor stage                     | [TNMPrimaryTumorStage] and [TNMStageGroup]                       |
+| TNMCN\_BREAST                    | Clinical nodal stage                     | [TNMRegionalNodalStage] and [TNMStageGroup]                      |
+| TNMCM\_BREAST                    | Clinical distant metastatsis             | [TNMDistantMetastases] and [TNMStageGroup]                       |
+| TNMPT\_BREAST                    | Pathological tumor stage                 | [TNMPrimaryTumorStage] and [TNMStageGroup]                       |
+| TNMPN\_BREAST                    | Pathological nodal stage                 | [TNMRegionalNodalStage] and [TNMStageGroup]                      |
+| TNMPM\_BREAST                    | Pathological distant metastasis          | [TNMDistantMetastases] and [TNMStageGroup]                       |
 | SIZEINV                          | Size of invasive tumor                   | [TumorSize]                                                      |
 | NumLymphNodesResect              | Number lymph nodes resected              | [LymphNodesResected]                                             |
 | LYMPHINV\_BREAST                 | Lymph nodes involved                     | [LymphNodesInvolved]                                             |

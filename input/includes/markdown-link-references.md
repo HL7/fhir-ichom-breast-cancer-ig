@@ -86,6 +86,7 @@
 [TNMPrimaryTumorVS]: ValueSet-tnm-primary-tumor-category-vs.html
 [TNMRegionalNodalStage]: StructureDefinition-tnm-regional-nodes-stage.html
 [TNMRegionalNodesVS]: ValueSet-tnm-regional-nodes-category-vs.html
+[TNMStageGroup]: StructureDefinition-breast-cancer-stage-group.html
 [TNMStageGroupVS]: ValueSet-tnm-stage-group-vs.html
 [TreatmentPlan]: StructureDefinition-treatment-plan.html
 [TreatmentPlanComplianceCodeSystem]: CodeSystem-TreatmentPlanComplianceCodeSystem.html
