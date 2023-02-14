@@ -17,4 +17,4 @@ That said, to give you an idea where this set is applicable, here are a few exam
 * PROM (Patient reported outcome measure: A scientifically validated questionnaire that assesses specific aspects of a patient’s experience of their health. Responses to each question receive a score and the scores are tallied based on a published algorithm. Typically both responses to individual questions and summary scores are saved but analytics are only performed on summary scores. (Examples: PHQ-9, PROMIS Global).
 * Third-party vendor: Typically a technology or analytics company offering a platform to solve a discrete data or analytic need (such as collecting PROMs data from patients).
 * Learning collaborative: A quality improvement activity in which provider organizations agree to privately share their de-identified patient outcome data for the purpose of facilitating conversations and learning best care practices from each other (example: [https://msqc.org](https://msqc.org)).
-* ICHOM benchmarking platform: [https://www.ichom.org/global-benchmarking-platform](https://www.ichom.org/global-benchmarking-platform)
+
