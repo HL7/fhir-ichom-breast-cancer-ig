@@ -1,4 +1,4 @@
-This domain of knowledge IG focuses on representing the same variables in the measure set in two ways - 1) as [FHIR](artifacts.html#structures-questionnaires) for patient-reported and clinical-reported outcomes, and 2) as [discrete FHIR resources](artifacts.html#structures-resource-profiles) for clinical-reported outcomes. Implementers are free to choose whether they want to implement the questionnaires, profiles, or both.
+This domain of knowledge IG focuses on representing the same variables in the measure set in two ways - 1) as [FHIR Questionnaires](artifacts.html#structures-questionnaires) for patient-reported and clinical-reported outcomes, and 2) as [discrete FHIR resources](artifacts.html#structures-resource-profiles) for clinical-reported outcomes. Implementers are free to choose whether they want to implement the questionnaires, profiles, or both.
 
 ### Questionnaires
 [Questionnaires](artifacts.html#structures-questionnaires) in this IG are organized differently than the ICHOM reference guide and data dictionary, and this is due to their different focuses or intended uses. The reference guide and data dictionary are meant to describe all of the data elements included in the set, so they are organized by data or variable type (e.g. Demographics, Baseline Clinical Factors). In contrast, this IG is meant to facilitate collection of the data elements. Therefore, it is organized by when in the patient's care pathway the data is to be collected (e.g. Baseline, 1 year follow-up) and the source of the data (clinical or patient reported). Despite this difference in organization, the data elements with the FHIR IG and ICHOM's reference guide and data dictionary are completely aligned.
@@ -36,12 +36,12 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | MUTBC                            | Genetic mutation                         | [GermlineMutation]                                               |
 | GRADEINV                         | Invasion grade                           | [InvasionGrade]                                                  |
 | GRADEDCIS                        | Tumor grade                              | [TumorGrade]                                                     |
-| TNMCT\_BREAST                    | Clinical tumor stage                     | [Chemotherapy]                                                   |
-| TNMCN\_BREAST                    | Clinical nodal stage                     | [Chemotherapy]                                                   |
-| TNMCM\_BREAST                    | Clinical distant metastatsis             | [Chemotherapy]                                                   |
-| TNMPT\_BREAST                    | Pathological tumor stage                 | [TNMPrimaryTumorStage]                                           |
-| TNMPN\_BREAST                    | Pathological nodal stage                 | [TNMRegionalNodalStage]                                          |
-| TNMPM\_BREAST                    | Pathological distant metastasis          | [TNMDistantMetastases]                                           |
+| TNMCT\_BREAST                    | Clinical tumor stage                     | [TNMPrimaryTumorStage] and [TNMStageGroup]                       |
+| TNMCN\_BREAST                    | Clinical nodal stage                     | [TNMRegionalNodalStage] and [TNMStageGroup]                      |
+| TNMCM\_BREAST                    | Clinical distant metastatsis             | [TNMDistantMetastases] and [TNMStageGroup]                       |
+| TNMPT\_BREAST                    | Pathological tumor stage                 | [TNMPrimaryTumorStage] and [TNMStageGroup]                       |
+| TNMPN\_BREAST                    | Pathological nodal stage                 | [TNMRegionalNodalStage] and [TNMStageGroup]                      |
+| TNMPM\_BREAST                    | Pathological distant metastasis          | [TNMDistantMetastases] and [TNMStageGroup]                       |
 | SIZEINV                          | Size of invasive tumor                   | [TumorSize]                                                      |
 | NumLymphNodesResect              | Number lymph nodes resected              | [LymphNodesResected]                                             |
 | LYMPHINV\_BREAST                 | Lymph nodes involved                     | [LymphNodesInvolved]                                             |

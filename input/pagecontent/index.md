@@ -20,7 +20,7 @@ Users of this guide must be familiar with the ICHOM Breast Cancer Set and the ac
 ### Alignment with HL7 specifications
 Artifacts in this Implementation Guide are in alignment with:
 
-* [Breast Radiology Reporting, 0.1.0](http://hl7.org/fhir/us/breast-radiology/2019Sep/)
+* [Breast Radiology Reporting, 0.2.0](http://hl7.org/fhir/us/breast-radiology/2019Sep/)
 * [minimal Common Oncology Data Elements (mCODE), STU2](http://hl7.org/fhir/us/mcode/STU2/)
     * Alignment on the TNM staging profiles
 * [QI-Core, 5.0.0-ballot](http://hl7.org/fhir/us/qicore/2022Sep/)
