@@ -52,5 +52,5 @@ Target: "https://connect.ichom.org/patient-centered-outcome-measures/breast-canc
 Id: secondaryconditionmapping
 Title: "Secondary condition to ICHOM set"
 Description: "Mapping of the secondary breast cancer condition to the ICHOM breast cancer PCOM set. To ensure this is secondary breast cancer diagnosed in a patient, the application can search for previous conditions." 	
-* -> "New cancer"
-* bodySite -> "New cancer"
+* -> "Second breast cancer"
+* bodySite -> "Second breast cancer"
