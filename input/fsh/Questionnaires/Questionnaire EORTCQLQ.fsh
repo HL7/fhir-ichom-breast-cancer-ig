@@ -247,94 +247,94 @@ RuleSet: EORTCQuestionnaire
     * text = "Patients sometimes report that they have the following symptoms or problems. Please indicate the extent to which you have experienced these symptoms or problems during the past week. Please answer by selecting the answer that best applies to you. During the past week:"
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q31"
+      * linkId = "EORTCQLQBR45_Q31"
       * type = #choice
       * text = "Have you had dry mouth?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q32"
+      * linkId = "EORTCQLQBR45_Q32"
       * type = #choice
       * text = "Have food and drink tasted different than usual?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q33"
+      * linkId = "EORTCQLQBR45_Q33"
       * type = #choice
       * text = "Have your eyes been painful, irritated or watery?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q34"
+      * linkId = "EORTCQLQBR45_Q34"
       * type = #choice
       * text = "Have you lost any hair?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q35"
+      * linkId = "EORTCQLQBR45_Q35"
       * type = #choice
       * text = "Have you been upset by the loss of your hair?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * enableWhen[+]
-        * question = "EORTCQLQBR23_Q34"
+        * question = "EORTCQLQBR45_Q34"
         * operator = #!=
         * answerCoding = AgreementResponseCodeSystem#no "Not at all"
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q36"
+      * linkId = "EORTCQLQBR45_Q36"
       * type = #choice
       * text = "Have you felt ill or unwell?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q37"
+      * linkId = "EORTCQLQBR45_Q37"
       * type = #choice
       * text = "Have you had hot flushes?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q38"
+      * linkId = "EORTCQLQBR45_Q38"
       * type = #choice
       * text = "Have you had headaches?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q39"
+      * linkId = "EORTCQLQBR45_Q39"
       * type = #choice
       * text = "Have you felt physically less attractive as a result of your disease or treatment?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q40"
+      * linkId = "EORTCQLQBR45_Q40"
       * type = #choice
       * text = "Have you felt less feminine as a result of your disease or treatment?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q41"
+      * linkId = "EORTCQLQBR45_Q41"
       * type = #choice
       * text = "Have you had problems looking at yourself naked?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q42"
+      * linkId = "EORTCQLQBR45_Q42"
       * type = #choice
       * text = "Have you been dissatisfied with your body?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q43"
+      * linkId = "EORTCQLQBR45_Q43"
       * type = #choice
       * text = "Have you worried about your health in the future?"
       * answerValueSet = Canonical(AgreementResponseVS)
@@ -346,26 +346,26 @@ RuleSet: EORTCQuestionnaire
     * text = "During the past four weeks:"
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q44"
+      * linkId = "EORTCQLQBR45_Q44"
       * type = #choice
       * text = "Have you been sexually active? (with or without intercourse)"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q45"
+      * linkId = "EORTCQLQBR45_Q45"
       * type = #choice
       * text = "To what extent were you sexually active? (with or without intercourse)"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q46"
+      * linkId = "EORTCQLQBR45_Q46"
       * type = #choice
       * text = "Has sex been enjoyable for you?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * enableWhen[+]
-        * question = "EORTCQLQBR23_Q45"
+        * question = "EORTCQLQBR45_Q45"
         * operator = #!=
         * answerCoding = AgreementResponseCodeSystem#no "Not at all"
 
@@ -375,49 +375,49 @@ RuleSet: EORTCQuestionnaire
     * text = "During the past week:"
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q47"
+      * linkId = "EORTCQLQBR45_Q47"
       * type = #choice
       * text = "Have you had any pain in your arm or shoulder?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
       * item[+]
-      * linkId = "EORTCQLQBR23_Q48"
+      * linkId = "EORTCQLQBR45_Q48"
       * type = #choice
       * text = "Have you had a swollen arm or hand?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q49"
+      * linkId = "EORTCQLQBR45_Q49"
       * type = #choice
       * text = "Have you had problems raising your arm or moving it sideways?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q50"
+      * linkId = "EORTCQLQBR45_Q50"
       * type = #choice
       * text = "Have you had any pain in the area of your affected breast?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q51"
+      * linkId = "EORTCQLQBR45_Q51"
       * type = #choice
       * text = "Has the area of your affected breast been swollen?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q52"
+      * linkId = "EORTCQLQBR45_Q52"
       * type = #choice
       * text = "Has the area of your affected breast been oversensitive?"
       * answerValueSet = Canonical(AgreementResponseVS)
       * required = true
 
     * item[+]
-      * linkId = "EORTCQLQBR23_Q53"
+      * linkId = "EORTCQLQBR45_Q53"
       * type = #choice
       * text = "Have you had skin problems on or in the area of your affected breast (e.g., itchy, dry, flaky)?"
       * answerValueSet = Canonical(AgreementResponseVS)
