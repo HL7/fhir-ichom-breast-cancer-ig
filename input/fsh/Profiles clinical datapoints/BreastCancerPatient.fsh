@@ -4,11 +4,12 @@ Id: patient
 Title: "Breast cancer patient"
 Description: "A patient who has been diagnosed with or is receiving medical treatment for breast cancer. This profile includes the ICHOM patient characteristics and demographic factors."
 * insert PublicationProfileRuleset
-* identifier.value and name.family and birthDate and gender and maritalStatus and deceased[x] MS 
+* identifier.value and name.family and birthDate and maritalStatus and deceased[x] MS 
 * deceased[x] only dateTime 
 * address.country from CountryVS (required)
 * address.country 0..1 MS
 * maritalStatus from RelationshipStatusVS (required)
+* extension contains SexForClinicalUse named sexForClinicalUse 0..1 MS
 * extension contains EducationLevel named educationLevel 0..1 MS
 * extension contains Ethnicity named ethnicity 0..1 MS
 * extension contains Race named race 0..1 MS
@@ -21,7 +22,7 @@ Description: "The characteristics and demographic factors of an example patient.
 * name.family = "Letsche"
 * birthDate = "1920"
 * address.country = CountryCS#USA
-* gender = GenderCS#male
+* extension[sexForClinicalUse].valueCodeableConcept = SexForClinicalUseCS#male
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003
 * extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
 * extension[race].valueCodeableConcept  = RaceCS#2076-8
@@ -35,7 +36,7 @@ Description: "The characteristics and demographic factors of an example patient.
 * name.family = "Cornetet"
 * birthDate = "1933"
 * address.country = CountryCS#GB
-* gender = GenderCS#male
+* extension[sexForClinicalUse].valueCodeableConcept = SexForClinicalUseCS#male
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003
 * extension[ethnicity].valueCodeableConcept = EthnicityCS#2186-5
 * extension[race].valueCodeableConcept  = RaceCS#2054-5
@@ -50,7 +51,7 @@ Description: "The characteristics and demographic factors of an example patient.
 * name.family = "Mortera"
 * birthDate = "1978"
 * address.country = CountryCS#GB
-* gender = GenderCS#unknown
+* extension[sexForClinicalUse].valueCodeableConcept =  SexForClinicalUseCS#unknown
 * extension[educationLevel].valueCodeableConcept  = SCT#224297003
 * extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
 * extension[race].valueCodeableConcept  = RaceCS#2028-9
@@ -66,11 +67,11 @@ Description: "Mapping of the breast cancer patient profile to the ICHOM breast c
 * identifier.value -> "Patient ID"
 * name.family -> "Last name"
 * birthDate -> "Year of birth"
-* gender -> "Sex"
 * deceased[x] -> "Date of death"
 * deceased[x] -> "Vital status"
 * address.country -> "Country"
 * maritalStatus -> "Relationship status"
+* extension[sexForClinicalUse] -> "Sex"
 * extension[educationLevel] -> "Level of education"
 * extension[ethnicity] -> "Ethnicity"
 * extension[race] -> "Race"

@@ -26,6 +26,7 @@ Alias: EthnicityCS = http://terminology.hl7.org/CodeSystem/v3-Ethnicity
 Alias: CountryCS = urn:iso:std:iso:3166
 Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: AdministrativeGenderCS = http://hl7.org/fhir/administrative-gender
+Alias: SexForClinicalUseCS = http://terminology.hl7.org/CodeSystem/sex-for-clinical-use
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity
@@ -46,3 +47,4 @@ Alias: ObservationExtractEx = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc
 Alias: ObservationLinkPeriodEx = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod
 Alias: CalculatedExpressionEx = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression
 Alias: HiddenEx = http://hl7.org/fhir/StructureDefinition/questionnaire-hidden
+Alias: SexForClinicalUse = http://hl7.org/fhir/StructureDefinition/patient-sexForClinicalUse
