@@ -29,7 +29,7 @@ The table below lays out the measure set variable to FHIR profile mappings. A ba
 | WeightUnit                       | Body weight units                        | [BodyWeight]                                                     |
 | LATERAL                          | Laterality                               | [PrimaryBreastCancerCondition]                                   |
 | FIRSTBC                          | First breast cancer                      | [PrimaryBreastCancerCondition]                                   |
-| NEWBC                            | New canc                                 | [SecondaryBreastCancerCondition]                                 |
+| SECONDBC                         | Second breast cancer                     | [SecondaryBreastCancerCondition]                                 |
 | **Baseline tumor factors**       |                                          |                                                                  |
 | HistologicalDiagnosisDate        | Date of histological diagnosis           | [Histotype]                                                      |
 | HISTOTYPE                        | Histological type                        | [Histotype]                                                      |
