@@ -9,7 +9,7 @@ Description: "A patient who has been diagnosed with or is receiving medical trea
 * address.country from CountryVS (required)
 * address.country 0..1 MS
 * maritalStatus from RelationshipStatusVS (required)
-* extension contains SexForClinicalUse named sexForClinicalUse 0..1 MS
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-sexForClinicalUse named sexForClinicalUse 0..1 MS
 * extension contains EducationLevel named educationLevel 0..1 MS
 * extension contains Ethnicity named ethnicity 0..1 MS
 * extension contains Race named race 0..1 MS
