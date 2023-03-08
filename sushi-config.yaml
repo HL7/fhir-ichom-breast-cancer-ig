@@ -18,6 +18,7 @@ publisher:
 
 dependencies:
   hl7.fhir.uv.sdc: 3.0.0
+  hl7.fhir.uv.extensions: current
 
 pages:
   index.md:
