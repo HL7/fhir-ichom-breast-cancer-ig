@@ -16,6 +16,12 @@ publisher:
   name: HL7 International - Clinical Interoperability Council Group
   url: http://www.hl7.org/Special/committees/cic
 
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 2
+
 dependencies:
   hl7.fhir.uv.sdc: 3.0.0
 
