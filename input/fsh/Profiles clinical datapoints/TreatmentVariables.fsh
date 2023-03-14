@@ -4,11 +4,12 @@ Parent: Procedure
 Id: breast-cancer-surgery
 Title: "Breast cancer surgery"
 Description: "Represents if the breast cancer patient received surgery during the last year."
+* category 1.. MS
 * category = SCT#387713003 "Surgical procedure" 
 * code from BreastSurgeryTypeVS (required)
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* status and subject and category and code and performedDateTime	and reasonReference MS
+* status and subject and code and performedDateTime	and reasonReference MS
 
 Instance: BreastCancerSurgeryPatient147
 InstanceOf: BreastCancerSurgery 
@@ -36,11 +37,12 @@ Parent: Procedure
 Id: axilla-surgery
 Title: "Axilla surgery"
 Description: "Represents if the breast cancer patient received surgery to the axilla during the last year."
+* category 1.. MS
 * category = SCT#699455008 "Operative procedure on axilla"
 * code from TargetedAxillaSurgeryVS (required)
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* status and subject and category and code and performedDateTime	and reasonReference MS
+* status and subject and code and performedDateTime	and reasonReference MS
 
 Instance: AxillaSurgeryPatient147
 InstanceOf: AxillaSurgery 
@@ -69,10 +71,11 @@ Parent: Procedure
 Id: axillary-clearance
 Title: "Axillary clearance"
 Description: "Represents if the breast cancer patient received axillary clearance during the last year. Axilla clearance could be due to lymph node involvement after sentinel lymph node biopsy."
+* code 1.. MS
 * code = SCT#79544006 "Complete axillary lymphadenectomy"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (AxillaSurgery)
-* status and subject and code and performedDateTime and reasonReference MS
+* status and subject and performedDateTime and reasonReference MS
 
 Instance: AxillaryClearancePatient147
 InstanceOf: AxillaryClearance
@@ -99,13 +102,14 @@ Parent: Procedure
 Id: reconstruction-surgery
 Title: "Reconstruction surgery"
 Description: "Represents if the breast cancer patient received reconstruction surgery during the last year."
+* code 1.. MS
 * code = SCT#33496007 "Reconstruction of breast" 
 * subject only Reference(BreastCancerPatient)
 * performedDateTime	and complication MS
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * bodySite from ImplantLocationVS (required)
 * usedCode from ReconstructionTypeVS (required)
-* status and subject and code and performedDateTime and reasonReference and bodySite and usedCode MS 
+* status and subject and performedDateTime and reasonReference and bodySite and usedCode MS 
 * partOf MS
   * ^short = "Original procedure that preceded the reconstruction (e.g. mastectomy)"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure (e.g. mastectomy) that preceded the reoperation."
@@ -141,6 +145,7 @@ Parent: Procedure
 Id: radiotherapy
 Title: "Radiotherapy"
 Description: "Represents if the breast cancer patient received radiotherapy during the last year." 
+* code 1.. MS
 * code = SCT#108290001 "Radiation oncology AND/OR radiotherapy" 
 * subject only Reference(BreastCancerPatient)
 * performedPeriod.start ^short = "Radiotherapy start date"
@@ -148,7 +153,7 @@ Description: "Represents if the breast cancer patient received radiotherapy duri
 * reasonReference only Reference (PrimaryBreastCancerCondition)
 * reasonCode from TherapyIntentVS (required)
 * bodySite from LocationRadiotherapyVS (preferred) 
-* status and subject and code and performedPeriod and reasonReference and reasonCode and bodySite MS 
+* status and subject and performedPeriod and reasonReference and reasonCode and bodySite MS 
 
 Instance: RadiotherapyPatient147
 InstanceOf: Radiotherapy
@@ -180,6 +185,7 @@ Parent: Procedure
 Id: chemotherapy
 Title: "Chemotherapy"
 Description: "Represents if the patient received chemotherapy during the last year."
+* code 1.. MS
 * code = SCT#385786002 "Chemotherapy care"
 * subject only Reference(BreastCancerPatient)
 * performedPeriod.start ^short = "Chemotherapy start date"
@@ -188,7 +194,7 @@ Description: "Represents if the patient received chemotherapy during the last ye
 * reasonCode from TherapyIntentVS (required)
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from ChemoTherapyTypeVS (preferred)
-* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
+* status and subject and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: ChemotherapyPatient147
 InstanceOf: Chemotherapy
@@ -220,6 +226,7 @@ Parent: Procedure
 Id: hormonal-therpay
 Title: "Hormonal therapy"
 Description: "Represents if the patient received hormonal therapy during the last year."
+* code 1.. MS
 * code = SCT#169413002 "Hormone therapy" 
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
@@ -228,7 +235,7 @@ Description: "Represents if the patient received hormonal therapy during the las
 * performedPeriod.end ^short = "Hormonal therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from HormonalTherapyTypeVS (preferred)
-* status and subject and code and performedPeriod and reasonReference and reasonCode MS 
+* status and subject and performedPeriod and reasonReference and reasonCode MS 
 
 Instance: HormonaltherapyPatient147
 InstanceOf: Hormonaltherapy
@@ -260,10 +267,11 @@ Parent: Procedure
 Id: best-supportive-care
 Title: "Best supportive care"
 Description: "Represents if breast cancer patient received best supportive care during the last year."
+* code 1.. MS
 * code = SCT#243114000 "Support"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* status and subject and code and reasonReference MS
+* status and subject and reasonReference MS
 
 Instance: BestSupportiveCarePatient147
 InstanceOf: BestSupportiveCare 
@@ -287,10 +295,11 @@ Parent: Procedure
 Id: immunotherapy
 Title: "Immunotherapy"
 Description: "Represents if the breast cancer patient received immunotherapy during the last year."
+* code 1.. MS
 * code = SCT#76334006 "Immunotherapy"
 * subject only Reference(BreastCancerPatient)
 * reasonReference only Reference (PrimaryBreastCancerCondition)
-* status and subject and code and reasonReference MS
+* status and subject and reasonReference MS
 
 Instance: ImmunotherapyPatient147
 InstanceOf: Immunotherapy 
@@ -314,13 +323,14 @@ Parent: Procedure
 Id: targeted-therapy
 Title: "Targeted therapy"
 Description: "Type and duration of targeted therapy"
+* code 1.. MS
 * code = TreatmentTypesCodeSystem#targeted-therapy "Targeted therapy"
 * subject only Reference(BreastCancerPatient)
 * performedPeriod.start ^short = "Targeted therapy start date"
 * performedPeriod.end ^short = "Targeted therapy stop date"
 * extension contains ProcedureMethodEx named method 0..1 MS
 * extension[method].valueCodeableConcept from TargetedTherapyVS (preferred)
-* status and subject and code and performedPeriod MS
+* status and subject and performedPeriod MS
 
 Instance: TargetedTherapyPatient134
 InstanceOf: TargetedTherapy 
