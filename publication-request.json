@@ -1,14 +1,9 @@
 {
     "package-id" : "hl7.fhir.uv.ichom-breast-cancer",
-    "version" : "1.0.0-ballot",
-    "path" : "http://hl7.org/fhir/uv/ichom-breast-cancer/2023Jan",
-    "milestone" : false,
-    "status" : "ballot",
+    "version" : "1.0.0",
+    "path" : "http://hl7.org/fhir/uv/ichom-breast-cancer/1.0.0",
+    "mode" : "milestone",
+    "status" : "trial-use",
     "sequence" : "STU 1",
-    "desc" : "First release of the specification representing the ICHOM Breast Cancer Patient-Centered Outcome Set version 5.0, modelled as both FHIR Questionnaires and resource profiles.",
-    "title" : "ICHOM Implementation Guide: Breast Cancer",
-    "ci-build" : "https://build.fhir.org/ig/HL7/fhir-ichom-breast-cancer-ig",
-    "category" : "Quality / CDS",
-    "introduction" : "There is a growing need for representing the ICHOM Patient-Centered Outcome Measure Sets through HL7 FHIR APIs for the international community. The clinical elements of the ICHOM Patient-centered Outcomes Measures are already created and accepted as per international clinical research, patient represented and peer-reviewed process (akin to HL7 balloting process). Mapping to standard ontologies, such as SNOMED, are part of the already peer-reviewed and internationally accepted measure set. What is sought is the development and publishing of the HL7 FHIR representation of the already internationally validated and peer-reviewed ICHOM patient-centered outcome measure set for breast cancer."
+    "desc" : "First release of the specification representing the ICHOM Breast Cancer Patient-Centered Outcome Set version 5.0, modelled as both FHIR Questionnaires and resource profiles."
 }
-  

@@ -7,10 +7,10 @@ canonical: http://hl7.org/fhir/uv/ichom-breast-cancer
 name: Breast Cancer - ICHOM
 title: "ICHOM Implementation Guide: Breast Cancer"
 status: draft
-version: 1.0.0-ballot
+version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2021+
-releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: trial-use # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
   name: HL7 International - Clinical Interoperability Council Group
