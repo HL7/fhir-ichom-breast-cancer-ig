@@ -54,7 +54,7 @@ Description: "The characteristics and demographic factors of an example patient.
 * birthDate = "1978"
 * address.country = CountryCS#GB
 * extension[sexForClinicalUse]
-  * extension[value].valueCodeableConcept = DataAbsentCS#unknown
+  * extension[value].valueCodeableConcept = SexForClinicalUseCS#male-typical
 * extension[educationLevel].valueCodeableConcept = SCT#224297003
 * extension[ethnicity].valueCodeableConcept = EthnicityCS#2135-2
 * extension[race].valueCodeableConcept  = RaceCS#2028-9

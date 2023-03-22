@@ -27,7 +27,7 @@ Alias: CountryCS = urn:iso:std:iso:3166
 Alias: YesNoUnkCS = http://terminology.hl7.org/CodeSystem/v2-0532
 Alias: AdministrativeGenderCS = http://hl7.org/fhir/administrative-gender
 Alias: SexForClinicalUseCS = http://terminology.hl7.org/CodeSystem/sex-parameter-for-clinical-use
-Alias: DataAbsentCS = https://terminology.hl7.org/CodeSystem-data-absent-reason
+Alias: DataAbsentCS = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 // Valuesets
 Alias: EthnicityVS = http://terminology.hl7.org/ValueSet/v3-Ethnicity

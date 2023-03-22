@@ -9,6 +9,9 @@ This domain of knowledge IG focuses on representing the same variables in the me
 ### Profiles
 [Profiles](artifacts.html#structures-resource-profiles) follow the ICHOM reference guide and data dictionary organisation, as laid out in the table below. Each variable is mapped to a single FHIR resource, or several variables are mapped to the same FHIR resource. The mappings themselves are communicated using [a FHIR profile](https://www.hl7.org/fhir/profiling.html). 
 
+<object data="ArchitectureOfProfiles-ICHOM.svg" type="image/svg+xml"></object>
+<br/>
+
 The table below lays out the measure set variable to FHIR profile mappings. A backwards FHIR to ICHOM mapping is available within each profile's `Mappings` tab.
 
 | Variable ID                      | ITEM                                     | FHIR profile                                                     |
