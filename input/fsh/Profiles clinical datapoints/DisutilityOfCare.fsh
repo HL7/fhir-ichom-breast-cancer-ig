@@ -14,7 +14,7 @@ Description: "Represents whether the patient has had a re-operation since their 
 * partOf MS
   * ^short = "Original procedure that prompted the reoperation"
   * ^definition = "A larger event of which this particular procedure is a component or step. In this case, the original procedure that prompted the reoperation."
-* status and subject and category and code and performedDateTime and reasonCode and reasonReference MS
+* status and subject and category and code and performedDateTime and reasonCode MS
 
 Instance: ReoperationSurgeryPatient147
 InstanceOf: ReoperationSurgery
