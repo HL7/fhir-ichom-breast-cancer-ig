@@ -8,6 +8,9 @@ Description: "Represents the height of a person diagnosed with breast cancer"
 * subject only Reference(BreastCancerPatient)
 * code and status and valueQuantity MS
 
+// Adjusted Observation.code.coding slice to fix error "The slice definition has min of 0 but add up to 1..."
+* code.coding 1..* MS
+
 Instance: BodyHeightPatient147
 InstanceOf: BodyHeight
 Description: "Example of the height of a patient diagnosed with breast cancer"
@@ -37,6 +40,9 @@ Description: "Represents the weight of a person diagnosed with breastcancer"
 * subject only Reference(BreastCancerPatient)
 * valueQuantity.unit from BodyWeightVS
 * code and status and valueQuantity MS
+
+// Adjusted Observation.code.coding slice to fix error "The slice definition has min of 0 but add up to 1..."
+* code.coding 1..* MS
 
 Instance: BodyWeightPatient147
 InstanceOf: BodyWeight
