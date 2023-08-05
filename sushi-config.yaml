@@ -5,7 +5,7 @@
 id: hl7.fhir.uv.ichom-breast-cancer
 canonical: http://hl7.org/fhir/uv/ichom-breast-cancer
 name: Breast Cancer - ICHOM
-title: "ICHOM Implementation Guide: Breast Cancer"
+title: "ICHOM Patient Centered Outcomes Measure Set for Breast Cancer"
 status: draft
 version: 1.0.0
 fhirVersion: 4.0.1
