@@ -22,3 +22,7 @@ RuleSet: ValuesetRuleset
 * ^status = #active
 * ^experimental = false
 * ^publisher = "ICHOM"
+
+RuleSet: ExtensionContext(path)
+* ^context[+].type = #element
+* ^context[=].expression = "{path}"
