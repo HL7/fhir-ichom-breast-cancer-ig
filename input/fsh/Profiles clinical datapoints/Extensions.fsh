@@ -4,6 +4,7 @@ Title:  "Education Level Extension"
 Description: "Represents the level of education of a patient."
 * value[x] only CodeableConcept
 * value[x] from EducationLevelVS (required)
+* insert ExtensionContext(Patient)
 
 Mapping: EducationLevelToICHOM
 Source:	EducationLevel
@@ -19,6 +20,7 @@ Title:  "Race Extension"
 Description: "Represents the race of a patient. This extension is aligned with USCore."
 * value[x] only CodeableConcept
 * value[x] from RaceVS (example) 
+* insert ExtensionContext(Patient)
 
 Mapping: RaceToICHOM
 Source:	Race
@@ -34,6 +36,7 @@ Title:  "Ethnicity Extension"
 Description: "Represents the ethnicity of a patient. This extension is aligned with USCore"
 * value[x] only CodeableConcept
 * value[x] from EthnicityVS (example)
+* insert ExtensionContext(Patient)
 
 Mapping: EthnicityToICHOM
 Source:	Ethnicity
