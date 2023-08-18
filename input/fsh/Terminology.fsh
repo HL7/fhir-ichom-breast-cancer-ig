@@ -85,7 +85,7 @@ Description: "Valueset of the TNM stage for the T category, according to TNM sta
 * insert ValuesetRuleset
 * SCT#1222604002 "American Joint Committee on Cancer cTX (qualifier value)"
 * SCT#1228882005 "American Joint Committee on Cancer cT0 (qualifier value)"
-* SCT#1228885007 "American Joint Committee on Cancer cTis(DCIS) (qualifier value"
+* SCT#1228885007 "American Joint Committee on Cancer cTis(DCIS) (qualifier value)"
 * SCT#1228888009 "American Joint Committee on Cancer cTis(Paget) (qualifier value)"
 * SCT#1228889001 "American Joint Committee on Cancer cT1 (qualifier value)"
 * SCT#1228929004 "American Joint Committee on Cancer cT2 (qualifier value)"
